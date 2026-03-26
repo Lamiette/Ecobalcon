@@ -13,6 +13,13 @@ function HtmlEscape {
   return [System.Security.SecurityElement]::Escape([string]$text)
 }
 
+function Escape-Xml {
+  param([string]$text)
+
+  if ($null -eq $text) { return "" }
+  return [System.Security.SecurityElement]::Escape([string]$text)
+}
+
 function Convert-IsoDateToFrench {
   param([string]$iso)
 
@@ -82,6 +89,277 @@ function Get-ImagePagePath {
 
   if ([string]::IsNullOrWhiteSpace($fileName)) { return "" }
   return "$pagePrefix$fileName"
+}
+
+try {
+  Add-Type -AssemblyName System.Drawing | Out-Null
+} catch {
+}
+
+$imageDimensionCache = @{}
+
+function Get-ImageDimensions {
+  param([string]$path)
+
+  if ([string]::IsNullOrWhiteSpace($path)) { return $null }
+
+  $fullPath = [System.IO.Path]::GetFullPath($path)
+  if ($imageDimensionCache.ContainsKey($fullPath)) {
+    return $imageDimensionCache[$fullPath]
+  }
+
+  if (-not (Test-Path $fullPath)) {
+    return $null
+  }
+
+  $image = [System.Drawing.Image]::FromFile($fullPath)
+  try {
+    $dimensions = [PSCustomObject]@{
+      Width = $image.Width
+      Height = $image.Height
+    }
+  } finally {
+    $image.Dispose()
+  }
+
+  $imageDimensionCache[$fullPath] = $dimensions
+  return $dimensions
+}
+
+function Get-ImageDimensionAttributes {
+  param([string]$path)
+
+  $dimensions = Get-ImageDimensions $path
+  if ($null -eq $dimensions) { return "" }
+  return " width=`"$($dimensions.Width)`" height=`"$($dimensions.Height)`""
+}
+
+function Get-ArticleImageDimensionAttributes {
+  param([string]$fileName)
+
+  if ([string]::IsNullOrWhiteSpace($fileName)) { return "" }
+  return Get-ImageDimensionAttributes (Join-Path $imagesDir $fileName)
+}
+
+function Get-RootImageDimensionAttributes {
+  param([string]$relativePath)
+
+  if ([string]::IsNullOrWhiteSpace($relativePath)) { return "" }
+  return Get-ImageDimensionAttributes (Join-Path $root $relativePath)
+}
+
+$faqSchemaMap = @{
+  "guide-tomates-sur-son-balcon" = @(
+    [ordered]@{
+      Question = "Quelle exposition faut-il pour cultiver des tomates sur un balcon ?"
+      Answer = "Les tomates ont besoin de plein soleil, au moins 6 heures par jour. Une exposition sud convient bien, avec une protection contre le vent et un peu d'ombre aux heures les plus chaudes."
+    },
+    [ordered]@{
+      Question = "Quel contenant choisir pour des tomates en pot ?"
+      Answer = "Prevois un pot d'au moins 30 cm de profondeur et de largeur, assez stable, avec un bon drainage et une couche de billes d'argile ou de graviers au fond."
+    },
+    [ordered]@{
+      Question = "Comment limiter les problemes courants sur les tomates ?"
+      Answer = "Arrose regulierement sans mouiller le feuillage, paille le pot, installe un tuteur des la plantation et surveille rapidement les signes de carence, de necrose apicale, de pucerons ou de mildiou."
+    }
+  )
+  "jardinage-en-lasagnes-sur-balcon" = @(
+    [ordered]@{
+      Question = "Qu'est-ce que le jardinage en lasagnes sur balcon ?"
+      Answer = "C'est une methode qui consiste a superposer des matieres brunes et vertes dans un bac pour creer un substrat riche, vivant et fertile, adapte aux petits espaces urbains."
+    },
+    [ordered]@{
+      Question = "Quelles matieres faut-il utiliser pour une lasagne de balcon ?"
+      Answer = "Il faut un contenant profond avec drainage, puis du carton humidifie, des matieres brunes comme les feuilles mortes ou la paille, des matieres vertes comme les epluchures ou le marc de cafe, et une couche finale de compost ou de terreau mur."
+    },
+    [ordered]@{
+      Question = "Quand installer une lasagne sur son balcon ?"
+      Answer = "Le printemps permet de planter rapidement, tandis que l'automne est ideal pour laisser la lasagne murir pendant l'hiver. C'est aussi possible en ete ou en hiver avec un suivi d'arrosage adapte."
+    }
+  )
+  "jardin-sur-balcon-astuces" = @(
+    [ordered]@{
+      Question = "Quelles plantes choisir pour debuter un jardin sur balcon ?"
+      Answer = "Le choix depend d'abord de l'exposition. Au soleil, privilegie les plantes mediterraneennes, tomates, aromatiques et fraisiers ; a l'ombre, les menthes, fougeres ou begonias sont plus adaptes."
+    },
+    [ordered]@{
+      Question = "Comment bien gerer l'arrosage sur un balcon ?"
+      Answer = "Arrose de preference le matin ou en fin de journee, surveille le dessechement rapide des pots en ete et utilise si besoin un goutte-a-goutte, des oyas ou des bouteilles retournees pour gagner en regularite."
+    },
+    [ordered]@{
+      Question = "Comment gagner de la place sur un petit balcon ?"
+      Answer = "Exploite la verticalite avec etageres, treillis, jardinières suspendues et cultures sur plusieurs niveaux. Pense aussi a organiser les plantes selon leur hauteur pour faciliter la circulation et la lumiere."
+    }
+  )
+  "erreurs-jardiner-sur-un-balcon" = @(
+    [ordered]@{
+      Question = "Quelle est l'erreur la plus frequente quand on jardine sur un balcon ?"
+      Answer = "L'une des erreurs les plus courantes est de ne pas tenir compte de l'exposition au soleil. Le choix des plantes doit toujours partir du niveau d'ensoleillement reel du balcon."
+    },
+    [ordered]@{
+      Question = "Comment eviter les erreurs d'arrosage sur un balcon ?"
+      Answer = "Il faut adapter l'arrosage a chaque plante, verifier l'humidite du terreau sur quelques centimetres avant d'arroser et intervenir plutot le matin ou le soir pour limiter l'evaporation."
+    },
+    [ordered]@{
+      Question = "Pourquoi ne faut-il pas surcharger un balcon de pots ?"
+      Answer = "Un balcon trop charge freine la circulation de l'air, augmente l'humidite stagnante, limite la lumiere et complique l'entretien. Une selection mieux espacee est plus saine et plus facile a gerer."
+    }
+  )
+  "legumes-faciles-a-cultiver" = @(
+    [ordered]@{
+      Question = "Quels legumes sont les plus faciles a cultiver en pot sur un balcon ?"
+      Answer = "Les laitues, radis, epinards, tomates cerises ou tomates cocktail font partie des cultures les plus accessibles pour debuter un potager de balcon productif."
+    },
+    [ordered]@{
+      Question = "Quelle profondeur de pot faut-il prevoir pour un potager en conteneur ?"
+      Answer = "Cela depend des cultures : environ 10 a 15 cm suffisent pour les radis, 15 a 20 cm pour les laitues et 30 cm ou plus pour les tomates afin d'offrir assez d'espace aux racines."
+    },
+    [ordered]@{
+      Question = "Comment maximiser les recoltes sur un balcon ?"
+      Answer = "Choisis un substrat adapte, respecte l'exposition de chaque legume, arrose regulierement, fertilise en saison et privilegie des semis echelonnes pour prolonger les recoltes."
+    }
+  )
+}
+
+$howToSchemaMap = @{
+  "guide-tomates-sur-son-balcon" = [ordered]@{
+    Name = "Comment cultiver des tomates sur son balcon"
+    Description = "Les etapes essentielles pour installer, arroser, entretenir et recolter des tomates en pot sur un balcon."
+    Steps = @(
+      [ordered]@{
+        Name = "Choisir un pot stable et drainant"
+        Text = "Selectionne un contenant d'au moins 30 cm de profondeur et de largeur, avec un bon drainage et une couche de billes d'argile ou de graviers au fond."
+      },
+      [ordered]@{
+        Name = "Installer le plant au soleil"
+        Text = "Place les tomates dans une zone tres ensoleillee, idealement exposee plein sud, tout en les protegant du vent et des heures les plus brulantes."
+      },
+      [ordered]@{
+        Name = "Planter profondement et tuteurer"
+        Text = "Plante apres les gelees en enterrant une partie de la tige jusqu'aux premieres feuilles, ajoute du compost et pose un tuteur solide des la plantation."
+      },
+      [ordered]@{
+        Name = "Arroser regulierement et pailler"
+        Text = "Arrose en profondeur plusieurs fois par semaine selon la chaleur, sans mouiller le feuillage, puis ajoute un paillage pour limiter l'evaporation."
+      },
+      [ordered]@{
+        Name = "Entretenir la plante en cours de saison"
+        Text = "Supprime les gourmands, apporte un engrais riche en potasse tous les 10 a 15 jours et griffe legerement la surface du terreau pour favoriser l'aeration."
+      },
+      [ordered]@{
+        Name = "Recolter au bon moment"
+        Text = "Cueille les tomates bien colorees, fermes et brillantes, puis surveille la fin de saison pour retirer les fleurs tardives et faire murir les derniers fruits."
+      }
+    )
+  }
+  "jardinage-en-lasagnes-sur-balcon" = [ordered]@{
+    Name = "Comment creer une lasagne de culture sur un balcon"
+    Description = "Une methode simple pour monter un bac fertile en superposant des matieres organiques sur un balcon."
+    Steps = @(
+      [ordered]@{
+        Name = "Choisir un contenant profond"
+        Text = "Prends un bac, une jardiniere ou un sac de culture d'au moins 40 cm de profondeur et verifie que le drainage est bien prevu."
+      },
+      [ordered]@{
+        Name = "Poser la base drainante"
+        Text = "Installe au fond une couche de billes d'argile ou de graviers, puis recouvre avec du carton humidifie."
+      },
+      [ordered]@{
+        Name = "Alterner matieres brunes et vertes"
+        Text = "Empile successivement des matieres brunes comme les feuilles mortes ou la paille et des matieres vertes comme les epluchures ou le marc de cafe."
+      },
+      [ordered]@{
+        Name = "Terminer avec du compost mur"
+        Text = "Ajoute une couche finale de 5 a 10 cm de compost ou de terreau bien mur pour accueillir les futures plantations."
+      },
+      [ordered]@{
+        Name = "Humidifier l'ensemble"
+        Text = "Arrose genereusement pour mouiller toutes les couches et amorcer la decomposition du melange."
+      },
+      [ordered]@{
+        Name = "Planter et entretenir"
+        Text = "Installe ensuite legumes, aromatiques ou fleurs adaptes au balcon, puis complete chaque annee avec de nouvelles matieres organiques."
+      }
+    )
+  }
+  "recuperer-eau-de-pluie-balcon" = [ordered]@{
+    Name = "Comment recuperer l'eau de pluie sur un balcon sans gouttiere"
+    Description = "Les etapes pour capter, stocker et reutiliser l'eau de pluie sur un balcon urbain."
+    Steps = @(
+      [ordered]@{
+        Name = "Observer les zones de captation"
+        Text = "Repere les surfaces exposees a la pluie comme la rambarde, une table, un pare-vue, une jardiniere ou un rebord."
+      },
+      [ordered]@{
+        Name = "Choisir un systeme simple de collecte"
+        Text = "Utilise une bache inclinee, un entonnoir suspendu, une surface de mobilier ou un pare-vue equipe d'une rigole pour canaliser l'eau."
+      },
+      [ordered]@{
+        Name = "Diriger l'eau vers un recipient"
+        Text = "Place un seau, un bidon ou une caisse plastique au point bas du systeme pour recueillir le ruissellement."
+      },
+      [ordered]@{
+        Name = "Stocker l'eau proprement"
+        Text = "Ferme ou couvre le contenant avec une moustiquaire ou une grille fine pour eviter moustiques, algues et salissures."
+      },
+      [ordered]@{
+        Name = "Reutiliser l'eau pour le balcon"
+        Text = "Utilise cette eau pour arroser, humidifier le compost ou preparer des purins, de preference avec un paillage pour limiter l'evaporation."
+      }
+    )
+  }
+  "diy-pots-pour-le-balcon" = [ordered]@{
+    Name = "Comment fabriquer des pots de balcon avec des objets recycles"
+    Description = "Une methode simple pour transformer des objets du quotidien en contenants pratiques pour les plantes."
+    Steps = @(
+      [ordered]@{
+        Name = "Choisir un contenant sain a recycler"
+        Text = "Selectionne une boite de conserve, une passoire, un seau, une brique alimentaire ou un autre objet propre, solide et adapte a un usage au jardin."
+      },
+      [ordered]@{
+        Name = "Nettoyer et preparer le drainage"
+        Text = "Lave le contenant, retire les residus et perce plusieurs trous au fond si necessaire pour evacuer l'eau."
+      },
+      [ordered]@{
+        Name = "Ajouter une couche drainante"
+        Text = "Dispose un peu de graviers ou de billes d'argile au fond pour limiter l'exces d'humidite autour des racines."
+      },
+      [ordered]@{
+        Name = "Remplir de terreau et planter"
+        Text = "Ajoute un terreau adapte a la plante choisie puis installe des aromatiques, des fleurs ou de petits legumes compatibles avec la taille du pot."
+      },
+      [ordered]@{
+        Name = "Finaliser avec les bons controles"
+        Text = "Verifie le poids, la resistance du materiau, l'absence de toxicite et, si tu veux, personnalise le contenant avec peinture, corde ou suspension."
+      }
+    )
+  }
+  "solutions-compostage-sur-balcon" = [ordered]@{
+    Name = "Comment choisir une solution de compostage adaptee a un balcon"
+    Description = "Les etapes pour mettre en place un compostage compact et propre sur un petit espace urbain."
+    Steps = @(
+      [ordered]@{
+        Name = "Evaluer la place et les besoins"
+        Text = "Observe la surface disponible sur le balcon et estime la quantite de dechets organiques que tu produis chaque semaine."
+      },
+      [ordered]@{
+        Name = "Choisir le bon systeme"
+        Text = "Selectionne un lombricomposteur, un bokashi, un composteur rotatif ou un mini composteur selon l'espace disponible et le niveau d'implication souhaite."
+      },
+      [ordered]@{
+        Name = "Trier les dechets autorises"
+        Text = "Ajoute les epluchures, marc de cafe, sachets de the sans plastique, feuilles mortes ou carton brun, et evite viandes, produits laitiers, huiles et excrements."
+      },
+      [ordered]@{
+        Name = "Equilibrer les matieres"
+        Text = "Alterner toujours les matieres vertes et les matieres brunes pour obtenir un compost plus aere, plus stable et sans odeur."
+      },
+      [ordered]@{
+        Name = "Utiliser le compost au jardin"
+        Text = "Recupere ensuite le compost ou le the de compost pour nourrir naturellement les plantes et le potager de balcon."
+      }
+    )
+  }
 }
 
 function Ensure-ArticleImages {
@@ -463,6 +741,113 @@ function Build-ArticleBody {
   return ($builder.ToString().TrimEnd() -replace '(?s)<a href="(?<url>[^"]+)"(?<attrs>[^>]*)>(?<text>[^<]+)</a>\s*<a href="\k<url>"[^>]*>\k<url></a>', '<a href="${url}"${attrs}>${text}</a> ')
 }
 
+function Get-JsonLdScriptTags {
+  param([object[]]$objects)
+
+  $scripts = New-Object System.Collections.Generic.List[string]
+  foreach ($obj in $objects) {
+    if ($null -eq $obj) { continue }
+    $scripts.Add("  <script type=`"application/ld+json`">$($obj | ConvertTo-Json -Depth 10 -Compress)</script>")
+  }
+
+  return ($scripts -join "`n")
+}
+
+function Get-ArticleBreadcrumbSchema {
+  param(
+    [pscustomobject]$article,
+    [string]$canonicalUrl
+  )
+
+  return [ordered]@{
+    "@context" = "https://schema.org"
+    "@type" = "BreadcrumbList"
+    itemListElement = @(
+      [ordered]@{
+        "@type" = "ListItem"
+        position = 1
+        name = "Accueil"
+        item = "$siteUrl/"
+      },
+      [ordered]@{
+        "@type" = "ListItem"
+        position = 2
+        name = "Articles"
+        item = "$siteUrl/articles/"
+      },
+      [ordered]@{
+        "@type" = "ListItem"
+        position = 3
+        name = $article.Title
+        item = $canonicalUrl
+      }
+    )
+  }
+}
+
+function Get-ArticleFaqSchema {
+  param([pscustomobject]$article)
+
+  if (-not $faqSchemaMap.ContainsKey($article.Slug)) {
+    return $null
+  }
+
+  return [ordered]@{
+    "@context" = "https://schema.org"
+    "@type" = "FAQPage"
+    mainEntity = @(
+      $faqSchemaMap[$article.Slug] | ForEach-Object {
+        [ordered]@{
+          "@type" = "Question"
+          name = $_.Question
+          acceptedAnswer = [ordered]@{
+            "@type" = "Answer"
+            text = $_.Answer
+          }
+        }
+      }
+    )
+  }
+}
+
+function Get-ArticleHowToSchema {
+  param([pscustomobject]$article)
+
+  if (-not $howToSchemaMap.ContainsKey($article.Slug)) {
+    return $null
+  }
+
+  $howTo = $howToSchemaMap[$article.Slug]
+  $steps = @()
+  $position = 1
+
+  foreach ($step in $howTo.Steps) {
+    $steps += [ordered]@{
+        "@type" = "HowToStep"
+        position = $position
+        name = $step.Name
+        text = $step.Text
+      }
+    $position += 1
+  }
+
+  $schema = [ordered]@{
+    "@context" = "https://schema.org"
+    "@type" = "HowTo"
+    name = $howTo.Name
+    description = $howTo.Description
+    inLanguage = "fr"
+    image = @($article.ImageCanonicalUrl)
+    step = $steps
+  }
+
+  if ($article.TimeRequired) {
+    $schema["totalTime"] = $article.TimeRequired
+  }
+
+  return $schema
+}
+
 function Build-ArticleHtml {
   param(
     [pscustomobject]$article,
@@ -476,9 +861,11 @@ function Build-ArticleHtml {
   $timeText = Convert-TimeRequired $article.TimeRequired
   $canonicalUrl = "$siteUrl/articles/$($article.OutputName)"
   $heroImageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix "../images/articles/"
+  $heroImageDimensions = Get-ArticleImageDimensionAttributes $article.ImageFileName
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
   $relatedArticles = @(Get-RelatedArticles -article $article -allArticles $allArticles -count 3)
 
-  $jsonLdObject = [ordered]@{
+  $articleSchema = [ordered]@{
     "@context" = "https://schema.org"
     "@type" = "BlogPosting"
     headline = $article.Title
@@ -503,7 +890,10 @@ function Build-ArticleHtml {
       }
     }
   }
-  $jsonLd = $jsonLdObject | ConvertTo-Json -Depth 6 -Compress
+  $breadcrumbSchema = Get-ArticleBreadcrumbSchema -article $article -canonicalUrl $canonicalUrl
+  $faqSchema = Get-ArticleFaqSchema -article $article
+  $howToSchema = Get-ArticleHowToSchema -article $article
+  $jsonLdScripts = Get-JsonLdScriptTags @($articleSchema, $breadcrumbSchema, $faqSchema, $howToSchema)
 
   $metaParts = @("<span>Par $(HtmlEscape $article.AuthorName)</span>")
   if ($dateText) { $metaParts += "<span>&bull;</span><span>$dateText</span>" }
@@ -518,6 +908,15 @@ function Build-ArticleHtml {
   $sidebarHtml = ($sidebarItems -join "`n")
 
   $heroTitle = if ($heroCaption) { $heroCaption } else { $article.Title }
+  $breadcrumbHtml = @"
+        <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="index.html">Articles</a></li>
+            <li aria-current="page">$(HtmlEscape $article.Title)</li>
+          </ol>
+        </nav>
+"@
   $relatedCardsHtml = if ($relatedArticles.Count -gt 0) {
     (($relatedArticles | ForEach-Object {
           Build-ArticleCardHtml -article $_ -hrefPrefix "" -imagePrefix "../images/articles/" -extraClass " related-card"
@@ -547,8 +946,12 @@ $relatedCardsHtml
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>$(HtmlEscape $article.Title) | EcoBalcon</title>
   <meta name="description" content="$(HtmlEscape $article.Description)">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="$(HtmlEscape $article.AuthorName)">
+  <link rel="preload" as="image" href="$heroImageSrc" fetchpriority="high">
   <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="article">
@@ -558,12 +961,13 @@ $relatedCardsHtml
   <meta property="og:image" content="$($article.ImageCanonicalUrl)">
   <meta property="og:image:alt" content="$(HtmlEscape $heroCaption)">
   <meta property="article:published_time" content="$($article.DatePublished)">
+  <meta property="article:modified_time" content="$($article.DateModified)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="$(HtmlEscape $article.Title) | EcoBalcon">
   <meta name="twitter:description" content="$(HtmlEscape $article.Description)">
   <meta name="twitter:image" content="$($article.ImageCanonicalUrl)">
   <meta name="twitter:image:alt" content="$(HtmlEscape $heroCaption)">
-  <script type="application/ld+json">$jsonLd</script>
+$jsonLdScripts
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
@@ -575,7 +979,7 @@ $relatedCardsHtml
       <div class="header-inner">
         <a class="brand" href="../index.html">
           <span class="brand-mark">
-            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon">
+            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
           </span>
         </a>
         <div class="header-actions">
@@ -605,6 +1009,7 @@ $relatedCardsHtml
 
     <main class="article-layout">
       <div class="article-shell">
+$breadcrumbHtml
         <header class="article-header">
           <span class="eyebrow">$(HtmlEscape $article.Category)</span>
           <h1 class="article-title">$(HtmlEscape $article.Title)</h1>
@@ -615,7 +1020,7 @@ $relatedCardsHtml
         </header>
 
         <figure class="hero-image">
-          <img src="$heroImageSrc" alt="$(HtmlEscape $heroCaption)" title="$(HtmlEscape $heroTitle)" loading="eager" decoding="async" fetchpriority="high">
+          <img src="$heroImageSrc" alt="$(HtmlEscape $heroCaption)" title="$(HtmlEscape $heroTitle)" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
         </figure>
 
         <div class="article-grid">
@@ -668,11 +1073,12 @@ function Build-ArticleCardHtml {
   $summary = Get-CardExcerpt $article.Description
   $href = "$hrefPrefix$($article.OutputName)"
   $imageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix $imagePrefix
+  $imageDimensions = Get-ArticleImageDimensionAttributes $article.ImageFileName
   $className = "article-card$extraClass"
 
   return @"
           <article class="$className">
-            <img src="$imageSrc" alt="$(HtmlEscape $article.ImageAlt)" title="$(HtmlEscape $article.ImageAlt)" loading="lazy" decoding="async">
+            <img src="$imageSrc" alt="$(HtmlEscape $article.ImageAlt)" title="$(HtmlEscape $article.ImageAlt)" loading="lazy" decoding="async"$imageDimensions>
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">$(HtmlEscape $category)</span></div>
               <h3><a href="$href">$(HtmlEscape $article.Title)</a></h3>
@@ -695,6 +1101,7 @@ function Build-HomeHtml {
   ) -fallbackIndex 0
   $featuredImage = if ($featuredArticle) { $featuredArticle.ImageCanonicalUrl } else { "" }
   $featuredImageSrc = if ($featuredArticle) { Get-ImagePagePath -fileName $featuredArticle.ImageFileName -pagePrefix "images/articles/" } else { "" }
+  $featuredImageDimensions = if ($featuredArticle) { Get-ArticleImageDimensionAttributes $featuredArticle.ImageFileName } else { "" }
   $featuredTitle = if ($featuredArticle) { $featuredArticle.Title } else { "Jardinage urbain sur balcon" }
   $featuredImageAlt = if ($featuredArticle) { $featuredArticle.ImageAlt } else { "Balcon potager et jardinage urbain" }
   $heroSecondary = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
@@ -776,6 +1183,8 @@ function Build-HomeHtml {
   ) -fallbackIndex 0
   $editorialFeatureHref = if ($editorialFeature) { "articles/$($editorialFeature.OutputName)" } else { "articles/index.html" }
   $editorialFeatureImageSrc = if ($editorialFeature) { Get-ImagePagePath -fileName $editorialFeature.ImageFileName -pagePrefix "images/articles/" } else { "" }
+  $editorialFeatureImageDimensions = if ($editorialFeature) { Get-ArticleImageDimensionAttributes $editorialFeature.ImageFileName } else { "" }
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
   $editorialList = @(
     $allArticles |
       Where-Object { $null -eq $editorialFeature -or $_.Slug -ne $editorialFeature.Slug } |
@@ -791,13 +1200,18 @@ function Build-HomeHtml {
             </article>
 "@
     }) -join "`n")
-  $jsonLd = ([ordered]@{
+  $jsonLd = Get-JsonLdScriptTags @([ordered]@{
       "@context" = "https://schema.org"
       "@type" = "WebSite"
       name = "EcoBalcon"
       url = "$siteUrl/"
       inLanguage = "fr"
       description = "EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain."
+      potentialAction = [ordered]@{
+        "@type" = "SearchAction"
+        target = "$siteUrl/articles/?q={search_term_string}"
+        "query-input" = "required name=search_term_string"
+      }
       publisher = [ordered]@{
         "@type" = "Organization"
         name = "EcoBalcon"
@@ -806,7 +1220,7 @@ function Build-HomeHtml {
           url = "$siteUrl/images/logo-site.png"
         }
       }
-    } | ConvertTo-Json -Depth 6 -Compress)
+    })
 
   return @"
 <!doctype html>
@@ -816,8 +1230,11 @@ function Build-HomeHtml {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EcoBalcon | Jardinage urbain sur balcon</title>
   <meta name="description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="preload" as="image" href="$featuredImageSrc" fetchpriority="high">
   <link rel="canonical" href="$siteUrl/">
+  <link rel="alternate" hreflang="fr" href="$siteUrl/">
+  <link rel="alternate" hreflang="x-default" href="$siteUrl/">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
@@ -831,7 +1248,7 @@ function Build-HomeHtml {
   <meta name="twitter:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain.">
   <meta name="twitter:image" content="$featuredImage">
   <meta name="twitter:image:alt" content="$(HtmlEscape $featuredImageAlt)">
-  <script type="application/ld+json">$jsonLd</script>
+$jsonLd
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -843,7 +1260,7 @@ function Build-HomeHtml {
       <div class="header-inner">
         <a class="brand" href="index.html">
           <span class="brand-mark">
-            <img class="brand-logo" src="images/logo-site.png" alt="Logo EcoBalcon">
+            <img class="brand-logo" src="images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
           </span>
         </a>
         <div class="header-actions">
@@ -898,7 +1315,7 @@ $statsHtml
 
           <aside class="hero-panel" aria-label="Par o&ugrave; commencer">
             <figure class="home-visual">
-              <img src="$featuredImageSrc" alt="$(HtmlEscape $featuredImageAlt)" title="$(HtmlEscape $featuredImageAlt)" loading="eager" decoding="async" fetchpriority="high">
+              <img src="$featuredImageSrc" alt="$(HtmlEscape $featuredImageAlt)" title="$(HtmlEscape $featuredImageAlt)" loading="eager" decoding="async" fetchpriority="high"$featuredImageDimensions>
             </figure>
             <div class="home-note">
               <span class="eyebrow">&Agrave; la une</span>
@@ -953,7 +1370,7 @@ $themeHtml
           </div>
           <div class="editorial-grid">
             <article class="editorial-feature">
-              <img src="$editorialFeatureImageSrc" alt="$(HtmlEscape $editorialFeature.ImageAlt)" title="$(HtmlEscape $editorialFeature.ImageAlt)" loading="lazy" decoding="async">
+              <img src="$editorialFeatureImageSrc" alt="$(HtmlEscape $editorialFeature.ImageAlt)" title="$(HtmlEscape $editorialFeature.ImageAlt)" loading="lazy" decoding="async"$editorialFeatureImageDimensions>
               <div class="editorial-feature-body">
                 <span class="pill">$(HtmlEscape $editorialFeature.Category)</span>
                 <h3><a href="$editorialFeatureHref">$(HtmlEscape $editorialFeature.Title)</a></h3>
@@ -1018,10 +1435,11 @@ function Build-ArticlesIndexHtml {
   $count = $allArticles.Count
   $heroImage = if ($allArticles.Count -gt 0) { $allArticles[0].ImageCanonicalUrl } else { "" }
   $heroImageAlt = if ($allArticles.Count -gt 0) { $allArticles[0].ImageAlt } else { "Articles EcoBalcon autour du jardinage sur balcon" }
-  $jsonLd = ([ordered]@{
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $jsonLd = Get-JsonLdScriptTags @([ordered]@{
       "@context" = "https://schema.org"
       "@type" = "CollectionPage"
-      name = "Articles | EcoBalcon"
+      name = "Conseils et guides jardinage sur balcon | EcoBalcon"
       url = "$siteUrl/articles/"
       inLanguage = "fr"
       description = "Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo."
@@ -1030,7 +1448,7 @@ function Build-ArticlesIndexHtml {
         name = "EcoBalcon"
         url = "$siteUrl/"
       }
-    } | ConvertTo-Json -Depth 6 -Compress)
+    })
 
   return @"
 <!doctype html>
@@ -1038,24 +1456,26 @@ function Build-ArticlesIndexHtml {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Articles | EcoBalcon</title>
+  <title>Conseils et guides jardinage sur balcon | EcoBalcon</title>
   <meta name="description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="$siteUrl/articles/">
+  <link rel="alternate" hreflang="fr" href="$siteUrl/articles/">
+  <link rel="alternate" hreflang="x-default" href="$siteUrl/articles/">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Articles | EcoBalcon">
+  <meta property="og:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
   <meta property="og:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
   <meta property="og:url" content="$siteUrl/articles/">
   <meta property="og:image" content="$heroImage">
   <meta property="og:image:alt" content="$(HtmlEscape $heroImageAlt)">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Articles | EcoBalcon">
+  <meta name="twitter:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
   <meta name="twitter:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
   <meta name="twitter:image" content="$heroImage">
   <meta name="twitter:image:alt" content="$(HtmlEscape $heroImageAlt)">
-  <script type="application/ld+json">$jsonLd</script>
+$jsonLd
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
@@ -1067,7 +1487,7 @@ function Build-ArticlesIndexHtml {
       <div class="header-inner">
         <a class="brand" href="../index.html">
           <span class="brand-mark">
-            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon">
+            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
           </span>
         </a>
         <div class="header-actions">
@@ -1113,7 +1533,7 @@ function Build-ArticlesIndexHtml {
               class="search-input"
               id="article-search"
               type="search"
-              name="search"
+              name="q"
               placeholder="Rechercher un article"
               autocomplete="off">
           </section>
@@ -1138,12 +1558,25 @@ $cardsHtml
     const searchInput = document.getElementById("article-search");
     const articleCards = Array.from(document.querySelectorAll("#article-list .article-card"));
     const emptyState = document.getElementById("search-empty");
+    const currentUrl = new URL(window.location.href);
 
     const normalizeText = (value) =>
       value
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
+
+    const syncQueryParam = () => {
+      const rawValue = searchInput.value.trim();
+
+      if (rawValue === "") {
+        currentUrl.searchParams.delete("q");
+      } else {
+        currentUrl.searchParams.set("q", rawValue);
+      }
+
+      window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
+    };
 
     const filterArticles = () => {
       const query = normalizeText(searchInput.value.trim());
@@ -1162,7 +1595,16 @@ $cardsHtml
       emptyState.hidden = visibleCount !== 0;
     };
 
-    searchInput.addEventListener("input", filterArticles);
+    const initialQuery = currentUrl.searchParams.get("q");
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      filterArticles();
+    }
+
+    searchInput.addEventListener("input", () => {
+      filterArticles();
+      syncQueryParam();
+    });
   </script>
 </body>
 </html>
@@ -1261,19 +1703,54 @@ function Build-SitemapXml {
   $today = (Get-Date).ToString("yyyy-MM-ddTHH:mm:sszzz")
   $entries = New-Object System.Collections.Generic.List[string]
 
-  $entries.Add("<url><loc>$siteUrl/</loc><priority>1.0</priority><lastmod>$today</lastmod></url>")
-  $entries.Add("<url><loc>$siteUrl/articles/</loc><priority>0.9</priority><lastmod>$today</lastmod></url>")
+  function New-SitemapImageNode {
+    param(
+      [string]$imageUrl,
+      [string]$caption
+    )
+
+    if ([string]::IsNullOrWhiteSpace($imageUrl)) {
+      return ""
+    }
+
+    $captionNode = if ([string]::IsNullOrWhiteSpace($caption)) {
+      ""
+    } else {
+      "<image:caption>$(Escape-Xml $caption)</image:caption>"
+    }
+
+    return "<image:image><image:loc>$(Escape-Xml $imageUrl)</image:loc>$captionNode</image:image>"
+  }
+
+  function New-SitemapUrlNode {
+    param(
+      [string]$loc,
+      [string]$lastmod,
+      [string]$priority,
+      [string]$imageUrl = "",
+      [string]$imageCaption = ""
+    )
+
+    $imageNode = New-SitemapImageNode -imageUrl $imageUrl -caption $imageCaption
+    return "<url><loc>$(Escape-Xml $loc)</loc><priority>$priority</priority><lastmod>$(Escape-Xml $lastmod)</lastmod>$imageNode</url>"
+  }
+
+  $homeFeatured = $allArticles | Select-Object -First 1
+  $homeImageUrl = if ($homeFeatured) { $homeFeatured.ImageCanonicalUrl } else { "" }
+  $homeImageCaption = if ($homeFeatured) { $homeFeatured.ImageAlt } else { "" }
+  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/" -priority "1.0" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
+  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/articles/" -priority "0.9" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
   if (Test-Path (Join-Path $root "galerie.html")) {
-    $entries.Add("<url><loc>$siteUrl/galerie.html</loc><priority>0.5</priority><lastmod>$today</lastmod></url>")
+    $entries.Add((New-SitemapUrlNode -loc "$siteUrl/galerie.html" -priority "0.5" -lastmod $today -imageUrl "$siteUrl/images/articles/canicule-balcon-mxBXq1QqyeTR1PLZ.webp" -imageCaption "Balcon plante en plein soleil"))
   }
 
   foreach ($article in $allArticles) {
     $lastmod = if ($article.DateModified) { $article.DateModified } else { $article.DatePublished }
-    $entries.Add("<url><loc>$siteUrl/articles/$($article.OutputName)</loc><priority>0.7</priority><lastmod>$lastmod</lastmod></url>")
+    $entries.Add((New-SitemapUrlNode -loc "$siteUrl/articles/$($article.OutputName)" -priority "0.7" -lastmod $lastmod -imageUrl $article.ImageCanonicalUrl -imageCaption $article.ImageAlt))
   }
 
   $body = ($entries -join "`n")
-  return "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<urlset xmlns=`"http://www.sitemaps.org/schemas/sitemap/0.9`">`n$body`n</urlset>"
+  return "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<urlset xmlns=`"http://www.sitemaps.org/schemas/sitemap/0.9`" xmlns:image=`"http://www.google.com/schemas/sitemap-image/1.1`">`n$body`n</urlset>"
 }
 
 function Build-RobotsTxt {
