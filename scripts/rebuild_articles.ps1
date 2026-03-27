@@ -219,6 +219,20 @@ $faqSchemaMap = @{
       Answer = "Choisis un substrat adapte, respecte l'exposition de chaque legume, arrose regulierement, fertilise en saison et privilegie des semis echelonnes pour prolonger les recoltes."
     }
   )
+  "guide-poivrons-sur-son-balcon" = @(
+    [ordered]@{
+      Question = "Quelle exposition faut-il pour cultiver des poivrons sur un balcon ?"
+      Answer = "Les poivrons ont besoin d'un emplacement chaud, lumineux et abrite, avec idealement 6 a 8 heures de soleil par jour. Une chaleur stable leur reussit mieux qu'un balcon vente ou trop ombrage."
+    },
+    [ordered]@{
+      Question = "Quel pot choisir pour des poivrons en conteneur ?"
+      Answer = "Prevois un pot profond et stable de 15 a 25 litres minimum, avec un tres bon drainage. Un contenant trop petit accentue les coups de chaud, freine la croissance et complique l'arrosage."
+    },
+    [ordered]@{
+      Question = "Pourquoi les fleurs de poivron tombent-elles avant de faire des fruits ?"
+      Answer = "La chute des fleurs vient souvent d'un stress combine : froid nocturne, chaleur excessive, manque d'eau ou arrosages irreguliers. Une exposition ensoleillee mais geree, plus un arrosage regulier, limitent ce probleme."
+    }
+  )
 }
 
 $howToSchemaMap = @{
@@ -357,6 +371,36 @@ $howToSchemaMap = @{
       [ordered]@{
         Name = "Utiliser le compost au jardin"
         Text = "Recupere ensuite le compost ou le the de compost pour nourrir naturellement les plantes et le potager de balcon."
+      }
+    )
+  }
+  "guide-poivrons-sur-son-balcon" = [ordered]@{
+    Name = "Comment cultiver des poivrons sur son balcon"
+    Description = "Les etapes essentielles pour installer, nourrir et recolter des poivrons en pot sur un balcon ensoleille."
+    Steps = @(
+      [ordered]@{
+        Name = "Choisir une variete compacte et un grand pot"
+        Text = "Selectionne une variete adaptee a la culture en conteneur et installe-la dans un pot profond, stable et bien draine d'au moins 15 a 25 litres."
+      },
+      [ordered]@{
+        Name = "Planter dans un substrat riche"
+        Text = "Remplis le contenant avec un terreau potager souple et drainant, enrichi avec un peu de compost mur pour soutenir la croissance."
+      },
+      [ordered]@{
+        Name = "Installer le plant au chaud"
+        Text = "Place les poivrons en plein soleil, a l'abri du vent, puis plante seulement lorsque les nuits restent durablement au-dessus de 12 a 15 degres."
+      },
+      [ordered]@{
+        Name = "Arroser regulierement et pailler"
+        Text = "Maintiens le terreau legerement frais sans le detremper, puis ajoute un paillage pour stabiliser l'humidite dans le pot."
+      },
+      [ordered]@{
+        Name = "Fertiliser a partir de la floraison"
+        Text = "Quand les premieres fleurs apparaissent, apporte un engrais organique riche en potasse toutes les une a deux semaines et pose un tuteur si besoin."
+      },
+      [ordered]@{
+        Name = "Recolter selon la couleur finale"
+        Text = "Cueille les fruits verts pour une recolte precoce ou attends leur pleine coloration pour un gout plus sucre et une meilleure intensite aromatique."
       }
     )
   }
