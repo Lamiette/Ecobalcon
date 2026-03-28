@@ -33,7 +33,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="article-page">
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -69,6 +69,7 @@
 
     <main class="article-layout">
       <div class="article-shell">
+        <div data-reveal>
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
             <li><a href="../index.html">Accueil</a></li>
@@ -76,7 +77,8 @@
             <li aria-current="page">Réduction consommation d’eau : astuces pour balcon économe</li>
           </ol>
         </nav>
-        <header class="article-header">
+        </div>
+        <header class="article-header" data-reveal style="--reveal-delay: 60ms;">
           <span class="eyebrow">Entretien &amp; astuces</span>
           <h1 class="article-title">Réduction consommation d’eau : astuces pour balcon économe</h1>
           <div class="article-meta">
@@ -87,12 +89,12 @@
           <p class="article-intro">Réduction de la consommation d’eau sur balcon : découvrez 10 astuces simples, économiques et durables pour arroser moins tout en gardant vos plantes luxuriantes.</p>
         </header>
 
-        <figure class="hero-image">
+        <figure class="hero-image" data-reveal style="--reveal-delay: 110ms;">
           <img src="../images/articles/arrosage-jardin-AGBbalPK2XfxzJLJ.webp" alt="Arrosage précis au pistolet réglable sur un balcon, geste simple pour économiser l’eau" title="Arrosage précis au pistolet réglable sur un balcon, geste simple pour économiser l’eau" loading="eager" decoding="async" fetchpriority="high" width="1280" height="756">
         </figure>
 
         <div class="article-grid">
-          <article class="article-prose">
+          <article class="article-prose" data-reveal style="--reveal-delay: 150ms;">
             <p>L’arrosage est souvent le point faible des balcons cultivés : entre les vagues de chaleur, les vacances et les restrictions d’eau, il devient essentiel d’optimiser chaque goutte. Bonne nouvelle : réduire la consommation d’eau sur un balcon ne veut pas dire abandonner son potager ou ses fleurs. Il suffit d’adopter quelques gestes simples, et surtout de bien connaître les besoins réels de ses plantes.</p>
             <p>Voici un guide pratique pour arroser malin, sans gaspillage, et garder un balcon verdoyant tout en respectant la ressource.</p>
             <h2>Pourquoi c’est important de limiter l’arrosage ?</h2>
@@ -228,7 +230,7 @@
             </ul>
           </article>
 
-          <aside class="sidebar-stack">
+          <aside class="sidebar-stack" data-reveal style="--reveal-delay: 190ms;">
             <div class="checklist article-note">
               <h3>Rep&egrave;res</h3>
               <ul class="article-list">
@@ -248,15 +250,15 @@
             </div>
           </aside>
         </div>
-        <section class="related-section" aria-labelledby="related-articles-heading">
+        <section class="related-section" aria-labelledby="related-articles-heading" data-reveal style="--reveal-delay: 220ms;">
           <div class="section-heading section-heading-compact">
             <div>
-              <h2 id="related-articles-heading">A lire aussi</h2>
+              <h2 id="related-articles-heading">À lire aussi</h2>
               <p>D'autres articles proches pour continuer naturellement ta lecture.</p>
             </div>
           </div>
           <div class="cards cards-related">
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 250ms;">
             <img src="../images/articles/nuisibles-jardin-AE0reQolQbSl4XyK.webp" alt="Invasion de pucerons noirs sous une feuille verte sur un balcon potager urbain" title="Invasion de pucerons noirs sous une feuille verte sur un balcon potager urbain" loading="lazy" decoding="async" width="1280" height="756">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -264,7 +266,7 @@
               <p>Découvrez comment protéger son balcon des nuisibles naturellement : astuces simples pour lutter contre pucerons, limaces et cochenilles sans...</p>
             </div>
           </article>
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 320ms;">
             <img src="../images/articles/coccinelle-dOqDvrReK6c4Kg20.webp" alt="Coccinelle sur une feuille verte, un insecte utile au jardin pour lutter contre les pucerons" title="Coccinelle sur une feuille verte, un insecte utile au jardin pour lutter contre les pucerons" loading="lazy" decoding="async" width="1280" height="756">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -272,7 +274,7 @@
               <p>Découvrez 10 insectes utiles sur un balcon pour un potager sain, productif et écologique : coccinelles, abeilles solitaires, syrphes… et comment...</p>
             </div>
           </article>
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 390ms;">
             <img src="../images/articles/jardin-balcon-9-A3Q2kVxJe4irwQED.webp" alt="Petit balcon urbain décoré avec de nombreuses plantes en pots, , idéal pour un jardin de balcon" title="Petit balcon urbain décoré avec de nombreuses plantes en pots, , idéal pour un jardin de balcon" loading="lazy" decoding="async" width="1216" height="756">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -287,10 +289,76 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <div>EcoBalcon</div>
-        <div><a class="muted-link" href="index.html">Retour &agrave; la liste</a></div>
+        <div class="footer-main">
+          <div class="footer-brand">
+            <strong>EcoBalcon</strong>
+            <p>Astuces pour jardiner en milieu urbain.</p>
+          </div>
+          <div class="footer-social" aria-label="R&eacute;seaux sociaux">
+            <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-side">
+          <strong>Sur le site</strong>
+          <ul class="footer-list">
+            <li>Potager de balcon et cultures faciles</li>
+            <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
+            <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
+          </ul>
+        </div>
+        <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
       </div>
     </footer>
   </div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+
+      if (!revealItems.length) {
+        return;
+      }
+
+      if (reduceMotion) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      document.body.classList.add("reveal-ready");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.14
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 </html>

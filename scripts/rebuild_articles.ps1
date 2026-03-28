@@ -5,6 +5,20 @@ $rawDir = Join-Path $root "raw-singlefile"
 $articlesDir = Join-Path $root "articles"
 $imagesDir = Join-Path $root "images\articles"
 $siteUrl = "https://ecobalcon.com"
+$articleOverrides = @{}
+$articleOverridesPath = Join-Path $PSScriptRoot "article-overrides.ps1"
+
+if (Test-Path $articleOverridesPath) {
+  . $articleOverridesPath
+
+  if (Get-Command Get-ArticleOverrides -ErrorAction SilentlyContinue) {
+    $articleOverrides = Get-ArticleOverrides
+  }
+}
+
+if ($null -eq $articleOverrides) {
+  $articleOverrides = @{}
+}
 
 function HtmlEscape {
   param([string]$text)
@@ -148,6 +162,45 @@ function Get-RootImageDimensionAttributes {
   return Get-ImageDimensionAttributes (Join-Path $root $relativePath)
 }
 
+function Get-SiteFooterHtml {
+  return @"
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <strong>EcoBalcon</strong>
+            <p>Astuces pour jardiner en milieu urbain.</p>
+          </div>
+          <div class="footer-social" aria-label="R&eacute;seaux sociaux">
+            <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-side">
+          <strong>Sur le site</strong>
+          <ul class="footer-list">
+            <li>Potager de balcon et cultures faciles</li>
+            <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
+            <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
+          </ul>
+        </div>
+        <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
+      </div>
+    </footer>
+"@
+}
+
 $faqSchemaMap = @{
   "guide-tomates-sur-son-balcon" = @(
     [ordered]@{
@@ -188,7 +241,7 @@ $faqSchemaMap = @{
     },
     [ordered]@{
       Question = "Comment gagner de la place sur un petit balcon ?"
-      Answer = "Exploite la verticalite avec etageres, treillis, jardinières suspendues et cultures sur plusieurs niveaux. Pense aussi a organiser les plantes selon leur hauteur pour faciliter la circulation et la lumiere."
+      Answer = "Exploite la verticalité avec étagères, treillis, jardinières suspendues et cultures sur plusieurs niveaux. Pense aussi à organiser les plantes selon leur hauteur pour faciliter la circulation et la lumière."
     }
   )
   "erreurs-jardiner-sur-un-balcon" = @(
@@ -202,7 +255,7 @@ $faqSchemaMap = @{
     },
     [ordered]@{
       Question = "Pourquoi ne faut-il pas surcharger un balcon de pots ?"
-      Answer = "Un balcon trop charge freine la circulation de l'air, augmente l'humidite stagnante, limite la lumiere et complique l'entretien. Une selection mieux espacee est plus saine et plus facile a gerer."
+      Answer = "Un balcon trop chargé freine la circulation de l'air, augmente l'humidité stagnante, limite la lumière et complique l'entretien. Une sélection mieux espacée est plus saine et plus facile à gérer."
     }
   )
   "legumes-faciles-a-cultiver" = @(
@@ -563,6 +616,60 @@ function Get-AuthorData {
   }
 }
 
+function Get-ArticleOverride {
+  param([string]$slug)
+
+  if ([string]::IsNullOrWhiteSpace($slug)) { return $null }
+  if (-not $articleOverrides.Contains($slug)) { return $null }
+  return $articleOverrides[$slug]
+}
+
+function Apply-ArticleOverride {
+  param([pscustomobject]$article)
+
+  $override = Get-ArticleOverride $article.Slug
+  if ($null -eq $override) {
+    return $article
+  }
+
+  $data = [ordered]@{}
+  foreach ($property in $article.PSObject.Properties) {
+    $data[$property.Name] = $property.Value
+  }
+
+  $supportedKeys = @(
+    "Title",
+    "Description",
+    "Intro",
+    "ImageAlt",
+    "DatePublished",
+    "DateModified",
+    "TimeRequired",
+    "AuthorName",
+    "AuthorType",
+    "Category",
+    "BodyHtml",
+    "Faq",
+    "HowTo"
+  )
+
+  foreach ($key in $supportedKeys) {
+    if ($override.Contains($key)) {
+      $data[$key] = $override[$key]
+    }
+  }
+
+  if ($override.Contains("Description") -and -not $override.Contains("Intro")) {
+    $data["Intro"] = $data["Description"]
+  }
+
+  if (-not $data["Intro"]) {
+    $data["Intro"] = $data["Description"]
+  }
+
+  return [PSCustomObject]$data
+}
+
 function Get-ArticleSources {
   $ignoreFiles = @("index.html", "articles.html", "galerie.html")
   $articleSources = New-Object System.Collections.Generic.List[object]
@@ -590,7 +697,7 @@ function Get-ArticleSources {
       "Article"
     }
 
-    $articleSources.Add([PSCustomObject]@{
+    $article = [PSCustomObject]@{
         SourcePath = $file.FullName
         SourceName = $file.Name
         Slug = $slug
@@ -608,7 +715,13 @@ function Get-ArticleSources {
         AuthorType = $authorData.Type
         Category = $category
         DateSort = $date
-      })
+        Intro = [System.Net.WebUtility]::HtmlDecode($schema.description)
+        BodyHtml = ""
+        Faq = $null
+        HowTo = $null
+      }
+
+    $articleSources.Add((Apply-ArticleOverride $article))
   }
 
   return $articleSources | Sort-Object `
@@ -832,6 +945,25 @@ function Get-ArticleBreadcrumbSchema {
 function Get-ArticleFaqSchema {
   param([pscustomobject]$article)
 
+  if ($article.Faq) {
+    return [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "FAQPage"
+      mainEntity = @(
+        $article.Faq | ForEach-Object {
+          [ordered]@{
+            "@type" = "Question"
+            name = $_.Question
+            acceptedAnswer = [ordered]@{
+              "@type" = "Answer"
+              text = $_.Answer
+            }
+          }
+        }
+      )
+    }
+  }
+
   if (-not $faqSchemaMap.ContainsKey($article.Slug)) {
     return $null
   }
@@ -857,11 +989,16 @@ function Get-ArticleFaqSchema {
 function Get-ArticleHowToSchema {
   param([pscustomobject]$article)
 
-  if (-not $howToSchemaMap.ContainsKey($article.Slug)) {
+  $howTo = $null
+
+  if ($article.HowTo) {
+    $howTo = $article.HowTo
+  } elseif ($howToSchemaMap.ContainsKey($article.Slug)) {
+    $howTo = $howToSchemaMap[$article.Slug]
+  } else {
     return $null
   }
 
-  $howTo = $howToSchemaMap[$article.Slug]
   $steps = @()
   $position = 1
 
@@ -900,7 +1037,7 @@ function Build-ArticleHtml {
 
   $content = Get-Content -Raw -Encoding UTF8 $article.SourcePath
   $heroCaption = if ($article.ImageAlt) { $article.ImageAlt } else { Get-HeroCaption $content }
-  $bodyHtml = Build-ArticleBody $content
+  $bodyHtml = if ($article.BodyHtml) { $article.BodyHtml.TrimEnd() } else { Build-ArticleBody $content }
   $dateText = Convert-IsoDateToFrench $article.DatePublished
   $timeText = Convert-TimeRequired $article.TimeRequired
   $canonicalUrl = "$siteUrl/articles/$($article.OutputName)"
@@ -962,16 +1099,18 @@ function Build-ArticleHtml {
         </nav>
 "@
   $relatedCardsHtml = if ($relatedArticles.Count -gt 0) {
-    (($relatedArticles | ForEach-Object {
-          Build-ArticleCardHtml -article $_ -hrefPrefix "" -imagePrefix "../images/articles/" -extraClass " related-card"
+    (($relatedArticles | ForEach-Object -Begin { $relatedIndex = 0 } -Process {
+          $delay = 250 + ($relatedIndex * 70)
+          $relatedIndex++
+          (Build-ArticleCardHtml -article $_ -hrefPrefix "" -imagePrefix "../images/articles/" -extraClass " related-card") -replace '<article class="article-card related-card">', "<article class=`"article-card related-card`" data-reveal style=`"--reveal-delay: ${delay}ms;`">"
         }) -join "`n")
   } else { "" }
   $relatedSection = if ($relatedCardsHtml) {
 @"
-        <section class="related-section" aria-labelledby="related-articles-heading">
+        <section class="related-section" aria-labelledby="related-articles-heading" data-reveal style="--reveal-delay: 220ms;">
           <div class="section-heading section-heading-compact">
             <div>
-              <h2 id="related-articles-heading">A lire aussi</h2>
+              <h2 id="related-articles-heading">À lire aussi</h2>
               <p>D'autres articles proches pour continuer naturellement ta lecture.</p>
             </div>
           </div>
@@ -1017,7 +1156,7 @@ $jsonLdScripts
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="article-page">
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -1053,26 +1192,28 @@ $jsonLdScripts
 
     <main class="article-layout">
       <div class="article-shell">
+        <div data-reveal>
 $breadcrumbHtml
-        <header class="article-header">
+        </div>
+        <header class="article-header" data-reveal style="--reveal-delay: 60ms;">
           <span class="eyebrow">$(HtmlEscape $article.Category)</span>
           <h1 class="article-title">$(HtmlEscape $article.Title)</h1>
           <div class="article-meta">
             $metaHtml
           </div>
-          <p class="article-intro">$(HtmlEscape $article.Description)</p>
+          <p class="article-intro">$(HtmlEscape $article.Intro)</p>
         </header>
 
-        <figure class="hero-image">
+        <figure class="hero-image" data-reveal style="--reveal-delay: 110ms;">
           <img src="$heroImageSrc" alt="$(HtmlEscape $heroCaption)" title="$(HtmlEscape $heroTitle)" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
         </figure>
 
         <div class="article-grid">
-          <article class="article-prose">
+          <article class="article-prose" data-reveal style="--reveal-delay: 150ms;">
 $bodyHtml
           </article>
 
-          <aside class="sidebar-stack">
+          <aside class="sidebar-stack" data-reveal style="--reveal-delay: 190ms;">
             <div class="checklist article-note">
               <h3>Rep&egrave;res</h3>
               <ul class="article-list">
@@ -1093,13 +1234,46 @@ $relatedSection
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>EcoBalcon</div>
-        <div><a class="muted-link" href="index.html">Retour &agrave; la liste</a></div>
-      </div>
-    </footer>
+$(Get-SiteFooterHtml)
   </div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+
+      if (!revealItems.length) {
+        return;
+      }
+
+      if (reduceMotion) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      document.body.classList.add("reveal-ready");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.14
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 </html>
 "@
@@ -1136,7 +1310,11 @@ function Build-HomeHtml {
   param([object[]]$allArticles)
 
   $featured = @($allArticles | Select-Object -First 6)
-  $cardsHtml = (($featured | ForEach-Object { Build-ArticleCardHtml -article $_ -hrefPrefix "articles/" -imagePrefix "images/articles/" }) -join "`n")
+  $cardsHtml = (($featured | ForEach-Object -Begin { $cardIndex = 0 } -Process {
+        $delay = 80 + ($cardIndex * 70)
+        $cardIndex++
+        (Build-ArticleCardHtml -article $_ -hrefPrefix "articles/" -imagePrefix "images/articles/") -replace '<article class="article-card">', "<article class=`"article-card`" data-reveal style=`"--reveal-delay: ${delay}ms;`">"
+      }) -join "`n")
   $count = $allArticles.Count
   $featuredArticle = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
     "jardinage-en-lasagnes-sur-balcon",
@@ -1153,17 +1331,20 @@ function Build-HomeHtml {
     "reduction-consommation-eau-balcon",
     "guide-tomates-sur-son-balcon"
   ) -fallbackIndex 1
+  $heroSupportHref = "articles/jardin-sur-balcon-astuces.html"
+  $homeVisualDimensions = " width=`"1024`" height=`"1536`""
   $homeStats = @(
-    [PSCustomObject]@{ Value = "$count"; Label = "guides pratiques" },
-    [PSCustomObject]@{ Value = "3"; Label = "auteurs" },
-    [PSCustomObject]@{ Value = "petits"; Label = "espaces d'abord" }
+    [PSCustomObject]@{ Label = "Guides utiles"; Value = "$count"; Copy = "pour planter, arroser, récolter et aménager." },
+    [PSCustomObject]@{ Label = "Repères clairs"; Value = "4"; Copy = "grands thèmes pour vite trouver le bon conseil." },
+    [PSCustomObject]@{ Label = "Pensé pour"; Value = "100 %"; Copy = "la ville, les pots, les rebords et les balcons." }
   )
   $statsHtml = (($homeStats | ForEach-Object {
 @"
-            <div class="mini-stat">
+            <article class="mini-stat">
+              <span class="mini-stat-label">$($_.Label)</span>
               <strong>$($_.Value)</strong>
-              <span>$($_.Label)</span>
-            </div>
+              <span class="mini-stat-copy">$($_.Copy)</span>
+            </article>
 "@
       }) -join "`n")
   $startBlocks = @(
@@ -1171,53 +1352,93 @@ function Build-HomeHtml {
       Label = "Débuter"
       Title = "Poser les bonnes bases"
       Copy = "Un point de départ simple pour installer un balcon agréable et éviter les erreurs classiques."
-      Article = (Get-PreferredArticle -allArticles $allArticles -preferredSlugs @("jardin-sur-balcon-astuces", "jardiner-sur-un-balcon") -fallbackIndex 0)
+      Href = "articles/jardin-sur-balcon-astuces.html"
+      LinkLabel = "Voir les bases"
     },
     [PSCustomObject]@{
       Label = "Planter"
       Title = "Choisir des cultures faciles"
-      Copy = "Des fiches pratiques pour cultiver sur balcon sans se noyer dans la technique."
-      Article = (Get-PreferredArticle -allArticles $allArticles -preferredSlugs @("guide-tomates-sur-son-balcon", "guide-laitues-sur-son-balcon", "guide-fraises-sur-son-balcon") -fallbackIndex 2)
+      Copy = "Des fiches pratiques pour cultiver sur balcon simplement, sans compliquer les choses."
+      Href = "articles/guide-tomates-sur-son-balcon.html"
+      LinkLabel = "Voir les cultures"
     },
     [PSCustomObject]@{
       Label = "Préserver"
-      Title = "Garder un balcon écolo"
-      Copy = "Eau, paillage, récupération et gestes durables pour un entretien plus serein."
-      Article = (Get-PreferredArticle -allArticles $allArticles -preferredSlugs @("reduction-consommation-eau-balcon", "recuperer-eau-de-pluie-balcon", "paillage-sur-balcon-ecolo") -fallbackIndex 3)
+      Title = "Entretenir un balcon plus écolo"
+      Copy = "Arrosage, paillage, récupération d’eau et gestes utiles pour un balcon facile à vivre au quotidien."
+      Href = "articles/reduction-consommation-eau-balcon.html"
+      LinkLabel = "Voir les astuces"
     }
   )
-  $startHtml = (($startBlocks | ForEach-Object {
-      if (-not $_.Article) { return }
-      $href = "articles/$($_.Article.OutputName)"
+  $startHtml = (($startBlocks | ForEach-Object -Begin { $startIndex = 0 } -Process {
+      $delay = 60 + ($startIndex * 70)
+      $startIndex++
+      $href = $_.Href
 @"
-          <article class="home-path-card">
+          <article class="home-path-card" data-reveal style="--reveal-delay: ${delay}ms;">
             <span class="eyebrow">$($_.Label)</span>
             <h3><a href="$href">$(HtmlEscape $_.Title)</a></h3>
             <p>$(HtmlEscape $_.Copy)</p>
-            <a class="text-link" href="$href">Lire pour commencer</a>
+            <a class="text-link" href="$href">$(HtmlEscape $_.LinkLabel)</a>
           </article>
 "@
     }) -join "`n")
+  $weeklyFallbackArticle = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
+    "plantes-qui-survivent-a-la-canicule",
+    "guide-poivrons-sur-son-balcon",
+    "guide-laitues-sur-son-balcon",
+    "calendrier-du-jardin-de-balcon",
+    "jardin-sur-balcon-astuces"
+  ) -fallbackIndex 0
+  $weeklyFeatureHref = if ($weeklyFallbackArticle) { "articles/$($weeklyFallbackArticle.OutputName)" } else { "articles/index.html" }
+  $weeklyFeatureImageSrc = if ($weeklyFallbackArticle) { Get-ImagePagePath -fileName $weeklyFallbackArticle.ImageFileName -pagePrefix "images/articles/" } else { "" }
+  $weeklyFeatureImageDimensions = if ($weeklyFallbackArticle) { Get-ArticleImageDimensionAttributes $weeklyFallbackArticle.ImageFileName } else { "" }
+  $weeklyFeatureCategory = if ($weeklyFallbackArticle) { $weeklyFallbackArticle.Category } else { "À lire" }
+  $weeklyFeatureTitle = if ($weeklyFallbackArticle) { $weeklyFallbackArticle.Title } else { "À découvrir cette semaine" }
+  $weeklyFeatureDescription = if ($weeklyFallbackArticle) { Get-CardExcerpt $weeklyFallbackArticle.Description 178 } else { "Une sélection pratique choisie automatiquement selon la période de l'année." }
+  $weeklyFeatureImageAlt = if ($weeklyFallbackArticle) { $weeklyFallbackArticle.ImageAlt } else { "Sélection d'article EcoBalcon de la semaine" }
+  $weeklyArticlesForJs = @(
+    $allArticles | ForEach-Object {
+      $imageDimensions = Get-ImageDimensions (Join-Path $imagesDir $_.ImageFileName)
+      [ordered]@{
+        slug = $_.Slug
+        title = $_.Title
+        description = $_.Description
+        category = $_.Category
+        href = "articles/$($_.OutputName)"
+        imageSrc = Get-ImagePagePath -fileName $_.ImageFileName -pagePrefix "images/articles/"
+        imageAlt = $_.ImageAlt
+        datePublished = $_.DatePublished
+        width = if ($imageDimensions) { $imageDimensions.Width } else { $null }
+        height = if ($imageDimensions) { $imageDimensions.Height } else { $null }
+      }
+    }
+  )
+  $weeklyArticlesJson = $weeklyArticlesForJs | ConvertTo-Json -Depth 5 -Compress
   $themeHtml = @"
-          <article class="theme-card">
-            <span class="eyebrow">Potager</span>
-            <h3><a href="articles/guide-tomates-sur-son-balcon.html">Cultiver m&ecirc;me avec peu de place</a></h3>
-            <p>Tomates, laitues, fraises, aromatiques et petits fruits pour un balcon gourmand.</p>
+          <article class="theme-card" data-reveal style="--reveal-delay: 60ms;">
+            <span class="eyebrow">Fiches Techniques</span>
+            <h3><a href="articles/index.html?theme=fiches-techniques">Trouver un guide culture pas &agrave; pas</a></h3>
+            <p>Les fiches les plus concr&egrave;tes pour cultiver tomates, poivrons, laitues, radis, fraises et autres cultures de balcon.</p>
+            <a class="text-link" href="articles/index.html?theme=fiches-techniques">Voir les fiches</a>
           </article>
-          <article class="theme-card">
-            <span class="eyebrow">Chaleur</span>
-            <h3><a href="articles/plantes-qui-survivent-a-la-canicule.html">Mieux vivre le plein soleil</a></h3>
-            <p>Des plantes plus r&eacute;sistantes et des gestes simples pour traverser l'&eacute;t&eacute; avec moins de stress.</p>
+          <article class="theme-card" data-reveal style="--reveal-delay: 130ms;">
+            <span class="eyebrow">Plantes &amp; semis</span>
+            <h3><a href="articles/index.html?theme=plantes-semis">Choisir quoi planter selon son balcon</a></h3>
+            <p>Des s&eacute;lections de plantes, de l&eacute;gumes, d’aromatiques et d’id&eacute;es de culture selon l’exposition et les envies.</p>
+            <a class="text-link" href="articles/index.html?theme=plantes-semis">Voir les plantations</a>
           </article>
-          <article class="theme-card">
-            <span class="eyebrow">Fiches</span>
-            <h3><a href="articles/index.html">Retrouver des guides concrets</a></h3>
-            <p>Chaque culture est pr&eacute;sent&eacute;e avec l'essentiel : pot, exposition, arrosage, entretien et r&eacute;colte.</p>
+          <article class="theme-card" data-reveal style="--reveal-delay: 200ms;">
+            <span class="eyebrow">Entretien &amp; astuces</span>
+            <h3><a href="articles/index.html?theme=entretien-astuces">Mieux entretenir son balcon au quotidien</a></h3>
+            <p>Arrosage, paillage, compost, nuisibles, chaleur et gestes simples pour garder un balcon sain et facile &agrave; vivre.</p>
+            <a class="text-link" href="articles/index.html?theme=entretien-astuces">Voir les astuces</a>
           </article>
-          <article class="theme-card">
-            <span class="eyebrow">Balcon &eacute;colo</span>
-            <h3><a href="articles/reduction-consommation-eau-balcon.html">&Eacute;conomiser l'eau au quotidien</a></h3>
-            <p>Paillage, eau de pluie, eau de cuisson et compost pour un jardinage urbain plus durable.</p>
+          <article class="theme-card" data-reveal style="--reveal-delay: 270ms;">
+            <span class="eyebrow">Am&eacute;nagement du balcon</span>
+            <h3><a href="articles/index.html?theme=amenagement-du-balcon">Am&eacute;nager un espace plus pratique</a></h3>
+            <p>Mat&eacute;riel, pots, compostage, r&eacute;cup&eacute;ration d’eau, plantes grimpantes et astuces pour organiser le balcon.</p>
+            <a class="text-link" href="articles/index.html?theme=amenagement-du-balcon">Voir les am&eacute;nagements</a>
           </article>
 "@
   $editorialFeature = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
@@ -1250,7 +1471,7 @@ function Build-HomeHtml {
       name = "EcoBalcon"
       url = "$siteUrl/"
       inLanguage = "fr"
-      description = "EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain."
+      description = "EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain."
       potentialAction = [ordered]@{
         "@type" = "SearchAction"
         target = "$siteUrl/articles/?q={search_term_string}"
@@ -1273,9 +1494,9 @@ function Build-HomeHtml {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EcoBalcon | Jardinage urbain sur balcon</title>
-  <meta name="description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain.">
+  <meta name="description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="preload" as="image" href="$featuredImageSrc" fetchpriority="high">
+  <link rel="preload" as="image" href="images/balcon-soleil.webp" fetchpriority="high">
   <link rel="canonical" href="$siteUrl/">
   <link rel="alternate" hreflang="fr" href="$siteUrl/">
   <link rel="alternate" hreflang="x-default" href="$siteUrl/">
@@ -1283,13 +1504,13 @@ function Build-HomeHtml {
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="EcoBalcon | Jardinage urbain sur balcon">
-  <meta property="og:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain.">
+  <meta property="og:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
   <meta property="og:url" content="$siteUrl/">
   <meta property="og:image" content="$featuredImage">
   <meta property="og:image:alt" content="$(HtmlEscape $featuredImageAlt)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="EcoBalcon | Jardinage urbain sur balcon">
-  <meta name="twitter:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, economiser l'eau, choisir les bonnes plantes et reussir un petit potager urbain.">
+  <meta name="twitter:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
   <meta name="twitter:image" content="$featuredImage">
   <meta name="twitter:image:alt" content="$(HtmlEscape $featuredImageAlt)">
 $jsonLd
@@ -1336,55 +1557,51 @@ $jsonLd
       <section class="hero hero-home">
         <div class="section-inner hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Jardinage urbain</span>
-            <h1>Des conseils simples pour faire d'un petit balcon un coin vivant et g&eacute;n&eacute;reux.</h1>
-            <p>
-              EcoBalcon rassemble des rep&egrave;res concrets pour jardiner en ville sans pression :
-              choisir les bonnes plantes, mieux vivre les fortes chaleurs, gagner en autonomie
-              et cultiver un espace ext&eacute;rieur beau, simple et nourricier.
-            </p>
-            <div class="meta-row hero-badges">
-              <span class="status status-ready">Potager urbain</span>
-              <span class="status status-ready">Plantes r&eacute;sistantes</span>
-              <span class="status status-ready">Gestes &eacute;colo</span>
+            <div class="hero-copy-main" data-reveal>
+              <span class="eyebrow hero-eyebrow">EcoBalcon &middot; Jardinage sur balcon</span>
+              <h1>Le balcon devient un jardin &agrave; vivre.</h1>
+              <p>Des conseils simples pour jardiner sur un balcon, lancer un potager urbain et faire vivre les petits espaces.</p>
             </div>
-            <div class="hero-actions">
-              <a class="button" href="articles/index.html">Voir tous les articles</a>
-              <a class="button-secondary" href="articles/$($featuredArticle.OutputName)">Commencer en douceur</a>
-            </div>
-            <div class="hero-stat-grid">
+            <div class="hero-copy-side">
+              <div class="hero-actions" data-reveal style="--reveal-delay: 90ms;">
+                <a class="button" href="articles/index.html">Explorer les guides</a>
+                <a class="button-secondary" href="$heroSupportHref">Commencer avec les bases</a>
+              </div>
+              <div class="hero-support-note" data-reveal style="--reveal-delay: 160ms;">
+                <span class="hero-support-chip">Le bon d&eacute;part</span>
+                <strong>Mieux vaut commencer simple, puis laisser le balcon prendre sa place.</strong>
+                <p>Deux ou trois cultures bien suivies suffisent souvent pour trouver le bon rythme, observer la lumi&egrave;re et prendre plaisir &agrave; jardiner.</p>
+                <a class="text-link" href="$heroSupportHref">Voir les bases</a>
+              </div>
+              <div class="hero-stat-grid" data-reveal style="--reveal-delay: 220ms;">
 $statsHtml
+              </div>
             </div>
           </div>
 
-          <aside class="hero-panel" aria-label="Par o&ugrave; commencer">
+          <aside class="hero-panel" aria-label="Balcon v&eacute;g&eacute;tal en ville" data-reveal style="--reveal-delay: 120ms;">
             <figure class="home-visual">
-              <img src="$featuredImageSrc" alt="$(HtmlEscape $featuredImageAlt)" title="$(HtmlEscape $featuredImageAlt)" loading="eager" decoding="async" fetchpriority="high"$featuredImageDimensions>
+              <div class="home-visual-stage">
+                <img class="home-visual-main" src="images/balcon-soleil.webp" alt="Balcon ensoleill&eacute; avec jardini&egrave;res, fleurs, l&eacute;gumes et arrosoir en pleine lumi&egrave;re" title="Balcon ensoleill&eacute; avec jardini&egrave;res, fleurs, l&eacute;gumes et arrosoir en pleine lumi&egrave;re" loading="eager" decoding="async" fetchpriority="high"$homeVisualDimensions>
+              </div>
+              <figcaption class="home-visual-note">
+                <span class="home-visual-chip">Balcon vivant</span>
+                <p>Un coin lumineux, vivant et simple &agrave; cultiver au rythme des saisons.</p>
+              </figcaption>
             </figure>
-            <div class="home-note">
-              <span class="eyebrow">&Agrave; la une</span>
-              <strong>$(HtmlEscape $featuredTitle)</strong>
-              <p>$(HtmlEscape (Get-CardExcerpt $featuredArticle.Description 140))</p>
-              <a class="text-link" href="articles/$($featuredArticle.OutputName)">Lire ce guide</a>
-            </div>
-            <div class="home-note home-note-soft">
-              <span class="eyebrow">En ce moment</span>
-              <strong>$(HtmlEscape $heroSecondary.Title)</strong>
-              <p>$(HtmlEscape (Get-CardExcerpt $heroSecondary.Description 110))</p>
-            </div>
           </aside>
         </div>
       </section>
 
       <section class="section">
         <div class="section-inner">
-          <div class="section-heading">
+          <div class="section-heading" data-reveal>
             <div>
               <h2>Commencer ici</h2>
-              <p>Trois portes d'entr&eacute;e simples selon ton envie du moment.</p>
+              <p>Trois mani&egrave;res simples de commencer selon tes envies.</p>
             </div>
           </div>
-          <div class="home-path-grid">
+          <div class="home-path-grid" data-reveal-group>
 $startHtml
           </div>
         </div>
@@ -1392,7 +1609,7 @@ $startHtml
 
       <section class="section section-soft">
         <div class="section-inner">
-          <div class="section-heading">
+          <div class="section-heading" data-reveal>
             <div>
               <h2>Explorer par th&egrave;me</h2>
               <p>Des rep&egrave;res visuels pour trouver rapidement le sujet qui t'aide vraiment.</p>
@@ -1406,67 +1623,219 @@ $themeHtml
 
       <section class="section">
         <div class="section-inner">
-          <div class="section-heading">
+          <div class="section-heading" data-reveal>
             <div>
               <h2>&Agrave; lire cette semaine</h2>
-              <p>Une entr&eacute;e plus &eacute;ditoriale pour d&eacute;couvrir les contenus sans scroller toute la biblioth&egrave;que.</p>
+              <p>Retrouvez ici une s&eacute;lection d'articles pratiques &agrave; lire en ce moment.</p>
             </div>
           </div>
           <div class="editorial-grid">
-            <article class="editorial-feature">
-              <img src="$editorialFeatureImageSrc" alt="$(HtmlEscape $editorialFeature.ImageAlt)" title="$(HtmlEscape $editorialFeature.ImageAlt)" loading="lazy" decoding="async"$editorialFeatureImageDimensions>
+            <article class="editorial-feature" id="weekly-feature" data-reveal>
+              <img id="weekly-feature-image" src="$weeklyFeatureImageSrc" alt="$(HtmlEscape $weeklyFeatureImageAlt)" title="$(HtmlEscape $weeklyFeatureImageAlt)" loading="lazy" decoding="async"$weeklyFeatureImageDimensions>
               <div class="editorial-feature-body">
-                <span class="pill">$(HtmlEscape $editorialFeature.Category)</span>
-                <h3><a href="$editorialFeatureHref">$(HtmlEscape $editorialFeature.Title)</a></h3>
-                <p>$(HtmlEscape (Get-CardExcerpt $editorialFeature.Description 172))</p>
-                <a class="text-link" href="$editorialFeatureHref">Ouvrir l'article</a>
+                <span class="pill" id="weekly-feature-category">$(HtmlEscape $weeklyFeatureCategory)</span>
+                <h3><a id="weekly-feature-title" href="$weeklyFeatureHref">$(HtmlEscape $weeklyFeatureTitle)</a></h3>
+                <p id="weekly-feature-description">$(HtmlEscape $weeklyFeatureDescription)</p>
+                <a class="text-link" id="weekly-feature-link" href="$weeklyFeatureHref">Lire l'article</a>
               </div>
             </article>
-            <div class="editorial-list">
-$editorialListHtml
-            </div>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-inner">
-          <div class="section-heading">
+          <div class="cta-strip" data-reveal>
             <div>
-              <h2>Articles &agrave; d&eacute;couvrir</h2>
-              <p>Une s&eacute;lection des guides les plus r&eacute;cents pour lancer ou am&eacute;liorer ton balcon au fil des saisons.</p>
-            </div>
-          </div>
-
-          <div class="cards">
-$cardsHtml
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-inner">
-          <div class="cta-strip">
-            <div>
-              <h2 class="page-title">Explorer les $count articles</h2>
+              <h2 class="page-title">Explorer les articles</h2>
               <p class="page-intro">
-                Potager, chaleur, &eacute;conomie d'eau, biodiversit&eacute;, fleurs utiles et fiches culture :
-                tout est regroup&eacute; dans une page unique avec recherche int&eacute;gr&eacute;e.
+                Potager, chaleur, &eacute;conomies d’eau, biodiversit&eacute;, fleurs utiles et fiches pratiques :
+                retrouvez tous les contenus au m&ecirc;me endroit.
               </p>
             </div>
-            <a class="button" href="articles/index.html">Ouvrir la rubrique articles</a>
+            <a class="button" href="articles/index.html">Voir tous les articles</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>EcoBalcon</div>
-        <div><a class="muted-link" href="articles/index.html">Voir tous les articles</a></div>
-      </div>
-    </footer>
+$(Get-SiteFooterHtml)
   </div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+
+      if (!reduceMotion) {
+        document.body.classList.add("home-reveal-ready");
+        document.body.classList.add("reveal-ready");
+
+        if ("IntersectionObserver" in window) {
+          const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          }, {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
+          });
+
+          revealItems.forEach((item) => revealObserver.observe(item));
+        } else {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+        }
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
+
+      const weeklyArticles = $weeklyArticlesJson;
+      if (!Array.isArray(weeklyArticles) || !weeklyArticles.length) {
+        return;
+      }
+
+      const weeklyImage = document.getElementById("weekly-feature-image");
+      const weeklyCategory = document.getElementById("weekly-feature-category");
+      const weeklyTitle = document.getElementById("weekly-feature-title");
+      const weeklyDescription = document.getElementById("weekly-feature-description");
+      const weeklyLink = document.getElementById("weekly-feature-link");
+
+      if (!weeklyImage || !weeklyCategory || !weeklyTitle || !weeklyDescription || !weeklyLink) {
+        return;
+      }
+
+      const slugKeywords = {
+        spring: ["printemps", "semis", "laitue", "laitues", "radis", "epinard", "epinards", "fraise", "fraises", "aromatiques", "calendrier"],
+        summer: ["ete", "chaleur", "canicule", "tomate", "tomates", "poivron", "poivrons", "arrosage", "soleil", "eau"],
+        autumn: ["automne", "compost", "paillage", "bulbes", "proteger", "recolte", "nuisibles", "pluie"],
+        winter: ["hiver", "materiel", "planifier", "preparer", "lunaire", "interieur", "structure"]
+      };
+
+      const monthKeywords = {
+        1: ["materiel", "planifier", "lunaire", "compost"],
+        2: ["semis", "aromatiques", "laitue", "laitues"],
+        3: ["semis", "radis", "laitue", "laitues", "fraise", "fraises"],
+        4: ["tomate", "tomates", "radis", "fraises", "potager"],
+        5: ["tomate", "tomates", "poivron", "poivrons", "aromatiques", "grimpantes"],
+        6: ["canicule", "eau", "paillage", "poivrons", "tomates"],
+        7: ["canicule", "soleil", "arrosage", "eau", "pollinisateurs"],
+        8: ["canicule", "arrosage", "nuisibles", "eau", "recolte"],
+        9: ["recolte", "compost", "petits-fruits", "potager"],
+        10: ["compost", "paillage", "bulbes", "pluie"],
+        11: ["compost", "materiel", "preparer", "structure"],
+        12: ["materiel", "planifier", "lunaire", "durable"]
+      };
+
+      const now = new Date();
+      const month = now.getMonth() + 1;
+      const season = getSeason(month);
+      const isoWeek = getIsoWeekNumber(now);
+      const weekKey = now.getFullYear() + "-" + String(isoWeek).padStart(2, "0");
+
+      const ranked = weeklyArticles
+        .map((article) => ({
+          article,
+          score: getArticleScore(article, season, month)
+        }))
+        .sort((left, right) => {
+          if (right.score !== left.score) {
+            return right.score - left.score;
+          }
+
+          return new Date(right.article.datePublished || 0) - new Date(left.article.datePublished || 0);
+        });
+
+      const shortlist = ranked.slice(0, Math.min(6, ranked.length));
+      const chosen = shortlist[hashString(weekKey) % shortlist.length].article;
+
+      weeklyImage.src = chosen.imageSrc || weeklyImage.src;
+      weeklyImage.alt = chosen.imageAlt || chosen.title || weeklyImage.alt;
+      weeklyImage.title = chosen.imageAlt || chosen.title || weeklyImage.title;
+
+      if (chosen.width) {
+        weeklyImage.width = chosen.width;
+      }
+
+      if (chosen.height) {
+        weeklyImage.height = chosen.height;
+      }
+
+      weeklyCategory.textContent = chosen.category || weeklyCategory.textContent;
+      weeklyTitle.textContent = chosen.title || weeklyTitle.textContent;
+      weeklyTitle.href = chosen.href || weeklyTitle.href;
+      weeklyDescription.textContent = truncate(chosen.description || weeklyDescription.textContent, 178);
+      weeklyLink.href = chosen.href || weeklyLink.href;
+
+      function getSeason(currentMonth) {
+        if (currentMonth >= 3 && currentMonth <= 5) {
+          return "spring";
+        }
+
+        if (currentMonth >= 6 && currentMonth <= 8) {
+          return "summer";
+        }
+
+        if (currentMonth >= 9 && currentMonth <= 11) {
+          return "autumn";
+        }
+
+        return "winter";
+      }
+
+      function getIsoWeekNumber(date) {
+        const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+        const day = utcDate.getUTCDay() || 7;
+        utcDate.setUTCDate(utcDate.getUTCDate() + 4 - day);
+        const yearStart = new Date(Date.UTC(utcDate.getUTCFullYear(), 0, 1));
+        return Math.ceil((((utcDate - yearStart) / 86400000) + 1) / 7);
+      }
+
+      function getArticleScore(article, currentSeason, currentMonth) {
+        const haystack = [article.slug || "", article.title || "", article.description || "", article.category || ""].join(" ").toLowerCase();
+        let score = 0;
+
+        (slugKeywords[currentSeason] || []).forEach((keyword) => {
+          if (haystack.includes(keyword)) {
+            score += 4;
+          }
+        });
+
+        (monthKeywords[currentMonth] || []).forEach((keyword) => {
+          if (haystack.includes(keyword)) {
+            score += 3;
+          }
+        });
+
+        const publishedAt = Date.parse(article.datePublished || "");
+        if (!Number.isNaN(publishedAt)) {
+          const ageInDays = Math.max(0, (Date.now() - publishedAt) / 86400000);
+          score += Math.max(0, 6 - Math.floor(ageInDays / 120));
+        }
+
+        if (/guide|calendrier|astuces|balcon/i.test(haystack)) {
+          score += 1;
+        }
+
+        return score;
+      }
+
+      function truncate(text, maxLength) {
+        if (!text || text.length <= maxLength) {
+          return text;
+        }
+
+        return text.slice(0, maxLength - 1).trimEnd() + "…";
+      }
+
+      function hashString(value) {
+        return Array.from(value).reduce((hash, character) => ((hash * 31) + character.charCodeAt(0)) >>> 0, 7);
+      }
+    })();
+  </script>
 </body>
 </html>
 "@
@@ -1475,7 +1844,11 @@ $cardsHtml
 function Build-ArticlesIndexHtml {
   param([object[]]$allArticles)
 
-  $cardsHtml = (($allArticles | ForEach-Object { Build-ArticleCardHtml -article $_ -hrefPrefix "" -imagePrefix "../images/articles/" }) -join "`n")
+  $cardsHtml = (($allArticles | ForEach-Object -Begin { $cardIndex = 0 } -Process {
+        $delay = [Math]::Min(70 + ($cardIndex * 45), 520)
+        $cardIndex++
+        (Build-ArticleCardHtml -article $_ -hrefPrefix "" -imagePrefix "../images/articles/") -replace '<article class="article-card">', "<article class=`"article-card`" data-reveal style=`"--reveal-delay: ${delay}ms;`">"
+      }) -join "`n")
   $count = $allArticles.Count
   $heroImage = if ($allArticles.Count -gt 0) { $allArticles[0].ImageCanonicalUrl } else { "" }
   $heroImageAlt = if ($allArticles.Count -gt 0) { $allArticles[0].ImageAlt } else { "Articles EcoBalcon autour du jardinage sur balcon" }
@@ -1486,7 +1859,7 @@ function Build-ArticlesIndexHtml {
       name = "Conseils et guides jardinage sur balcon | EcoBalcon"
       url = "$siteUrl/articles/"
       inLanguage = "fr"
-      description = "Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo."
+      description = "Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo."
       isPartOf = [ordered]@{
         "@type" = "WebSite"
         name = "EcoBalcon"
@@ -1501,7 +1874,7 @@ function Build-ArticlesIndexHtml {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conseils et guides jardinage sur balcon | EcoBalcon</title>
-  <meta name="description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
+  <meta name="description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="$siteUrl/articles/">
   <link rel="alternate" hreflang="fr" href="$siteUrl/articles/">
@@ -1510,13 +1883,13 @@ function Build-ArticlesIndexHtml {
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
-  <meta property="og:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
+  <meta property="og:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
   <meta property="og:url" content="$siteUrl/articles/">
   <meta property="og:image" content="$heroImage">
   <meta property="og:image:alt" content="$(HtmlEscape $heroImageAlt)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
-  <meta name="twitter:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes ecolo.">
+  <meta name="twitter:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
   <meta name="twitter:image" content="$heroImage">
   <meta name="twitter:image:alt" content="$(HtmlEscape $heroImageAlt)">
 $jsonLd
@@ -1525,7 +1898,7 @@ $jsonLd
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="articles-page">
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -1561,17 +1934,15 @@ $jsonLd
 
     <main class="section">
       <div class="section-inner">
-        <div class="page-hero">
+        <div class="page-hero" data-reveal>
           <div class="page-hero-copy">
-            <span class="eyebrow">Articles</span>
-            <h1 class="page-title">Conseils et guides pour jardiner sur balcon</h1>
+            <h1 class="page-title">Tout pour jardiner facilement sur un balcon</h1>
             <p class="page-intro">
-              Une biblioth&egrave;que de $count contenus pratiques autour du potager urbain, des plantes adapt&eacute;es &agrave; la ville,
-              des &eacute;conomies d'eau et des m&eacute;thodes simples pour mieux cultiver sur un petit espace.
+              Des conseils simples et concrets pour am&eacute;nager son balcon, choisir les bonnes plantes et cr&eacute;er un petit coin de verdure facile &agrave; entretenir.
             </p>
           </div>
 
-          <section class="search-panel search-panel-compact" aria-label="Recherche d'articles">
+          <section class="search-panel search-panel-compact" aria-label="Recherche d'articles" data-reveal style="--reveal-delay: 60ms;">
             <label class="search-label sr-only" for="article-search">Rechercher un article</label>
             <input
               class="search-input"
@@ -1583,72 +1954,310 @@ $jsonLd
           </section>
         </div>
 
+        <section class="theme-filter-panel" aria-label="Filtrer les articles par thème" data-reveal style="--reveal-delay: 90ms;">
+          <div class="theme-filter-list" id="article-theme-filters"></div>
+        </section>
+
         <p class="search-empty" id="search-empty" hidden>Aucun article ne correspond &agrave; cette recherche.</p>
 
         <div class="cards" id="article-list">
 $cardsHtml
         </div>
+
+        <div class="article-list-actions" id="article-list-actions" hidden>
+          <button class="button-secondary article-list-toggle" id="article-list-toggle" type="button" aria-controls="article-list" aria-expanded="false">
+            Voir plus
+          </button>
+        </div>
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>EcoBalcon</div>
-        <div><a class="muted-link" href="../index.html">Retour &agrave; l'accueil</a></div>
-      </div>
-    </footer>
+$(Get-SiteFooterHtml)
   </div>
   <script>
-    const searchInput = document.getElementById("article-search");
-    const articleCards = Array.from(document.querySelectorAll("#article-list .article-card"));
-    const emptyState = document.getElementById("search-empty");
-    const currentUrl = new URL(window.location.href);
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+      const searchInput = document.getElementById("article-search");
+      const articleCards = Array.from(document.querySelectorAll("#article-list .article-card"));
+      const themeFilterList = document.getElementById("article-theme-filters");
+      const articleListActions = document.getElementById("article-list-actions");
+      const articleListToggle = document.getElementById("article-list-toggle");
+      const emptyState = document.getElementById("search-empty");
+      const currentUrl = new URL(window.location.href);
+      const previewRowStep = 2;
+      let visibleRowCount = previewRowStep;
+      let articleListFullyRevealed = false;
+      let previewRefreshFrame = 0;
+      let activeTheme = "all";
 
-    const normalizeText = (value) =>
-      value
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+      const initReveal = () => {
+        if (!revealItems.length) {
+          return;
+        }
 
-    const syncQueryParam = () => {
-      const rawValue = searchInput.value.trim();
+        if (reduceMotion) {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
 
-      if (rawValue === "") {
-        currentUrl.searchParams.delete("q");
-      } else {
-        currentUrl.searchParams.set("q", rawValue);
-      }
+        document.body.classList.add("reveal-ready");
 
-      window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
-    };
+        if (!("IntersectionObserver" in window)) {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
 
-    const filterArticles = () => {
-      const query = normalizeText(searchInput.value.trim());
-      let visibleCount = 0;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        }, {
+          rootMargin: "0px 0px -8% 0px",
+          threshold: 0.12
+        });
+
+        revealItems.forEach((item) => observer.observe(item));
+      };
+
+      const normalizeText = (value) =>
+        value
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+
+      const slugifyTheme = (value) =>
+        normalizeText(value)
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
+      const getCardThemeLabel = (card) => {
+        const themePill = card.querySelector(".pill");
+        return themePill ? themePill.textContent.trim() : "";
+      };
+
+      const resetArticlePreview = () => {
+        visibleRowCount = previewRowStep;
+        articleListFullyRevealed = false;
+      };
+
+      const articleThemeOptions = [{ slug: "all", label: "Tous" }];
+      const seenThemes = new Set();
 
       articleCards.forEach((card) => {
-        const searchableText = normalizeText(card.textContent);
-        const matches = query === "" || searchableText.includes(query);
-        card.hidden = !matches;
+        const themeLabel = getCardThemeLabel(card);
+        const themeSlug = slugifyTheme(themeLabel);
+        const themePill = card.querySelector(".pill");
 
-        if (matches) {
-          visibleCount += 1;
+        if (themeSlug === "") {
+          return;
+        }
+
+        card.dataset.theme = themeSlug;
+
+        if (themePill) {
+          themePill.dataset.themeFilter = themeSlug;
+          themePill.classList.add("pill-filter-trigger");
+          themePill.setAttribute("role", "button");
+          themePill.tabIndex = 0;
+          themePill.setAttribute("aria-label", "Afficher les articles du thème " + themeLabel);
+        }
+
+        if (!seenThemes.has(themeSlug)) {
+          seenThemes.add(themeSlug);
+          articleThemeOptions.push({ slug: themeSlug, label: themeLabel });
         }
       });
 
-      emptyState.hidden = visibleCount !== 0;
-    };
+      const themeButtonsBySlug = new Map();
 
-    const initialQuery = currentUrl.searchParams.get("q");
-    if (initialQuery) {
-      searchInput.value = initialQuery;
-      filterArticles();
-    }
+      articleThemeOptions.forEach((themeOption) => {
+        const themeButton = document.createElement("button");
+        themeButton.type = "button";
+        themeButton.className = "theme-filter-button";
+        themeButton.dataset.themeFilter = themeOption.slug;
+        themeButton.textContent = themeOption.label;
+        themeButton.setAttribute("aria-pressed", "false");
+        themeFilterList.appendChild(themeButton);
+        themeButtonsBySlug.set(themeOption.slug, themeButton);
+      });
 
-    searchInput.addEventListener("input", () => {
+      const themeFilterButtons = Array.from(themeButtonsBySlug.values());
+
+      const updateThemeFilterButtons = () => {
+        themeFilterButtons.forEach((button) => {
+          const isActive = button.dataset.themeFilter === activeTheme;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      };
+
+      const getMatchedCards = () => articleCards.filter((card) => !card.hidden);
+
+      const updateArticlePreview = () => {
+        const matchedCards = getMatchedCards();
+        const hasSearchQuery = searchInput.value.trim() !== "";
+        let rowIndex = 0;
+        let lastRowTop = null;
+        let hiddenCount = 0;
+
+        articleCards.forEach((card) => {
+          card.classList.remove("article-card-collapsed");
+        });
+
+        if (matchedCards.length === 0 || articleListFullyRevealed || hasSearchQuery) {
+          articleListActions.hidden = true;
+          articleListToggle.setAttribute("aria-expanded", String(articleListFullyRevealed || hasSearchQuery));
+          return;
+        }
+
+        matchedCards.forEach((card) => {
+          const cardTop = Math.round(card.offsetTop);
+
+          if (lastRowTop === null || Math.abs(cardTop - lastRowTop) > 1) {
+            rowIndex += 1;
+            lastRowTop = cardTop;
+          }
+
+          const shouldCollapse = rowIndex > visibleRowCount;
+          card.classList.toggle("article-card-collapsed", shouldCollapse);
+
+          if (shouldCollapse) {
+            hiddenCount += 1;
+          }
+        });
+
+        articleListFullyRevealed = hiddenCount === 0;
+        articleListActions.hidden = articleListFullyRevealed;
+        articleListToggle.setAttribute("aria-expanded", String(articleListFullyRevealed));
+      };
+
+      const requestArticlePreviewRefresh = () => {
+        if (previewRefreshFrame !== 0) {
+          window.cancelAnimationFrame(previewRefreshFrame);
+        }
+
+        previewRefreshFrame = window.requestAnimationFrame(() => {
+          previewRefreshFrame = 0;
+          updateArticlePreview();
+        });
+      };
+
+      const syncFilterParams = () => {
+        const rawQuery = searchInput.value.trim();
+
+        if (rawQuery === "") {
+          currentUrl.searchParams.delete("q");
+        } else {
+          currentUrl.searchParams.set("q", rawQuery);
+        }
+
+        if (activeTheme === "all") {
+          currentUrl.searchParams.delete("theme");
+        } else {
+          currentUrl.searchParams.set("theme", activeTheme);
+        }
+
+        window.history.replaceState({}, "", currentUrl.pathname + currentUrl.search);
+      };
+
+      const filterArticles = () => {
+        const query = normalizeText(searchInput.value.trim());
+        let visibleCount = 0;
+
+        articleCards.forEach((card) => {
+          const searchableText = normalizeText(card.textContent);
+          const matchesTheme = activeTheme === "all" || card.dataset.theme === activeTheme;
+          const matchesQuery = query === "" || searchableText.includes(query);
+          const matches = matchesTheme && matchesQuery;
+          card.hidden = !matches;
+
+          if (matches) {
+            visibleCount += 1;
+          }
+        });
+
+        emptyState.hidden = visibleCount !== 0;
+        requestArticlePreviewRefresh();
+      };
+
+      const applyThemeFilter = (themeSlug) => {
+        if (!themeButtonsBySlug.has(themeSlug)) {
+          return;
+        }
+
+        activeTheme = themeSlug;
+        resetArticlePreview();
+        updateThemeFilterButtons();
+        filterArticles();
+        syncFilterParams();
+      };
+
+      const initialQuery = currentUrl.searchParams.get("q");
+      const initialTheme = currentUrl.searchParams.get("theme");
+
+      if (initialQuery) {
+        searchInput.value = initialQuery;
+      }
+
+      if (initialTheme && themeButtonsBySlug.has(initialTheme)) {
+        activeTheme = initialTheme;
+      }
+
+      updateThemeFilterButtons();
       filterArticles();
-      syncQueryParam();
-    });
+      initReveal();
+
+      searchInput.addEventListener("input", () => {
+        resetArticlePreview();
+        filterArticles();
+        syncFilterParams();
+      });
+
+      themeFilterList.addEventListener("click", (event) => {
+        const targetButton = event.target.closest("[data-theme-filter]");
+
+        if (!targetButton) {
+          return;
+        }
+
+        applyThemeFilter(targetButton.dataset.themeFilter);
+      });
+
+      document.addEventListener("click", (event) => {
+        const targetPill = event.target.closest("#article-list .pill-filter-trigger");
+
+        if (!targetPill) {
+          return;
+        }
+
+        applyThemeFilter(targetPill.dataset.themeFilter);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const targetPill = event.target.closest("#article-list .pill-filter-trigger");
+
+        if (!targetPill || (event.key !== "Enter" && event.key !== " ")) {
+          return;
+        }
+
+        event.preventDefault();
+        applyThemeFilter(targetPill.dataset.themeFilter);
+      });
+
+      articleListToggle.addEventListener("click", () => {
+        visibleRowCount += previewRowStep;
+        requestArticlePreviewRefresh();
+      });
+
+      window.addEventListener("resize", requestArticlePreviewRefresh);
+      window.addEventListener("load", requestArticlePreviewRefresh, { once: true });
+    })();
   </script>
 </body>
 </html>

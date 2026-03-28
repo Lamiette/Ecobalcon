@@ -35,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="article-page">
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -71,6 +71,7 @@
 
     <main class="article-layout">
       <div class="article-shell">
+        <div data-reveal>
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
             <li><a href="../index.html">Accueil</a></li>
@@ -78,7 +79,8 @@
             <li aria-current="page">Jardinage en lasagnes sur balcon : guide pratique</li>
           </ol>
         </nav>
-        <header class="article-header">
+        </div>
+        <header class="article-header" data-reveal style="--reveal-delay: 60ms;">
           <span class="eyebrow">Entretien &amp; astuces</span>
           <h1 class="article-title">Jardinage en lasagnes sur balcon : guide pratique</h1>
           <div class="article-meta">
@@ -89,12 +91,12 @@
           <p class="article-intro">Découvrez comment créer un jardinage en lasagnes sur balcon pour un potager fertile, écologique et simple, même en ville avec peu d’espace. A vous de jouer !</p>
         </header>
 
-        <figure class="hero-image">
+        <figure class="hero-image" data-reveal style="--reveal-delay: 110ms;">
           <img src="../images/articles/jardin-lasagne-balcon-AGBbw5VWqzSB3B3e.webp" alt="Pot de culture en lasagnes sur un balcon, montrant les différentes couches de matières organiques" title="Pot de culture en lasagnes sur un balcon, montrant les différentes couches de matières organiques" loading="eager" decoding="async" fetchpriority="high" width="1440" height="756">
         </figure>
 
         <div class="article-grid">
-          <article class="article-prose">
+          <article class="article-prose" data-reveal style="--reveal-delay: 150ms;">
             <p>Vous rêvez d’un balcon verdoyant et productif, mais vous manquez de place et ne savez pas comment enrichir votre terreau sans vous ruiner en sacs de substrat ? Le jardinage en lasagnes est une technique ingénieuse qui peut transformer votre balcon en un véritable potager fertile, même sans sol naturel.</p>
             <p>Née des principes de la permaculture, cette méthode consiste à superposer différentes couches de matières organiques pour créer un substrat riche, vivant et autosuffisant. Et contrairement à ce que l’on pourrait penser, elle s’adapte parfaitement aux petits espaces urbains.</p>
             <h2>Qu’est-ce que le jardinage en lasagnes ?</h2>
@@ -158,7 +160,7 @@
             <p>👉 Pour aller encore plus loin, explorez notre <a href="jardiner-sur-un-balcon.html">guide ultime du potager</a> en pot et découvrez comment tirer le meilleur parti de votre balcon urbain.</p>
           </article>
 
-          <aside class="sidebar-stack">
+          <aside class="sidebar-stack" data-reveal style="--reveal-delay: 190ms;">
             <div class="checklist article-note">
               <h3>Rep&egrave;res</h3>
               <ul class="article-list">
@@ -178,15 +180,15 @@
             </div>
           </aside>
         </div>
-        <section class="related-section" aria-labelledby="related-articles-heading">
+        <section class="related-section" aria-labelledby="related-articles-heading" data-reveal style="--reveal-delay: 220ms;">
           <div class="section-heading section-heading-compact">
             <div>
-              <h2 id="related-articles-heading">A lire aussi</h2>
+              <h2 id="related-articles-heading">À lire aussi</h2>
               <p>D'autres articles proches pour continuer naturellement ta lecture.</p>
             </div>
           </div>
           <div class="cards cards-related">
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 250ms;">
             <img src="../images/articles/coccinelle-dOqDvrReK6c4Kg20.webp" alt="Coccinelle sur une feuille verte, un insecte utile au jardin pour lutter contre les pucerons" title="Coccinelle sur une feuille verte, un insecte utile au jardin pour lutter contre les pucerons" loading="lazy" decoding="async" width="1280" height="756">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -194,7 +196,7 @@
               <p>Découvrez 10 insectes utiles sur un balcon pour un potager sain, productif et écologique : coccinelles, abeilles solitaires, syrphes… et comment...</p>
             </div>
           </article>
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 320ms;">
             <img src="../images/articles/jardin-balcon-9-A3Q2kVxJe4irwQED.webp" alt="Petit balcon urbain décoré avec de nombreuses plantes en pots, , idéal pour un jardin de balcon" title="Petit balcon urbain décoré avec de nombreuses plantes en pots, , idéal pour un jardin de balcon" loading="lazy" decoding="async" width="1216" height="756">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -202,7 +204,7 @@
               <p>Découvrez nos 10 astuces pour démarrer un jardin sur balcon : cultivez facilement un potager balcon, des plantes en pot et créez un espace vert...</p>
             </div>
           </article>
-          <article class="article-card related-card">
+          <article class="article-card related-card" data-reveal style="--reveal-delay: 390ms;">
             <img src="../images/articles/canicule-balcon-mxBXq1QqyeTR1PLZ.webp" alt="Rayon de soleil intense dans un ciel bleu profond avec une herbe haute en contre-jour" title="Rayon de soleil intense dans un ciel bleu profond avec une herbe haute en contre-jour" loading="lazy" decoding="async" width="1280" height="720">
             <div class="article-card-body">
               <div class="pill-row"><span class="pill">Entretien &amp; astuces</span></div>
@@ -217,10 +219,76 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <div>EcoBalcon</div>
-        <div><a class="muted-link" href="index.html">Retour &agrave; la liste</a></div>
+        <div class="footer-main">
+          <div class="footer-brand">
+            <strong>EcoBalcon</strong>
+            <p>Astuces pour jardiner en milieu urbain.</p>
+          </div>
+          <div class="footer-social" aria-label="R&eacute;seaux sociaux">
+            <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-side">
+          <strong>Sur le site</strong>
+          <ul class="footer-list">
+            <li>Potager de balcon et cultures faciles</li>
+            <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
+            <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
+          </ul>
+        </div>
+        <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
       </div>
     </footer>
   </div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
+
+      if (!revealItems.length) {
+        return;
+      }
+
+      if (reduceMotion) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      document.body.classList.add("reveal-ready");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.14
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 </html>
