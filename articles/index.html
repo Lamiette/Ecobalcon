@@ -6,15 +6,15 @@
   <title>Conseils et guides jardinage sur balcon | EcoBalcon</title>
   <meta name="description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://ecobalcon.com/articles/">
-  <link rel="alternate" hreflang="fr" href="https://ecobalcon.com/articles/">
-  <link rel="alternate" hreflang="x-default" href="https://ecobalcon.com/articles/">
+  <link rel="canonical" href="https://ecobalcon.com/articles/index.html">
+  <link rel="alternate" hreflang="fr" href="https://ecobalcon.com/articles/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://ecobalcon.com/articles/index.html">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
   <meta property="og:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
-  <meta property="og:url" content="https://ecobalcon.com/articles/">
+  <meta property="og:url" content="https://ecobalcon.com/articles/index.html">
   <meta property="og:image" content="https://ecobalcon.com/images/articles/poivrons-balcon-guide-A20260327.png">
   <meta property="og:image:alt" content="Illustration de poivrons rouges et jaunes en pot sur un balcon ensoleillé">
   <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="articles-page">
   <!-- Google Tag Manager (noscript) -->
@@ -425,6 +425,8 @@
       const articleListToggle = document.getElementById("article-list-toggle");
       const emptyState = document.getElementById("search-empty");
       const currentUrl = new URL(window.location.href);
+      const currentHashParams = new URLSearchParams(currentUrl.hash.startsWith("#") ? currentUrl.hash.slice(1) : "");
+      const currentPath = currentUrl.pathname;
       const previewRowStep = 2;
       let visibleRowCount = previewRowStep;
       let articleListFullyRevealed = false;
@@ -600,20 +602,18 @@
 
       const syncFilterParams = () => {
         const rawQuery = searchInput.value.trim();
+        const nextHashParams = new URLSearchParams();
 
-        if (rawQuery === "") {
-          currentUrl.searchParams.delete("q");
-        } else {
-          currentUrl.searchParams.set("q", rawQuery);
+        if (rawQuery !== "") {
+          nextHashParams.set("q", rawQuery);
         }
 
-        if (activeTheme === "all") {
-          currentUrl.searchParams.delete("theme");
-        } else {
-          currentUrl.searchParams.set("theme", activeTheme);
+        if (activeTheme !== "all") {
+          nextHashParams.set("theme", activeTheme);
         }
 
-        window.history.replaceState({}, "", currentUrl.pathname + currentUrl.search);
+        const nextHash = nextHashParams.toString();
+        window.history.replaceState({}, "", currentPath + (nextHash ? "#" + nextHash : ""));
       };
 
       const filterArticles = () => {
@@ -648,8 +648,8 @@
         syncFilterParams();
       };
 
-      const initialQuery = currentUrl.searchParams.get("q");
-      const initialTheme = currentUrl.searchParams.get("theme");
+      const initialQuery = currentHashParams.get("q");
+      const initialTheme = currentHashParams.get("theme");
 
       if (initialQuery) {
         searchInput.value = initialQuery;

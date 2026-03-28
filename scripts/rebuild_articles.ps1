@@ -7,6 +7,10 @@ $root = Split-Path -Parent $PSScriptRoot
 $rawDir = Join-Path $root "raw-singlefile"
 $articlesDir = Join-Path $root "articles"
 $imagesDir = Join-Path $root "images\articles"
+$sourceStylesheetPath = Join-Path $root "css\style.css"
+$minifiedStylesheetPath = Join-Path $root "css\style.min.css"
+$rootStylesheetHref = "css/style.min.css"
+$articleStylesheetHref = "../css/style.min.css"
 $siteUrl = "https://ecobalcon.com"
 # GA4 is intended to be wired through GTM to avoid duplicate pageview tracking.
 $googleAnalyticsMeasurementId = "G-L952X34SHR"
@@ -31,6 +35,28 @@ function HtmlEscape {
 
   if ($null -eq $text) { return "" }
   return [System.Security.SecurityElement]::Escape([string]$text)
+}
+
+function Get-MinifiedCss {
+  param([string]$css)
+
+  if ([string]::IsNullOrWhiteSpace($css)) { return "" }
+
+  $minified = [regex]::Replace($css, '/\*[\s\S]*?\*/', '')
+  $minified = $minified -replace '\r?\n', ' '
+  $minified = [regex]::Replace($minified, '\s+', ' ')
+  $minified = [regex]::Replace($minified, '\s*([{}:;,])\s*', '$1')
+  $minified = [regex]::Replace($minified, ';}', '}')
+
+  return $minified.Trim()
+}
+
+function Write-MinifiedStylesheet {
+  if (-not (Test-Path $sourceStylesheetPath)) { return }
+
+  $sourceCss = Get-Content -Raw -Encoding UTF8 $sourceStylesheetPath
+  $minifiedCss = Get-MinifiedCss $sourceCss
+  Set-Content -Path $minifiedStylesheetPath -Value $minifiedCss -Encoding UTF8
 }
 
 function Get-TagManagerHeadHtml {
@@ -1288,7 +1314,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="$articleStylesheetHref">
 </head>
 <body class="article-page">
 $tagManagerBody
@@ -1423,6 +1449,8 @@ function Build-HomeHtml {
   $featuredImageDimensions = if ($featuredArticle) { Get-ArticleImageDimensionAttributes $featuredArticle.ImageFileName } else { "" }
   $featuredTitle = if ($featuredArticle) { $featuredArticle.Title } else { "Jardinage urbain sur balcon" }
   $featuredImageAlt = if ($featuredArticle) { $featuredArticle.ImageAlt } else { "Balcon potager et jardinage urbain" }
+  $shareImage = "$siteUrl/images/cette-semaine-home.jpg"
+  $shareImageAlt = "Balcon ensoleillé avec plusieurs plantes en pot et jardinières"
   $heroSecondary = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
     "plantes-qui-survivent-a-la-canicule",
     "reduction-consommation-eau-balcon",
@@ -1517,27 +1545,27 @@ function Build-HomeHtml {
   $themeHtml = @"
           <article class="theme-card" data-reveal style="--reveal-delay: 60ms;">
             <span class="eyebrow">Fiches Techniques</span>
-            <h3><a href="articles/index.html?theme=fiches-techniques">Trouver un guide culture pas &agrave; pas</a></h3>
+            <h3><a href="articles/index.html#theme=fiches-techniques">Trouver un guide culture pas &agrave; pas</a></h3>
             <p>Les fiches les plus concr&egrave;tes pour cultiver tomates, poivrons, laitues, radis, fraises et autres cultures de balcon.</p>
-            <a class="text-link" href="articles/index.html?theme=fiches-techniques">Voir les fiches</a>
+            <a class="text-link" href="articles/index.html#theme=fiches-techniques">Voir les fiches</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 130ms;">
             <span class="eyebrow">Plantes &amp; semis</span>
-            <h3><a href="articles/index.html?theme=plantes-semis">Choisir quoi planter selon son balcon</a></h3>
+            <h3><a href="articles/index.html#theme=plantes-semis">Choisir quoi planter selon son balcon</a></h3>
             <p>Des s&eacute;lections de plantes, de l&eacute;gumes, d’aromatiques et d’id&eacute;es de culture selon l’exposition et les envies.</p>
-            <a class="text-link" href="articles/index.html?theme=plantes-semis">Voir les plantations</a>
+            <a class="text-link" href="articles/index.html#theme=plantes-semis">Voir les plantations</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 200ms;">
             <span class="eyebrow">Entretien &amp; astuces</span>
-            <h3><a href="articles/index.html?theme=entretien-astuces">Mieux entretenir son balcon au quotidien</a></h3>
+            <h3><a href="articles/index.html#theme=entretien-astuces">Mieux entretenir son balcon au quotidien</a></h3>
             <p>Arrosage, paillage, compost, nuisibles, chaleur et gestes simples pour garder un balcon sain et facile &agrave; vivre.</p>
-            <a class="text-link" href="articles/index.html?theme=entretien-astuces">Voir les astuces</a>
+            <a class="text-link" href="articles/index.html#theme=entretien-astuces">Voir les astuces</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 270ms;">
             <span class="eyebrow">Am&eacute;nagement du balcon</span>
-            <h3><a href="articles/index.html?theme=amenagement-du-balcon">Am&eacute;nager un espace plus pratique</a></h3>
+            <h3><a href="articles/index.html#theme=amenagement-du-balcon">Am&eacute;nager un espace plus pratique</a></h3>
             <p>Mat&eacute;riel, pots, compostage, r&eacute;cup&eacute;ration d’eau, plantes grimpantes et astuces pour organiser le balcon.</p>
-            <a class="text-link" href="articles/index.html?theme=amenagement-du-balcon">Voir les am&eacute;nagements</a>
+            <a class="text-link" href="articles/index.html#theme=amenagement-du-balcon">Voir les am&eacute;nagements</a>
           </article>
 "@
   $editorialFeature = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
@@ -1596,28 +1624,28 @@ function Build-HomeHtml {
   <meta name="description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="preload" as="image" href="images/balcon-soleil.webp" fetchpriority="high">
-  <link rel="canonical" href="$siteUrl/">
-  <link rel="alternate" hreflang="fr" href="$siteUrl/">
-  <link rel="alternate" hreflang="x-default" href="$siteUrl/">
+  <link rel="canonical" href="$siteUrl/index.html">
+  <link rel="alternate" hreflang="fr" href="$siteUrl/index.html">
+  <link rel="alternate" hreflang="x-default" href="$siteUrl/index.html">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="EcoBalcon | Jardinage urbain sur balcon">
   <meta property="og:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
-  <meta property="og:url" content="$siteUrl/">
-  <meta property="og:image" content="$featuredImage">
-  <meta property="og:image:alt" content="$(HtmlEscape $featuredImageAlt)">
+  <meta property="og:url" content="$siteUrl/index.html">
+  <meta property="og:image" content="$shareImage">
+  <meta property="og:image:alt" content="$(HtmlEscape $shareImageAlt)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="EcoBalcon | Jardinage urbain sur balcon">
   <meta name="twitter:description" content="EcoBalcon partage des conseils pratiques pour jardiner sur balcon, économiser l'eau, choisir les bonnes plantes et réussir un petit potager urbain.">
-  <meta name="twitter:image" content="$featuredImage">
-  <meta name="twitter:image:alt" content="$(HtmlEscape $featuredImageAlt)">
+  <meta name="twitter:image" content="$shareImage">
+  <meta name="twitter:image:alt" content="$(HtmlEscape $shareImageAlt)">
 $jsonLd
 $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="$rootStylesheetHref">
 </head>
 <body class="home-page">
 $tagManagerBody
@@ -1979,15 +2007,15 @@ function Build-ArticlesIndexHtml {
   <title>Conseils et guides jardinage sur balcon | EcoBalcon</title>
   <meta name="description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="$siteUrl/articles/">
-  <link rel="alternate" hreflang="fr" href="$siteUrl/articles/">
-  <link rel="alternate" hreflang="x-default" href="$siteUrl/articles/">
+  <link rel="canonical" href="$siteUrl/articles/index.html">
+  <link rel="alternate" hreflang="fr" href="$siteUrl/articles/index.html">
+  <link rel="alternate" hreflang="x-default" href="$siteUrl/articles/index.html">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Conseils et guides jardinage sur balcon | EcoBalcon">
   <meta property="og:description" content="Retrouve les articles EcoBalcon autour du jardinage sur balcon, du potager urbain, des plantes utiles et des gestes écolo.">
-  <meta property="og:url" content="$siteUrl/articles/">
+  <meta property="og:url" content="$siteUrl/articles/index.html">
   <meta property="og:image" content="$heroImage">
   <meta property="og:image:alt" content="$(HtmlEscape $heroImageAlt)">
   <meta name="twitter:card" content="summary_large_image">
@@ -2000,7 +2028,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="$articleStylesheetHref">
 </head>
 <body class="articles-page">
 $tagManagerBody
@@ -2090,6 +2118,8 @@ $(Get-SiteFooterHtml -pagePrefix "../")
       const articleListToggle = document.getElementById("article-list-toggle");
       const emptyState = document.getElementById("search-empty");
       const currentUrl = new URL(window.location.href);
+      const currentHashParams = new URLSearchParams(currentUrl.hash.startsWith("#") ? currentUrl.hash.slice(1) : "");
+      const currentPath = currentUrl.pathname;
       const previewRowStep = 2;
       let visibleRowCount = previewRowStep;
       let articleListFullyRevealed = false;
@@ -2265,20 +2295,18 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 
       const syncFilterParams = () => {
         const rawQuery = searchInput.value.trim();
+        const nextHashParams = new URLSearchParams();
 
-        if (rawQuery === "") {
-          currentUrl.searchParams.delete("q");
-        } else {
-          currentUrl.searchParams.set("q", rawQuery);
+        if (rawQuery !== "") {
+          nextHashParams.set("q", rawQuery);
         }
 
-        if (activeTheme === "all") {
-          currentUrl.searchParams.delete("theme");
-        } else {
-          currentUrl.searchParams.set("theme", activeTheme);
+        if (activeTheme !== "all") {
+          nextHashParams.set("theme", activeTheme);
         }
 
-        window.history.replaceState({}, "", currentUrl.pathname + currentUrl.search);
+        const nextHash = nextHashParams.toString();
+        window.history.replaceState({}, "", currentPath + (nextHash ? "#" + nextHash : ""));
       };
 
       const filterArticles = () => {
@@ -2313,8 +2341,8 @@ $(Get-SiteFooterHtml -pagePrefix "../")
         syncFilterParams();
       };
 
-      const initialQuery = currentUrl.searchParams.get("q");
-      const initialTheme = currentUrl.searchParams.get("theme");
+      const initialQuery = currentHashParams.get("q");
+      const initialTheme = currentHashParams.get("theme");
 
       if (initialQuery) {
         searchInput.value = initialQuery;
@@ -2496,7 +2524,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="$rootStylesheetHref">
 </head>
 <body class="legal-page">
 $tagManagerBody
@@ -2638,7 +2666,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="$rootStylesheetHref">
 </head>
 <body class="not-found-page">
 $tagManagerBody
@@ -2783,6 +2811,8 @@ foreach ($article in $articles) {
   Write-Output "Rebuilt $($article.OutputName)"
 }
 
+Write-MinifiedStylesheet
+
 Set-Content -Path (Join-Path $articlesDir "index.html") -Value (Build-ArticlesIndexHtml $articles) -Encoding UTF8
 Set-Content -Path (Join-Path $root "politique-confidentialite.html") -Value (Build-PrivacyHtml) -Encoding UTF8
 Set-Content -Path (Join-Path $root "404.html") -Value (Build-404Html) -Encoding UTF8
@@ -2808,7 +2838,7 @@ if ($RebuildHome -or -not (Test-Path $homePath)) {
 Set-Content -Path (Join-Path $root "sitemap.xml") -Value (Build-SitemapXml $articles) -Encoding UTF8
 Set-Content -Path (Join-Path $root "robots.txt") -Value (Build-RobotsTxt) -Encoding UTF8
 
-Write-Output "Updated articles index, 404.html, politique-confidentialite.html, sitemap.xml and robots.txt"
+Write-Output "Updated style.min.css, articles index, 404.html, politique-confidentialite.html, sitemap.xml and robots.txt"
 if ($homeBackupStatus) {
   Write-Output $homeBackupStatus
 }
