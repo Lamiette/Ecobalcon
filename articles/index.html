@@ -126,7 +126,7 @@
           <article class="article-card" data-reveal style="--reveal-delay: 250ms;">
             <img src="../images/articles/lierre-grimpant-A85V1gor4Dsan5k8.webp" alt="Découvrez les meilleures plantes grimpantes pour créer de l&apos;intimité en ville. Apprenez à choisir et entretenir des plantes grimpantes adaptées à votre espace urbain." title="Découvrez les meilleures plantes grimpantes pour créer de l&apos;intimité en ville. Apprenez à choisir et entretenir des plantes grimpantes adaptées à votre espace urbain." loading="lazy" decoding="async" width="1280" height="756">
             <div class="article-card-body">
-              <div class="pill-row"><span class="pill">Article</span></div>
+              <div class="pill-row"><span class="pill">Aménagement du balcon</span></div>
               <h3><a href="meilleures-plantes-grimpantes-en-ville.html">7 Meilleures plantes grimpantes pour créer de l’intimité en ville</a></h3>
               <p>Découvrez les meilleures plantes grimpantes pour créer de l&apos;intimité en ville. Apprenez à choisir et entretenir des plantes grimpantes adaptées à...</p>
             </div>
@@ -150,7 +150,7 @@
           <article class="article-card" data-reveal style="--reveal-delay: 385ms;">
             <img src="../images/articles/fruits-AVLaZbRrwRcWW7ba.webp" alt="Petits fruits rouges et bleus cultivés en pot sur un balcon, avec fraises et groseilles" title="Petits fruits rouges et bleus cultivés en pot sur un balcon, avec fraises et groseilles" loading="lazy" decoding="async" width="1280" height="719">
             <div class="article-card-body">
-              <div class="pill-row"><span class="pill">Fruits</span></div>
+              <div class="pill-row"><span class="pill">Plantes &amp; semis</span></div>
               <h3><a href="petits-fruits-en-pot.html">Balcon gourmand : cultiver des petits fruits en pot</a></h3>
               <p>Petits fruits en pot sur balcon : fraisiers, framboisiers nains, myrtilles, groseilliers et cassissiers. Le guide pour récolter des fruits même en...</p>
             </div>
@@ -262,7 +262,7 @@
           <article class="article-card" data-reveal style="--reveal-delay: 520ms;">
             <img src="../images/articles/papillon-fleurs-YD0w7b63NEsyO121.webp" alt="Papillon flambé butinant des fleurs rouges" title="Papillon flambé butinant des fleurs rouges" loading="lazy" decoding="async" width="1280" height="756">
             <div class="article-card-body">
-              <div class="pill-row"><span class="pill">Article</span></div>
+              <div class="pill-row"><span class="pill">Plantes &amp; semis</span></div>
               <h3><a href="balcon-pour-pollinisateurs.html">Balcon pour pollinisateurs : Tout ce qu&apos;il faut savoir pour les attirer</a></h3>
               <p>Créez votre balcon pour pollinisateurs ! Attirez abeilles &amp; papillons en ville avec notre guide : plantes mellifères, abris et points d&apos;eau...</p>
             </div>
@@ -470,9 +470,19 @@
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/^-+|-+$/g, "");
 
+      const getSearchTokens = (value) =>
+        normalizeText(value)
+          .split(/\s+/)
+          .filter(Boolean);
+
       const getCardThemeLabel = (card) => {
         const themePill = card.querySelector(".pill");
         return themePill ? themePill.textContent.trim() : "";
+      };
+
+      const getCardTitleText = (card) => {
+        const titleLink = card.querySelector("h3 a");
+        return titleLink ? normalizeText(titleLink.textContent) : "";
       };
 
       const resetArticlePreview = () => {
@@ -480,8 +490,13 @@
         articleListFullyRevealed = false;
       };
 
-      const articleThemeOptions = [{ slug: "all", label: "Tous" }];
-      const seenThemes = new Set();
+      const articleThemeOptions = [
+        { slug: "all", label: "Tous" },
+        { slug: "fiches-techniques", label: "Fiches Techniques" },
+        { slug: "plantes-semis", label: "Plantes & semis" },
+        { slug: "entretien-astuces", label: "Entretien & astuces" },
+        { slug: "amenagement-du-balcon", label: "Aménagement du balcon" }
+      ];
 
       articleCards.forEach((card) => {
         const themeLabel = getCardThemeLabel(card);
@@ -500,11 +515,6 @@
           themePill.setAttribute("role", "button");
           themePill.tabIndex = 0;
           themePill.setAttribute("aria-label", "Afficher les articles du thème " + themeLabel);
-        }
-
-        if (!seenThemes.has(themeSlug)) {
-          seenThemes.add(themeSlug);
-          articleThemeOptions.push({ slug: themeSlug, label: themeLabel });
         }
       });
 
@@ -601,13 +611,13 @@
       };
 
       const filterArticles = () => {
-        const query = normalizeText(searchInput.value.trim());
+        const queryTokens = getSearchTokens(searchInput.value.trim());
         let visibleCount = 0;
 
         articleCards.forEach((card) => {
-          const searchableText = normalizeText(card.textContent);
+          const searchableTitle = getCardTitleText(card);
           const matchesTheme = activeTheme === "all" || card.dataset.theme === activeTheme;
-          const matchesQuery = query === "" || searchableText.includes(query);
+          const matchesQuery = queryTokens.length === 0 || queryTokens.every((token) => searchableTitle.includes(token));
           const matches = matchesTheme && matchesQuery;
           card.hidden = !matches;
 

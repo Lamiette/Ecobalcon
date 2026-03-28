@@ -201,6 +201,102 @@ function Get-SiteFooterHtml {
 "@
 }
 
+function Normalize-ArticleCategoryToken {
+  param([string]$value)
+
+  if ([string]::IsNullOrWhiteSpace($value)) { return "" }
+
+  $normalized = $value.ToLowerInvariant().Normalize([System.Text.NormalizationForm]::FormD)
+  $builder = New-Object System.Text.StringBuilder
+
+  foreach ($char in $normalized.ToCharArray()) {
+    if ([System.Globalization.CharUnicodeInfo]::GetUnicodeCategory($char) -ne [System.Globalization.UnicodeCategory]::NonSpacingMark) {
+      [void]$builder.Append($char)
+    }
+  }
+
+  return (($builder.ToString().Normalize([System.Text.NormalizationForm]::FormC) -replace '[^a-z0-9]+', ' ') -replace '\s+', ' ').Trim()
+}
+
+function Get-CanonicalArticleCategory {
+  param(
+    [string]$slug,
+    [string]$rawCategory,
+    [string]$title,
+    [string]$description
+  )
+
+  $categoryBySlug = @{
+    "guide-poivrons-sur-son-balcon" = "Fiches Techniques"
+    "guide-tomates-sur-son-balcon" = "Fiches Techniques"
+    "guide-epinards-sur-son-balcon" = "Fiches Techniques"
+    "guide-fraises-sur-son-balcon" = "Fiches Techniques"
+    "guide-radis-sur-son-balcon" = "Fiches Techniques"
+    "guide-laitues-sur-son-balcon" = "Fiches Techniques"
+    "tomates-cerises-balcon" = "Fiches Techniques"
+    "potager-balcon-eau-de-cuisson" = "Plantes & semis"
+    "pommes-de-terre-balcon" = "Plantes & semis"
+    "petits-fruits-en-pot" = "Plantes & semis"
+    "fleurs-comestibles-melliferes-balcon" = "Plantes & semis"
+    "plantes-pour-un-balcon-plein-soleil" = "Plantes & semis"
+    "balcon-a-lombre-plantes-et-culture" = "Plantes & semis"
+    "legumes-faciles-a-cultiver" = "Plantes & semis"
+    "calendrier-du-jardin-de-balcon" = "Plantes & semis"
+    "plantes-aromatiques-sur-balcon" = "Plantes & semis"
+    "balcon-durable-plantes" = "Plantes & semis"
+    "balcon-pour-pollinisateurs" = "Plantes & semis"
+    "jardinage-en-lasagnes-sur-balcon" = "Entretien & astuces"
+    "plantes-qui-survivent-a-la-canicule" = "Entretien & astuces"
+    "reduction-consommation-eau-balcon" = "Entretien & astuces"
+    "insectes-utiles-sur-un-balcon" = "Entretien & astuces"
+    "calendrier-lunaire-balcon" = "Entretien & astuces"
+    "jardiner-sur-un-balcon" = "Entretien & astuces"
+    "paillage-sur-balcon-ecolo" = "Entretien & astuces"
+    "proteger-son-balcon-des-nuisibles-naturellement" = "Entretien & astuces"
+    "utilisation-compost-sur-balcon" = "Entretien & astuces"
+    "jardin-sur-balcon-astuces" = "Entretien & astuces"
+    "erreurs-jardiner-sur-un-balcon" = "Entretien & astuces"
+    "meilleures-plantes-grimpantes-en-ville" = "Aménagement du balcon"
+    "recuperer-eau-de-pluie-balcon" = "Aménagement du balcon"
+    "diy-pots-pour-le-balcon" = "Aménagement du balcon"
+    "le-materiel-essentiel-pour-commencer" = "Aménagement du balcon"
+    "solutions-compostage-sur-balcon" = "Aménagement du balcon"
+  }
+
+  if ($categoryBySlug.ContainsKey($slug)) {
+    return $categoryBySlug[$slug]
+  }
+
+  $normalizedCategory = Normalize-ArticleCategoryToken $rawCategory
+  switch ($normalizedCategory) {
+    "fiches techniques" { return "Fiches Techniques" }
+    "plantes semis" { return "Plantes & semis" }
+    "plantes et semis" { return "Plantes & semis" }
+    "fruits" { return "Plantes & semis" }
+    "fruit" { return "Plantes & semis" }
+    "entretien astuces" { return "Entretien & astuces" }
+    "entretien et astuces" { return "Entretien & astuces" }
+    "amenagement du balcon" { return "Aménagement du balcon" }
+    "amenagement balcon" { return "Aménagement du balcon" }
+  }
+
+  $haystack = Normalize-ArticleCategoryToken "$slug $title $description"
+
+  if ($haystack -match 'grimp|intimite|treillis|diy|materiel|compostage|eau pluie|gouttiere|amenag') {
+    return "Aménagement du balcon"
+  }
+
+  if ($haystack -match 'pollinis|mellifer|abeill|papillon|fruit|semis|plante|aromatique|legume|cultiver') {
+    return "Plantes & semis"
+  }
+
+  if ($haystack -match 'arros|paillage|nuisible|compost|astuce|canicule|lunaire|entretien|erreur|eau') {
+    return "Entretien & astuces"
+  }
+
+  return "Entretien & astuces"
+}
+
 $faqSchemaMap = @{
   "guide-tomates-sur-son-balcon" = @(
     [ordered]@{
@@ -691,11 +787,20 @@ function Get-ArticleSources {
     $heroCaption = Get-HeroCaption $content
     $imageRemoteUrl = [string]$schema.image
     $imageFileName = Get-ImageFileName -url $imageRemoteUrl -slug $slug
-    $category = if ($schema.articleSection -and $schema.articleSection.Count -gt 0) {
-      [System.Net.WebUtility]::HtmlDecode($schema.articleSection[0])
+    $rawCategory = if ($schema.articleSection) {
+      if ($schema.articleSection -is [System.Array]) {
+        [string]$schema.articleSection[0]
+      } else {
+        [string]$schema.articleSection
+      }
     } else {
       "Article"
     }
+    $category = Get-CanonicalArticleCategory `
+      -slug $slug `
+      -rawCategory ([System.Net.WebUtility]::HtmlDecode($rawCategory)) `
+      -title ([System.Net.WebUtility]::HtmlDecode($schema.name)) `
+      -description ([System.Net.WebUtility]::HtmlDecode($schema.description))
 
     $article = [PSCustomObject]@{
         SourcePath = $file.FullName
@@ -1287,7 +1392,7 @@ function Build-ArticleCardHtml {
     [string]$extraClass = ""
   )
 
-  $category = if ($article.Category) { $article.Category } else { "Article" }
+  $category = Get-CanonicalArticleCategory -slug $article.Slug -rawCategory $article.Category -title $article.Title -description $article.Description
   $summary = Get-CardExcerpt $article.Description
   $href = "$hrefPrefix$($article.OutputName)"
   $imageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix $imagePrefix
@@ -2036,9 +2141,19 @@ $(Get-SiteFooterHtml)
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/^-+|-+$/g, "");
 
+      const getSearchTokens = (value) =>
+        normalizeText(value)
+          .split(/\s+/)
+          .filter(Boolean);
+
       const getCardThemeLabel = (card) => {
         const themePill = card.querySelector(".pill");
         return themePill ? themePill.textContent.trim() : "";
+      };
+
+      const getCardTitleText = (card) => {
+        const titleLink = card.querySelector("h3 a");
+        return titleLink ? normalizeText(titleLink.textContent) : "";
       };
 
       const resetArticlePreview = () => {
@@ -2046,8 +2161,13 @@ $(Get-SiteFooterHtml)
         articleListFullyRevealed = false;
       };
 
-      const articleThemeOptions = [{ slug: "all", label: "Tous" }];
-      const seenThemes = new Set();
+      const articleThemeOptions = [
+        { slug: "all", label: "Tous" },
+        { slug: "fiches-techniques", label: "Fiches Techniques" },
+        { slug: "plantes-semis", label: "Plantes & semis" },
+        { slug: "entretien-astuces", label: "Entretien & astuces" },
+        { slug: "amenagement-du-balcon", label: "Aménagement du balcon" }
+      ];
 
       articleCards.forEach((card) => {
         const themeLabel = getCardThemeLabel(card);
@@ -2066,11 +2186,6 @@ $(Get-SiteFooterHtml)
           themePill.setAttribute("role", "button");
           themePill.tabIndex = 0;
           themePill.setAttribute("aria-label", "Afficher les articles du thème " + themeLabel);
-        }
-
-        if (!seenThemes.has(themeSlug)) {
-          seenThemes.add(themeSlug);
-          articleThemeOptions.push({ slug: themeSlug, label: themeLabel });
         }
       });
 
@@ -2167,13 +2282,13 @@ $(Get-SiteFooterHtml)
       };
 
       const filterArticles = () => {
-        const query = normalizeText(searchInput.value.trim());
+        const queryTokens = getSearchTokens(searchInput.value.trim());
         let visibleCount = 0;
 
         articleCards.forEach((card) => {
-          const searchableText = normalizeText(card.textContent);
+          const searchableTitle = getCardTitleText(card);
           const matchesTheme = activeTheme === "all" || card.dataset.theme === activeTheme;
-          const matchesQuery = query === "" || searchableText.includes(query);
+          const matchesQuery = queryTokens.length === 0 || queryTokens.every((token) => searchableTitle.includes(token));
           const matches = matchesTheme && matchesQuery;
           card.hidden = !matches;
 
