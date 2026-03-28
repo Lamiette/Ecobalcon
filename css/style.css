@@ -1441,6 +1441,38 @@ a {
   color: rgba(255, 255, 255, 0.92);
 }
 
+.footer-legal a {
+  color: inherit;
+  text-decoration-color: rgba(255, 255, 255, 0.55);
+  text-underline-offset: 0.18rem;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  text-decoration-color: rgba(255, 255, 255, 0.9);
+  outline: none;
+}
+
+.footer-legal-sep {
+  opacity: 0.72;
+}
+
+.utility-panel {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.utility-panel h2 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.utility-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .muted-link {
   color: var(--brand-dark);
 }

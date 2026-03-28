@@ -189,6 +189,8 @@ function Get-RootImageDimensionAttributes {
 }
 
 function Get-SiteFooterHtml {
+  param([string]$pagePrefix = "")
+
   return @"
     <footer class="footer">
       <div class="footer-inner">
@@ -1367,7 +1369,7 @@ $relatedSection
       </div>
     </main>
 
-$(Get-SiteFooterHtml)
+$(Get-SiteFooterHtml -pagePrefix "../")
   </div>
 </body>
 </html>
@@ -1758,7 +1760,7 @@ $themeHtml
       </section>
     </main>
 
-$(Get-SiteFooterHtml)
+$(Get-SiteFooterHtml -pagePrefix "")
   </div>
   <script>
     (() => {
@@ -2075,7 +2077,7 @@ $cardsHtml
       </div>
     </main>
 
-$(Get-SiteFooterHtml)
+$(Get-SiteFooterHtml -pagePrefix "../")
   </div>
   <script>
     (() => {
@@ -2463,6 +2465,252 @@ function Get-PreferredArticle {
   return $allArticles | Select-Object -First 1
 }
 
+function Build-PrivacyHtml {
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $canonicalUrl = "$siteUrl/politique-confidentialite.html"
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Politique de confidentialit&eacute; | EcoBalcon</title>
+  <meta name="description" content="Informations sur la mesure d'audience, les cookies et les donn&eacute;es de navigation utilis&eacute;s sur EcoBalcon.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Politique de confidentialit&eacute; | EcoBalcon">
+  <meta property="og:description" content="Informations sur la mesure d'audience, les cookies et les donn&eacute;es de navigation utilis&eacute;s sur EcoBalcon.">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Politique de confidentialit&eacute; | EcoBalcon">
+  <meta name="twitter:description" content="Informations sur la mesure d'audience, les cookies et les donn&eacute;es de navigation utilis&eacute;s sur EcoBalcon.">
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="legal-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <img class="brand-logo" src="images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="articles/index.html">Articles</a>
+            <a href="galerie.html">Galerie</a>
+          </nav>
+          <div class="social-nav" aria-label="R&eacute;seaux sociaux">
+            <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-layout">
+      <div class="article-shell">
+        <div>
+          <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+            <ol class="breadcrumb">
+              <li><a href="index.html">Accueil</a></li>
+              <li aria-current="page">Politique de confidentialit&eacute;</li>
+            </ol>
+          </nav>
+        </div>
+
+        <section class="page-hero">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Confidentialit&eacute;</span>
+            <h1 class="page-title">Politique de confidentialit&eacute;</h1>
+            <p class="page-intro">
+              Cette page r&eacute;sume les informations utiles sur la mesure d'audience, les cookies et les donn&eacute;es techniques
+              susceptibles d'&ecirc;tre trait&eacute;es lorsque tu consultes EcoBalcon.
+            </p>
+          </div>
+
+          <aside class="checklist utility-panel">
+            <h2>En bref</h2>
+            <ul class="article-list">
+              <li>EcoBalcon est un site &eacute;ditorial autour du jardinage sur balcon.</li>
+              <li>Le site utilise Google Tag Manager et peut activer Google Analytics 4 pour la mesure d'audience.</li>
+              <li>Il n'y a pas d'espace membre ni de compte utilisateur &agrave; cr&eacute;er sur le site.</li>
+              <li>Les liens vers des services tiers comme Instagram ou X suivent leurs propres r&egrave;gles.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <article class="article-prose">
+          <h2>Donn&eacute;es de navigation</h2>
+          <p>
+            Lorsque tu visites EcoBalcon, des informations techniques usuelles peuvent &ecirc;tre trait&eacute;es&nbsp;:
+            pages consult&eacute;es, date et heure de visite, appareil, navigateur, langue, provenance de la visite ou
+            donn&eacute;es de performance. Elles servent surtout &agrave; comprendre l'usage du site et &agrave; l'am&eacute;liorer.
+          </p>
+
+          <h2>Mesure d'audience</h2>
+          <p>
+            EcoBalcon utilise Google Tag Manager (<code>GTM-MFRVPVFQ</code>) pour piloter ses balises. Selon la configuration
+            active du conteneur, Google Analytics 4 (<code>G-L952X34SHR</code>) peut &ecirc;tre utilis&eacute; pour mesurer l'audience,
+            observer les pages vues et mieux comprendre les parcours de navigation.
+          </p>
+
+          <h2>Cookies et technologies proches</h2>
+          <p>
+            Certaines balises ou outils de mesure peuvent d&eacute;poser des cookies ou utiliser des technologies similaires.
+            Leur fonctionnement d&eacute;pend des outils activ&eacute;s, des r&eacute;glages du navigateur et, le cas &eacute;ch&eacute;ant,
+            des param&egrave;tres de consentement mis en place sur le site.
+          </p>
+
+          <h2>Liens et services tiers</h2>
+          <p>
+            Le site propose des liens vers des plateformes externes, notamment Instagram et X. Lorsque tu quittes EcoBalcon
+            pour consulter ces services, leurs propres politiques de confidentialit&eacute; s'appliquent.
+          </p>
+
+          <h2>&Eacute;volution de cette page</h2>
+          <p>
+            Cette page pourra &ecirc;tre mise &agrave; jour si le site ajoute de nouveaux outils, de nouveaux formulaires
+            ou d'autres services tiers. La version affich&eacute;e ici est celle qui fait foi sur le site publi&eacute;.
+          </p>
+        </article>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "")
+  </div>
+</body>
+</html>
+"@
+}
+
+function Build-404Html {
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $canonicalUrl = "$siteUrl/404.html"
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable | EcoBalcon</title>
+  <meta name="description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page introuvable | EcoBalcon">
+  <meta property="og:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Page introuvable | EcoBalcon">
+  <meta name="twitter:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="not-found-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <img class="brand-logo" src="images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="articles/index.html">Articles</a>
+            <a href="galerie.html">Galerie</a>
+          </nav>
+          <div class="social-nav" aria-label="R&eacute;seaux sociaux">
+            <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-inner">
+        <section class="page-hero">
+          <div class="page-hero-copy">
+            <span class="eyebrow">404</span>
+            <h1 class="page-title">Page introuvable</h1>
+            <p class="page-intro">
+              L'adresse demand&eacute;e ne correspond &agrave; aucune page active du site. Tu peux revenir &agrave; l'accueil
+              ou repartir depuis les articles pour retrouver le bon contenu.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="index.html">Retour &agrave; l'accueil</a>
+              <a class="button-secondary" href="articles/index.html">Voir les articles</a>
+            </div>
+          </div>
+
+          <aside class="checklist utility-panel">
+            <h2>Tu peux essayer</h2>
+            <ul class="article-list">
+              <li>Revenir &agrave; l'accueil pour repartir des contenus principaux.</li>
+              <li>Parcourir les guides et fiches techniques depuis la liste des articles.</li>
+              <li>Ouvrir la galerie pour retrouver des inspirations balcon.</li>
+            </ul>
+            <a class="text-link" href="galerie.html">Voir la galerie</a>
+          </aside>
+        </section>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "")
+  </div>
+</body>
+</html>
+"@
+}
+
 function Build-SitemapXml {
   param([object[]]$allArticles)
 
@@ -2536,6 +2784,8 @@ foreach ($article in $articles) {
 }
 
 Set-Content -Path (Join-Path $articlesDir "index.html") -Value (Build-ArticlesIndexHtml $articles) -Encoding UTF8
+Set-Content -Path (Join-Path $root "politique-confidentialite.html") -Value (Build-PrivacyHtml) -Encoding UTF8
+Set-Content -Path (Join-Path $root "404.html") -Value (Build-404Html) -Encoding UTF8
 
 $homePath = Join-Path $root "index.html"
 $homeStatus = "Homepage preserved as-is (use -RebuildHome to regenerate it)"
@@ -2558,7 +2808,7 @@ if ($RebuildHome -or -not (Test-Path $homePath)) {
 Set-Content -Path (Join-Path $root "sitemap.xml") -Value (Build-SitemapXml $articles) -Encoding UTF8
 Set-Content -Path (Join-Path $root "robots.txt") -Value (Build-RobotsTxt) -Encoding UTF8
 
-Write-Output "Updated articles index, sitemap.xml and robots.txt"
+Write-Output "Updated articles index, 404.html, politique-confidentialite.html, sitemap.xml and robots.txt"
 if ($homeBackupStatus) {
   Write-Output $homeBackupStatus
 }
