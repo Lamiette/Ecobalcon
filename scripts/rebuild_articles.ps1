@@ -789,6 +789,7 @@ function Apply-ArticleOverride {
 
   $supportedKeys = @(
     "Title",
+    "SeoTitle",
     "Description",
     "Intro",
     "ImageAlt",
@@ -862,6 +863,7 @@ function Get-ArticleSources {
         Slug = $slug
         OutputName = "$slug.html"
         Title = [System.Net.WebUtility]::HtmlDecode($schema.name)
+        SeoTitle = ""
         Description = [System.Net.WebUtility]::HtmlDecode($schema.description)
         ImageRemoteUrl = $imageRemoteUrl
         ImageFileName = $imageFileName
@@ -1200,6 +1202,7 @@ function Build-ArticleHtml {
   $dateText = Convert-IsoDateToFrench $article.DatePublished
   $timeText = Convert-TimeRequired $article.TimeRequired
   $canonicalUrl = "$siteUrl/articles/$($article.OutputName)"
+  $seoTitle = if ($article.SeoTitle) { $article.SeoTitle } else { $article.Title }
   $heroImageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix "../images/articles/"
   $heroImageDimensions = Get-ArticleImageDimensionAttributes $article.ImageFileName
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
@@ -1286,7 +1289,7 @@ $relatedCardsHtml
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$(HtmlEscape $article.Title) | EcoBalcon</title>
+  <title>$(HtmlEscape $seoTitle) | EcoBalcon</title>
   <meta name="description" content="$(HtmlEscape $article.Description)">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="$(HtmlEscape $article.AuthorName)">
@@ -1297,7 +1300,7 @@ $relatedCardsHtml
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="$(HtmlEscape $article.Title) | EcoBalcon">
+  <meta property="og:title" content="$(HtmlEscape $seoTitle) | EcoBalcon">
   <meta property="og:description" content="$(HtmlEscape $article.Description)">
   <meta property="og:url" content="$canonicalUrl">
   <meta property="og:image" content="$($article.ImageCanonicalUrl)">
@@ -1305,7 +1308,7 @@ $relatedCardsHtml
   <meta property="article:published_time" content="$($article.DatePublished)">
   <meta property="article:modified_time" content="$($article.DateModified)">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="$(HtmlEscape $article.Title) | EcoBalcon">
+  <meta name="twitter:title" content="$(HtmlEscape $seoTitle) | EcoBalcon">
   <meta name="twitter:description" content="$(HtmlEscape $article.Description)">
   <meta name="twitter:image" content="$($article.ImageCanonicalUrl)">
   <meta name="twitter:image:alt" content="$(HtmlEscape $heroCaption)">

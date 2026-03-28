@@ -295,6 +295,7 @@
       }
     }
     "calendrier-du-jardin-de-balcon" = [ordered]@{
+      SeoTitle = "Calendrier du jardin de balcon"
       Description = "Calendrier du jardin de balcon : semis, plantations, tailles, protection et récoltes mois par mois pour suivre le bon rythme sans se disperser."
       Intro = "Sur balcon, on gagne beaucoup à jardiner au bon moment plutôt qu’à tout faire d’un coup. Ce calendrier t’aide à garder un rythme simple, mois par mois, pour mieux semer, planter, entretenir et récolter."
       TimeRequired = "PT5M"
@@ -983,6 +984,24 @@
           [ordered]@{ Name = "Maintenir une bonne aération"; Text = "Retire les feuilles abîmées, surveille les ravageurs et garde un balcon propre et respirant." }
         )
       }
+    }
+    "balcon-durable-plantes" = [ordered]@{
+      SeoTitle = "Balcon durable : plantes résistantes"
+    }
+    "balcon-pour-pollinisateurs" = [ordered]@{
+      SeoTitle = "Balcon pour pollinisateurs : guide"
+    }
+    "calendrier-lunaire-balcon" = [ordered]@{
+      SeoTitle = "Calendrier lunaire balcon : guide"
+    }
+    "meilleures-plantes-grimpantes-en-ville" = [ordered]@{
+      SeoTitle = "7 plantes grimpantes pour l’intimité"
+    }
+    "proteger-son-balcon-des-nuisibles-naturellement" = [ordered]@{
+      SeoTitle = "Nuisibles sur balcon : solutions naturelles"
+    }
+    "recuperer-eau-de-pluie-balcon" = [ordered]@{
+      SeoTitle = "Eau de pluie sur balcon : comment faire"
     }
   }
 }
