@@ -1021,6 +1021,93 @@ function Fix-InlineAnchorSpacing {
   return $fixed
 }
 
+function Normalize-PlainTextForMatch {
+  param([string]$text)
+
+  if ([string]::IsNullOrWhiteSpace($text)) { return "" }
+
+  $normalized = [System.Net.WebUtility]::HtmlDecode($text).Trim().ToLowerInvariant()
+  $normalized = $normalized.Replace("’", "'").Replace("œ", "oe")
+  $normalized = [regex]::Replace($normalized, '\s+', ' ')
+
+  return $normalized
+}
+
+function Convert-KeyFactsSection {
+  param([string]$html)
+
+  if ([string]::IsNullOrWhiteSpace($html)) { return "" }
+
+  return [regex]::Replace($html, '(?is)(?<headingBlock><h2\b[^>]*>(?<heading>.*?)</h2>)\s*<p>(?<content>.*?)</p>', {
+      param($m)
+
+      $headingText = Normalize-PlainTextForMatch ([regex]::Replace($m.Groups["heading"].Value, '(?is)<[^>]+>', ''))
+      if ($headingText -ne "ce qu'il faut savoir en un coup d'oeil") {
+        return $m.Value
+      }
+
+      $lines = @(
+        [regex]::Split($m.Groups["content"].Value, '(?i)<br\s*/?>') |
+          ForEach-Object { (Fix-InlineAnchorSpacing $_).Trim() } |
+          Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+      )
+
+      if ($lines.Count -lt 3) {
+        return $m.Value
+      }
+
+      $items = @()
+      $labelCount = 0
+
+      foreach ($line in $lines) {
+        $lineMatch = [regex]::Match($line, '^(?<label>[^:]{2,48})\s*:\s*(?<value>.+)$')
+
+        if ($lineMatch.Success) {
+          $label = [regex]::Replace($lineMatch.Groups["label"].Value, '(?is)<[^>]+>', '')
+          $label = [System.Net.WebUtility]::HtmlDecode($label).Trim()
+          $value = (Fix-InlineAnchorSpacing $lineMatch.Groups["value"].Value).Trim()
+
+          if ($label -and $value) {
+            $labelCount++
+            $items += [PSCustomObject]@{
+              IsFull = $false
+              Label = $label
+              Value = $value
+            }
+            continue
+          }
+        }
+
+        $items += [PSCustomObject]@{
+          IsFull = $true
+          Label = ""
+          Value = $line
+        }
+      }
+
+      if ($labelCount -lt 3) {
+        return $m.Value
+      }
+
+      $builder = New-Object System.Text.StringBuilder
+      [void]$builder.AppendLine('            <div class="article-key-facts" role="list">')
+
+      foreach ($item in $items) {
+        if ($item.IsFull) {
+          [void]$builder.AppendLine("              <div class=`"article-key-facts-item article-key-facts-item-full`" role=`"listitem`"><span>$($item.Value)</span></div>")
+          continue
+        }
+
+        $safeLabel = HtmlEscape $item.Label
+        [void]$builder.AppendLine("              <div class=`"article-key-facts-item`" role=`"listitem`"><strong>${safeLabel}&nbsp;:</strong><span>$($item.Value)</span></div>")
+      }
+
+      [void]$builder.Append('            </div>')
+
+      return "$($m.Groups["headingBlock"].Value)`n$($builder.ToString())"
+    })
+}
+
 function Normalize-BodyHtml {
   param([string]$html)
 
@@ -1033,7 +1120,7 @@ function Normalize-BodyHtml {
       return "$($m.Groups[1].Value)$quote$url$quote"
     })
 
-  return Fix-InlineAnchorSpacing $normalized
+  return Convert-KeyFactsSection (Fix-InlineAnchorSpacing $normalized)
 }
 
 function Sanitize-InlineHtml {
@@ -1147,7 +1234,8 @@ function Build-ArticleBody {
     [void]$builder.AppendLine("            </ul>")
   }
 
-  return ($builder.ToString().TrimEnd() -replace '(?s)<a href="(?<url>[^"]+)"(?<attrs>[^>]*)>(?<text>[^<]+)</a>\s*<a href="\k<url>"[^>]*>\k<url></a>', '<a href="${url}"${attrs}>${text}</a> ')
+  $bodyHtml = $builder.ToString().TrimEnd() -replace '(?s)<a href="(?<url>[^"]+)"(?<attrs>[^>]*)>(?<text>[^<]+)</a>\s*<a href="\k<url>"[^>]*>\k<url></a>', '<a href="${url}"${attrs}>${text}</a> '
+  return Convert-KeyFactsSection $bodyHtml
 }
 
 function Ensure-AffiliateDisclosure {
