@@ -1010,6 +1010,32 @@ function New-AnchorHtml {
   return "<a href=`"$url`">$safeText</a>"
 }
 
+function Fix-InlineAnchorSpacing {
+  param([string]$html)
+
+  if ([string]::IsNullOrWhiteSpace($html)) { return "" }
+
+  $fixed = [regex]::Replace($html, '(?<=[\p{L}\p{N}])<a\b', ' <a')
+  $fixed = [regex]::Replace($fixed, '</a>(?=[\p{L}\p{N}])', '</a> ')
+
+  return $fixed
+}
+
+function Normalize-BodyHtml {
+  param([string]$html)
+
+  if ([string]::IsNullOrWhiteSpace($html)) { return "" }
+
+  $normalized = [regex]::Replace($html, '(?is)(\bhref=)(["'']?)(?<url>[^"''\s>]+)\2', {
+      param($m)
+      $quote = if ($m.Groups[2].Value) { $m.Groups[2].Value } else { '"' }
+      $url = Resolve-Link ([System.Net.WebUtility]::HtmlDecode($m.Groups["url"].Value))
+      return "$($m.Groups[1].Value)$quote$url$quote"
+    })
+
+  return Fix-InlineAnchorSpacing $normalized
+}
+
 function Sanitize-InlineHtml {
   param([string]$html)
 
@@ -1040,7 +1066,7 @@ function Sanitize-InlineHtml {
     $working = $working.Replace($key, $anchorMap[$key])
   }
 
-  return $working.Trim()
+  return (Fix-InlineAnchorSpacing $working).Trim()
 }
 
 function Get-BodyBlocks {
@@ -1304,7 +1330,7 @@ function Build-ArticleHtml {
 
   $content = Get-Content -Raw -Encoding UTF8 $article.SourcePath
   $heroCaption = if ($article.ImageAlt) { $article.ImageAlt } else { Get-HeroCaption $content }
-  $bodyHtml = if ($article.BodyHtml) { $article.BodyHtml.TrimEnd() } else { Build-ArticleBody $content }
+  $bodyHtml = if ($article.BodyHtml) { Normalize-BodyHtml ($article.BodyHtml.TrimEnd()) } else { Build-ArticleBody $content }
   $bodyHtml = Ensure-AffiliateDisclosure $bodyHtml
   $dateText = Convert-IsoDateToFrench $article.DatePublished
   $timeText = Convert-TimeRequired $article.TimeRequired
