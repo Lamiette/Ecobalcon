@@ -1,11 +1,113 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "que-planter-en-avril-sur-un-balcon" = [ordered]@{
+      Title = "Que planter en avril sur un balcon ? Les cultures faciles pour bien démarrer"
+      SeoTitle = "Que planter en avril sur un balcon ?"
+      Description = "Que planter en avril sur un balcon : radis, laitues, fraisiers, aromatiques, pommes de terre et premiers plants d’été. Le guide simple pour bien démarrer."
+      Intro = "Avril est souvent le meilleur moment pour lancer un balcon potager, à condition de ne pas tout sortir trop vite. C’est le bon mois pour semer les cultures rapides, installer quelques valeurs sûres et préparer les plantes d’été sans se laisser piéger par les nuits encore fraîches."
+      TimeRequired = "PT5M"
+      DatePublished = "2026-04-04T09:00:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
+      Category = "Plantes & semis"
+      ImageFileName = "que-planter-en-avril-sur-un-balcon.jpg"
+      ImageAlt = "Potager de balcon au printemps avec laitues, pois et aromatiques en pot vus du dessus"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Période : tout le mois d’avril, avec vigilance sur les nuits froides<br>Cultures les plus simples : radis, laitues, épinards, fraisiers, pommes de terre en sac, aromatiques fraîches, fleurs utiles<br>Ce que tu peux seulement préparer : tomates, poivrons et basilic, selon la douceur réelle de ton balcon<br>Exposition : le choix des cultures dépend autant de la lumière que du vent et de l’abri nocturne<br>Risque principal : sortir trop tôt les plantes d’été ou semer tout d’un coup<br>Bon réflexe : lancer peu de choses, puis relancer de petits semis une à deux semaines plus tard<br>Repère utile : garde ton <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> sous la main pour ajuster selon la météo locale</p>
+            <h2>Pourquoi avril est un mois charnière sur un balcon</h2>
+            <p>Sur un balcon, avril donne souvent envie de tout lancer d’un coup. La lumière revient, les jardineries se remplissent et les premiers plants d’été commencent à apparaître partout. Pourtant, ce n’est pas encore un mois d’été : selon la région, l’exposition et la prise au vent, les nuits peuvent rester franchement fraîches.</p>
+            <p>Le bon état d’esprit, ce n’est donc ni d’attendre passivement ni de transformer le balcon en jungle trop tôt. Avril sert surtout à installer les cultures de printemps les plus simples, à mettre en route les premiers bacs productifs et à préparer calmement les cultures plus frileuses qui prendront le relais ensuite.</p>
+            <h2>Les cultures les plus simples à lancer tout de suite</h2>
+            <h3>Les radis</h3>
+            <p>Le radis reste l’une des meilleures portes d’entrée du balcon potager. Il se sème directement, pousse vite et montre rapidement si le terreau et l’arrosage sont bien gérés. En avril, il profite encore de températures assez douces pour rester croquant et ne pas monter trop vite en graines.</p>
+            <p>Si tu veux aller plus loin, notre <a href="guide-radis-sur-son-balcon.html">guide complet pour cultiver des radis sur son balcon</a> détaille le contenant, le semis et le rythme d’arrosage.</p>
+            <h3>Les laitues et les jeunes salades</h3>
+            <p>Avril est un très bon moment pour lancer ou relancer des laitues en jardinière. Elles aiment les températures modérées et demandent peu de profondeur. C’est une culture idéale si tu veux voir vite le balcon se remplir sans partir sur des plantes trop exigeantes.</p>
+            <p>Tu peux semer par petites touches ou installer quelques jeunes plants. Pour garder des récoltes régulières, pense surtout à échelonner. Notre <a href="guide-laitues-sur-son-balcon.html">guide sur les laitues de balcon</a> t’aide à garder des salades tendres plus longtemps.</p>
+            <h3>Les épinards</h3>
+            <p>Les épinards apprécient eux aussi le printemps. Sur un balcon qui ne chauffe pas trop vite, ils poussent bien en avril et permettent de lancer une culture nourricière sans entrer tout de suite dans la logique des grands pots très gourmands.</p>
+            <p>Ils conviennent particulièrement aux balcons lumineux mais pas brûlants. Si c’est ton cas, notre <a href="guide-epinards-sur-son-balcon.html">guide pour cultiver des épinards sur son balcon</a> te donnera les bons repères.</p>
+            <h3>Les fraisiers</h3>
+            <p>Le mois d’avril est excellent pour installer des fraisiers ou compléter une jardinière déjà en place. La reprise est souvent douce, les plants s’enracinent bien et la floraison arrive dans de bonnes conditions si l’humidité reste régulière.</p>
+            <p>Pour un balcon gourmand sans trop d’encombrement, c’est l’une des valeurs sûres du printemps. Tu peux compléter avec notre <a href="guide-fraises-sur-son-balcon.html">guide complet sur les fraises en pot</a>.</p>
+            <h3>Les pommes de terre en sac</h3>
+            <p>Si tu as un peu plus de volume disponible, avril reste un bon moment pour lancer des pommes de terre précoces dans un sac ou un grand bac. C’est une culture étonnamment accessible sur balcon, à condition de partir avec un contenant assez profond et une variété adaptée.</p>
+            <p>Elle ne demande pas une grande technicité, mais un peu de méthode. Notre article <a href="pommes-de-terre-balcon.html">Pommes de terre balcon : cultiver en sac ou en bac facilement</a> te montre comment la démarrer proprement.</p>
+            <h3>Les aromatiques fraîches</h3>
+            <p>Le persil, la ciboulette, la coriandre ou la menthe trouvent très bien leur place en avril, surtout si tu veux un balcon utile tout de suite en cuisine. Elles donnent vite un sentiment de jardin vivant sans demander les mêmes conditions de chaleur que des plantes d’été comme le basilic.</p>
+            <p>Pour composer un ensemble cohérent selon ton exposition, appuie-toi sur notre guide des <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques à cultiver sur un balcon</a>.</p>
+            <h3>Les fleurs utiles et gourmandes</h3>
+            <p>Avril est aussi le bon moment pour installer quelques fleurs qui rendent le balcon plus vivant sans être purement décoratives. Les capucines, soucis ou autres fleurs comestibles et mellifères prennent bien le relais entre l’utile, le beau et le gourmand.</p>
+            <p>Elles sont intéressantes pour attirer davantage d’insectes utiles et accompagner les cultures comestibles. Si tu veux des idées concrètes, regarde aussi notre sélection de <a href="fleurs-comestibles-melliferes-balcon.html">fleurs comestibles et mellifères pour balcon</a>.</p>
+            <h2>Les cultures d’été à préparer sans se précipiter</h2>
+            <h3>Tomates et tomates cerises</h3>
+            <p>En avril, la vraie question n’est pas seulement “peut-on planter des tomates ?”, mais “dans quelles conditions exactes ?”. Sur un balcon très abrité, dans une région douce, tu peux parfois sortir progressivement certains plants robustes en fin de mois. Mais dans beaucoup de situations, il vaut mieux encore patienter ou acclimater très progressivement.</p>
+            <p>Si tu vises cette culture, prépare plutôt les grands contenants, les tuteurs et l’emplacement. Tu éviteras ainsi d’agir dans la précipitation au premier week-end chaud. Tu peux ensuite basculer sur nos guides dédiés aux <a href="tomates-cerises-balcon.html">tomates cerises sur balcon</a> ou aux <a href="guide-tomates-sur-son-balcon.html">tomates sur balcon</a>.</p>
+            <h3>Les poivrons</h3>
+            <p>Les poivrons sont encore plus sensibles aux nuits fraîches. Avril sert surtout à les garder au chaud, à les endurcir progressivement si besoin, puis à attendre une vraie stabilité thermique avant plantation dehors. Ce n’est pas du temps perdu : cela évite beaucoup de stagnations ensuite.</p>
+            <p>Quand le bon créneau arrive, notre <a href="guide-poivrons-sur-son-balcon.html">guide complet pour cultiver des poivrons sur son balcon</a> prend le relais.</p>
+            <h3>Le basilic</h3>
+            <p>Le basilic donne souvent envie d’être sorti trop tôt, alors que c’est justement l’une des aromatiques les plus sensibles au froid. En avril, tu peux le semer au chaud, rempoter un petit plant ou le faire patienter près d’une fenêtre très lumineuse, mais évite de l’installer dehors tant que les nuits restent hésitantes.</p>
+            <p>Si tu veux éviter les erreurs classiques, garde sous la main notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a>.</p>
+            <h2>Adapter ses choix selon l’exposition du balcon</h2>
+            <p>Le meilleur article de saison ne remplace jamais l’observation du lieu. En avril, un balcon sud abrité ne réagit pas comme un balcon nord-est exposé au vent. C’est pourquoi il vaut mieux choisir par groupes :</p>
+            <ul>
+              <li>balcon bien ensoleillé : radis de printemps, fraisiers, pommes de terre en sac, aromatiques, puis préparation des tomates et poivrons ;</li>
+              <li>balcon à lumière douce : laitues, épinards, radis, persil, ciboulette, menthe ;</li>
+              <li>balcon encore froid ou très venteux : commence avec les cultures les plus indulgentes et reporte les plantations d’été.</li>
+            </ul>
+            <p>Si ton espace chauffe très vite, nos repères sur les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a> peuvent t’aider. Si, au contraire, la lumière directe manque, pars plutôt de notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a>.</p>
+            <h2>Un plan d’action simple pour tout le mois d’avril</h2>
+            <p>Pour éviter de t’éparpiller, garde un cap très concret :</p>
+            <ul>
+              <li>remplis ou recharge quelques bacs avec un terreau propre et vivant ;</li>
+              <li>sème une première série de radis, laitues ou épinards ;</li>
+              <li>installe tes fraisiers, tes aromatiques fraîches et, si tu veux, un sac de pommes de terre ;</li>
+              <li>prépare les grands pots des cultures d’été, sans forcément y mettre déjà les plants ;</li>
+              <li>relance un petit semis dix à quinze jours plus tard pour étaler la suite.</li>
+            </ul>
+            <p>Ce fonctionnement en deux temps change beaucoup de choses : le balcon démarre vite, mais sans surcharge inutile.</p>
+            <h2>Les erreurs les plus fréquentes en avril</h2>
+            <p>La première erreur, c’est de confondre journée douce et saison installée. Un après-midi lumineux ne suffit pas à sécuriser une tomate, un poivron ou un basilic dehors.</p>
+            <p>La deuxième, c’est de tout semer le même jour. Sur balcon, mieux vaut étaler un peu que se retrouver avec trop de jeunes plants à gérer ensemble.</p>
+            <p>La troisième, c’est de sous-estimer le vent de printemps et la vitesse à laquelle un petit pot peut sécher ou se refroidir. En cas de doute, simplifie toujours. Et si tu veux repérer les pièges classiques plus largement, relis aussi notre article sur les <a href="erreurs-jardiner-sur-un-balcon.html">erreurs à éviter quand on jardine sur un balcon</a>.</p>
+            <h2>En résumé</h2>
+            <p>En avril, le meilleur choix consiste rarement à tout planter : il consiste à lancer les bonnes cultures au bon rythme. Commence par les radis, laitues, épinards, fraisiers, aromatiques et quelques fleurs utiles, puis prépare calmement les cultures d’été qui viendront après.</p>
+            <p>Si tu veux avancer sans te disperser, combine ce guide avec le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> et les fiches de culture déjà disponibles sur EcoBalcon. Tu garderas ainsi un balcon vivant, lisible et beaucoup plus facile à suivre au quotidien.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Peut-on déjà planter tomates et basilic dehors en avril sur un balcon ?"
+          Answer = "Parfois en fin de mois sur un balcon très abrité et dans une région douce, mais ce n’est pas la situation la plus simple. En règle générale, mieux vaut attendre des nuits durablement plus douces ou sortir les plants très progressivement."
+        },
+        [ordered]@{
+          Question = "Quelles cultures donnent vite quand on commence en avril ?"
+          Answer = "Les radis, les laitues et certaines jeunes feuilles font partie des cultures les plus rapides à lancer au printemps sur balcon. Elles donnent vite des repères et des récoltes sans demander de grands contenants."
+        },
+        [ordered]@{
+          Question = "Que planter en avril sur un balcon peu ensoleillé ?"
+          Answer = "Mieux vaut viser des cultures de lumière douce comme les laitues, les épinards, les radis, le persil, la ciboulette ou la menthe. Les légumes-fruits d’été demandent généralement plus de soleil et plus de chaleur."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment choisir quoi planter en avril sur son balcon"
+        Description = "Les étapes essentielles pour lancer les bonnes cultures de printemps, éviter les plantes trop frileuses et organiser un balcon productif dès avril."
+        Steps = @(
+          [ordered]@{ Name = "Observer l’exposition et les nuits"; Text = "Repère la lumière réelle du balcon, sa prise au vent et la fraîcheur nocturne avant de choisir les cultures." },
+          [ordered]@{ Name = "Lancer les cultures rapides"; Text = "Commence par semer radis, laitues ou épinards pour mettre vite le balcon en route sans te compliquer." },
+          [ordered]@{ Name = "Installer les valeurs sûres du printemps"; Text = "Ajoute fraisiers, aromatiques fraîches, fleurs utiles ou pommes de terre selon la place disponible." },
+          [ordered]@{ Name = "Préparer les grands pots d’été"; Text = "Mets en place les contenants, tuteurs et emplacements des tomates, poivrons ou basilic sans les sortir trop tôt." },
+          [ordered]@{ Name = "Échelonner les semis"; Text = "Relance une petite série dix à quinze jours plus tard pour étaler les récoltes et garder un balcon plus simple à suivre." },
+          [ordered]@{ Name = "Protéger et ajuster"; Text = "Surveille le vent, les nuits fraîches et l’humidité des pots pour adapter le rythme au lieu réel, pas au calendrier théorique." }
+        )
+      }
+    }
     "tomates-cerises-balcon" = [ordered]@{
       Title = "Guide complet pour cultiver des tomates cerises sur son balcon"
       Description = "Tomates cerises sur balcon : variétés compactes, pot adapté, soleil, arrosage, taille et récolte. Un guide clair pour produire facilement en pot tout l’été."
       Intro = "La tomate cerise est l’un des légumes-fruits les plus gratifiants en pot : avec du soleil, un grand contenant et un arrosage régulier, elle produit généreusement tout l’été sur un balcon."
       TimeRequired = "PT4M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
       ImageAlt = "Tomates cerises mûres sur un balcon cultivées en pot, prêtes à être récoltées"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
@@ -383,7 +485,7 @@
       Description = "Calendrier du jardin de balcon : semis, plantations, tailles, protection et récoltes mois par mois pour suivre le bon rythme sans se disperser."
       Intro = "Sur balcon, on gagne beaucoup à jardiner au bon moment plutôt qu’à tout faire d’un coup. Ce calendrier t’aide à garder un rythme simple, mois par mois, pour mieux semer, planter, entretenir et récolter."
       TimeRequired = "PT5M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
       ImageAlt = "Agenda de jardinage posé parmi des feuilles, symbole d’un calendrier de culture pour balcon"
       BodyHtml = @'
             <h2>Comment utiliser ce calendrier</h2>
@@ -411,7 +513,7 @@
               <li>Prépare les supports pour les futures plantes grimpantes ou gourmandes.</li>
             </ul>
             <h2>Avril</h2>
-            <p>Le balcon se remplit, mais il faut garder un œil sur les dernières gelées tardives.</p>
+            <p>Le balcon se remplit, mais il faut garder un œil sur les dernières gelées tardives. Si tu veux un repère plus ciblé pour ce moment précis, complète aussi avec notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a>.</p>
             <ul>
               <li>Poursuis les semis rapides et installe les premières aromatiques.</li>
               <li>Paille les pots qui commencent à se réchauffer.</li>
@@ -578,7 +680,7 @@
       Description = "Plantes aromatiques sur balcon : les meilleures variétés selon l’exposition, avec conseils simples pour récolter souvent et garder des pots parfumés."
       Intro = "Les aromatiques sont parmi les meilleures plantes à cultiver sur un balcon : peu encombrantes, utiles en cuisine et très gratifiantes. En choisissant bien les variétés selon l’exposition, on peut garder des pots parfumés presque toute l’année."
       TimeRequired = "PT4M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
       ImageAlt = "Pots d’herbes aromatiques alignés sur un balcon lumineux, avec basilic, menthe et thym"
       BodyHtml = @'
             <h2>Pourquoi commencer par les aromatiques</h2>
@@ -594,6 +696,7 @@
             <h2>Le trio facile pour démarrer</h2>
             <p>Si tu veux faire simple, démarre avec trois valeurs sûres : basilic, persil et ciboulette. Elles sont utiles au quotidien, visuellement complémentaires et suffisamment indulgentes pour un premier balcon.</p>
             <p>Le basilic demande plus de chaleur et une vraie régularité d’arrosage. Le persil pousse plus lentement mais tient bien dans le temps. La ciboulette, elle, s’installe facilement et repousse bien après coupe.</p>
+            <p>Si tu cherches justement quoi lancer ce mois-ci sans trop te disperser, notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a> peut t’aider à les associer à quelques cultures de printemps faciles.</p>
             <p>Si c’est surtout le basilic qui t’intéresse, notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a> détaille le semis, le pincement et les erreurs qui le fatiguent le plus vite.</p>
             <h2>Les aromatiques très parfumées pour les balcons ensoleillés</h2>
             <p>Le thym, le romarin, l’origan ou la sauge aiment les situations lumineuses, les substrats bien drainés et les arrosages mesurés. Elles sont idéales si ton balcon reçoit beaucoup de soleil ou chauffe vite.</p>
@@ -735,7 +838,7 @@
       Description = "Jardiner sur un balcon : exposition, pots, premières cultures, arrosage, organisation et gestes de saison. Le guide pour créer un coin vivant en ville sans se compliquer."
       Intro = "Un balcon peut devenir un vrai jardin à vivre, même avec peu de place. Le plus important n’est pas de tout planter d’un coup, mais de comprendre l’exposition, de choisir quelques cultures adaptées et de construire un rythme simple."
       TimeRequired = "PT6M"
-      DateModified = "2026-03-28T11:30:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
       ImageAlt = "Balcon potager urbain avec plusieurs pots de légumes, aromatiques et fleurs utiles"
       BodyHtml = @'
             <h2>Par où commencer quand on veut jardiner en ville</h2>
@@ -755,6 +858,7 @@
             <p>Si tu veux préparer cette base proprement, notre article sur <a href="le-materiel-essentiel-pour-commencer.html">le matériel essentiel pour commencer</a> peut t’éviter des achats inutiles.</p>
             <h2>3. Choisir des cultures qui donnent confiance</h2>
             <p>Le balcon fonctionne mieux quand on démarre avec des plantes indulgentes. Les <a href="guide-laitues-sur-son-balcon.html">laitues</a>, les <a href="guide-radis-sur-son-balcon.html">radis</a>, les <a href="guide-epinards-sur-son-balcon.html">épinards</a>, les aromatiques ou les <a href="guide-fraises-sur-son-balcon.html">fraises</a> donnent vite des résultats et apprennent beaucoup sur la lumière et l’arrosage.</p>
+            <p>Si tu commences justement au printemps, notre sélection sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a> peut t’aider à transformer ces grandes idées en premières cultures concrètes, sans surcharger l’espace.</p>
             <p>Si ton balcon est très ensoleillé, tu peux ajouter plus tard une culture phare comme la <a href="tomates-cerises-balcon.html">tomate cerise</a> ou les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a>. L’important est de garder un équilibre entre plaisir et charge d’entretien.</p>
             <h2>4. Organiser l’espace pour qu’il reste agréable</h2>
             <p>Un balcon productif n’est pas forcément un balcon rempli. Il doit rester facile à traverser, à arroser et à regarder. Regroupe les plantes par besoins proches : celles qui aiment le soleil ensemble, celles qui préfèrent la fraîcheur ailleurs. Tu éviteras ainsi de multiplier les gestes contradictoires.</p>
@@ -808,12 +912,13 @@
       Description = "Légumes faciles à cultiver sur balcon : ceux qui poussent vite, demandent peu de profondeur ou supportent bien la culture en pot. Une sélection concrète pour débuter sereinement."
       Intro = "Tous les légumes ne se valent pas quand on débute sur un balcon. Les plus faciles sont souvent ceux qui poussent vite, supportent bien la culture en pot et pardonnent davantage les petites erreurs d’arrosage ou d’exposition."
       TimeRequired = "PT6M"
-      DateModified = "2026-03-28T11:30:00.000Z"
+      DateModified = "2026-04-04T09:00:00.000Z"
       ImageAlt = "Sélection de légumes faciles cultivés en pot sur un balcon, avec laitues, tomates et radis"
       BodyHtml = @'
             <h2>Comment reconnaître un légume facile sur balcon</h2>
             <p>Un légume simple à réussir sur balcon partage souvent plusieurs qualités : il pousse rapidement, se contente d’un volume de terre raisonnable, supporte bien la culture en contenant et permet de voir vite si l’on est sur la bonne voie. C’est précisément ce qui donne confiance quand on démarre.</p>
             <p>La vraie facilité dépend aussi de ton exposition. Un balcon très lumineux peut accueillir plus de légumes-fruits, alors qu’un balcon plus doux favorisera plutôt les feuilles et les racines rapides.</p>
+            <p>Et si tu démarres en plein printemps, tu peux compléter cette sélection avec notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a>, pensé pour passer de l’idée générale à une vraie mise en route de saison.</p>
             <h2>1. Les laitues</h2>
             <p>Les <a href="guide-laitues-sur-son-balcon.html">laitues</a> sont probablement les plus rassurantes : elles poussent vite, prennent peu de profondeur et permettent des récoltes progressives. Elles fonctionnent très bien dans une jardinière, surtout au printemps et à l’automne, ou en lumière douce l’été.</p>
             <h2>2. Les radis</h2>
