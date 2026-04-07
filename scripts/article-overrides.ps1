@@ -49,7 +49,7 @@
             <p>Quand le bon créneau arrive, notre <a href="guide-poivrons-sur-son-balcon.html">guide complet pour cultiver des poivrons sur son balcon</a> prend le relais.</p>
             <h3>Le basilic</h3>
             <p>Le basilic donne souvent envie d’être sorti trop tôt, alors que c’est justement l’une des aromatiques les plus sensibles au froid. En avril, tu peux le semer au chaud, rempoter un petit plant ou le faire patienter près d’une fenêtre très lumineuse, mais évite de l’installer dehors tant que les nuits restent hésitantes.</p>
-            <p>Si tu veux éviter les erreurs classiques, garde sous la main notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a>.</p>
+            <p>Si tu veux éviter les erreurs classiques, garde sous la main notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a>. Et si tu repars de pots déjà en place, notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> t’aidera à refaire une base propre avant les cultures d’été.</p>
             <h2>Adapter ses choix selon l’exposition du balcon</h2>
             <p>Le meilleur article de saison ne remplace jamais l’observation du lieu. En avril, un balcon sud abrité ne réagit pas comme un balcon nord-est exposé au vent. C’est pourquoi il vaut mieux choisir par groupes :</p>
             <ul>
@@ -100,6 +100,120 @@
           [ordered]@{ Name = "Préparer les grands pots d’été"; Text = "Mets en place les contenants, tuteurs et emplacements des tomates, poivrons ou basilic sans les sortir trop tôt." },
           [ordered]@{ Name = "Échelonner les semis"; Text = "Relance une petite série dix à quinze jours plus tard pour étaler les récoltes et garder un balcon plus simple à suivre." },
           [ordered]@{ Name = "Protéger et ajuster"; Text = "Surveille le vent, les nuits fraîches et l’humidité des pots pour adapter le rythme au lieu réel, pas au calendrier théorique." }
+        )
+      }
+    }
+    "rempoter-plantes-balcon" = [ordered]@{
+      Title = "Rempoter ses plantes de balcon : quand le faire et comment éviter les erreurs"
+      SeoTitle = "Rempoter ses plantes de balcon : quand et comment faire"
+      Description = "Rempoter ses plantes de balcon : bon moment, bon pot, bon terreau et gestes utiles pour relancer une plante en pot sans la brusquer."
+      Intro = "Sur un balcon, les plantes vivent dans un volume de terre limité qui se tasse, s’épuise et sèche vite. Un bon rempotage, au bon moment, suffit souvent à relancer un pot fatigué sans tout compliquer."
+      TimeRequired = "PT6M"
+      DatePublished = "2026-04-07T09:00:00.000Z"
+      DateModified = "2026-04-07T09:00:00.000Z"
+      AuthorName = "Louis Fargot"
+      Category = "Entretien & astuces"
+      ImageFileName = "rempoter-plantes-balcon.jpg"
+      ImageAlt = "Main gantée rempotant une plante avec terreau, petit outil et pot sur une table de jardinage"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Moment le plus simple : de la fin de l’hiver au printemps, juste avant ou pendant la reprise douce des plantes<br>À rempoter si : les racines tournent, le terreau se tasse, l’arrosage devient difficile ou la croissance cale<br>Nouveau pot : un contenant légèrement plus grand, pas un saut de taille excessif<br>Substrat : un terreau adapté à la plante, souple et drainant, enrichi légèrement si besoin<br>Alternative utile : le surfaçage quand le pot est déjà assez grand ou trop lourd à changer<br>À éviter : pleine canicule, pic de floraison, motte détrempée ou exposition brûlante juste après l’opération<br>Bon réflexe : garder la plante à l’abri du vent fort et du soleil dur pendant quelques jours</p>
+            <h2>Pourquoi le rempotage compte vraiment sur un balcon</h2>
+            <p>Sur un balcon, les plantes n’ont pas la réserve de terre d’un jardin. Au fil des mois, le substrat se tasse, les racines prennent toute la place, l’eau circule moins bien et la nutrition devient plus irrégulière. Résultat : une plante peut sembler “capricieuse” alors qu’elle manque simplement d’espace ou de terreau vivant.</p>
+            <p>C’est particulièrement vrai sur les petits contenants, les balconnières très exposées et les pots qu’on garde plusieurs saisons de suite. Avant d’ajouter du matériel ou des engrais, il vaut donc souvent mieux repartir d’une base saine. Si tu veux revoir l’essentiel côté contenants et substrat, notre guide sur le <a href="le-materiel-essentiel-pour-commencer.html">matériel essentiel pour commencer</a> complète bien ce point.</p>
+            <h2>Quand rempoter ses plantes de balcon</h2>
+            <h3>Le meilleur créneau : juste avant la vraie poussée</h3>
+            <p>Le moment le plus simple se situe souvent entre mars et mai, selon le climat et les plantes. L’idée n’est pas de suivre une date rigide, mais de profiter de la reprise de saison avant les grosses chaleurs. Une plante qui recommence à pousser doucement supporte généralement mieux le changement qu’en plein été, quand tout sèche trop vite.</p>
+            <p>Début avril est souvent un très bon moment pour les aromatiques, les feuillages et les pots qu’on relance après l’hiver. Tu peux d’ailleurs croiser ce repère avec notre guide <a href="que-planter-en-avril-sur-un-balcon.html">Que planter en avril sur un balcon</a> et le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> si tu veux t’organiser plus largement.</p>
+            <h3>Les signes qui montrent qu’un pot est arrivé au bout</h3>
+            <ul>
+              <li>Les racines tournent en chignon quand tu sors la motte.</li>
+              <li>L’eau file immédiatement sur les côtés ou, au contraire, stagne mal.</li>
+              <li>Le terreau a beaucoup baissé, s’est tassé ou forme une masse compacte.</li>
+              <li>La plante pousse moins alors que la lumière et l’arrosage sont corrects.</li>
+              <li>Le pot devient trop léger, sèche très vite et réclame des arrosages incessants.</li>
+            </ul>
+            <p>Un seul de ces signes ne suffit pas toujours, mais leur combinaison donne souvent un diagnostic très clair.</p>
+            <h3>Les moments à éviter</h3>
+            <p>Évite de rempoter pendant une période de chaleur forte, de vent desséchant ou au moment où une plante est déjà très stressée. Ce n’est pas idéal non plus en plein pic de floraison, sauf si le pot est vraiment devenu ingérable. En cas d’urgence, fais le geste le plus doux possible et protège davantage la plante ensuite.</p>
+            <h2>Quel pot, quel terreau et quel drainage choisir</h2>
+            <p>Le réflexe le plus sûr consiste à passer dans un contenant un peu plus grand, pas énorme. Un saut trop important garde plus longtemps l’humidité, ralentit le réchauffement du substrat et peut compliquer l’arrosage. Sur balcon, mieux vaut souvent monter d’une taille raisonnable et garder la main sur ce qui se passe dans le pot.</p>
+            <p>Pour le terreau, vise surtout quelque chose de souple, aéré et cohérent avec la plante : plus riche pour des cultures gourmandes, plus léger pour des aromatiques méditerranéennes, plus frais pour des feuillages comme les laitues. Tu peux aussi ajouter un peu de compost mûr si la plante apprécie un substrat nourrissant, en t’appuyant sur notre guide <a href="utilisation-compost-sur-balcon.html">Compost sur balcon : comment bien l’utiliser</a>.</p>
+            <ul>
+              <li>Vérifie toujours que le nouveau pot est percé.</li>
+              <li>Privilégie un contenant stable si ton balcon prend le vent.</li>
+              <li>Ne compte pas sur une grosse couche de billes d’argile pour corriger un mauvais drainage : le plus important reste un pot ouvert et un terreau adapté.</li>
+              <li>Pense au poids final du pot, surtout pour les grands bacs déjà bien arrosés.</li>
+            </ul>
+            <h2>Comment rempoter sans stresser la plante</h2>
+            <p>Le bon rempotage n’a rien de spectaculaire. Il repose surtout sur une manipulation calme, un pot prêt à l’avance et une plantation à la bonne hauteur.</p>
+            <ol>
+              <li>Prépare le nouveau contenant avec un fond propre, les trous dégagés et un premier lit de terreau.</li>
+              <li>Sors la plante de son ancien pot en tenant la base, sans tirer sur les tiges.</li>
+              <li>Observe les racines : si elles tournent en cercle, desserre-les légèrement avec les doigts.</li>
+              <li>Retire seulement ce qui est clairement sec, pourri ou abîmé.</li>
+              <li>Replace la motte à la même hauteur qu’avant : ni enterrée trop profond, ni perchée.</li>
+              <li>Complète autour avec du terreau, tasse très légèrement avec les mains puis arrose une bonne fois.</li>
+            </ol>
+            <p>Le point clé, c’est de ne pas trop compacter. Sur balcon, on a parfois tendance à “bloquer” la plante dans son nouveau pot, alors qu’un substrat trop serré gêne justement l’eau et l’air.</p>
+            <h2>Et si le pot est déjà grand ? Le surfaçage peut suffire</h2>
+            <p>Toutes les plantes n’ont pas besoin d’un pot plus grand. Sur un gros bac, un agrume, une vivace bien installée ou une plante que tu veux garder à taille raisonnable, le surfaçage est souvent plus pertinent. Il consiste à retirer les premiers centimètres de terreau fatigué en surface puis à les remplacer par un mélange neuf.</p>
+            <p>Cette solution est particulièrement utile quand le contenant est lourd, encombrant ou déjà adapté au volume de la plante. Elle redonne un peu d’air et de nourriture au pot sans déranger toute la motte.</p>
+            <ul>
+              <li>Gratte doucement la surface sans blesser les grosses racines.</li>
+              <li>Retire quelques centimètres de vieux substrat tassé.</li>
+              <li>Ajoute un terreau neuf, éventuellement mélangé à un peu de compost mûr.</li>
+              <li>Arrose ensuite comme après un entretien classique.</li>
+            </ul>
+            <h2>Les bons gestes après le rempotage</h2>
+            <p>Les jours qui suivent comptent presque autant que le geste lui-même. Une plante rempotée n’a pas besoin d’être “boostée” tout de suite : elle a surtout besoin de stabilité.</p>
+            <ul>
+              <li>Garde-la quelques jours dans une lumière douce si le balcon est très brûlant.</li>
+              <li>Protège-la des rafales si l’espace est exposé.</li>
+              <li>Arrose régulièrement, sans transformer le pot en éponge permanente.</li>
+              <li>Évite les apports d’engrais trop rapides juste après l’opération.</li>
+            </ul>
+            <p>Ce suivi est très utile sur les aromatiques fragiles et les petits fruits. Si tu rempotes un pot de basilic trop serré, tu peux ensuite reprendre notre <a href="guide-basilic-sur-son-balcon.html">guide du basilic sur balcon</a>. Pour des fraisiers relancés au printemps, le <a href="guide-fraises-sur-son-balcon.html">guide des fraises en pot</a> te donnera les bons repères pour l’arrosage et la reprise.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur, c’est de choisir un pot beaucoup trop grand “pour être tranquille”. Sur balcon, cela crée souvent plus de problèmes d’humidité qu’autre chose.</p>
+            <p>La deuxième, c’est d’enterrer la plante trop profond. Le collet doit rester au bon niveau, surtout pour les aromatiques et beaucoup de petits fruits.</p>
+            <p>La troisième, c’est de rempoter dans la précipitation avec un terreau détrempé ou une motte qu’on maltraite. Plus le geste est propre et calme, plus la reprise est simple.</p>
+            <p>La quatrième, c’est d’exposer tout de suite le pot rempoté au plein soleil de midi ou à un vent sec. Une courte phase de transition évite beaucoup de feuilles molles et de démarrages ratés.</p>
+            <h2>Questions fréquentes</h2>
+            <h3>Faut-il toujours rempoter dans un pot plus grand ?</h3>
+            <p>Non. Si la plante est encore bien proportionnée à son contenant, un simple surfaçage peut suffire. Le changement de pot devient surtout utile quand les racines ont vraiment colonisé tout l’espace ou quand l’arrosage est devenu difficile à gérer.</p>
+            <h3>Peut-on rempoter une plante en fleurs ?</h3>
+            <p>C’est possible en cas de nécessité, mais ce n’est pas le moment le plus simple. Quand tu peux attendre, mieux vaut laisser passer le gros de la floraison puis intervenir dans de meilleures conditions.</p>
+            <h3>Comment savoir si le terreau est simplement fatigué ?</h3>
+            <p>Quand la surface s’est affaissée, que l’eau pénètre mal, que le substrat ressemble à une masse compacte ou que la plante réagit moins bien malgré de bons soins, il y a souvent un vrai intérêt à renouveler au moins une partie de la terre.</p>
+            <h2>En résumé</h2>
+            <p>Rempoter ses plantes de balcon, ce n’est pas changer tout le dispositif : c’est redonner de l’air, de la place et une base plus saine à des pots qui ont déjà bien travaillé. Au printemps, c’est souvent l’un des gestes les plus rentables pour repartir proprement sans multiplier les achats.</p>
+            <p>Si tu es en train de remettre ton balcon en route, combine ce guide avec <a href="que-planter-en-avril-sur-un-balcon.html">les cultures faciles d’avril</a>, le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> et les fiches de culture qui t’intéressent déjà. Tu gagneras tout de suite en lisibilité et en confort d’entretien.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Faut-il rempoter toutes les plantes de balcon chaque année ?"
+          Answer = "Non. Certaines plantes ont surtout besoin d’un surfaçage ou d’un simple renouvellement partiel du substrat. Le rempotage complet devient utile surtout quand le pot est saturé de racines ou que le terreau est vraiment épuisé."
+        },
+        [ordered]@{
+          Question = "Peut-on rempoter une plante en fleurs ?"
+          Answer = "Oui si c’est nécessaire, mais ce n’est pas le moment le plus confortable pour la plante. Quand tu peux choisir, mieux vaut intervenir avant la grosse poussée de floraison ou juste après."
+        },
+        [ordered]@{
+          Question = "Quelle différence entre rempotage et surfaçage ?"
+          Answer = "Le rempotage consiste à sortir la plante de son contenant pour lui redonner du volume ou du terreau neuf. Le surfaçage remplace seulement la couche supérieure du substrat quand le pot est déjà assez grand ou trop lourd à changer."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment rempoter ses plantes de balcon"
+        Description = "Les étapes essentielles pour choisir le bon moment, préparer le bon pot et relancer une plante en pot sans la brusquer."
+        Steps = @(
+          [ordered]@{ Name = "Choisir le bon moment"; Text = "Interviens de préférence au printemps, quand la plante repart doucement et avant les grosses chaleurs." },
+          [ordered]@{ Name = "Préparer un pot légèrement plus grand"; Text = "Prends un contenant percé, stable et un peu plus large que l’ancien, sans faire un saut de taille excessif." },
+          [ordered]@{ Name = "Préparer un terreau adapté"; Text = "Utilise un substrat souple et drainant, cohérent avec le type de plante et enrichi légèrement si besoin." },
+          [ordered]@{ Name = "Sortir la motte et desserrer les racines"; Text = "Dépote calmement la plante et défais légèrement les racines si elles tournent en chignon." },
+          [ordered]@{ Name = "Replanter à la bonne hauteur"; Text = "Replace la motte au même niveau qu’avant, complète autour avec du terreau et tasse seulement très légèrement." },
+          [ordered]@{ Name = "Arroser puis protéger quelques jours"; Text = "Arrose une fois correctement puis garde le pot à l’abri du vent fort et du soleil brûlant pendant la reprise." }
         )
       }
     }
@@ -346,7 +460,7 @@
             <h3>Partir de semis</h3>
             <p>Le semis est économique et permet de choisir la variété. Il fonctionne bien si tu peux offrir de la chaleur et un peu de patience au départ. Sème peu profond, garde le substrat humide sans excès et évite de sortir les jeunes plants trop tôt.</p>
             <h3>Partir d’un plant déjà formé</h3>
-            <p>Pour un premier balcon, un petit plant est souvent plus simple. Il permet de récolter plus vite et d’apprendre d’abord l’arrosage, le pincement et l’exposition. Les pots très serrés du commerce gagnent souvent à être divisés ou rempotés rapidement pour durer plus longtemps.</p>
+            <p>Pour un premier balcon, un petit plant est souvent plus simple. Il permet de récolter plus vite et d’apprendre d’abord l’arrosage, le pincement et l’exposition. Les pots très serrés du commerce gagnent souvent à être divisés ou rempotés rapidement pour durer plus longtemps. Si tu hésites sur le bon geste, appuie-toi sur notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a>.</p>
             <h2>Le bon pot et le bon terreau</h2>
             <p>Le basilic aime un substrat vivant, souple et frais, mais pas gorgé d’eau. Choisis un pot percé, assez large pour laisser la touffe s’étoffer, avec un drainage propre au fond sans bloquer l’évacuation.</p>
             <p>Un terreau potager de bonne qualité, enrichi d’un peu de compost mûr, fonctionne bien. Si tu veux mieux doser cette matière organique, notre article sur <a href="utilisation-compost-sur-balcon.html">l’utilisation du compost sur balcon</a> t’aidera à éviter les apports trop lourds.</p>
@@ -510,7 +624,7 @@
             <p>Le vrai début de saison arrive. Sur beaucoup de balcons, c’est le mois où tout se remet doucement en route.</p>
             <ul>
               <li>Sème les premiers radis, laitues, roquettes et épinards.</li>
-              <li>Rempote ce qui s’est trop tassé pendant l’hiver.</li>
+              <li><a href="rempoter-plantes-balcon.html">Rempote ce qui s’est trop tassé pendant l’hiver</a>.</li>
               <li>Prépare les supports pour les futures plantes grimpantes ou gourmandes.</li>
             </ul>
             <h2>Avril</h2>
@@ -625,7 +739,7 @@
             </ul>
             <p>Si tu veux regarder quelques exemples : <a href="https://amzn.to/3YXjTvS">pots de différentes tailles</a> ou <a href="https://amzn.to/4jAkY50">jardinières basiques</a>.</p>
             <h2>2. Un bon terreau avant tout</h2>
-            <p>Un balcon se joue davantage sur la qualité du substrat que sur la quantité d’accessoires. Un terreau potager souple, enrichi et assez drainant fera beaucoup plus pour tes plantes qu’un gadget d’arrosage mal choisi.</p>
+            <p>Un balcon se joue davantage sur la qualité du substrat que sur la quantité d’accessoires. Un terreau potager souple, enrichi et assez drainant fera beaucoup plus pour tes plantes qu’un gadget d’arrosage mal choisi. Si tu veux voir comment l’utiliser concrètement dans un pot déjà en place, notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> te donne la méthode pas à pas.</p>
             <p>Tu peux l’améliorer avec un peu de compost mûr ou de lombricompost. Notre dossier sur les <a href="solutions-compostage-sur-balcon.html">solutions de compostage sur balcon</a> peut t’aider si tu veux aller vers plus d’autonomie.</p>
             <p>Pour te faire une idée : <a href="https://amzn.to/42G8qDp">terreau spécial potager</a>.</p>
             <h2>3. Un arrosoir compact et agréable à utiliser</h2>
