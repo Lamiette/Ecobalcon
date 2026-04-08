@@ -10,52 +10,52 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 
 - [Accueil](https://ecobalcon.com/) : présentation du site et sélection éditoriale
 - [Tous les articles](https://ecobalcon.com/articles/) : index des 33 guides pratiques
-- [Galerie](https://ecobalcon.com/galerie.html) : photos d'inspiration de balcons jardinés
+- [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardinés
 
 ## Fiches techniques (cultures)
 
-- [Tomates sur balcon](https://ecobalcon.com/articles/guide-tomates-sur-son-balcon.html)
-- [Tomates cerises sur balcon](https://ecobalcon.com/articles/tomates-cerises-balcon.html)
-- [Laitues sur balcon](https://ecobalcon.com/articles/guide-laitues-sur-son-balcon.html)
-- [Épinards sur balcon](https://ecobalcon.com/articles/guide-epinards-sur-son-balcon.html)
-- [Fraises sur balcon](https://ecobalcon.com/articles/guide-fraises-sur-son-balcon.html)
-- [Radis sur balcon](https://ecobalcon.com/articles/guide-radis-sur-son-balcon.html)
-- [Pommes de terre sur balcon](https://ecobalcon.com/articles/pommes-de-terre-balcon.html)
-- [10 légumes faciles à cultiver en pot](https://ecobalcon.com/articles/legumes-faciles-a-cultiver.html)
-- [Petits fruits en pot](https://ecobalcon.com/articles/petits-fruits-en-pot.html)
-- [Plantes aromatiques sur balcon](https://ecobalcon.com/articles/plantes-aromatiques-sur-balcon.html)
+- [Tomates sur balcon](https://ecobalcon.com/articles/guide-tomates-sur-son-balcon/)
+- [Tomates cerises sur balcon](https://ecobalcon.com/articles/tomates-cerises-balcon/)
+- [Laitues sur balcon](https://ecobalcon.com/articles/guide-laitues-sur-son-balcon/)
+- [Épinards sur balcon](https://ecobalcon.com/articles/guide-epinards-sur-son-balcon/)
+- [Fraises sur balcon](https://ecobalcon.com/articles/guide-fraises-sur-son-balcon/)
+- [Radis sur balcon](https://ecobalcon.com/articles/guide-radis-sur-son-balcon/)
+- [Pommes de terre sur balcon](https://ecobalcon.com/articles/pommes-de-terre-balcon/)
+- [10 légumes faciles à cultiver en pot](https://ecobalcon.com/articles/legumes-faciles-a-cultiver/)
+- [Petits fruits en pot](https://ecobalcon.com/articles/petits-fruits-en-pot/)
+- [Plantes aromatiques sur balcon](https://ecobalcon.com/articles/plantes-aromatiques-sur-balcon/)
 
 ## Entretien & astuces écologiques
 
-- [Réduire la consommation d'eau sur balcon](https://ecobalcon.com/articles/reduction-consommation-eau-balcon.html)
-- [Récupérer l'eau de pluie sans gouttière](https://ecobalcon.com/articles/recuperer-eau-de-pluie-balcon.html)
-- [Utilisation du compost sur balcon](https://ecobalcon.com/articles/utilisation-compost-sur-balcon.html)
-- [Solutions de compostage pour petits espaces](https://ecobalcon.com/articles/solutions-compostage-sur-balcon.html)
-- [Paillage écologique sur balcon](https://ecobalcon.com/articles/paillage-sur-balcon-ecolo.html)
-- [Arrosage à l'eau de cuisson](https://ecobalcon.com/articles/potager-balcon-eau-de-cuisson.html)
-- [Jardinage en lasagnes sur balcon](https://ecobalcon.com/articles/jardinage-en-lasagnes-sur-balcon.html)
-- [Protéger son balcon des nuisibles naturellement](https://ecobalcon.com/articles/proteger-son-balcon-des-nuisibles-naturellement.html)
-- [Insectes utiles à attirer sur un balcon](https://ecobalcon.com/articles/insectes-utiles-sur-un-balcon.html)
-- [Balcon pour pollinisateurs](https://ecobalcon.com/articles/balcon-pour-pollinisateurs.html)
-- [Calendrier lunaire pour le balcon](https://ecobalcon.com/articles/calendrier-lunaire-balcon.html)
+- [Réduire la consommation d'eau sur balcon](https://ecobalcon.com/articles/reduction-consommation-eau-balcon/)
+- [Récupérer l'eau de pluie sans gouttière](https://ecobalcon.com/articles/recuperer-eau-de-pluie-balcon/)
+- [Utilisation du compost sur balcon](https://ecobalcon.com/articles/utilisation-compost-sur-balcon/)
+- [Solutions de compostage pour petits espaces](https://ecobalcon.com/articles/solutions-compostage-sur-balcon/)
+- [Paillage écologique sur balcon](https://ecobalcon.com/articles/paillage-sur-balcon-ecolo/)
+- [Arrosage à l'eau de cuisson](https://ecobalcon.com/articles/potager-balcon-eau-de-cuisson/)
+- [Jardinage en lasagnes sur balcon](https://ecobalcon.com/articles/jardinage-en-lasagnes-sur-balcon/)
+- [Protéger son balcon des nuisibles naturellement](https://ecobalcon.com/articles/proteger-son-balcon-des-nuisibles-naturellement/)
+- [Insectes utiles à attirer sur un balcon](https://ecobalcon.com/articles/insectes-utiles-sur-un-balcon/)
+- [Balcon pour pollinisateurs](https://ecobalcon.com/articles/balcon-pour-pollinisateurs/)
+- [Calendrier lunaire pour le balcon](https://ecobalcon.com/articles/calendrier-lunaire-balcon/)
 
 ## Aménagement & matériel
 
-- [Le matériel essentiel pour commencer](https://ecobalcon.com/articles/le-materiel-essentiel-pour-commencer.html)
-- [DIY : recycler des objets en pots de balcon](https://ecobalcon.com/articles/diy-pots-pour-le-balcon.html)
-- [7 meilleures plantes grimpantes pour l'intimité en ville](https://ecobalcon.com/articles/meilleures-plantes-grimpantes-en-ville.html)
+- [Le matériel essentiel pour commencer](https://ecobalcon.com/articles/le-materiel-essentiel-pour-commencer/)
+- [DIY : recycler des objets en pots de balcon](https://ecobalcon.com/articles/diy-pots-pour-le-balcon/)
+- [7 meilleures plantes grimpantes pour l'intimité en ville](https://ecobalcon.com/articles/meilleures-plantes-grimpantes-en-ville/)
 
 ## Choix de plantes selon l'exposition
 
-- [Balcon plein soleil : quelles plantes ?](https://ecobalcon.com/articles/plantes-pour-un-balcon-plein-soleil.html)
-- [Balcon à l'ombre : que cultiver ?](https://ecobalcon.com/articles/balcon-a-lombre-plantes-et-culture.html)
-- [Plantes qui survivent à la canicule](https://ecobalcon.com/articles/plantes-qui-survivent-a-la-canicule.html)
-- [Plantes pour un balcon durable et résistant](https://ecobalcon.com/articles/balcon-durable-plantes.html)
-- [Fleurs comestibles et mellifères pour balcon](https://ecobalcon.com/articles/fleurs-comestibles-melliferes-balcon.html)
+- [Balcon plein soleil : quelles plantes ?](https://ecobalcon.com/articles/plantes-pour-un-balcon-plein-soleil/)
+- [Balcon à l'ombre : que cultiver ?](https://ecobalcon.com/articles/balcon-a-lombre-plantes-et-culture/)
+- [Plantes qui survivent à la canicule](https://ecobalcon.com/articles/plantes-qui-survivent-a-la-canicule/)
+- [Plantes pour un balcon durable et résistant](https://ecobalcon.com/articles/balcon-durable-plantes/)
+- [Fleurs comestibles et mellifères pour balcon](https://ecobalcon.com/articles/fleurs-comestibles-melliferes-balcon/)
 
 ## Guides généraux
 
-- [Jardiner sur un balcon : réussir son potager urbain](https://ecobalcon.com/articles/jardiner-sur-un-balcon.html)
-- [Astuces pour un jardin de balcon réussi](https://ecobalcon.com/articles/jardin-sur-balcon-astuces.html)
-- [Calendrier annuel du jardin de balcon](https://ecobalcon.com/articles/calendrier-du-jardin-de-balcon.html)
-- [Erreurs courantes en jardinage sur balcon](https://ecobalcon.com/articles/erreurs-jardiner-sur-un-balcon.html)
+- [Jardiner sur un balcon : réussir son potager urbain](https://ecobalcon.com/articles/jardiner-sur-un-balcon/)
+- [Astuces pour un jardin de balcon réussi](https://ecobalcon.com/articles/jardin-sur-balcon-astuces/)
+- [Calendrier annuel du jardin de balcon](https://ecobalcon.com/articles/calendrier-du-jardin-de-balcon/)
+- [Erreurs courantes en jardinage sur balcon](https://ecobalcon.com/articles/erreurs-jardiner-sur-un-balcon/)
