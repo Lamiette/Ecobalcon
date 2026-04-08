@@ -13,6 +13,11 @@ $rootStylesheetHref = "css/style.min.css"
 $articleStylesheetHref = "../css/style.min.css"
 $articleDetailStylesheetHref = "../../css/style.min.css"
 $siteUrl = "https://ecobalcon.com"
+$contactEmail = "ecobalcon21@gmail.com"
+$contactPageUrl = "$siteUrl/contact/"
+$contactThanksUrl = "$siteUrl/contact/merci/"
+$contactFormAction = "https://formsubmit.co/$contactEmail"
+$contactShareImageUrl = "$siteUrl/images/balcon-soleil.webp"
 # GA4 is intended to be wired through GTM to avoid duplicate pageview tracking.
 $googleAnalyticsMeasurementId = "G-L952X34SHR"
 $googleTagManagerId = "GTM-MFRVPVFQ"
@@ -323,6 +328,10 @@ function Get-SiteFooterHtml {
             <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
             <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
           </ul>
+          <div class="footer-links">
+            <a href="${pagePrefix}contact/">Contact</a>
+            <a href="${pagePrefix}politique-confidentialite/">Confidentialit&eacute;</a>
+          </div>
         </div>
         <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
       </div>
@@ -1586,6 +1595,7 @@ $tagManagerBody
             <a href="../../">Accueil</a>
             <a href="../">Articles</a>
             <a href="../../galerie/">Galerie</a>
+            <a href="../../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1917,6 +1927,7 @@ $tagManagerBody
             <a href="./" aria-current="page">Accueil</a>
             <a href="articles/">Articles</a>
             <a href="galerie/">Galerie</a>
+            <a href="contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -2300,6 +2311,7 @@ $tagManagerBody
             <a href="../">Accueil</a>
             <a href="./" aria-current="page">Articles</a>
             <a href="../galerie/">Galerie</a>
+            <a href="../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -2796,6 +2808,7 @@ $tagManagerBody
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
             <a href="../galerie/">Galerie</a>
+            <a href="../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -2863,6 +2876,13 @@ $tagManagerBody
             observer les pages vues et mieux comprendre les parcours de navigation.
           </p>
 
+          <h2>Formulaire de contact</h2>
+          <p>
+            Si tu utilises la page contact, les informations que tu saisis dans le formulaire
+            (nom, adresse e-mail, objet et message) sont transmises via le service FormSubmit
+            afin d'&ecirc;tre transmises &agrave; l'&eacute;quipe du site et permettre une r&eacute;ponse &agrave; ta demande.
+          </p>
+
           <h2>Cookies et technologies proches</h2>
           <p>
             Certaines balises ou outils de mesure peuvent d&eacute;poser des cookies ou utiliser des technologies similaires.
@@ -2886,6 +2906,306 @@ $tagManagerBody
     </main>
 
 $(Get-SiteFooterHtml -pagePrefix "../")
+  </div>
+</body>
+</html>
+"@
+}
+
+function Build-ContactPageHtml {
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $canonicalUrl = $contactPageUrl
+  $jsonLd = Get-JsonLdScriptTags @(
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "ContactPage"
+      name = "Contact EcoBalcon"
+      url = $canonicalUrl
+      description = "Pose une question a EcoBalcon a propos du jardinage sur balcon, d'un guide ou d'une suggestion de contenu."
+      inLanguage = "fr"
+      isPartOf = [ordered]@{
+        "@type" = "WebSite"
+        name = "EcoBalcon"
+        url = "$siteUrl/"
+      }
+    },
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "BreadcrumbList"
+      itemListElement = @(
+        [ordered]@{
+          "@type" = "ListItem"
+          position = 1
+          name = "Accueil"
+          item = "$siteUrl/"
+        },
+        [ordered]@{
+          "@type" = "ListItem"
+          position = 2
+          name = "Contact"
+          item = $canonicalUrl
+        }
+      )
+    }
+  )
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact EcoBalcon | Questions jardinage sur balcon</title>
+  <meta name="description" content="Contacte EcoBalcon pour poser une question sur le jardinage sur balcon, sugg&eacute;rer un sujet ou signaler une correction.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact EcoBalcon | Questions jardinage sur balcon">
+  <meta property="og:description" content="Pose une question, partage une suggestion ou contacte EcoBalcon &agrave; propos d'un guide ou d'une installation sur balcon.">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta property="og:image" content="$contactShareImageUrl">
+  <meta property="og:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact EcoBalcon | Questions jardinage sur balcon">
+  <meta name="twitter:description" content="Pose une question, partage une suggestion ou contacte EcoBalcon &agrave; propos d'un guide ou d'une installation sur balcon.">
+  <meta name="twitter:image" content="$contactShareImageUrl">
+  <meta name="twitter:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
+$jsonLd
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body class="contact-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../">
+          <span class="brand-mark">
+            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="../">Accueil</a>
+            <a href="../articles/">Articles</a>
+            <a href="../galerie/">Galerie</a>
+            <a href="./" aria-current="page">Contact</a>
+          </nav>
+          <div class="social-nav" aria-label="R&eacute;seaux sociaux">
+            <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-layout">
+      <div class="article-shell">
+        <div>
+          <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+            <ol class="breadcrumb">
+              <li><a href="../">Accueil</a></li>
+              <li aria-current="page">Contact</li>
+            </ol>
+          </nav>
+        </div>
+
+        <section class="page-hero contact-hero">
+          <div class="page-hero-copy">
+            <h1 class="page-title">Poser une question simplement</h1>
+            <p class="page-intro">
+              Une question sur un guide, un doute sur ton installation ou une suggestion de sujet ?
+              Le formulaire ci-dessous permet d'envoyer un message directement depuis le site.
+            </p>
+            <p class="page-intro">
+              Les messages sont transmis &agrave; l'&eacute;quipe du site via FormSubmit, puis trait&eacute;s d&egrave;s que possible.
+            </p>
+          </div>
+
+          <aside class="checklist utility-panel contact-tip-card">
+            <h2>Dans ton message</h2>
+            <ul class="article-list">
+              <li>Ajoute le lien du guide concern&eacute; si ta question porte sur un article pr&eacute;cis.</li>
+              <li>Indique ton espace, la lumi&egrave;re et le type de syst&egrave;me si tu bloques sur un setup.</li>
+              <li>Pr&eacute;cise si c'est une question, une suggestion ou une correction.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="contact-form-card" aria-label="Formulaire de contact">
+          <form class="contact-form" action="$contactFormAction" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="_next" value="$contactThanksUrl">
+            <input type="hidden" name="_subject" value="Nouveau message depuis EcoBalcon">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_url" value="$canonicalUrl">
+            <input class="contact-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="contact-form-grid">
+              <div class="contact-field">
+                <label for="contact-name">Nom</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="160" required>
+              </div>
+            </div>
+
+            <div class="contact-field">
+              <label for="contact-subject">Objet</label>
+              <input id="contact-subject" name="subject" type="text" placeholder="Exemple : question sur un syst&egrave;me d&eacute;butant" maxlength="180" required>
+            </div>
+
+            <div class="contact-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="D&eacute;cris ta question ou ton besoin en quelques lignes." rows="8" maxlength="3000" required></textarea>
+            </div>
+
+            <div class="contact-form-actions">
+              <button class="button contact-submit" type="submit">Envoyer le message</button>
+              <p class="contact-form-note">
+                Apr&egrave;s envoi, tu seras redirig&eacute; vers une page de confirmation sur le site.
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "../")
+  </div>
+</body>
+</html>
+"@
+}
+
+function Build-ContactThanksHtml {
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $canonicalUrl = $contactThanksUrl
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merci pour ton message | EcoBalcon</title>
+  <meta name="description" content="Merci pour ton message. EcoBalcon l'a bien re&ccedil;u et reviendra vers toi si n&eacute;cessaire.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Merci pour ton message | EcoBalcon">
+  <meta property="og:description" content="Merci pour ton message. EcoBalcon l'a bien re&ccedil;u et reviendra vers toi si n&eacute;cessaire.">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Merci pour ton message | EcoBalcon">
+  <meta name="twitter:description" content="Merci pour ton message. EcoBalcon l'a bien re&ccedil;u et reviendra vers toi si n&eacute;cessaire.">
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+<body class="contact-thanks-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../../">
+          <span class="brand-mark">
+            <img class="brand-logo" src="../../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="../../">Accueil</a>
+            <a href="../../articles/">Articles</a>
+            <a href="../../galerie/">Galerie</a>
+            <a href="../" aria-current="page">Contact</a>
+          </nav>
+          <div class="social-nav" aria-label="R&eacute;seaux sociaux">
+            <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-layout">
+      <div class="article-shell">
+        <div>
+          <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+            <ol class="breadcrumb">
+              <li><a href="../../">Accueil</a></li>
+              <li><a href="../">Contact</a></li>
+              <li aria-current="page">Merci</li>
+            </ol>
+          </nav>
+        </div>
+
+        <section class="page-hero contact-hero">
+          <div class="page-hero-copy">
+            <h1 class="page-title">Merci, ton message est parti.</h1>
+            <p class="page-intro">
+              Le message a bien &eacute;t&eacute; transmis. EcoBalcon le lira d&egrave;s que possible et reviendra vers toi si une r&eacute;ponse est n&eacute;cessaire.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="../">Revenir au formulaire</a>
+              <a class="button-secondary" href="../../articles/">Explorer les articles</a>
+            </div>
+          </div>
+
+          <aside class="checklist utility-panel contact-tip-card">
+            <h2>En attendant</h2>
+            <ul class="article-list">
+              <li>Tu peux parcourir les derniers guides publi&eacute;s dans la section articles.</li>
+              <li>La galerie donne aussi des id&eacute;es simples d'am&eacute;nagement pour petits espaces.</li>
+              <li>Pour une autre demande, tu peux revenir au formulaire &agrave; tout moment.</li>
+            </ul>
+          </aside>
+        </section>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "../../")
   </div>
 </body>
 </html>
@@ -2938,6 +3258,7 @@ $tagManagerBody
             <a href="./">Accueil</a>
             <a href="articles/">Articles</a>
             <a href="galerie/">Galerie</a>
+            <a href="contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -3041,6 +3362,9 @@ function Build-SitemapXml {
     $galleryLoc = if (Test-Path (Join-Path $root "galerie\index.html")) { "$siteUrl/galerie/" } else { "$siteUrl/galerie.html" }
     $entries.Add((New-SitemapUrlNode -loc $galleryLoc -priority "0.5" -lastmod $today -imageUrl "$siteUrl/images/articles/canicule-balcon-mxBXq1QqyeTR1PLZ.webp" -imageCaption "Balcon plante en plein soleil"))
   }
+  if (Test-Path (Join-Path $root "contact\index.html")) {
+    $entries.Add((New-SitemapUrlNode -loc $contactPageUrl -priority "0.4" -lastmod $today))
+  }
 
   foreach ($article in $allArticles) {
     $lastmod = if ($article.DateModified) { $article.DateModified } else { $article.DatePublished }
@@ -3084,6 +3408,14 @@ New-Item -ItemType Directory -Path $privacyDir -Force | Out-Null
 Set-Content -Path (Join-Path $privacyDir "index.html") -Value (Build-PrivacyPageHtml) -Encoding UTF8
 Set-Content -Path (Join-Path $root "politique-confidentialite.html") -Value (Get-RedirectHtml -targetUrl "$siteUrl/politique-confidentialite/" -title "Politique de confidentialite | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.") -Encoding UTF8
 
+$contactDir = Join-Path $root "contact"
+$contactThanksDir = Join-Path $contactDir "merci"
+New-Item -ItemType Directory -Path $contactDir -Force | Out-Null
+New-Item -ItemType Directory -Path $contactThanksDir -Force | Out-Null
+Set-Content -Path (Join-Path $contactDir "index.html") -Value (Build-ContactPageHtml) -Encoding UTF8
+Set-Content -Path (Join-Path $contactThanksDir "index.html") -Value (Build-ContactThanksHtml) -Encoding UTF8
+Set-Content -Path (Join-Path $root "contact.html") -Value (Get-RedirectHtml -targetUrl $contactPageUrl -title "Contact | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.") -Encoding UTF8
+
 $homePath = Join-Path $root "index.html"
 $homeStatus = "Homepage preserved as-is (use -RebuildHome to regenerate it)"
 $homeBackupStatus = ""
@@ -3105,7 +3437,7 @@ if ($RebuildHome -or -not (Test-Path $homePath)) {
 Set-Content -Path (Join-Path $root "sitemap.xml") -Value (Build-SitemapXml $articles) -Encoding UTF8
 Set-Content -Path (Join-Path $root "robots.txt") -Value (Build-RobotsTxt) -Encoding UTF8
 
-Write-Output "Updated style.min.css, articles index, 404.html, politique-confidentialite.html, sitemap.xml and robots.txt"
+Write-Output "Updated style.min.css, articles index, 404.html, contact pages, politique-confidentialite.html, sitemap.xml and robots.txt"
 if ($homeBackupStatus) {
   Write-Output $homeBackupStatus
 }

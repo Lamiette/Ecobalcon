@@ -9,8 +9,9 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 ## Navigation principale
 
 - [Accueil](https://ecobalcon.com/) : présentation du site et sélection éditoriale
-- [Tous les articles](https://ecobalcon.com/articles/) : index des 33 guides pratiques
+- [Tous les articles](https://ecobalcon.com/articles/) : index des 37 guides pratiques
 - [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardinés
+- [Contact](https://ecobalcon.com/contact/) : formulaire pour poser une question, suggérer un sujet ou signaler une correction
 
 ## Fiches techniques (cultures)
 
