@@ -9,7 +9,7 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 ## Navigation principale
 
 - [Accueil](https://ecobalcon.com/) : présentation du site et sélection éditoriale
-- [Tous les articles](https://ecobalcon.com/articles/) : index des 37 guides pratiques
+- [Tous les articles](https://ecobalcon.com/articles/) : index des 38 guides pratiques
 - [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardinés
 - [Contact](https://ecobalcon.com/contact/) : formulaire pour poser une question, suggérer un sujet ou signaler une correction
 
@@ -39,6 +39,7 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 - [Insectes utiles à attirer sur un balcon](https://ecobalcon.com/articles/insectes-utiles-sur-un-balcon/)
 - [Balcon pour pollinisateurs](https://ecobalcon.com/articles/balcon-pour-pollinisateurs/)
 - [Calendrier lunaire pour le balcon](https://ecobalcon.com/articles/calendrier-lunaire-balcon/)
+- [Quand sortir tomates, poivrons et basilic sur un balcon ?](https://ecobalcon.com/articles/quand-sortir-tomates-poivrons-basilic-balcon/)
 
 ## Aménagement & matériel
 

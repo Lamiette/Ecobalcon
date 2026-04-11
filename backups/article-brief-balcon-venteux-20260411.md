@@ -1,0 +1,24 @@
+# Brief article EcoBalcon
+
+- Sujet retenu : Balcon venteux, avec un angle très pratique centré sur le choix des plantes et la protection des pots.
+- Titre retenu : Balcon venteux : quelles plantes choisir et comment protéger ses pots ?
+- Mot-clé principal : balcon venteux
+- Mots-clés secondaires : plantes pour balcon venteux, protéger ses pots du vent, balcon exposé au vent, jardiner sur un balcon venteux
+- Intention de recherche : informationnelle et pratique, pour un lecteur qui veut continuer à jardiner malgré les rafales sans multiplier les erreurs ou les achats inutiles.
+- Raison du choix : le vent revient souvent comme contrainte dans les contenus existants, mais aucun article dédié ne traite ce vrai cas d’usage. Le sujet est très cohérent avec EcoBalcon, utile pour un public débutant, facile à mailler avec plusieurs guides et plus accessible SEO qu’un sujet très large.
+- Saison / contexte : pertinent au printemps et en été, au moment où l’on installe les pots et où les jeunes plants souffrent le plus du vent.
+- Auteur retenu : Louis Fargot, pour mieux répartir les signatures récentes.
+- Articles existants vers lesquels faire des liens internes :
+  - `jardiner-sur-un-balcon`
+  - `plantes-pour-un-balcon-plein-soleil`
+  - `balcon-a-lombre-plantes-et-culture`
+  - `plantes-aromatiques-sur-balcon`
+  - `guide-tomates-sur-son-balcon`
+  - `guide-poivrons-sur-son-balcon`
+  - `guide-basilic-sur-son-balcon`
+  - `quand-sortir-tomates-poivrons-basilic-balcon`
+  - `le-materiel-essentiel-pour-commencer`
+  - `paillage-sur-balcon-ecolo`
+  - `reduction-consommation-eau-balcon`
+- Image retenue : photo Pexels plus percutante montrant des pots fixés à une rambarde de balcon, crédit Beyza Kayikci.
+- URL source : `https://images.pexels.com/photos/17034082/pexels-photo-17034082.jpeg?cs=srgb&dl=pexels-beyzakayikci-17034082.jpg&fm=jpg`

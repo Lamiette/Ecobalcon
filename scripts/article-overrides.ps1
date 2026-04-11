@@ -42,7 +42,7 @@
             <p>Elles sont intéressantes pour attirer davantage d’insectes utiles et accompagner les cultures comestibles. Si tu veux des idées concrètes, regarde aussi notre sélection de <a href="fleurs-comestibles-melliferes-balcon.html">fleurs comestibles et mellifères pour balcon</a>.</p>
             <h2>Les cultures d’été à préparer sans se précipiter</h2>
             <h3>Tomates et tomates cerises</h3>
-            <p>En avril, la vraie question n’est pas seulement “peut-on planter des tomates ?”, mais “dans quelles conditions exactes ?”. Sur un balcon très abrité, dans une région douce, tu peux parfois sortir progressivement certains plants robustes en fin de mois. Mais dans beaucoup de situations, il vaut mieux encore patienter ou acclimater très progressivement.</p>
+            <p>En avril, la vraie question n’est pas seulement “peut-on planter des tomates ?”, mais “dans quelles conditions exactes ?”. Sur un balcon très abrité, dans une région douce, tu peux parfois sortir progressivement certains plants robustes en fin de mois. Mais dans beaucoup de situations, il vaut mieux encore patienter ou acclimater très progressivement. Si c’est précisément le point qui te bloque, notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> détaille le bon rythme.</p>
             <p>Si tu vises cette culture, prépare plutôt les grands contenants, les tuteurs et l’emplacement. Tu éviteras ainsi d’agir dans la précipitation au premier week-end chaud. Tu peux ensuite basculer sur nos guides dédiés aux <a href="tomates-cerises-balcon.html">tomates cerises sur balcon</a> ou aux <a href="guide-tomates-sur-son-balcon.html">tomates sur balcon</a>.</p>
             <h3>Les poivrons</h3>
             <p>Les poivrons sont encore plus sensibles aux nuits fraîches. Avril sert surtout à les garder au chaud, à les endurcir progressivement si besoin, puis à attendre une vraie stabilité thermique avant plantation dehors. Ce n’est pas du temps perdu : cela évite beaucoup de stagnations ensuite.</p>
@@ -57,7 +57,7 @@
               <li>balcon à lumière douce : laitues, épinards, radis, persil, ciboulette, menthe ;</li>
               <li>balcon encore froid ou très venteux : commence avec les cultures les plus indulgentes et reporte les plantations d’été.</li>
             </ul>
-            <p>Si ton espace chauffe très vite, nos repères sur les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a> peuvent t’aider. Si, au contraire, la lumière directe manque, pars plutôt de notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a>.</p>
+            <p>Si ton espace chauffe très vite, nos repères sur les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a> peuvent t’aider. Si ton balcon prend surtout le vent, notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> t’aidera à choisir des plantes plus adaptées et à mieux protéger les pots. Si, au contraire, la lumière directe manque, pars plutôt de notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a>.</p>
             <h2>Un plan d’action simple pour tout le mois d’avril</h2>
             <p>Pour éviter de t’éparpiller, garde un cap très concret :</p>
             <ul>
@@ -214,6 +214,211 @@
           [ordered]@{ Name = "Sortir la motte et desserrer les racines"; Text = "Dépote calmement la plante et défais légèrement les racines si elles tournent en chignon." },
           [ordered]@{ Name = "Replanter à la bonne hauteur"; Text = "Replace la motte au même niveau qu’avant, complète autour avec du terreau et tasse seulement très légèrement." },
           [ordered]@{ Name = "Arroser puis protéger quelques jours"; Text = "Arrose une fois correctement puis garde le pot à l’abri du vent fort et du soleil brûlant pendant la reprise." }
+        )
+      }
+    }
+    "quand-sortir-tomates-poivrons-basilic-balcon" = [ordered]@{
+      Title = "Quand sortir les tomates, les poivrons et le basilic sur un balcon ?"
+      SeoTitle = "Quand sortir les tomates, les poivrons et le basilic sur un balcon ?"
+      Description = "Quand sortir tomates, poivrons et basilic sur un balcon : repères de température, Saints de glace et méthode d’acclimatation simple pour éviter le coup de froid."
+      Intro = "Au printemps, le vrai piège n’est pas d’acheter ses plants trop tôt, mais de les sortir trop vite. Tomates, poivrons et basilic peuvent très bien démarrer sur balcon, à condition de respecter quelques repères simples sur les nuits, le vent et l’acclimatation."
+      TimeRequired = "PT6M"
+      DatePublished = "2026-04-11T09:00:00.000Z"
+      DateModified = "2026-04-11T09:00:00.000Z"
+      AuthorName = "Mathias Lancet"
+      Category = "Entretien & astuces"
+      ImageFileName = "sortir-tomates-poivrons-basilic-balcon.jpg"
+      ImageAlt = "Jeune plant de tomate en pot sur une table de jardinage au printemps, prêt à être sorti dehors"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Tomates : dehors plus facilement quand les nuits restent globalement au-dessus de 10 à 12 °C<br>Poivrons : attends plutôt une vraie douceur stable, avec des nuits autour de 12 °C ou plus<br>Basilic : le plus frileux des trois, à sortir seulement quand les nuits sont franchement douces<br>Acclimatation : prévois 5 à 7 jours, d’abord à l’ombre lumineuse puis avec un peu de soleil progressif<br>À surveiller : vent, soleil direct brutal, terreau qui sèche trop vite et chutes soudaines des températures<br>Repère utile : les Saints de glace restent un bon jalon en France, mais le microclimat réel du balcon compte davantage qu’une date seule<br>Bon réflexe : mieux vaut rentrer un plant une nuit de plus que lui faire encaisser un vrai coup de froid</p>
+            <h2>Pourquoi cette étape fait rater beaucoup de débuts de saison</h2>
+            <p>Quand on a enfin ses premiers plants de tomates, de poivrons ou de basilic, tout pousse à les installer dehors au plus vite. Le balcon semble lumineux, les après-midis sont agréables et les jardineries donnent l’impression que la saison est déjà lancée. Pourtant, entre une belle journée de printemps et une plante capable de passer dehors durablement, il y a encore une vraie phase de transition.</p>
+            <p>Le problème ne vient pas seulement du froid. Un jeune plant élevé à l’intérieur, en serre ou sous abri doit aussi apprendre à gérer le vent, les écarts de température et surtout un soleil beaucoup plus fort qu’à travers une fenêtre. C’est pourquoi la réussite tient moins à une date magique qu’à une acclimatation progressive.</p>
+            <p>Si tu es encore en phase de mise en route globale, complète ce sujet avec notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a> : tu verras plus facilement quoi installer tout de suite et quoi faire encore patienter.</p>
+            <h2>Les trois repères à regarder avant de sortir les plants</h2>
+            <h3>1. Les températures de nuit</h3>
+            <p>Sur balcon, c’est souvent la nuit qui décide. Une tomate peut encaisser un peu de fraîcheur mieux qu’un basilic, mais aucune de ces plantes n’aime les nuits froides répétées. Le plus simple consiste à regarder la tendance sur plusieurs jours, pas seulement la météo du lendemain.</p>
+            <ul>
+              <li>Pour les tomates, la sortie devient plus simple quand les nuits descendent rarement sous 10 à 12 °C.</li>
+              <li>Pour les poivrons, vise une douceur encore plus régulière, car ils stagnent vite s’ils ont froid.</li>
+              <li>Pour le basilic, attends franchement la chaleur stable : c’est lui qui réagit le plus mal au moindre coup de frais.</li>
+            </ul>
+            <p>Ce ne sont pas des seuils rigides, mais de bons repères pour éviter de forcer trop tôt.</p>
+            <h3>2. Le vent et l’inertie du balcon</h3>
+            <p>Un balcon urbain peut sembler doux au sol et pourtant devenir agressif au niveau des pots. Le vent dessèche très vite le feuillage, refroidit le substrat et secoue les tiges encore tendres. Un balcon haut, traversant ou très ouvert demande donc plus de prudence qu’une loggia ou qu’un coin bien abrité.</p>
+            <p>Si tes plants passent de l’intérieur à un espace exposé, commence toujours par un endroit calme, près d’un mur ou dans un angle lumineux sans rafale. Le soleil seul ne suffit pas à compenser un environnement trop brusque.</p>
+            <h3>3. Le soleil direct</h3>
+            <p>Le soleil d’avril ou de mai paraît doux pour nous, mais pour un plant élevé derrière une vitre, il peut brûler très vite. Les feuilles tendres de basilic marquent rapidement, et même une tomate peut se fatiguer si elle passe d’un rebord intérieur à un plein sud brutal en une seule journée.</p>
+            <p>L’acclimatation sert justement à épaissir un peu les tissus et à rendre la plante plus autonome face à la lumière extérieure. Commence donc par de la clarté sans soleil fort, puis ajoute progressivement quelques heures de soleil du matin.</p>
+            <h2>Faut-il vraiment attendre les Saints de glace ?</h2>
+            <p>En France, les Saints de glace correspondent traditionnellement aux 11, 12 et 13 mai. Ce repère reste utile parce qu’il rappelle une chose simple : les coups de froid tardifs existent encore souvent à cette période, surtout hors des centres-villes très doux ou dans les zones venteuses.</p>
+            <p>Pour autant, ce n’est pas une frontière absolue. Sur un balcon très protégé, en climat doux, tu peux parfois commencer des sorties en journée un peu avant. À l’inverse, même après la mi-mai, une séquence fraîche et humide peut justifier d’attendre encore un peu pour laisser les plants dehors la nuit.</p>
+            <p>Le plus juste est donc de garder les Saints de glace comme repère de prudence, puis d’ajuster avec la météo réelle de ton balcon, comme on le fait déjà dans notre <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a>.</p>
+            <h2>Comment acclimater les plants sans les brusquer</h2>
+            <p>Une bonne acclimatation prend rarement plus d’une semaine, mais elle change beaucoup de choses. Le principe : donner aux plants un peu plus d’extérieur chaque jour, sans les exposer d’un coup au cumul soleil plus vent plus nuits fraîches.</p>
+            <ol>
+              <li>Choisis d’abord un créneau calme, sans rafales ni chute brutale annoncée.</li>
+              <li>Les deux premiers jours, sors les plants 2 à 3 heures dans une lumière vive, mais sans soleil dur.</li>
+              <li>Les jours suivants, prolonge la durée dehors et ajoute un peu de soleil du matin.</li>
+              <li>Quand le feuillage reste bien tonique, laisse-les passer une journée entière dehors.</li>
+              <li>Ne tente la première nuit à l’extérieur que si la douceur reste stable et que le balcon n’est pas trop exposé.</li>
+              <li>Au moindre doute sur un retour de fraîcheur, rentre les plants ou protège-les : ce n’est pas un recul, c’est juste une transition bien gérée.</li>
+            </ol>
+            <p>Cette logique fonctionne aussi pour des plants achetés en jardinerie. Même s’ils paraissent déjà robustes, ils viennent souvent d’un environnement protégé et chaud.</p>
+            <h2>Tomates, poivrons et basilic : pas tout à fait le même rythme</h2>
+            <h3>Les tomates : les plus conciliantes</h3>
+            <p>Parmi les trois, la tomate est souvent la plus tolérante. Cela ne veut pas dire qu’elle aime le froid, mais elle reprend plus facilement après une petite fraîcheur qu’un basilic ou qu’un poivron. C’est pourquoi on commence souvent par elle pour les sorties en journée.</p>
+            <p>Quand le bon moment arrive, appuie-toi ensuite sur notre <a href="guide-tomates-sur-son-balcon.html">guide complet pour cultiver des tomates sur son balcon</a> pour le choix du pot, l’installation du tuteur et l’arrosage régulier.</p>
+            <h3>Les poivrons : plus lents, donc plus sensibles au froid</h3>
+            <p>Le poivron aime la chaleur stable. Un simple coup de frais ne le tue pas forcément, mais il peut le bloquer pendant plusieurs jours, voire plusieurs semaines. Sur balcon, cette stagnation se paie ensuite par une croissance lente et une fructification tardive.</p>
+            <p>Si tu veux éviter ce faux départ, attends un vrai redoux avant de l’installer durablement et garde sous la main notre <a href="guide-poivrons-sur-son-balcon.html">guide des poivrons sur balcon</a> pour la suite de la culture.</p>
+            <h3>Le basilic : le plus frileux des trois</h3>
+            <p>Le basilic est souvent celui qu’on sort trop tôt parce qu’il paraît petit, simple et vite remplaçable. Pourtant, c’est aussi celui qui noircit ou se bloque le plus vite dès que les nuits restent fraîches. Sur beaucoup de balcons, mieux vaut lui faire patienter encore un peu, même quand les tomates commencent à faire leurs premières sorties.</p>
+            <p>Pour bien gérer ce timing, complète avec notre <a href="guide-basilic-sur-son-balcon.html">guide complet du basilic sur balcon</a>, surtout si tu pars d’un petit pot acheté en magasin.</p>
+            <h2>Et si les plants viennent d’être achetés ou rempotés ?</h2>
+            <p>Un plant acheté récemment cumule souvent plusieurs fragilités : godet serré, substrat qui sèche vite, exposition encore inconnue et reprise pas toujours régulière. Si tu viens aussi de le rempoter, ne l’envoie pas immédiatement en plein soleil dehors toute la journée.</p>
+            <p>Laisse-lui d’abord le temps de reprendre dans de bonnes conditions, puis démarre l’acclimatation. Si besoin, notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> t’aidera à repartir d’une base plus stable avant la vraie installation au balcon.</p>
+            <h2>Que faire si un coup de froid arrive après la sortie</h2>
+            <p>La bonne nouvelle, c’est qu’un retour de fraîcheur ne condamne pas tout, à condition de réagir vite. Sur balcon, quelques gestes simples suffisent souvent à passer un épisode délicat.</p>
+            <ul>
+              <li>Rentre les petits pots pour la nuit si c’est possible.</li>
+              <li>Regroupe les contenants contre le mur le plus abrité du balcon.</li>
+              <li>Évite d’arroser tard si une nuit froide est annoncée.</li>
+              <li>Ajoute provisoirement une protection légère, sans enfermer les plants dans une humidité stagnante.</li>
+              <li>Attends le retour d’une météo plus douce avant de reprendre l’acclimatation là où tu l’avais laissée.</li>
+            </ul>
+            <p>Le vrai piège serait de persister “par principe” alors que les conditions se dégradent. Revenir temporairement à un abri reste souvent la décision la plus rentable.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur consiste à se fier à un seul après-midi chaud. Ce sont les nuits et la stabilité de plusieurs jours qui comptent le plus.</p>
+            <p>La deuxième, c’est de passer d’un intérieur lumineux à un plein soleil direct. Même une plante de chaleur a besoin d’une montée progressive.</p>
+            <p>La troisième, c’est d’oublier le vent. Sur un balcon, il fatigue parfois plus vite les jeunes plants qu’une température simplement fraîche.</p>
+            <p>La quatrième, c’est de traiter tomates, poivrons et basilic comme s’ils réagissaient tous pareil. En pratique, le basilic reste le plus prudent à sortir, puis viennent les poivrons, tandis que la tomate prend souvent un peu d’avance.</p>
+            <h2>Questions fréquentes</h2>
+            <h3>Peut-on sortir les tomates avant les Saints de glace sur un balcon ?</h3>
+            <p>Oui, parfois en journée sur un balcon doux et bien abrité, mais pas forcément pour les laisser dehors en continu. Il faut surtout regarder les nuits et acclimater progressivement.</p>
+            <h3>Faut-il rentrer les plants la nuit au début ?</h3>
+            <p>Souvent oui, surtout pour le basilic et les poivrons. C’est une bonne façon de faire la transition sans exposer les plants à un refroidissement trop brutal.</p>
+            <h3>Combien de temps dure une bonne acclimatation ?</h3>
+            <p>Compte en général 5 à 7 jours pour des plants déjà assez formés, parfois un peu plus si le balcon est très exposé ou si la météo reste hésitante.</p>
+            <h2>En résumé</h2>
+            <p>Le bon moment pour sortir tomates, poivrons et basilic sur un balcon ne dépend pas d’une seule date, mais d’un ensemble simple : des nuits assez douces, un peu de stabilité météo et une acclimatation progressive au vrai dehors.</p>
+            <p>Si tu veux passer de cette étape de transition à la culture complète, enchaîne ensuite avec nos guides sur les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et le <a href="guide-basilic-sur-son-balcon.html">basilic</a>. Et si tu es encore en plein démarrage de saison, reviens aussi vers <a href="que-planter-en-avril-sur-un-balcon.html">les cultures faciles d’avril</a> pour garder un balcon simple et cohérent.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Peut-on sortir les tomates avant les Saints de glace sur un balcon ?"
+          Answer = "Oui, parfois en journée sur un balcon doux et bien abrité, mais pas toujours pour les laisser dehors en continu. Les nuits réelles et l’acclimatation progressive comptent davantage qu’une date seule."
+        },
+        [ordered]@{
+          Question = "Faut-il rentrer les plants la nuit au début ?"
+          Answer = "Souvent oui, surtout pour les poivrons et le basilic. Cette transition en douceur évite beaucoup de blocages de croissance et de feuilles abîmées."
+        },
+        [ordered]@{
+          Question = "Combien de temps faut-il pour acclimater des plants au balcon ?"
+          Answer = "Compte généralement 5 à 7 jours pour des plants déjà bien formés, parfois un peu plus si le balcon est très venteux, très ensoleillé ou si la météo reste instable."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment sortir progressivement ses plants au balcon"
+        Description = "Les étapes essentielles pour acclimater des tomates, poivrons et basilic avant de les laisser dehors durablement."
+        Steps = @(
+          [ordered]@{ Name = "Observer les nuits à venir"; Text = "Regarde la tendance sur plusieurs jours et attends une vraie douceur nocturne avant la sortie prolongée." },
+          [ordered]@{ Name = "Commencer dans un endroit calme"; Text = "Place d’abord les plants dehors dans une lumière vive mais protégée du vent et du soleil fort." },
+          [ordered]@{ Name = "Allonger la durée chaque jour"; Text = "Augmente progressivement le temps passé dehors pour habituer les plants au vrai rythme du balcon." },
+          [ordered]@{ Name = "Introduire un peu de soleil"; Text = "Ajoute d’abord quelques heures de soleil doux, surtout le matin, avant toute exposition plus forte." },
+          [ordered]@{ Name = "Tester une journée complète puis une nuit douce"; Text = "Laisse ensuite les plants dehors plus longtemps et ne tente la première nuit qu’en météo stable." },
+          [ordered]@{ Name = "Revenir sous abri si besoin"; Text = "Rentre ou protège les plants dès qu’un refroidissement ou un vent fort est annoncé." }
+        )
+      }
+    }
+    "balcon-venteux-plantes-protection-pots" = [ordered]@{
+      Title = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
+      SeoTitle = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
+      Description = "Balcon venteux : quelles plantes choisir, quels pots éviter et comment protéger ses cultures sans surcharger l’espace. Le guide simple pour jardiner malgré les rafales."
+      Intro = "Un balcon bien exposé peut vite devenir fatigant pour les plantes quand le vent s’en mêle. Feuillage desséché, tiges qui cassent, pots qui bougent, terreau qui sèche trop vite : sur un balcon venteux, la vraie solution n’est pas de renoncer, mais d’adapter les plantes, les contenants et l’organisation."
+      TimeRequired = "PT6M"
+      DatePublished = "2026-04-11T13:30:00.000Z"
+      DateModified = "2026-04-11T13:30:00.000Z"
+      AuthorName = "Louis Fargot"
+      Category = "Plantes & semis"
+      ImageFileName = "balcon-venteux-plantes-protection-pots.jpg"
+      ImageAlt = "Pots fixés à une rambarde de balcon avec fleurs et feuillage, sur un espace urbain exposé au vent"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Plantes les plus simples : formes compactes, tiges souples, feuillages fins ou coriaces, racines à l’aise dans des pots stables<br>À éviter au départ : suspensions légères, grands plants déjà filés, feuilles très tendres sans abri et pots trop hauts pour leur base<br>Contenants : larges, lourds, percés et si possible regroupés près d’un mur ou dans un angle plus calme<br>Protection utile : ralentir le vent, pas le bloquer avec une grande paroi qui se transforme en voile<br>Arrosage : plus suivi qu’on ne l’imagine, car le vent dessèche même sans grosse chaleur<br>Exposition : plein soleil venteux et ombre venteuse ne se gèrent pas de la même façon<br>Bon réflexe : commencer avec quelques plantes robustes, puis tester les cultures plus sensibles dans les zones les mieux protégées</p>
+            <h2>Pourquoi le vent complique autant la culture en pot</h2>
+            <p>Sur un balcon, le vent ne fait pas seulement “bouger les plantes”. Il refroidit les pots, accélère l’évaporation, sèche le feuillage, fatigue les tiges et déstabilise les contenants. Une plante qui semblait bien exposée peut donc se retrouver en stress permanent, même si elle reçoit beaucoup de lumière.</p>
+            <p>C’est pour cela qu’un balcon très ensoleillé mais très soufflé ne se comporte pas comme un balcon chaud et abrité. Si tu veux repartir de la base pour relire ton espace, notre guide pour <a href="jardiner-sur-un-balcon.html">jardiner sur un balcon</a> aide déjà à observer la lumière, la prise au vent et l’organisation générale.</p>
+            <h2>Comment reconnaître un balcon vraiment venteux</h2>
+            <p>Le plus simple, ce n’est pas de se fier à une impression ponctuelle, mais à des signes répétés. Un balcon devient vraiment délicat quand :</p>
+            <ul>
+              <li>le terreau sèche beaucoup plus vite que prévu, même hors canicule ;</li>
+              <li>les tiges souples penchent ou cassent souvent ;</li>
+              <li>les feuilles se déchirent, brunissent sur les bords ou se couchent régulièrement ;</li>
+              <li>les petits pots bougent, vibrent ou basculent facilement ;</li>
+              <li>les zones près de la rambarde sont beaucoup plus dures à cultiver que les coins contre le mur.</li>
+            </ul>
+            <p>Ce diagnostic est important, car il évite de conclure trop vite que “les plantes ne tiennent pas”. Très souvent, ce ne sont pas les plantes en elles-mêmes qui posent problème, mais leur emplacement exact sur le balcon.</p>
+            <h2>Les plantes les plus adaptées à un balcon venteux</h2>
+            <h3>Sur un balcon ensoleillé</h3>
+            <p>Quand le vent s’ajoute à un vrai soleil, les plantes les plus faciles sont souvent celles qui gardent un port compact et un feuillage plutôt résistant. Les aromatiques méditerranéennes font partie des meilleures alliées : thym, origan, ciboulette, lavande ou romarin compact tiennent généralement mieux qu’un feuillage large et tendre.</p>
+            <p>Si ton balcon cumule soleil fort et rafales, tu peux aussi croiser ce sujet avec nos repères sur les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a> et les <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques sur balcon</a>. L’idée n’est pas d’avoir les plantes les plus spectaculaires, mais celles qui restent faciles à suivre au quotidien.</p>
+            <h3>Sur un balcon lumineux mais moins brûlant</h3>
+            <p>Un balcon venteux n’est pas toujours un four. Quand la lumière est bonne mais plus douce, tu peux garder quelques plantes plus fraîches à condition de les installer dans les zones les moins brassées. Le persil, la ciboulette, certains fraisiers bien calés ou une menthe gardée dans un pot lourd peuvent mieux s’en sortir qu’on ne l’imagine.</p>
+            <p>Les cultures de feuilles comme les laitues ou les épinards restent possibles surtout dans les coins plus calmes, pas en première ligne derrière la rambarde. Si ton balcon reçoit peu de soleil en plus du vent, regarde aussi notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> pour éviter de cumuler deux contraintes sans adapter les choix.</p>
+            <h3>Les plantes à protéger davantage</h3>
+            <p>Les cultures les plus sensibles au vent sont souvent celles qu’on a le plus envie de lancer au printemps et en été : tomates hautes, poivrons, basilic, jeunes semis et suspensions très fleuries. Cela ne veut pas dire qu’elles sont impossibles, mais qu’elles demandent un coin plus calme, des pots bien stables et un suivi plus régulier.</p>
+            <p>Pour la suite, tu peux t’appuyer sur nos guides des <a href="guide-tomates-sur-son-balcon.html">tomates</a>, des <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et du <a href="guide-basilic-sur-son-balcon.html">basilic</a>. Et si le vrai blocage concerne le moment où les sortir dehors sans les abîmer, complète aussi avec <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a>.</p>
+            <h2>Comment protéger ses pots sans transformer le balcon en chantier</h2>
+            <h3>Choisir des contenants vraiment stables</h3>
+            <p>Le bon pot change énormément la donne. Sur balcon venteux, un contenant trop léger ou trop étroit fatigue vite la plante et finit par devenir pénible à surveiller. Mieux vaut un bac ou un pot assez large à la base, un peu lourd et bien percé, plutôt qu’une série de petits contenants décoratifs qui bougent au moindre coup d’air.</p>
+            <p>Si tu veux poser des bases simples avant d’acheter, relis aussi notre guide sur <a href="le-materiel-essentiel-pour-commencer.html">le matériel essentiel pour commencer</a>. Tu verras plus facilement quels contenants, tuteurs et fixations valent vraiment le coup sur un balcon exposé.</p>
+            <h3>Créer des zones plus calmes</h3>
+            <p>Le meilleur réflexe consiste souvent à déplacer les plantes plutôt qu’à chercher tout de suite une grosse protection. Un coin contre un mur, derrière un autre bac plus haut, près d’un angle ou à distance de la rambarde suffit parfois à faire une vraie différence.</p>
+            <p>Si tu ajoutes un brise-vue ou un écran, préfère quelque chose qui coupe partiellement les rafales au lieu de faire une paroi totalement rigide. Un obstacle plein peut se comporter comme une voile et rendre l’ensemble plus instable. Le but est de casser la vitesse du vent, pas d’enfermer le balcon.</p>
+            <h3>Tuteurer et attacher sans serrer</h3>
+            <p>Les plantes un peu hautes ont souvent besoin d’aide, mais un tuteur mal posé ne règle pas grand-chose. Choisis une attache souple, vérifie régulièrement qu’elle ne blesse pas la tige et accepte l’idée qu’un plant trop haut pour son pot restera plus fragile qu’un plant plus compact.</p>
+            <p>Sur des cultures gourmandes, mieux vaut parfois une variété un peu plus trapue et un tuteurage simple qu’une plante très vigoureuse mal tenue au vent pendant toute la saison.</p>
+            <h3>Adapter l’arrosage et le paillage</h3>
+            <p>Le vent donne souvent l’impression que la plante “boit beaucoup”, alors que le vrai problème vient surtout du dessèchement du terreau et du feuillage. Surveille donc la fraîcheur réelle du substrat, surtout dans les pots les plus exposés, et évite les alternances sec complet puis gros arrosage.</p>
+            <p>Un <a href="paillage-sur-balcon-ecolo.html">paillage</a> léger aide beaucoup à lisser ces à-coups. Si tu veux éviter de surarroser tout le balcon pour compenser un seul coin plus exposé, nos conseils sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a> complètent bien ce sujet.</p>
+            <h2>Peut-on quand même cultiver tomates, poivrons et basilic ?</h2>
+            <p>Oui, mais rarement au tout premier emplacement venu. Sur un balcon venteux, la bonne méthode consiste à réserver ces cultures aux zones les plus calmes, avec de grands pots stables et une vraie logique de progression. La tomate cerise s’en sort souvent mieux qu’une grosse variété haute, le poivron réclame une chaleur plus stable encore, et le basilic doit rester loin des rafales froides et desséchantes.</p>
+            <p>Autrement dit, un balcon venteux n’interdit pas les cultures d’été, mais il oblige à être plus sélectif. Si tu cumules en plus chaleur forte et air sec, regarde aussi nos repères sur les <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> : certaines logiques de protection se rejoignent.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur, c’est de vouloir tout mettre en première ligne parce que c’est la zone la plus lumineuse. Sur un balcon venteux, la meilleure place n’est pas toujours la plus spectaculaire.</p>
+            <p>La deuxième, c’est de multiplier les petits pots. Ils sèchent vite, bougent facilement et donnent l’impression que toutes les plantes sont capricieuses.</p>
+            <p>La troisième, c’est de choisir des plantes très hautes ou très feuillues sans adapter le volume du pot, l’emplacement et les attaches. La casse vient souvent de là, plus que du vent seul.</p>
+            <p>La quatrième, c’est de répondre au vent uniquement par un grand écran plein. Dans beaucoup de cas, mieux vaut une protection partielle, des bacs mieux répartis et quelques plantes plus robustes que de transformer le balcon en prise au vent géante.</p>
+            <h2>En résumé</h2>
+            <p>Sur un balcon venteux, on jardine mieux en cherchant l’équilibre plutôt que la performance. Des plantes plus compactes, des pots plus stables, quelques zones plus calmes et un arrosage mieux ajusté changent souvent bien plus de choses qu’un gros aménagement coûteux.</p>
+            <p>Si tu débutes, commence simple avec quelques plantes robustes, puis ajoute progressivement des cultures plus sensibles dans les endroits vraiment protégés. Le balcon deviendra tout de suite plus lisible, plus stable et beaucoup plus agréable à entretenir.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Quelles plantes tiennent le mieux sur un balcon venteux ?"
+          Answer = "Les plantes compactes, peu hautes et au feuillage plutôt résistant restent les plus simples : aromatiques comme le thym, l’origan, la ciboulette, la lavande ou certains romarins compacts, selon l’exposition."
+        },
+        [ordered]@{
+          Question = "Faut-il éviter les petits pots sur un balcon très exposé au vent ?"
+          Answer = "Souvent oui. Les petits contenants sèchent plus vite, bougent facilement et laissent moins de marge aux racines. Des pots plus larges et plus stables rendent le balcon beaucoup plus simple à gérer."
+        },
+        [ordered]@{
+          Question = "Peut-on installer un brise-vue sur un balcon venteux ?"
+          Answer = "Oui, mais il vaut mieux ralentir les rafales que tout bloquer avec une paroi rigide. Une protection trop pleine peut augmenter la prise au vent et rendre l’ensemble moins stable."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment aménager un balcon venteux pour les plantes"
+        Description = "Les étapes essentielles pour choisir de meilleures plantes, stabiliser les pots et protéger les cultures les plus fragiles sur un balcon exposé au vent."
+        Steps = @(
+          [ordered]@{ Name = "Observer les zones les plus exposées"; Text = "Repère les endroits où les rafales frappent le plus fort et les coins naturellement plus calmes contre un mur ou dans un angle." },
+          [ordered]@{ Name = "Choisir des plantes compactes"; Text = "Commence avec des plantes basses ou souples, moins sensibles à la casse et au dessèchement rapide." },
+          [ordered]@{ Name = "Installer des pots stables"; Text = "Privilégie des contenants plus larges et plus lourds, bien percés, capables de rester en place malgré les coups de vent." },
+          [ordered]@{ Name = "Créer un frein au vent"; Text = "Groupe les pots et ajoute si besoin une protection partielle pour casser les rafales sans transformer le balcon en voile." },
+          [ordered]@{ Name = "Attacher les plantes sensibles"; Text = "Pose des tuteurs et attaches souples sur les cultures hautes pour accompagner les tiges sans les blesser." },
+          [ordered]@{ Name = "Suivre l’arrosage plus finement"; Text = "Vérifie plus souvent la fraîcheur du terreau et ajoute un paillage pour limiter le dessèchement des pots exposés." }
         )
       }
     }
@@ -465,7 +670,7 @@
             <p>Le basilic aime un substrat vivant, souple et frais, mais pas gorgé d’eau. Choisis un pot percé, assez large pour laisser la touffe s’étoffer, avec un drainage propre au fond sans bloquer l’évacuation.</p>
             <p>Un terreau potager de bonne qualité, enrichi d’un peu de compost mûr, fonctionne bien. Si tu veux mieux doser cette matière organique, notre article sur <a href="utilisation-compost-sur-balcon.html">l’utilisation du compost sur balcon</a> t’aidera à éviter les apports trop lourds.</p>
             <h2>Soleil, chaleur et emplacement</h2>
-            <p>Le basilic aime la lumière et surtout la chaleur régulière. C’est une plante qui souffre vite des nuits fraîches, des courants d’air et des gros écarts de température. Attends donc que les nuits soient durablement douces avant de l’installer dehors.</p>
+            <p>Le basilic aime la lumière et surtout la chaleur régulière. C’est une plante qui souffre vite des nuits fraîches, des courants d’air et des gros écarts de température. Attends donc que les nuits soient durablement douces avant de l’installer dehors. Si tu hésites précisément sur ce passage dehors, notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> t’aidera à doser l’acclimatation.</p>
             <p>Un balcon est, sud-est ou sud avec un peu de protection au vent lui convient très bien. Si ton espace est très lumineux, garde aussi sous la main nos repères pour les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes adaptées à un balcon plein soleil</a> : le basilic aime la lumière, mais ses feuilles tendres apprécient qu’on évite les coups de chaud les plus durs.</p>
             <h2>Arroser sans excès</h2>
             <p>Le basilic déteste les à-coups. Un terreau qui sèche complètement, puis reçoit beaucoup d’eau d’un coup, donne vite un plant mou, taché ou stressé. Le bon rythme, c’est un substrat qui reste légèrement frais, jamais détrempé.</p>
@@ -628,7 +833,7 @@
               <li>Prépare les supports pour les futures plantes grimpantes ou gourmandes.</li>
             </ul>
             <h2>Avril</h2>
-            <p>Le balcon se remplit, mais il faut garder un œil sur les dernières gelées tardives. Si tu veux un repère plus ciblé pour ce moment précis, complète aussi avec notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a>.</p>
+            <p>Le balcon se remplit, mais il faut garder un œil sur les dernières gelées tardives. Si tu veux un repère plus ciblé pour ce moment précis, complète aussi avec notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a>. Et si tu commences à préparer tomates, poivrons ou basilic, regarde aussi <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand les sortir au balcon sans les brusquer</a>.</p>
             <ul>
               <li>Poursuis les semis rapides et installe les premières aromatiques.</li>
               <li>Paille les pots qui commencent à se réchauffer.</li>
@@ -750,7 +955,7 @@
             <p>Tu n’as pas besoin de transformer le balcon en atelier. Un <a href="https://amzn.to/44lUuQ6">petit kit d’outils</a> bien choisi remplace facilement une collection complète.</p>
             <h2>5. De quoi protéger et stabiliser</h2>
             <p>Selon ton balcon, quelques accessoires deviennent vite utiles : soucoupes, attaches, tuteurs, gants fins ou petites fixations pour jardinières. Ce sont souvent eux qui rendent l’entretien plus fluide, surtout dès que les cultures grandissent.</p>
-            <p>Si ton balcon est très exposé, pense aussi à ce qui aide à protéger du vent ou à maintenir les pots en sécurité.</p>
+            <p>Si ton balcon est très exposé, pense aussi à ce qui aide à protéger du vent ou à maintenir les pots en sécurité. Notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> détaille justement les protections utiles sans transformer l’espace en chantier.</p>
             <h2>6. Le matériel vraiment optionnel</h2>
             <p>Certains équipements sont intéressants, mais pas indispensables au départ : mini-serre, irrigation automatique, lampe horticole ou filet de protection. Ils deviennent utiles quand tu connais déjà ton balcon et tes usages, pas nécessairement le premier jour.</p>
             <ul>
@@ -891,9 +1096,9 @@
             <p>Un terreau potager riche, drainant et légèrement enrichi en compost mûr donne une base bien plus fiable qu’un simple terreau universel. Pour mieux valoriser cette matière organique au fil de la saison, tu peux aussi consulter notre guide sur <a href="utilisation-compost-sur-balcon.html">l’utilisation du compost sur balcon</a>.</p>
             <h2>Lumière, chaleur et circulation de l’air</h2>
             <p>La tomate a besoin de beaucoup de lumière pour fleurir et fructifier correctement. Une exposition sud, sud-est ou sud-ouest fonctionne bien, à condition que le plant ne soit pas enfermé dans une zone sans circulation d’air. Un balcon très chaud ou adossé à un mur minéral peut accélérer les stress hydriques.</p>
-            <p>En été, les mêmes gestes que pour les <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> peuvent t’aider : paillage, arrosage matinal, surveillance renforcée pendant les pics et ombre légère si la chaleur devient extrême.</p>
+            <p>En été, les mêmes gestes que pour les <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> peuvent t’aider : paillage, arrosage matinal, surveillance renforcée pendant les pics et ombre légère si la chaleur devient extrême. Si ton installation prend aussi les rafales, notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> t’aidera à choisir un emplacement plus calme et des pots vraiment stables.</p>
             <h2>Planter correctement</h2>
-            <p>Plante quand les nuits sont vraiment douces. Enterre une partie de la tige jusqu’aux premières feuilles : la tomate peut former de nouvelles racines le long de la tige, ce qui renforce le plant.</p>
+            <p>Plante quand les nuits sont vraiment douces. Enterre une partie de la tige jusqu’aux premières feuilles : la tomate peut former de nouvelles racines le long de la tige, ce qui renforce le plant. Si tu veux affiner ce timing avant l’installation définitive, consulte aussi notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">le bon moment pour sortir tomates, poivrons et basilic sur un balcon</a>.</p>
             <ul>
               <li>Installe le tuteur dès le départ.</li>
               <li>Arrose profondément juste après plantation.</li>
@@ -958,7 +1163,7 @@
       BodyHtml = @'
             <h2>Par où commencer quand on veut jardiner en ville</h2>
             <p>Jardiner sur un balcon ne consiste pas à reproduire un grand potager dans un petit format. C’est plutôt l’art de composer avec la lumière, le vent, le poids, le volume des pots et le temps que l’on peut réellement consacrer aux plantes. Quand on l’accepte, le balcon devient beaucoup plus simple à aménager, et surtout plus agréable à entretenir.</p>
-            <p>Le bon point de départ, c’est donc de lire ton espace avant de choisir tes cultures. Cette étape fait gagner plus de temps que n’importe quel accessoire ou achat impulsif.</p>
+            <p>Le bon point de départ, c’est donc de lire ton espace avant de choisir tes cultures. Cette étape fait gagner plus de temps que n’importe quel accessoire ou achat impulsif. Si le vent est justement ce qui te complique la vie, notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> t’aidera à adapter les plantes, les contenants et les protections sans te suréquiper.</p>
             <h2>1. Observer l’exposition avant toute plantation</h2>
             <p>Un balcon plein soleil n’offre pas les mêmes possibilités qu’un balcon orienté est ou qu’un espace à l’ombre. Les tomates, poivrons et aromatiques méditerranéennes réclament beaucoup de lumière. À l’inverse, les laitues, radis, épinards ou certaines herbes se plaisent dans une lumière plus douce.</p>
             <p>Si tu hésites, observe simplement à quels moments le soleil touche les pots. Et si la lumière directe manque vraiment, notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> t’aidera à choisir plus juste.</p>
