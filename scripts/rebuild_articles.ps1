@@ -67,48 +67,19 @@ function Write-MinifiedStylesheet {
 }
 
 function Get-TagManagerHeadHtml {
-  $snippets = @()
+  param([string]$scriptPrefix = "")
 
-  if (-not [string]::IsNullOrWhiteSpace($googleTagManagerId)) {
-    $snippets += (@"
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','$googleTagManagerId');</script>
-  <!-- End Google Tag Manager -->
-"@).TrimEnd()
-  }
-
-  $clarityHead = Get-ClarityHeadHtml
-  if (-not [string]::IsNullOrWhiteSpace($clarityHead)) {
-    $snippets += $clarityHead.TrimEnd()
-  }
-
-  if ($snippets.Count -eq 0) { return "" }
-  return $snippets -join "`r`n"
+  return @"
+  <script src="${scriptPrefix}js/cookie-consent.js" data-site-prefix="$scriptPrefix" data-gtm-id="$googleTagManagerId" data-ga-id="$googleAnalyticsMeasurementId" data-clarity-id="$microsoftClarityProjectId" defer></script>
+"@
 }
 
 function Get-ClarityHeadHtml {
-  if ([string]::IsNullOrWhiteSpace($microsoftClarityProjectId)) { return "" }
-
-  return @"
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "$microsoftClarityProjectId");
-  </script>
-"@
+  return ""
 }
 
 function Get-TagManagerBodyHtml {
-  if ([string]::IsNullOrWhiteSpace($googleTagManagerId)) { return "" }
-
-  return @"
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=$googleTagManagerId" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-"@
+  return ""
 }
 
 function Escape-Xml {
@@ -1467,7 +1438,7 @@ function Build-ArticleHtml {
   $heroImageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix "../../images/articles/"
   $heroImageDimensions = Get-ArticleImageDimensionAttributes $article.ImageFileName
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $relatedArticles = @(Get-RelatedArticles -article $article -allArticles $allArticles -count 3)
 
@@ -1805,7 +1776,7 @@ function Build-HomeHtml {
     }
   )
   $weeklyArticlesJson = $weeklyArticlesForJs | ConvertTo-Json -Depth 5 -Compress
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix ""
   $tagManagerBody = Get-TagManagerBodyHtml
   $themeHtml = @"
           <article class="theme-card" data-reveal style="--reveal-delay: 60ms;">
@@ -2248,7 +2219,7 @@ function Build-ArticlesIndexHtml {
   $heroImage = if ($allArticles.Count -gt 0) { $allArticles[0].ImageCanonicalUrl } else { "" }
   $heroImageAlt = if ($allArticles.Count -gt 0) { $allArticles[0].ImageAlt } else { "Articles EcoBalcon autour du jardinage sur balcon" }
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $jsonLd = Get-JsonLdScriptTags @([ordered]@{
       "@context" = "https://schema.org"
@@ -2762,7 +2733,7 @@ function Get-PreferredArticle {
 
 function Build-PrivacyPageHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = "$siteUrl/politique-confidentialite/"
 
@@ -2854,7 +2825,8 @@ $tagManagerBody
             <h2>En bref</h2>
             <ul class="article-list">
               <li>EcoBalcon est un site &eacute;ditorial autour du jardinage sur balcon.</li>
-              <li>Le site utilise Google Tag Manager et peut activer Google Analytics 4 pour la mesure d'audience.</li>
+              <li>Les outils de mesure d'audience ne sont activ&eacute;s qu'apr&egrave;s accord explicite.</li>
+              <li>Tu peux accepter, refuser ou modifier ce choix &agrave; tout moment depuis le lien de gestion des cookies.</li>
               <li>Il n'y a pas d'espace membre ni de compte utilisateur &agrave; cr&eacute;er sur le site.</li>
               <li>Les liens vers des services tiers comme Instagram ou X suivent leurs propres r&egrave;gles.</li>
             </ul>
@@ -2871,9 +2843,10 @@ $tagManagerBody
 
           <h2>Mesure d'audience</h2>
           <p>
-            EcoBalcon utilise Google Tag Manager (<code>GTM-MFRVPVFQ</code>) pour piloter ses balises. Selon la configuration
-            active du conteneur, Google Analytics 4 (<code>G-L952X34SHR</code>) peut &ecirc;tre utilis&eacute; pour mesurer l'audience,
-            observer les pages vues et mieux comprendre les parcours de navigation.
+            EcoBalcon utilise Google Tag Manager (<code>$googleTagManagerId</code>) pour piloter ses balises, Google Analytics 4
+            (<code>$googleAnalyticsMeasurementId</code>) pour la mesure d'audience et Microsoft Clarity
+            (<code>$microsoftClarityProjectId</code>) pour l'analyse d'usage. Ces outils ne sont charg&eacute;s qu'apr&egrave;s
+            un consentement explicite sur le bandeau cookies.
           </p>
 
           <h2>Formulaire de contact</h2>
@@ -2885,9 +2858,15 @@ $tagManagerBody
 
           <h2>Cookies et technologies proches</h2>
           <p>
-            Certaines balises ou outils de mesure peuvent d&eacute;poser des cookies ou utiliser des technologies similaires.
-            Leur fonctionnement d&eacute;pend des outils activ&eacute;s, des r&eacute;glages du navigateur et, le cas &eacute;ch&eacute;ant,
-            des param&egrave;tres de consentement mis en place sur le site.
+            EcoBalcon n'active pas les cookies d'audience avant ton accord. Seul le stockage n&eacute;cessaire &agrave; la
+            conservation de ton choix de consentement est utilis&eacute; par d&eacute;faut, via le navigateur, pour une dur&eacute;e
+            maximale de 6 mois. Si tu refuses, la navigation reste possible dans les m&ecirc;mes conditions &eacute;ditoriales.
+          </p>
+
+          <h2>G&eacute;rer tes pr&eacute;f&eacute;rences</h2>
+          <p>
+            Tu peux accepter, refuser ou modifier les cookies d'audience &agrave; tout moment depuis le bandeau affich&eacute;
+            &agrave; la premi&egrave;re visite, puis via le lien <em>G&eacute;rer mes cookies</em> ajout&eacute; dans le pied de page.
           </p>
 
           <h2>Liens et services tiers</h2>
@@ -2914,7 +2893,7 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 
 function Build-ContactPageHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = $contactPageUrl
   $jsonLd = Get-JsonLdScriptTags @(
@@ -3102,7 +3081,7 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 
 function Build-ContactThanksHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = $contactThanksUrl
 
@@ -3214,7 +3193,7 @@ $(Get-SiteFooterHtml -pagePrefix "../../")
 
 function Build-404Html {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml
+  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix ""
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = "$siteUrl/404.html"
 
