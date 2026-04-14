@@ -110,6 +110,15 @@ a {
   border-radius: 999px;
 }
 
+.site-nav a[href$="galerie/"],
+.site-nav a[href$="galerie"] {
+  display: none;
+}
+
+.gallery-page .site-nav a[aria-current="page"] {
+  display: none;
+}
+
 .site-nav a[aria-current="page"] {
   color: var(--brand-dark);
   text-decoration: underline;

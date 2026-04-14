@@ -346,8 +346,25 @@
     footerLinks.appendChild(button);
   }
 
+  function hideGalleryNavItem() {
+    const navLinks = document.querySelectorAll(".site-nav a");
+
+    navLinks.forEach((link) => {
+      const label = (link.textContent || "").trim().toLowerCase();
+
+      if (label !== "galerie") {
+        return;
+      }
+
+      link.hidden = true;
+      link.setAttribute("aria-hidden", "true");
+      link.setAttribute("tabindex", "-1");
+    });
+  }
+
   function init() {
     state.consent = readConsent();
+    hideGalleryNavItem();
     ensureFooterButton();
     buildUi();
 
