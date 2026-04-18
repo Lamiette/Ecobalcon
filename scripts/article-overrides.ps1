@@ -1,5 +1,108 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "que-planter-en-mai-sur-un-balcon" = [ordered]@{
+      Title = "Que planter en mai sur un balcon ? Les cultures faciles pour passer au rythme d’été"
+      SeoTitle = "Que planter en mai sur un balcon ?"
+      Description = "Que planter en mai sur un balcon : tomates cerises, basilic, poivrons, haricots nains, fleurs utiles et derniers semis faciles quand les nuits deviennent plus douces."
+      Intro = "Mai change vraiment la donne sur un balcon. Les nuits deviennent plus douces, les plants d’été trouvent enfin leur place et on peut passer du simple redémarrage de printemps à un vrai balcon productif, sans tout brusquer."
+      TimeRequired = "PT6M"
+      DatePublished = "2026-04-18T09:00:00.000Z"
+      DateModified = "2026-04-18T09:00:00.000Z"
+      AuthorName = "Clara Fontaine"
+      Category = "Plantes & semis"
+      ImageFileName = "que-planter-en-mai-sur-un-balcon.jpg"
+      ImageAlt = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Période : surtout de la mi-mai jusqu’au début juin, une fois les nuits redevenues plus douces<br>Ce que tu peux enfin installer plus sereinement : tomates cerises, tomates, poivrons, basilic, haricots nains, concombres ou courgettes compactes selon la place<br>Ce qui reste très intéressant : fraisiers, aromatiques, fleurs utiles et quelques semis rapides pour compléter les pots<br>Point clé : ne te fie pas à une seule journée chaude, regarde surtout la tendance des nuits et le vent réel du balcon<br>Bon réflexe : mieux vaut installer moins de pots, mais leur donner enfin le bon volume et la bonne exposition<br>Repère utile : appuie-toi sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">le bon moment pour sortir tomates, poivrons et basilic</a> avant de tout installer</p>
+            <h2>Pourquoi mai est souvent le vrai mois de lancement</h2>
+            <p>Avril sert à redémarrer. Mai sert souvent à installer vraiment. Sur beaucoup de balcons français, c’est le moment où l’on cesse de jongler avec les nuits trop fraîches, les allers-retours à l’intérieur et les demi-mesures sur les cultures d’été.</p>
+            <p>Autrement dit, si tu as suivi notre guide sur <a href="que-planter-en-avril-sur-un-balcon.html">ce que planter en avril sur un balcon</a>, mai correspond au passage suivant : on garde les cultures de printemps qui fonctionnent bien, puis on ajoute enfin les plantes plus gourmandes en chaleur et en volume.</p>
+            <h2>Les cultures les plus intéressantes à installer en mai</h2>
+            <h3>Les tomates cerises et les tomates compactes</h3>
+            <p>Mai est souvent le bon créneau pour les tomates sur balcon, surtout si les nuits sont devenues franchement plus douces. Les tomates cerises restent les plus simples pour débuter : elles supportent bien la culture en pot, donnent vite une impression de vrai potager et se marient bien avec un balcon de taille moyenne.</p>
+            <p>Si tu veux un repère pratique pour choisir entre format compact, grand pot et tuteur, va voir notre <a href="tomates-cerises-balcon.html">guide des tomates cerises sur balcon</a> ainsi que le <a href="guide-tomates-sur-son-balcon.html">guide complet pour cultiver des tomates sur son balcon</a>.</p>
+            <h3>Les poivrons</h3>
+            <p>Le poivron reste plus prudent que la tomate, mais en mai il devient enfin beaucoup plus simple à installer dehors durablement. Il aime la chaleur stable, un pot généreux et un emplacement lumineux, de préférence abrité du vent.</p>
+            <p>Si ton balcon chauffe bien et reste assez protégé, mai est souvent son vrai point de départ. Pour la suite, garde sous la main notre <a href="guide-poivrons-sur-son-balcon.html">guide complet pour cultiver des poivrons sur son balcon</a>.</p>
+            <h3>Le basilic</h3>
+            <p>Le basilic fait partie des grands gagnants du mois de mai, parce qu’il n’aime vraiment pas les nuits hésitantes. Quand la douceur s’installe, il se densifie mieux, pousse plus vite et devient enfin simple à garder dehors sans stress permanent.</p>
+            <p>Tu peux l’associer aux tomates, mais aussi le cultiver seul dans un pot bien drainé, avec un peu de pincement régulier. Si tu veux lui donner toutes ses chances, relis notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a>.</p>
+            <h3>Les haricots nains</h3>
+            <p>Les haricots nains sont une très bonne idée de mai sur balcon : ils se sèment directement, poussent vite et demandent moins de structure que les variétés grimpantes. Ils sont intéressants si tu veux compléter un balcon potager sans basculer dans les gros contenants très encombrants.</p>
+            <p>Leur vrai intérêt, c’est qu’ils apportent une culture d’été productive sans demander la même surveillance qu’une tomate. Sur un balcon moyen, quelques grands bacs suffisent déjà à les rendre rentables.</p>
+            <h3>Les concombres ou courgettes compactes si tu as vraiment de la place</h3>
+            <p>Mai peut aussi convenir à des cultures plus gourmandes comme les concombres compacts ou certaines courgettes adaptées au pot, mais seulement si tu disposes d’un grand contenant, d’une bonne lumière et d’un vrai espace de circulation. Sur un petit balcon, mieux vaut souvent réussir peu de plantes bien choisies que tout essayer à la fois.</p>
+            <p>Si tu hésites, retiens une règle simple : tomate, poivron et basilic restent plus lisibles pour commencer qu’une grosse plante qui envahit tout le balcon en quelques semaines.</p>
+            <h2>Ce qu’on peut encore semer ou compléter facilement</h2>
+            <p>Mai ne sert pas seulement à installer des plants déjà avancés. C’est aussi un très bon mois pour compléter les pots avec quelques cultures rapides et utiles.</p>
+            <ul>
+              <li>des haricots nains en semis direct ;</li>
+              <li>du basilic si tu veux encore tenter un semis au chaud puis une sortie rapide ;</li>
+              <li>des laitues à relancer dans les coins moins brûlants ;</li>
+              <li>des fleurs utiles comme les capucines ou les soucis ;</li>
+              <li>quelques aromatiques pour densifier la cuisine du balcon.</li>
+            </ul>
+            <p>Les <a href="guide-laitues-sur-son-balcon.html">laitues</a>, les <a href="guide-fraises-sur-son-balcon.html">fraisiers</a> et beaucoup d’<a href="plantes-aromatiques-sur-balcon.html">aromatiques de balcon</a> restent donc totalement intéressants en mai, à condition d’adapter l’exposition et l’arrosage aux premières chaleurs.</p>
+            <h2>Adapter ses choix selon l’exposition</h2>
+            <h3>Balcon très ensoleillé</h3>
+            <p>C’est là que mai devient le plus spectaculaire. Tomates, poivrons, basilic, haricots nains et fleurs utiles y trouvent vite leur place. En revanche, il faut anticiper l’arrosage et le séchage rapide des pots. Si ton balcon chauffe fort, relis aussi nos repères sur les <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a>.</p>
+            <h3>Balcon venteux</h3>
+            <p>Le mois de mai ne supprime pas le problème du vent. Il le rend parfois plus délicat, car les plants d’été encore tendres se dessèchent ou se cassent plus vite. Dans ce cas, mieux vaut réduire un peu le nombre de cultures exigeantes et t’appuyer sur notre guide <a href="balcon-venteux-plantes-protection-pots.html">Balcon venteux : quelles plantes choisir et comment protéger ses pots ?</a>.</p>
+            <h3>Balcon à lumière douce</h3>
+            <p>Si ton balcon reste assez ombragé, mai ne transforme pas tout en balcon à tomates. Mieux vaut continuer à valoriser les cultures de lumière douce et garder seulement quelques essais ciblés pour les plantes d’été. Notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> t’aidera à rester réaliste.</p>
+            <h2>Un plan simple pour le mois de mai</h2>
+            <p>Le plus rentable consiste souvent à avancer par étapes très claires :</p>
+            <ol>
+              <li>confirme d’abord que les nuits sont assez douces pour une installation durable ;</li>
+              <li>mets en place les grands pots des tomates, poivrons ou haricots nains ;</li>
+              <li>garde encore quelques bacs frais pour les laitues, fraisiers ou aromatiques ;</li>
+              <li>ajoute une ou deux fleurs utiles pour accompagner le balcon ;</li>
+              <li>paille ou protège la surface des pots dès le départ pour ne pas courir après l’eau en juin.</li>
+            </ol>
+            <p>Cette méthode évite de transformer mai en grand week-end de plantation impossible à suivre. Elle permet surtout de garder un balcon cohérent, plus simple à arroser et plus agréable à regarder.</p>
+            <h2>Les erreurs les plus fréquentes en mai</h2>
+            <p>La première erreur consiste à croire que mai règle tout partout en France. Sur un balcon urbain très doux, oui, on peut aller vite. Sur un balcon haut, traversant ou en climat encore frais, la prudence reste utile quelques jours ou semaines de plus.</p>
+            <p>La deuxième, c’est de vouloir installer tomates, poivrons, basilic, courgettes, concombres et fleurs dans le même petit espace. En pratique, la réussite vient souvent d’un meilleur choix, pas d’un plus grand nombre de pots.</p>
+            <p>La troisième, c’est d’oublier que le vrai changement de mai n’est pas seulement la chaleur. C’est aussi la vitesse à laquelle les plantes poussent et boivent. Si tu veux garder une logique simple, anticipe dès maintenant le paillage, l’accès à l’eau et le volume des contenants.</p>
+            <h2>FAQ</h2>
+            <h3>Peut-on planter le basilic dehors tout le mois de mai ?</h3>
+            <p>Souvent oui, à condition que les nuits soient redevenues franchement douces. Sur un balcon encore frais ou très venteux, il peut rester utile de patienter un peu ou de le protéger au début.</p>
+            <h3>Que planter en mai sur un petit balcon ?</h3>
+            <p>Le plus simple reste souvent une combinaison de tomates cerises, basilic, quelques fraisiers, une ou deux aromatiques et éventuellement des haricots nains. Ce choix reste productif sans surcharger l’espace.</p>
+            <h3>Est-il trop tard pour les laitues ou les fraises en mai ?</h3>
+            <p>Non, pas du tout. Les fraisiers s’installent très bien et les laitues restent intéressantes dans les zones moins brûlantes ou pour des récoltes rapides, à condition de surveiller davantage l’humidité.</p>
+            <h2>En résumé</h2>
+            <p>Mai est souvent le mois où un balcon passe vraiment du printemps prudent au potager d’été. C’est le bon moment pour installer plus sereinement tomates, poivrons, basilic et quelques cultures productives en pot, tout en gardant des bacs plus frais pour les laitues, fraisiers ou aromatiques.</p>
+            <p>Pour garder un rythme simple, complète ce guide avec <a href="que-planter-en-avril-sur-un-balcon.html">les cultures d’avril</a>, <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">le bon moment pour sortir les plants frileux</a> et le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a>. Tu verras beaucoup plus clairement quoi ajouter, quoi garder et quoi laisser de côté.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Que planter en mai sur un balcon en France ?"
+          Answer = "Le mois de mai convient très bien aux tomates cerises, tomates compactes, poivrons, basilic, haricots nains, fraisiers, aromatiques et fleurs utiles, avec des ajustements selon la douceur réelle des nuits et l’exposition du balcon."
+        },
+        [ordered]@{
+          Question = "Peut-on installer les tomates en pot dès le début du mois de mai ?"
+          Answer = "Parfois oui sur un balcon doux et abrité, mais pas systématiquement. Le plus important reste la stabilité des nuits et une acclimatation correcte si les plants vivaient encore à l’intérieur ou sous abri."
+        },
+        [ordered]@{
+          Question = "Que planter en mai sur un balcon peu ensoleillé ?"
+          Answer = "Mieux vaut rester sur des laitues, fraisiers, aromatiques fraîches et quelques fleurs adaptées à la lumière douce, puis limiter les légumes-fruits très gourmands en soleil."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment choisir quoi planter en mai sur son balcon"
+        Description = "Les étapes essentielles pour profiter du redoux, installer les bonnes cultures d’été et garder un balcon simple à suivre pendant la belle saison."
+        Steps = @(
+          [ordered]@{ Name = "Observer les nuits"; Text = "Vérifie que les températures nocturnes sont enfin assez douces pour installer durablement les cultures d’été les plus frileuses." },
+          [ordered]@{ Name = "Choisir deux ou trois cultures prioritaires"; Text = "Commence par les plantes les plus utiles et les plus adaptées à ton exposition, au lieu de vouloir tout installer en même temps." },
+          [ordered]@{ Name = "Préparer les grands contenants"; Text = "Installe les pots stables et assez volumineux pour les tomates, poivrons ou haricots nains avant de planter." },
+          [ordered]@{ Name = "Compléter avec des cultures fraîches"; Text = "Garde de la place pour les fraisiers, aromatiques, laitues ou fleurs utiles qui équilibrent le balcon." },
+          [ordered]@{ Name = "Anticiper l’arrosage"; Text = "Paille, organise l’accès à l’eau et évite les contenants trop petits qui deviendront vite ingérables avec les premières chaleurs." },
+          [ordered]@{ Name = "Ajuster selon le lieu réel"; Text = "Corrige tes choix si le balcon est très venteux, trop ombragé ou au contraire très brûlant dès la fin du printemps." }
+        )
+      }
+    }
     "que-planter-en-avril-sur-un-balcon" = [ordered]@{
       Title = "Que planter en avril sur un balcon ? Les cultures faciles pour bien démarrer"
       SeoTitle = "Que planter en avril sur un balcon ?"
@@ -42,7 +145,7 @@
             <p>Elles sont intéressantes pour attirer davantage d’insectes utiles et accompagner les cultures comestibles. Si tu veux des idées concrètes, regarde aussi notre sélection de <a href="fleurs-comestibles-melliferes-balcon.html">fleurs comestibles et mellifères pour balcon</a>.</p>
             <h2>Les cultures d’été à préparer sans se précipiter</h2>
             <h3>Tomates et tomates cerises</h3>
-            <p>En avril, la vraie question n’est pas seulement “peut-on planter des tomates ?”, mais “dans quelles conditions exactes ?”. Sur un balcon très abrité, dans une région douce, tu peux parfois sortir progressivement certains plants robustes en fin de mois. Mais dans beaucoup de situations, il vaut mieux encore patienter ou acclimater très progressivement. Si c’est précisément le point qui te bloque, notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> détaille le bon rythme.</p>
+            <p>En avril, la vraie question n’est pas seulement “peut-on planter des tomates ?”, mais “dans quelles conditions exactes ?”. Sur un balcon très abrité, dans une région douce, tu peux parfois sortir progressivement certains plants robustes en fin de mois. Mais dans beaucoup de situations, il vaut mieux encore patienter ou acclimater très progressivement. Si c’est précisément le point qui te bloque, notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> détaille le bon rythme. Et si tu regardes déjà le mois suivant, enchaîne ensuite avec notre guide sur <a href="que-planter-en-mai-sur-un-balcon.html">ce que planter en mai sur un balcon</a> pour passer au vrai rythme d’été.</p>
             <p>Si tu vises cette culture, prépare plutôt les grands contenants, les tuteurs et l’emplacement. Tu éviteras ainsi d’agir dans la précipitation au premier week-end chaud. Tu peux ensuite basculer sur nos guides dédiés aux <a href="tomates-cerises-balcon.html">tomates cerises sur balcon</a> ou aux <a href="guide-tomates-sur-son-balcon.html">tomates sur balcon</a>.</p>
             <h3>Les poivrons</h3>
             <p>Les poivrons sont encore plus sensibles aux nuits fraîches. Avril sert surtout à les garder au chaud, à les endurcir progressivement si besoin, puis à attendre une vraie stabilité thermique avant plantation dehors. Ce n’est pas du temps perdu : cela évite beaucoup de stagnations ensuite.</p>
@@ -74,7 +177,7 @@
             <p>La troisième, c’est de sous-estimer le vent de printemps et la vitesse à laquelle un petit pot peut sécher ou se refroidir. En cas de doute, simplifie toujours. Et si tu veux repérer les pièges classiques plus largement, relis aussi notre article sur les <a href="erreurs-jardiner-sur-un-balcon.html">erreurs à éviter quand on jardine sur un balcon</a>.</p>
             <h2>En résumé</h2>
             <p>En avril, le meilleur choix consiste rarement à tout planter : il consiste à lancer les bonnes cultures au bon rythme. Commence par les radis, laitues, épinards, fraisiers, aromatiques et quelques fleurs utiles, puis prépare calmement les cultures d’été qui viendront après.</p>
-            <p>Si tu veux avancer sans te disperser, combine ce guide avec le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> et les fiches de culture déjà disponibles sur EcoBalcon. Tu garderas ainsi un balcon vivant, lisible et beaucoup plus facile à suivre au quotidien.</p>
+            <p>Si tu veux avancer sans te disperser, combine ce guide avec le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a>, puis prolonge avec <a href="que-planter-en-mai-sur-un-balcon.html">les cultures faciles à installer en mai</a> pour passer d’un balcon de printemps à un balcon d’été sans rupture brutale. Tu garderas ainsi un balcon vivant, lisible et beaucoup plus facile à suivre au quotidien.</p>
 '@
       Faq = @(
         [ordered]@{
@@ -303,7 +406,7 @@
             <p>Compte en général 5 à 7 jours pour des plants déjà assez formés, parfois un peu plus si le balcon est très exposé ou si la météo reste hésitante.</p>
             <h2>En résumé</h2>
             <p>Le bon moment pour sortir tomates, poivrons et basilic sur un balcon ne dépend pas d’une seule date, mais d’un ensemble simple : des nuits assez douces, un peu de stabilité météo et une acclimatation progressive au vrai dehors.</p>
-            <p>Si tu veux passer de cette étape de transition à la culture complète, enchaîne ensuite avec nos guides sur les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et le <a href="guide-basilic-sur-son-balcon.html">basilic</a>. Et si tu es encore en plein démarrage de saison, reviens aussi vers <a href="que-planter-en-avril-sur-un-balcon.html">les cultures faciles d’avril</a> pour garder un balcon simple et cohérent.</p>
+            <p>Si tu veux passer de cette étape de transition à la culture complète, enchaîne ensuite avec nos guides sur les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et le <a href="guide-basilic-sur-son-balcon.html">basilic</a>. Et si tu veux savoir quoi installer juste après cette phase d’acclimatation, complète aussi avec <a href="que-planter-en-mai-sur-un-balcon.html">ce que planter en mai sur un balcon</a> pour organiser le vrai lancement des cultures d’été.</p>
 '@
       Faq = @(
         [ordered]@{
