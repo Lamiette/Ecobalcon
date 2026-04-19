@@ -526,18 +526,19 @@
       }
     }
     "tomates-cerises-balcon" = [ordered]@{
-      Title = "Guide complet pour cultiver des tomates cerises sur son balcon"
-      Description = "Tomates cerises sur balcon : variétés compactes, pot adapté, soleil, arrosage, taille et récolte. Un guide clair pour produire facilement en pot tout l’été."
-      Intro = "La tomate cerise est l’un des légumes-fruits les plus gratifiants en pot : avec du soleil, un grand contenant et un arrosage régulier, elle produit généreusement tout l’été sur un balcon."
+      Title = "Tomates cerises sur balcon : le guide simple pour bien démarrer"
+      SeoTitle = "Tomates cerises sur balcon : guide simple pour réussir"
+      Description = "Tomates cerises sur balcon : variété facile, pot de 20 à 30 L, soleil, arrosage et taille légère. Les bons repères pour récolter tout l’été en pot."
+      Intro = "La tomate cerise reste l’une des meilleures cultures pour débuter un balcon potager ensoleillé. Avec un grand pot, beaucoup de lumière et un arrosage régulier, elle donne vite une récolte concrète sans demander la même technicité qu’une grosse tomate."
       TimeRequired = "PT4M"
-      DateModified = "2026-04-04T09:00:00.000Z"
+      DateModified = "2026-04-19T09:00:00.000Z"
       ImageAlt = "Tomates cerises mûres sur un balcon cultivées en pot, prêtes à être récoltées"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Exposition : plein soleil, 6 à 8 h par jour<br>Type de pot : 20 à 30 L minimum, profond et stable<br>Substrat : terreau potager riche, drainant, enrichi en compost mûr<br>Plantation : avril à juin après les gelées<br>Arrosage : régulier, sans alternance sécheresse / excès d’eau<br>Fertilisation : toutes les 2 semaines en période de production<br>Récolte : juillet à octobre selon la variété<br>Variétés conseillées : Tumbling Tom, Balconi Red, Sweet 100, Black Cherry, Gardener’s Delight</p>
             <h2>Pourquoi la tomate cerise marche si bien sur un balcon</h2>
             <p>Si tu veux une culture généreuse, visuelle et assez simple à réussir, la tomate cerise fait partie des meilleures options. Elle tolère mieux la culture en pot que de grosses tomates charnues, démarre vite et produit longtemps si le plant reste bien nourri.</p>
-            <p>Elle convient particulièrement aux balcons ensoleillés, où la chaleur aide la fructification. Si tu veux une version plus générale du sujet, tu peux aussi lire notre <a href="guide-tomates-sur-son-balcon.html">guide complet pour cultiver des tomates sur son balcon</a>.</p>
+            <p>Elle convient particulièrement aux balcons ensoleillés, où la chaleur aide la fructification. Si tu veux une version plus générale du sujet, tu peux aussi lire notre <a href="guide-tomates-sur-son-balcon.html">guide complet pour cultiver des tomates sur son balcon</a>. Pour un coin d’été cohérent, elle s’associe aussi très bien à des <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et à un pot de <a href="guide-basilic-sur-son-balcon.html">basilic</a>.</p>
             <h2>Choisir une variété adaptée au petit espace</h2>
             <p>Toutes les tomates cerises ne poussent pas de la même façon. Les variétés compactes ou retombantes sont idéales si tu manques de place ou si tu cultives en suspension. Les variétés plus vigoureuses demandent un tuteur plus solide et un volume de terre plus généreux, mais offrent souvent des récoltes plus abondantes.</p>
             <p>Sur un balcon exposé au vent, choisis de préférence un plant trapu, pas trop haut, pour éviter la casse et limiter la prise au vent.</p>
@@ -547,13 +548,14 @@
             <h2>Soleil, chaleur et emplacement</h2>
             <p>Les tomates cerises aiment la chaleur, mais elles fructifient mieux avec une chaleur régulière qu’avec un balcon transformé en plaque brûlante. L’idéal reste une exposition très lumineuse, sud ou sud-ouest, avec un emplacement protégé des rafales.</p>
             <p>Si ton balcon devient étouffant en été, garde en tête les mêmes réflexes que pour d’autres <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> : paillage, arrosage tôt le matin et ombre légère pendant les pics extrêmes.</p>
-            <h2>Plantation</h2>
+            <h2>Quand planter et comment l’installer</h2>
             <p>Attends que les nuits soient franchement douces avant d’installer le plant dehors. Enterre une partie de la tige jusqu’aux premières feuilles : cela aide la plante à former davantage de racines et à s’ancrer plus solidement dans le pot.</p>
             <ul>
               <li>Place une couche drainante légère sans obstruer les trous d’évacuation.</li>
               <li>Ajoute un tuteur dès la plantation pour ne pas déranger les racines plus tard.</li>
               <li>Arrose copieusement une première fois pour bien mettre le substrat en contact avec les racines.</li>
             </ul>
+            <p>Si ton plant a encore vécu à l’intérieur ou sous abri, passe d’abord par notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> pour éviter un faux départ.</p>
             <h2>Arrosage : la régularité avant tout</h2>
             <p>Le vrai piège en pot, ce n’est pas tant le manque d’eau ponctuel que l’irrégularité. Une tomate cerise qui sèche trop entre deux arrosages, puis reçoit beaucoup d’eau d’un coup, réagit vite : fruits qui éclatent, feuillage fatigué, croissance ralentie.</p>
             <ul>
@@ -570,7 +572,7 @@
               <li>retirer les feuilles abîmées au bas du plant,</li>
               <li>apporter un engrais riche en potasse toutes les 2 semaines quand les bouquets de fleurs s’enchaînent.</li>
             </ul>
-            <h2>Problèmes courants sur balcon</h2>
+            <h2>Les erreurs les plus fréquentes sur balcon</h2>
             <p>Les fruits éclatent ? C’est presque toujours un problème de rythme d’arrosage.</p>
             <p>Les fleurs tombent ? Le plant a souvent subi un stress : chaleur trop forte, vent, froid nocturne ou manque d’eau.</p>
             <p>Le feuillage se tache ou se couvre d’humidité persistante ? Surveille les maladies cryptogamiques et évite de mouiller les feuilles. Si des pucerons ou aleurodes s’installent, tu peux réagir tôt avec les bons gestes de notre guide pour <a href="proteger-son-balcon-des-nuisibles-naturellement.html">protéger son balcon des nuisibles naturellement</a>.</p>
@@ -677,17 +679,19 @@
       }
     }
     "guide-fraises-sur-son-balcon" = [ordered]@{
-      Description = "Fraises sur balcon : variétés remontantes, pot adapté, soleil doux, paillage, stolons et récoltes parfumées. Le guide pour réussir des fraisiers en pot."
-      Intro = "Le fraisier fait partie des cultures les plus plaisantes sur balcon : peu encombrant, décoratif et gourmand. Avec un contenant bien choisi et une bonne gestion de l’humidité, il produit des fruits parfumés pendant de longues semaines."
+      Title = "Fraises sur balcon : comment réussir des fraisiers en pot"
+      SeoTitle = "Fraises sur balcon : réussir des fraisiers en pot"
+      Description = "Fraises sur balcon : variétés faciles, bon pot, arrosage, paillage et stolons. Les repères simples pour récolter des fraises en pot même quand on débute."
+      Intro = "Oui, les fraises poussent très bien en pot sur un balcon, à condition d’avoir un contenant assez large, une bonne lumière et une humidité régulière. Pour un débutant, c’est même l’une des cultures les plus gratifiantes : elle prend peu de place et donne vite envie de continuer."
       TimeRequired = "PT4M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      DateModified = "2026-04-19T09:00:00.000Z"
       ImageAlt = "Grosse fraise bien mûre dans un potager de balcon, entourée de feuilles et paillée"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Exposition : soleil doux à mi-ombre lumineuse, 4 à 6 h par jour<br>Type de pot : jardinière ou pot large de 20 à 25 cm minimum<br>Substrat : terreau riche, souple, drainant, légèrement enrichi en compost mûr<br>Plantation : mars à juin ou en début d’automne<br>Arrosage : régulier, sans détremper le terreau<br>Récolte : mai à octobre selon variété<br>Variétés conseillées : Charlotte, Mara des Bois, Cirafine, Gariguette, fraises des bois compactes</p>
             <h2>Pourquoi le fraisier fonctionne bien en pot</h2>
             <p>Le fraisier a un vrai profil balcon : il reste compact, fructifie vite, apporte un aspect gourmand et décoratif, et peut même se cultiver en suspension selon les variétés. C’est une plante généreuse, à condition de ne pas la laisser subir les à-coups de chaleur et de sécheresse.</p>
-            <p>Sur un petit espace, il est souvent plus intéressant que des cultures plus volumineuses. Il s’associe très bien à quelques <a href="guide-laitues-sur-son-balcon.html">laitues</a>, à des <a href="guide-radis-sur-son-balcon.html">radis</a> ou à un peu de <a href="guide-basilic-sur-son-balcon.html">basilic</a>.</p>
+            <p>Sur un petit espace, il est souvent plus intéressant que des cultures plus volumineuses. Il se marie très bien avec des <a href="guide-laitues-sur-son-balcon.html">laitues</a>, des <a href="guide-epinards-sur-son-balcon.html">épinards</a> de printemps ou un peu de <a href="guide-basilic-sur-son-balcon.html">basilic</a>. Et si ton balcon est plus chaud, tu peux compléter avec un grand pot de <a href="tomates-cerises-balcon.html">tomates cerises</a> pour garder un coin vraiment gourmand.</p>
             <h2>Choisir la bonne variété</h2>
             <p>Les variétés remontantes sont généralement les plus simples sur balcon, car elles produisent par vagues pendant plusieurs mois. Les non-remontantes donnent une récolte plus concentrée, mais parfois très abondante sur une courte période.</p>
             <p>Si tu jardineras surtout pour le plaisir de cueillir souvent, vise une remontante. Si tu veux plutôt une belle récolte printanière et un goût très marqué, certaines variétés classiques restent excellentes.</p>
@@ -697,14 +701,14 @@
             <h2>Lumière et emplacement</h2>
             <p>Les fraisiers ont besoin de lumière pour sucrer les fruits, mais ils supportent mal les situations extrêmes en pot. Une exposition est, sud-est ou un soleil filtré l’après-midi fonctionne souvent mieux qu’un plein sud écrasant sur dalle brûlante.</p>
             <p>Si ton balcon chauffe très fort, garde quelques réflexes simples : paillage, arrosage matinal, et éventuellement ombre légère pendant les heures les plus dures. Cela évite les fruits secs et le feuillage brûlé.</p>
-            <h2>Plantation</h2>
+            <h2>Quand planter et comment installer ses fraisiers</h2>
             <p>Plante de préférence au printemps ou en début d’automne, quand la reprise est plus douce. Le collet doit rester juste au niveau du substrat : ni enterré, ni laissé trop haut.</p>
             <ul>
               <li>Humidifie les racines ou la motte avant plantation.</li>
               <li>Tasse légèrement autour du plant, sans compacter excessivement.</li>
               <li>Arrose généreusement juste après pour bien lancer l’enracinement.</li>
             </ul>
-            <p>Si tu veux ensuite multiplier tes plants, tu pourras conserver quelques stolons bien placés et éliminer les autres.</p>
+            <p>Si tu veux ensuite multiplier tes plants, tu pourras conserver quelques stolons bien placés et éliminer les autres. Et si tu veux élargir ce coin gourmand sans surcharger le balcon, notre dossier sur les <a href="petits-fruits-en-pot.html">petits fruits en pot</a> peut t’aider à garder une composition cohérente.</p>
             <h2>Arrosage et paillage : le duo essentiel</h2>
             <p>La fraise aime la fraîcheur, mais pas l’eau stagnante. L’objectif est de garder un terreau souple et frais, surtout quand les fruits se forment. Des alternances trop brutales entre sec et humide donnent vite des fruits décevants.</p>
             <p>Arrose au pied, le matin si possible, puis ajoute un <a href="paillage-sur-balcon-ecolo.html">paillage</a> fin pour garder l’humidité et éviter que les fraises touchent le substrat. C’est l’un des gestes les plus rentables pour cette culture.</p>
@@ -755,7 +759,7 @@
       Description = "Basilic sur balcon : semis, pot, soleil, arrosage, pincement et récoltes régulières. Le guide simple pour garder un basilic touffu et parfumé en pot."
       Intro = "Le basilic fait partie des plantes les plus gratifiantes sur un balcon ensoleillé : il pousse vite, parfume les repas et répond très bien quand on comprend ses trois vrais besoins, la chaleur, l’eau régulière et les récoltes fréquentes."
       TimeRequired = "PT5M"
-      DateModified = "2026-04-01T09:00:00.000Z"
+      DateModified = "2026-04-19T09:00:00.000Z"
       ImageFileName = "basilic-sur-balcon-ron-lach.jpg"
       ImageAlt = "Jeune plant de basilic bien vert dans un pot sur un balcon lumineux"
       BodyHtml = @'
@@ -795,6 +799,7 @@
             <h2>Récolter pour garder un basilic touffu</h2>
             <p>La récolte n’est pas la récompense finale : elle fait partie de l’entretien. Commence quand le plant a assez de tiges pour supporter quelques coupes, puis prélève souvent sans le déshabiller complètement.</p>
             <p>Sur un balcon gourmand, le basilic accompagne très bien les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> et d’autres cultures d’été. C’est aussi une bonne plante pour donner vite du rythme à un petit espace comestible, entre deux cultures plus lentes.</p>
+            <p>Quand un plant se plaît vraiment, n’hésite pas à le multiplier : notre méthode pour <a href="bouturer-basilic-balcon.html">bouturer du basilic sur un balcon</a> permet de relancer facilement un deuxième pot sans repartir de zéro.</p>
             <h2>Les problèmes les plus courants</h2>
             <p>Le basilic jaunit ? Le pot est souvent trop mouillé, le drainage insuffisant ou la plante a subi un coup de froid.</p>
             <p>Les feuilles noircissent ? Le plus fréquent, c’est une nuit trop fraîche, un arrosage sur le feuillage par temps frais ou un stress thermique important.</p>
@@ -1175,10 +1180,12 @@
       }
     }
     "guide-tomates-sur-son-balcon" = [ordered]@{
-      Description = "Tomates sur balcon : variétés adaptées, pot généreux, soleil, tuteur, arrosage régulier et prévention des maladies. Le guide pour récolter en pot tout l’été."
-      Intro = "La tomate est l’une des cultures les plus désirées sur balcon, mais aussi l’une des plus exigeantes. Avec un bon volume de terre, beaucoup de lumière et un suivi régulier, elle peut pourtant devenir une vraie réussite en ville."
+      Title = "Tomates sur balcon : réussir la culture en pot sans se compliquer"
+      SeoTitle = "Tomates sur balcon : réussir la culture en pot"
+      Description = "Tomates sur balcon : quelle variété choisir, quel pot prévoir, quand planter et comment arroser pour récolter en pot sans multiplier les erreurs."
+      Intro = "Les tomates sont tout à fait possibles sur un balcon, mais elles demandent des bases solides dès le départ : beaucoup de lumière, un grand pot et un arrosage régulier. Si tu débutes, le plus simple consiste à choisir une variété adaptée au pot et à viser moins de plants, mais mieux installés."
       TimeRequired = "PT5M"
-      DateModified = "2026-03-28T11:30:00.000Z"
+      DateModified = "2026-04-19T09:00:00.000Z"
       ImageAlt = "Tomates mûres cultivées en pot sur un balcon ensoleillé, attachées à un tuteur"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
@@ -1186,7 +1193,7 @@
             <h2>Pourquoi la tomate demande un peu plus d’attention en pot</h2>
             <p>Sur balcon, la tomate ne manque pas d’atouts : elle est belle, généreuse, gourmande et très satisfaisante à récolter. Mais elle vit dans un volume de terre limité, souvent exposé au vent, à la chaleur et aux oublis d’arrosage. C’est ce qui explique pourquoi la culture réussit très bien chez certains et se révèle frustrante chez d’autres.</p>
             <p>La bonne nouvelle, c’est qu’une grande partie des problèmes se joue avant même la plantation : choix de variété, taille du contenant, emplacement et organisation de l’arrosage. Si tu cherches une version encore plus simple à démarrer, la <a href="tomates-cerises-balcon.html">tomate cerise sur balcon</a> reste souvent la meilleure porte d’entrée.</p>
-            <p>Pour compléter ce coin chaud avec une culture plus rapide à récolter, ajoute aussi un pot de <a href="guide-basilic-sur-son-balcon.html">basilic sur balcon</a> : l’association est pratique au quotidien et très adaptée aux petits espaces d’été.</p>
+            <p>Pour compléter ce coin chaud avec une culture plus rapide à récolter, ajoute aussi un pot de <a href="guide-basilic-sur-son-balcon.html">basilic sur balcon</a> : l’association est pratique au quotidien et très adaptée aux petits espaces d’été. Et quand ce basilic se plaît vraiment, notre méthode pour <a href="bouturer-basilic-balcon.html">bouturer le basilic sur un balcon</a> permet d’en relancer facilement un deuxième pot.</p>
             <h2>Choisir une variété adaptée au balcon</h2>
             <p>Toutes les tomates ne sont pas faites pour la culture en pot. Les variétés déterminées, compactes ou à fruits plus petits demandent moins d’espace et restent plus simples à gérer. Les tomates très vigoureuses peuvent fonctionner, mais elles réclament un grand pot, un tuteur sérieux et un suivi plus attentif.</p>
             <ul>
@@ -1200,7 +1207,7 @@
             <h2>Lumière, chaleur et circulation de l’air</h2>
             <p>La tomate a besoin de beaucoup de lumière pour fleurir et fructifier correctement. Une exposition sud, sud-est ou sud-ouest fonctionne bien, à condition que le plant ne soit pas enfermé dans une zone sans circulation d’air. Un balcon très chaud ou adossé à un mur minéral peut accélérer les stress hydriques.</p>
             <p>En été, les mêmes gestes que pour les <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> peuvent t’aider : paillage, arrosage matinal, surveillance renforcée pendant les pics et ombre légère si la chaleur devient extrême. Si ton installation prend aussi les rafales, notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> t’aidera à choisir un emplacement plus calme et des pots vraiment stables.</p>
-            <h2>Planter correctement</h2>
+            <h2>Quand planter et comment installer le plant</h2>
             <p>Plante quand les nuits sont vraiment douces. Enterre une partie de la tige jusqu’aux premières feuilles : la tomate peut former de nouvelles racines le long de la tige, ce qui renforce le plant. Si tu veux affiner ce timing avant l’installation définitive, consulte aussi notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">le bon moment pour sortir tomates, poivrons et basilic sur un balcon</a>.</p>
             <ul>
               <li>Installe le tuteur dès le départ.</li>
@@ -1220,7 +1227,7 @@
             <h2>Taille, entretien et surveillance</h2>
             <p>Selon la variété, la taille peut aider à mieux canaliser la plante, mais elle ne doit pas devenir un automatisme sans discernement. Sur les tomates à croissance indéterminée, enlever une partie des gourmands permet souvent d’aérer et de guider la végétation. Sur les formes plus compactes, une taille trop forte peut réduire la récolte.</p>
             <p>Retire surtout les feuilles abîmées à la base, attache régulièrement les tiges et surveille les premiers signes d’attaque : pucerons, aleurodes, taches brunes, feuilles jaunes ou fruits marqués. Un repérage rapide fait souvent toute la différence.</p>
-            <h2>Problèmes fréquents sur balcon</h2>
+            <h2>Les erreurs les plus fréquentes et comment réagir</h2>
             <p>Fleurs qui tombent : stress thermique, vent, froid nocturne ou arrosage irrégulier.</p>
             <p>Fruits qui noircissent au bout : souvent une nécrose apicale liée à un déséquilibre hydrique.</p>
             <p>Feuilles tachées ou malades : humidité stagnante, mauvais séchage du feuillage, air qui circule mal. Si des ravageurs s’installent, tu peux compléter avec notre guide pour <a href="proteger-son-balcon-des-nuisibles-naturellement.html">protéger son balcon des nuisibles naturellement</a>.</p>
@@ -1599,6 +1606,385 @@
         )
       }
     }
+    "guide-epinards-sur-son-balcon" = [ordered]@{
+      Title = "Épinards sur balcon : réussir les semis et la récolte en pot"
+      SeoTitle = "Épinards sur balcon : semis, pot et récolte facile"
+      Description = "Épinards sur balcon : quand semer, quel pot choisir, où les placer et comment éviter la montée en graines. Un guide simple pour récolter longtemps en pot."
+      Intro = "Les épinards font partie des cultures les plus faciles sur un balcon peu brûlant. Avec un bac pas trop profond, un semis simple et une humidité régulière, on peut récolter plusieurs fois sans entrer dans une culture compliquée."
+      TimeRequired = "PT5M"
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Exposition : soleil doux à mi-ombre lumineuse, surtout au printemps et à l’automne<br>Type de pot : jardinière ou bac de 15 à 20 cm de profondeur minimum<br>Substrat : terreau souple, riche et frais, avec un peu de compost mûr<br>Semis : surtout de fin d’hiver au printemps puis de fin d’été à l’automne<br>Arrosage : régulier pour éviter le coup de sec et la montée en graines<br>Récolte : feuille à feuille ou coupe partielle quelques semaines après le semis<br>Variétés faciles : Géant d’hiver, Matador, Monstrueux de Viroflay, jeunes pousses</p>
+            <h2>Pourquoi les épinards sont intéressants sur un balcon</h2>
+            <p>Les épinards poussent vite, demandent peu de profondeur et aiment les saisons fraîches. Sur un balcon qui n’est pas brûlant, c’est une culture très rassurante pour débuter parce qu’elle répond bien à des gestes simples : semer, garder le terreau frais, récolter régulièrement.</p>
+            <p>Ils trouvent très bien leur place à côté des <a href="guide-laitues-sur-son-balcon.html">laitues</a>, des <a href="guide-radis-sur-son-balcon.html">radis</a> et même de quelques <a href="guide-fraises-sur-son-balcon.html">fraisiers</a> si tu veux un balcon productif sans miser uniquement sur les cultures d’été plus gourmandes.</p>
+            <h2>Quand semer des épinards sur un balcon</h2>
+            <p>Le meilleur créneau reste souvent le printemps doux et la fin d’été. En plein été, un balcon trop chaud les fait monter en graines beaucoup plus vite.</p>
+            <p>Si tu débutes, pars sur de petits semis espacés de deux à trois semaines plutôt que tout semer d’un coup. C’est plus simple à suivre et cela étale les récoltes.</p>
+            <h2>Le bon pot et le bon terreau</h2>
+            <p>Les épinards n’ont pas besoin d’un bac profond, mais ils aiment un contenant assez large pour que les plants respirent. Une jardinière classique ou un bac peu encombrant fonctionne très bien.</p>
+            <p>Vise un terreau potager frais et souple, enrichi légèrement avec du compost mûr. Si tu veux préparer ce mélange sans excès, tu peux t’appuyer sur notre dossier sur <a href="solutions-compostage-sur-balcon.html">les solutions de compostage sur balcon</a> et sur notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur un balcon</a>.</p>
+            <h2>Exposition et emplacement</h2>
+            <p>Les épinards préfèrent la lumière douce à un plein soleil écrasant. Un balcon est, nord-est ou un coin lumineux mais pas brûlant leur convient souvent très bien.</p>
+            <p>Si ton espace manque de soleil, ce n’est pas forcément un problème. Notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> peut t’aider à mieux exploiter ces zones plus fraîches.</p>
+            <h2>Semis pas à pas</h2>
+            <ul>
+              <li>Humidifie le terreau avant de semer.</li>
+              <li>Sème clair pour éviter un tapis trop serré.</li>
+              <li>Recouvre légèrement puis garde la surface fraîche jusqu’à la levée.</li>
+              <li>Éclaircis un peu si les jeunes plants se touchent trop.</li>
+            </ul>
+            <p>Tu peux aussi récolter les premiers éclaircissages comme jeunes pousses. C’est une manière simple de ne rien perdre.</p>
+            <h2>Arrosage : le vrai point de vigilance</h2>
+            <p>Les épinards aiment la fraîcheur régulière. Dès que le terreau alterne trop entre sec et mouillé, ils ralentissent, durcissent ou montent en graines plus vite.</p>
+            <p>Arrose de préférence le matin, surveille la fraîcheur sur quelques centimètres et ajoute un <a href="paillage-sur-balcon-ecolo.html">paillage léger</a> si le bac chauffe vite. Si tu veux aussi économiser l’eau, complète avec notre guide sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a>.</p>
+            <h2>Récolter sans épuiser le bac</h2>
+            <p>Tu peux couper les feuilles extérieures au fur et à mesure ou récolter une partie du rang quand les plants sont assez développés. Dans les deux cas, mieux vaut revenir souvent plutôt que tout attendre en une seule fois.</p>
+            <p>Sur un balcon bien organisé, cette logique fonctionne très bien avec des cultures rapides comme les laitues et les radis, pendant que les <a href="tomates-cerises-balcon.html">tomates cerises</a> prennent le relais dans les zones plus chaudes.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur consiste à semer en plein été sur un balcon très chaud. La deuxième, à laisser le bac sécher entre deux arrosages. La troisième, à serrer les plants au point de bloquer l’air et la lumière.</p>
+            <p>Si quelques pucerons ou feuilles abîmées apparaissent, interviens tôt avec les bons gestes de notre guide pour <a href="proteger-son-balcon-des-nuisibles-naturellement.html">protéger son balcon des nuisibles naturellement</a>.</p>
+            <h2>En résumé</h2>
+            <p>Pour réussir des épinards sur un balcon, retiens surtout trois choses : une saison fraîche, un bac large plutôt que profond, et une humidité régulière. C’est une culture très accessible quand on respecte ce rythme simple.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Quand semer des épinards sur un balcon ?"
+          Answer = "Les meilleurs moments sont souvent le printemps doux et la fin d’été. Les fortes chaleurs rendent la culture moins simple car les épinards montent plus vite en graines."
+        },
+        [ordered]@{
+          Question = "Pourquoi mes épinards montent-ils trop vite ?"
+          Answer = "La montée en graines arrive surtout quand il fait trop chaud, que le terreau sèche trop entre deux arrosages ou que la variété n’est pas bien calée sur la saison."
+        },
+        [ordered]@{
+          Question = "Quelle exposition convient le mieux aux épinards en pot ?"
+          Answer = "Une lumière douce ou une mi-ombre lumineuse fonctionne souvent très bien. Les épinards supportent moins bien un plein soleil brûlant qu’une tomate ou un poivron."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment cultiver des épinards sur un balcon"
+        Description = "Les étapes essentielles pour semer des épinards en pot, garder le terreau frais et récolter plusieurs fois sur un balcon."
+        Steps = @(
+          [ordered]@{ Name = "Choisir la bonne saison"; Text = "Sème surtout au printemps doux ou en fin d’été pour éviter les périodes trop chaudes." },
+          [ordered]@{ Name = "Préparer un bac large"; Text = "Utilise une jardinière ou un bac de profondeur moyenne avec un terreau souple, riche et frais." },
+          [ordered]@{ Name = "Semer clair"; Text = "Répartis les graines sans trop serrer puis recouvre-les légèrement." },
+          [ordered]@{ Name = "Garder le substrat frais"; Text = "Arrose régulièrement sans détremper le bac et ajoute un paillage léger si besoin." },
+          [ordered]@{ Name = "Éclaircir au bon moment"; Text = "Retire quelques jeunes plants si la levée est trop dense pour laisser respirer le rang." },
+          [ordered]@{ Name = "Récolter progressivement"; Text = "Prélève les feuilles extérieures ou coupe une partie du rang pour prolonger la production." }
+        )
+      }
+    }
+    "guide-poivrons-sur-son-balcon" = [ordered]@{
+      Title = "Poivrons sur balcon : réussir la culture en pot"
+      SeoTitle = "Poivrons sur balcon : guide simple pour réussir en pot"
+      Description = "Poivrons sur balcon : variété compacte, grand pot, chaleur, arrosage régulier et nouaison. Le guide simple pour réussir des poivrons en pot."
+      Intro = "Les poivrons demandent plus de chaleur que les cultures de printemps, mais ils restent très accessibles sur un balcon ensoleillé. Avec un grand pot, une installation au bon moment et un arrosage suivi, on peut obtenir de beaux fruits sans compliquer toute la saison."
+      DateModified = "2026-04-19T09:00:00.000Z"
+    }
+    "bouturer-basilic-balcon" = [ordered]@{
+      Title = "Bouturer du basilic sur un balcon : la méthode la plus simple"
+      SeoTitle = "Bouturer du basilic : méthode simple sur balcon"
+      Description = "Bouturer du basilic sur un balcon : choisir la bonne tige, faire raciner dans l’eau ou en pot, puis replanter sans casser la reprise."
+      Intro = "Quand un basilic se plaît vraiment, on a vite envie d’en obtenir un deuxième pot sans tout recommencer. Bonne nouvelle : c’est l’une des aromatiques les plus simples à multiplier si on choisit une tige saine et une reprise douce."
+      TimeRequired = "PT6M"
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Moment le plus simple : de mai à août, quand le basilic pousse franchement<br>Tige à choisir : saine, non fleurie, souple mais déjà vigoureuse<br>Méthode la plus rassurante : faire raciner d’abord dans l’eau, puis replanter<br>Alternative : piquer directement en petit pot dans un substrat léger et frais<br>Erreur classique : choisir une tige trop faible ou replanter trop tôt</p>
+            <h2>Pourquoi bouturer du basilic plutôt que repartir de zéro</h2>
+            <p>Sur un balcon, le basilic fait partie des plantes qu’on a envie de multiplier dès qu’elles deviennent belles. Un plant déjà adapté à ton exposition repart souvent plus vite par bouture qu’un semis improvisé.</p>
+            <p>La bouture permet aussi de densifier un coin aromatique sans racheter un autre pot. Si tu veux garder une vue d’ensemble sur cette culture, appuie-toi aussi sur notre <a href="guide-basilic-sur-son-balcon.html">guide complet pour cultiver du basilic sur son balcon</a>.</p>
+            <h2>Quand prélever une tige</h2>
+            <p>Le meilleur moment arrive quand le basilic pousse activement, avec des tiges souples mais déjà assez formées. En pratique, c’est souvent entre la fin du printemps et le cœur de l’été, tant que la plante reste vigoureuse.</p>
+            <p>Évite les tiges déjà en floraison, trop fines ou stressées par un coup de chaud, un manque d’eau ou une nuit froide.</p>
+            <h2>Quelle tige choisir exactement</h2>
+            <ul>
+              <li>Prends une tige saine, bien verte et non abîmée.</li>
+              <li>Coupe juste sous un nœud.</li>
+              <li>Retire les feuilles du bas pour dégager la future zone d’enracinement.</li>
+              <li>Garde seulement quelques feuilles en haut pour limiter l’évaporation.</li>
+            </ul>
+            <p>Si ton basilic est encore à l’étroit dans son pot, un passage par notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> peut aussi aider avant de multiplier.</p>
+            <h2>Dans l’eau ou directement en pot ?</h2>
+            <h3>La méthode dans l’eau</h3>
+            <p>C’est la plus rassurante pour un débutant parce qu’elle permet de voir les racines arriver. Un petit verre d’eau propre, beaucoup de lumière sans soleil dur et un renouvellement régulier suffisent souvent.</p>
+            <h3>La méthode directement en pot</h3>
+            <p>Elle fonctionne aussi très bien si tu gardes un substrat léger, frais et une ambiance douce les premiers jours. Sur un balcon exposé au vent ou aux grosses chaleurs, l’eau reste souvent la voie la plus lisible.</p>
+            <h2>La méthode la plus simple pas à pas</h2>
+            <ol>
+              <li>Choisis une tige saine de 10 à 15 cm.</li>
+              <li>Coupe proprement juste sous un nœud.</li>
+              <li>Retire les feuilles du bas.</li>
+              <li>Place la tige dans un verre d’eau propre ou un petit pot très léger.</li>
+              <li>Installe le tout dans un endroit lumineux sans plein soleil agressif.</li>
+              <li>Attends des racines visibles avant de replanter en pot drainant.</li>
+            </ol>
+            <p>Une fois la bouture repartie, tu peux compléter avec notre <a href="guide-basilic-sur-son-balcon.html">guide complet du basilic</a> pour garder ensuite un plant dense et productif.</p>
+            <h2>Comment replanter sans casser la reprise</h2>
+            <p>La vraie fragilité arrive souvent après l’enracinement, au moment du passage en pot. Utilise un petit contenant percé, un terreau souple et garde la jeune plante à l’abri du vent et du soleil le plus dur pendant quelques jours.</p>
+            <p>Si tu dois ensuite la sortir dehors après une période à l’intérieur, fais-le progressivement. Notre guide sur <a href="quand-sortir-tomates-poivrons-basilic-balcon.html">quand sortir tomates, poivrons et basilic sur un balcon</a> aide justement à éviter les sorties trop brusques.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur consiste à prélever une tige trop faible ou déjà fleurie. La deuxième, à laisser des feuilles tremper dans l’eau. La troisième, à replanter dans un grand pot trop humide “pour être tranquille”.</p>
+            <p>Une jeune bouture préfère souvent un petit contenant bien maîtrisé à un grand pot détrempé.</p>
+            <h2>FAQ</h2>
+            <h3>Peut-on bouturer du basilic acheté en supermarché ?</h3>
+            <p>Oui, si certaines tiges sont encore bien saines. Mieux vaut agir assez tôt, avant que le pot trop serré ne fatigue tout le plant.</p>
+            <h3>Combien de temps faut-il avant de replanter ?</h3>
+            <p>Il n’y a pas un nombre de jours parfait, mais une règle simple : attends que les racines soient déjà visibles et un peu développées.</p>
+            <h3>Peut-on laisser la bouture longtemps dans l’eau ?</h3>
+            <p>Quelques jours à deux semaines fonctionnent souvent très bien. Au-delà, il vaut mieux penser à la replantation pour relancer une croissance plus stable.</p>
+            <h2>En résumé</h2>
+            <p>Bouturer du basilic sur un balcon est l’un des gestes les plus simples pour multiplier une aromatique qu’on aime déjà. Choisis une tige saine, fais-la raciner dans l’eau ou dans un petit pot, puis replante doucement sans brusquer la reprise.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Peut-on bouturer du basilic directement dans l’eau ?"
+          Answer = "Oui. Le basilic s’enracine très facilement dans un verre d’eau si on choisit une tige saine, qu’on retire les feuilles basses et qu’on garde le contenant propre et lumineux."
+        },
+        [ordered]@{
+          Question = "Combien de temps faut-il pour qu’une bouture de basilic fasse des racines ?"
+          Answer = "Dans de bonnes conditions, les premières racines apparaissent souvent en quelques jours et deviennent assez solides en une à deux semaines selon la chaleur et la lumière."
+        },
+        [ordered]@{
+          Question = "Faut-il replanter la bouture dès que les racines sortent ?"
+          Answer = "Mieux vaut attendre que les racines soient déjà visibles et un peu développées. Une replantation trop précoce rend la reprise plus fragile, surtout sur un balcon exposé au vent ou au soleil fort."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment bouturer du basilic sur un balcon"
+        Description = "Les étapes essentielles pour prélever une tige de basilic, la faire raciner puis la replanter dans de bonnes conditions sur un balcon."
+        Steps = @(
+          [ordered]@{ Name = "Choisir une tige saine"; Text = "Prélève une tige souple, non fleurie, longue de quelques nœuds et encore bien vigoureuse." },
+          [ordered]@{ Name = "Couper sous un nœud"; Text = "Fais une coupe nette juste sous un nœud, puis retire les feuilles du bas pour libérer la future zone d’enracinement." },
+          [ordered]@{ Name = "Faire raciner dans l’eau ou dans un petit pot"; Text = "Place la tige dans un verre d’eau propre ou dans un substrat léger maintenu frais et lumineux." },
+          [ordered]@{ Name = "Attendre des racines suffisantes"; Text = "Laisse la bouture s’enraciner quelques jours à deux semaines en surveillant la propreté et la lumière." },
+          [ordered]@{ Name = "Replanter doucement"; Text = "Installe la jeune bouture dans un pot drainant, à l’abri du vent et du soleil le plus dur pendant sa reprise." },
+          [ordered]@{ Name = "Pincer ensuite pour la densifier"; Text = "Quand la reprise est bonne, pince légèrement les tiges pour encourager un basilic plus compact et plus productif." }
+        )
+      }
+    }
+    "insectes-utiles-sur-un-balcon" = [ordered]@{
+      Title = "Insectes utiles sur un balcon : lesquels attirer et pourquoi"
+      SeoTitle = "Insectes utiles sur un balcon : lesquels attirer ?"
+      Description = "Coccinelles, syrphes, abeilles solitaires, chrysopes : quels insectes utiles attirer sur un balcon et comment les faire venir naturellement."
+      Intro = "Un balcon vivant ne repose pas seulement sur les plantes. Quand des insectes utiles s’installent, les fleurs sont mieux visitées et certains ravageurs sont régulés plus tôt, sans transformer le balcon en terrain d’intervention permanente."
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Rôle des insectes utiles : polliniser, réguler certains ravageurs et rendre le balcon plus équilibré<br>Alliés faciles à observer : coccinelles, syrphes, chrysopes, abeilles solitaires, bourdons, araignées discrètes<br>Ce qui les attire : fleurs simples, diversité de plantes, eau propre en petite quantité, absence de traitements agressifs<br>Ce qui les fait fuir : balcon trop minéral, insecticides répétés, manque de fleurs, nettoyage trop systématique</p>
+            <h2>Pourquoi ils comptent vraiment sur un balcon</h2>
+            <p>Sur un petit espace, tout se voit plus vite : les fleurs mal visitées, les pucerons qui s’installent, les plantes qui s’affaiblissent. Les insectes utiles aident justement à rendre ce micro-écosystème plus stable. Ils ne remplacent pas l’entretien, mais ils rendent le balcon plus résilient.</p>
+            <p>Ce n’est pas une affaire de grand jardin. Même quelques pots bien choisis suffisent à attirer des visiteurs utiles si le balcon leur laisse quelque chose à manger, à boire et un peu de tranquillité.</p>
+            <h2>Les auxiliaires les plus intéressants à observer</h2>
+            <h3>Les coccinelles, chrysopes et syrphes</h3>
+            <p>Ces trois alliés sont précieux quand les pucerons apparaissent. Les adultes ne se ressemblent pas, mais leur présence est souvent un bon signe : le balcon attire déjà des auxiliaires capables de réguler une partie des petites invasions.</p>
+            <p>Si tu as justement des attaques récurrentes, garde aussi sous la main notre guide pour <a href="proteger-son-balcon-des-nuisibles-naturellement.html">protéger son balcon des nuisibles naturellement</a>. Les deux sujets se complètent très bien.</p>
+            <h3>Les abeilles solitaires et les bourdons</h3>
+            <p>Ces visiteurs aident surtout la pollinisation. Ils sont particulièrement utiles si tu cultives des fraisiers, des fleurs mellifères ou quelques légumes-fruits sur un balcon bien exposé.</p>
+            <p>Ils apprécient les fleurs simples, les floraisons étalées et un balcon qui n’est pas entièrement minéral. Tu peux les aider avec notre guide sur le <a href="balcon-pour-pollinisateurs.html">balcon pour pollinisateurs</a>.</p>
+            <h3>Les araignées, perce-oreilles et autres aides discrètes</h3>
+            <p>Ils ne sont pas toujours les plus populaires, pourtant ils participent aussi à l’équilibre du balcon. Le but n’est pas de les multiplier artificiellement, mais de ne pas éliminer systématiquement toute présence vivante dès qu’elle surprend.</p>
+            <h2>Comment les attirer sans surcharger l’espace</h2>
+            <ul>
+              <li>Prévois quelques floraisons simples sur une longue période.</li>
+              <li>Mélange cultures utiles, aromatiques et quelques plantes gourmandes.</li>
+              <li>Laisse une petite coupelle d’eau propre avec des cailloux si l’exposition est chaude.</li>
+              <li>Évite les pulvérisations répétées dès qu’un insecte apparaît.</li>
+            </ul>
+            <p>Pas besoin d’un balcon très grand. Deux ou trois pots bien choisis peuvent déjà faire venir plus de vie qu’un balcon rempli uniquement de feuillages serrés.</p>
+            <h2>Quelles plantes aident vraiment</h2>
+            <p>Les fleurs mellifères, certaines aromatiques en floraison et quelques plantes compagnes créent vite un balcon plus accueillant. Pour des idées concrètes, tu peux croiser ce guide avec nos articles sur les <a href="fleurs-comestibles-melliferes-balcon.html">fleurs comestibles et mellifères</a> et sur les <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques à cultiver sur un balcon</a>.</p>
+            <p>Un coin mêlant basilic, capucines, soucis, fleurs simples et quelques fraisiers devient souvent beaucoup plus vivant qu’une suite de pots isolés sans floraison.</p>
+            <h2>Ce qu’il vaut mieux éviter</h2>
+            <p>Un balcon trop propre au sens strict, sans fleurs, sans diversité et avec des traitements fréquents, attire peu d’auxiliaires. À l’inverse, il ne s’agit pas non plus d’empiler des abris ou des “hôtels” gadget sans vraie utilité.</p>
+            <p>Le plus efficace reste simple : diversité, régularité des floraisons, eau en petite quantité, et patience. Les insectes utiles viennent d’autant mieux que l’espace paraît stable.</p>
+            <h2>FAQ</h2>
+            <h3>Les insectes utiles suffisent-ils à protéger toutes les plantes ?</h3>
+            <p>Non, mais ils aident beaucoup à limiter certains déséquilibres. Ils fonctionnent surtout comme un soutien, pas comme une solution magique à eux seuls.</p>
+            <h3>Faut-il absolument installer un hôtel à insectes ?</h3>
+            <p>Pas forcément. Sur un balcon, quelques fleurs adaptées, un peu d’eau et l’absence de traitements agressifs font souvent plus de différence qu’un gros abri mal placé.</p>
+            <h3>Quels insectes utiles sont les plus faciles à attirer ?</h3>
+            <p>Les syrphes, certaines abeilles solitaires, les coccinelles de passage et les petits pollinisateurs sont parmi les plus faciles à voir si le balcon fleurit régulièrement.</p>
+            <h2>En résumé</h2>
+            <p>Attirer des insectes utiles sur un balcon, c’est surtout rendre l’espace plus accueillant et plus varié. Quelques plantes bien choisies, un peu de floraison étalée et des gestes moins agressifs changent déjà beaucoup la dynamique du balcon.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Quels insectes utiles peut-on attirer facilement sur un balcon ?"
+          Answer = "Les syrphes, certaines abeilles solitaires, les coccinelles de passage et d’autres petits pollinisateurs sont parmi les plus faciles à voir si le balcon fleurit régulièrement."
+        },
+        [ordered]@{
+          Question = "Comment attirer des insectes utiles sans transformer le balcon en jungle ?"
+          Answer = "Il suffit souvent de quelques fleurs simples, d’un peu de diversité végétale et d’un balcon moins traité. L’objectif n’est pas d’encombrer l’espace, mais de le rendre plus vivant."
+        },
+        [ordered]@{
+          Question = "Les insectes utiles aident-ils vraiment contre les pucerons ?"
+          Answer = "Oui, surtout les coccinelles, syrphes et chrysopes. Ils ne règlent pas tout seuls une grosse invasion, mais ils participent clairement à la régulation quand le balcon leur convient."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment attirer des insectes utiles sur un balcon"
+        Description = "Les étapes essentielles pour rendre un balcon plus accueillant pour les pollinisateurs et auxiliaires naturels."
+        Steps = @(
+          [ordered]@{ Name = "Ajouter quelques fleurs simples"; Text = "Prévois des floraisons accessibles et étalées pour offrir du nectar et du pollen sur la durée." },
+          [ordered]@{ Name = "Diversifier les pots"; Text = "Mélange cultures gourmandes, aromatiques et fleurs plutôt que de répéter une seule plante." },
+          [ordered]@{ Name = "Laisser de l’eau propre"; Text = "Une petite coupelle avec des cailloux aide les visiteurs en période chaude." },
+          [ordered]@{ Name = "Éviter les traitements agressifs"; Text = "Interviens seulement quand c’est nécessaire et préfère des gestes légers." },
+          [ordered]@{ Name = "Observer les passages"; Text = "Repère quels insectes reviennent selon les saisons pour ajuster les plantations." },
+          [ordered]@{ Name = "Garder un balcon stable"; Text = "La régularité des floraisons et l’absence de bouleversements permanents favorisent l’installation des auxiliaires." }
+        )
+      }
+    }
+    "solutions-compostage-sur-balcon" = [ordered]@{
+      Title = "Compost sur balcon : les solutions simples pour petit espace"
+      SeoTitle = "Compost sur balcon : 5 solutions simples sans odeur"
+      Description = "Compost sur balcon : lombricomposteur, bokashi, mini composteur ou solution sans vers. Le guide simple pour composter en petit espace sans odeur."
+      Intro = "Oui, on peut composter sur un balcon, même petit. Le vrai enjeu n’est pas seulement de gagner de la place, mais de choisir une méthode adaptée à ton espace, à ton rythme et à ce que tu es prêt à gérer au quotidien."
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Objectif : réduire une partie des biodéchets et récupérer une matière utile pour les pots<br>Solutions les plus courantes : lombricomposteur, bokashi, mini composteur aéré, seau fermé avant apport partagé, bac de culture enrichi en lasagnes<br>Pour éviter les odeurs : peu de matière à la fois, bon équilibre, récipient adapté et suivi régulier<br>Si tu ne veux pas de vers : bokashi, seau fermé avec apport extérieur, ou bac de culture enrichi progressivement<br>Pour débuter : mieux vaut un système simple et stable qu’un gros dispositif mal suivi</p>
+            <h2>Comment choisir la bonne solution</h2>
+            <p>Le bon système n’est pas le plus “complet”, mais celui que tu accepteras vraiment d’entretenir. Si tu veux traiter tes biodéchets directement sur place, le lombricomposteur et le bokashi sont souvent les deux options les plus réalistes sur balcon. Si tu veux surtout une routine simple sans trop de suivi, un seau fermé avant apport dans un compost partagé peut être plus confortable.</p>
+            <p>Pose-toi trois questions : quelle place as-tu vraiment, veux-tu ou non gérer des vers, et peux-tu sortir régulièrement une partie des matières si besoin ? La réponse à ces trois points simplifie beaucoup le choix.</p>
+            <h2>Le lombricomposteur</h2>
+            <p>C’est souvent la solution la plus connue sur balcon. Elle fonctionne bien quand le système reste à l’abri des excès de chaleur, du froid brutal et des apports trop massifs. Le vrai avantage est de transformer progressivement de petites quantités de biodéchets en matière intéressante pour les pots.</p>
+            <p>Ce n’est pas forcément compliqué, mais cela demande une certaine régularité. Si tu ne veux pas suivre un équilibre entre matières et humidité, ce n’est pas toujours la méthode la plus sereine.</p>
+            <h2>Le bokashi</h2>
+            <p>Le bokashi plaît souvent à ceux qui veulent composter sur balcon sans vers. Le système reste fermé, prend peu de place et limite bien les odeurs si l’on respecte son fonctionnement. En revanche, il ne donne pas immédiatement un compost prêt à l’emploi : il faut ensuite valoriser ce pré-compost dans de la terre, un bac de culture ou une filière complémentaire.</p>
+            <p>Pour un appartement ou un très petit balcon, c’est souvent l’option la plus simple à garder discrète.</p>
+            <h2>Le mini composteur aéré</h2>
+            <p>Cette solution peut convenir sur un balcon bien ventilé, avec de petites quantités et un vrai suivi. Elle demande d’être plus attentive à l’humidité et au volume, car un composteur aéré trop petit se déséquilibre vite.</p>
+            <p>Elle devient plus intéressante si tu as déjà l’habitude de gérer les apports organiques et que ton balcon reste assez stable sur la durée.</p>
+            <h2>Le seau fermé avant apport partagé</h2>
+            <p>Si tu veux une solution très simple en appartement, tu peux aussi stocker proprement une partie des biodéchets dans un contenant fermé avant de les apporter vers un compost partagé ou un autre point de valorisation. Ce n’est pas du compostage complet sur place, mais c’est souvent la méthode la plus réaliste quand on manque vraiment de temps ou d’espace.</p>
+            <p>Beaucoup de débutants s’en sortent mieux avec cette étape intermédiaire qu’avec un système plus technique mal suivi.</p>
+            <h2>Le bac de culture enrichi en lasagnes</h2>
+            <p>Sur un balcon, on peut aussi valoriser une partie des matières organiques dans un bac de culture monté progressivement, à la manière d’un <a href="jardinage-en-lasagnes-sur-balcon.html">jardinage en lasagnes sur balcon</a>. Ce n’est pas un composteur classique, mais c’est une bonne manière de nourrir un bac profond tout en limitant les allers-retours.</p>
+            <p>Cette solution demande surtout un contenant adapté et une logique de couches bien gérée.</p>
+            <h2>Compost sur balcon sans odeur : les vraies règles</h2>
+            <ul>
+              <li>Ajoute peu de matière à la fois.</li>
+              <li>Évite les apports humides en masse sans correction.</li>
+              <li>Ne laisse pas de matière fraîche exposée à l’air libre plusieurs jours.</li>
+              <li>Place le système dans un coin accessible, pas en plein cagnard toute la journée.</li>
+            </ul>
+            <p>Quand un système sent mauvais, c’est souvent qu’il est trop chargé, trop humide ou mal équilibré. Le problème vient rarement du principe du compostage lui-même.</p>
+            <h2>Compost sur balcon sans vers : quelles options garder</h2>
+            <p>Si l’idée des vers te bloque, le bokashi reste souvent la voie la plus simple. Le seau fermé avec apport vers un compost partagé fonctionne aussi très bien. Et si tu as un grand bac de culture, la logique lasagnes peut compléter le dispositif sans imposer de lombricomposteur.</p>
+            <p>L’essentiel est d’accepter qu’aucune méthode ne fait tout toute seule. Le plus important est d’avoir un système compatible avec ton quotidien.</p>
+            <h2>Que peut-on composter sur un balcon ?</h2>
+            <p>Sur un petit espace, mieux vaut rester prudent et simple : épluchures végétales, marc de café, sachets de thé sans éléments plastiques, petits déchets verts, carton brun non imprimé en petite quantité selon le système. Ce qu’il faut surtout éviter, c’est d’en mettre trop d’un coup ou de mélanger des matières que ton système gère mal.</p>
+            <p>Ensuite, notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur un balcon</a> t’aidera à savoir comment valoriser proprement ce que tu récupères dans les pots.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur est de choisir un système trop ambitieux pour son rythme réel. La deuxième, de vouloir tout composter tout de suite. La troisième, d’oublier où ira la matière produite une fois prête ou pré-transformée.</p>
+            <p>Si ton objectif est aussi de limiter l’arrosage, pense à relier ce sujet au <a href="paillage-sur-balcon-ecolo.html">paillage</a> et à la <a href="recuperer-eau-de-pluie-balcon.html">récupération de l’eau de pluie sur un balcon</a> : ces trois gestes vont très bien ensemble.</p>
+            <h2>FAQ</h2>
+            <h3>Peut-on vraiment composter sur un petit balcon ?</h3>
+            <p>Oui, à condition d’adapter la méthode au volume disponible. Sur un très petit espace, les solutions les plus compactes et les plus simples restent souvent les meilleures.</p>
+            <h3>Quel système choisir pour composter sur balcon sans odeur ?</h3>
+            <p>Le bokashi, un lombricomposteur bien suivi ou un seau fermé avant apport extérieur sont souvent les options les plus rassurantes. L’odeur vient surtout d’un système mal géré, pas du simple fait de composter.</p>
+            <h3>Peut-on composter sur balcon sans vers ?</h3>
+            <p>Oui. Le bokashi, le seau fermé avant apport partagé ou certains bacs de culture enrichis progressivement permettent d’avancer sans lombricomposteur.</p>
+            <h2>En résumé</h2>
+            <p>Le meilleur compost sur balcon est celui que tu suivras vraiment. Choisis une solution simple, adaptée à ton espace et à ton niveau d’envie, puis relie-la à l’usage concret du compost, au paillage et à une gestion plus sobre de l’eau.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Quelle solution de compostage choisir pour un balcon ?"
+          Answer = "Tout dépend de la place disponible, de ton envie de gérer ou non des vers et du temps que tu peux y consacrer. Sur petit espace, le lombricomposteur, le bokashi ou un seau fermé bien pensé sont souvent les options les plus réalistes."
+        },
+        [ordered]@{
+          Question = "Comment éviter les odeurs avec un composteur de balcon ?"
+          Answer = "Le plus important est de rester sur de petits apports, de garder un bon équilibre du système et de ne pas laisser des matières fraîches s’accumuler sans suivi. Les mauvaises odeurs signalent surtout un déséquilibre."
+        },
+        [ordered]@{
+          Question = "Peut-on faire du compost sur un balcon sans vers ?"
+          Answer = "Oui. Le bokashi, le seau fermé avant apport partagé ou certains bacs de culture enrichis progressivement permettent d’avancer sans lombricomposteur."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment choisir un compostage adapté à son balcon"
+        Description = "Les étapes essentielles pour sélectionner une solution de compost sur balcon, l’installer proprement et l’utiliser sans odeur."
+        Steps = @(
+          [ordered]@{ Name = "Évaluer la place réelle"; Text = "Repère l’emplacement disponible et l’exposition avant de choisir un système." },
+          [ordered]@{ Name = "Choisir une méthode compatible"; Text = "Sélectionne une solution simple selon ton espace, ton rythme et ton envie ou non de gérer des vers." },
+          [ordered]@{ Name = "Commencer avec de petits apports"; Text = "Ajoute peu de biodéchets à la fois pour garder un système stable et facile à comprendre." },
+          [ordered]@{ Name = "Surveiller humidité et équilibre"; Text = "Corrige vite un excès d’humidité ou un système trop chargé pour éviter les odeurs." },
+          [ordered]@{ Name = "Prévoir l’usage du résultat"; Text = "Décide à l’avance comment tu utiliseras ou transféreras la matière produite." },
+          [ordered]@{ Name = "Relier compost, eau et paillage"; Text = "Intègre le compostage à une routine plus large de balcon sobre et facile à suivre." }
+        )
+      }
+    }
+    "utilisation-compost-sur-balcon" = [ordered]@{
+      Title = "Utiliser le compost sur un balcon : dosages simples et erreurs à éviter"
+      SeoTitle = "Utiliser le compost sur un balcon : dosages simples"
+      Description = "Utiliser du compost sur un balcon : dosages simples, plantes qui aiment ça et erreurs à éviter pour nourrir ses pots sans excès."
+      Intro = "Avoir du compost ne suffit pas : sur un balcon, il faut surtout savoir en mettre peu, au bon moment et aux bonnes plantes. Bien utilisé, il nourrit les pots et aide à garder un terreau vivant. Mal dosé, il alourdit ou fatigue certaines cultures."
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Compost idéal : mûr, émietté et sans odeur forte<br>Utilisation la plus simple : en petite proportion dans le terreau ou en surface légère<br>Plantes qui apprécient bien le compost : tomates, poivrons, fraisiers, certaines aromatiques et bacs potagers déjà bien installés<br>Point de vigilance : mieux vaut un peu de compost bien utilisé qu’un gros apport qui tasse ou surcharge le pot</p>
+            <h2>Pourquoi le compost aide vraiment en pot</h2>
+            <p>Sur un balcon, le terreau travaille vite : il s’appauvrit, sèche plus vite, se tasse parfois et nourrit moins bien les cultures gourmandes. Le compost aide à garder un substrat plus vivant, plus souple et plus résilient quand il est utilisé avec mesure.</p>
+            <p>Ce n’est pas un produit miracle ni un engrais à vider à la pelle. En pot, le bon dosage compte plus que la quantité.</p>
+            <h2>Quelles plantes apprécient le plus le compost</h2>
+            <p>Les cultures gourmandes comme les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> ou les <a href="tomates-cerises-balcon.html">tomates cerises</a> profitent bien d’un apport modéré dans un grand contenant. Les <a href="guide-fraises-sur-son-balcon.html">fraisiers</a> l’apprécient aussi, surtout dans un mélange souple et régulier.</p>
+            <p>Les cultures plus rapides ou plus tendres, comme les laitues, les épinards ou certains aromatiques, demandent souvent un dosage plus léger. Le but est de nourrir sans alourdir.</p>
+            <h2>Les trois usages les plus simples</h2>
+            <h3>En mélange dans le terreau</h3>
+            <p>C’est l’option la plus facile pour démarrer un pot ou relancer un rempotage. Le compost mûr vient alors compléter un terreau de bonne qualité sans le remplacer entièrement.</p>
+            <h3>En surfaçage léger</h3>
+            <p>Sur des pots déjà installés, une petite couche en surface au bon moment peut suffire à soutenir la saison. On l’incorpore très légèrement ou on laisse l’arrosage l’aider à descendre.</p>
+            <h3>En complément d’un paillage</h3>
+            <p>Le compost et le <a href="paillage-sur-balcon-ecolo.html">paillage sur balcon</a> fonctionnent bien ensemble : l’un nourrit doucement, l’autre aide à stabiliser l’humidité.</p>
+            <h2>Quand en mettre</h2>
+            <p>Le plus utile est souvent d’en apporter au démarrage d’une culture, au rempotage ou juste avant une période de croissance active. Inutile de charger les pots très souvent : sur un balcon, de petites touches régulières suffisent largement.</p>
+            <p>Si tu récupères aussi un peu d’eau de pluie, tu peux combiner cette logique avec notre guide pour <a href="recuperer-eau-de-pluie-balcon.html">récupérer l’eau de pluie sur un balcon</a> afin d’accompagner les apports organiques sans gaspiller.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur est d’utiliser un compost pas assez mûr. La deuxième, d’en mettre trop dans un petit pot. La troisième, de croire que toutes les plantes ont besoin de la même richesse.</p>
+            <p>Si tu débutes, garde une règle simple : commence léger, observe la réaction de la plante et ajuste ensuite. C’est beaucoup plus sûr que de suralimenter d’emblée.</p>
+            <h2>Et si on n’a pas encore de compost ?</h2>
+            <p>Dans ce cas, commence par choisir une méthode réaliste avec notre guide <a href="solutions-compostage-sur-balcon.html">Compost sur balcon : les solutions simples pour petit espace</a>. Le plus important est d’avoir un système que tu suivras vraiment, pas un équipement de plus qui prend la poussière.</p>
+            <p>Si tu as déjà un grand bac profond, la logique du <a href="jardinage-en-lasagnes-sur-balcon.html">jardinage en lasagnes sur balcon</a> peut aussi t’intéresser pour valoriser de la matière organique autrement.</p>
+            <h2>FAQ</h2>
+            <h3>Peut-on mettre du compost dans tous les pots du balcon ?</h3>
+            <p>Non, pas de la même façon. Les plantes gourmandes l’apprécient bien, mais sur des petits contenants ou des cultures rapides, il faut rester plus léger.</p>
+            <h3>Combien de compost faut-il utiliser en pot ?</h3>
+            <p>Il vaut mieux raisonner en petite proportion et ajuster ensuite. En pot, un excès de compost crée plus facilement des déséquilibres qu’en pleine terre.</p>
+            <h3>Le compost remplace-t-il totalement l’engrais ?</h3>
+            <p>Pas toujours. Il améliore surtout la vie du substrat et apporte une base nutritive intéressante. Selon la culture et la saison, un appoint léger peut encore être utile.</p>
+            <h2>En résumé</h2>
+            <p>Bien utiliser le compost sur un balcon, c’est surtout doser juste. Un compost mûr, en petite quantité, au bon moment, suffit déjà à améliorer nettement la tenue et la vigueur des pots.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Comment utiliser le compost sur un balcon sans abîmer les plantes ?"
+          Answer = "Le plus simple est de partir sur de petites quantités de compost mûr, mélangées au terreau ou posées en surface légère, puis d’observer la réaction des pots."
+        },
+        [ordered]@{
+          Question = "Quelles plantes aiment le plus le compost en pot ?"
+          Answer = "Les tomates, poivrons, tomates cerises, fraisiers et autres cultures gourmandes profitent bien d’un apport modéré. Les plantes plus rapides ou plus tendres demandent souvent un dosage plus léger."
+        },
+        [ordered]@{
+          Question = "Peut-on utiliser un compost encore jeune dans des pots ?"
+          Answer = "Mieux vaut éviter. Sur un balcon, un compost insuffisamment mûr crée plus facilement des déséquilibres qu’un compost bien stabilisé et utilisé en petite quantité."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment utiliser du compost sur un balcon"
+        Description = "Les étapes essentielles pour apporter du compost aux pots de balcon sans excès et au bon moment."
+        Steps = @(
+          [ordered]@{ Name = "Vérifier la maturité"; Text = "Utilise un compost bien mûr, émietté et stable avant de l’ajouter aux pots." },
+          [ordered]@{ Name = "Choisir les plantes concernées"; Text = "Commence par les cultures les plus gourmandes et les grands contenants." },
+          [ordered]@{ Name = "Doser légèrement"; Text = "Ajoute de petites quantités en mélange ou en surface plutôt qu’un gros apport d’un seul coup." },
+          [ordered]@{ Name = "Arroser proprement"; Text = "Accompagne l’apport avec un arrosage régulier pour aider le compost à s’intégrer." },
+          [ordered]@{ Name = "Observer la réaction du pot"; Text = "Surveille la tenue du terreau, la vigueur de la plante et la gestion de l’humidité." },
+          [ordered]@{ Name = "Ajuster au fil de la saison"; Text = "Renouvelle seulement si la culture en a vraiment besoin et si le pot reste bien équilibré." }
+        )
+      }
+    }
     "balcon-durable-plantes" = [ordered]@{
       SeoTitle = "Balcon durable : plantes résistantes"
     }
@@ -1612,10 +1998,148 @@
       SeoTitle = "7 plantes grimpantes pour l’intimité"
     }
     "proteger-son-balcon-des-nuisibles-naturellement" = [ordered]@{
-      SeoTitle = "Nuisibles sur balcon : solutions naturelles"
+      Title = "Nuisibles sur balcon : que faire naturellement ?"
+      SeoTitle = "Nuisibles sur balcon : que faire sans produits chimiques ?"
+      Description = "Pucerons, cochenilles, limaces ou aleurodes sur balcon : les gestes simples pour limiter les dégâts sans pesticides et garder des plantes plus résistantes."
+      Intro = "Sur un balcon, les nuisibles arrivent souvent vite parce que l’espace est petit et les plantes rapprochées. Le plus efficace n’est pas de traiter à l’aveugle, mais de repérer le bon coupable, de corriger ce qui affaiblit les pots et d’agir avec des gestes simples."
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Nuisibles les plus fréquents : pucerons, cochenilles, aleurodes, limaces, quelques chenilles ou acariens selon la saison<br>Réflexe numéro un : identifier le problème avant de traiter<br>Réflexe numéro deux : corriger l’arrosage, l’aération et l’encombrement des pots<br>Réflexe numéro trois : intervenir tôt avec des gestes doux et réguliers<br>Point clé : un balcon vivant et équilibré attire aussi des alliés naturels</p>
+            <h2>Reconnaître vite le problème</h2>
+            <p>Sur un petit espace, les dégâts se voient souvent tôt. Des jeunes pousses collantes ou déformées font penser aux pucerons. Des amas cotonneux ou de petites carapaces collées aux tiges évoquent plutôt les cochenilles. Des nuées blanches au moindre mouvement signalent souvent des aleurodes. Des feuilles découpées pendant la nuit renvoient davantage aux limaces ou à d’autres grignoteurs de passage.</p>
+            <p>Le bon réflexe est de regarder sous les feuilles, à la base des tiges et autour du pot. Mieux vaut intervenir tôt sur quelques feuilles touchées que laisser le problème s’installer.</p>
+            <h2>Pourquoi un balcon attire parfois plus de nuisibles</h2>
+            <p>Le problème ne vient pas seulement des insectes eux-mêmes. Une plante stressée par le manque d’eau, un balcon trop serré, un air qui circule mal ou des apports trop riches rendent souvent les pots plus fragiles.</p>
+            <p>C’est pour cela que la prévention compte autant que le traitement. Un balcon bien arrosé, bien espacé et pas trop chargé résiste mieux, surtout si tu évites les coups de chaud et les excès d’azote.</p>
+            <h2>Les gestes de prévention les plus rentables</h2>
+            <ul>
+              <li>Arrose régulièrement sans passer du sec complet au détrempé.</li>
+              <li>Espace les contenants pour laisser l’air circuler.</li>
+              <li>Retire vite les feuilles très touchées ou déjà collantes.</li>
+              <li>Évite de surdoser engrais et compost mal mûr.</li>
+              <li>Garde un coin accueillant pour les <a href="insectes-utiles-sur-un-balcon.html">insectes utiles sur un balcon</a>.</li>
+            </ul>
+            <p>Quelques fleurs et aromatiques aident aussi à stabiliser le balcon. Tu peux t’inspirer de notre guide sur le <a href="balcon-pour-pollinisateurs.html">balcon pour pollinisateurs</a> pour rendre l’espace plus équilibré sans le compliquer.</p>
+            <h2>Que faire contre les pucerons</h2>
+            <p>Les pucerons s’installent souvent sur les jeunes pousses de tomates, poivrons, fèves, rosiers ou basilic. Commence par une douche douce ou un jet d’eau modéré si la plante le supporte. Ensuite, un savon noir très dilué ou un nettoyage manuel sur les tiges les plus touchées suffit souvent si tu agis tôt.</p>
+            <p>Surveille ensuite les nouvelles pousses pendant quelques jours. Si des coccinelles, syrphes ou chrysopes passent déjà sur le balcon, laisse-leur aussi un peu de temps pour travailler.</p>
+            <h2>Que faire contre les cochenilles et aleurodes</h2>
+            <p>Les cochenilles aiment les coins abrités et les plantes un peu affaiblies. Retire d’abord les foyers à la main avec un chiffon humide ou un coton légèrement imbibé d’eau savonneuse. Les aleurodes demandent surtout de la régularité : secouer légèrement le feuillage, retirer les feuilles les plus envahies et répéter les gestes simples pendant quelques jours donne souvent de meilleurs résultats qu’un traitement brutal.</p>
+            <p>Dans les deux cas, isole si possible la plante la plus atteinte pour éviter la propagation vers les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> ou les <a href="guide-fraises-sur-son-balcon.html">fraises</a> voisines.</p>
+            <h2>Que faire contre les limaces et autres grignotages</h2>
+            <p>Les limaces sont moins fréquentes en étage, mais elles restent possibles sur les balcons humides, très végétalisés ou proches d’un jardin. Commence par nettoyer ce qui leur sert d’abri direct, comme les dessous de pots humides ou les amas de feuilles en contact permanent avec le sol.</p>
+            <p>Un <a href="paillage-sur-balcon-ecolo.html">paillage</a> mal géré peut parfois offrir une cachette trop confortable. Garde-le aéré, surveille les zones très humides et fais des passages réguliers au bon moment plutôt que de multiplier les pièges.</p>
+            <h2>Aider le balcon à se défendre seul</h2>
+            <p>Le but n’est pas d’avoir un balcon stérile, mais un balcon assez vivant pour que les déséquilibres durent moins longtemps. Quelques fleurs mellifères, des coins plus variés et l’absence de traitements agressifs favorisent l’arrivée des auxiliaires.</p>
+            <p>Notre guide sur les <a href="insectes-utiles-sur-un-balcon.html">insectes utiles</a> peut justement t’aider à comprendre quels alliés observer et comment les garder autour des pots.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur consiste à traiter avant même d’avoir identifié le problème. La deuxième, à répéter des pulvérisations trop fortes sur des plantes déjà stressées. La troisième, à oublier la cause : manque d’air, arrosage irrégulier, balcon surchargé ou plante trop affaiblie.</p>
+            <p>Si une plante est vraiment dépassée, il vaut parfois mieux tailler franchement les parties les plus touchées, voire la sortir du groupe quelques jours, plutôt que d’exposer tout le balcon.</p>
+            <h2>FAQ</h2>
+            <h3>Faut-il toujours utiliser du savon noir contre les pucerons ?</h3>
+            <p>Non. Sur une petite attaque, retirer les foyers à la main ou rincer doucement peut suffire. Le savon noir reste un appoint utile, pas une réponse automatique à tout.</p>
+            <h3>Pourquoi les nuisibles reviennent-ils malgré les traitements ?</h3>
+            <p>Souvent parce que la cause du déséquilibre est toujours là : plante affaiblie, manque d’air, excès d’engrais ou stress hydrique. Sans corriger ce contexte, le problème revient vite.</p>
+            <h3>Faut-il jeter une plante très touchée ?</h3>
+            <p>Pas forcément. Commence par isoler, tailler ce qui est le plus atteint et observer la reprise. Si la plante reste très faible ou devient un foyer permanent, mieux vaut parfois repartir plus sainement.</p>
+            <h2>En résumé</h2>
+            <p>Protéger son balcon des nuisibles naturellement, c’est surtout observer tôt, alléger les causes du stress et intervenir avec des gestes simples. Un balcon un peu plus vivant, moins chargé et mieux suivi demande ensuite beaucoup moins de corrections.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Comment se débarrasser des pucerons sur un balcon sans pesticides ?"
+          Answer = "Le plus simple est d’agir tôt : supprimer les foyers les plus visibles, rincer doucement si la plante le supporte, puis répéter un geste léger plutôt que traiter fort d’un seul coup."
+        },
+        [ordered]@{
+          Question = "Pourquoi mes plantes attirent-elles toujours des nuisibles ?"
+          Answer = "Une plante stressée par le manque d’eau, un excès d’engrais, un balcon trop serré ou mal aéré attire plus facilement les ravageurs. Le contexte du balcon compte autant que le traitement."
+        },
+        [ordered]@{
+          Question = "Les insectes utiles suffisent-ils à protéger un balcon ?"
+          Answer = "Ils aident beaucoup, mais ils ne remplacent pas l’observation. Ils fonctionnent surtout quand le balcon reste accueillant, varié et qu’on intervient tôt sur les premiers foyers."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment réagir face aux nuisibles sur un balcon"
+        Description = "Les étapes essentielles pour identifier un ravageur, corriger les causes du problème et intervenir naturellement sur un balcon."
+        Steps = @(
+          [ordered]@{ Name = "Observer les symptômes"; Text = "Regarde sous les feuilles, sur les tiges et autour du pot pour identifier le type d’attaque." },
+          [ordered]@{ Name = "Limiter la propagation"; Text = "Retire les feuilles très touchées et isole si possible la plante la plus infestée." },
+          [ordered]@{ Name = "Corriger le contexte"; Text = "Ajuste l’arrosage, l’aération et l’encombrement des pots pour rendre les plantes moins vulnérables." },
+          [ordered]@{ Name = "Utiliser un geste simple"; Text = "Rinçage doux, retrait manuel ou solution légère selon le nuisible observé." },
+          [ordered]@{ Name = "Favoriser les auxiliaires"; Text = "Garde un balcon accueillant pour les insectes utiles afin qu’ils participent à la régulation." },
+          [ordered]@{ Name = "Surveiller quelques jours"; Text = "Reviens régulièrement vérifier les nouvelles pousses au lieu de considérer le problème réglé trop vite." }
+        )
+      }
     }
     "recuperer-eau-de-pluie-balcon" = [ordered]@{
-      SeoTitle = "Eau de pluie sur balcon : comment faire"
+      Title = "Récupérer l’eau de pluie sur un balcon : solutions simples sans gouttière"
+      SeoTitle = "Récupérer l’eau de pluie sur un balcon sans gouttière"
+      Description = "Récupérer l’eau de pluie sur un balcon : idées simples sans gouttière, stockage prudent et usages utiles pour arroser sans gaspiller."
+      Intro = "Même sans gouttière, un balcon peut récupérer un peu d’eau de pluie utile pour l’arrosage. Le plus important est de rester simple, prudent et cohérent avec l’espace disponible."
+      DateModified = "2026-04-19T09:00:00.000Z"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <p>Objectif réaliste : récupérer une petite réserve d’eau utile, pas transformer le balcon en citerne<br>Sans gouttière : oui, c’est possible avec des systèmes de collecte simples et légers<br>Points de vigilance : stabilité, poids, propreté de l’eau et absence d’écoulement gênant vers le dessous<br>Le vrai gain : mieux arroser certains pots et gaspiller moins pendant les périodes sèches</p>
+            <h2>Avant d’installer quoi que ce soit</h2>
+            <p>Sur un balcon, il faut penser d’abord à la stabilité et au bon sens. Un contenant plein pèse vite lourd, surtout après un gros épisode de pluie. Vérifie aussi que ton système ne crée pas d’écoulement vers les voisins du dessous et qu’il reste facile à vider ou à nettoyer.</p>
+            <p>Si tu fixes un élément sur une rambarde, une toile ou un pare-vue, garde un montage simple et prudent. Le plus efficace n’est pas toujours le plus grand, mais le plus stable.</p>
+            <h2>Les solutions les plus simples sans gouttière</h2>
+            <h3>Le contenant déjà exposé à la pluie</h3>
+            <p>La méthode la plus sobre consiste parfois simplement à placer un récipient propre dans une zone qui reçoit déjà bien la pluie, puis à le rentrer ou le couvrir ensuite. Ce n’est pas spectaculaire, mais c’est facile à gérer.</p>
+            <h3>La toile ou surface inclinée vers un bac</h3>
+            <p>Une petite surface tendue ou inclinée peut guider l’eau vers un seau ou un arrosoir. Cette solution fonctionne bien si elle reste légère, démontable et qu’elle ne prend pas le vent comme une voile.</p>
+            <h3>L’entonnoir ou la rigole maison</h3>
+            <p>Sur certaines installations, un petit entonnoir ou une rigole discrète suffit à canaliser une partie de l’eau reçue sur une tablette, un rebord ou une surface déjà présente. Là encore, mieux vaut viser simple que bricoler un système trop ambitieux.</p>
+            <h2>Comment stocker l’eau proprement</h2>
+            <p>Un arrosoir, un bidon alimentaire propre ou un seau avec couvercle font souvent très bien l’affaire. Le plus important est d’éviter l’eau stagnante pendant trop longtemps, surtout en période douce, et de garder le contenant facile à déplacer.</p>
+            <p>Si tu récupères peu d’eau mais régulièrement, c’est déjà utile. Sur balcon, une petite réserve bien utilisée vaut souvent mieux qu’un gros contenant mal géré.</p>
+            <h2>Pour quels usages cette eau est-elle la plus intéressante ?</h2>
+            <p>L’eau de pluie est surtout utile pour humidifier les grands pots gourmands, relancer un substrat sec ou accompagner des cultures sensibles aux à-coups d’arrosage, comme les <a href="guide-fraises-sur-son-balcon.html">fraises</a>, les <a href="guide-laitues-sur-son-balcon.html">laitues</a> ou les bacs potagers d’été.</p>
+            <p>Tu peux aussi l’utiliser pour accompagner un apport léger de compost dans les pots ou garder un bac plus frais après un rempotage. Dans ce cas, notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur un balcon</a> t’aidera à rester mesuré.</p>
+            <h2>Comment tirer plus de chaque litre récupéré</h2>
+            <p>Le vrai gain ne vient pas seulement de la collecte, mais de ce que tu en fais. Si tu combines cette eau avec un <a href="paillage-sur-balcon-ecolo.html">paillage adapté</a> et une routine d’arrosage plus régulière, tu prolonges beaucoup mieux son effet.</p>
+            <p>Cette logique se complète aussi très bien avec nos conseils sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a> et avec le cluster <a href="solutions-compostage-sur-balcon.html">compost sur balcon</a>, qui aide à garder des substrats plus vivants.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <p>La première erreur est de stocker trop lourd sans penser au poids final. La deuxième, de laisser une eau stagner trop longtemps. La troisième, de bricoler un système complexe alors qu’un montage plus petit et mieux suivi ferait mieux le travail.</p>
+            <p>Si tu débutes, vise un dispositif très simple, puis ajuste après quelques pluies. Sur un balcon, l’efficacité vient souvent de la sobriété.</p>
+            <h2>FAQ</h2>
+            <h3>Peut-on récupérer l’eau de pluie sur un balcon sans gouttière ?</h3>
+            <p>Oui, mais à petite échelle. Un contenant bien placé, une surface inclinée légère ou un guidage simple suffisent souvent à récupérer une réserve utile.</p>
+            <h3>Cette eau peut-elle servir à toutes les plantes ?</h3>
+            <p>Elle est surtout intéressante pour l’arrosage des pots et bacs. Le plus important est qu’elle reste propre et qu’elle ne stagne pas trop longtemps avant usage.</p>
+            <h3>Comment éviter que le système devienne contraignant ?</h3>
+            <p>En gardant un montage simple, facile à vider, nettoyer et ranger. Sur balcon, la meilleure solution est celle qu’on continue à utiliser sans effort excessif.</p>
+            <h2>En résumé</h2>
+            <p>Récupérer l’eau de pluie sur un balcon n’a pas besoin d’être compliqué. Un petit système simple, stable et bien utilisé aide déjà à arroser plus sobrement, surtout s’il est combiné au paillage et à une meilleure gestion des pots.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Peut-on récupérer l’eau de pluie sur un balcon sans gouttière ?"
+          Answer = "Oui, à petite échelle. Un contenant bien placé, une surface inclinée légère ou un guidage discret peuvent déjà récupérer une réserve utile pour les pots."
+        },
+        [ordered]@{
+          Question = "Quel récipient utiliser pour stocker l’eau de pluie sur un balcon ?"
+          Answer = "Un arrosoir, un bidon propre ou un seau avec couvercle suffisent souvent. Le plus important est de garder le système stable, propre et facile à déplacer."
+        },
+        [ordered]@{
+          Question = "Comment faire durer cette eau plus longtemps ?"
+          Answer = "Le plus efficace est de la combiner avec un paillage adapté, des arrosages plus réguliers et des pots moins sensibles aux coups de sec."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment récupérer l’eau de pluie sur un balcon"
+        Description = "Les étapes essentielles pour mettre en place une récupération d’eau de pluie simple et utile sur un balcon sans gouttière."
+        Steps = @(
+          [ordered]@{ Name = "Choisir un emplacement stable"; Text = "Repère une zone qui reçoit la pluie sans gêner la circulation ni les écoulements." },
+          [ordered]@{ Name = "Installer une collecte simple"; Text = "Utilise un contenant exposé, une petite surface inclinée ou un guidage léger vers un bac." },
+          [ordered]@{ Name = "Prévoir un récipient propre"; Text = "Stocke l’eau dans un arrosoir, un seau fermé ou un bidon propre facile à manipuler." },
+          [ordered]@{ Name = "Vérifier le poids et la sécurité"; Text = "Ne surcharge pas le balcon et assure-toi que rien ne coule chez le voisin du dessous." },
+          [ordered]@{ Name = "Utiliser rapidement"; Text = "Emploie l’eau récupérée pour les pots avant qu’elle ne stagne trop longtemps." },
+          [ordered]@{ Name = "Relier la collecte au reste du balcon"; Text = "Associe cette eau à du paillage et à une routine d’arrosage sobre pour en tirer le meilleur." }
+        )
+      }
     }
   }
 }

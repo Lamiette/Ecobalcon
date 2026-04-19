@@ -2645,6 +2645,21 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 "@
 }
 
+$relatedArticlePriorityMap = @{
+  "guide-fraises-sur-son-balcon" = @("tomates-cerises-balcon", "guide-epinards-sur-son-balcon", "guide-poivrons-sur-son-balcon")
+  "guide-epinards-sur-son-balcon" = @("guide-fraises-sur-son-balcon", "tomates-cerises-balcon", "guide-poivrons-sur-son-balcon")
+  "tomates-cerises-balcon" = @("guide-tomates-sur-son-balcon", "guide-poivrons-sur-son-balcon", "guide-fraises-sur-son-balcon")
+  "guide-tomates-sur-son-balcon" = @("tomates-cerises-balcon", "guide-poivrons-sur-son-balcon", "guide-basilic-sur-son-balcon")
+  "guide-poivrons-sur-son-balcon" = @("guide-tomates-sur-son-balcon", "tomates-cerises-balcon", "guide-basilic-sur-son-balcon")
+  "guide-basilic-sur-son-balcon" = @("bouturer-basilic-balcon", "guide-tomates-sur-son-balcon", "guide-poivrons-sur-son-balcon")
+  "bouturer-basilic-balcon" = @("guide-basilic-sur-son-balcon", "guide-tomates-sur-son-balcon", "guide-poivrons-sur-son-balcon")
+  "proteger-son-balcon-des-nuisibles-naturellement" = @("insectes-utiles-sur-un-balcon", "balcon-pour-pollinisateurs", "guide-tomates-sur-son-balcon")
+  "insectes-utiles-sur-un-balcon" = @("proteger-son-balcon-des-nuisibles-naturellement", "balcon-pour-pollinisateurs", "fleurs-comestibles-melliferes-balcon")
+  "solutions-compostage-sur-balcon" = @("utilisation-compost-sur-balcon", "jardinage-en-lasagnes-sur-balcon", "recuperer-eau-de-pluie-balcon")
+  "utilisation-compost-sur-balcon" = @("solutions-compostage-sur-balcon", "paillage-sur-balcon-ecolo", "recuperer-eau-de-pluie-balcon")
+  "recuperer-eau-de-pluie-balcon" = @("reduction-consommation-eau-balcon", "paillage-sur-balcon-ecolo", "solutions-compostage-sur-balcon")
+}
+
 function Get-RelatedArticles {
   param(
     [pscustomobject]$article,
@@ -2669,6 +2684,11 @@ function Get-RelatedArticles {
       Select-Object -Unique |
       Select-Object -First 8
   )
+  $prioritySlugs = if ($relatedArticlePriorityMap.ContainsKey($article.Slug)) {
+    @($relatedArticlePriorityMap[$article.Slug])
+  } else {
+    @()
+  }
 
   $scored = foreach ($candidate in $allArticles) {
     if ($candidate.Slug -eq $article.Slug) { continue }
@@ -2676,6 +2696,14 @@ function Get-RelatedArticles {
     $score = 0
     if ($candidate.Category -and $candidate.Category -eq $article.Category) { $score += 6 }
     if ($candidate.AuthorName -and $candidate.AuthorName -eq $article.AuthorName) { $score += 1 }
+    $priorityIndex = if ($prioritySlugs -and $prioritySlugs.Count -gt 0) {
+      [array]::IndexOf([object[]]$prioritySlugs, $candidate.Slug)
+    } else {
+      -1
+    }
+    if ($priorityIndex -ge 0) {
+      $score += 100 - ($priorityIndex * 10)
+    }
 
     $haystack = ($candidate.Title + " " + $candidate.Description).ToLowerInvariant()
     foreach ($term in $terms) {
