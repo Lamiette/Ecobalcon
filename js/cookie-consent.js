@@ -346,6 +346,60 @@
     footerLinks.appendChild(button);
   }
 
+  function normalizePath(pathname) {
+    const normalized = (pathname || "")
+      .replace(/index\.html$/i, "")
+      .replace(/\/+$/, "");
+
+    return normalized || "/";
+  }
+
+  function ensureSimulatorNavItem() {
+    const navs = document.querySelectorAll(".site-nav");
+
+    if (!navs.length) {
+      return;
+    }
+
+    const simulatorUrl = `${sitePrefix}simulateur/`;
+    const currentPath = normalizePath(window.location.pathname);
+    const simulatorPath = normalizePath(new URL(simulatorUrl, window.location.href).pathname);
+
+    navs.forEach((nav) => {
+      const links = Array.from(nav.querySelectorAll("a"));
+      const hasSimulatorLink = links.some((link) => ((link.textContent || "").trim().toLowerCase() === "simulateur"));
+
+      if (hasSimulatorLink) {
+        return;
+      }
+
+      const link = document.createElement("a");
+      const articleLink = links.find((anchor) => ((anchor.textContent || "").trim().toLowerCase() === "articles"));
+      const contactLink = links.find((anchor) => ((anchor.textContent || "").trim().toLowerCase() === "contact"));
+
+      link.href = simulatorUrl;
+      link.textContent = "Simulateur";
+      link.setAttribute("data-nav-simulateur", "");
+
+      if (currentPath === simulatorPath) {
+        nav.querySelectorAll('a[aria-current="page"]').forEach((currentLink) => currentLink.removeAttribute("aria-current"));
+        link.setAttribute("aria-current", "page");
+      }
+
+      if (articleLink) {
+        articleLink.insertAdjacentElement("afterend", link);
+        return;
+      }
+
+      if (contactLink) {
+        nav.insertBefore(link, contactLink);
+        return;
+      }
+
+      nav.appendChild(link);
+    });
+  }
+
   function hideGalleryNavItem() {
     const navLinks = document.querySelectorAll(".site-nav a");
 
@@ -364,6 +418,7 @@
 
   function init() {
     state.consent = readConsent();
+    ensureSimulatorNavItem();
     hideGalleryNavItem();
     ensureFooterButton();
     buildUi();

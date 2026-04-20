@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulateur de plantes pour balcon | EcoBalcon</title>
+  <meta name="description" content="Trouvez quelles plantes choisir sur votre balcon selon l'exposition, le vent, la place disponible et votre objectif.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://ecobalcon.com/simulateur/">
+  <link rel="alternate" hreflang="fr" href="https://ecobalcon.com/simulateur/">
+  <link rel="alternate" hreflang="x-default" href="https://ecobalcon.com/simulateur/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simulateur de plantes pour balcon | EcoBalcon">
+  <meta property="og:description" content="Un simulateur simple pour trouver quoi faire pousser sur son balcon selon l'exposition, le vent, la place et vos envies.">
+  <meta property="og:url" content="https://ecobalcon.com/simulateur/">
+  <meta property="og:image" content="https://ecobalcon.com/images/balcon-soleil.webp">
+  <meta property="og:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simulateur de plantes pour balcon | EcoBalcon">
+  <meta name="twitter:description" content="Un simulateur simple pour trouver quoi faire pousser sur son balcon selon l'exposition, le vent, la place et vos envies.">
+  <meta name="twitter:image" content="https://ecobalcon.com/images/balcon-soleil.webp">
+  <meta name="twitter:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Simulateur de plantes pour balcon | EcoBalcon","url":"https://ecobalcon.com/simulateur/","inLanguage":"fr","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Un simulateur simple pour trouver quelles plantes choisir sur un balcon selon l'exposition, le vent, la place disponible et l'objectif de culture.","publisher":{"@type":"Organization","name":"EcoBalcon","url":"https://ecobalcon.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://ecobalcon.com/"},{"@type":"ListItem","position":2,"name":"Simulateur","item":"https://ecobalcon.com/simulateur/"}]}</script>
+  <script src="../js/cookie-consent.js" data-site-prefix="../" data-gtm-id="GTM-MFRVPVFQ" data-ga-id="G-L952X34SHR" data-clarity-id="w4a97sk52t" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <style>
+    .simulator-page .article-shell {
+      display: grid;
+      gap: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .simulator-shell {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(216, 140, 63, 0.14), transparent 24%),
+        radial-gradient(circle at top left, rgba(47, 111, 89, 0.12), transparent 28%),
+        var(--surface);
+      border: 1px solid rgba(33, 48, 42, 0.08);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.3rem, 2.4vw, 2rem);
+    }
+
+    .simulator-heading {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.35rem;
+      max-width: 62rem;
+    }
+
+    .simulator-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .simulator-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .simulator-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .simulator-panel {
+      background: rgba(255, 253, 248, 0.92);
+      border: 1px solid rgba(33, 48, 42, 0.08);
+      border-radius: 24px;
+      padding: clamp(1rem, 2vw, 1.4rem);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .simulator-panel h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.18rem;
+    }
+
+    .simulator-panel > p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .simulator-fields {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .simulator-field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .simulator-field label {
+      font-weight: 700;
+    }
+
+    .simulator-field small {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .simulator-select {
+      width: 100%;
+      min-height: 3.15rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(33, 48, 42, 0.14);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      appearance: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .simulator-select:focus {
+      outline: none;
+      border-color: rgba(47, 111, 89, 0.56);
+      box-shadow: 0 0 0 4px rgba(47, 111, 89, 0.11);
+    }
+
+    .simulator-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .simulator-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.82rem 1.15rem;
+      border-radius: 999px;
+      border: 0;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .simulator-button:hover,
+    .simulator-button:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .simulator-button-primary {
+      color: #fff;
+      background: var(--brand);
+      box-shadow: 0 14px 28px rgba(47, 111, 89, 0.22);
+    }
+
+    .simulator-button-primary:hover,
+    .simulator-button-primary:focus-visible {
+      background: var(--brand-dark);
+    }
+
+    .simulator-button-secondary {
+      color: var(--brand-dark);
+      background: rgba(47, 111, 89, 0.08);
+      border: 1px solid rgba(47, 111, 89, 0.1);
+    }
+
+    .simulator-summary,
+    .simulator-note,
+    .simulator-empty {
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+    }
+
+    .simulator-summary {
+      display: none;
+      margin-bottom: 0.95rem;
+      background: rgba(47, 111, 89, 0.1);
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    .simulator-empty {
+      border: 1px dashed rgba(33, 48, 42, 0.16);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
+    }
+
+    .simulator-results {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .simulator-result {
+      background: #fff;
+      border: 1px solid rgba(33, 48, 42, 0.08);
+      border-radius: 22px;
+      padding: 1rem 1.05rem;
+      box-shadow: 0 10px 24px rgba(31, 50, 40, 0.05);
+    }
+
+    .simulator-result h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.08rem;
+    }
+
+    .simulator-result p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .simulator-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .simulator-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.9rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 111, 89, 0.12);
+      background: rgba(47, 111, 89, 0.06);
+      color: var(--brand-dark);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .simulator-tips {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .simulator-tips li + li {
+      margin-top: 0.35rem;
+    }
+
+    .simulator-guide-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.9rem;
+      color: var(--brand-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 0.82;
+      transition: opacity 160ms ease, color 160ms ease;
+    }
+
+    .simulator-guide-link:hover,
+    .simulator-guide-link:focus-visible {
+      color: var(--brand);
+      opacity: 1;
+      outline: none;
+    }
+
+    .simulator-note {
+      display: none;
+      margin-top: 0.95rem;
+      background: rgba(216, 140, 63, 0.12);
+      border: 1px solid rgba(216, 140, 63, 0.18);
+      color: #7b4d1f;
+    }
+
+    .simulator-links {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .simulator-link-card {
+      background: var(--surface);
+      border: 1px solid rgba(33, 48, 42, 0.08);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .simulator-link-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .simulator-link-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .simulator-grid,
+      .simulator-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .simulator-actions {
+        flex-direction: column;
+      }
+
+      .simulator-button {
+        width: 100%;
+      }
+
+      .simulator-shell {
+        border-radius: 24px;
+      }
+
+      .simulator-panel,
+      .simulator-result,
+      .simulator-link-card {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="simulator-page">
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../">
+          <span class="brand-mark">
+            <img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon" width="768" height="206">
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="../">Accueil</a>
+            <a href="../articles/">Articles</a>
+            <a href="./" aria-current="page" data-nav-simulateur>Simulateur</a>
+            <a href="../galerie/">Galerie</a>
+            <a href="../contact/">Contact</a>
+          </nav>
+          <div class="social-nav" aria-label="R&eacute;seaux sociaux">
+            <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-layout">
+      <div class="article-shell">
+        <div>
+          <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+            <ol class="breadcrumb">
+              <li><a href="../">Accueil</a></li>
+              <li aria-current="page">Simulateur</li>
+            </ol>
+          </nav>
+        </div>
+
+        <section class="simulator-shell" id="simulateur" aria-labelledby="simulateur-title">
+          <div class="simulator-heading">
+            <span class="eyebrow">EcoBalcon &middot; simulateur</span>
+            <h2 id="simulateur-title">Quelles plantes choisir pour votre balcon ?</h2>
+            <p>
+              S&eacute;lectionnez vos crit&egrave;res pour obtenir une premi&egrave;re liste de plantes adapt&eacute;es &agrave; votre espace.
+            </p>
+          </div>
+
+          <div class="simulator-grid">
+            <section class="simulator-panel" aria-labelledby="simulateur-form-title">
+              <h3 id="simulateur-form-title">Vos crit&egrave;res</h3>
+              <p>Quelques r&eacute;ponses suffisent pour faire ressortir les options les plus coh&eacute;rentes.</p>
+
+              <div class="simulator-fields">
+                <div class="simulator-field">
+                  <label for="exposition">Exposition</label>
+                  <small>Le soleil direct change presque tout sur un balcon.</small>
+                  <select class="simulator-select" id="exposition">
+                    <option value="">Choisir une exposition</option>
+                    <option value="soleil">Plein soleil</option>
+                    <option value="mi-ombre">Mi-ombre</option>
+                    <option value="ombre">Ombre / lumi&egrave;re faible</option>
+                  </select>
+                </div>
+
+                <div class="simulator-field">
+                  <label for="vent">Vent</label>
+                  <small>Un balcon tr&egrave;s expos&eacute; demande souvent des plantes plus robustes.</small>
+                  <select class="simulator-select" id="vent">
+                    <option value="">Choisir</option>
+                    <option value="abrite">Balcon plut&ocirc;t abrit&eacute;</option>
+                    <option value="modere">Un peu expos&eacute;</option>
+                    <option value="fort">Tr&egrave;s expos&eacute; au vent</option>
+                  </select>
+                </div>
+
+                <div class="simulator-field">
+                  <label for="place">Place disponible</label>
+                  <small>M&ecirc;me un petit balcon peut d&eacute;j&agrave; accueillir plusieurs pots utiles.</small>
+                  <select class="simulator-select" id="place">
+                    <option value="">Choisir</option>
+                    <option value="petit">Petit balcon / peu de pots</option>
+                    <option value="moyen">Balcon moyen</option>
+                    <option value="grand">Balcon spacieux</option>
+                  </select>
+                </div>
+
+                <div class="simulator-field">
+                  <label for="objectif">Votre priorit&eacute;</label>
+                  <small>Vous pouvez viser des aromatiques, des l&eacute;gumes, des fleurs ou le plus simple possible.</small>
+                  <select class="simulator-select" id="objectif">
+                    <option value="">Choisir</option>
+                    <option value="aromatiques">Aromatiques</option>
+                    <option value="legumes">L&eacute;gumes / r&eacute;colte utile</option>
+                    <option value="fleurs">Fleurs / rendu d&eacute;coratif</option>
+                    <option value="facile">Le plus facile possible</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="simulator-actions">
+                <button class="simulator-button simulator-button-primary" id="runBtn" type="button">Voir mes plantes id&eacute;ales</button>
+                <button class="simulator-button simulator-button-secondary" id="resetBtn" type="button">R&eacute;initialiser</button>
+              </div>
+            </section>
+
+            <aside class="simulator-panel" aria-live="polite">
+              <h3>Suggestions personnalis&eacute;es</h3>
+              <p>Le simulateur fait remonter en priorit&eacute; les plantes qui collent le mieux &agrave; vos conditions.</p>
+              <div id="summary" class="simulator-summary"></div>
+              <div id="results" class="simulator-results"></div>
+              <div id="emptyState" class="simulator-empty">
+                Choisissez vos crit&egrave;res puis lancez le simulateur pour voir une premi&egrave;re s&eacute;lection de plantes adapt&eacute;es &agrave; votre balcon.
+              </div>
+              <div id="note" class="simulator-note"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="simulator-links" aria-label="Guides &agrave; lire ensuite">
+          <article class="simulator-link-card">
+            <span class="eyebrow">Pour aller plus loin</span>
+            <h3><a href="../articles/plantes-aromatiques-sur-balcon/">Les aromatiques qui marchent bien en pot</a></h3>
+            <p>Un bon prolongement si vous voulez commencer avec quelque chose d'utile, simple et gratifiant.</p>
+          </article>
+          <article class="simulator-link-card">
+            <span class="eyebrow">Cas concret</span>
+            <h3><a href="../articles/plantes-pour-un-balcon-plein-soleil/">Que planter sur un balcon en plein soleil ?</a></h3>
+            <p>Id&eacute;al si votre exposition est forte et que vous voulez choisir des plantes qui tiennent bien la chaleur.</p>
+          </article>
+          <article class="simulator-link-card">
+            <span class="eyebrow">Pour d&eacute;marrer</span>
+            <h3><a href="../articles/legumes-faciles-a-cultiver/">Les l&eacute;gumes les plus faciles en pot</a></h3>
+            <p>Une s&eacute;lection simple pour passer du test &agrave; la mise en culture sans se compliquer la vie.</p>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <strong>EcoBalcon</strong>
+            <p>Astuces pour jardiner en milieu urbain.</p>
+          </div>
+          <div class="footer-social" aria-label="R&eacute;seaux sociaux">
+            <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <circle cx="17.4" cy="6.6" r="1"></circle>
+              </svg>
+            </a>
+            <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-side">
+          <strong>Sur le site</strong>
+          <ul class="footer-list">
+            <li>Potager de balcon et cultures faciles</li>
+            <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
+            <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
+          </ul>
+          <div class="footer-links">
+            <a href="../contact/">Contact</a>
+            <a href="../politique-confidentialite/">Confidentialit&eacute;</a>
+          </div>
+        </div>
+        <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const plants = [
+      {
+        name: "Basilic",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Facile", "Pot"],
+        description: "Une valeur s&ucirc;re sur balcon si vous avez de la lumi&egrave;re et des arrosages r&eacute;guliers.",
+        tips: ["Arrosez d&egrave;s que la surface s&egrave;che", "Pincez les tiges pour le faire ramifier"]
+      },
+      {
+        name: "Menthe",
+        exposure: ["mi-ombre", "ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Tol&egrave;re l'ombre", "Vigoureuse"],
+        description: "Tr&egrave;s simple &agrave; cultiver, id&eacute;ale pour un balcon moins ensoleill&eacute;.",
+        tips: ["Gardez-la en pot s&eacute;par&eacute;", "Arrosez r&eacute;guli&egrave;rement en &eacute;t&eacute;"]
+      },
+      {
+        name: "Persil",
+        exposure: ["mi-ombre", "ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Compact", "D&eacute;butant"],
+        description: "Une bonne option pour les petits espaces et les expositions douces.",
+        tips: ["Semez ou achetez un plant d&eacute;j&agrave; form&eacute;", "Coupez les tiges ext&eacute;rieures en priorit&eacute;"]
+      },
+      {
+        name: "Tomate cerise",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere"],
+        space: ["moyen", "grand"],
+        goals: ["legumes"],
+        tags: ["L&eacute;gume", "Productif", "Soleil"],
+        description: "Tr&egrave;s int&eacute;ressante en balcon ensoleill&eacute; avec un pot profond et un tuteur.",
+        tips: ["Utilisez un grand pot", "Arrosez r&eacute;guli&egrave;rement sans d&eacute;tremper"]
+      },
+      {
+        name: "Fraisier",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["Fruit", "Petit espace", "Accessible"],
+        description: "Un classique facile &agrave; placer en jardini&egrave;re ou en suspension.",
+        tips: ["Retirez les feuilles ab&icirc;m&eacute;es", "Apportez un peu d'engrais en saison"]
+      },
+      {
+        name: "Radis",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Rapide", "D&eacute;butant"],
+        description: "Pratique pour d&eacute;buter : pousse vite et demande peu de place.",
+        tips: ["Semez peu mais souvent", "&Eacute;claircissez si les semis sont serr&eacute;s"]
+      },
+      {
+        name: "Laitue &agrave; couper",
+        exposure: ["mi-ombre", "soleil"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Petit espace", "Simple"],
+        description: "Tr&egrave;s bien pour r&eacute;colter au fil des besoins sans gros mat&eacute;riel.",
+        tips: ["&Eacute;vitez les fortes chaleurs sans arrosage", "R&eacute;coltez feuille par feuille"]
+      },
+      {
+        name: "G&eacute;ranium",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs", "facile"],
+        tags: ["Fleur", "Robuste", "Balcon"],
+        description: "Une plante tr&egrave;s classique de balcon, florif&egrave;re et assez tol&eacute;rante.",
+        tips: ["Retirez les fleurs fan&eacute;es", "Arrosez plus souvent pendant les fortes chaleurs"]
+      },
+      {
+        name: "P&eacute;tunia",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs"],
+        tags: ["Fleur", "Tr&egrave;s florif&egrave;re", "Suspension"],
+        description: "Parfait pour donner rapidement un effet g&eacute;n&eacute;reux et color&eacute;.",
+        tips: ["Supprimez les fleurs fan&eacute;es", "Nourrissez un peu en p&eacute;riode de floraison"]
+      },
+      {
+        name: "B&eacute;gonia",
+        exposure: ["mi-ombre", "ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs", "facile"],
+        tags: ["Fleur", "Ombre", "D&eacute;coratif"],
+        description: "Tr&egrave;s utile pour fleurir un balcon lumineux mais sans soleil br&ucirc;lant.",
+        tips: ["&Eacute;vitez l'exc&egrave;s d'eau stagnante", "Placez-le &agrave; l'abri du soleil de midi"]
+      },
+      {
+        name: "Lavande",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["moyen", "grand"],
+        goals: ["fleurs", "facile", "aromatiques"],
+        tags: ["M&eacute;diterran&eacute;enne", "Soleil", "Peu d'eau"],
+        description: "Excellente en plein soleil, surtout sur balcon chaud et bien drain&eacute;.",
+        tips: ["Choisissez un substrat drainant", "Arrosez sans exc&egrave;s"]
+      },
+      {
+        name: "Ciboulette",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Tr&egrave;s simple", "Compacte"],
+        description: "Une des aromatiques les plus faciles &agrave; garder en pot.",
+        tips: ["Coupez r&eacute;guli&egrave;rement pour stimuler la repousse", "Divisez la touffe si elle grossit"]
+      },
+      {
+        name: "Thym",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Soleil", "Peu d'eau"],
+        description: "Une aromatique sobre et tr&egrave;s adapt&eacute;e aux balcons lumineux et bien drain&eacute;s.",
+        tips: ["Arrosez avec mod&eacute;ration", "Taillez l&eacute;g&egrave;rement apr&egrave;s la floraison"]
+      },
+      {
+        name: "Romarin",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "M&eacute;diterran&eacute;enne", "Robuste"],
+        description: "Parfait pour les balcons ensoleill&eacute;s si le pot est assez profond et drainant.",
+        tips: ["Placez-le dans un substrat l&eacute;ger", "Evitez les arrosages trop fr&eacute;quents"]
+      },
+      {
+        name: "Origan",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Compact", "Cuisine"],
+        description: "Une aromatique tr&egrave;s simple qui pousse bien en jardini&egrave;re ou en petit pot.",
+        tips: ["Pincez les extr&eacute;mit&eacute;s pour densifier", "Laissez s&eacute;cher la surface entre deux arrosages"]
+      },
+      {
+        name: "Sauge",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["moyen", "grand"],
+        goals: ["aromatiques", "facile"],
+        tags: ["Aromatique", "Soleil", "Durable"],
+        description: "Une plante parfum&eacute;e, robuste et bien adapt&eacute;e aux expositions chaudes.",
+        tips: ["Evitez l'exc&egrave;s d'eau", "Taillez un peu au printemps pour garder une forme compacte"]
+      },
+      {
+        name: "Coriandre",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["aromatiques"],
+        tags: ["Aromatique", "Fra&icirc;che", "Cuisine"],
+        description: "Int&eacute;ressante pour les balcons doux ou l&eacute;g&egrave;rement ombrag&eacute;s, surtout hors grosse chaleur.",
+        tips: ["Semez en petites quantit&eacute;s successives", "Gardez le terreau frais sans l'alourdir"]
+      },
+      {
+        name: "Poivron",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere"],
+        space: ["moyen", "grand"],
+        goals: ["legumes"],
+        tags: ["L&eacute;gume", "Soleil", "Pot profond"],
+        description: "Un bon choix sur balcon chaud et lumineux, avec un contenant stable et profond.",
+        tips: ["Pr&eacute;voyez un pot assez grand", "Maintenez une humidit&eacute; r&eacute;guli&egrave;re en &eacute;t&eacute;"]
+      },
+      {
+        name: "Epinard",
+        exposure: ["mi-ombre", "soleil"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Feuilles", "Mi-ombre"],
+        description: "Tr&egrave;s utile pour les balcons peu br&ucirc;lants, surtout au printemps et en automne.",
+        tips: ["Semez dans un terreau frais", "R&eacute;coltez les feuilles au fur et &agrave; mesure"]
+      },
+      {
+        name: "Roquette",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Rapide", "Coupe"],
+        description: "Une culture tr&egrave;s pratique pour r&eacute;colter vite sans prendre beaucoup de place.",
+        tips: ["Semez peu mais souvent", "R&eacute;coltez jeune pour garder des feuilles tendres"]
+      },
+      {
+        name: "Haricot nain",
+        exposure: ["soleil"],
+        wind: ["abrite", "modere"],
+        space: ["moyen", "grand"],
+        goals: ["legumes"],
+        tags: ["L&eacute;gume", "Et&eacute;", "Productif"],
+        description: "Une option int&eacute;ressante pour produire sur balcon sans avoir besoin d'une grande hauteur.",
+        tips: ["Semez quand les temp&eacute;ratures sont bien douces", "Arrosez r&eacute;guli&egrave;rement pendant la floraison"]
+      },
+      {
+        name: "Pois nain",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere"],
+        space: ["moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Printemps", "Accessible"],
+        description: "Adapt&eacute; aux balcons frais de d&eacute;but de saison, avec un petit support si besoin.",
+        tips: ["Semez t&ocirc;t dans la saison", "Aidez les tiges &agrave; grimper si n&eacute;cessaire"]
+      },
+      {
+        name: "Blette",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["moyen", "grand"],
+        goals: ["legumes", "facile"],
+        tags: ["L&eacute;gume", "Feuillage", "Longue r&eacute;colte"],
+        description: "Une plante g&eacute;n&eacute;reuse qui tient bien en bac et permet des r&eacute;coltes prolong&eacute;es.",
+        tips: ["Coupez les grandes feuilles ext&eacute;rieures en premier", "Gardez un pot assez profond"]
+      },
+      {
+        name: "Capucine",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere"],
+        space: ["moyen", "grand"],
+        goals: ["fleurs", "facile"],
+        tags: ["Fleur", "Comestible", "Balcon"],
+        description: "Une fleur facile et g&eacute;n&eacute;reuse qui apporte vite de la couleur sur balcon.",
+        tips: ["Evitez les pots trop riches en engrais", "Palisser l&eacute;g&egrave;rement si elle s'allonge"]
+      },
+      {
+        name: "Souci",
+        exposure: ["soleil", "mi-ombre"],
+        wind: ["abrite", "modere", "fort"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs", "facile"],
+        tags: ["Fleur", "Rustique", "Mellif&egrave;re"],
+        description: "Une fleur simple &agrave; vivre, pratique pour un balcon fleuri et assez tol&eacute;rant.",
+        tips: ["Retirez les fleurs fan&eacute;es pour prolonger la floraison", "Semez ou replantez facilement au printemps"]
+      },
+      {
+        name: "Impatiens",
+        exposure: ["mi-ombre", "ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs", "facile"],
+        tags: ["Fleur", "Ombre", "Tr&egrave;s simple"],
+        description: "Une valeur s&ucirc;re pour donner vite de la couleur sur un balcon peu ensoleill&eacute;.",
+        tips: ["Gardez le terreau frais en p&eacute;riode chaude", "Supprimez les tiges ab&icirc;m&eacute;es au fur et &agrave; mesure"]
+      },
+      {
+        name: "Fuchsia",
+        exposure: ["mi-ombre", "ombre"],
+        wind: ["abrite", "modere"],
+        space: ["petit", "moyen", "grand"],
+        goals: ["fleurs"],
+        tags: ["Fleur", "Ombre", "Retombant"],
+        description: "Tr&egrave;s d&eacute;coratif en suspension ou en pot, surtout sur balcon lumineux sans soleil fort.",
+        tips: ["Evitez les expositions tr&egrave;s chaudes", "Arrosez d&egrave;s que le m&eacute;lange s&egrave;che en surface"]
+      }
+    ];
+
+    const labels = {
+      exposition: {
+        soleil: "plein soleil",
+        "mi-ombre": "mi-ombre",
+        ombre: "ombre"
+      },
+      vent: {
+        abrite: "balcon abrit&eacute;",
+        modere: "balcon un peu expos&eacute;",
+        fort: "balcon tr&egrave;s expos&eacute; au vent"
+      },
+      place: {
+        petit: "petit espace",
+        moyen: "espace moyen",
+        grand: "balcon spacieux"
+      },
+      objectif: {
+        aromatiques: "des aromatiques",
+        legumes: "des l&eacute;gumes utiles",
+        fleurs: "un rendu fleuri",
+        facile: "quelque chose de tr&egrave;s simple"
+      }
+    };
+
+    const expositionEl = document.getElementById("exposition");
+    const ventEl = document.getElementById("vent");
+    const placeEl = document.getElementById("place");
+    const objectifEl = document.getElementById("objectif");
+    const resultsEl = document.getElementById("results");
+    const summaryEl = document.getElementById("summary");
+    const emptyStateEl = document.getElementById("emptyState");
+    const noteEl = document.getElementById("note");
+    const runBtn = document.getElementById("runBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const plantArticles = {
+      "Basilic": "../articles/guide-basilic-sur-son-balcon/",
+      "Tomate cerise": "../articles/tomates-cerises-balcon/",
+      "Fraisier": "../articles/guide-fraises-sur-son-balcon/",
+      "Radis": "../articles/guide-radis-sur-son-balcon/",
+      "Laitue \u00e0 couper": "../articles/guide-laitues-sur-son-balcon/",
+      "Poivron": "../articles/guide-poivrons-sur-son-balcon/",
+      "Epinard": "../articles/guide-epinards-sur-son-balcon/"
+    };
+
+    function decodeHtml(value) {
+      const textarea = document.createElement("textarea");
+      textarea.innerHTML = value;
+      return textarea.value;
+    }
+
+    function buildSummary(filters, count) {
+      const parts = [];
+
+      if (filters.exposition) {
+        parts.push(decodeHtml(labels.exposition[filters.exposition]));
+      }
+      if (filters.vent) {
+        parts.push(decodeHtml(labels.vent[filters.vent]));
+      }
+      if (filters.place) {
+        parts.push(decodeHtml(labels.place[filters.place]));
+      }
+      if (filters.objectif) {
+        parts.push(decodeHtml(labels.objectif[filters.objectif]));
+      }
+
+      const sentence = parts.length ? parts.join(" \u00b7 ") : "vos crit\u00e8res";
+      return `${count} suggestion${count > 1 ? "s" : ""} trouv\u00e9e${count > 1 ? "s" : ""} pour ${sentence}.`;
+    }
+
+    function getFallbackAdvice(exposition) {
+      if (exposition === "soleil") {
+        return "Votre balcon semble tr\u00e8s ensoleill\u00e9 : commencez avec lavande, g\u00e9ranium, ciboulette ou fraisier si vous voulez quelque chose d'accessible.";
+      }
+
+      if (exposition === "ombre") {
+        return "Avec peu de soleil direct, privil\u00e9giez des plantes comme la menthe, le persil ou le b\u00e9gonia, g\u00e9n\u00e9ralement plus tol\u00e9rantes \u00e0 l'ombre.";
+      }
+
+      return "Avec une exposition interm\u00e9diaire, essayez des plantes polyvalentes comme fraisier, basilic, ciboulette ou g\u00e9ranium.";
+    }
+
+    function renderResults(plantsToShow) {
+      resultsEl.innerHTML = "";
+
+      plantsToShow.forEach((plant) => {
+        const article = document.createElement("article");
+        article.className = "simulator-result";
+        const plantName = decodeHtml(plant.name);
+        const guide = plantArticles[plantName];
+        article.innerHTML = `
+          <h4>${plant.name}</h4>
+          <div class="simulator-tags">${plant.tags.map((tag) => `<span class="simulator-tag">${tag}</span>`).join("")}</div>
+          <p>${plant.description}</p>
+          <ul class="simulator-tips">${plant.tips.map((tip) => `<li>${tip}</li>`).join("")}</ul>
+          ${guide ? `<a class="simulator-guide-link" href="${guide}" aria-label="Voir le guide d&eacute;di&eacute; pour ${plant.name}">Voir le guide d&eacute;di&eacute;</a>` : ""}
+        `;
+        resultsEl.appendChild(article);
+      });
+    }
+
+    function runSimulation() {
+      const filters = {
+        exposition: expositionEl.value,
+        vent: ventEl.value,
+        place: placeEl.value,
+        objectif: objectifEl.value
+      };
+
+      const selectedFilters = Object.values(filters).filter(Boolean).length;
+
+      emptyStateEl.style.display = "none";
+      noteEl.style.display = "none";
+      noteEl.textContent = "";
+
+      if (!selectedFilters) {
+        resultsEl.innerHTML = "";
+        summaryEl.style.display = "block";
+        summaryEl.textContent = "Choisissez au moins un crit\u00e8re pour lancer le simulateur.";
+        noteEl.style.display = "block";
+        noteEl.textContent = "Commencez par l'exposition : c'est souvent le rep\u00e8re le plus utile pour faire un premier tri sur un balcon.";
+        return;
+      }
+
+      const results = plants
+        .filter((plant) => {
+          if (filters.exposition && !plant.exposure.includes(filters.exposition)) {
+            return false;
+          }
+
+          if (filters.objectif && !plant.goals.includes(filters.objectif)) {
+            return false;
+          }
+
+          return true;
+        })
+        .map((plant) => {
+          let score = 0;
+
+          if (filters.exposition && plant.exposure.includes(filters.exposition)) {
+            score += 4;
+          }
+
+          if (filters.objectif && plant.goals.includes(filters.objectif)) {
+            score += 3;
+          }
+
+          if (filters.vent && plant.wind.includes(filters.vent)) {
+            score += 2;
+          }
+
+          if (filters.place && plant.space.includes(filters.place)) {
+            score += 1;
+          }
+
+          return { plant, score };
+        })
+        .sort((left, right) => {
+          if (right.score !== left.score) {
+            return right.score - left.score;
+          }
+
+          return decodeHtml(left.plant.name).localeCompare(decodeHtml(right.plant.name), "fr");
+        })
+        .slice(0, 8)
+        .map((item) => item.plant);
+
+      if (!results.length) {
+        resultsEl.innerHTML = "";
+        summaryEl.style.display = "block";
+        summaryEl.textContent = "Aucune correspondance directe avec cette combinaison de crit\u00e8res.";
+        noteEl.style.display = "block";
+        noteEl.textContent = getFallbackAdvice(filters.exposition);
+        return;
+      }
+
+      summaryEl.style.display = "block";
+      summaryEl.textContent = buildSummary(filters, results.length);
+      renderResults(results);
+
+      if (filters.vent === "fort") {
+        noteEl.style.display = "block";
+        noteEl.textContent = "Balcon venteux : choisissez des pots assez lourds, \u00e9vitez les plantes trop fragiles et surveillez le dess\u00e8chement du terreau.";
+      }
+    }
+
+    function resetSimulation() {
+      expositionEl.value = "";
+      ventEl.value = "";
+      placeEl.value = "";
+      objectifEl.value = "";
+      resultsEl.innerHTML = "";
+      summaryEl.style.display = "none";
+      summaryEl.textContent = "";
+      noteEl.style.display = "none";
+      noteEl.textContent = "";
+      emptyStateEl.style.display = "block";
+    }
+
+    runBtn.addEventListener("click", runSimulation);
+    resetBtn.addEventListener("click", resetSimulation);
+  </script>
+</body>
+</html>
