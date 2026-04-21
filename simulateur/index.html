@@ -56,6 +56,7 @@
       max-width: 62rem;
     }
 
+    .simulator-heading h1,
     .simulator-heading h2 {
       margin: 0;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
@@ -83,6 +84,7 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
+    .simulator-panel h2,
     .simulator-panel h3 {
       margin: 0 0 0.35rem;
       font-size: 1.18rem;
@@ -382,7 +384,7 @@
         <section class="simulator-shell" id="simulateur" aria-labelledby="simulateur-title">
           <div class="simulator-heading">
             <span class="eyebrow">EcoBalcon &middot; simulateur</span>
-            <h2 id="simulateur-title">Quelles plantes choisir pour votre balcon ?</h2>
+            <h1 id="simulateur-title">Quelles plantes choisir pour votre balcon ?</h1>
             <p>
               S&eacute;lectionnez vos crit&egrave;res pour obtenir une premi&egrave;re liste de plantes adapt&eacute;es &agrave; votre espace.
             </p>
@@ -390,7 +392,7 @@
 
           <div class="simulator-grid">
             <section class="simulator-panel" aria-labelledby="simulateur-form-title">
-              <h3 id="simulateur-form-title">Vos crit&egrave;res</h3>
+              <h2 id="simulateur-form-title">Vos crit&egrave;res</h2>
               <p>Quelques r&eacute;ponses suffisent pour faire ressortir les options les plus coh&eacute;rentes.</p>
 
               <div class="simulator-fields">
@@ -447,7 +449,7 @@
             </section>
 
             <aside class="simulator-panel" aria-live="polite">
-              <h3>Suggestions personnalis&eacute;es</h3>
+              <h2>Suggestions personnalis&eacute;es</h2>
               <p>Le simulateur fait remonter en priorit&eacute; les plantes qui collent le mieux &agrave; vos conditions.</p>
               <div id="summary" class="simulator-summary"></div>
               <div id="results" class="simulator-results"></div>
@@ -460,6 +462,7 @@
         </section>
 
         <section class="simulator-links" aria-label="Guides &agrave; lire ensuite">
+          <h2 class="sr-only">Guides &agrave; lire ensuite</h2>
           <article class="simulator-link-card">
             <span class="eyebrow">Pour aller plus loin</span>
             <h3><a href="../articles/plantes-aromatiques-sur-balcon/">Les aromatiques qui marchent bien en pot</a></h3>
