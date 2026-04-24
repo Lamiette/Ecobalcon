@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -412,7 +412,7 @@
                   <small>Un balcon tr&egrave;s expos&eacute; demande souvent des plantes plus robustes.</small>
                   <select class="simulator-select" id="vent">
                     <option value="">Choisir</option>
-                    <option value="abrite">Balcon plut&ocirc;t abrit&eacute;</option>
+                    <option value="abrité">Balcon plut&ocirc;t abrit&eacute;</option>
                     <option value="modere">Un peu expos&eacute;</option>
                     <option value="fort">Tr&egrave;s expos&eacute; au vent</option>
                   </select>
@@ -459,6 +459,82 @@
               <div id="note" class="simulator-note"></div>
             </aside>
           </div>
+
+          <section class="diagnostic-panel" aria-labelledby="diagnostic-title">
+            <div>
+              <span class="eyebrow">Diagnostic complet</span>
+              <h2 id="diagnostic-title">Plan d'action pour votre balcon</h2>
+              <p>Le diagnostic traduit vos choix en priorités concrètes : type de cultures, volume de pots, vigilance eau et gestes à faire en premier.</p>
+            </div>
+            <div id="diagnosticResult" class="diagnostic-result">
+              Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.
+            </div>
+          </section>
+
+          <section class="tools-grid" aria-label="Calculateurs balcon">
+            <article class="tool-card">
+              <h2>Calculateur de pot</h2>
+              <p>Estimez le volume minimal pour une culture en pot.</p>
+              <label for="potPlant">Culture</label>
+              <select class="simulator-select" id="potPlant"></select>
+              <label for="plantCount">Nombre de plants</label>
+              <input class="simulator-input" id="plantCount" type="number" min="1" max="12" value="1">
+              <button class="simulator-button simulator-button-secondary" id="potCalcBtn" type="button">Calculer</button>
+              <div class="tool-result" id="potResult"></div>
+            </article>
+
+            <article class="tool-card">
+              <h2>Arrosage vacances</h2>
+              <p>Repérez le niveau de risque avant une absence.</p>
+              <label for="absenceDays">Jours d'absence</label>
+              <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
+              <label for="heatLevel">Contexte</label>
+              <select class="simulator-select" id="heatLevel">
+                <option value="doux">Balcon doux ou mi-ombre</option>
+                <option value="chaud">Balcon chaud</option>
+                <option value="brulant">Plein soleil / canicule</option>
+              </select>
+              <button class="simulator-button simulator-button-secondary" id="waterCalcBtn" type="button">Evaluer</button>
+              <div class="tool-result" id="waterResult"></div>
+            </article>
+
+            <article class="tool-card">
+              <h2>Compost en pot</h2>
+              <p>Dosez sans saturer le substrat.</p>
+              <label for="compostPot">Volume du pot en litres</label>
+              <input class="simulator-input" id="compostPot" type="number" min="2" max="80" value="20">
+              <label for="compostCulture">Type de culture</label>
+              <select class="simulator-select" id="compostCulture">
+                <option value="gourmande">Culture gourmande</option>
+                <option value="feuille">Légume feuille / aromatique fraîche</option>
+                <option value="sobre">Aromatique sobre / plante méditerranéenne</option>
+              </select>
+              <button class="simulator-button simulator-button-secondary" id="compostCalcBtn" type="button">Doser</button>
+              <div class="tool-result" id="compostResult"></div>
+            </article>
+          </section>
+
+          <section class="comparator-section" aria-labelledby="comparator-title">
+            <div class="section-heading section-heading-compact">
+              <div>
+                <span class="eyebrow">Comparateurs propres</span>
+                <h2 id="comparator-title">Choisir sans acheter trop vite</h2>
+                <p>Ces rep&egrave;res aident &agrave; recommander du mat&eacute;riel seulement quand il r&egrave;gle un vrai probl&egrave;me.</p>
+              </div>
+            </div>
+            <div class="comparison-table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr><th>Besoin</th><th>Option simple</th><th>Option confort</th><th>Achat &agrave; &eacute;viter</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Arroser moins</td><td>Paillage + grands pots</td><td>Oyas ou goutte-&agrave;-goutte test&eacute;</td><td>Syst&egrave;me pos&eacute; la veille du d&eacute;part</td></tr>
+                  <tr><td>Composter</td><td>Compost partag&eacute; + petit stockage sec</td><td>Bokashi ou lombricomposteur compact</td><td>Grand bac sans routine</td></tr>
+                  <tr><td>Stabiliser au vent</td><td>Pots lourds au sol</td><td>Fixations + bacs profonds</td><td>Jardini&egrave;res l&eacute;g&egrave;res en hauteur</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
         </section>
 
         <section class="simulator-links" aria-label="Guides &agrave; lire ensuite">
@@ -522,8 +598,9 @@
     </footer>
   </div>
 
+  <script src="../js/plants-data.js"></script>
   <script>
-    const plants = [
+    const plants = window.EcoBalconPlants || [
       {
         name: "Basilic",
         exposure: ["soleil", "mi-ombre"],
@@ -552,7 +629,7 @@
         goals: ["aromatiques", "facile"],
         tags: ["Aromatique", "Compact", "D&eacute;butant"],
         description: "Une bonne option pour les petits espaces et les expositions douces.",
-        tips: ["Semez ou achetez un plant d&eacute;j&agrave; form&eacute;", "Coupez les tiges ext&eacute;rieures en priorit&eacute;"]
+        tips: ["Semez ou achétéz un plant d&eacute;j&agrave; form&eacute;", "Coupez les tiges ext&eacute;rieures en priorit&eacute;"]
       },
       {
         name: "Tomate cerise",
@@ -662,7 +739,7 @@
         goals: ["aromatiques", "facile"],
         tags: ["Aromatique", "M&eacute;diterran&eacute;enne", "Robuste"],
         description: "Parfait pour les balcons ensoleill&eacute;s si le pot est assez profond et drainant.",
-        tips: ["Placez-le dans un substrat l&eacute;ger", "Evitez les arrosages trop fr&eacute;quents"]
+        tips: ["Placez-le dans un substrat l&eacute;ger", "&Eacute;vitez les arrosages trop fr&eacute;quents"]
       },
       {
         name: "Origan",
@@ -682,7 +759,7 @@
         goals: ["aromatiques", "facile"],
         tags: ["Aromatique", "Soleil", "Durable"],
         description: "Une plante parfum&eacute;e, robuste et bien adapt&eacute;e aux expositions chaudes.",
-        tips: ["Evitez l'exc&egrave;s d'eau", "Taillez un peu au printemps pour garder une forme compacte"]
+        tips: ["&Eacute;vitez l'exc&egrave;s d'eau", "Taillez un peu au printemps pour garder une forme compacte"]
       },
       {
         name: "Coriandre",
@@ -705,7 +782,7 @@
         tips: ["Pr&eacute;voyez un pot assez grand", "Maintenez une humidit&eacute; r&eacute;guli&egrave;re en &eacute;t&eacute;"]
       },
       {
-        name: "Epinard",
+        name: "Épinard",
         exposure: ["mi-ombre", "soleil"],
         wind: ["abrite", "modere"],
         space: ["petit", "moyen", "grand"],
@@ -762,7 +839,7 @@
         goals: ["fleurs", "facile"],
         tags: ["Fleur", "Comestible", "Balcon"],
         description: "Une fleur facile et g&eacute;n&eacute;reuse qui apporte vite de la couleur sur balcon.",
-        tips: ["Evitez les pots trop riches en engrais", "Palisser l&eacute;g&egrave;rement si elle s'allonge"]
+        tips: ["&Eacute;vitez les pots trop riches en engrais", "Palissez l&eacute;g&egrave;rement si elle s'allonge"]
       },
       {
         name: "Souci",
@@ -792,7 +869,7 @@
         goals: ["fleurs"],
         tags: ["Fleur", "Ombre", "Retombant"],
         description: "Tr&egrave;s d&eacute;coratif en suspension ou en pot, surtout sur balcon lumineux sans soleil fort.",
-        tips: ["Evitez les expositions tr&egrave;s chaudes", "Arrosez d&egrave;s que le m&eacute;lange s&egrave;che en surface"]
+        tips: ["&Eacute;vitez les expositions tr&egrave;s chaudes", "Arrosez d&egrave;s que le m&eacute;lange s&egrave;che en surface"]
       }
     ];
 
@@ -803,7 +880,7 @@
         ombre: "ombre"
       },
       vent: {
-        abrite: "balcon abrit&eacute;",
+        abrité: "balcon abrit&eacute;",
         modere: "balcon un peu expos&eacute;",
         fort: "balcon tr&egrave;s expos&eacute; au vent"
       },
@@ -828,16 +905,30 @@
     const summaryEl = document.getElementById("summary");
     const emptyStateEl = document.getElementById("emptyState");
     const noteEl = document.getElementById("note");
+    const diagnosticResultEl = document.getElementById("diagnosticResult");
     const runBtn = document.getElementById("runBtn");
     const resetBtn = document.getElementById("resetBtn");
+    const potPlantEl = document.getElementById("potPlant");
+    const plantCountEl = document.getElementById("plantCount");
+    const potCalcBtn = document.getElementById("potCalcBtn");
+    const potResultEl = document.getElementById("potResult");
+    const absenceDaysEl = document.getElementById("absenceDays");
+    const heatLevelEl = document.getElementById("heatLevel");
+    const waterCalcBtn = document.getElementById("waterCalcBtn");
+    const waterResultEl = document.getElementById("waterResult");
+    const compostPotEl = document.getElementById("compostPot");
+    const compostCultureEl = document.getElementById("compostCulture");
+    const compostCalcBtn = document.getElementById("compostCalcBtn");
+    const compostResultEl = document.getElementById("compostResult");
     const plantArticles = {
       "Basilic": "../articles/guide-basilic-sur-son-balcon/",
       "Tomate cerise": "../articles/tomates-cerises-balcon/",
       "Fraisier": "../articles/guide-fraises-sur-son-balcon/",
       "Radis": "../articles/guide-radis-sur-son-balcon/",
       "Laitue \u00e0 couper": "../articles/guide-laitues-sur-son-balcon/",
+      "Laitue à couper": "../articles/guide-laitues-sur-son-balcon/",
       "Poivron": "../articles/guide-poivrons-sur-son-balcon/",
-      "Epinard": "../articles/guide-epinards-sur-son-balcon/"
+      "Épinard": "../articles/guide-epinards-sur-son-balcon/"
     };
 
     function decodeHtml(value) {
@@ -876,6 +967,28 @@
       }
 
       return "Avec une exposition interm\u00e9diaire, essayez des plantes polyvalentes comme fraisier, basilic, ciboulette ou g\u00e9ranium.";
+    }
+
+    function getDiagnostic(filters, results) {
+      const first = results[0];
+      const potNeed = first && first.potLiters ? `${first.potLiters} L minimum pour ${first.name}` : "un volume de pot adapté à la culture principale";
+      const waterLevel = filters.exposition === "soleil" || filters.vent === "fort" ? "priorité forte à l'arrosage régulier et au paillage" : "arrosage à surveiller sans saturer le terreau";
+      const spaceAdvice = filters.place === "petit" ? "limitez-vous à 3 ou 4 pots vraiment utiles" : "organisez les grands pots au fond et les cultures rapides devant";
+      const nextGuide = filters.exposition === "ombre"
+        ? "../articles/balcon-a-lombre-plantes-et-culture/"
+        : filters.vent === "fort"
+          ? "../articles/balcon-venteux-plantes-protection-pots/"
+          : "../articles/le-materiel-essentiel-pour-commencer/";
+
+      return `
+        <ul class="article-list">
+          <li><strong>Culture prioritaire :</strong> ${first ? first.name : "choisir une plante simple et robuste"}.</li>
+          <li><strong>Pot :</strong> ${potNeed}.</li>
+          <li><strong>Eau :</strong> ${waterLevel}.</li>
+          <li><strong>Organisation :</strong> ${spaceAdvice}.</li>
+          <li><strong>Prochaine lecture :</strong> <a href="${nextGuide}">ouvrir le guide le plus utile</a>.</li>
+        </ul>
+      `;
     }
 
     function renderResults(plantsToShow) {
@@ -975,6 +1088,7 @@
       summaryEl.style.display = "block";
       summaryEl.textContent = buildSummary(filters, results.length);
       renderResults(results);
+      diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
 
       if (filters.vent === "fort") {
         noteEl.style.display = "block";
@@ -993,10 +1107,66 @@
       noteEl.style.display = "none";
       noteEl.textContent = "";
       emptyStateEl.style.display = "block";
+      diagnosticResultEl.textContent = "Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.";
     }
 
+    function hydratePlantTools() {
+      plants
+        .slice()
+        .sort((left, right) => decodeHtml(left.name).localeCompare(decodeHtml(right.name), "fr"))
+        .forEach((plant) => {
+          const option = document.createElement("option");
+          option.value = decodeHtml(plant.name);
+          option.textContent = decodeHtml(plant.name);
+          potPlantEl.appendChild(option);
+        });
+    }
+
+    function getPlantByName(name) {
+      return plants.find((plant) => decodeHtml(plant.name) === name) || plants[0];
+    }
+
+    function calculatePot() {
+      const plant = getPlantByName(potPlantEl.value);
+      const count = Math.max(1, Number(plantCountEl.value) || 1);
+      const liters = Math.ceil((plant.potLiters || 5) * count);
+      potResultEl.innerHTML = `<strong>${liters} L minimum</strong><br>${count > 1 ? "Pour plusieurs plants, séparez si possible les cultures gourmandes." : plant.harvest || "Choisissez un pot percé et stable."}`;
+    }
+
+    function calculateWaterRisk() {
+      const days = Math.max(1, Number(absenceDaysEl.value) || 1);
+      const heat = heatLevelEl.value;
+      let score = days;
+      if (heat === "chaud") score += 3;
+      if (heat === "brulant") score += 6;
+      const level = score >= 12 ? "risque fort" : score >= 7 ? "risque moyen" : "risque modéré";
+      const action = score >= 12
+        ? "prévoir relais humain, ombre légère, paillage et système testé avant départ"
+        : score >= 7
+          ? "pailler, regrouper les pots et tester une réserve d'eau"
+          : "arroser à fond avant départ et éloigner les pots du plein soleil";
+      waterResultEl.innerHTML = `<strong>${level}</strong><br>${action}.`;
+    }
+
+    function calculateCompost() {
+      const liters = Math.max(2, Number(compostPotEl.value) || 2);
+      const type = compostCultureEl.value;
+      const ratio = type === "gourmande" ? 0.08 : type === "feuille" ? 0.04 : 0.02;
+      const compost = Math.max(1, Math.round(liters * ratio));
+      compostResultEl.innerHTML = `<strong>${compost} L maximum d'apport prudent</strong><br>Utilisez du compost mûr et mélangez légèrement plutôt que de charger la surface.`;
+    }
+
+    hydratePlantTools();
+    calculatePot();
+    calculateWaterRisk();
+    calculateCompost();
     runBtn.addEventListener("click", runSimulation);
     resetBtn.addEventListener("click", resetSimulation);
+    potCalcBtn.addEventListener("click", calculatePot);
+    waterCalcBtn.addEventListener("click", calculateWaterRisk);
+    compostCalcBtn.addEventListener("click", calculateCompost);
   </script>
 </body>
 </html>
+
+

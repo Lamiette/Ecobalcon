@@ -1,63 +1,20 @@
-# EcoBalcon
+﻿# EcoBalcon
 
 > Conseils pratiques pour jardiner sur balcon en milieu urbain, de façon écologique et accessible.
 
-EcoBalcon est un blog francophone dédié au jardinage urbain sur balcon et terrasse. Il propose des guides pratiques pour cultiver légumes, herbes aromatiques, petits fruits et fleurs dans de petits espaces, tout en adoptant des gestes écologiques : économie d'eau, compostage, attirer les pollinisateurs, lutte naturelle contre les nuisibles.
+EcoBalcon est un site francophone dédié au jardinage urbain sur balcon et terrasse. Il propose des guides pratiques, un simulateur de plantes pour balcon et des ressources utiles pour cultiver légumes, aromatiques, petits fruits et fleurs dans de petits espaces.
 
 Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant créer un potager productif sur un espace restreint, en France ou dans tout pays francophone.
 
 ## Navigation principale
 
-- [Accueil](https://ecobalcon.com/) : présentation du site et sélection éditoriale
-- [Tous les articles](https://ecobalcon.com/articles/) : index des 38 guides pratiques
-- [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardinés
+- [Accueil](https://ecobalcon.com/) : presentation du site et sélection editoriale
+- [Tous les articles](https://ecobalcon.com/articles/) : index des 42 guides pratiques
+- [Simulateur](https://ecobalcon.com/simulateur/) : diagnostic pour choisir des plantes selon l'exposition, le vent, la place et l'objectif
+- [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardines
 - [Contact](https://ecobalcon.com/contact/) : formulaire pour poser une question, suggérer un sujet ou signaler une correction
 
-## Fiches techniques (cultures)
+## Thématique principale
 
-- [Tomates sur balcon](https://ecobalcon.com/articles/guide-tomates-sur-son-balcon/)
-- [Tomates cerises sur balcon](https://ecobalcon.com/articles/tomates-cerises-balcon/)
-- [Laitues sur balcon](https://ecobalcon.com/articles/guide-laitues-sur-son-balcon/)
-- [Épinards sur balcon](https://ecobalcon.com/articles/guide-epinards-sur-son-balcon/)
-- [Fraises sur balcon](https://ecobalcon.com/articles/guide-fraises-sur-son-balcon/)
-- [Radis sur balcon](https://ecobalcon.com/articles/guide-radis-sur-son-balcon/)
-- [Pommes de terre sur balcon](https://ecobalcon.com/articles/pommes-de-terre-balcon/)
-- [10 légumes faciles à cultiver en pot](https://ecobalcon.com/articles/legumes-faciles-a-cultiver/)
-- [Petits fruits en pot](https://ecobalcon.com/articles/petits-fruits-en-pot/)
-- [Plantes aromatiques sur balcon](https://ecobalcon.com/articles/plantes-aromatiques-sur-balcon/)
+EcoBalcon couvre les cultures en pot, le choix des plantes selon exposition, l'arrosage sobre, le compostage en petit espace, le matériel utile, la biodiversité urbaine et les gestes saisonniers pour balcon.
 
-## Entretien & astuces écologiques
-
-- [Réduire la consommation d'eau sur balcon](https://ecobalcon.com/articles/reduction-consommation-eau-balcon/)
-- [Récupérer l'eau de pluie sans gouttière](https://ecobalcon.com/articles/recuperer-eau-de-pluie-balcon/)
-- [Utilisation du compost sur balcon](https://ecobalcon.com/articles/utilisation-compost-sur-balcon/)
-- [Solutions de compostage pour petits espaces](https://ecobalcon.com/articles/solutions-compostage-sur-balcon/)
-- [Paillage écologique sur balcon](https://ecobalcon.com/articles/paillage-sur-balcon-ecolo/)
-- [Arrosage à l'eau de cuisson](https://ecobalcon.com/articles/potager-balcon-eau-de-cuisson/)
-- [Jardinage en lasagnes sur balcon](https://ecobalcon.com/articles/jardinage-en-lasagnes-sur-balcon/)
-- [Protéger son balcon des nuisibles naturellement](https://ecobalcon.com/articles/proteger-son-balcon-des-nuisibles-naturellement/)
-- [Insectes utiles à attirer sur un balcon](https://ecobalcon.com/articles/insectes-utiles-sur-un-balcon/)
-- [Balcon pour pollinisateurs](https://ecobalcon.com/articles/balcon-pour-pollinisateurs/)
-- [Calendrier lunaire pour le balcon](https://ecobalcon.com/articles/calendrier-lunaire-balcon/)
-- [Quand sortir tomates, poivrons et basilic sur un balcon ?](https://ecobalcon.com/articles/quand-sortir-tomates-poivrons-basilic-balcon/)
-
-## Aménagement & matériel
-
-- [Le matériel essentiel pour commencer](https://ecobalcon.com/articles/le-materiel-essentiel-pour-commencer/)
-- [DIY : recycler des objets en pots de balcon](https://ecobalcon.com/articles/diy-pots-pour-le-balcon/)
-- [7 meilleures plantes grimpantes pour l'intimité en ville](https://ecobalcon.com/articles/meilleures-plantes-grimpantes-en-ville/)
-
-## Choix de plantes selon l'exposition
-
-- [Balcon plein soleil : quelles plantes ?](https://ecobalcon.com/articles/plantes-pour-un-balcon-plein-soleil/)
-- [Balcon à l'ombre : que cultiver ?](https://ecobalcon.com/articles/balcon-a-lombre-plantes-et-culture/)
-- [Plantes qui survivent à la canicule](https://ecobalcon.com/articles/plantes-qui-survivent-a-la-canicule/)
-- [Plantes pour un balcon durable et résistant](https://ecobalcon.com/articles/balcon-durable-plantes/)
-- [Fleurs comestibles et mellifères pour balcon](https://ecobalcon.com/articles/fleurs-comestibles-melliferes-balcon/)
-
-## Guides généraux
-
-- [Jardiner sur un balcon : réussir son potager urbain](https://ecobalcon.com/articles/jardiner-sur-un-balcon/)
-- [Astuces pour un jardin de balcon réussi](https://ecobalcon.com/articles/jardin-sur-balcon-astuces/)
-- [Calendrier annuel du jardin de balcon](https://ecobalcon.com/articles/calendrier-du-jardin-de-balcon/)
-- [Erreurs courantes en jardinage sur balcon](https://ecobalcon.com/articles/erreurs-jardiner-sur-un-balcon/)
