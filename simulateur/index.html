@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simulateur de plantes pour balcon | EcoBalcon</title>
-  <meta name="description" content="Trouvez quelles plantes choisir sur votre balcon selon l'exposition, le vent, la place disponible et votre objectif.">
+  <title>Outils balcon : simulateur, plantes, compost et arrosage | EcoBalcon</title>
+  <meta name="description" content="Simulateur EcoBalcon : trouvez les plantes adaptées, filtrez la bibliothèque, comparez les solutions de compostage et estimez l'arrosage avant les vacances.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://ecobalcon.com/simulateur/">
   <link rel="alternate" hreflang="fr" href="https://ecobalcon.com/simulateur/">
@@ -12,17 +12,17 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Simulateur de plantes pour balcon | EcoBalcon">
-  <meta property="og:description" content="Un simulateur simple pour trouver quoi faire pousser sur son balcon selon l'exposition, le vent, la place et vos envies.">
+  <meta property="og:title" content="Outils balcon : simulateur, plantes, compost et arrosage | EcoBalcon">
+  <meta property="og:description" content="Des outils pratiques pour choisir les plantes, prévoir les pots, comparer le compostage et préparer l'arrosage avant une absence.">
   <meta property="og:url" content="https://ecobalcon.com/simulateur/">
   <meta property="og:image" content="https://ecobalcon.com/images/balcon-soleil.webp">
   <meta property="og:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Simulateur de plantes pour balcon | EcoBalcon">
-  <meta name="twitter:description" content="Un simulateur simple pour trouver quoi faire pousser sur son balcon selon l'exposition, le vent, la place et vos envies.">
+  <meta name="twitter:title" content="Outils balcon : simulateur, plantes, compost et arrosage | EcoBalcon">
+  <meta name="twitter:description" content="Des outils pratiques pour choisir les plantes, prévoir les pots, comparer le compostage et préparer l'arrosage avant une absence.">
   <meta name="twitter:image" content="https://ecobalcon.com/images/balcon-soleil.webp">
   <meta name="twitter:image:alt" content="Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Simulateur de plantes pour balcon | EcoBalcon","url":"https://ecobalcon.com/simulateur/","inLanguage":"fr","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Un simulateur simple pour trouver quelles plantes choisir sur un balcon selon l'exposition, le vent, la place disponible et l'objectif de culture.","publisher":{"@type":"Organization","name":"EcoBalcon","url":"https://ecobalcon.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Outils balcon EcoBalcon","url":"https://ecobalcon.com/simulateur/","inLanguage":"fr","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Un ensemble d'outils pour choisir les plantes de balcon, estimer les pots, comparer le compostage et préparer l'arrosage avant les vacances.","publisher":{"@type":"Organization","name":"EcoBalcon","url":"https://ecobalcon.com/"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://ecobalcon.com/"},{"@type":"ListItem","position":2,"name":"Simulateur","item":"https://ecobalcon.com/simulateur/"}]}</script>
   <script src="../js/cookie-consent.js" data-site-prefix="../" data-gtm-id="GTM-MFRVPVFQ" data-ga-id="G-L952X34SHR" data-clarity-id="w4a97sk52t" defer></script>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -241,6 +241,28 @@
       font-weight: 700;
     }
 
+    .plant-library-card h3 {
+      min-height: 1.45rem;
+    }
+
+    .plant-library-card .simulator-tags {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 0.45rem;
+      min-height: 2.65rem;
+    }
+
+    .plant-library-card .simulator-tag {
+      justify-content: center;
+      width: 100%;
+      height: 2.65rem;
+      min-height: 2.65rem;
+      padding-inline: 0.35rem;
+      text-align: center;
+      line-height: 1.15;
+    }
+
     .simulator-tips {
       margin: 0;
       padding-left: 1.1rem;
@@ -347,7 +369,7 @@
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
-            <a href="./" aria-current="page" data-nav-simulateur>Simulateur</a>
+            <a href="./" aria-current="page" data-nav-simulateur>Outils</a>
             <a href="../galerie/">Galerie</a>
             <a href="../contact/">Contact</a>
           </nav>
@@ -383,10 +405,10 @@
 
         <section class="simulator-shell" id="simulateur" aria-labelledby="simulateur-title">
           <div class="simulator-heading">
-            <span class="eyebrow">EcoBalcon &middot; simulateur</span>
-            <h1 id="simulateur-title">Quelles plantes choisir pour votre balcon ?</h1>
+            <span class="eyebrow">EcoBalcon &middot; outils</span>
+            <h1 id="simulateur-title">Outils pour jardiner sur balcon</h1>
             <p>
-              S&eacute;lectionnez vos crit&egrave;res pour obtenir une premi&egrave;re liste de plantes adapt&eacute;es &agrave; votre espace.
+              Simulateur d’espace, fiches plantes, conseils d’arrosage et comparatifs pour aménager votre balcon sans acheter trop vite.
             </p>
           </div>
 
@@ -412,7 +434,7 @@
                   <small>Un balcon tr&egrave;s expos&eacute; demande souvent des plantes plus robustes.</small>
                   <select class="simulator-select" id="vent">
                     <option value="">Choisir</option>
-                    <option value="abrité">Balcon plut&ocirc;t abrit&eacute;</option>
+                    <option value="abrite">Balcon plut&ocirc;t abrit&eacute;</option>
                     <option value="modere">Un peu expos&eacute;</option>
                     <option value="fort">Tr&egrave;s expos&eacute; au vent</option>
                   </select>
@@ -471,6 +493,52 @@
             </div>
           </section>
 
+          <section class="plant-library-section" aria-labelledby="plant-library-title">
+            <div class="section-heading section-heading-compact">
+              <div>
+                <span class="eyebrow">Bibliothèque de plantes</span>
+                <h2 id="plant-library-title">Filtrer les plantes de balcon</h2>
+                <p>Trouvez les plantes adaptées à votre balcon selon l’exposition, l’usage, la difficulté et le volume de pot.</p>
+              </div>
+            </div>
+            <div class="library-controls" aria-label="Filtres de la bibliothèque plantes">
+              <label>
+                <span>Recherche</span>
+                <input class="simulator-input" id="plantSearch" type="search" placeholder="Basilic, radis, ombre...">
+              </label>
+              <label>
+                <span>Exposition</span>
+                <select class="simulator-select" id="libraryExposure">
+                  <option value="">Toutes</option>
+                  <option value="soleil">Soleil</option>
+                  <option value="mi-ombre">Mi-ombre</option>
+                  <option value="ombre">Ombre</option>
+                </select>
+              </label>
+              <label>
+                <span>Usage</span>
+                <select class="simulator-select" id="libraryGoal">
+                  <option value="">Tous</option>
+                  <option value="aromatiques">Aromatiques</option>
+                  <option value="legumes">Légumes</option>
+                  <option value="fleurs">Fleurs</option>
+                  <option value="facile">Très facile</option>
+                </select>
+              </label>
+              <label>
+                <span>Pot maximal</span>
+                <select class="simulator-select" id="libraryPot">
+                  <option value="">Tous volumes</option>
+                  <option value="5">5 L ou moins</option>
+                  <option value="10">10 L ou moins</option>
+                  <option value="20">20 L ou moins</option>
+                </select>
+              </label>
+            </div>
+            <div class="library-summary" id="librarySummary" aria-live="polite"></div>
+            <div class="plant-library-grid" id="plantLibrary"></div>
+          </section>
+
           <section class="tools-grid" aria-label="Calculateurs balcon">
             <article class="tool-card">
               <h2>Calculateur de pot</h2>
@@ -485,9 +553,20 @@
 
             <article class="tool-card">
               <h2>Arrosage vacances</h2>
-              <p>Repérez le niveau de risque avant une absence.</p>
+              <p>Repérez le niveau de risque et le plan minimum avant une absence.</p>
               <label for="absenceDays">Jours d'absence</label>
               <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
+              <label for="absencePlant">Culture la plus fragile</label>
+              <select class="simulator-select" id="absencePlant"></select>
+              <label for="absencePots">Nombre de pots concernés</label>
+              <input class="simulator-input" id="absencePots" type="number" min="1" max="40" value="6">
+              <label for="wateringAid">Solution prévue</label>
+              <select class="simulator-select" id="wateringAid">
+                <option value="none">Aucune solution</option>
+                <option value="paillage">Paillage + pots regroupés</option>
+                <option value="reserve">Réserve d'eau / oyas testées</option>
+                <option value="person">Passage d'une personne</option>
+              </select>
               <label for="heatLevel">Contexte</label>
               <select class="simulator-select" id="heatLevel">
                 <option value="doux">Balcon doux ou mi-ombre</option>
@@ -517,23 +596,56 @@
           <section class="comparator-section" aria-labelledby="comparator-title">
             <div class="section-heading section-heading-compact">
               <div>
-                <span class="eyebrow">Comparateurs propres</span>
-                <h2 id="comparator-title">Choisir sans acheter trop vite</h2>
-                <p>Ces rep&egrave;res aident &agrave; recommander du mat&eacute;riel seulement quand il r&egrave;gle un vrai probl&egrave;me.</p>
+                <span class="eyebrow">Comparateur compostage</span>
+                <h2 id="comparator-title">Quelle solution de compostage choisir ?</h2>
+                <p>Comparez les options selon la place, les odeurs, le suivi et le type de déchets que vous voulez gérer sur balcon.</p>
               </div>
             </div>
+            <div class="library-controls compost-controls" aria-label="Filtres du comparateur compostage">
+              <label>
+                <span>Place disponible</span>
+                <select class="simulator-select" id="compostSpace">
+                  <option value="petit">Très peu de place</option>
+                  <option value="moyen">Place moyenne</option>
+                  <option value="grand">Balcon confortable</option>
+                </select>
+              </label>
+              <label>
+                <span>Temps d'entretien</span>
+                <select class="simulator-select" id="compostTime">
+                  <option value="faible">Le moins possible</option>
+                  <option value="moyen">Routine hebdomadaire</option>
+                  <option value="fort">Suivi régulier accepté</option>
+                </select>
+              </label>
+              <label>
+                <span>Sensibilité odeurs</span>
+                <select class="simulator-select" id="compostSmell">
+                  <option value="forte">Très sensible</option>
+                  <option value="moyenne">Tolérance moyenne</option>
+                  <option value="faible">Peu sensible</option>
+                </select>
+              </label>
+            </div>
+            <div id="compostRecommendation" class="tool-result"></div>
             <div class="comparison-table-wrap">
               <table class="comparison-table">
                 <thead>
-                  <tr><th>Besoin</th><th>Option simple</th><th>Option confort</th><th>Achat &agrave; &eacute;viter</th></tr>
+                  <tr><th>Solution</th><th>Place</th><th>Suivi</th><th>Points forts</th><th>À éviter si...</th></tr>
                 </thead>
-                <tbody>
-                  <tr><td>Arroser moins</td><td>Paillage + grands pots</td><td>Oyas ou goutte-&agrave;-goutte test&eacute;</td><td>Syst&egrave;me pos&eacute; la veille du d&eacute;part</td></tr>
-                  <tr><td>Composter</td><td>Compost partag&eacute; + petit stockage sec</td><td>Bokashi ou lombricomposteur compact</td><td>Grand bac sans routine</td></tr>
-                  <tr><td>Stabiliser au vent</td><td>Pots lourds au sol</td><td>Fixations + bacs profonds</td><td>Jardini&egrave;res l&eacute;g&egrave;res en hauteur</td></tr>
+                <tbody id="compostRows">
                 </tbody>
               </table>
             </div>
+          </section>
+
+          <section class="checklist-download" aria-labelledby="checklist-title">
+            <div>
+              <span class="eyebrow">Checklist PDF</span>
+              <h2 id="checklist-title">Préparer son balcon avant les vacances</h2>
+              <p>Une checklist imprimable pour faire le tour des pots, de l'eau, de l'ombre et des solutions de secours avant de partir.</p>
+            </div>
+            <a class="button" href="../checklists/arrosage-vacances/" target="_blank" rel="noopener">Ouvrir la checklist PDF</a>
           </section>
         </section>
 
@@ -629,7 +741,7 @@
         goals: ["aromatiques", "facile"],
         tags: ["Aromatique", "Compact", "D&eacute;butant"],
         description: "Une bonne option pour les petits espaces et les expositions douces.",
-        tips: ["Semez ou achétéz un plant d&eacute;j&agrave; form&eacute;", "Coupez les tiges ext&eacute;rieures en priorit&eacute;"]
+        tips: ["Semez ou achetez un plant d&eacute;j&agrave; form&eacute;", "Coupez les tiges ext&eacute;rieures en priorit&eacute;"]
       },
       {
         name: "Tomate cerise",
@@ -880,7 +992,7 @@
         ombre: "ombre"
       },
       vent: {
-        abrité: "balcon abrit&eacute;",
+        abrite: "balcon abrit&eacute;",
         modere: "balcon un peu expos&eacute;",
         fort: "balcon tr&egrave;s expos&eacute; au vent"
       },
@@ -920,6 +1032,62 @@
     const compostCultureEl = document.getElementById("compostCulture");
     const compostCalcBtn = document.getElementById("compostCalcBtn");
     const compostResultEl = document.getElementById("compostResult");
+    const plantSearchEl = document.getElementById("plantSearch");
+    const libraryExposureEl = document.getElementById("libraryExposure");
+    const libraryGoalEl = document.getElementById("libraryGoal");
+    const libraryPotEl = document.getElementById("libraryPot");
+    const plantLibraryEl = document.getElementById("plantLibrary");
+    const librarySummaryEl = document.getElementById("librarySummary");
+    const absencePlantEl = document.getElementById("absencePlant");
+    const absencePotsEl = document.getElementById("absencePots");
+    const wateringAidEl = document.getElementById("wateringAid");
+    const compostSpaceEl = document.getElementById("compostSpace");
+    const compostTimeEl = document.getElementById("compostTime");
+    const compostSmellEl = document.getElementById("compostSmell");
+    const compostRecommendationEl = document.getElementById("compostRecommendation");
+    const compostRowsEl = document.getElementById("compostRows");
+    const compostMethods = [
+      {
+        name: "Compost partagé + bioseau",
+        space: "petit",
+        time: "faible",
+        smell: "forte",
+        place: "Très faible",
+        care: "Sortie régulière",
+        strengths: "Propre, peu coûteux, parfait en appartement",
+        avoid: "Vous n'avez aucun point de collecte accessible"
+      },
+      {
+        name: "Bokashi",
+        space: "petit",
+        time: "moyen",
+        smell: "moyenne",
+        place: "Faible",
+        care: "Vidange et jus à gérer",
+        strengths: "Compact, accepte beaucoup de déchets de cuisine",
+        avoid: "Vous ne savez pas où vider le digestat"
+      },
+      {
+        name: "Lombricomposteur compact",
+        space: "moyen",
+        time: "fort",
+        smell: "moyenne",
+        place: "Moyenne",
+        care: "Suivi vivant",
+        strengths: "Produit un amendement utile et pédagogique",
+        avoid: "Balcon brûlant, gel fréquent ou suivi irrégulier"
+      },
+      {
+        name: "Grand bac de compostage",
+        space: "grand",
+        time: "fort",
+        smell: "faible",
+        place: "Élevée",
+        care: "Mélange et surveillance",
+        strengths: "Possible seulement sur grand espace bien ventilé",
+        avoid: "Petit balcon, voisins proches ou copropriété stricte"
+      }
+    ];
     const plantArticles = {
       "Basilic": "../articles/guide-basilic-sur-son-balcon/",
       "Tomate cerise": "../articles/tomates-cerises-balcon/",
@@ -1007,6 +1175,73 @@
           ${guide ? `<a class="simulator-guide-link" href="${guide}" aria-label="Voir le guide d&eacute;di&eacute; pour ${plant.name}">Voir le guide d&eacute;di&eacute;</a>` : ""}
         `;
         resultsEl.appendChild(article);
+      });
+    }
+
+    function getPlantText(plant) {
+      return [
+        plant.name,
+        plant.difficulty,
+        plant.harvest,
+        plant.description,
+        plant.tags.join(" "),
+        plant.tips.join(" ")
+      ].map((value) => decodeHtml(value || "")).join(" ").toLowerCase();
+    }
+
+    function hasActiveLibrarySearch() {
+      return Boolean(
+        plantSearchEl.value.trim() ||
+        libraryExposureEl.value ||
+        libraryGoalEl.value ||
+        libraryPotEl.value
+      );
+    }
+
+    function renderPlantLibrary() {
+      const query = plantSearchEl.value.trim().toLowerCase();
+      const exposure = libraryExposureEl.value;
+      const goal = libraryGoalEl.value;
+      const potLimit = Number(libraryPotEl.value) || 0;
+
+      plantLibraryEl.innerHTML = "";
+
+      if (!hasActiveLibrarySearch()) {
+        librarySummaryEl.textContent = "Lancez une recherche ou choisissez un filtre pour afficher les plantes adaptées.";
+        return;
+      }
+
+      const matches = plants
+        .filter((plant) => !query || getPlantText(plant).includes(query))
+        .filter((plant) => !exposure || plant.exposure.includes(exposure))
+        .filter((plant) => !goal || plant.goals.includes(goal))
+        .filter((plant) => !potLimit || (plant.potLiters || 99) <= potLimit)
+        .sort((left, right) => decodeHtml(left.name).localeCompare(decodeHtml(right.name), "fr"));
+
+      librarySummaryEl.textContent = `${matches.length} plante${matches.length > 1 ? "s" : ""} affichée${matches.length > 1 ? "s" : ""}.`;
+
+      if (!matches.length) {
+        librarySummaryEl.textContent = "Aucune plante ne correspond à ces critères. Essayez un filtre moins strict.";
+        return;
+      }
+
+      matches.forEach((plant) => {
+        const card = document.createElement("article");
+        card.className = "plant-library-card";
+        const name = decodeHtml(plant.name);
+        const guide = plantArticles[name];
+        card.innerHTML = `
+          <h3>${plant.name}</h3>
+          <div class="simulator-tags">${plant.tags.map((tag) => `<span class="simulator-tag">${tag}</span>`).join("")}</div>
+          <div class="plant-library-meta">
+            <span>Pot : ${plant.potLiters || "?"} L min.</span>
+            <span>Difficulté : ${plant.difficulty || "à vérifier"}</span>
+            <span>Récolte/floraison : ${plant.harvest || "selon saison"}</span>
+          </div>
+          <p>${plant.description}</p>
+          ${guide ? `<a class="simulator-guide-link" href="${guide}">Lire le guide</a>` : ""}
+        `;
+        plantLibraryEl.appendChild(card);
       });
     }
 
@@ -1119,6 +1354,11 @@
           option.value = decodeHtml(plant.name);
           option.textContent = decodeHtml(plant.name);
           potPlantEl.appendChild(option);
+
+          const absenceOption = document.createElement("option");
+          absenceOption.value = decodeHtml(plant.name);
+          absenceOption.textContent = decodeHtml(plant.name);
+          absencePlantEl.appendChild(absenceOption);
         });
     }
 
@@ -1136,16 +1376,24 @@
     function calculateWaterRisk() {
       const days = Math.max(1, Number(absenceDaysEl.value) || 1);
       const heat = heatLevelEl.value;
-      let score = days;
+      const plant = getPlantByName(absencePlantEl.value);
+      const pots = Math.max(1, Number(absencePotsEl.value) || 1);
+      const aid = wateringAidEl.value;
+      let score = days + (plant.waterNeed || 3);
       if (heat === "chaud") score += 3;
       if (heat === "brulant") score += 6;
+      if (pots >= 8) score += 1;
+      if (aid === "paillage") score -= 2;
+      if (aid === "reserve") score -= 4;
+      if (aid === "person") score -= 6;
       const level = score >= 12 ? "risque fort" : score >= 7 ? "risque moyen" : "risque modéré";
+      const liters = Math.max(2, Math.round((plant.potLiters || 5) * pots * 0.22));
       const action = score >= 12
-        ? "prévoir relais humain, ombre légère, paillage et système testé avant départ"
+        ? "prévoyez un passage humain ou une réserve testée, plus ombre légère et paillage"
         : score >= 7
-          ? "pailler, regrouper les pots et tester une réserve d'eau"
-          : "arroser à fond avant départ et éloigner les pots du plein soleil";
-      waterResultEl.innerHTML = `<strong>${level}</strong><br>${action}.`;
+          ? "paillez, regroupez les pots et testez une réserve d'eau au moins 48 h avant le départ"
+          : "arrosez à fond avant départ et éloignez les pots du plein soleil direct";
+      waterResultEl.innerHTML = `<strong>${level}</strong><br>${action}.<br>Repère utile : environ ${liters} L d'eau tampon à prévoir pour ${pots} pot${pots > 1 ? "s" : ""}, à adapter selon météo réelle.`;
     }
 
     function calculateCompost() {
@@ -1156,17 +1404,58 @@
       compostResultEl.innerHTML = `<strong>${compost} L maximum d'apport prudent</strong><br>Utilisez du compost mûr et mélangez légèrement plutôt que de charger la surface.`;
     }
 
+    function compareCompost() {
+      const space = compostSpaceEl.value;
+      const time = compostTimeEl.value;
+      const smell = compostSmellEl.value;
+      const scoreValue = { petit: 1, moyen: 2, grand: 3, faible: 1, moyenne: 2, forte: 3, fort: 3 };
+
+      const scored = compostMethods
+        .map((method) => {
+          let score = 0;
+          if (scoreValue[method.space] <= scoreValue[space]) score += 3;
+          if (scoreValue[method.time] <= scoreValue[time]) score += 3;
+          if (scoreValue[method.smell] >= scoreValue[smell]) score += 2;
+          if (method.name.includes("partagé") && space === "petit") score += 1;
+          return { method, score };
+        })
+        .sort((left, right) => right.score - left.score);
+
+      const best = scored[0].method;
+      compostRecommendationEl.innerHTML = `<strong>Recommandation : ${best.name}</strong><br>${best.strengths}. À vérifier : ${best.avoid.toLowerCase()}.`;
+      compostRowsEl.innerHTML = scored.map(({ method }) => `
+        <tr>
+          <td>${method.name}</td>
+          <td>${method.place}</td>
+          <td>${method.care}</td>
+          <td>${method.strengths}</td>
+          <td>${method.avoid}</td>
+        </tr>
+      `).join("");
+    }
+
     hydratePlantTools();
+    renderPlantLibrary();
     calculatePot();
     calculateWaterRisk();
     calculateCompost();
+    compareCompost();
     runBtn.addEventListener("click", runSimulation);
     resetBtn.addEventListener("click", resetSimulation);
     potCalcBtn.addEventListener("click", calculatePot);
     waterCalcBtn.addEventListener("click", calculateWaterRisk);
     compostCalcBtn.addEventListener("click", calculateCompost);
+    [plantSearchEl, libraryExposureEl, libraryGoalEl, libraryPotEl].forEach((element) => {
+      element.addEventListener("input", renderPlantLibrary);
+      element.addEventListener("change", renderPlantLibrary);
+    });
+    [absencePlantEl, absencePotsEl, wateringAidEl, heatLevelEl, absenceDaysEl].forEach((element) => {
+      element.addEventListener("input", calculateWaterRisk);
+      element.addEventListener("change", calculateWaterRisk);
+    });
+    [compostSpaceEl, compostTimeEl, compostSmellEl].forEach((element) => {
+      element.addEventListener("change", compareCompost);
+    });
   </script>
 </body>
 </html>
-
-

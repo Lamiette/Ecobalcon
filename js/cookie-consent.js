@@ -367,7 +367,12 @@
 
     navs.forEach((nav) => {
       const links = Array.from(nav.querySelectorAll("a"));
-      const hasSimulatorLink = links.some((link) => ((link.textContent || "").trim().toLowerCase() === "simulateur"));
+      const hasSimulatorLink = links.some((link) => {
+        const label = (link.textContent || "").trim().toLowerCase();
+        const path = normalizePath(new URL(link.getAttribute("href") || "", window.location.href).pathname);
+
+        return label === "simulateur" || label === "outils" || path === simulatorPath || link.hasAttribute("data-nav-simulateur");
+      });
 
       if (hasSimulatorLink) {
         return;
@@ -378,7 +383,7 @@
       const contactLink = links.find((anchor) => ((anchor.textContent || "").trim().toLowerCase() === "contact"));
 
       link.href = simulatorUrl;
-      link.textContent = "Simulateur";
+      link.textContent = "Outils";
       link.setAttribute("data-nav-simulateur", "");
 
       if (currentPath === simulatorPath) {

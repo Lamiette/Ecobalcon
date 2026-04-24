@@ -10,7 +10,8 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 
 - [Accueil](https://ecobalcon.com/) : presentation du site et sélection editoriale
 - [Tous les articles](https://ecobalcon.com/articles/) : index des 42 guides pratiques
-- [Simulateur](https://ecobalcon.com/simulateur/) : diagnostic pour choisir des plantes selon l'exposition, le vent, la place et l'objectif
+- [Outils balcon](https://ecobalcon.com/simulateur/) : simulateur, bibliothèque plantes filtrable, calculateurs pot/arrosage/compost et comparateur compostage
+- [Checklist arrosage vacances](https://ecobalcon.com/checklists/arrosage-vacances/) : checklist imprimable pour préparer les plantes avant une absence
 - [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardines
 - [Contact](https://ecobalcon.com/contact/) : formulaire pour poser une question, suggérer un sujet ou signaler une correction
 

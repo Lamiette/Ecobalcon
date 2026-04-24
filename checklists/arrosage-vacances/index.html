@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checklist PDF arrosage vacances balcon | EcoBalcon</title>
+  <meta name="description" content="Checklist imprimable pour préparer l'arrosage des plantes de balcon avant les vacances : pots, paillage, ombre, réserve d'eau et relais.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://ecobalcon.com/checklists/arrosage-vacances/">
+  <link rel="alternate" hreflang="fr" href="https://ecobalcon.com/checklists/arrosage-vacances/">
+  <link rel="alternate" hreflang="x-default" href="https://ecobalcon.com/checklists/arrosage-vacances/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg: #f7f4ec;
+      --surface: #fffdf8;
+      --text: #21302a;
+      --muted: #5d6d65;
+      --brand: #2f6f59;
+      --brand-dark: #1f4d3d;
+      --line: #d7d1c2;
+      --accent: #d88c3f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(920px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .sheet {
+      background: var(--surface);
+      border: 1px solid rgba(33, 48, 42, 0.1);
+      border-radius: 18px;
+      padding: clamp(1.2rem, 3vw, 2.2rem);
+      box-shadow: 0 18px 40px rgba(31, 50, 40, 0.08);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--brand-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 8.5rem;
+      height: auto;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.8rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      border: 0;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button {
+      color: white;
+      background: var(--brand);
+    }
+
+    .button-secondary {
+      color: var(--brand-dark);
+      background: rgba(47, 111, 89, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      max-width: 68ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta-grid,
+    .check-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .meta-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 1.4rem 0;
+    }
+
+    .field,
+    .section {
+      border: 1px solid rgba(47, 111, 89, 0.14);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .field {
+      min-height: 4.2rem;
+      padding: 0.8rem;
+    }
+
+    .field strong {
+      display: block;
+      color: var(--brand-dark);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .line {
+      display: block;
+      margin-top: 0.65rem;
+      border-bottom: 1px solid var(--line);
+      height: 1rem;
+    }
+
+    .section {
+      padding: 1rem;
+    }
+
+    .section h2 {
+      margin: 0 0 0.7rem;
+      color: var(--brand-dark);
+      font-size: 1.2rem;
+    }
+
+    .tasks {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tasks li {
+      display: grid;
+      grid-template-columns: 1.35rem minmax(0, 1fr);
+      gap: 0.55rem;
+      align-items: start;
+    }
+
+    .box {
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-top: 0.18rem;
+      border: 2px solid var(--brand);
+      border-radius: 4px;
+      background: white;
+    }
+
+    .notes {
+      min-height: 6rem;
+      background-image: linear-gradient(to bottom, transparent 1.75rem, rgba(33, 48, 42, 0.18) 1.8rem);
+      background-size: 100% 1.9rem;
+    }
+
+    .footer-note {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        display: grid;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .button,
+      .button-secondary {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        background: white;
+        color: #111;
+      }
+
+      main {
+        width: 100%;
+        padding: 0;
+      }
+
+      .sheet {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .actions,
+      .button,
+      .button-secondary {
+        display: none !important;
+      }
+
+      .brand img {
+        width: 6.6rem;
+      }
+
+      .meta-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="sheet">
+      <div class="topbar">
+        <a class="brand" href="../../">
+          <img src="../../images/logo-site.png" alt="EcoBalcon">
+        </a>
+        <div class="actions">
+          <button class="button" type="button" onclick="window.print()">Enregistrer en PDF</button>
+          <a class="button-secondary" href="../../simulateur/">Retour aux outils</a>
+        </div>
+      </div>
+
+      <header>
+        <h1>Checklist arrosage vacances balcon</h1>
+        <p class="intro">À remplir 2 à 4 jours avant le départ, puis à revérifier le matin même. Le but : éviter les solutions improvisées et repérer les pots vraiment fragiles.</p>
+      </header>
+
+      <div class="meta-grid" aria-label="Informations à remplir">
+        <div class="field"><strong>Dates</strong><span class="line"></span></div>
+        <div class="field"><strong>Durée</strong><span class="line"></span></div>
+        <div class="field"><strong>Météo prévue</strong><span class="line"></span></div>
+        <div class="field"><strong>Personne relais</strong><span class="line"></span></div>
+      </div>
+
+      <div class="check-grid">
+        <section class="section">
+          <h2>1. Trier les pots par risque</h2>
+          <ul class="tasks">
+            <li><span class="box"></span><span>Repérer les petits pots, suspensions et jardinières qui sèchent le plus vite.</span></li>
+            <li><span class="box"></span><span>Mettre à part basilic, laitues, fraisiers, menthe et jeunes plants.</span></li>
+            <li><span class="box"></span><span>Déplacer les pots fragiles hors du plein soleil de midi si possible.</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>2. Préparer l'eau</h2>
+          <ul class="tasks">
+            <li><span class="box"></span><span>Arroser à fond jusqu'à humidifier toute la motte, pas seulement la surface.</span></li>
+            <li><span class="box"></span><span>Ajouter un paillage propre sur les pots qui chauffent vite.</span></li>
+            <li><span class="box"></span><span>Tester oyas, mèches ou réserve d'eau au moins 48 h avant le départ.</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>3. Sécuriser le balcon</h2>
+          <ul class="tasks">
+            <li><span class="box"></span><span>Regrouper les pots au sol, près d'un mur ou dans la zone la plus calme.</span></li>
+            <li><span class="box"></span><span>Vérifier les soucoupes : utiles pour une courte absence, risquées si l'eau stagne longtemps.</span></li>
+            <li><span class="box"></span><span>Attacher les plantes hautes et retirer les feuilles abîmées.</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>4. Donner des consignes simples</h2>
+          <ul class="tasks">
+            <li><span class="box"></span><span>Indiquer clairement quels pots arroser en priorité.</span></li>
+            <li><span class="box"></span><span>Laisser un arrosoir rempli et une bouteille dose si quelqu'un passe.</span></li>
+            <li><span class="box"></span><span>Envoyer une photo du balcon avec les zones importantes entourées.</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Notes</h2>
+          <div class="notes" aria-label="Notes libres"></div>
+        </section>
+      </div>
+
+      <p class="footer-note">EcoBalcon - à compléter avec le calculateur d'arrosage vacances sur ecobalcon.com/simulateur/</p>
+    </article>
+  </main>
+</body>
+</html>
