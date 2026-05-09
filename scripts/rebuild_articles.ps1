@@ -18,9 +18,7 @@ $contactPageUrl = "$siteUrl/contact/"
 $contactThanksUrl = "$siteUrl/contact/merci/"
 $contactFormAction = "https://formsubmit.co/$contactEmail"
 $contactShareImageUrl = "$siteUrl/images/balcon-soleil.webp"
-# GA4 is intended to be wired through GTM to avoid duplicate pageview tracking.
 $googleAnalyticsMeasurementId = "G-L952X34SHR"
-$googleTagManagerId = "GTM-MFRVPVFQ"
 $microsoftClarityProjectId = "w4a97sk52t"
 $articleOverrides = @{}
 $articleOverridesPath = Join-Path $PSScriptRoot "article-overrides.ps1"
@@ -66,11 +64,11 @@ function Write-MinifiedStylesheet {
   Set-Content -Path $minifiedStylesheetPath -Value $minifiedCss -Encoding UTF8
 }
 
-function Get-TagManagerHeadHtml {
+function Get-TrackingHeadHtml {
   param([string]$scriptPrefix = "")
 
   return @"
-  <script src="${scriptPrefix}js/cookie-consent.js" data-site-prefix="$scriptPrefix" data-gtm-id="$googleTagManagerId" data-ga-id="$googleAnalyticsMeasurementId" data-clarity-id="$microsoftClarityProjectId" defer></script>
+  <script src="${scriptPrefix}js/cookie-consent.js" data-site-prefix="$scriptPrefix" data-ga-id="$googleAnalyticsMeasurementId" data-clarity-id="$microsoftClarityProjectId" defer></script>
 "@
 }
 
@@ -1438,7 +1436,7 @@ function Build-ArticleHtml {
   $heroImageSrc = Get-ImagePagePath -fileName $article.ImageFileName -pagePrefix "../../images/articles/"
   $heroImageDimensions = Get-ArticleImageDimensionAttributes $article.ImageFileName
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../../"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $relatedArticles = @(Get-RelatedArticles -article $article -allArticles $allArticles -count 3)
 
@@ -1776,7 +1774,7 @@ function Build-HomeHtml {
     }
   )
   $weeklyArticlesJson = $weeklyArticlesForJs | ConvertTo-Json -Depth 5 -Compress
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix ""
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix ""
   $tagManagerBody = Get-TagManagerBodyHtml
   $themeHtml = @"
           <article class="theme-card" data-reveal style="--reveal-delay: 60ms;">
@@ -2219,7 +2217,7 @@ function Build-ArticlesIndexHtml {
   $heroImage = if ($allArticles.Count -gt 0) { $allArticles[0].ImageCanonicalUrl } else { "" }
   $heroImageAlt = if ($allArticles.Count -gt 0) { $allArticles[0].ImageAlt } else { "Articles EcoBalcon autour du jardinage sur balcon" }
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $jsonLd = Get-JsonLdScriptTags @([ordered]@{
       "@context" = "https://schema.org"
@@ -2761,7 +2759,7 @@ function Get-PreferredArticle {
 
 function Build-PrivacyPageHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = "$siteUrl/politique-confidentialite/"
 
@@ -2871,7 +2869,7 @@ $tagManagerBody
 
           <h2>Mesure d'audience</h2>
           <p>
-            EcoBalcon utilise Google Tag Manager (<code>$googleTagManagerId</code>) pour piloter ses balises, Google Analytics 4
+            EcoBalcon utilise Google Analytics 4
             (<code>$googleAnalyticsMeasurementId</code>) pour la mesure d'audience et Microsoft Clarity
             (<code>$microsoftClarityProjectId</code>) pour l'analyse d'usage. Ces outils ne sont charg&eacute;s qu'apr&egrave;s
             un consentement explicite sur le bandeau cookies.
@@ -2921,7 +2919,7 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 
 function Build-ContactPageHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = $contactPageUrl
   $jsonLd = Get-JsonLdScriptTags @(
@@ -3109,7 +3107,7 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 
 function Build-ContactThanksHtml {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix "../../"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = $contactThanksUrl
 
@@ -3221,7 +3219,7 @@ $(Get-SiteFooterHtml -pagePrefix "../../")
 
 function Build-404Html {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TagManagerHeadHtml -scriptPrefix ""
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix ""
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = "$siteUrl/404.html"
 

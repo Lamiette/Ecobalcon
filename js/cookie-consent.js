@@ -17,7 +17,6 @@
   const COOKIE_PREFIXES = ["_ga_", "_cl"];
   const trackerScript = document.currentScript || document.querySelector('script[src*="cookie-consent.js"]');
   const sitePrefix = trackerScript?.dataset?.sitePrefix || "";
-  const gtmId = trackerScript?.dataset?.gtmId || "";
   const gaMeasurementId = trackerScript?.dataset?.gaId || "";
   const clarityProjectId = trackerScript?.dataset?.clarityId || "";
   const canUseStorage = (() => {
@@ -137,21 +136,27 @@
     });
   }
 
-  function loadGtm() {
-    if (!gtmId || document.getElementById("ecobalcon-gtm-loader")) {
+  function loadGoogleAnalytics() {
+    if (!gaMeasurementId || document.getElementById("ecobalcon-ga4-loader")) {
       return;
     }
 
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "ecobalcon_cookie_consent_granted"
-    });
+    window.gtag = window.gtag || function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window[`ga-disable-${gaMeasurementId}`] = false;
 
     const script = document.createElement("script");
-    script.id = "ecobalcon-gtm-loader";
+    script.id = "ecobalcon-ga4-loader";
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtmId)}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
     document.head.appendChild(script);
+
+    window.gtag("js", new Date());
+    window.gtag("config", gaMeasurementId, {
+      anonymize_ip: true
+    });
   }
 
   function loadClarity() {
@@ -178,7 +183,7 @@
     }
 
     state.trackersLoaded = true;
-    loadGtm();
+    loadGoogleAnalytics();
     loadClarity();
   }
 
@@ -231,7 +236,7 @@
             <div class="cookie-consent__option">
               <div>
                 <strong>Mesure d'audience</strong>
-                <p>Google Tag Manager, Google Analytics 4 et Microsoft Clarity, seulement apr&egrave;s consentement.</p>
+                <p>Google Analytics 4 et Microsoft Clarity, seulement apr&egrave;s consentement.</p>
               </div>
               <label class="cookie-switch" for="cookie-audience-toggle">
                 <input id="cookie-audience-toggle" type="checkbox" data-cookie-audience>
