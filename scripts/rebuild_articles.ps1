@@ -3219,7 +3219,7 @@ $(Get-SiteFooterHtml -pagePrefix "../../")
 
 function Build-404Html {
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix ""
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "/"
   $tagManagerBody = Get-TagManagerBodyHtml
   $canonicalUrl = "$siteUrl/404.html"
 
@@ -3243,27 +3243,27 @@ function Build-404Html {
   <meta name="twitter:title" content="Page introuvable | EcoBalcon">
   <meta name="twitter:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
 $tagManagerHead
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="$rootStylesheetHref">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body class="not-found-page">
 $tagManagerBody
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="./">
+        <a class="brand" href="/">
           <span class="brand-mark">
-            <img class="brand-logo" src="images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
+            <img class="brand-logo" src="/images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions>
           </span>
         </a>
         <div class="header-actions">
           <nav class="site-nav" aria-label="Navigation principale">
-            <a href="./">Accueil</a>
-            <a href="articles/">Articles</a>
-            <a href="galerie/">Galerie</a>
-            <a href="contact/">Contact</a>
+            <a href="/">Accueil</a>
+            <a href="/articles/">Articles</a>
+            <a href="/galerie/">Galerie</a>
+            <a href="/contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
             <a class="social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -3295,8 +3295,8 @@ $tagManagerBody
               ou repartir depuis les articles pour retrouver le bon contenu.
             </p>
             <div class="hero-actions">
-              <a class="button" href="./">Retour &agrave; l'accueil</a>
-              <a class="button-secondary" href="articles/">Voir les articles</a>
+              <a class="button" href="/">Retour &agrave; l'accueil</a>
+              <a class="button-secondary" href="/articles/">Voir les articles</a>
             </div>
           </div>
 
@@ -3307,13 +3307,13 @@ $tagManagerBody
               <li>Parcourir les guides et fiches techniques depuis la liste des articles.</li>
               <li>Ouvrir la galerie pour retrouver des inspirations balcon.</li>
             </ul>
-            <a class="text-link" href="galerie/">Voir la galerie</a>
+            <a class="text-link" href="/galerie/">Voir la galerie</a>
           </aside>
         </section>
       </div>
     </main>
 
-$(Get-SiteFooterHtml -pagePrefix "")
+$(Get-SiteFooterHtml -pagePrefix "/")
   </div>
 </body>
 </html>
