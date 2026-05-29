@@ -74,6 +74,13 @@ Style attendu :
 - conseils réellement exploitables ;
 - cohérence avec le ton EcoBalcon.
 
+Titres :
+- vérifier les derniers articles visibles en grille avant de valider un nouveau H1/title SEO ;
+- éviter les séries de titres construits sur le même moule, notamment “X en pot sur balcon : …”, “Guide simple pour …” ou “Guide complet pour …” répétés plusieurs fois ;
+- varier les angles naturellement : question concrète, problème lecteur, bénéfice pratique, formulation conversationnelle ou promesse sobre ;
+- garder le mot-clé principal quand il aide le SEO, mais sans imposer toujours le même ordre, le même deux-points ni la même structure ;
+- relire la liste d’articles comme un lecteur : si plusieurs titres sonnent mécaniques ou générés par IA, les réécrire avant intégration.
+
 Structure attendue :
 - H1 naturel et optimisé ;
 - introduction engageante ;
