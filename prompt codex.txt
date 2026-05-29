@@ -30,6 +30,7 @@ Identifie :
 - les sujets déjà bien couverts ;
 - les sujets incomplets ;
 - les risques de doublon ou de cannibalisation ;
+- les pages anciennes à mettre à jour, fusionner ou laisser tranquilles plutôt que créer un article de plus ;
 - les opportunités de longue traîne SEO ;
 - les sujets adaptés à un lecteur français débutant/intermédiaire ;
 - les sujets cohérents avec la saison si pertinent.
@@ -45,6 +46,7 @@ Critères de choix :
 - pas de doublon évident avec un article existant.
 
 Ne me demande pas de choisir le sujet. Décide en autonomie.
+Mais si un article existant répond déjà presque à l’intention de recherche, privilégie une mise à jour, une fusion ou un enrichissement plutôt qu’une nouvelle page trop proche.
 
 ────────────────────────
 2. NOTE DE DÉCISION
@@ -64,6 +66,13 @@ Avant d’écrire l’article, crée ou ajoute dans ton récap final une courte 
 ────────────────────────
 
 Rédige un article complet, original, naturel et utile.
+
+Workflow anti-contenu IA faible qualité :
+- utiliser l’IA pour cadrer, structurer et vérifier les angles, mais jamais pour publier une synthèse générique sans valeur ajoutée ;
+- partir d’un brief éditorial concret : lecteur visé, problème réel, contexte balcon, saison, contraintes de pot, exposition, arrosage, erreurs fréquentes ;
+- ajouter au moins un élément vraiment utile et spécifique : diagnostic rapide, repères par exposition, tableau de décision, exemples de petits espaces, gestes de vérification, cas où il vaut mieux éviter ;
+- supprimer les introductions vagues, les promesses trop larges et les paragraphes qui pourraient s’appliquer à n’importe quel site de jardinage ;
+- relire comme un jardinier de balcon : chaque section doit aider à décider, faire, corriger ou éviter une erreur.
 
 Style attendu :
 - français naturel ;
@@ -119,6 +128,15 @@ Priorité :
 - probabilité de clic depuis Google.
 
 N’invente pas de chiffres précis, de données botaniques douteuses ou de promesses non vérifiables.
+Ne change pas une date de mise à jour uniquement pour donner une impression de fraîcheur : la date modifiée doit correspondre à une amélioration réelle du contenu.
+
+Après une grosse mise à jour SEO ou une baisse de trafic :
+- ne pas publier en masse pour compenser ;
+- commencer par identifier les pages les plus touchées, leurs requêtes et leur intention ;
+- améliorer, fusionner ou désindexer les contenus faibles ou redondants ;
+- vérifier les signaux techniques : canonical, sitemap, robots, redirections, liens internes, pages orphelines ;
+- éviter le netlinking artificiel ou les commentaires de forum posés uniquement pour manipuler le classement ;
+- privilégier les liens et mentions éditoriales utiles, les réseaux sociaux cohérents avec le sujet, et les contenus que l’on aurait envie de recommander hors Google.
 
 ────────────────────────
 5. MAILLAGE INTERNE
