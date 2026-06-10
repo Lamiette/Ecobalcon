@@ -88,6 +88,7 @@ Titres :
 - éviter les séries de titres construits sur le même moule, notamment “X en pot sur balcon : …”, “Guide simple pour …” ou “Guide complet pour …” répétés plusieurs fois ;
 - varier les angles naturellement : question concrète, problème lecteur, bénéfice pratique, formulation conversationnelle ou promesse sobre ;
 - garder le mot-clé principal quand il aide le SEO, mais sans imposer toujours le même ordre, le même deux-points ni la même structure ;
+- privilégier un titre qui paraît naturel et écrit pour un humain, même s’il est un peu moins “SEO-friendly” ; n’assumer une formulation plus SEO que si elle améliore clairement la promesse, les visites ou le clic sans sonner artificiel ;
 - relire la liste d’articles comme un lecteur : si plusieurs titres sonnent mécaniques ou générés par IA, les réécrire avant intégration.
 
 Structure attendue :
