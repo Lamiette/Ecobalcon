@@ -1477,6 +1477,96 @@ a {
   margin-top: 2rem;
 }
 
+.tool-cta-section .section-heading-compact {
+  position: relative;
+  align-items: center;
+  gap: 1.35rem;
+  padding: 1.35rem 1.45rem 1.35rem 1.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(47, 111, 89, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(232, 241, 225, 0.9)),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 44px rgba(31, 50, 40, 0.09);
+}
+
+.tool-cta-section .section-heading-compact::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.42rem;
+  background: linear-gradient(180deg, var(--brand), var(--accent));
+}
+
+.tool-cta-section .section-heading-compact::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(16rem, 36%);
+  background:
+    linear-gradient(135deg, transparent 0 35%, rgba(216, 140, 63, 0.12) 35% 38%, transparent 38% 100%),
+    linear-gradient(135deg, transparent 0 55%, rgba(47, 111, 89, 0.11) 55% 58%, transparent 58% 100%);
+  pointer-events: none;
+}
+
+.tool-cta-section .section-heading-compact > div,
+.tool-cta-section .section-heading-compact .button-secondary {
+  position: relative;
+  z-index: 1;
+}
+
+.tool-cta-section .section-heading-compact > div {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.tool-cta-section .section-heading-compact h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--brand-dark);
+  font-size: 1.72rem;
+  line-height: 1.14;
+}
+
+.tool-cta-section .section-heading-compact h2::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.78rem;
+  height: 0.78rem;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--accent), #e9b36e);
+  box-shadow: 0 0 0 0.32rem rgba(216, 140, 63, 0.12);
+}
+
+.tool-cta-section .section-heading-compact p {
+  max-width: 65ch;
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.tool-cta-section .section-heading-compact .button-secondary {
+  min-width: 10.9rem;
+  min-height: 3.15rem;
+  padding-inline: 1.35rem;
+  color: white;
+  background: var(--brand);
+  box-shadow: 0 14px 28px rgba(31, 77, 61, 0.18);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tool-cta-section .section-heading-compact .button-secondary:hover,
+.tool-cta-section .section-heading-compact .button-secondary:focus-visible {
+  background: var(--brand-dark);
+  box-shadow: 0 16px 30px rgba(31, 77, 61, 0.22);
+  transform: translateY(-1px);
+}
+
 .newsletter-section,
 .diagnostic-panel,
 .comparator-section,
@@ -2441,6 +2531,10 @@ a {
     flex-direction: column;
   }
 
+  .tool-cta-section .section-heading-compact {
+    align-items: flex-start;
+  }
+
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -2696,6 +2790,35 @@ a {
   .article-prose {
     font-size: 1rem;
     line-height: 1.72;
+  }
+
+  .tool-cta-section {
+    margin-top: 1.35rem;
+  }
+
+  .tool-cta-section .section-heading-compact {
+    gap: 1rem;
+    padding: 1.1rem 1rem 1.15rem 1.25rem;
+  }
+
+  .tool-cta-section .section-heading-compact::after {
+    width: 100%;
+    opacity: 0.55;
+  }
+
+  .tool-cta-section .section-heading-compact h2 {
+    font-size: 1.42rem;
+  }
+
+  .tool-cta-section .section-heading-compact h2::before {
+    width: 0.66rem;
+    height: 0.66rem;
+    box-shadow: 0 0 0 0.24rem rgba(216, 140, 63, 0.12);
+  }
+
+  .tool-cta-section .section-heading-compact .button-secondary {
+    width: 100%;
+    min-width: 0;
   }
 
   .tool-card {
