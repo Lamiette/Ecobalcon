@@ -301,6 +301,96 @@
       color: #7b4d1f;
     }
 
+    .gear-recommendations {
+      margin-top: 0.95rem;
+      padding: 1rem;
+      border: 1px solid rgba(47, 111, 89, 0.12);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 12px 26px rgba(31, 50, 40, 0.06);
+    }
+
+    .gear-recommendations h3 {
+      margin: 0 0 0.35rem;
+      color: var(--brand-dark);
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    .gear-recommendations-intro {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .gear-recommendations-disclosure {
+      margin: 0 0 0.8rem;
+      color: rgba(35, 55, 50, 0.58);
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    .gear-recommendation-grid {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .gear-recommendation-card {
+      display: grid;
+      gap: 0.38rem;
+      padding: 0.8rem 0.85rem;
+      border: 1px solid rgba(33, 48, 42, 0.08);
+      border-left: 0.28rem solid var(--accent);
+      border-radius: 12px;
+      background: rgba(255, 253, 248, 0.86);
+    }
+
+    .gear-recommendation-card span {
+      width: fit-content;
+      padding: 0.18rem 0.52rem;
+      border-radius: 999px;
+      background: rgba(47, 111, 89, 0.08);
+      color: var(--brand-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .gear-recommendation-card strong {
+      color: var(--brand-dark);
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .gear-recommendation-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .gear-recommendation-card a,
+    .gear-recommendations-guide {
+      color: var(--brand-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .gear-recommendation-card a:hover,
+    .gear-recommendation-card a:focus-visible,
+    .gear-recommendations-guide:hover,
+    .gear-recommendations-guide:focus-visible {
+      color: var(--brand);
+      outline: none;
+    }
+
+    .gear-recommendations-guide {
+      display: inline-flex;
+      margin-top: 0.85rem;
+      font-size: 0.9rem;
+    }
+
     .simulator-links {
       display: grid;
       gap: 1rem;
@@ -479,6 +569,7 @@
                 Choisissez vos crit&egrave;res puis lancez le simulateur pour voir une premi&egrave;re s&eacute;lection de plantes adapt&eacute;es &agrave; votre balcon.
               </div>
               <div id="note" class="simulator-note"></div>
+              <div id="gearRecommendations" class="gear-recommendations" hidden></div>
             </aside>
           </div>
 
@@ -541,54 +632,93 @@
 
           <section class="tools-grid" aria-label="Calculateurs balcon">
             <article class="tool-card">
-              <h2>Calculateur de pot</h2>
-              <p>Estimez le volume minimal pour une culture en pot.</p>
-              <label for="potPlant">Culture</label>
-              <select class="simulator-select" id="potPlant"></select>
-              <label for="plantCount">Nombre de plants</label>
-              <input class="simulator-input" id="plantCount" type="number" min="1" max="12" value="1">
-              <button class="simulator-button simulator-button-secondary" id="potCalcBtn" type="button">Calculer</button>
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">L</span>
+                <div>
+                  <h2>Calculateur de pot</h2>
+                  <p>Volume minimal pour une culture en pot.</p>
+                </div>
+              </div>
+              <div class="tool-fields">
+                <label for="potPlant">
+                  <span>Culture</span>
+                  <select class="simulator-select" id="potPlant"></select>
+                </label>
+                <label for="plantCount">
+                  <span>Plants</span>
+                  <input class="simulator-input" id="plantCount" type="number" min="1" max="12" value="1">
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="potCalcBtn" type="button">Calculer</button>
               <div class="tool-result" id="potResult"></div>
             </article>
 
             <article class="tool-card">
-              <h2>Arrosage vacances</h2>
-              <p>Repérez le niveau de risque et le plan minimum avant une absence.</p>
-              <label for="absenceDays">Jours d'absence</label>
-              <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
-              <label for="absencePlant">Culture la plus fragile</label>
-              <select class="simulator-select" id="absencePlant"></select>
-              <label for="absencePots">Nombre de pots concernés</label>
-              <input class="simulator-input" id="absencePots" type="number" min="1" max="40" value="6">
-              <label for="wateringAid">Solution prévue</label>
-              <select class="simulator-select" id="wateringAid">
-                <option value="none">Aucune solution</option>
-                <option value="paillage">Paillage + pots regroupés</option>
-                <option value="reserve">Réserve d'eau / oyas testées</option>
-                <option value="person">Passage d'une personne</option>
-              </select>
-              <label for="heatLevel">Contexte</label>
-              <select class="simulator-select" id="heatLevel">
-                <option value="doux">Balcon doux ou mi-ombre</option>
-                <option value="chaud">Balcon chaud</option>
-                <option value="brulant">Plein soleil / canicule</option>
-              </select>
-              <button class="simulator-button simulator-button-secondary" id="waterCalcBtn" type="button">Evaluer</button>
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">H2O</span>
+                <div>
+                  <h2>Arrosage vacances</h2>
+                  <p>Risque et plan minimum avant une absence.</p>
+                </div>
+              </div>
+              <div class="tool-fields tool-fields-dense">
+                <label for="absenceDays">
+                  <span>Jours</span>
+                  <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
+                </label>
+                <label for="absencePots">
+                  <span>Pots</span>
+                  <input class="simulator-input" id="absencePots" type="number" min="1" max="40" value="6">
+                </label>
+                <label for="absencePlant">
+                  <span>Culture fragile</span>
+                  <select class="simulator-select" id="absencePlant"></select>
+                </label>
+                <label for="wateringAid">
+                  <span>Solution prévue</span>
+                  <select class="simulator-select" id="wateringAid">
+                    <option value="none">Aucune solution</option>
+                    <option value="paillage">Paillage + pots regroupés</option>
+                    <option value="reserve">Réserve d'eau / oyas testées</option>
+                    <option value="person">Passage d'une personne</option>
+                  </select>
+                </label>
+                <label for="heatLevel" class="tool-field-full">
+                  <span>Contexte</span>
+                  <select class="simulator-select" id="heatLevel">
+                    <option value="doux">Balcon doux ou mi-ombre</option>
+                    <option value="chaud">Balcon chaud</option>
+                    <option value="brulant">Plein soleil / canicule</option>
+                  </select>
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="waterCalcBtn" type="button">Évaluer</button>
               <div class="tool-result" id="waterResult"></div>
             </article>
 
             <article class="tool-card">
-              <h2>Compost en pot</h2>
-              <p>Dosez sans saturer le substrat.</p>
-              <label for="compostPot">Volume du pot en litres</label>
-              <input class="simulator-input" id="compostPot" type="number" min="2" max="80" value="20">
-              <label for="compostCulture">Type de culture</label>
-              <select class="simulator-select" id="compostCulture">
-                <option value="gourmande">Culture gourmande</option>
-                <option value="feuille">Légume feuille / aromatique fraîche</option>
-                <option value="sobre">Aromatique sobre / plante méditerranéenne</option>
-              </select>
-              <button class="simulator-button simulator-button-secondary" id="compostCalcBtn" type="button">Doser</button>
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">%</span>
+                <div>
+                  <h2>Compost en pot</h2>
+                  <p>Dosage prudent sans saturer le substrat.</p>
+                </div>
+              </div>
+              <div class="tool-fields">
+                <label for="compostPot">
+                  <span>Litres du pot</span>
+                  <input class="simulator-input" id="compostPot" type="number" min="2" max="80" value="20">
+                </label>
+                <label for="compostCulture">
+                  <span>Culture</span>
+                  <select class="simulator-select" id="compostCulture">
+                    <option value="gourmande">Culture gourmande</option>
+                    <option value="feuille">Légume feuille / aromatique fraîche</option>
+                    <option value="sobre">Aromatique sobre / plante méditerranéenne</option>
+                  </select>
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="compostCalcBtn" type="button">Doser</button>
               <div class="tool-result" id="compostResult"></div>
             </article>
           </section>
@@ -1017,6 +1147,7 @@
     const summaryEl = document.getElementById("summary");
     const emptyStateEl = document.getElementById("emptyState");
     const noteEl = document.getElementById("note");
+    const gearRecommendationsEl = document.getElementById("gearRecommendations");
     const diagnosticResultEl = document.getElementById("diagnosticResult");
     const runBtn = document.getElementById("runBtn");
     const resetBtn = document.getElementById("resetBtn");
@@ -1178,6 +1309,164 @@
       });
     }
 
+    function getGearRecommendations(filters) {
+      if (!filters) {
+        return [];
+      }
+
+      const picks = [];
+      const add = (item) => {
+        if (!picks.some((pick) => pick.id === item.id)) {
+          picks.push(item);
+        }
+      };
+
+      const gear = {
+        pots: {
+          id: "pots",
+          badge: "Contenants",
+          title: "Des pots au bon volume",
+          text: "Le plus rentable si les plantes sèchent trop vite ou manquent de place.",
+          link: "https://amzn.to/3YXjTvS",
+          label: "voir des pots de tailles variées"
+        },
+        planters: {
+          id: "planters",
+          badge: "Petit espace",
+          title: "Des jardinières simples",
+          text: "Utile pour aligner aromatiques, fleurs compactes ou salades sans bloquer la circulation.",
+          link: "https://amzn.to/4jAkY50",
+          label: "voir des jardinières basiques"
+        },
+        soil: {
+          id: "soil",
+          badge: "Substrat",
+          title: "Un terreau potager fiable",
+          text: "Prioritaire pour les légumes, les fraisiers et les pots qui s’épuisent vite.",
+          link: "https://amzn.to/42G8qDp",
+          label: "voir le terreau potager"
+        },
+        wateringCan: {
+          id: "wateringCan",
+          badge: "Arrosage",
+          title: "Un arrosoir maniable",
+          text: "Le choix simple quand l’arrosage quotidien devient imprécis ou pénible.",
+          link: "https://amzn.to/3EPUPjG",
+          label: "voir un arrosoir compact"
+        },
+        drip: {
+          id: "drip",
+          badge: "Vacances",
+          title: "Un kit goutte à goutte à tester",
+          text: "Intéressant si vous partez souvent, surtout sur balcon chaud ou venté.",
+          link: "https://amzn.to/3ShEqri",
+          label: "voir un kit goutte à goutte"
+        },
+        ollas: {
+          id: "ollas",
+          badge: "Chaleur",
+          title: "Des ollas pour stabiliser l’eau",
+          text: "À envisager pour les gros pots en plein soleil qui alternent sec et trop arrosé.",
+          link: "https://amzn.to/4o0h748",
+          label: "voir des ollas"
+        },
+        herbs: {
+          id: "herbs",
+          badge: "Aromatiques",
+          title: "Un kit d’herbes aromatiques",
+          text: "Pratique si vous voulez démarrer vite avec des cultures faciles à récolter.",
+          link: "https://amzn.to/3Sjt2Lu",
+          label: "voir un kit d’herbes aromatiques"
+        },
+        protection: {
+          id: "protection",
+          badge: "Protection",
+          title: "Un filet léger",
+          text: "À garder pour les jeunes pousses exposées aux coups de vent ou aux passages répétés près des bacs.",
+          link: "https://amzn.to/3EV8sxW",
+          label: "voir un filet de protection"
+        }
+      };
+
+      if (filters.place === "petit") {
+        add(gear.planters);
+      } else if (filters.place) {
+        add(gear.pots);
+      }
+
+      if (filters.objectif === "legumes") {
+        add(gear.soil);
+      } else if (filters.objectif === "aromatiques") {
+        add(gear.herbs);
+      } else if (filters.objectif === "fleurs") {
+        add(gear.planters);
+      } else if (filters.objectif === "facile") {
+        add(gear.wateringCan);
+      }
+
+      if (filters.exposition === "soleil") {
+        add(gear.ollas);
+      }
+
+      if (filters.vent === "fort") {
+        add(gear.pots);
+        add(gear.protection);
+      }
+
+      if (filters.objectif === "legumes") {
+        add(gear.pots);
+      } else if (filters.objectif === "aromatiques") {
+        add(filters.place === "petit" ? gear.planters : gear.pots);
+      } else if (filters.objectif === "fleurs") {
+        add(gear.protection);
+      } else if (filters.objectif === "facile") {
+        add(gear.soil);
+      }
+
+      if (!picks.length) {
+        add(gear.soil);
+        add(gear.wateringCan);
+      }
+
+      if (picks.length < 3) {
+        add(gear.wateringCan);
+      }
+
+      if (picks.length < 3) {
+        add(gear.soil);
+      }
+
+      return picks.slice(0, 3);
+    }
+
+    function renderGearRecommendations(filters) {
+      const recommendations = getGearRecommendations(filters);
+
+      if (!recommendations.length) {
+        gearRecommendationsEl.hidden = true;
+        gearRecommendationsEl.innerHTML = "";
+        return;
+      }
+
+      gearRecommendationsEl.hidden = false;
+      gearRecommendationsEl.innerHTML = `
+        <h3>Matériel utile à prévoir</h3>
+        <p class="gear-recommendations-intro">Ces choix suivent vos critères. L’idée reste de compléter seulement ce qui règle un vrai problème sur votre balcon.</p>
+        <p class="gear-recommendations-disclosure">Liens affiliés Amazon. En tant que Partenaire Amazon, EcoBalcon peut recevoir une commission sur les achats éligibles.</p>
+        <div class="gear-recommendation-grid">
+          ${recommendations.map((item) => `
+            <article class="gear-recommendation-card">
+              <span>${item.badge}</span>
+              <strong>${item.title}</strong>
+              <p>${item.text}</p>
+              <p><a href="${item.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">${item.label}</a></p>
+            </article>
+          `).join("")}
+        </div>
+        <a class="gear-recommendations-guide" href="../articles/le-materiel-essentiel-pour-commencer/">Voir le guide matériel complet</a>
+      `;
+    }
+
     function getPlantText(plant) {
       return [
         plant.name,
@@ -1258,6 +1547,7 @@
       emptyStateEl.style.display = "none";
       noteEl.style.display = "none";
       noteEl.textContent = "";
+      renderGearRecommendations(null);
 
       if (!selectedFilters) {
         resultsEl.innerHTML = "";
@@ -1265,6 +1555,7 @@
         summaryEl.textContent = "Choisissez au moins un crit\u00e8re pour lancer le simulateur.";
         noteEl.style.display = "block";
         noteEl.textContent = "Commencez par l'exposition : c'est souvent le rep\u00e8re le plus utile pour faire un premier tri sur un balcon.";
+        diagnosticResultEl.textContent = "Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.";
         return;
       }
 
@@ -1317,12 +1608,15 @@
         summaryEl.textContent = "Aucune correspondance directe avec cette combinaison de crit\u00e8res.";
         noteEl.style.display = "block";
         noteEl.textContent = getFallbackAdvice(filters.exposition);
+        diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
+        renderGearRecommendations(filters);
         return;
       }
 
       summaryEl.style.display = "block";
       summaryEl.textContent = buildSummary(filters, results.length);
       renderResults(results);
+      renderGearRecommendations(filters);
       diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
 
       if (filters.vent === "fort") {
@@ -1341,6 +1635,7 @@
       summaryEl.textContent = "";
       noteEl.style.display = "none";
       noteEl.textContent = "";
+      renderGearRecommendations(null);
       emptyStateEl.style.display = "block";
       diagnosticResultEl.textContent = "Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.";
     }
