@@ -250,6 +250,7 @@
             </ul>
             <h2>Comment rempoter sans stresser la plante</h2>
             <p>Le bon rempotage n’a rien de spectaculaire. Il repose surtout sur une manipulation calme, un pot prêt à l’avance et une plantation à la bonne hauteur.</p>
+            <p>Pour garder une table ou un petit balcon propre, un <a href="https://amzn.to/4gHGlCU">tapis de rempotage pliable</a> aide bien à contenir le terreau. Un <a href="https://amzn.to/4w6x1wN">transplantoir simple</a> suffit ensuite pour remplir les côtés sans tasser comme avec une pelle trop large.</p>
             <ol>
               <li>Prépare le nouveau contenant avec un fond propre, les trous dégagés et un premier lit de terreau.</li>
               <li>Sors la plante de son ancien pot en tenant la base, sans tirer sur les tiges.</li>
@@ -477,6 +478,7 @@
             <h3>Choisir des contenants vraiment stables</h3>
             <p>Le bon pot change énormément la donne. Sur balcon venteux, un contenant trop léger ou trop étroit fatigue vite la plante et finit par devenir pénible à surveiller. Mieux vaut un bac ou un pot assez large à la base, un peu lourd et bien percé, plutôt qu’une série de petits contenants décoratifs qui bougent au moindre coup d’air.</p>
             <p>Si tu veux poser des bases simples avant d’acheter, relis aussi notre guide sur <a href="le-materiel-essentiel-pour-commencer.html">le matériel essentiel pour commencer</a>. Tu verras plus facilement quels contenants, tuteurs et fixations valent vraiment le coup sur un balcon exposé.</p>
+            <p>Côté maintien, des <a href="https://amzn.to/3T3jXKl">attaches souples pour plantes</a> et de <a href="https://amzn.to/4vqISWG">petits tuteurs</a> sont souvent plus utiles qu’un gros dispositif. Ils accompagnent les tiges sans les blesser et se déplacent facilement quand tu changes l’organisation des pots.</p>
             <h3>Créer des zones plus calmes</h3>
             <p>Le meilleur réflexe consiste souvent à déplacer les plantes plutôt qu’à chercher tout de suite une grosse protection. Un coin contre un mur, derrière un autre bac plus haut, près d’un angle ou à distance de la rambarde suffit parfois à faire une vraie différence.</p>
             <p>Si tu ajoutes un brise-vue ou un écran, préfère quelque chose qui coupe partiellement les rafales au lieu de faire une paroi totalement rigide. Un obstacle plein peut se comporter comme une voile et rendre l’ensemble plus instable. Le but est de casser la vitesse du vent, pas d’enfermer le balcon.</p>
@@ -1068,7 +1070,7 @@
             <p>Certains équipements sont intéressants, mais pas indispensables au départ : mini-serre, irrigation automatique, lampe horticole ou filet de protection. Ils deviennent utiles quand tu connais déjà ton balcon et tes usages, pas nécessairement le premier jour.</p>
             <ul>
               <li><a href="https://amzn.to/42Ncy32">Mini-serre</a> si tu veux prolonger les saisons.</li>
-              <li><a href="https://amzn.to/3ShEqri">Kit goutte à goutte</a> si tu t’absentes souvent.</li>
+              <li><a href="https://amzn.to/3QO15OK">Kit goutte à goutte</a> si tu t’absentes souvent.</li>
               <li><a href="https://amzn.to/3EV8sxW">Filet de protection léger</a> si les oiseaux ou animaux viennent piocher dans les bacs.</li>
             </ul>
             <h2>Ce qu’il vaut mieux éviter au début</h2>
@@ -1214,6 +1216,7 @@
               <li>Arrose profondément juste après plantation.</li>
               <li>Laisse un peu d’espace en haut du pot pour faciliter les arrosages futurs.</li>
             </ul>
+            <p>Si le plant est haut ou exposé au vent, un <a href="https://amzn.to/4v2Cp33">support ajustable pour tomates</a> aide à garder une conduite lisible. Pendant la floraison, un <a href="https://amzn.to/4g7Gcsq">engrais tomates et légumes</a> peut compléter le compost, avec parcimonie.</p>
             <p>Si tu plantes plusieurs tomates, évite de trop serrer : un balcon encombré ralentit la circulation de l’air et complique vite l’entretien.</p>
             <h2>Arrosage et fertilisation : le vrai cœur de la réussite</h2>
             <p>La tomate aime une humidité régulière. Ce qu’elle supporte mal, c’est l’alternance sec complet / gros arrosage. Cette irrégularité fatigue la plante, favorise l’éclatement des fruits et amplifie certaines carences.</p>

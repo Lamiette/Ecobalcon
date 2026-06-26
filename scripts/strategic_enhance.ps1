@@ -299,7 +299,7 @@ $affiliateComparator = @"
                 <tbody>
                   <tr><td>Installer les cultures</td><td><a href="https://amzn.to/3YXjTvS" target="_blank" rel="nofollow sponsored noopener noreferrer">Pots de tailles variées</a></td><td><a href="https://amzn.to/4jAkY50" target="_blank" rel="nofollow sponsored noopener noreferrer">Jardinières basiques</a></td><td>Avant plantation, si les pots actuels sont trop petits.</td></tr>
                   <tr><td>Améliorer le substrat</td><td>Compost mûr en petite quantité</td><td><a href="https://amzn.to/42G8qDp" target="_blank" rel="nofollow sponsored noopener noreferrer">Terreau potager</a></td><td>Quand le terreau se tasse ou nourrit mal les plantes.</td></tr>
-                  <tr><td>Absences fréquentes</td><td>Paillage + regroupement des pots</td><td><a href="https://amzn.to/3ShEqri" target="_blank" rel="nofollow sponsored noopener noreferrer">Kit goutte à goutte</a></td><td>Seulement après un test de 48 h sur le balcon.</td></tr>
+                  <tr><td>Absences fréquentes</td><td>Paillage + regroupement des pots</td><td><a href="https://amzn.to/3QO15OK" target="_blank" rel="nofollow sponsored noopener noreferrer">Kit goutte à goutte</a></td><td>Seulement après un test de 48 h sur le balcon.</td></tr>
                 </tbody>
               </table>
             </div>
