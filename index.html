@@ -91,7 +91,7 @@
               <div class="hero-stat-grid" data-reveal style="--reveal-delay: 220ms;">
             <article class="mini-stat">
               <span class="mini-stat-label">Guides utiles</span>
-              <strong>50</strong>
+              <strong>51</strong>
               <span class="mini-stat-copy">pour planter, arroser, récolter et aménager.</span>
             </article>
             <article class="mini-stat">
@@ -306,6 +306,7 @@
       weeklyArticles.unshift({"slug":"tailler-tomates-balcon","title":"Tailler des tomates en pot : quoi couper, quoi garder ?","description":"Reconnaître les gourmands, garder assez de feuilles et limiter l’encombrement sans fatiguer un plant de tomate en pot.","category":"Entretien \u0026 astuces","href":"articles/tailler-tomates-balcon/","imageSrc":"images/articles/tailler-tomates-balcon-pexels-7299975.jpg","imageAlt":"Taille d'un plant de tomate avec un sécateur, feuillage et fruits visibles","datePublished":"2026-06-03T09:00:00.000Z","width":3500,"height":2333});
       weeklyArticles.unshift({"slug":"feuilles-blanches-balcon-oidium","title":"Des feuilles qui blanchissent ? reconnaître l'oïdium sans paniquer","description":"Reconnaître l'oïdium, éviter les confusions et agir sans gestes excessifs quand les feuilles blanchissent en pot.","category":"Entretien \u0026 astuces","href":"articles/feuilles-blanches-balcon-oidium/","imageSrc":"images/articles/feuilles-oidium-balcon.png","imageAlt":"Feuille de courgette en pot avec un voile blanc d'oïdium visible","datePublished":"2026-06-10T09:00:00.000Z","width":1536,"height":1024});
       weeklyArticles.unshift({"slug":"ombrer-balcon-plantes-chaleur","title":"Créer de l'ombre sur un balcon sans priver les plantes de lumière","description":"Voile léger, canisse, déplacement des pots et bons horaires : protéger les plantes sans transformer le balcon en coin sombre.","category":"Entretien \u0026 astuces","href":"articles/ombrer-balcon-plantes-chaleur/","imageSrc":"images/articles/ombrer-balcon-plantes-chaleur.png","imageAlt":"Voile d'ombrage léger au-dessus de plantes en pots sur un balcon ensoleillé","datePublished":"2026-06-16T09:00:00.000Z","width":1672,"height":941});
+      weeklyArticles.unshift({"slug":"pots-trop-chauds-balcon","title":"Quand les pots chauffent trop : protéger les racines sur un balcon","description":"Pot noir, dalle brûlante, terreau qui sèche : les bons gestes pour garder les racines plus fraîches en été.","category":"Entretien \u0026 astuces","href":"articles/pots-trop-chauds-balcon/","imageSrc":"images/articles/pots-chauds-balcon-pexels-5138165.jpg","imageAlt":"Pots de plantes regroupés sur un balcon avec feuillage et contenants exposés à la chaleur","datePublished":"2026-06-26T09:00:00.000Z","width":1600,"height":2233});
       if (!Array.isArray(weeklyArticles) || !weeklyArticles.length) {
         return;
       }
@@ -322,7 +323,7 @@
 
       const slugKeywords = {
         spring: ["printemps", "semis", "laitue", "laitues", "radis", "epinard", "epinards", "fraise", "fraises", "aromatiques", "calendrier"],
-        summer: ["ete", "chaleur", "canicule", "tomate", "tomates", "poivron", "poivrons", "arrosage", "soleil", "eau"],
+        summer: ["ete", "chaleur", "canicule", "tomate", "tomates", "poivron", "poivrons", "arrosage", "soleil", "eau", "pot", "racines"],
         autumn: ["automne", "compost", "paillage", "bulbes", "proteger", "recolte", "nuisibles", "pluie"],
         winter: ["hiver", "materiel", "planifier", "preparer", "lunaire", "interieur", "structure"]
       };
@@ -333,8 +334,8 @@
         3: ["semis", "radis", "laitue", "laitues", "fraise", "fraises"],
         4: ["tomate", "tomates", "radis", "fraises", "potager"],
         5: ["tomate", "tomates", "poivron", "poivrons", "aromatiques", "grimpantes"],
-        6: ["canicule", "eau", "paillage", "poivrons", "tomates"],
-        7: ["canicule", "soleil", "arrosage", "eau", "pollinisateurs"],
+        6: ["canicule", "eau", "paillage", "poivrons", "tomates", "pot"],
+        7: ["canicule", "soleil", "arrosage", "eau", "pollinisateurs", "racines"],
         8: ["canicule", "arrosage", "nuisibles", "eau", "recolte"],
         9: ["recolte", "compost", "petits-fruits", "potager"],
         10: ["compost", "paillage", "bulbes", "pluie"],
@@ -344,6 +345,7 @@
 
       const weeklyArticleWindows = {
         "ombrer-balcon-plantes-chaleur": { fromMonth: 6, fromDay: 1, toMonth: 9, toDay: 15 },
+        "pots-trop-chauds-balcon": { fromMonth: 6, fromDay: 15, toMonth: 9, toDay: 15 },
         "feuilles-blanches-balcon-oidium": { fromMonth: 6, fromDay: 1, toMonth: 9, toDay: 15 },
         "tailler-tomates-balcon": { fromMonth: 6, fromDay: 1, toMonth: 8, toDay: 20 },
         "haricots-nains-pot-balcon": { fromMonth: 5, fromDay: 10, toMonth: 7, toDay: 20 },
@@ -477,6 +479,7 @@
   </script>
 </body>
 </html>
+
 
 
 

@@ -9,7 +9,7 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 ## Navigation principale
 
 - [Accueil](https://ecobalcon.com/) : presentation du site et sélection editoriale
-- [Tous les articles](https://ecobalcon.com/articles/) : index des 50 guides pratiques
+- [Tous les articles](https://ecobalcon.com/articles/) : index des 51 guides pratiques
 - [Outils balcon](https://ecobalcon.com/simulateur/) : simulateur, bibliothèque plantes filtrable, calculateurs pot/arrosage/compost et comparateur compostage
 - [Checklist arrosage vacances](https://ecobalcon.com/checklists/arrosage-vacances/) : checklist imprimable pour préparer les plantes avant une absence
 - [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardines
@@ -18,4 +18,5 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 ## Thématique principale
 
 EcoBalcon couvre les cultures en pot, le choix des plantes selon exposition, l'arrosage sobre, le compostage en petit espace, le matériel utile, la biodiversité urbaine et les gestes saisonniers pour balcon.
+Les contenus récents renforcent aussi les routines d'été : ombrage léger, oïdium, pots qui chauffent, paillage et gestion de l'eau.
 
