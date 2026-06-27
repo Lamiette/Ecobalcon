@@ -1,4 +1,5 @@
 ﻿User-agent: *
 Allow: /
+Disallow: /backups/
 
 Sitemap: https://ecobalcon.com/sitemap.xml

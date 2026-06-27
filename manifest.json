@@ -1,0 +1,54 @@
+{
+  "id": "/",
+  "name": "EcoBalcon",
+  "short_name": "EcoBalcon",
+  "description": "Guides pratiques pour jardiner sur balcon : plantes, potager urbain, arrosage et conseils \u00e9cologiques.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f4ec",
+  "theme_color": "#2f6f59",
+  "categories": ["lifestyle", "education", "utilities"],
+  "icons": [
+    {
+      "src": "/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Simulateur de balcon",
+      "short_name": "Simulateur",
+      "description": "Tester exposition, vent et place disponible.",
+      "url": "/simulateur/"
+    },
+    {
+      "name": "Guides jardinage",
+      "short_name": "Guides",
+      "description": "Lire les guides pratiques EcoBalcon.",
+      "url": "/articles/"
+    },
+    {
+      "name": "Categories de conseils",
+      "short_name": "Categories",
+      "description": "Explorer les conseils par theme.",
+      "url": "/categories/"
+    }
+  ]
+}

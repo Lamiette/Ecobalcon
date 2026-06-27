@@ -18,6 +18,7 @@ $contactPageUrl = "$siteUrl/contact/"
 $contactThanksUrl = "$siteUrl/contact/merci/"
 $contactFormAction = "https://formsubmit.co/$contactEmail"
 $contactShareImageUrl = "$siteUrl/images/balcon-soleil.webp"
+$themeColor = "#2f6f59"
 $googleAnalyticsMeasurementId = "G-L952X34SHR"
 $microsoftClarityProjectId = "w4a97sk52t"
 $articleOverrides = @{}
@@ -69,6 +70,14 @@ function Get-TrackingHeadHtml {
 
   return @"
   <script src="${scriptPrefix}js/cookie-consent.js" data-site-prefix="$scriptPrefix" data-ga-id="$googleAnalyticsMeasurementId" data-clarity-id="$microsoftClarityProjectId" defer></script>
+"@
+}
+
+function Get-AppHeadHtml {
+  return @"
+  <meta name="application-name" content="EcoBalcon">
+  <meta name="theme-color" content="$themeColor">
+  <link rel="manifest" href="/manifest.json">
 "@
 }
 
@@ -1549,6 +1558,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="$articleDetailStylesheetHref">
 </head>
 <body class="article-page">
@@ -1881,6 +1891,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="$rootStylesheetHref">
 </head>
 <body class="home-page">
@@ -2265,6 +2276,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="$articleStylesheetHref">
 </head>
 <body class="articles-page">
@@ -2790,6 +2802,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="legal-page">
@@ -2988,6 +3001,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="contact-page">
@@ -3138,6 +3152,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="../../css/style.min.css">
 </head>
 <body class="contact-thanks-page">
@@ -3248,6 +3263,7 @@ $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
   <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body class="not-found-page">
@@ -3403,9 +3419,69 @@ function Build-RobotsTxt {
   return @"
 User-agent: *
 Allow: /
+Disallow: /backups/
 
 Sitemap: $siteUrl/sitemap.xml
 "@
+}
+
+function Build-ManifestJson {
+  return @'
+{
+  "id": "/",
+  "name": "EcoBalcon",
+  "short_name": "EcoBalcon",
+  "description": "Guides pratiques pour jardiner sur balcon : plantes, potager urbain, arrosage et conseils \u00e9cologiques.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f4ec",
+  "theme_color": "#2f6f59",
+  "categories": ["lifestyle", "education", "utilities"],
+  "icons": [
+    {
+      "src": "/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Simulateur de balcon",
+      "short_name": "Simulateur",
+      "description": "Tester exposition, vent et place disponible.",
+      "url": "/simulateur/"
+    },
+    {
+      "name": "Guides jardinage",
+      "short_name": "Guides",
+      "description": "Lire les guides pratiques EcoBalcon.",
+      "url": "/articles/"
+    },
+    {
+      "name": "Categories de conseils",
+      "short_name": "Categories",
+      "description": "Explorer les conseils par theme.",
+      "url": "/categories/"
+    }
+  ]
+}
+'@
 }
 
 foreach ($article in $articles) {
@@ -3460,8 +3536,9 @@ if ($RebuildHome -or -not (Test-Path $homePath)) {
 
 Set-Content -Path (Join-Path $root "sitemap.xml") -Value (Build-SitemapXml $articles) -Encoding UTF8
 Set-Content -Path (Join-Path $root "robots.txt") -Value (Build-RobotsTxt) -Encoding UTF8
+Set-Content -Path (Join-Path $root "manifest.json") -Value (Build-ManifestJson) -Encoding UTF8
 
-Write-Output "Updated style.min.css, articles index, 404.html, contact pages, politique-confidentialite.html, sitemap.xml and robots.txt"
+Write-Output "Updated style.min.css, articles index, 404.html, contact pages, politique-confidentialite.html, sitemap.xml, robots.txt and manifest.json"
 if ($homeBackupStatus) {
   Write-Output $homeBackupStatus
 }
