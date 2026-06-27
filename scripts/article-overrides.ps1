@@ -439,7 +439,7 @@
     "balcon-venteux-plantes-protection-pots" = [ordered]@{
       Title = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
       SeoTitle = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
-      Description = "Balcon venteux : quelles plantes choisir, quels pots éviter et comment protéger ses cultures sans surcharger l’espace. Le guide simple pour jardiner malgré les rafales."
+      Description = "Balcon venteux : plantes adaptées, pots stables et protections simples pour jardiner malgré les rafales sans surcharger l’espace."
       Intro = "Un balcon bien exposé peut vite devenir fatigant pour les plantes quand le vent s’en mêle. Feuillage desséché, tiges qui cassent, pots qui bougent, terreau qui sèche trop vite : sur un balcon venteux, la vraie solution n’est pas de renoncer, mais d’adapter les plantes, les contenants et l’organisation."
       TimeRequired = "PT6M"
       DatePublished = "2026-04-11T13:30:00.000Z"
