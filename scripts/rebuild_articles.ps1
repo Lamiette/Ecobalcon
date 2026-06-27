@@ -275,45 +275,66 @@ function Get-RootImageDimensionAttributes {
 function Get-SiteFooterHtml {
   param([string]$pagePrefix = "")
 
+  $homeHref = if ($pagePrefix -eq "") { "./" } else { $pagePrefix }
+  $logoSrc = "${pagePrefix}images/logo-site.png"
+
   return @"
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-main">
+        <div class="footer-top">
           <div class="footer-brand">
-            <strong>EcoBalcon</strong>
-            <p>Astuces pour jardiner en milieu urbain.</p>
+            <a class="footer-brand-link" href="$homeHref" aria-label="EcoBalcon - accueil">
+              <span class="footer-brand-logo-wrap">
+                <img class="footer-brand-logo" src="$logoSrc" alt="EcoBalcon" width="768" height="206" loading="lazy">
+              </span>
+            </a>
+            <p>Guides concrets pour jardiner en pot, choisir les bonnes plantes et garder un balcon facile &agrave; vivre.</p>
           </div>
-          <div class="footer-social" aria-label="R&eacute;seaux sociaux">
-            <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4.2"></circle>
-                <circle cx="17.4" cy="6.6" r="1"></circle>
-              </svg>
-            </a>
-            <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 4l16 16"></path>
-                <path d="M20 4L4 20"></path>
-              </svg>
-            </a>
+          <div class="footer-actions">
+            <a class="footer-primary-link" href="${pagePrefix}simulateur/">Ouvrir le simulateur</a>
+            <div class="footer-social" aria-label="R&eacute;seaux sociaux">
+              <a class="footer-social-link" href="https://www.instagram.com/eco_balcon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4.2"></circle>
+                  <circle cx="17.4" cy="6.6" r="1"></circle>
+                </svg>
+              </a>
+              <a class="footer-social-link" href="https://x.com/Eco_Balcon" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4l16 16"></path>
+                  <path d="M20 4L4 20"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="footer-side">
-          <strong>Sur le site</strong>
-          <ul class="footer-list">
-            <li>Potager de balcon et cultures faciles</li>
-            <li>Plantes adapt&eacute;es au soleil comme &agrave; l'ombre</li>
-            <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
-          </ul>
-          <div class="footer-links">
+        <div class="footer-nav-grid">
+          <nav class="footer-nav" aria-label="Guides EcoBalcon">
+            <strong>Guides</strong>
+            <a href="${pagePrefix}articles/">Tous les articles</a>
+            <a href="${pagePrefix}categories/fiches-techniques/">Fiches techniques</a>
+            <a href="${pagePrefix}categories/plantes-semis/">Plantes &amp; semis</a>
+          </nav>
+          <nav class="footer-nav" aria-label="Outils EcoBalcon">
+            <strong>Outils</strong>
+            <a href="${pagePrefix}simulateur/">Simulateur de balcon</a>
+            <a href="${pagePrefix}checklists/arrosage-vacances/">Checklist arrosage</a>
+            <a href="${pagePrefix}categories/entretien-astuces/">Entretien &amp; astuces</a>
+          </nav>
+          <nav class="footer-nav" aria-label="EcoBalcon">
+            <strong>EcoBalcon</strong>
             <a href="${pagePrefix}categories/">Cat&eacute;gories</a>
             <a href="${pagePrefix}a-propos/">&Agrave; propos</a>
             <a href="${pagePrefix}contact/">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-legal">&copy; 2026 EcoBalcon. Tous droits r&eacute;serv&eacute;s.</div>
+          <div class="footer-links">
             <a href="${pagePrefix}politique-confidentialite/">Confidentialit&eacute;</a>
           </div>
         </div>
-        <div class="footer-legal">&copy; 2026. Tous droits r&eacute;serv&eacute;s.</div>
       </div>
     </footer>
 "@
