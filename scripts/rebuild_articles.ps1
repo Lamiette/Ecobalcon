@@ -298,6 +298,8 @@ function Get-SiteFooterHtml {
             <li>Gestes sobres pour l'eau, le compost et la biodiversit&eacute;</li>
           </ul>
           <div class="footer-links">
+            <a href="${pagePrefix}categories/">Cat&eacute;gories</a>
+            <a href="${pagePrefix}a-propos/">&Agrave; propos</a>
             <a href="${pagePrefix}contact/">Contact</a>
             <a href="${pagePrefix}politique-confidentialite/">Confidentialit&eacute;</a>
           </div>
@@ -1779,27 +1781,27 @@ function Build-HomeHtml {
   $themeHtml = @"
           <article class="theme-card" data-reveal style="--reveal-delay: 60ms;">
             <span class="eyebrow">Fiches Techniques</span>
-            <h3><a href="articles/#theme=fiches-techniques">Trouver un guide culture pas &agrave; pas</a></h3>
+            <h3><a href="categories/fiches-techniques/">Trouver un guide culture pas &agrave; pas</a></h3>
             <p>Les fiches les plus concr&egrave;tes pour cultiver tomates, poivrons, laitues, radis, fraises et autres cultures de balcon.</p>
-            <a class="text-link" href="articles/#theme=fiches-techniques">Voir les fiches</a>
+            <a class="text-link" href="categories/fiches-techniques/">Voir les fiches</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 130ms;">
             <span class="eyebrow">Plantes &amp; semis</span>
-            <h3><a href="articles/#theme=plantes-semis">Choisir quoi planter selon son balcon</a></h3>
+            <h3><a href="categories/plantes-semis/">Choisir quoi planter selon son balcon</a></h3>
             <p>Des s&eacute;lections de plantes, de l&eacute;gumes, d’aromatiques et d’id&eacute;es de culture selon l’exposition et les envies.</p>
-            <a class="text-link" href="articles/#theme=plantes-semis">Voir les plantations</a>
+            <a class="text-link" href="categories/plantes-semis/">Voir les plantations</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 200ms;">
             <span class="eyebrow">Entretien &amp; astuces</span>
-            <h3><a href="articles/#theme=entretien-astuces">Mieux entretenir son balcon au quotidien</a></h3>
+            <h3><a href="categories/entretien-astuces/">Mieux entretenir son balcon au quotidien</a></h3>
             <p>Arrosage, paillage, compost, nuisibles, chaleur et gestes simples pour garder un balcon sain et facile &agrave; vivre.</p>
-            <a class="text-link" href="articles/#theme=entretien-astuces">Voir les astuces</a>
+            <a class="text-link" href="categories/entretien-astuces/">Voir les astuces</a>
           </article>
           <article class="theme-card" data-reveal style="--reveal-delay: 270ms;">
             <span class="eyebrow">Am&eacute;nagement du balcon</span>
-            <h3><a href="articles/#theme=amenagement-du-balcon">Am&eacute;nager un espace plus pratique</a></h3>
+            <h3><a href="categories/amenagement-du-balcon/">Am&eacute;nager un espace plus pratique</a></h3>
             <p>Mat&eacute;riel, pots, compostage, r&eacute;cup&eacute;ration d’eau, plantes grimpantes et astuces pour organiser le balcon.</p>
-            <a class="text-link" href="articles/#theme=amenagement-du-balcon">Voir les am&eacute;nagements</a>
+            <a class="text-link" href="categories/amenagement-du-balcon/">Voir les am&eacute;nagements</a>
           </article>
 "@
   $editorialFeature = Get-PreferredArticle -allArticles $allArticles -preferredSlugs @(
@@ -3369,6 +3371,23 @@ function Build-SitemapXml {
   }
   if (Test-Path (Join-Path $root "contact\index.html")) {
     $entries.Add((New-SitemapUrlNode -loc $contactPageUrl -priority "0.4" -lastmod $today))
+  }
+
+  $staticPages = @(
+    [ordered]@{ Path = "simulateur\index.html"; Loc = "$siteUrl/simulateur/"; Priority = "0.8"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "checklists\arrosage-vacances\index.html"; Loc = "$siteUrl/checklists/arrosage-vacances/"; Priority = "0.6"; ImageUrl = ""; ImageCaption = "" },
+    [ordered]@{ Path = "a-propos\index.html"; Loc = "$siteUrl/a-propos/"; Priority = "0.6"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "categories\index.html"; Loc = "$siteUrl/categories/"; Priority = "0.7"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "categories\fiches-techniques\index.html"; Loc = "$siteUrl/categories/fiches-techniques/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/menthe-pot-balcon-pexels-12727257.webp"; ImageCaption = "Menthe vigoureuse cultivée seule en pot, avec feuillage vert dense" },
+    [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-mai-sur-un-balcon.jpg"; ImageCaption = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite" },
+    [ordered]@{ Path = "categories\entretien-astuces\index.html"; Loc = "$siteUrl/categories/entretien-astuces/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/pots-chauds-balcon-pexels-5138165.jpg"; ImageCaption = "Pots de plantes regroupés sur un balcon avec feuillage et contenants exposés à la chaleur" },
+    [ordered]@{ Path = "categories\amenagement-du-balcon\index.html"; Loc = "$siteUrl/categories/amenagement-du-balcon/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/lierre-grimpant-A85V1gor4Dsan5k8.webp"; ImageCaption = "Plante grimpante en pot pour créer de l'intimité sur un balcon" }
+  )
+
+  foreach ($page in $staticPages) {
+    if (Test-Path (Join-Path $root $page.Path)) {
+      $entries.Add((New-SitemapUrlNode -loc $page.Loc -priority $page.Priority -lastmod $today -imageUrl $page.ImageUrl -imageCaption $page.ImageCaption))
+    }
   }
 
   foreach ($article in $allArticles) {

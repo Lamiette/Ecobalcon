@@ -9,7 +9,13 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 ## Navigation principale
 
 - [Accueil](https://ecobalcon.com/) : presentation du site et sélection editoriale
+- [À propos](https://ecobalcon.com/a-propos/) : mission, méthode éditoriale et principes de confiance d'EcoBalcon
 - [Tous les articles](https://ecobalcon.com/articles/) : index des 51 guides pratiques
+- [Catégories](https://ecobalcon.com/categories/) : accès aux guides par thème éditorial
+- [Fiches techniques](https://ecobalcon.com/categories/fiches-techniques/) : guides culture pas à pas pour les plantes en pot
+- [Plantes et semis](https://ecobalcon.com/categories/plantes-semis/) : choix des cultures selon saison, exposition et place disponible
+- [Entretien et astuces](https://ecobalcon.com/categories/entretien-astuces/) : arrosage, chaleur, paillage, compost et problèmes courants
+- [Aménagement du balcon](https://ecobalcon.com/categories/amenagement-du-balcon/) : pots, matériel, récupération d'eau, compostage et organisation
 - [Outils balcon](https://ecobalcon.com/simulateur/) : simulateur, bibliothèque plantes filtrable, calculateurs pot/arrosage/compost et comparateur compostage
 - [Checklist arrosage vacances](https://ecobalcon.com/checklists/arrosage-vacances/) : checklist imprimable pour préparer les plantes avant une absence
 - [Galerie](https://ecobalcon.com/galerie/) : photos d'inspiration de balcons jardines

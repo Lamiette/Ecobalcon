@@ -1991,6 +1991,35 @@
     "balcon-durable-plantes" = [ordered]@{
       SeoTitle = "Balcon durable : plantes résistantes"
     }
+    "paillage-sur-balcon-ecolo" = [ordered]@{
+      Description = "Paillage en pot : paillis adaptés, épaisseur, arrosage et gestes propres pour garder la terre fraîche sans attirer les nuisibles ni étouffer les plantes."
+      Intro = "Découvre comment pailler des pots grâce à des techniques simples, des paillis adaptés et des gestes propres pour garder l’humidité plus longtemps."
+    }
+    "jardinage-en-lasagnes-sur-balcon" = [ordered]@{
+      SeoTitle = "Bac en lasagnes sur balcon"
+    }
+    "ombrer-balcon-plantes-chaleur" = [ordered]@{
+      SeoTitle = "Ombre légère sur balcon : protéger les plantes"
+      ImageFileName = "ombrer-balcon-plantes-chaleur.webp"
+    }
+    "feuilles-blanches-balcon-oidium" = [ordered]@{
+      ImageFileName = "feuilles-oidium-balcon.webp"
+    }
+    "tailler-tomates-balcon" = [ordered]@{
+      ImageFileName = "tailler-tomates-balcon-pexels-7299975.webp"
+    }
+    "menthe-pot-balcon" = [ordered]@{
+      ImageFileName = "menthe-pot-balcon-pexels-12727257.webp"
+    }
+    "courgette-pot-balcon" = [ordered]@{
+      ImageFileName = "courgette-pot-balcon-unsplash.webp"
+    }
+    "haricots-nains-pot-balcon" = [ordered]@{
+      ImageFileName = "haricots-nains-pot-balcon-pexels-8639507.webp"
+    }
+    "que-faire-en-juin-potager-balcon" = [ordered]@{
+      ImageFileName = "potager-balcon-juin-tomates-unsplash.webp"
+    }
     "balcon-pour-pollinisateurs" = [ordered]@{
       SeoTitle = "Balcon pour pollinisateurs : guide"
     }

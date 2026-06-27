@@ -337,7 +337,7 @@ foreach ($slug in $exposureSlugs) {
 }
 
 Update-ArticleMeta -slug "plantes-qui-survivent-a-la-canicule" -title "12 plantes de balcon qui résistent à la canicule" -description "Plantes de balcon qui résistent à la canicule : sélection utile, besoins en eau, pots à choisir et gestes simples pour garder un balcon vivant en été."
-Update-ArticleMeta -slug "balcon-durable-plantes" -title "Balcon durable : plantes résistantes et faciles à garder" -description "Balcon durable : quelles plantes choisir pour arroser moins, résister au soleil, limiter les achats inutiles et garder un jardin urbain plus autonome."
+Update-ArticleMeta -slug "balcon-durable-plantes" -title "Balcon durable : plantes résistantes" -description "Balcon durable : quelles plantes choisir pour arroser moins, résister au soleil, limiter les achats inutiles et garder un jardin urbain plus autonome."
 Update-ArticleMeta -slug "calendrier-lunaire-balcon" -title "Calendrier lunaire balcon : semer, planter et récolter" -description "Calendrier lunaire balcon : repères simples pour organiser semis, plantations, entretien et récoltes en pot sans perdre de vue les vrais besoins des plantes."
 Update-ArticleMeta -slug "legumes-faciles-a-cultiver" -title "10 légumes faciles en pot : profondeur, exposition et récolte" -description "10 légumes faciles à cultiver en pot sur balcon : profondeur de pot, exposition, difficulté, rythme d'arrosage et choix fiables pour débuter."
 
