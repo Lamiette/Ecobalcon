@@ -10,6 +10,10 @@ Le site s'adresse aux jardiniers urbains débutants ou confirmés souhaitant cr�
 
 - [Accueil](https://ecobalcon.com/) : presentation du site et sélection editoriale
 - [À propos](https://ecobalcon.com/a-propos/) : mission, méthode éditoriale et principes de confiance d'EcoBalcon
+- [Auteurs](https://ecobalcon.com/auteurs/) : profils éditoriaux et signatures des guides EcoBalcon
+- [Clara Fontaine](https://ecobalcon.com/auteurs/clara-fontaine/) : cultures faciles, aromatiques, semis en pot et balcons fleuris
+- [Louis Fargot](https://ecobalcon.com/auteurs/louis-fargot/) : aménagement, contenants, matériel utile et balcons venteux
+- [Mathias Lancet](https://ecobalcon.com/auteurs/mathias-lancet/) : entretien, arrosage, diagnostic des plantes et cultures potagères
 - [Tous les articles](https://ecobalcon.com/articles/) : index des 51 guides pratiques
 - [Catégories](https://ecobalcon.com/categories/) : accès aux guides par thème éditorial
 - [Fiches techniques](https://ecobalcon.com/categories/fiches-techniques/) : guides culture pas à pas pour les plantes en pot

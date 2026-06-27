@@ -733,6 +733,229 @@ a {
   margin-top: 0;
 }
 
+.author-section {
+  padding-top: 1.15rem;
+}
+
+.author-page .breadcrumb-nav {
+  margin-bottom: 0.9rem;
+}
+
+.author-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(18rem, 0.62fr);
+  gap: 1rem;
+  align-items: stretch;
+  min-width: 0;
+  margin-bottom: 1rem;
+}
+
+.author-hero-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 22rem;
+  padding: clamp(1.35rem, 4vw, 2.5rem);
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(241, 238, 225, 0.95)),
+    var(--surface);
+  border: 1px solid rgba(33, 48, 42, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 42px rgba(31, 50, 40, 0.07);
+}
+
+.author-hero-main::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.45rem;
+  background: linear-gradient(180deg, var(--brand), rgba(216, 140, 63, 0.86));
+}
+
+.author-hero-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+.author-hero-main .page-title {
+  max-width: 12ch;
+  margin: 0.35rem 0 0.8rem;
+  font-size: clamp(2.25rem, 5.8vw, 4.15rem);
+  line-height: 0.98;
+}
+
+.author-hero-main .page-intro {
+  max-width: 58rem;
+  margin: 0;
+  color: #31423b;
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+}
+
+.author-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.author-stats span {
+  min-width: 0;
+  padding: 0.8rem 0.85rem;
+  background: rgba(255, 253, 248, 0.76);
+  border: 1px solid rgba(33, 48, 42, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.author-stats strong {
+  display: block;
+  color: var(--brand-dark);
+  font-size: 1.06rem;
+  line-height: 1.15;
+}
+
+.author-profile-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(33, 48, 42, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 42px rgba(31, 50, 40, 0.07);
+}
+
+.author-profile-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.author-profile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-initials {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: grid;
+  place-items: center;
+  width: 3.35rem;
+  height: 3.35rem;
+  border: 1px solid rgba(47, 111, 89, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.95);
+  color: var(--brand-dark);
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(31, 50, 40, 0.12);
+}
+
+.author-profile-body {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.author-role {
+  color: var(--brand-dark);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.author-profile-body p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.author-brief-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.78fr);
+  gap: 1rem;
+  min-width: 0;
+  margin-bottom: 1.65rem;
+}
+
+.author-brief-card {
+  min-width: 0;
+  padding: 1.35rem 1.4rem 1.45rem;
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid rgba(33, 48, 42, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 30px rgba(31, 50, 40, 0.055);
+}
+
+.author-brief-card h2 {
+  margin: 0.45rem 0 0.7rem;
+  color: var(--brand-dark);
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.12;
+}
+
+.author-brief-card p {
+  max-width: 68ch;
+  margin: 0;
+}
+
+.author-theme-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-theme-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: auto;
+  padding-top: 0.2rem;
+}
+
+.author-theme-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.34rem 0.72rem;
+  border: 1px solid rgba(47, 111, 89, 0.13);
+  border-radius: 999px;
+  background: rgba(47, 111, 89, 0.09);
+  color: var(--brand-dark);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.author-articles-section {
+  margin-top: 0;
+}
+
+.author-articles-heading {
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(33, 48, 42, 0.08);
+}
+
+.author-articles-heading .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.author-article-cards {
+  align-items: stretch;
+}
+
+.author-page .author-article-cards .article-card {
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid rgba(33, 48, 42, 0.08);
+  box-shadow: 0 12px 26px rgba(31, 50, 40, 0.055);
+}
+
 .gallery-page .section-inner {
   text-align: center;
 }
@@ -2582,10 +2805,26 @@ a {
 @media (max-width: 980px) {
   .hero-grid,
   .page-hero,
+  .author-hero,
+  .author-brief-grid,
   .article-grid,
   .editorial-grid,
   .recipe-grid {
     grid-template-columns: 1fr;
+  }
+
+  .author-hero-main {
+    min-height: auto;
+  }
+
+  .author-profile-card {
+    grid-template-columns: minmax(13rem, 0.55fr) minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .author-profile-media {
+    min-height: 100%;
+    aspect-ratio: auto;
   }
 
   .cards,
@@ -2853,6 +3092,11 @@ a {
     aspect-ratio: 16 / 9;
   }
 
+  .author-profile-media img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
   .hero-stat-grid {
     grid-template-columns: 1fr;
   }
@@ -3018,10 +3262,43 @@ a {
   .cards,
   #article-list.cards,
   .cards-related,
+  .author-article-cards,
   .home-path-grid,
   .theme-grid,
   .recipe-grid {
     grid-template-columns: 1fr;
+  }
+
+  .author-section {
+    padding-top: 0.85rem;
+  }
+
+  .author-hero-main {
+    padding: 1.25rem 1.15rem 1.2rem;
+  }
+
+  .author-hero-main .page-title {
+    max-width: 100%;
+    font-size: clamp(1.9rem, 10.5vw, 2.4rem);
+    overflow-wrap: anywhere;
+  }
+
+  .author-stats {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1.05rem;
+  }
+
+  .author-profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .author-profile-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .author-brief-card {
+    padding: 1.1rem 1rem 1.15rem;
   }
 
   .newsletter-section,

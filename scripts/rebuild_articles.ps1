@@ -36,6 +36,41 @@ if ($null -eq $articleOverrides) {
   $articleOverrides = @{}
 }
 
+$siteAuthors = @(
+  [PSCustomObject]@{
+    Name = "Clara Fontaine"
+    Slug = "clara-fontaine"
+    Role = "Rédactrice jardinage urbain"
+    Description = "Clara Fontaine accompagne les jardiniers de balcon qui veulent commencer simplement : aromatiques, fleurs utiles, semis faciles et petits gestes saisonniers pour obtenir un coin vivant sans se compliquer la vie."
+    Intro = "Clara parle aux débutants comme aux jardiniers pressés : elle aide à choisir les bonnes plantes, à comprendre leurs besoins réels et à installer un balcon fleuri ou gourmand qui reste agréable au quotidien."
+    Approach = "Elle privilégie les essais progressifs, les variétés tolérantes et les conseils applicables sur quelques mètres carrés. Ses guides cherchent surtout à rendre le jardinage urbain plus clair, plus doux et moins intimidant."
+    Themes = @("cultures faciles", "aromatiques", "semis en pot", "balcons fleuris")
+  }
+  [PSCustomObject]@{
+    Name = "Louis Fargot"
+    Slug = "louis-fargot"
+    Role = "Rédacteur aménagement et matériel"
+    Description = "Louis Fargot s’intéresse à la partie très concrète du balcon : pots, supports, rangement, stabilité au vent et matériel vraiment utile pour aménager un petit espace sans l’encombrer."
+    Intro = "Louis regarde le balcon comme un lieu à organiser avant de le remplir. Il aide à choisir des contenants adaptés, à sécuriser les installations et à garder de la place pour circuler, arroser et profiter."
+    Approach = "Son approche reste pratique et mesurée : moins d’achats impulsifs, plus de solutions durables, stables et faciles à entretenir. Chaque conseil part des contraintes réelles d’un balcon urbain."
+    Themes = @("aménagement", "pots et contenants", "matériel utile", "balcons venteux")
+  }
+  [PSCustomObject]@{
+    Name = "Mathias Lancet"
+    Slug = "mathias-lancet"
+    Role = "Rédacteur entretien et cultures en pot"
+    Description = "Mathias Lancet aide à comprendre ce qui se passe dans les pots : arrosage, chaleur, maladies courantes, feuilles qui changent d’aspect et cultures potagères qui demandent des repères précis."
+    Intro = "Mathias aime partir des signes visibles : un pot qui sèche trop vite, une feuille qui jaunit, un plant qui ralentit. Ses guides aident à poser le bon diagnostic sans dramatiser, puis à agir simplement."
+    Approach = "Il relie l’observation des plantes aux gestes à faire au bon moment, avec des conseils adaptés aux volumes de terre limités, aux expositions changeantes et aux petits accidents de culture en ville."
+    Themes = @("entretien", "arrosage", "diagnostic des plantes", "cultures potagères")
+  }
+)
+
+$siteAuthorMap = @{}
+foreach ($siteAuthor in $siteAuthors) {
+  $siteAuthorMap[$siteAuthor.Name] = $siteAuthor
+}
+
 function HtmlEscape {
   param([string]$text)
 
@@ -122,6 +157,28 @@ function Convert-TimeRequired {
   }
 
   return ""
+}
+
+function Get-AuthorProfile {
+  param([string]$name)
+
+  if ([string]::IsNullOrWhiteSpace($name)) { return $null }
+
+  $normalizedName = [System.Net.WebUtility]::HtmlDecode($name).Trim()
+  if ($siteAuthorMap.ContainsKey($normalizedName)) {
+    return $siteAuthorMap[$normalizedName]
+  }
+
+  return $null
+}
+
+function Get-AuthorCanonicalUrl {
+  param([string]$name)
+
+  $profile = Get-AuthorProfile $name
+  if ($null -eq $profile) { return "" }
+
+  return "$siteUrl/auteurs/$($profile.Slug)/"
 }
 
 function Get-ImageFileName {
@@ -326,6 +383,7 @@ function Get-SiteFooterHtml {
             <strong>EcoBalcon</strong>
             <a href="${pagePrefix}categories/">Cat&eacute;gories</a>
             <a href="${pagePrefix}a-propos/">&Agrave; propos</a>
+            <a href="${pagePrefix}auteurs/">Auteurs</a>
             <a href="${pagePrefix}contact/">Contact</a>
           </nav>
         </div>
@@ -824,9 +882,12 @@ function Get-AuthorData {
 
   $pageAuthorName = Get-AuthorNameFromPageData -content $content -slug $slug
   if ($pageAuthorName) {
+    $pageAuthorProfile = Get-AuthorProfile $pageAuthorName
     return [PSCustomObject]@{
       Type = "Person"
       Name = $pageAuthorName
+      Slug = if ($pageAuthorProfile) { $pageAuthorProfile.Slug } else { "" }
+      Url = if ($pageAuthorProfile) { "$siteUrl/auteurs/$($pageAuthorProfile.Slug)/" } else { "" }
     }
   }
 
@@ -835,6 +896,8 @@ function Get-AuthorData {
     return [PSCustomObject]@{
       Type = "Organization"
       Name = "Eco Balcon"
+      Slug = ""
+      Url = ""
     }
   }
 
@@ -844,10 +907,19 @@ function Get-AuthorData {
 
   $authorType = if ($author.'@type') { [string]$author.'@type' } else { "Organization" }
   $authorName = if ($author.name) { [System.Net.WebUtility]::HtmlDecode([string]$author.name) } else { "Eco Balcon" }
+  $authorProfile = Get-AuthorProfile $authorName
 
   return [PSCustomObject]@{
     Type = $authorType
     Name = $authorName
+    Slug = if ($authorProfile) { $authorProfile.Slug } else { "" }
+    Url = if ($authorProfile) {
+      "$siteUrl/auteurs/$($authorProfile.Slug)/"
+    } elseif ($author.url) {
+      [string]$author.url
+    } else {
+      ""
+    }
   }
 }
 
@@ -964,6 +1036,8 @@ function Get-ArticleSources {
         TimeRequired = [string]$schema.timeRequired
         AuthorName = $authorData.Name
         AuthorType = $authorData.Type
+        AuthorSlug = $authorData.Slug
+        AuthorUrl = $authorData.Url
         Category = $category
         DateSort = $date
         Intro = [System.Net.WebUtility]::HtmlDecode($schema.description)
@@ -1472,6 +1546,14 @@ function Build-ArticleHtml {
   $tagManagerBody = Get-TagManagerBodyHtml
   $relatedArticles = @(Get-RelatedArticles -article $article -allArticles $allArticles -count 3)
 
+  $authorSchema = [ordered]@{
+    "@type" = $article.AuthorType
+    name = $article.AuthorName
+  }
+  if ($article.AuthorUrl) {
+    $authorSchema["url"] = $article.AuthorUrl
+  }
+
   $articleSchema = [ordered]@{
     "@context" = "https://schema.org"
     "@type" = "BlogPosting"
@@ -1484,10 +1566,7 @@ function Build-ArticleHtml {
     dateModified = $article.DateModified
     articleSection = $article.Category
     inLanguage = "fr"
-    author = [ordered]@{
-      "@type" = $article.AuthorType
-      name = $article.AuthorName
-    }
+    author = $authorSchema
     publisher = [ordered]@{
       "@type" = "Organization"
       name = "EcoBalcon"
@@ -1502,13 +1581,16 @@ function Build-ArticleHtml {
   $howToSchema = Get-ArticleHowToSchema -article $article
   $jsonLdScripts = Get-JsonLdScriptTags @($articleSchema, $breadcrumbSchema, $faqSchema, $howToSchema)
 
-  $metaParts = @("<span>Par $(HtmlEscape $article.AuthorName)</span>")
+  $authorNameHtml = HtmlEscape $article.AuthorName
+  $authorHref = if ($article.AuthorSlug) { "../../auteurs/$($article.AuthorSlug)/" } else { "" }
+  $authorInlineHtml = if ($authorHref) { "<a href=`"$authorHref`">$authorNameHtml</a>" } else { $authorNameHtml }
+  $metaParts = @("<span>Par $authorInlineHtml</span>")
   if ($dateText) { $metaParts += "<span>&bull;</span><span>$dateText</span>" }
   if ($timeText) { $metaParts += "<span>&bull;</span><span>$timeText</span>" }
   $metaHtml = ($metaParts -join "`n            ")
 
   $sidebarItems = @()
-  if ($article.AuthorName) { $sidebarItems += "                <li><strong>Auteur :</strong> $(HtmlEscape $article.AuthorName)</li>" }
+  if ($article.AuthorName) { $sidebarItems += "                <li><strong>Auteur :</strong> $authorInlineHtml</li>" }
   if ($article.Category) { $sidebarItems += "                <li><strong>Th&egrave;me :</strong> $(HtmlEscape $article.Category)</li>" }
   if ($timeText) { $sidebarItems += "                <li><strong>Lecture :</strong> $(HtmlEscape $timeText)</li>" }
   if ($dateText) { $sidebarItems += "                <li><strong>Publication :</strong> $(HtmlEscape $dateText)</li>" }
@@ -2678,6 +2760,365 @@ $(Get-SiteFooterHtml -pagePrefix "../")
 "@
 }
 
+function Build-AuthorCardHtml {
+  param(
+    [pscustomobject]$author,
+    [int]$articleCount
+  )
+
+  return @"
+          <article class="article-card">
+            <div class="article-card-body">
+              <div class="pill-row"><span class="pill">$articleCount guides</span></div>
+              <h2><a href="$($author.Slug)/">$(HtmlEscape $author.Name)</a></h2>
+              <p>$(HtmlEscape $author.Description)</p>
+            </div>
+          </article>
+"@
+}
+
+function Build-AuthorIndexHtml {
+  param([object[]]$allArticles)
+
+  $canonicalUrl = "$siteUrl/auteurs/"
+  $title = "Auteurs EcoBalcon"
+  $description = "Decouvre les signatures EcoBalcon, leurs themes editoriaux et les guides pratiques publies sur le jardinage de balcon."
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $heroImageDimensions = Get-RootImageDimensionAttributes "images\balcon-soleil.webp"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../"
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $cardsHtml = (($siteAuthors | ForEach-Object {
+        $author = $_
+        $articleCount = @($allArticles | Where-Object { $_.AuthorSlug -eq $author.Slug }).Count
+        Build-AuthorCardHtml -author $author -articleCount $articleCount
+      }) -join "`n")
+
+  $itemListElements = @()
+  $position = 1
+  foreach ($author in $siteAuthors) {
+    $itemListElements += [ordered]@{
+      "@type" = "ListItem"
+      position = $position
+      name = $author.Name
+      url = "$siteUrl/auteurs/$($author.Slug)/"
+    }
+    $position += 1
+  }
+
+  $jsonLd = Get-JsonLdScriptTags @(
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "CollectionPage"
+      name = $title
+      url = $canonicalUrl
+      inLanguage = "fr"
+      description = $description
+      isPartOf = [ordered]@{
+        "@type" = "WebSite"
+        name = "EcoBalcon"
+        url = "$siteUrl/"
+      }
+      mainEntity = [ordered]@{
+        "@type" = "ItemList"
+        itemListElement = $itemListElements
+      }
+    },
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "BreadcrumbList"
+      itemListElement = @(
+        [ordered]@{ "@type" = "ListItem"; position = 1; name = "Accueil"; item = "$siteUrl/" },
+        [ordered]@{ "@type" = "ListItem"; position = 2; name = "Auteurs"; item = $canonicalUrl }
+      )
+    }
+  )
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title | EcoBalcon</title>
+  <meta name="description" content="$description">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$title | EcoBalcon">
+  <meta property="og:description" content="$description">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta property="og:image" content="$siteUrl/images/balcon-soleil.webp">
+  <meta property="og:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$title | EcoBalcon">
+  <meta name="twitter:description" content="$description">
+  <meta name="twitter:image" content="$siteUrl/images/balcon-soleil.webp">
+  <meta name="twitter:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+$jsonLd
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body class="articles-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../"><span class="brand-mark"><img class="brand-logo" src="../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions></span></a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="../">Accueil</a>
+            <a href="../articles/">Articles</a>
+            <a href="../simulateur/">Outils</a>
+            <a href="../galerie/">Galerie</a>
+            <a href="../a-propos/">A propos</a>
+            <a href="../contact/">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="section-inner">
+        <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+          <ol class="breadcrumb">
+            <li><a href="../">Accueil</a></li>
+            <li aria-current="page">Auteurs</li>
+          </ol>
+        </nav>
+        <section class="page-hero">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Equipe editoriale</span>
+            <h1 class="page-title">Les signatures EcoBalcon</h1>
+            <p class="page-intro">Chaque auteur couvre des sujets precis du jardinage sur balcon : cultures faciles, entretien des pots, amenagement, arrosage, materiel utile et petits problemes de saison.</p>
+          </div>
+          <article class="article-card">
+            <img src="../images/balcon-soleil.webp" alt="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
+            <div class="article-card-body">
+              <div class="pill-row"><span class="pill">EcoBalcon</span></div>
+              <h2>Une ligne editoriale specialisee balcon</h2>
+              <p>Les profils auteurs relient les guides a leurs angles editoriaux pour renforcer la lisibilite et la confiance.</p>
+            </div>
+          </article>
+        </section>
+
+        <div class="cards">
+$cardsHtml
+        </div>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "../")
+  </div>
+</body>
+</html>
+"@
+}
+
+function Build-AuthorPageHtml {
+  param(
+    [pscustomobject]$author,
+    [object[]]$allArticles
+  )
+
+  $canonicalUrl = "$siteUrl/auteurs/$($author.Slug)/"
+  $title = "$($author.Name), auteur EcoBalcon"
+  $description = $author.Description
+  $authorArticles = @($allArticles | Where-Object { $_.AuthorSlug -eq $author.Slug })
+  $articleCount = $authorArticles.Count
+  $cardsHtml = (($authorArticles | ForEach-Object {
+        Build-ArticleCardHtml -article $_ -hrefPrefix "../../articles/" -imagePrefix "../../images/articles/"
+      }) -join "`n")
+  if (-not $cardsHtml) {
+    $cardsHtml = '          <p>Aucun article signe par cet auteur pour le moment.</p>'
+  }
+  $themeCount = $author.Themes.Count
+  $authorInitials = (($author.Name -split '\s+' | Where-Object { $_ } | ForEach-Object { $_.Substring(0, 1) }) -join '').ToUpperInvariant()
+  $themesHtml = (($author.Themes | ForEach-Object { "              <span class=`"author-theme-pill`">$(HtmlEscape $_)</span>" }) -join "`n")
+  $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
+  $heroImageDimensions = Get-RootImageDimensionAttributes "images\balcon-soleil.webp"
+  $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../../"
+  $tagManagerBody = Get-TagManagerBodyHtml
+  $jsonLd = Get-JsonLdScriptTags @(
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "ProfilePage"
+      name = $title
+      url = $canonicalUrl
+      inLanguage = "fr"
+      description = $description
+      isPartOf = [ordered]@{
+        "@type" = "WebSite"
+        name = "EcoBalcon"
+        url = "$siteUrl/"
+      }
+      mainEntity = [ordered]@{
+        "@type" = "Person"
+        name = $author.Name
+        url = $canonicalUrl
+        jobTitle = $author.Role
+        description = $description
+        worksFor = [ordered]@{
+          "@type" = "Organization"
+          name = "EcoBalcon"
+          url = "$siteUrl/"
+        }
+      }
+    },
+    [ordered]@{
+      "@context" = "https://schema.org"
+      "@type" = "BreadcrumbList"
+      itemListElement = @(
+        [ordered]@{ "@type" = "ListItem"; position = 1; name = "Accueil"; item = "$siteUrl/" },
+        [ordered]@{ "@type" = "ListItem"; position = 2; name = "Auteurs"; item = "$siteUrl/auteurs/" },
+        [ordered]@{ "@type" = "ListItem"; position = 3; name = $author.Name; item = $canonicalUrl }
+      )
+    }
+  )
+
+  return @"
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title | EcoBalcon</title>
+  <meta name="description" content="$(HtmlEscape $description)">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="$canonicalUrl">
+  <link rel="alternate" hreflang="fr" href="$canonicalUrl">
+  <link rel="alternate" hreflang="x-default" href="$canonicalUrl">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EcoBalcon">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="$title | EcoBalcon">
+  <meta property="og:description" content="$(HtmlEscape $description)">
+  <meta property="og:url" content="$canonicalUrl">
+  <meta property="og:image" content="$siteUrl/images/balcon-soleil.webp">
+  <meta property="og:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$title | EcoBalcon">
+  <meta name="twitter:description" content="$(HtmlEscape $description)">
+  <meta name="twitter:image" content="$siteUrl/images/balcon-soleil.webp">
+  <meta name="twitter:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+$jsonLd
+$tagManagerHead
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+$(Get-AppHeadHtml)
+  <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+<body class="articles-page author-page">
+$tagManagerBody
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../../"><span class="brand-mark"><img class="brand-logo" src="../../images/logo-site.png" alt="Logo EcoBalcon"$logoDimensions></span></a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Navigation principale">
+            <a href="../../">Accueil</a>
+            <a href="../../articles/">Articles</a>
+            <a href="../../simulateur/">Outils</a>
+            <a href="../../galerie/">Galerie</a>
+            <a href="../../a-propos/">&Agrave; propos</a>
+            <a href="../../contact/">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="section author-section">
+      <div class="section-inner">
+        <nav class="breadcrumb-nav" aria-label="fil d'ariane">
+          <ol class="breadcrumb">
+            <li><a href="../../">Accueil</a></li>
+            <li><a href="../">Auteurs</a></li>
+            <li aria-current="page">$(HtmlEscape $author.Name)</li>
+          </ol>
+        </nav>
+
+        <section class="author-hero" aria-labelledby="author-title">
+          <div class="author-hero-main">
+            <span class="eyebrow">Auteur EcoBalcon</span>
+            <h1 class="page-title" id="author-title">$(HtmlEscape $author.Name)</h1>
+            <p class="page-intro">$(HtmlEscape $author.Intro)</p>
+            <div class="author-stats" aria-label="Repères auteur">
+              <span><strong>$articleCount</strong> guides publi&eacute;s</span>
+              <span><strong>$themeCount</strong> th&egrave;mes suivis</span>
+              <span><strong>EcoBalcon</strong> ligne &eacute;ditoriale</span>
+            </div>
+          </div>
+          <aside class="author-profile-card" aria-label="Profil de $(HtmlEscape $author.Name)">
+            <div class="author-profile-media">
+              <img src="../../images/balcon-soleil.webp" alt="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
+              <span class="author-initials" aria-hidden="true">$authorInitials</span>
+            </div>
+            <div class="author-profile-body">
+              <span class="author-role">$(HtmlEscape $author.Role)</span>
+              <p>$(HtmlEscape $author.Description)</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="author-brief-grid" aria-label="Approche éditoriale">
+          <article class="author-brief-card author-approach-card">
+            <span class="eyebrow">M&eacute;thode</span>
+            <h2>Son approche</h2>
+            <p>$(HtmlEscape $author.Approach)</p>
+          </article>
+          <article class="author-brief-card author-theme-card">
+            <span class="eyebrow">Domaines</span>
+            <h2>Th&egrave;mes suivis</h2>
+            <div class="author-theme-list">
+$themesHtml
+            </div>
+          </article>
+        </section>
+
+        <section class="related-section author-articles-section" aria-labelledby="author-articles-heading">
+          <div class="section-heading section-heading-compact author-articles-heading">
+            <div>
+              <span class="eyebrow">Biblioth&egrave;que</span>
+              <h2 id="author-articles-heading">Articles sign&eacute;s par $(HtmlEscape $author.Name)</h2>
+              <p>Les guides EcoBalcon reli&eacute;s &agrave; cette signature.</p>
+            </div>
+          </div>
+          <div class="cards author-article-cards">
+$cardsHtml
+          </div>
+        </section>
+      </div>
+    </main>
+
+$(Get-SiteFooterHtml -pagePrefix "../../")
+  </div>
+</body>
+</html>
+"@
+}
+
+function Write-AuthorPages {
+  param([object[]]$allArticles)
+
+  $authorsDir = Join-Path $root "auteurs"
+  New-Item -ItemType Directory -Path $authorsDir -Force | Out-Null
+  Set-Content -Path (Join-Path $authorsDir "index.html") -Value (Build-AuthorIndexHtml $allArticles) -Encoding UTF8
+
+  foreach ($author in $siteAuthors) {
+    $authorDir = Join-Path $authorsDir $author.Slug
+    New-Item -ItemType Directory -Path $authorDir -Force | Out-Null
+    Set-Content -Path (Join-Path $authorDir "index.html") -Value (Build-AuthorPageHtml -author $author -allArticles $allArticles) -Encoding UTF8
+  }
+}
+
 $relatedArticlePriorityMap = @{
   "guide-fraises-sur-son-balcon" = @("tomates-cerises-balcon", "guide-epinards-sur-son-balcon", "guide-poivrons-sur-son-balcon")
   "guide-epinards-sur-son-balcon" = @("guide-fraises-sur-son-balcon", "tomates-cerises-balcon", "guide-poivrons-sur-son-balcon")
@@ -3414,6 +3855,10 @@ function Build-SitemapXml {
     [ordered]@{ Path = "simulateur\index.html"; Loc = "$siteUrl/simulateur/"; Priority = "0.8"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "checklists\arrosage-vacances\index.html"; Loc = "$siteUrl/checklists/arrosage-vacances/"; Priority = "0.6"; ImageUrl = ""; ImageCaption = "" },
     [ordered]@{ Path = "a-propos\index.html"; Loc = "$siteUrl/a-propos/"; Priority = "0.6"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "auteurs\index.html"; Loc = "$siteUrl/auteurs/"; Priority = "0.55"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "auteurs\clara-fontaine\index.html"; Loc = "$siteUrl/auteurs/clara-fontaine/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "auteurs\louis-fargot\index.html"; Loc = "$siteUrl/auteurs/louis-fargot/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "categories\index.html"; Loc = "$siteUrl/categories/"; Priority = "0.7"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "categories\fiches-techniques\index.html"; Loc = "$siteUrl/categories/fiches-techniques/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/menthe-pot-balcon-pexels-12727257.webp"; ImageCaption = "Menthe vigoureuse cultivée seule en pot, avec feuillage vert dense" },
     [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-mai-sur-un-balcon.jpg"; ImageCaption = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite" },
@@ -3537,6 +3982,8 @@ Set-Content -Path (Join-Path $contactDir "index.html") -Value (Build-ContactPage
 Set-Content -Path (Join-Path $contactThanksDir "index.html") -Value (Build-ContactThanksHtml) -Encoding UTF8
 Set-Content -Path (Join-Path $root "contact.html") -Value (Get-RedirectHtml -targetUrl $contactPageUrl -title "Contact | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.") -Encoding UTF8
 
+Write-AuthorPages $articles
+
 $homePath = Join-Path $root "index.html"
 $homeStatus = "Homepage preserved as-is (use -RebuildHome to regenerate it)"
 $homeBackupStatus = ""
@@ -3559,7 +4006,7 @@ Set-Content -Path (Join-Path $root "sitemap.xml") -Value (Build-SitemapXml $arti
 Set-Content -Path (Join-Path $root "robots.txt") -Value (Build-RobotsTxt) -Encoding UTF8
 Set-Content -Path (Join-Path $root "manifest.json") -Value (Build-ManifestJson) -Encoding UTF8
 
-Write-Output "Updated style.min.css, articles index, 404.html, contact pages, politique-confidentialite.html, sitemap.xml, robots.txt and manifest.json"
+Write-Output "Updated style.min.css, articles index, author pages, 404.html, contact pages, politique-confidentialite.html, sitemap.xml, robots.txt and manifest.json"
 if ($homeBackupStatus) {
   Write-Output $homeBackupStatus
 }
