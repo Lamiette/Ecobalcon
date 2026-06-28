@@ -3,7 +3,7 @@
     "que-planter-en-mai-sur-un-balcon" = [ordered]@{
       Title = "Que planter en mai sur un balcon ? Les cultures faciles pour passer au rythme d’été"
       SeoTitle = "Que planter en mai sur un balcon ?"
-      Description = "Que planter en mai sur un balcon : tomates cerises, basilic, poivrons, haricots nains, fleurs utiles et derniers semis faciles quand les nuits deviennent plus douces."
+      Description = "Que planter en mai sur un balcon : tomates cerises, basilic, poivrons, haricots nains et fleurs utiles quand les nuits se radoucissent."
       Intro = "Mai change vraiment la donne sur un balcon. Les nuits deviennent plus douces, les plants d’été trouvent enfin leur place et on peut passer du simple redémarrage de printemps à un vrai balcon productif, sans tout brusquer."
       TimeRequired = "PT6M"
       DatePublished = "2026-04-18T09:00:00.000Z"
@@ -529,7 +529,7 @@
     }
     "tomates-cerises-balcon" = [ordered]@{
       Title = "Tomates cerises sur balcon : le guide simple pour bien démarrer"
-      SeoTitle = "Tomates cerises sur balcon : guide simple pour réussir"
+      SeoTitle = "Tomates cerises sur balcon : guide"
       Description = "Tomates cerises sur balcon : variété facile, pot de 20 à 30 L, soleil, arrosage et taille légère. Les bons repères pour récolter tout l’été en pot."
       Intro = "La tomate cerise reste l’une des meilleures cultures pour débuter un balcon potager ensoleillé. Avec un grand pot, beaucoup de lumière et un arrosage régulier, elle donne vite une récolte concrète sans demander la même technicité qu’une grosse tomate."
       TimeRequired = "PT4M"
@@ -1268,7 +1268,8 @@
       }
     }
     "jardiner-sur-un-balcon" = [ordered]@{
-      Description = "Jardiner sur un balcon : exposition, pots, premières cultures, arrosage, organisation et gestes de saison. Le guide pour créer un coin vivant en ville sans se compliquer."
+      SeoTitle = "Jardiner sur balcon : potager urbain"
+      Description = "Jardiner sur un balcon : exposition, pots, premières cultures, arrosage et gestes simples pour créer un coin vivant en ville."
       Intro = "Un balcon peut devenir un vrai jardin à vivre, même avec peu de place. Le plus important n’est pas de tout planter d’un coup, mais de comprendre l’exposition, de choisir quelques cultures adaptées et de construire un rythme simple."
       TimeRequired = "PT6M"
       DateModified = "2026-04-04T09:00:00.000Z"
@@ -1342,7 +1343,7 @@
       }
     }
     "legumes-faciles-a-cultiver" = [ordered]@{
-      Description = "Légumes faciles à cultiver sur balcon : ceux qui poussent vite, demandent peu de profondeur ou supportent bien la culture en pot. Une sélection concrète pour débuter sereinement."
+      Description = "Légumes faciles sur balcon : 10 cultures en pot pour débuter, avec profondeur, exposition et arrosage adaptés aux petits espaces."
       Intro = "Tous les légumes ne se valent pas quand on débute sur un balcon. Les plus faciles sont souvent ceux qui poussent vite, supportent bien la culture en pot et pardonnent davantage les petites erreurs d’arrosage ou d’exposition."
       TimeRequired = "PT6M"
       DateModified = "2026-04-04T09:00:00.000Z"
@@ -1479,7 +1480,8 @@
       }
     }
     "petits-fruits-en-pot" = [ordered]@{
-      Description = "Petits fruits en pot sur balcon : fraisiers, framboisiers nains, myrtilles, groseilliers et cassissiers. Le guide pour récolter des fruits même en petit espace."
+      SeoTitle = "Petits fruits en pot sur balcon"
+      Description = "Petits fruits en pot : fraisiers, framboisiers nains, myrtilles et groseilliers pour récolter sur balcon même avec peu de place."
       Intro = "Les petits fruits ont toute leur place sur un balcon : ils sont décoratifs, gourmands et souvent plus accessibles qu’on l’imagine. Le vrai secret consiste à choisir les espèces en fonction du volume des pots, de la lumière et du rythme d’arrosage."
       TimeRequired = "PT6M"
       DateModified = "2026-03-28T11:30:00.000Z"
@@ -1769,7 +1771,7 @@
     }
     "insectes-utiles-sur-un-balcon" = [ordered]@{
       Title = "Insectes utiles sur un balcon : lesquels attirer et pourquoi"
-      SeoTitle = "Insectes utiles sur un balcon : lesquels attirer ?"
+      SeoTitle = "Insectes utiles sur balcon : guide"
       Description = "Coccinelles, syrphes, abeilles solitaires, chrysopes : quels insectes utiles attirer sur un balcon et comment les faire venir naturellement."
       Intro = "Un balcon vivant ne repose pas seulement sur les plantes. Quand des insectes utiles s’installent, les fleurs sont mieux visitées et certains ravageurs sont régulés plus tôt, sans transformer le balcon en terrain d’intervention permanente."
       DateModified = "2026-04-19T09:00:00.000Z"
@@ -1995,15 +1997,40 @@
       Description = "Paillage en pot : paillis adaptés, épaisseur, arrosage et gestes propres pour garder la terre fraîche sans attirer les nuisibles ni étouffer les plantes."
       Intro = "Découvre comment pailler des pots grâce à des techniques simples, des paillis adaptés et des gestes propres pour garder l’humidité plus longtemps."
     }
+    "arroser-plantes-balcon-vacances" = [ordered]@{
+      SeoTitle = "Arrosage vacances balcon : solutions simples"
+    }
+    "diy-pots-pour-le-balcon" = [ordered]@{
+      SeoTitle = "DIY pots balcon : recycler et planter"
+      Description = "DIY pots balcon : transforme boîtes, passoires ou briques en contenants drainés, stables et faciles à utiliser pour tes plantes en pot."
+    }
+    "fleurs-comestibles-melliferes-balcon" = [ordered]@{
+      SeoTitle = "Fleurs comestibles sur balcon"
+    }
     "jardinage-en-lasagnes-sur-balcon" = [ordered]@{
       SeoTitle = "Bac en lasagnes sur balcon"
+      Description = "Jardinage en lasagnes sur balcon : monter un bac fertile, léger et pratique avec des couches adaptées aux petits espaces."
+    }
+    "jardin-sur-balcon-astuces" = [ordered]@{
+      Description = "10 astuces pour démarrer un jardin sur balcon : bons pots, plantes faciles, arrosage simple et organisation réaliste en petit espace."
     }
     "ombrer-balcon-plantes-chaleur" = [ordered]@{
       SeoTitle = "Ombre légère sur balcon : protéger les plantes"
       ImageFileName = "ombrer-balcon-plantes-chaleur.webp"
     }
+    "plantes-pour-un-balcon-plein-soleil" = [ordered]@{
+      SeoTitle = "Balcon plein soleil : plantes faciles"
+    }
+    "potager-balcon-eau-de-cuisson" = [ordered]@{
+      SeoTitle = "Potager balcon : eau de cuisson"
+      Description = "Potager balcon : semis faciles, eau de cuisson refroidie et gestes simples pour arroser sans gaspiller."
+    }
+    "erreurs-jardiner-sur-un-balcon" = [ordered]@{
+      Description = "Les erreurs à éviter sur balcon : exposition, arrosage, pots trop petits et espace surchargé. Les bons réflexes pour mieux démarrer."
+    }
     "feuilles-blanches-balcon-oidium" = [ordered]@{
       ImageFileName = "feuilles-oidium-balcon.webp"
+      Description = "Feuilles blanches en pot : reconnaître l’oïdium, éviter les confusions et agir simplement sur courgettes, concombres ou tomates."
     }
     "tailler-tomates-balcon" = [ordered]@{
       ImageFileName = "tailler-tomates-balcon-pexels-7299975.webp"
@@ -2107,7 +2134,7 @@
     }
     "recuperer-eau-de-pluie-balcon" = [ordered]@{
       Title = "Récupérer l’eau de pluie sur un balcon : solutions simples sans gouttière"
-      SeoTitle = "Récupérer l’eau de pluie sur un balcon sans gouttière"
+      SeoTitle = "Eau de pluie sur balcon sans gouttière"
       Description = "Récupérer l’eau de pluie sur un balcon : idées simples sans gouttière, stockage prudent et usages utiles pour arroser sans gaspiller."
       Intro = "Même sans gouttière, un balcon peut récupérer un peu d’eau de pluie utile pour l’arrosage. Le plus important est de rester simple, prudent et cohérent avec l’espace disponible."
       DateModified = "2026-04-19T09:00:00.000Z"

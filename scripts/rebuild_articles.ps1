@@ -46,6 +46,8 @@ $siteAuthors = @(
     Intro = "Clara parle aux débutants comme aux jardiniers pressés : elle aide à choisir les bonnes plantes, à comprendre leurs besoins réels et à installer un balcon fleuri ou gourmand qui reste agréable au quotidien."
     Approach = "Elle privilégie les essais progressifs, les variétés tolérantes et les conseils applicables sur quelques mètres carrés. Ses guides cherchent surtout à rendre le jardinage urbain plus clair, plus doux et moins intimidant."
     Themes = @("cultures faciles", "aromatiques", "semis en pot", "balcons fleuris")
+    PhotoFileName = "clara-fontaine-balcon-fleuri.webp"
+    PhotoAlt = "Portrait de Clara Fontaine sur un balcon végétalisé, avec des aromatiques en pot"
   }
   [PSCustomObject]@{
     Name = "Louis Fargot"
@@ -56,6 +58,8 @@ $siteAuthors = @(
     Intro = "Louis regarde le balcon comme un lieu à organiser avant de le remplir. Il aide à choisir des contenants adaptés, à sécuriser les installations et à garder de la place pour circuler, arroser et profiter."
     Approach = "Son approche reste pratique et mesurée : moins d’achats impulsifs, plus de solutions durables, stables et faciles à entretenir. Chaque conseil part des contraintes réelles d’un balcon urbain."
     Themes = @("aménagement", "pots et contenants", "matériel utile", "balcons venteux")
+    PhotoFileName = "louis-fargot-outils-balcon.webp"
+    PhotoAlt = "Portrait de Louis Fargot sur un balcon urbain, devant des plantes en pot"
   }
   [PSCustomObject]@{
     Name = "Mathias Lancet"
@@ -66,6 +70,8 @@ $siteAuthors = @(
     Intro = "Mathias aime partir des signes visibles : un pot qui sèche trop vite, une feuille qui jaunit, un plant qui ralentit. Ses guides aident à poser le bon diagnostic sans dramatiser, puis à agir simplement."
     Approach = "Il relie l’observation des plantes aux gestes à faire au bon moment, avec des conseils adaptés aux volumes de terre limités, aux expositions changeantes et aux petits accidents de culture en ville."
     Themes = @("entretien", "arrosage", "diagnostic des plantes", "cultures potagères")
+    PhotoFileName = "mathias-lancet.png"
+    PhotoAlt = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot"
   }
 )
 
@@ -112,7 +118,10 @@ function Get-TrackingHeadHtml {
 }
 
 function Get-AppHeadHtml {
+  $cspPolicy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;"
+
   return @"
+  <meta http-equiv="Content-Security-Policy" content="$cspPolicy">
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="$themeColor">
   <link rel="manifest" href="/manifest.json">
@@ -2697,8 +2706,8 @@ $(Get-SiteFooterHtml -pagePrefix "../")
         syncFilterParams();
       };
 
-      const initialQuery = currentHashParams.get("q");
-      const initialTheme = currentHashParams.get("theme");
+      const initialQuery = currentHashParams.get("q") ?? currentUrl.searchParams.get("q");
+      const initialTheme = currentHashParams.get("theme") ?? currentUrl.searchParams.get("theme");
 
       if (initialQuery) {
         searchInput.value = initialQuery;
@@ -2769,12 +2778,66 @@ function Build-AuthorCardHtml {
     [int]$articleCount
   )
 
+  $authorInitials = (($author.Name -split '\s+' | Where-Object { $_ } | ForEach-Object { $_.Substring(0, 1) }) -join '').ToUpperInvariant()
+  $avatarContent = if ($author.PhotoFileName) {
+    "<img src=`"../images/auteurs/$($author.PhotoFileName)`" alt=`"`" loading=`"lazy`" decoding=`"async`">"
+  } else { $authorInitials }
+  $authorAccent = switch ($author.Slug) {
+    "clara-fontaine" { "#2d6a4f" }
+    "louis-fargot" { "#8b5e36" }
+    "mathias-lancet" { "#3a5970" }
+    default { "#2f6f59" }
+  }
+  $authorAccentRgb = switch ($author.Slug) {
+    "clara-fontaine" { "45,106,79" }
+    "louis-fargot" { "139,94,54" }
+    "mathias-lancet" { "58,89,112" }
+    default { "47,111,89" }
+  }
+  $authorFocus = switch ($author.Slug) {
+    "clara-fontaine" { "Cultures simples" }
+    "louis-fargot" { "Balcon pratique" }
+    "mathias-lancet" { "Diagnostic des pots" }
+    default { "Guide balcon" }
+  }
+  $themeLabels = @{
+    "cultures faciles" = "Cultures faciles"
+    "aromatiques" = "Aromatiques"
+    "semis en pot" = "Semis en pot"
+    "balcons fleuris" = "Balcons fleuris"
+    "aménagement" = "Aménagement"
+    "pots et contenants" = "Pots et contenants"
+    "matériel utile" = "Matériel utile"
+    "balcons venteux" = "Balcons venteux"
+    "entretien" = "Entretien"
+    "arrosage" = "Arrosage"
+    "diagnostic des plantes" = "Diagnostic des plantes"
+    "cultures potagères" = "Cultures potagères"
+  }
+  $themesHtml = (($author.Themes | Select-Object -First 3 | ForEach-Object {
+        $theme = [string]$_
+        $label = if ($themeLabels.ContainsKey($theme)) { $themeLabels[$theme] } else { $theme }
+        "              <span class=`"author-theme-pill`">$(HtmlEscape $label)</span>"
+      }) -join "`n")
+  $guideLabel = if ($articleCount -gt 1) { "guides publiés" } else { "guide publié" }
+
   return @"
-          <article class="article-card">
-            <div class="article-card-body">
-              <div class="pill-row"><span class="pill">$articleCount guides</span></div>
-              <h2><a href="$($author.Slug)/">$(HtmlEscape $author.Name)</a></h2>
-              <p>$(HtmlEscape $author.Description)</p>
+          <article class="author-index-card" style="--ac:$authorAccent;--ac-rgb:$authorAccentRgb">
+            <div class="author-index-header">
+              <span class="author-index-avatar" aria-hidden="true">$avatarContent</span>
+              <div class="author-index-id">
+                <span class="author-index-kicker">$(HtmlEscape $authorFocus)</span>
+                <h2 class="author-index-name"><a href="$($author.Slug)/">$(HtmlEscape $author.Name)</a></h2>
+                <span class="author-index-role">$(HtmlEscape $author.Role)</span>
+              </div>
+            </div>
+            <p class="author-index-bio">$(HtmlEscape $author.Description)</p>
+            <div class="author-index-tags">
+$themesHtml
+            </div>
+            <div class="author-index-card-footer">
+              <span class="author-index-count"><strong>$articleCount</strong> $guideLabel</span>
+              <a href="$($author.Slug)/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
             </div>
           </article>
 "@
@@ -2785,9 +2848,8 @@ function Build-AuthorIndexHtml {
 
   $canonicalUrl = "$siteUrl/auteurs/"
   $title = "Auteurs EcoBalcon"
-  $description = "Decouvre les signatures EcoBalcon, leurs themes editoriaux et les guides pratiques publies sur le jardinage de balcon."
+  $description = "Découvre les signatures EcoBalcon, leurs thèmes éditoriaux et les guides pratiques publiés sur le jardinage de balcon."
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $heroImageDimensions = Get-RootImageDimensionAttributes "images\balcon-soleil.webp"
   $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $cardsHtml = (($siteAuthors | ForEach-Object {
@@ -2869,7 +2931,7 @@ $tagManagerHead
 $(Get-AppHeadHtml)
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
-<body class="articles-page">
+<body class="articles-page author-index-page">
 $tagManagerBody
   <div class="site-shell">
     <header class="site-header">
@@ -2888,7 +2950,7 @@ $tagManagerBody
       </div>
     </header>
 
-    <main class="section">
+    <main class="section author-index-section">
       <div class="section-inner">
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
@@ -2896,23 +2958,20 @@ $tagManagerBody
             <li aria-current="page">Auteurs</li>
           </ol>
         </nav>
-        <section class="page-hero">
-          <div class="page-hero-copy">
-            <span class="eyebrow">Equipe editoriale</span>
-            <h1 class="page-title">Les signatures EcoBalcon</h1>
-            <p class="page-intro">Chaque auteur couvre des sujets precis du jardinage sur balcon : cultures faciles, entretien des pots, amenagement, arrosage, materiel utile et petits problemes de saison.</p>
-          </div>
-          <article class="article-card">
-            <img src="../images/balcon-soleil.webp" alt="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
-            <div class="article-card-body">
-              <div class="pill-row"><span class="pill">EcoBalcon</span></div>
-              <h2>Une ligne editoriale specialisee balcon</h2>
-              <p>Les profils auteurs relient les guides a leurs angles editoriaux pour renforcer la lisibilite et la confiance.</p>
+        <section class="author-index-hero" aria-labelledby="authors-title">
+          <div class="author-index-hero-copy">
+            <span class="eyebrow">Équipe éditoriale</span>
+            <h1 class="page-title" id="authors-title">Les signatures EcoBalcon</h1>
+            <p class="page-intro">Chaque auteur couvre un angle précis du jardinage sur balcon : cultures faciles, entretien des pots, aménagement, arrosage, matériel utile et petits problèmes de saison.</p>
+            <div class="author-index-proof" aria-label="Repères éditoriaux">
+              <span><strong>$($siteAuthors.Count)</strong> signatures</span>
+              <span><strong>Balcon</strong> terrain commun</span>
+              <span><strong>Guides</strong> concrets</span>
             </div>
-          </article>
+          </div>
         </section>
 
-        <div class="cards">
+        <div class="author-index-grid">
 $cardsHtml
         </div>
       </div>
@@ -2946,7 +3005,12 @@ function Build-AuthorPageHtml {
   $authorInitials = (($author.Name -split '\s+' | Where-Object { $_ } | ForEach-Object { $_.Substring(0, 1) }) -join '').ToUpperInvariant()
   $themesHtml = (($author.Themes | ForEach-Object { "              <span class=`"author-theme-pill`">$(HtmlEscape $_)</span>" }) -join "`n")
   $logoDimensions = Get-RootImageDimensionAttributes "images\logo-site.png"
-  $heroImageDimensions = Get-RootImageDimensionAttributes "images\balcon-soleil.webp"
+  $authorPhotoFileName = if ($author.PhotoFileName) { [string]$author.PhotoFileName } else { "balcon-soleil.webp" }
+  $authorPhotoRootPath = if ($author.PhotoFileName) { "images\auteurs\$authorPhotoFileName" } else { "images\balcon-soleil.webp" }
+  $authorPhotoSrc = if ($author.PhotoFileName) { "../../images/auteurs/$authorPhotoFileName" } else { "../../images/balcon-soleil.webp" }
+  $authorPhotoUrl = if ($author.PhotoFileName) { "$siteUrl/images/auteurs/$authorPhotoFileName" } else { "$siteUrl/images/balcon-soleil.webp" }
+  $authorPhotoAlt = if ($author.PhotoAlt) { [string]$author.PhotoAlt } else { "Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" }
+  $authorPhotoDimensions = Get-RootImageDimensionAttributes $authorPhotoRootPath
   $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $jsonLd = Get-JsonLdScriptTags @(
@@ -3004,13 +3068,13 @@ function Build-AuthorPageHtml {
   <meta property="og:title" content="$title | EcoBalcon">
   <meta property="og:description" content="$(HtmlEscape $description)">
   <meta property="og:url" content="$canonicalUrl">
-  <meta property="og:image" content="$siteUrl/images/balcon-soleil.webp">
-  <meta property="og:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+  <meta property="og:image" content="$authorPhotoUrl">
+  <meta property="og:image:alt" content="$(HtmlEscape $authorPhotoAlt)">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="$title | EcoBalcon">
   <meta name="twitter:description" content="$(HtmlEscape $description)">
-  <meta name="twitter:image" content="$siteUrl/images/balcon-soleil.webp">
-  <meta name="twitter:image:alt" content="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon">
+  <meta name="twitter:image" content="$authorPhotoUrl">
+  <meta name="twitter:image:alt" content="$(HtmlEscape $authorPhotoAlt)">
 $jsonLd
 $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
@@ -3061,7 +3125,7 @@ $tagManagerBody
           </div>
           <aside class="author-profile-card" aria-label="Profil de $(HtmlEscape $author.Name)">
             <div class="author-profile-media">
-              <img src="../../images/balcon-soleil.webp" alt="Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" loading="eager" decoding="async" fetchpriority="high"$heroImageDimensions>
+              <img src="$authorPhotoSrc" alt="$(HtmlEscape $authorPhotoAlt)" loading="eager" decoding="async" fetchpriority="high"$authorPhotoDimensions>
               <span class="author-initials" aria-hidden="true">$authorInitials</span>
             </div>
             <div class="author-profile-body">
@@ -3859,9 +3923,9 @@ function Build-SitemapXml {
     [ordered]@{ Path = "checklists\arrosage-vacances\index.html"; Loc = "$siteUrl/checklists/arrosage-vacances/"; Priority = "0.6"; ImageUrl = ""; ImageCaption = "" },
     [ordered]@{ Path = "a-propos\index.html"; Loc = "$siteUrl/a-propos/"; Priority = "0.6"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "auteurs\index.html"; Loc = "$siteUrl/auteurs/"; Priority = "0.55"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
-    [ordered]@{ Path = "auteurs\clara-fontaine\index.html"; Loc = "$siteUrl/auteurs/clara-fontaine/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
-    [ordered]@{ Path = "auteurs\louis-fargot\index.html"; Loc = "$siteUrl/auteurs/louis-fargot/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
-    [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
+    [ordered]@{ Path = "auteurs\clara-fontaine\index.html"; Loc = "$siteUrl/auteurs/clara-fontaine/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/clara-fontaine-balcon-fleuri.webp"; ImageCaption = "Portrait de Clara Fontaine sur un balcon végétalisé, avec des aromatiques en pot" },
+    [ordered]@{ Path = "auteurs\louis-fargot\index.html"; Loc = "$siteUrl/auteurs/louis-fargot/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/louis-fargot-outils-balcon.webp"; ImageCaption = "Portrait de Louis Fargot sur un balcon urbain, devant des plantes en pot" },
+    [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/mathias-lancet.png"; ImageCaption = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot" },
     [ordered]@{ Path = "categories\index.html"; Loc = "$siteUrl/categories/"; Priority = "0.7"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "categories\fiches-techniques\index.html"; Loc = "$siteUrl/categories/fiches-techniques/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/menthe-pot-balcon-pexels-12727257.webp"; ImageCaption = "Menthe vigoureuse cultivée seule en pot, avec feuillage vert dense" },
     [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-mai-sur-un-balcon.jpg"; ImageCaption = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite" },

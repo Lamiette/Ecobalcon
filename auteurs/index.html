@@ -28,12 +28,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="#2f6f59">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
-<body class="articles-page">
+<body class="articles-page author-index-page">
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -51,7 +52,7 @@
       </div>
     </header>
 
-    <main class="section">
+    <main class="section author-index-section">
       <div class="section-inner">
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
@@ -59,19 +60,25 @@
             <li aria-current="page">Auteurs</li>
           </ol>
         </nav>
-        <section class="page-hero page-hero--solo">
-          <div class="page-hero-copy">
+        <section class="author-index-hero" aria-labelledby="authors-title">
+          <div class="author-index-hero-copy">
             <span class="eyebrow">Équipe éditoriale</span>
-            <h1 class="page-title">Les signatures EcoBalcon</h1>
-            <p class="page-intro">Chaque auteur couvre des sujets précis du jardinage sur balcon : cultures faciles, entretien des pots, aménagement, arrosage, matériel utile et petits problèmes de saison.</p>
+            <h1 class="page-title" id="authors-title">Les signatures EcoBalcon</h1>
+            <p class="page-intro">Chaque auteur couvre un angle précis du jardinage sur balcon : cultures faciles, entretien des pots, aménagement, arrosage, matériel utile et petits problèmes de saison.</p>
+            <div class="author-index-proof" aria-label="Repères éditoriaux">
+              <span><strong>3</strong> signatures</span>
+              <span><strong>Balcon</strong> terrain commun</span>
+              <span><strong>Guides</strong> concrets</span>
+            </div>
           </div>
         </section>
 
         <div class="author-index-grid">
-          <article class="author-index-card">
+          <article class="author-index-card" style="--ac:#2d6a4f;--ac-rgb:45,106,79">
             <div class="author-index-header">
-              <span class="author-index-avatar" style="--ac:#2d6a4f" aria-hidden="true">CF</span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/clara-fontaine-balcon-fleuri.webp" alt="" loading="lazy" decoding="async"></span>
               <div class="author-index-id">
+                <span class="author-index-kicker">Cultures simples</span>
                 <h2 class="author-index-name"><a href="clara-fontaine/">Clara Fontaine</a></h2>
                 <span class="author-index-role">Rédactrice jardinage urbain</span>
               </div>
@@ -82,13 +89,17 @@
               <span class="author-theme-pill">Aromatiques</span>
               <span class="author-theme-pill">Semis en pot</span>
             </div>
-            <a href="clara-fontaine/" class="author-index-cta">27 guides publiés <span aria-hidden="true">→</span></a>
+            <div class="author-index-card-footer">
+              <span class="author-index-count"><strong>27</strong> guides publiés</span>
+              <a href="clara-fontaine/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
+            </div>
           </article>
 
-          <article class="author-index-card">
+          <article class="author-index-card" style="--ac:#8b5e36;--ac-rgb:139,94,54">
             <div class="author-index-header">
-              <span class="author-index-avatar" style="--ac:#8b5e36" aria-hidden="true">LF</span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/louis-fargot-outils-balcon.webp" alt="" loading="lazy" decoding="async"></span>
               <div class="author-index-id">
+                <span class="author-index-kicker">Balcon pratique</span>
                 <h2 class="author-index-name"><a href="louis-fargot/">Louis Fargot</a></h2>
                 <span class="author-index-role">Rédacteur aménagement et matériel</span>
               </div>
@@ -99,13 +110,17 @@
               <span class="author-theme-pill">Pots et contenants</span>
               <span class="author-theme-pill">Balcons venteux</span>
             </div>
-            <a href="louis-fargot/" class="author-index-cta">13 guides publiés <span aria-hidden="true">→</span></a>
+            <div class="author-index-card-footer">
+              <span class="author-index-count"><strong>13</strong> guides publiés</span>
+              <a href="louis-fargot/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
+            </div>
           </article>
 
-          <article class="author-index-card">
+          <article class="author-index-card" style="--ac:#3a5970;--ac-rgb:58,89,112">
             <div class="author-index-header">
-              <span class="author-index-avatar" style="--ac:#3a5970" aria-hidden="true">ML</span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/mathias-lancet.png" alt="" loading="lazy" decoding="async"></span>
               <div class="author-index-id">
+                <span class="author-index-kicker">Diagnostic des pots</span>
                 <h2 class="author-index-name"><a href="mathias-lancet/">Mathias Lancet</a></h2>
                 <span class="author-index-role">Rédacteur entretien et cultures en pot</span>
               </div>
@@ -116,7 +131,10 @@
               <span class="author-theme-pill">Arrosage</span>
               <span class="author-theme-pill">Diagnostic des plantes</span>
             </div>
-            <a href="mathias-lancet/" class="author-index-cta">11 guides publiés <span aria-hidden="true">→</span></a>
+            <div class="author-index-card-footer">
+              <span class="author-index-count"><strong>11</strong> guides publiés</span>
+              <a href="mathias-lancet/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
+            </div>
           </article>
         </div>
       </div>
