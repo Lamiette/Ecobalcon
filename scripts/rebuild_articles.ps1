@@ -1506,6 +1506,27 @@ function Build-ArticleBody {
   return Convert-KeyFactsSection $bodyHtml
 }
 
+function Ensure-AffiliateLinkRel {
+  param([string]$bodyHtml)
+
+  if ([string]::IsNullOrWhiteSpace($bodyHtml)) { return "" }
+
+  $updated = [regex]::Replace($bodyHtml, '<a href="(https?://(?:www\.)?(?:amzn\.to|amazon\.)[^"]+)"(?![^>]*\brel=)([^>]*)>', '<a href="$1"$2 target="_blank" rel="nofollow sponsored noopener noreferrer">')
+  $updated = [regex]::Replace($updated, '<a href="(https?://(?:www\.)?(?:amzn\.to|amazon\.)[^"]+)"([^>]*)\brel="([^"]*)"', {
+    param($m)
+    $url = $m.Groups[1].Value
+    $attrs = $m.Groups[2].Value
+    $rel = $m.Groups[3].Value
+    $parts = @($rel -split '\s+' | Where-Object { $_ })
+    foreach ($needed in @("nofollow", "sponsored", "noopener", "noreferrer")) {
+      if ($parts -notcontains $needed) { $parts += $needed }
+    }
+    "<a href=`"$url`"$attrs rel=`"$($parts -join ' ')`""
+  })
+
+  return $updated
+}
+
 function Ensure-AffiliateDisclosure {
   param([string]$bodyHtml)
 
@@ -1687,6 +1708,7 @@ function Build-ArticleHtml {
   $content = Get-Content -Raw -Encoding UTF8 $article.SourcePath
   $heroCaption = if ($article.ImageAlt) { $article.ImageAlt } else { Get-HeroCaption $content }
   $bodyHtml = if ($article.BodyHtml) { Normalize-BodyHtml ($article.BodyHtml.TrimEnd()) } else { Build-ArticleBody $content }
+  $bodyHtml = Ensure-AffiliateLinkRel $bodyHtml
   $bodyHtml = Ensure-AffiliateDisclosure $bodyHtml
   $dateText = Convert-IsoDateToFrench $article.DatePublished
   $timeText = Convert-TimeRequired $article.TimeRequired

@@ -323,8 +323,8 @@
     }
     "quand-sortir-tomates-poivrons-basilic-balcon" = [ordered]@{
       Title = "Quand sortir les tomates, les poivrons et le basilic sur un balcon ?"
-      SeoTitle = "Quand sortir les tomates, les poivrons et le basilic sur un balcon ?"
-      Description = "Quand sortir tomates, poivrons et basilic sur un balcon : repères de température, Saints de glace et méthode d’acclimatation simple pour éviter le coup de froid."
+      SeoTitle = "Quand sortir tomates, poivrons et basilic ?"
+      Description = "Quand sortir tomates, poivrons et basilic sur un balcon : repères de température, Saints de glace et acclimatation simple pour éviter le coup de froid."
       Intro = "Au printemps, le vrai piège n’est pas d’acheter ses plants trop tôt, mais de les sortir trop vite. Tomates, poivrons et basilic peuvent très bien démarrer sur balcon, à condition de respecter quelques repères simples sur les nuits, le vent et l’acclimatation."
       TimeRequired = "PT6M"
       DatePublished = "2026-04-11T09:00:00.000Z"
@@ -438,7 +438,7 @@
     }
     "balcon-venteux-plantes-protection-pots" = [ordered]@{
       Title = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
-      SeoTitle = "Balcon venteux : quelles plantes choisir et comment protéger ses pots ?"
+      SeoTitle = "Balcon venteux : plantes et protection des pots"
       Description = "Balcon venteux : plantes adaptées, pots stables et protections simples pour jardiner malgré les rafales sans surcharger l’espace."
       Intro = "Un balcon bien exposé peut vite devenir fatigant pour les plantes quand le vent s’en mêle. Feuillage desséché, tiges qui cassent, pots qui bougent, terreau qui sèche trop vite : sur un balcon venteux, la vraie solution n’est pas de renoncer, mais d’adapter les plantes, les contenants et l’organisation."
       TimeRequired = "PT6M"
@@ -1407,6 +1407,7 @@
       }
     }
     "pommes-de-terre-balcon" = [ordered]@{
+      SeoTitle = "Pommes de terre sur balcon : culture en sac"
       Description = "Pommes de terre sur balcon : sac de culture, variétés précoces, buttage, arrosage et récolte propre. Un guide clair pour produire facilement en pot."
       Intro = "La pomme de terre n’est pas réservée aux grands potagers. Sur balcon, elle peut très bien pousser dans un sac ou un bac profond, à condition d’avoir assez de lumière et de respecter quelques étapes simples."
       TimeRequired = "PT5M"
@@ -1550,7 +1551,8 @@
       }
     }
     "balcon-a-lombre-plantes-et-culture" = [ordered]@{
-      Description = "Balcon à l’ombre : quelles plantes choisir, comment arroser, organiser l’espace et éviter les erreurs classiques. Un guide concret pour cultiver malgré le manque de soleil."
+      SeoTitle = "Balcon à l’ombre : quelles plantes cultiver ?"
+      Description = "Balcon à l’ombre : quelles plantes choisir, comment arroser et organiser l’espace. Un guide concret pour cultiver malgré le manque de soleil."
       Intro = "Un balcon ombragé n’est pas un balcon condamné. Il demande simplement d’autres choix de plantes, un autre rapport à l’humidité et une manière plus fine d’utiliser la lumière disponible."
       TimeRequired = "PT5M"
       DateModified = "2026-03-28T11:30:00.000Z"
@@ -1992,6 +1994,7 @@
     }
     "balcon-durable-plantes" = [ordered]@{
       SeoTitle = "Balcon durable : plantes résistantes"
+      Description = "Plantes pour un balcon durable : espèces résistantes, écologiques et faciles à entretenir pour un jardin urbain fleuri et accueillant."
     }
     "paillage-sur-balcon-ecolo" = [ordered]@{
       Description = "Paillage en pot : paillis adaptés, épaisseur, arrosage et gestes propres pour garder la terre fraîche sans attirer les nuisibles ni étouffer les plantes."
@@ -2006,6 +2009,7 @@
     }
     "fleurs-comestibles-melliferes-balcon" = [ordered]@{
       SeoTitle = "Fleurs comestibles sur balcon"
+      Description = "Cultiver des fleurs comestibles et mellifères sur balcon : un jardin gourmand, écologique et accueillant pour les pollinisateurs."
     }
     "jardinage-en-lasagnes-sur-balcon" = [ordered]@{
       SeoTitle = "Bac en lasagnes sur balcon"
@@ -2026,9 +2030,11 @@
       Description = "Potager balcon : semis faciles, eau de cuisson refroidie et gestes simples pour arroser sans gaspiller."
     }
     "erreurs-jardiner-sur-un-balcon" = [ordered]@{
+      SeoTitle = "Jardiner sur un balcon : erreurs à éviter"
       Description = "Les erreurs à éviter sur balcon : exposition, arrosage, pots trop petits et espace surchargé. Les bons réflexes pour mieux démarrer."
     }
     "feuilles-blanches-balcon-oidium" = [ordered]@{
+      SeoTitle = "Feuilles blanches en pot : reconnaître l’oïdium"
       ImageFileName = "feuilles-oidium-balcon.webp"
       Description = "Feuilles blanches en pot : reconnaître l’oïdium, éviter les confusions et agir simplement sur courgettes, concombres ou tomates."
     }
@@ -2045,7 +2051,11 @@
       ImageFileName = "haricots-nains-pot-balcon-pexels-8639507.webp"
     }
     "que-faire-en-juin-potager-balcon" = [ordered]@{
+      SeoTitle = "Potager de balcon en juin : les bons gestes"
       ImageFileName = "potager-balcon-juin-tomates-unsplash.webp"
+    }
+    "pots-trop-chauds-balcon" = [ordered]@{
+      SeoTitle = "Pots trop chauds sur balcon : que faire ?"
     }
     "balcon-pour-pollinisateurs" = [ordered]@{
       SeoTitle = "Balcon pour pollinisateurs : guide"
@@ -2055,6 +2065,7 @@
     }
     "meilleures-plantes-grimpantes-en-ville" = [ordered]@{
       SeoTitle = "7 plantes grimpantes pour l’intimité"
+      Description = "Les meilleures plantes grimpantes pour créer de l’intimité en ville : comment les choisir et les entretenir sur un balcon urbain."
     }
     "proteger-son-balcon-des-nuisibles-naturellement" = [ordered]@{
       Title = "Nuisibles sur balcon : que faire naturellement ?"
