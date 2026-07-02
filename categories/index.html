@@ -28,13 +28,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com 'sha256-645lfWzAruQw1wC8Zw87e4x54PCDOXP6FxLX/Of1Rxw=' 'sha256-tvbOgukl7X/6ZPJcCLGV2j41lu90a10juqlIxM/acjE='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="#2f6f59">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="articles-page">
+  <a class="skip-link" href="#contenu">Passer au contenu</a>
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -44,7 +45,6 @@
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
             <a href="../simulateur/">Outils</a>
-            <a href="../galerie/">Galerie</a>
             <a href="../a-propos/">À propos</a>
             <a href="../contact/">Contact</a>
           </nav>
@@ -52,7 +52,7 @@
       </div>
     </header>
 
-    <main class="section">
+    <main id="contenu" class="section">
       <div class="section-inner">
         <div class="page-hero">
           <div class="page-hero-copy">
@@ -92,6 +92,18 @@
             </div>
           </article>
         </div>
+
+        <article class="article-prose">
+          <h2>Choisir le bon point de départ</h2>
+          <p>Si ton balcon est encore en construction, commence par l'<a href="amenagement-du-balcon/">aménagement</a> : le choix des pots, la circulation et la gestion de l'eau conditionnent tout le reste. Un balcon bien organisé demande moins d'arrosages improvisés, supporte mieux le vent et reste plus agréable à entretenir au fil des semaines.</p>
+          <p>Si tu sais déjà où placer tes contenants, passe plutôt par les <a href="plantes-semis/">plantes & semis</a> pour choisir des cultures adaptées à l'exposition. Les balcons plein sud, ombragés ou venteux n'ont pas les mêmes besoins, et quelques choix réalistes évitent de perdre du temps avec des plantes trop gourmandes ou trop fragiles.</p>
+          <p>Pour suivre une culture précise, les <a href="fiches-techniques/">fiches techniques</a> donnent les repères pot par pot : volume, lumière, arrosage et gestes de saison. Quand un problème apparaît, la rubrique <a href="entretien-astuces/">entretien & astuces</a> aide à diagnostiquer la chaleur, le manque d'eau, l'oïdium, les nuisibles ou le rempotage sans multiplier les traitements.</p>
+          <ul>
+            <li>Besoin d'un tri rapide ? Lance le <a href="../simulateur/">simulateur de balcon</a> pour croiser exposition, place et envie de récolte.</li>
+            <li>Départ proche ? Prépare l'arrosage avec la <a href="../checklists/arrosage-vacances/">checklist vacances</a>.</li>
+            <li>Envie de commencer simple ? Lis d'abord <a href="../articles/jardin-sur-balcon-astuces/">les bases d'un balcon qui pousse mieux</a>.</li>
+          </ul>
+        </article>
       </div>
     </main>
     <footer class="footer">

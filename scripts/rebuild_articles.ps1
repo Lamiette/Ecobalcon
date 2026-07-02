@@ -47,6 +47,8 @@ $siteAuthors = @(
     Approach = "Elle privilégie les essais progressifs, les variétés tolérantes et les conseils applicables sur quelques mètres carrés. Ses guides cherchent surtout à rendre le jardinage urbain plus clair, plus doux et moins intimidant."
     Themes = @("cultures faciles", "aromatiques", "semis en pot", "balcons fleuris")
     PhotoFileName = "clara-fontaine-balcon-fleuri.webp"
+    PhotoWidth = 1200
+    PhotoHeight = 900
     PhotoAlt = "Portrait de Clara Fontaine sur un balcon végétalisé, avec des aromatiques en pot"
   }
   [PSCustomObject]@{
@@ -59,6 +61,8 @@ $siteAuthors = @(
     Approach = "Son approche reste pratique et mesurée : moins d’achats impulsifs, plus de solutions durables, stables et faciles à entretenir. Chaque conseil part des contraintes réelles d’un balcon urbain."
     Themes = @("aménagement", "pots et contenants", "matériel utile", "balcons venteux")
     PhotoFileName = "louis-fargot-outils-balcon.webp"
+    PhotoWidth = 1200
+    PhotoHeight = 900
     PhotoAlt = "Portrait de Louis Fargot sur un balcon urbain, devant des plantes en pot"
   }
   [PSCustomObject]@{
@@ -70,7 +74,9 @@ $siteAuthors = @(
     Intro = "Mathias aime partir des signes visibles : un pot qui sèche trop vite, une feuille qui jaunit, un plant qui ralentit. Ses guides aident à poser le bon diagnostic sans dramatiser, puis à agir simplement."
     Approach = "Il relie l’observation des plantes aux gestes à faire au bon moment, avec des conseils adaptés aux volumes de terre limités, aux expositions changeantes et aux petits accidents de culture en ville."
     Themes = @("entretien", "arrosage", "diagnostic des plantes", "cultures potagères")
-    PhotoFileName = "mathias-lancet.png"
+    PhotoFileName = "mathias-lancet.webp"
+    PhotoWidth = 640
+    PhotoHeight = 640
     PhotoAlt = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot"
   }
 )
@@ -109,6 +115,99 @@ function Write-MinifiedStylesheet {
   Set-Content -Path $minifiedStylesheetPath -Value $minifiedCss -Encoding UTF8
 }
 
+$scriptSrcBase = "script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com"
+
+function Get-BaseCspPolicy {
+  return "default-src 'self'; $scriptSrcBase; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;"
+}
+
+function Get-InlineScriptHashes {
+  param([string]$html)
+
+  $hashes = New-Object System.Collections.Generic.List[string]
+  $seen = @{}
+  $options = [System.Text.RegularExpressions.RegexOptions]::IgnoreCase -bor [System.Text.RegularExpressions.RegexOptions]::Singleline
+  $sha256 = [System.Security.Cryptography.SHA256]::Create()
+
+  try {
+    foreach ($match in [regex]::Matches($html, '<script\b(?<attrs>[^>]*)>(?<body>.*?)</script>', $options)) {
+      $attrs = $match.Groups['attrs'].Value
+      if ($attrs -match '\bsrc\s*=') { continue }
+
+      $bytes = [System.Text.Encoding]::UTF8.GetBytes($match.Groups['body'].Value)
+      $hash = "'sha256-$([Convert]::ToBase64String($sha256.ComputeHash($bytes)))'"
+      if (-not $seen.ContainsKey($hash)) {
+        $seen[$hash] = $true
+        $hashes.Add($hash)
+      }
+    }
+  } finally {
+    $sha256.Dispose()
+  }
+
+  return $hashes
+}
+
+function Get-CspPolicyForHtml {
+  param([string]$html)
+
+  $hashes = Get-InlineScriptHashes $html
+  $scriptSrc = $scriptSrcBase
+  if ($hashes.Count -gt 0) {
+    $scriptSrc = "$scriptSrc $($hashes -join ' ')"
+  }
+
+  return (Get-BaseCspPolicy) -replace [regex]::Escape("$scriptSrcBase;"), "$scriptSrc;"
+}
+
+function Add-CspHashesToHtml {
+  param([string]$html)
+
+  $policy = Get-CspPolicyForHtml $html
+  $meta = "<meta http-equiv=`"Content-Security-Policy`" content=`"$policy`">"
+  $options = [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+  $cspRegex = [regex]::new('<meta\s+http-equiv="Content-Security-Policy"\s+content="[^"]*"\s*/?>', $options)
+
+  if ($cspRegex.IsMatch($html)) {
+    return $cspRegex.Replace($html, $meta, 1)
+  }
+
+  $headCloseRegex = [regex]::new('</head>', $options)
+  return $headCloseRegex.Replace($html, "  $meta`n</head>", 1)
+}
+
+function Add-SkipLinkToHtml {
+  param([string]$html)
+
+  if ($html -notmatch '<main\b') { return $html }
+
+  $options = [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+  if ($html -notmatch 'class="skip-link"') {
+    $bodyRegex = [regex]::new('(<body\b[^>]*>)', $options)
+    $html = $bodyRegex.Replace($html, "`$1`n  <a class=`"skip-link`" href=`"#contenu`">Passer au contenu</a>", 1)
+  }
+
+  $mainRegex = [regex]::new('<main\b(?<attrs>[^>]*)>', $options)
+  $mainMatch = $mainRegex.Match($html)
+  if ($mainMatch.Success -and $mainMatch.Value -notmatch '\bid\s*=') {
+    $mainTag = $mainMatch.Value -replace '<main\b', '<main id="contenu"'
+    $html = $html.Remove($mainMatch.Index, $mainMatch.Length).Insert($mainMatch.Index, $mainTag)
+  }
+
+  return $html
+}
+
+function Write-HtmlFile {
+  param(
+    [string]$Path,
+    [string]$Html
+  )
+
+  $processedHtml = Add-SkipLinkToHtml $Html
+  $processedHtml = Add-CspHashesToHtml $processedHtml
+  Set-Content -Path $Path -Value $processedHtml -Encoding UTF8
+}
+
 function Get-TrackingHeadHtml {
   param([string]$scriptPrefix = "")
 
@@ -118,7 +217,7 @@ function Get-TrackingHeadHtml {
 }
 
 function Get-AppHeadHtml {
-  $cspPolicy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;"
+  $cspPolicy = Get-BaseCspPolicy
 
   return @"
   <meta http-equiv="Content-Security-Policy" content="$cspPolicy">
@@ -305,7 +404,13 @@ function Get-ImageDimensions {
     return $null
   }
 
-  $image = [System.Drawing.Image]::FromFile($fullPath)
+  try {
+    $image = [System.Drawing.Image]::FromFile($fullPath)
+  } catch {
+    $imageDimensionCache[$fullPath] = $null
+    return $null
+  }
+
   try {
     $dimensions = [PSCustomObject]@{
       Width = $image.Width
@@ -829,12 +934,21 @@ function Get-CardExcerpt {
 function Get-SchemaData {
   param([string]$content)
 
-  $schemaMatch = [regex]::Match($content, '<script type=application/ld\+json>(?<json>\{.*?\})</script>', 'Singleline')
+  $schemaMatch = [regex]::Match($content, '<script\b[^>]*type\s*=\s*["'']?application/ld\+json["'']?[^>]*>(?<json>\{.*?\})</script>', 'Singleline,IgnoreCase')
   if (-not $schemaMatch.Success) {
     throw "Schema JSON-LD introuvable."
   }
 
   return ($schemaMatch.Groups["json"].Value | ConvertFrom-Json)
+}
+
+function Get-GeneratedArticleBodyHtml {
+  param([string]$content)
+
+  $bodyMatch = [regex]::Match($content, '<article\s+class="article-prose"[^>]*>(?<body>.*?)</article>', 'Singleline,IgnoreCase')
+  if (-not $bodyMatch.Success) { return "" }
+
+  return $bodyMatch.Groups["body"].Value.Trim()
 }
 
 function Get-HeroCaption {
@@ -998,24 +1112,50 @@ function Apply-ArticleOverride {
 function Get-ArticleSources {
   $ignoreFiles = @("index.html", "articles.html", "galerie.html")
   $articleSources = New-Object System.Collections.Generic.List[object]
+  $useRawSources = Test-Path $rawDir
+  $sourceFiles = if ($useRawSources) {
+    Get-ChildItem -Path $rawDir -File | Sort-Object Name
+  } else {
+    Get-ChildItem -Path $articlesDir -Directory |
+      ForEach-Object { Join-Path $_.FullName "index.html" } |
+      Where-Object { Test-Path $_ } |
+      ForEach-Object { Get-Item $_ } |
+      Sort-Object { $_.Directory.Name }
+  }
 
-  foreach ($file in Get-ChildItem -Path $rawDir -File | Sort-Object Name) {
-    if ($ignoreFiles -contains $file.Name) { continue }
+  foreach ($file in $sourceFiles) {
+    if ($useRawSources -and $ignoreFiles -contains $file.Name) { continue }
 
     $content = Get-Content -Raw -Encoding UTF8 $file.FullName
     $schema = Get-SchemaData $content
-    if ($schema.'@type' -ne 'Article') { continue }
+    if (@("Article", "BlogPosting") -notcontains [string]$schema.'@type') { continue }
 
-    if ($schema.url -notmatch '^https://ecobalcon\.com/(?<slug>[^/?#]+)') {
+    if ($schema.url -match '^https://ecobalcon\.com/(?:articles/)?(?<slug>[^/?#]+)/?') {
+      $slug = $matches["slug"]
+    } elseif (-not $useRawSources -and $file.Directory.Name) {
+      $slug = $file.Directory.Name
+    } else {
       throw "Impossible de determiner le slug pour $($file.Name)."
     }
 
-    $slug = $matches["slug"]
     $date = if ($schema.datePublished) { [DateTime]::Parse($schema.datePublished) } else { [DateTime]::MinValue }
     $authorData = Get-AuthorData -schema $schema -content $content -slug $slug
     $heroCaption = Get-HeroCaption $content
-    $imageRemoteUrl = [string]$schema.image
+    $schemaImage = $schema.image
+    if ($schemaImage -is [System.Array] -and $schemaImage.Count -gt 0) {
+      $imageRemoteUrl = [string]$schemaImage[0]
+    } else {
+      $imageRemoteUrl = [string]$schemaImage
+    }
     $imageFileName = Get-ImageFileName -url $imageRemoteUrl -slug $slug
+    $title = if ($schema.name) {
+      [System.Net.WebUtility]::HtmlDecode([string]$schema.name)
+    } elseif ($schema.headline) {
+      [System.Net.WebUtility]::HtmlDecode([string]$schema.headline)
+    } else {
+      [System.Net.WebUtility]::HtmlDecode($slug)
+    }
+    $description = [System.Net.WebUtility]::HtmlDecode([string]$schema.description)
     $rawCategory = if ($schema.articleSection) {
       if ($schema.articleSection -is [System.Array]) {
         [string]$schema.articleSection[0]
@@ -1028,21 +1168,22 @@ function Get-ArticleSources {
     $category = Get-CanonicalArticleCategory `
       -slug $slug `
       -rawCategory ([System.Net.WebUtility]::HtmlDecode($rawCategory)) `
-      -title ([System.Net.WebUtility]::HtmlDecode($schema.name)) `
-      -description ([System.Net.WebUtility]::HtmlDecode($schema.description))
+      -title $title `
+      -description $description
+    $bodyHtml = if ($useRawSources) { "" } else { Get-GeneratedArticleBodyHtml $content }
 
     $article = [PSCustomObject]@{
         SourcePath = $file.FullName
         SourceName = $file.Name
         Slug = $slug
         OutputName = Get-ArticleLegacyFileName ([PSCustomObject]@{ Slug = $slug })
-        Title = [System.Net.WebUtility]::HtmlDecode($schema.name)
+        Title = $title
         SeoTitle = ""
-        Description = [System.Net.WebUtility]::HtmlDecode($schema.description)
+        Description = $description
         ImageRemoteUrl = $imageRemoteUrl
         ImageFileName = $imageFileName
         ImageCanonicalUrl = Get-ImageCanonicalUrl $imageFileName
-        ImageAlt = if ($heroCaption) { $heroCaption } else { [System.Net.WebUtility]::HtmlDecode($schema.description) }
+        ImageAlt = if ($heroCaption) { $heroCaption } else { $description }
         DatePublished = [string]$schema.datePublished
         DateModified = if ($schema.dateModified) { [string]$schema.dateModified } else { [string]$schema.datePublished }
         TimeRequired = [string]$schema.timeRequired
@@ -1052,8 +1193,8 @@ function Get-ArticleSources {
         AuthorUrl = $authorData.Url
         Category = $category
         DateSort = $date
-        Intro = [System.Net.WebUtility]::HtmlDecode($schema.description)
-        BodyHtml = ""
+        Intro = $description
+        BodyHtml = $bodyHtml
         Faq = $null
         HowTo = $null
       }
@@ -1690,7 +1831,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../../">Accueil</a>
             <a href="../">Articles</a>
-            <a href="../../galerie/">Galerie</a>
             <a href="../../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -2023,7 +2163,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="./" aria-current="page">Accueil</a>
             <a href="articles/">Articles</a>
-            <a href="galerie/">Galerie</a>
             <a href="contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -2408,7 +2547,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../">Accueil</a>
             <a href="./" aria-current="page">Articles</a>
-            <a href="../galerie/">Galerie</a>
             <a href="../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -2472,301 +2610,7 @@ $cardsHtml
 
 $(Get-SiteFooterHtml -pagePrefix "../")
   </div>
-  <script>
-    (() => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
-      const searchInput = document.getElementById("article-search");
-      const articleCards = Array.from(document.querySelectorAll("#article-list .article-card"));
-      const themeFilterList = document.getElementById("article-theme-filters");
-      const articleListActions = document.getElementById("article-list-actions");
-      const articleListToggle = document.getElementById("article-list-toggle");
-      const emptyState = document.getElementById("search-empty");
-      const currentUrl = new URL(window.location.href);
-      const currentHashParams = new URLSearchParams(currentUrl.hash.startsWith("#") ? currentUrl.hash.slice(1) : "");
-      const currentPath = currentUrl.pathname;
-      const previewRowStep = 2;
-      let visibleRowCount = previewRowStep;
-      let articleListFullyRevealed = false;
-      let previewRefreshFrame = 0;
-      let activeTheme = "all";
-
-      const initReveal = () => {
-        if (!revealItems.length) {
-          return;
-        }
-
-        if (reduceMotion) {
-          revealItems.forEach((item) => item.classList.add("is-visible"));
-          return;
-        }
-
-        document.body.classList.add("reveal-ready");
-
-        if (!("IntersectionObserver" in window)) {
-          revealItems.forEach((item) => item.classList.add("is-visible"));
-          return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          });
-        }, {
-          rootMargin: "0px 0px -8% 0px",
-          threshold: 0.12
-        });
-
-        revealItems.forEach((item) => observer.observe(item));
-      };
-
-      const normalizeText = (value) =>
-        value
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "");
-
-      const slugifyTheme = (value) =>
-        normalizeText(value)
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-+|-+$/g, "");
-
-      const getSearchTokens = (value) =>
-        normalizeText(value)
-          .split(/\s+/)
-          .filter(Boolean);
-
-      const getCardThemeLabel = (card) => {
-        const themePill = card.querySelector(".pill");
-        return themePill ? themePill.textContent.trim() : "";
-      };
-
-      const getCardTitleText = (card) => {
-        const titleLink = card.querySelector("h3 a");
-        return titleLink ? normalizeText(titleLink.textContent) : "";
-      };
-
-      const resetArticlePreview = () => {
-        visibleRowCount = previewRowStep;
-        articleListFullyRevealed = false;
-      };
-
-      const articleThemeOptions = [
-        { slug: "all", label: "Tous" },
-        { slug: "fiches-techniques", label: "Fiches Techniques" },
-        { slug: "plantes-semis", label: "Plantes & semis" },
-        { slug: "entretien-astuces", label: "Entretien & astuces" },
-        { slug: "amenagement-du-balcon", label: "Aménagement du balcon" }
-      ];
-
-      articleCards.forEach((card) => {
-        const themeLabel = getCardThemeLabel(card);
-        const themeSlug = slugifyTheme(themeLabel);
-        const themePill = card.querySelector(".pill");
-
-        if (themeSlug === "") {
-          return;
-        }
-
-        card.dataset.theme = themeSlug;
-
-        if (themePill) {
-          themePill.dataset.themeFilter = themeSlug;
-          themePill.classList.add("pill-filter-trigger");
-          themePill.setAttribute("role", "button");
-          themePill.tabIndex = 0;
-          themePill.setAttribute("aria-label", "Afficher les articles du thème " + themeLabel);
-        }
-      });
-
-      const themeButtonsBySlug = new Map();
-
-      articleThemeOptions.forEach((themeOption) => {
-        const themeButton = document.createElement("button");
-        themeButton.type = "button";
-        themeButton.className = "theme-filter-button";
-        themeButton.dataset.themeFilter = themeOption.slug;
-        themeButton.textContent = themeOption.label;
-        themeButton.setAttribute("aria-pressed", "false");
-        themeFilterList.appendChild(themeButton);
-        themeButtonsBySlug.set(themeOption.slug, themeButton);
-      });
-
-      const themeFilterButtons = Array.from(themeButtonsBySlug.values());
-
-      const updateThemeFilterButtons = () => {
-        themeFilterButtons.forEach((button) => {
-          const isActive = button.dataset.themeFilter === activeTheme;
-          button.classList.toggle("is-active", isActive);
-          button.setAttribute("aria-pressed", String(isActive));
-        });
-      };
-
-      const getMatchedCards = () => articleCards.filter((card) => !card.hidden);
-
-      const updateArticlePreview = () => {
-        const matchedCards = getMatchedCards();
-        const hasSearchQuery = searchInput.value.trim() !== "";
-        let rowIndex = 0;
-        let lastRowTop = null;
-        let hiddenCount = 0;
-
-        articleCards.forEach((card) => {
-          card.classList.remove("article-card-collapsed");
-        });
-
-        if (matchedCards.length === 0 || articleListFullyRevealed || hasSearchQuery) {
-          articleListActions.hidden = true;
-          articleListToggle.setAttribute("aria-expanded", String(articleListFullyRevealed || hasSearchQuery));
-          return;
-        }
-
-        matchedCards.forEach((card) => {
-          const cardTop = Math.round(card.offsetTop);
-
-          if (lastRowTop === null || Math.abs(cardTop - lastRowTop) > 1) {
-            rowIndex += 1;
-            lastRowTop = cardTop;
-          }
-
-          const shouldCollapse = rowIndex > visibleRowCount;
-          card.classList.toggle("article-card-collapsed", shouldCollapse);
-
-          if (shouldCollapse) {
-            hiddenCount += 1;
-          }
-        });
-
-        articleListFullyRevealed = hiddenCount === 0;
-        articleListActions.hidden = articleListFullyRevealed;
-        articleListToggle.setAttribute("aria-expanded", String(articleListFullyRevealed));
-      };
-
-      const requestArticlePreviewRefresh = () => {
-        if (previewRefreshFrame !== 0) {
-          window.cancelAnimationFrame(previewRefreshFrame);
-        }
-
-        previewRefreshFrame = window.requestAnimationFrame(() => {
-          previewRefreshFrame = 0;
-          updateArticlePreview();
-        });
-      };
-
-      const syncFilterParams = () => {
-        const rawQuery = searchInput.value.trim();
-        const nextHashParams = new URLSearchParams();
-
-        if (rawQuery !== "") {
-          nextHashParams.set("q", rawQuery);
-        }
-
-        if (activeTheme !== "all") {
-          nextHashParams.set("theme", activeTheme);
-        }
-
-        const nextHash = nextHashParams.toString();
-        window.history.replaceState({}, "", currentPath + (nextHash ? "#" + nextHash : ""));
-      };
-
-      const filterArticles = () => {
-        const queryTokens = getSearchTokens(searchInput.value.trim());
-        let visibleCount = 0;
-
-        articleCards.forEach((card) => {
-          const searchableTitle = getCardTitleText(card);
-          const matchesTheme = activeTheme === "all" || card.dataset.theme === activeTheme;
-          const matchesQuery = queryTokens.length === 0 || queryTokens.every((token) => searchableTitle.includes(token));
-          const matches = matchesTheme && matchesQuery;
-          card.hidden = !matches;
-
-          if (matches) {
-            visibleCount += 1;
-          }
-        });
-
-        emptyState.hidden = visibleCount !== 0;
-        requestArticlePreviewRefresh();
-      };
-
-      const applyThemeFilter = (themeSlug) => {
-        if (!themeButtonsBySlug.has(themeSlug)) {
-          return;
-        }
-
-        activeTheme = themeSlug;
-        resetArticlePreview();
-        updateThemeFilterButtons();
-        filterArticles();
-        syncFilterParams();
-      };
-
-      const initialQuery = currentHashParams.get("q") ?? currentUrl.searchParams.get("q");
-      const initialTheme = currentHashParams.get("theme") ?? currentUrl.searchParams.get("theme");
-
-      if (initialQuery) {
-        searchInput.value = initialQuery;
-      }
-
-      if (initialTheme && themeButtonsBySlug.has(initialTheme)) {
-        activeTheme = initialTheme;
-      }
-
-      updateThemeFilterButtons();
-      filterArticles();
-      initReveal();
-
-      searchInput.addEventListener("input", () => {
-        resetArticlePreview();
-        filterArticles();
-        syncFilterParams();
-      });
-
-      themeFilterList.addEventListener("click", (event) => {
-        const targetButton = event.target.closest("[data-theme-filter]");
-
-        if (!targetButton) {
-          return;
-        }
-
-        applyThemeFilter(targetButton.dataset.themeFilter);
-      });
-
-      document.addEventListener("click", (event) => {
-        const targetPill = event.target.closest("#article-list .pill-filter-trigger");
-
-        if (!targetPill) {
-          return;
-        }
-
-        applyThemeFilter(targetPill.dataset.themeFilter);
-      });
-
-      document.addEventListener("keydown", (event) => {
-        const targetPill = event.target.closest("#article-list .pill-filter-trigger");
-
-        if (!targetPill || (event.key !== "Enter" && event.key !== " ")) {
-          return;
-        }
-
-        event.preventDefault();
-        applyThemeFilter(targetPill.dataset.themeFilter);
-      });
-
-      articleListToggle.addEventListener("click", () => {
-        visibleRowCount += previewRowStep;
-        requestArticlePreviewRefresh();
-      });
-
-      window.addEventListener("resize", requestArticlePreviewRefresh);
-      window.addEventListener("load", requestArticlePreviewRefresh, { once: true });
-    })();
-  </script>
+  <script src="../js/articles-index.js" defer></script>
 </body>
 </html>
 "@
@@ -2779,8 +2623,14 @@ function Build-AuthorCardHtml {
   )
 
   $authorInitials = (($author.Name -split '\s+' | Where-Object { $_ } | ForEach-Object { $_.Substring(0, 1) }) -join '').ToUpperInvariant()
+  $avatarPhotoRootPath = if ($author.PhotoFileName) { "images\auteurs\$($author.PhotoFileName)" } else { "" }
+  $avatarDimensions = if ($author.PhotoWidth -and $author.PhotoHeight) {
+    " width=`"$($author.PhotoWidth)`" height=`"$($author.PhotoHeight)`""
+  } elseif ($avatarPhotoRootPath) {
+    Get-RootImageDimensionAttributes $avatarPhotoRootPath
+  } else { "" }
   $avatarContent = if ($author.PhotoFileName) {
-    "<img src=`"../images/auteurs/$($author.PhotoFileName)`" alt=`"`" loading=`"lazy`" decoding=`"async`">"
+    "<img src=`"../images/auteurs/$($author.PhotoFileName)`" alt=`"`" loading=`"lazy`" decoding=`"async`"$avatarDimensions>"
   } else { $authorInitials }
   $authorAccent = switch ($author.Slug) {
     "clara-fontaine" { "#2d6a4f" }
@@ -2942,7 +2792,6 @@ $tagManagerBody
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
             <a href="../simulateur/">Outils</a>
-            <a href="../galerie/">Galerie</a>
             <a href="../a-propos/">A propos</a>
             <a href="../contact/">Contact</a>
           </nav>
@@ -3010,7 +2859,11 @@ function Build-AuthorPageHtml {
   $authorPhotoSrc = if ($author.PhotoFileName) { "../../images/auteurs/$authorPhotoFileName" } else { "../../images/balcon-soleil.webp" }
   $authorPhotoUrl = if ($author.PhotoFileName) { "$siteUrl/images/auteurs/$authorPhotoFileName" } else { "$siteUrl/images/balcon-soleil.webp" }
   $authorPhotoAlt = if ($author.PhotoAlt) { [string]$author.PhotoAlt } else { "Balcon lumineux avec pots et plantes dans l'univers EcoBalcon" }
-  $authorPhotoDimensions = Get-RootImageDimensionAttributes $authorPhotoRootPath
+  $authorPhotoDimensions = if ($author.PhotoWidth -and $author.PhotoHeight) {
+    " width=`"$($author.PhotoWidth)`" height=`"$($author.PhotoHeight)`""
+  } else {
+    Get-RootImageDimensionAttributes $authorPhotoRootPath
+  }
   $tagManagerHead = Get-TrackingHeadHtml -scriptPrefix "../../"
   $tagManagerBody = Get-TagManagerBodyHtml
   $jsonLd = Get-JsonLdScriptTags @(
@@ -3094,7 +2947,6 @@ $tagManagerBody
             <a href="../../">Accueil</a>
             <a href="../../articles/">Articles</a>
             <a href="../../simulateur/">Outils</a>
-            <a href="../../galerie/">Galerie</a>
             <a href="../../a-propos/">&Agrave; propos</a>
             <a href="../../contact/">Contact</a>
           </nav>
@@ -3177,12 +3029,12 @@ function Write-AuthorPages {
 
   $authorsDir = Join-Path $root "auteurs"
   New-Item -ItemType Directory -Path $authorsDir -Force | Out-Null
-  Set-Content -Path (Join-Path $authorsDir "index.html") -Value (Build-AuthorIndexHtml $allArticles) -Encoding UTF8
+  Write-HtmlFile -Path (Join-Path $authorsDir "index.html") -Html (Build-AuthorIndexHtml $allArticles)
 
   foreach ($author in $siteAuthors) {
     $authorDir = Join-Path $authorsDir $author.Slug
     New-Item -ItemType Directory -Path $authorDir -Force | Out-Null
-    Set-Content -Path (Join-Path $authorDir "index.html") -Value (Build-AuthorPageHtml -author $author -allArticles $allArticles) -Encoding UTF8
+    Write-HtmlFile -Path (Join-Path $authorDir "index.html") -Html (Build-AuthorPageHtml -author $author -allArticles $allArticles)
   }
 }
 
@@ -3348,7 +3200,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
-            <a href="../galerie/">Galerie</a>
             <a href="../contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -3547,7 +3398,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
-            <a href="../galerie/">Galerie</a>
             <a href="./" aria-current="page">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -3698,7 +3548,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="../../">Accueil</a>
             <a href="../../articles/">Articles</a>
-            <a href="../../galerie/">Galerie</a>
             <a href="../" aria-current="page">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -3748,7 +3597,7 @@ $tagManagerBody
             <h2>En attendant</h2>
             <ul class="article-list">
               <li>Tu peux parcourir les derniers guides publi&eacute;s dans la section articles.</li>
-              <li>La galerie donne aussi des id&eacute;es simples d'am&eacute;nagement pour petits espaces.</li>
+              <li>Les cat&eacute;gories donnent aussi des id&eacute;es simples d'am&eacute;nagement pour petits espaces.</li>
               <li>Pour une autre demande, tu peux revenir au formulaire &agrave; tout moment.</li>
             </ul>
           </aside>
@@ -3776,18 +3625,18 @@ function Build-404Html {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page introuvable | EcoBalcon</title>
-  <meta name="description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+  <meta name="description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et les cat&eacute;gories.">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="$canonicalUrl">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="EcoBalcon">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Page introuvable | EcoBalcon">
-  <meta property="og:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+  <meta property="og:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et les cat&eacute;gories.">
   <meta property="og:url" content="$canonicalUrl">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Page introuvable | EcoBalcon">
-  <meta name="twitter:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et la galerie.">
+  <meta name="twitter:description" content="La page demand&eacute;e est introuvable. Reviens &agrave; l'accueil EcoBalcon ou explore les articles et les cat&eacute;gories.">
 $tagManagerHead
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
@@ -3809,7 +3658,6 @@ $tagManagerBody
           <nav class="site-nav" aria-label="Navigation principale">
             <a href="/">Accueil</a>
             <a href="/articles/">Articles</a>
-            <a href="/galerie/">Galerie</a>
             <a href="/contact/">Contact</a>
           </nav>
           <div class="social-nav" aria-label="R&eacute;seaux sociaux">
@@ -3852,9 +3700,9 @@ $tagManagerBody
             <ul class="article-list">
               <li>Revenir &agrave; l'accueil pour repartir des contenus principaux.</li>
               <li>Parcourir les guides et fiches techniques depuis la liste des articles.</li>
-              <li>Ouvrir la galerie pour retrouver des inspirations balcon.</li>
+              <li>Ouvrir les cat&eacute;gories pour retrouver des inspirations balcon.</li>
             </ul>
-            <a class="text-link" href="/galerie/">Voir la galerie</a>
+            <a class="text-link" href="/categories/">Voir les cat&eacute;gories</a>
           </aside>
         </section>
       </div>
@@ -3910,10 +3758,6 @@ function Build-SitemapXml {
   $homeImageCaption = if ($homeFeatured) { $homeFeatured.ImageAlt } else { "" }
   $entries.Add((New-SitemapUrlNode -loc "$siteUrl/" -priority "1.0" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
   $entries.Add((New-SitemapUrlNode -loc "$siteUrl/articles/" -priority "0.9" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
-  if (Test-Path (Join-Path $root "galerie.html")) {
-    $galleryLoc = if (Test-Path (Join-Path $root "galerie\index.html")) { "$siteUrl/galerie/" } else { "$siteUrl/galerie.html" }
-    $entries.Add((New-SitemapUrlNode -loc $galleryLoc -priority "0.5" -lastmod $today -imageUrl "$siteUrl/images/articles/canicule-balcon-mxBXq1QqyeTR1PLZ.webp" -imageCaption "Balcon plante en plein soleil"))
-  }
   if (Test-Path (Join-Path $root "contact\index.html")) {
     $entries.Add((New-SitemapUrlNode -loc $contactPageUrl -priority "0.4" -lastmod $today))
   }
@@ -3925,7 +3769,7 @@ function Build-SitemapXml {
     [ordered]@{ Path = "auteurs\index.html"; Loc = "$siteUrl/auteurs/"; Priority = "0.55"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "auteurs\clara-fontaine\index.html"; Loc = "$siteUrl/auteurs/clara-fontaine/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/clara-fontaine-balcon-fleuri.webp"; ImageCaption = "Portrait de Clara Fontaine sur un balcon végétalisé, avec des aromatiques en pot" },
     [ordered]@{ Path = "auteurs\louis-fargot\index.html"; Loc = "$siteUrl/auteurs/louis-fargot/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/louis-fargot-outils-balcon.webp"; ImageCaption = "Portrait de Louis Fargot sur un balcon urbain, devant des plantes en pot" },
-    [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/mathias-lancet.png"; ImageCaption = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot" },
+    [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/mathias-lancet.webp"; ImageCaption = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot" },
     [ordered]@{ Path = "categories\index.html"; Loc = "$siteUrl/categories/"; Priority = "0.7"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "categories\fiches-techniques\index.html"; Loc = "$siteUrl/categories/fiches-techniques/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/menthe-pot-balcon-pexels-12727257.webp"; ImageCaption = "Menthe vigoureuse cultivée seule en pot, avec feuillage vert dense" },
     [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-mai-sur-un-balcon.jpg"; ImageCaption = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite" },
@@ -4025,29 +3869,29 @@ foreach ($article in $articles) {
   $redirectHtml = Get-RedirectHtml -targetUrl (Get-ArticleCanonicalUrl $article) -title "$($article.Title) | EcoBalcon" -description "Cette page a été déplacée vers sa nouvelle adresse."
   New-Item -ItemType Directory -Path $articleOutDir -Force | Out-Null
   New-Item -ItemType Directory -Path $legacyRootDir -Force | Out-Null
-  Set-Content -Path $outPath -Value $html -Encoding UTF8
-  Set-Content -Path (Join-Path $articlesDir $article.OutputName) -Value $redirectHtml -Encoding UTF8
-  Set-Content -Path (Join-Path $legacyRootDir "index.html") -Value $redirectHtml -Encoding UTF8
+  Write-HtmlFile -Path $outPath -Html $html
+  Write-HtmlFile -Path (Join-Path $articlesDir $article.OutputName) -Html $redirectHtml
+  Write-HtmlFile -Path (Join-Path $legacyRootDir "index.html") -Html $redirectHtml
   Write-Output "Rebuilt articles/$($article.Slug)/index.html, legacy redirect $($article.OutputName) and root redirect /$($article.Slug)/"
 }
 
 Write-MinifiedStylesheet
 
-Set-Content -Path (Join-Path $articlesDir "index.html") -Value (Build-ArticlesIndexHtml $articles) -Encoding UTF8
-Set-Content -Path (Join-Path $root "404.html") -Value (Build-404Html) -Encoding UTF8
+Write-HtmlFile -Path (Join-Path $articlesDir "index.html") -Html (Build-ArticlesIndexHtml $articles)
+Write-HtmlFile -Path (Join-Path $root "404.html") -Html (Build-404Html)
 
 $privacyDir = Join-Path $root "politique-confidentialite"
 New-Item -ItemType Directory -Path $privacyDir -Force | Out-Null
-Set-Content -Path (Join-Path $privacyDir "index.html") -Value (Build-PrivacyPageHtml) -Encoding UTF8
-Set-Content -Path (Join-Path $root "politique-confidentialite.html") -Value (Get-RedirectHtml -targetUrl "$siteUrl/politique-confidentialite/" -title "Politique de confidentialite | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.") -Encoding UTF8
+Write-HtmlFile -Path (Join-Path $privacyDir "index.html") -Html (Build-PrivacyPageHtml)
+Write-HtmlFile -Path (Join-Path $root "politique-confidentialite.html") -Html (Get-RedirectHtml -targetUrl "$siteUrl/politique-confidentialite/" -title "Politique de confidentialite | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.")
 
 $contactDir = Join-Path $root "contact"
 $contactThanksDir = Join-Path $contactDir "merci"
 New-Item -ItemType Directory -Path $contactDir -Force | Out-Null
 New-Item -ItemType Directory -Path $contactThanksDir -Force | Out-Null
-Set-Content -Path (Join-Path $contactDir "index.html") -Value (Build-ContactPageHtml) -Encoding UTF8
-Set-Content -Path (Join-Path $contactThanksDir "index.html") -Value (Build-ContactThanksHtml) -Encoding UTF8
-Set-Content -Path (Join-Path $root "contact.html") -Value (Get-RedirectHtml -targetUrl $contactPageUrl -title "Contact | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.") -Encoding UTF8
+Write-HtmlFile -Path (Join-Path $contactDir "index.html") -Html (Build-ContactPageHtml)
+Write-HtmlFile -Path (Join-Path $contactThanksDir "index.html") -Html (Build-ContactThanksHtml)
+Write-HtmlFile -Path (Join-Path $root "contact.html") -Html (Get-RedirectHtml -targetUrl $contactPageUrl -title "Contact | EcoBalcon" -description "Cette page a ete deplacee vers sa nouvelle adresse.")
 
 Write-AuthorPages $articles
 
@@ -4065,7 +3909,7 @@ if ($RebuildHome -or -not (Test-Path $homePath)) {
     $homeBackupStatus = "Homepage backup created: $homeBackupPath"
   }
 
-  Set-Content -Path $homePath -Value (Build-HomeHtml $articles) -Encoding UTF8
+  Write-HtmlFile -Path $homePath -Html (Build-HomeHtml $articles)
   $homeStatus = if ($RebuildHome) { "Homepage regenerated from the script" } else { "Homepage created from the script" }
 }
 

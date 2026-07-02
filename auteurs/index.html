@@ -28,13 +28,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com 'sha256-dDD3FkOkcLuzSl8JhSYlXudjQj7Ba1+4IOO2xuEkZhA=' 'sha256-o5DAkyK3fe5z82I/WPpc2r25wuXqt7uAwB9DiNHOfxg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="#2f6f59">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="articles-page author-index-page">
+  <a class="skip-link" href="#contenu">Passer au contenu</a>
+
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -44,15 +46,14 @@
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
             <a href="../simulateur/">Outils</a>
-            <a href="../galerie/">Galerie</a>
-            <a href="../a-propos/">À propos</a>
+            <a href="../a-propos/">A propos</a>
             <a href="../contact/">Contact</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="section author-index-section">
+    <main id="contenu" class="section author-index-section">
       <div class="section-inner">
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
@@ -76,14 +77,14 @@
         <div class="author-index-grid">
           <article class="author-index-card" style="--ac:#2d6a4f;--ac-rgb:45,106,79">
             <div class="author-index-header">
-              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/clara-fontaine-balcon-fleuri.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/clara-fontaine-balcon-fleuri.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"></span>
               <div class="author-index-id">
                 <span class="author-index-kicker">Cultures simples</span>
                 <h2 class="author-index-name"><a href="clara-fontaine/">Clara Fontaine</a></h2>
                 <span class="author-index-role">Rédactrice jardinage urbain</span>
               </div>
             </div>
-            <p class="author-index-bio">Clara accompagne les jardiniers de balcon qui veulent commencer simplement : aromatiques, fleurs utiles, semis faciles et petits gestes saisonniers pour obtenir un coin vivant sans se compliquer la vie.</p>
+            <p class="author-index-bio">Clara Fontaine accompagne les jardiniers de balcon qui veulent commencer simplement : aromatiques, fleurs utiles, semis faciles et petits gestes saisonniers pour obtenir un coin vivant sans se compliquer la vie.</p>
             <div class="author-index-tags">
               <span class="author-theme-pill">Cultures faciles</span>
               <span class="author-theme-pill">Aromatiques</span>
@@ -94,38 +95,36 @@
               <a href="clara-fontaine/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
             </div>
           </article>
-
           <article class="author-index-card" style="--ac:#8b5e36;--ac-rgb:139,94,54">
             <div class="author-index-header">
-              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/louis-fargot-outils-balcon.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/louis-fargot-outils-balcon.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"></span>
               <div class="author-index-id">
                 <span class="author-index-kicker">Balcon pratique</span>
                 <h2 class="author-index-name"><a href="louis-fargot/">Louis Fargot</a></h2>
                 <span class="author-index-role">Rédacteur aménagement et matériel</span>
               </div>
             </div>
-            <p class="author-index-bio">Louis s’intéresse à la partie très concrète du balcon : pots, supports, rangement, stabilité au vent et matériel vraiment utile pour aménager un petit espace sans l’encombrer.</p>
+            <p class="author-index-bio">Louis Fargot s’intéresse à la partie très concrète du balcon : pots, supports, rangement, stabilité au vent et matériel vraiment utile pour aménager un petit espace sans l’encombrer.</p>
             <div class="author-index-tags">
               <span class="author-theme-pill">Aménagement</span>
               <span class="author-theme-pill">Pots et contenants</span>
-              <span class="author-theme-pill">Balcons venteux</span>
+              <span class="author-theme-pill">Matériel utile</span>
             </div>
             <div class="author-index-card-footer">
               <span class="author-index-count"><strong>13</strong> guides publiés</span>
               <a href="louis-fargot/" class="author-index-cta">Voir le profil <span aria-hidden="true">→</span></a>
             </div>
           </article>
-
           <article class="author-index-card" style="--ac:#3a5970;--ac-rgb:58,89,112">
             <div class="author-index-header">
-              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/mathias-lancet.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="author-index-avatar" aria-hidden="true"><img src="../images/auteurs/mathias-lancet.webp" alt="" loading="lazy" decoding="async" width="640" height="640"></span>
               <div class="author-index-id">
                 <span class="author-index-kicker">Diagnostic des pots</span>
                 <h2 class="author-index-name"><a href="mathias-lancet/">Mathias Lancet</a></h2>
                 <span class="author-index-role">Rédacteur entretien et cultures en pot</span>
               </div>
             </div>
-            <p class="author-index-bio">Mathias aide à comprendre ce qui se passe dans les pots : arrosage, chaleur, maladies courantes, feuilles qui changent d’aspect et cultures potagères qui demandent des repères précis.</p>
+            <p class="author-index-bio">Mathias Lancet aide à comprendre ce qui se passe dans les pots : arrosage, chaleur, maladies courantes, feuilles qui changent d’aspect et cultures potagères qui demandent des repères précis.</p>
             <div class="author-index-tags">
               <span class="author-theme-pill">Entretien</span>
               <span class="author-theme-pill">Arrosage</span>
@@ -139,6 +138,7 @@
         </div>
       </div>
     </main>
+
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-top">

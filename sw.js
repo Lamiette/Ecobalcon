@@ -1,8 +1,9 @@
 'use strict';
 
-const STATIC_CACHE  = 'ecobalcon-static-v1';
-const PAGES_CACHE   = 'ecobalcon-pages-v1';
-const IMAGES_CACHE  = 'ecobalcon-images-v1';
+const CACHE_VERSION = '2026-06-29';
+const STATIC_CACHE  = `ecobalcon-static-${CACHE_VERSION}`;
+const PAGES_CACHE   = `ecobalcon-pages-${CACHE_VERSION}`;
+const IMAGES_CACHE  = `ecobalcon-images-${CACHE_VERSION}`;
 const ALL_CACHES    = [STATIC_CACHE, PAGES_CACHE, IMAGES_CACHE];
 const IMAGE_MAX     = 60;
 
@@ -12,14 +13,17 @@ const PRECACHE_URLS = [
   '/simulateur/',
   '/css/style.min.css',
   '/js/cookie-consent.js',
+  '/js/articles-index.js',
+  '/js/home.js',
   '/js/plants-data.js',
+  '/js/simulateur.js',
   '/manifest.json',
   '/images/logo-site.png',
   '/images/favicon-192.png',
   '/images/balcon-soleil.webp',
 ];
 
-// ── Install : pré-cache du shell ─────────────────────────────────────────────
+// Install : pre-cache du shell
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -29,7 +33,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// ── Activate : suppression des anciens caches ────────────────────────────────
+// Activate : suppression des anciens caches
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -43,24 +47,24 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// ── Fetch ────────────────────────────────────────────────────────────────────
+// Fetch
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Ignore les requêtes non-GET et cross-origin (analytics, clarity…)
+  // Ignore les requetes non-GET et cross-origin (analytics, clarity...)
   if (request.method !== 'GET' || url.origin !== self.location.origin) {
     return;
   }
 
-  // CSS et JS : cache-first (changent via bump de version dans PRECACHE_URLS)
+  // CSS et JS : cache-first avec version explicite du service worker
   if (url.pathname.startsWith('/css/') || url.pathname.startsWith('/js/')) {
     event.respondWith(cacheFirst(request, STATIC_CACHE));
     return;
   }
 
-  // Images : cache-first avec limite de 60 entrées
+  // Images : cache-first avec limite de 60 entrees
   if (
     request.destination === 'image' ||
     /\.(webp|png|jpg|jpeg|svg|gif|ico)$/i.test(url.pathname)
@@ -69,7 +73,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Pages HTML : stale-while-revalidate (fraîcheur + vitesse)
+  // Pages HTML : stale-while-revalidate (fraicheur + vitesse)
   if (
     request.destination === 'document' ||
     (request.headers.get('Accept') || '').includes('text/html')
@@ -79,7 +83,7 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-// ── Stratégies de cache ──────────────────────────────────────────────────────
+// Strategies de cache
 
 async function cacheFirst(request, cacheName) {
   const cached = await caches.match(request);

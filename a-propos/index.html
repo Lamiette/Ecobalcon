@@ -28,13 +28,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com 'sha256-1ZHnxHwseoZfoAG7LmpEdnUJW/JBwIqvPceSeWam4p8=' 'sha256-ZOM7Xsy7qcbXB+0nxu5yrpDQZvsmq89vBESLn8YH4Ak='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://c.bing.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="#2f6f59">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body class="articles-page">
+  <a class="skip-link" href="#contenu">Passer au contenu</a>
   <div class="site-shell">
     <header class="site-header">
       <div class="header-inner">
@@ -48,7 +49,6 @@
             <a href="../">Accueil</a>
             <a href="../articles/">Articles</a>
             <a href="../simulateur/">Outils</a>
-            <a href="../galerie/">Galerie</a>
             <a href="./" aria-current="page">À propos</a>
             <a href="../contact/">Contact</a>
           </nav>
@@ -56,7 +56,7 @@
       </div>
     </header>
 
-    <main class="article-layout">
+    <main id="contenu" class="article-layout">
       <div class="article-shell">
         <nav class="breadcrumb-nav" aria-label="fil d'ariane">
           <ol class="breadcrumb">
