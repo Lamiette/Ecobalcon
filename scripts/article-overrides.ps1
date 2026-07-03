@@ -1,5 +1,138 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "que-planter-en-aout-sur-un-balcon" = [ordered]@{
+      Title = "Que planter en août sur un balcon ? Les semis qui préparent l’automne"
+      SeoTitle = "Que planter en août sur un balcon ?"
+      Description = "Que planter en août sur un balcon : laitues, radis, épinards, mâche, aromatiques et gestes simples pour relancer des pots après l’été."
+      Intro = "Août n’est pas seulement un mois d’arrosage et de récolte. Sur un balcon, c’est aussi le bon moment pour préparer la suite avec quelques semis malins, à condition de composer avec la chaleur, les pots déjà occupés et les départs en vacances."
+      TimeRequired = "PT6M"
+      DatePublished = "2026-07-03T09:00:00.000Z"
+      DateModified = "2026-07-03T09:00:00.000Z"
+      AuthorName = "Mathias Lancet"
+      Category = "Plantes & semis"
+      ImageFileName = "que-planter-en-aout-sur-un-balcon.webp"
+      ImageAlt = "Balcon urbain lumineux avec plusieurs pots et jeunes plants alignés le long de la rambarde"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <div class="article-key-facts" role="list">
+              <div class="article-key-facts-item" role="listitem"><strong>Objectif du mois&nbsp;: </strong><span>relancer des cultures d’automne sans épuiser le balcon en pleine chaleur</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>À semer facilement&nbsp;: </strong><span>radis, laitues à couper, roquette, mesclun et aromatiques fraîches selon l’exposition</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>À tenter plutôt en fin de mois&nbsp;: </strong><span>épinards, mâche et nouvelles salades si les nuits redeviennent moins lourdes</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>À éviter&nbsp;: </strong><span>démarrer tomates, poivrons, courgettes ou concombres depuis zéro</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Bon réflexe&nbsp;: </strong><span>semer peu, à l’ombre légère, dans un terreau déjà humidifié</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Repère utile&nbsp;: </strong><span>ce guide complète le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a></span></div>
+            </div>
+
+            <h2>Pourquoi août est un mois à part sur balcon</h2>
+            <p>En août, le balcon a souvent deux visages. D’un côté, les tomates, poivrons, basilics, fraisiers ou fleurs d’été sont encore en place. De l’autre, certains pots fatiguent, les laitues ont disparu, les petits bacs sèchent trop vite et on commence à penser aux récoltes d’automne.</p>
+            <p>Le bon réflexe n’est donc pas de tout arracher pour recommencer. Il vaut mieux repérer deux ou trois contenants libres, relancer des cultures rapides et garder les grandes plantes productives tant qu’elles donnent encore. Si ton balcon a beaucoup souffert de la chaleur, commence aussi par nos conseils sur les <a href="pots-trop-chauds-balcon.html">pots trop chauds sur balcon</a> et l’<a href="ombrer-balcon-plantes-chaleur.html">ombre légère en été</a>.</p>
+
+            <h2>Avant de semer : le diagnostic rapide du balcon</h2>
+            <p>Avant d’ouvrir les sachets de graines, regarde le balcon comme il est vraiment à la fin de l’été. Un semis d’août réussit rarement dans un pot brûlant, sec en profondeur ou déjà saturé de racines.</p>
+            <ul>
+              <li>Si le terreau se rétracte et laisse un jour sur les bords du pot, réhydrate-le doucement avant de semer.</li>
+              <li>Si le contenant est encore occupé par une plante productive, ne la sacrifie pas trop tôt.</li>
+              <li>Si le balcon reçoit le soleil brûlant de l’après-midi, prévois une ombre légère pour les semis.</li>
+              <li>Si tu pars plusieurs jours, attends ton retour ou sème seulement dans les pots les plus faciles à arroser.</li>
+            </ul>
+            <p>Ce petit tri évite beaucoup d’échecs. En août, ce n’est pas la graine qui manque le plus souvent : c’est la fraîcheur régulière dont elle a besoin pour lever.</p>
+
+            <h2>Les cultures les plus intéressantes à lancer en août</h2>
+            <h3>Les radis</h3>
+            <p>Les radis sont souvent le meilleur essai de fin d’été. Ils poussent vite, prennent peu de place et se sèment directement dans une jardinière. En revanche, ils deviennent vite piquants ou creux si le terreau alterne entre sécheresse et arrosage brutal.</p>
+            <p>Choisis un bac lumineux mais pas brûlant, garde la surface fraîche jusqu’à la levée et éclaircis sans attendre. Pour les détails de profondeur, d’arrosage et de récolte, appuie-toi sur notre <a href="guide-radis-sur-son-balcon.html">guide des radis sur balcon</a>.</p>
+
+            <h3>Les laitues à couper et jeunes salades</h3>
+            <p>Août peut relancer les laitues, surtout en fin de mois ou sur un balcon qui profite d’une lumière douce le matin. Les laitues à couper sont souvent plus simples que les grosses laitues pommées, car elles donnent vite des feuilles et supportent mieux une récolte progressive.</p>
+            <p>Le point clé reste la protection contre la surchauffe. Un petit semis en caissette, une jardinière déplacée à l’est ou un voile léger pendant les heures les plus dures peuvent changer le résultat. Notre fiche sur les <a href="guide-laitues-sur-son-balcon.html">laitues en pot</a> complète bien ce passage.</p>
+
+            <h3>La roquette et le mesclun</h3>
+            <p>La roquette et les mélanges de jeunes feuilles sont très adaptés aux petits espaces, parce qu’ils se récoltent jeunes et n’ont pas besoin de grands contenants. En août, sème-les clair, dans un bac propre, puis arrose en pluie fine pour ne pas déplacer les graines.</p>
+            <p>Sur un balcon très chaud, il vaut mieux attendre quelques jours plus doux que forcer le semis pendant une période caniculaire. Tu gagnes souvent plus en patience qu’en précipitation.</p>
+
+            <h3>Les épinards, plutôt quand la chaleur baisse</h3>
+            <p>Les épinards aiment les saisons fraîches. En août, ils deviennent intéressants surtout quand les nuits se calment et que le balcon ne reste plus brûlant jusque tard le soir. Sur un balcon exposé plein sud, vise plutôt la fin du mois ou le début septembre.</p>
+            <p>Si tu as un coin lumineux mais protégé du soleil dur, tu peux lancer un petit rang test. Notre guide pour <a href="guide-epinards-sur-son-balcon.html">cultiver des épinards sur balcon</a> te donnera les bons repères de pot, de semis et d’arrosage.</p>
+
+            <h3>La mâche, pour patienter vers l’automne</h3>
+            <p>La mâche n’est pas pressée. Elle préfère une ambiance plus fraîche et régulière. En août, elle se tente plutôt en toute fin de mois, dans une jardinière qui ne chauffe pas trop, avec un semis léger et bien suivi.</p>
+            <p>Si ton balcon reste très chaud, garde-la pour septembre. Un semis un peu plus tardif mais mieux placé donne souvent un meilleur résultat qu’un semis d’août lancé dans un pot encore brûlant.</p>
+
+            <h3>Les aromatiques fraîches</h3>
+            <p>Persil, ciboulette, coriandre ou cerfeuil peuvent retrouver de l’intérêt quand la chaleur se calme. La coriandre, notamment, monte vite en graines quand elle a trop chaud : elle se réussit mieux si tu lances peu de graines, dans une lumière douce et avec un arrosage régulier.</p>
+            <p>Si tu veux recomposer un coin utile en cuisine sans multiplier les erreurs, notre guide des <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques sur balcon</a> aide à choisir selon l’exposition.</p>
+
+            <h2>Que garder, quoi remplacer, quoi ne pas lancer</h2>
+            <p>En août, le choix le plus important n’est pas toujours ce que tu plantes. C’est aussi ce que tu décides de garder. Une tomate cerise productive, un basilic encore dense ou un fraisier remontant en forme mérite souvent sa place quelques semaines de plus.</p>
+            <p>À l’inverse, un bac de laitues montées, un pot de radis ratés ou une jardinière vide peut devenir un excellent support de relance. Vide ce qui est terminé, retire les racines grossières, ajoute un peu de terreau frais et arrose avant de semer.</p>
+            <p>Ne lance pas de tomates, poivrons, courgettes ou concombres depuis zéro en août. Ces cultures demandent trop de temps, de chaleur stable et de volume pour devenir vraiment rentables avant la fin de saison. Mieux vaut les garder pour le printemps suivant et utiliser août pour les cultures rapides ou d’arrière-saison.</p>
+
+            <h2>Adapter les semis selon l’exposition</h2>
+            <h3>Balcon plein soleil</h3>
+            <p>Sème moins, mais mieux protégé. Le matin est ton meilleur allié : arrose tôt, place les semis à l’abri du soleil de l’après-midi et surveille les petits contenants. Les radis peuvent fonctionner si le bac reste frais. Les laitues, épinards et mâche attendront souvent un créneau plus doux. Pour choisir les zones les moins dures, relis aussi notre guide des <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour balcon plein soleil</a>.</p>
+
+            <h3>Balcon à l’est ou lumière douce</h3>
+            <p>C’est souvent le meilleur cas pour les semis d’août. Les jeunes feuilles profitent de la lumière sans cuire toute la journée. Tu peux tester radis, laitues à couper, roquette, mesclun et, en fin de mois, épinards ou mâche.</p>
+
+            <h3>Balcon ombragé</h3>
+            <p>Un balcon ombragé n’est pas perdu pour août. Les légumes-fruits y manquent souvent de lumière, mais les cultures de feuilles peuvent rester intéressantes si l’air circule bien. Notre guide sur le <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> t’aidera à distinguer ombre fraîche et ombre trop sombre.</p>
+
+            <h2>Un plan simple pour relancer sans se compliquer</h2>
+            <p>Si tu veux avancer sans transformer le balcon en chantier, garde un plan très court :</p>
+            <ol>
+              <li>choisis deux contenants libres ou faciles à vider ;</li>
+              <li>réhydrate le terreau en profondeur la veille ;</li>
+              <li>ajoute un peu de terreau neuf en surface si le substrat est tassé ;</li>
+              <li>sème une culture rapide, puis une culture plus fraîche seulement en fin de mois ;</li>
+              <li>protège les semis du soleil dur pendant la levée ;</li>
+              <li>échelonne une deuxième petite série dix à quinze jours plus tard si la météo devient favorable.</li>
+            </ol>
+            <p>Cette méthode est moins spectaculaire qu’un grand redémarrage, mais elle correspond mieux à la réalité d’un balcon d’août : beaucoup de chaleur, peu de place libre et des pots qu’il faut garder simples à arroser.</p>
+
+            <h2>Les erreurs fréquentes en août</h2>
+            <p>La première erreur consiste à semer comme au printemps. En août, le terreau sèche plus vite, les graines lèvent parfois mal et les jeunes plants peuvent griller en une journée si le pot reste au soleil dur.</p>
+            <p>La deuxième erreur est de trop nettoyer le balcon trop tôt. Tant que les tomates, basilics, poivrons ou fraisiers produisent encore, garde-les. Les cultures d’automne doivent prendre le relais, pas remplacer inutilement ce qui fonctionne.</p>
+            <p>La troisième erreur, c’est de semer juste avant de partir. Si personne ne peut arroser, patiente. Un semis lancé une semaine plus tard, mais suivi correctement, sera presque toujours plus fiable.</p>
+
+            <h2>FAQ</h2>
+            <h3>Que planter en août sur un petit balcon ?</h3>
+            <p>Le plus simple est de viser radis, laitues à couper, roquette, mesclun et quelques aromatiques fraîches. En fin de mois, tu peux tester épinards ou mâche si le balcon redevient plus doux.</p>
+            <h3>Est-il trop tard pour semer des légumes en août ?</h3>
+            <p>Non, mais il faut choisir des cultures rapides ou adaptées à la fin d’été. Ce n’est pas le bon moment pour démarrer des tomates ou des courgettes depuis zéro.</p>
+            <h3>Comment éviter que les semis grillent en août ?</h3>
+            <p>Sème dans un terreau déjà humide, place les bacs en lumière douce, protège des heures les plus chaudes et arrose en pluie fine le matin. La régularité compte plus que la quantité d’eau.</p>
+
+            <h2>En résumé</h2>
+            <p>Août est un très bon mois pour préparer l’automne sur un balcon, à condition de rester sélectif. Garde les cultures d’été encore productives, libère seulement les pots terminés et relance des semis rapides comme radis, laitues à couper, roquette ou mesclun.</p>
+            <p>Pour garder le bon rythme, complète ce guide avec le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a>, nos conseils de <a href="paillage-sur-balcon-ecolo.html">paillage en pot</a> et les repères pour <a href="reduction-consommation-eau-balcon.html">réduire la consommation d’eau sur balcon</a>. Tu prépareras la suite sans rendre l’été plus compliqué à gérer.</p>
+'@
+      Faq = @(
+        [ordered]@{
+          Question = "Que planter en août sur un balcon ?"
+          Answer = "En août, les meilleurs choix sont souvent les radis, laitues à couper, roquette, mesclun, aromatiques fraîches et, plutôt en fin de mois, épinards ou mâche si la chaleur baisse."
+        },
+        [ordered]@{
+          Question = "Peut-on encore semer des salades en août sur balcon ?"
+          Answer = "Oui, surtout les laitues à couper et jeunes feuilles, à condition de semer dans une lumière douce, avec un terreau frais et un arrosage très régulier."
+        },
+        [ordered]@{
+          Question = "Faut-il arracher les tomates pour préparer l’automne ?"
+          Answer = "Non si elles produisent encore. Il vaut mieux garder les plants utiles et relancer les semis d’automne dans les pots déjà vides ou vraiment terminés."
+        }
+      )
+      HowTo = [ordered]@{
+        Name = "Comment relancer des semis d’août sur un balcon"
+        Description = "Les étapes essentielles pour semer en août sans épuiser les pots ni griller les jeunes plants sur un balcon."
+        Steps = @(
+          [ordered]@{ Name = "Repérer les contenants disponibles"; Text = "Garde les cultures d’été encore productives et choisis seulement les pots vides ou les bacs vraiment terminés." },
+          [ordered]@{ Name = "Réhydrater le substrat"; Text = "Arrose doucement le terreau la veille pour éviter de semer dans une motte sèche ou rétractée." },
+          [ordered]@{ Name = "Choisir des cultures rapides"; Text = "Privilégie radis, laitues à couper, roquette ou mesclun, puis attends une météo plus douce pour épinards et mâche." },
+          [ordered]@{ Name = "Semer à l’abri du soleil dur"; Text = "Installe les bacs en lumière douce ou protège-les pendant les heures les plus chaudes." },
+          [ordered]@{ Name = "Arroser en pluie fine"; Text = "Maintiens la surface fraîche sans noyer les graines ni déplacer le semis." },
+          [ordered]@{ Name = "Échelonner la relance"; Text = "Relance une petite série dix à quinze jours plus tard si la température devient plus favorable." }
+        )
+      }
+    }
     "que-planter-en-mai-sur-un-balcon" = [ordered]@{
       Title = "Que planter en mai sur un balcon ? Les cultures faciles pour passer au rythme d’été"
       SeoTitle = "Que planter en mai sur un balcon ?"
@@ -615,7 +748,7 @@
       Description = "Laitues sur balcon : variétés faciles, semis, arrosage, ombre légère et récoltes échelonnées pour garder des salades tendres presque toute l’année."
       Intro = "Les laitues sont parfaites pour un balcon parce qu’elles poussent vite, demandent peu de profondeur et apprécient souvent la lumière douce. Bien conduites, elles permettent d’échelonner les récoltes sur une grande partie de l’année."
       TimeRequired = "PT4M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      DateModified = "2026-07-03T09:00:00.000Z"
       ImageAlt = "Feuilles de laitues pommées et frisées cultivées en pot sur un balcon"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
@@ -628,7 +761,7 @@
             <p>Prévois un drainage simple mais réel : trous d’évacuation, couche légère au fond si besoin, et surtout pas de soucoupe remplie en permanence.</p>
             <h2>Lumière et saison : trouver le bon rythme</h2>
             <p>La laitue aime la lumière, mais elle déteste la surchauffe. Au printemps et en automne, un balcon bien lumineux lui convient très bien. En été, elle préfère souvent une exposition est, nord-est ou une mi-ombre légère qui protège les feuilles aux heures les plus chaudes.</p>
-            <p>Si ton balcon chauffe vite, adopte les mêmes réflexes que pour un coin frais : arrosage matinal, paillage fin et semis un peu plus serrés dans les périodes tempérées.</p>
+            <p>Si ton balcon chauffe vite, adopte les mêmes réflexes que pour un coin frais : arrosage matinal, paillage fin et semis un peu plus serrés dans les périodes tempérées. En fin d’été, notre guide sur <a href="que-planter-en-aout-sur-un-balcon.html">que planter en août sur un balcon</a> t’aide à relancer les salades sans les exposer au plein coup de chaud.</p>
             <h2>Semer ou repiquer</h2>
             <p>Les deux méthodes se défendent. Les plants du commerce sont pratiques pour aller vite, mais les semis restent très intéressants si tu veux récolter régulièrement sans tout avoir mûr en même temps.</p>
             <ul>
@@ -915,7 +1048,7 @@
       Description = "Calendrier du jardin de balcon : semis, plantations, tailles, protection et récoltes mois par mois pour suivre le bon rythme sans se disperser."
       Intro = "Sur balcon, on gagne beaucoup à jardiner au bon moment plutôt qu’à tout faire d’un coup. Ce calendrier t’aide à garder un rythme simple, mois par mois, pour mieux semer, planter, entretenir et récolter."
       TimeRequired = "PT5M"
-      DateModified = "2026-04-04T09:00:00.000Z"
+      DateModified = "2026-07-03T09:00:00.000Z"
       ImageAlt = "Agenda de jardinage posé parmi des feuilles, symbole d’un calendrier de culture pour balcon"
       BodyHtml = @'
             <h2>Comment utiliser ce calendrier</h2>
@@ -971,7 +1104,7 @@
               <li>Sème déjà quelques cultures d’arrière-saison comme radis ou laitues d’automne.</li>
             </ul>
             <h2>Août</h2>
-            <p>Le balcon peut entrer en mode survie si la chaleur s’installe. Il faut surtout maintenir l’équilibre.</p>
+            <p>Le balcon peut entrer en mode survie si la chaleur s’installe. Il faut surtout maintenir l’équilibre et choisir les semis qui préparent la suite sans griller. Pour un repère détaillé, complète avec <a href="que-planter-en-aout-sur-un-balcon.html">que planter en août sur un balcon</a>.</p>
             <ul>
               <li>Ombrage légèrement les cultures sensibles pendant les pics.</li>
               <li>Continue les récoltes et retire les parties fatiguées.</li>
@@ -1619,7 +1752,7 @@
       Description = "Épinards sur balcon : quand semer, quel pot choisir, où les placer et comment éviter la montée en graines. Un guide simple pour récolter longtemps en pot."
       Intro = "Les épinards font partie des cultures les plus faciles sur un balcon peu brûlant. Avec un bac pas trop profond, un semis simple et une humidité régulière, on peut récolter plusieurs fois sans entrer dans une culture compliquée."
       TimeRequired = "PT5M"
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-07-03T09:00:00.000Z"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Exposition : soleil doux à mi-ombre lumineuse, surtout au printemps et à l’automne<br>Type de pot : jardinière ou bac de 15 à 20 cm de profondeur minimum<br>Substrat : terreau souple, riche et frais, avec un peu de compost mûr<br>Semis : surtout de fin d’hiver au printemps puis de fin d’été à l’automne<br>Arrosage : régulier pour éviter le coup de sec et la montée en graines<br>Récolte : feuille à feuille ou coupe partielle quelques semaines après le semis<br>Variétés faciles : Géant d’hiver, Matador, Monstrueux de Viroflay, jeunes pousses</p>
@@ -1628,6 +1761,7 @@
             <p>Ils trouvent très bien leur place à côté des <a href="guide-laitues-sur-son-balcon.html">laitues</a>, des <a href="guide-radis-sur-son-balcon.html">radis</a> et même de quelques <a href="guide-fraises-sur-son-balcon.html">fraisiers</a> si tu veux un balcon productif sans miser uniquement sur les cultures d’été plus gourmandes.</p>
             <h2>Quand semer des épinards sur un balcon</h2>
             <p>Le meilleur créneau reste souvent le printemps doux et la fin d’été. En plein été, un balcon trop chaud les fait monter en graines beaucoup plus vite.</p>
+            <p>Pour une relance de fin d’été, vise plutôt la deuxième partie d’août ou septembre selon la chaleur réelle du balcon. Notre guide <a href="que-planter-en-aout-sur-un-balcon.html">Que planter en août sur un balcon ?</a> t’aide justement à choisir le bon moment entre radis, salades, mâche et épinards.</p>
             <p>Si tu débutes, pars sur de petits semis espacés de deux à trois semaines plutôt que tout semer d’un coup. C’est plus simple à suivre et cela étale les récoltes.</p>
             <h2>Le bon pot et le bon terreau</h2>
             <p>Les épinards n’ont pas besoin d’un bac profond, mais ils aiment un contenant assez large pour que les plants respirent. Une jardinière classique ou un bac peu encombrant fonctionne très bien.</p>
@@ -2213,4 +2347,3 @@
     }
   }
 }
-

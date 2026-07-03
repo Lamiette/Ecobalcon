@@ -33,9 +33,17 @@ Identifie :
 - les pages anciennes à mettre à jour, fusionner ou laisser tranquilles plutôt que créer un article de plus ;
 - les opportunités de longue traîne SEO ;
 - les sujets adaptés à un lecteur français débutant/intermédiaire ;
-- les sujets cohérents avec la saison si pertinent.
+- les sujets cohérents avec la saison à venir : anticiper le pic de recherche de 3 à 4 semaines plutôt que suivre la saison en cours, le temps que Google positionne la page.
 
 Choisis ensuite le meilleur sujet à créer maintenant.
+
+Priorités éditoriales (audit SEO du 3 juillet 2026), à examiner dans cet ordre avant tout autre sujet :
+1. Série mensuelle “Que planter / que faire en [mois] sur un balcon” : si le volet du mois suivant n’existe pas encore, c’est le sujet prioritaire. Au moment de l’audit, la série s’arrête à juin ; juillet, août puis les mois suivants restent à couvrir, chacun publié 3 à 4 semaines avant le début du mois concerné.
+2. Rafraîchissement saisonnier : si un article existant approche de son pic de saison (canicule, plantes grimpantes, arrosage vacances, jardinage en lasagnes…) et n’a pas été amélioré depuis plus d’un an, privilégier sa vraie mise à jour (contenu, maillage interne, dateModified, sitemap) plutôt qu’un nouvel article proche.
+3. Trou automne/hiver : le site n’a historiquement rien publié de septembre à mars et ne couvre pas du tout ces saisons, donc il perd ce trafic chaque année. Sujets à créer en anticipation : que planter en septembre puis en octobre sur un balcon, hivernage des plantes en pot, protéger les pots du gel, bulbes d’automne, légumes d’hiver (mâche, épinards, ail), préparer le balcon avant l’hiver.
+4. Nouvelles fiches techniques et longue traîne : aubergine, piment, persil, ciboulette, thym, romarin ou roquette en pot ; côté entretien : engrais liquide maison (un dossier vide articles/engrais-liquide-maison-balcon/ attend déjà ce sujet), marc de café au potager de balcon, drainage des pots.
+
+Ces priorités complètent l’analyse du site, elles ne la remplacent pas : vérifie toujours l’absence de doublon et la cohérence avec l’existant avant de trancher.
 
 Critères de choix :
 - sujet précis, pas trop large ;
@@ -76,6 +84,7 @@ Workflow anti-contenu IA faible qualité :
 
 Style attendu :
 - français naturel ;
+- tutoiement du lecteur, comme dans tous les articles existants du site ;
 - ton clair, concret, rassurant et pédagogique ;
 - pas de phrases creuses ;
 - pas de blabla SEO artificiel ;
@@ -110,7 +119,7 @@ Ne gonfle pas artificiellement le texte.
 ────────────────────────
 
 Optimise l’article avec :
-- title SEO unique ;
+- title SEO unique, de 45 à 60 caractères au total, suffixe “| EcoBalcon” compris, pour éviter la troncature dans les résultats ;
 - meta description naturelle et incitative ;
 - slug propre ;
 - structure Hn cohérente ;
@@ -162,8 +171,10 @@ Règles :
 - ne pas inventer de source ;
 - éviter les images kitsch, trop artificielles ou hors sujet ;
 - privilégier une image crédible pour un site de jardinage sur balcon ;
-- nom de fichier optimisé SEO ;
-- alt text naturel ;
+- format WebP de préférence, image héro sous 150 à 200 Ko ;
+- fichier placé dans images/articles/ avec un nom optimisé SEO ;
+- attributs width et height renseignés, comme sur les images existantes ;
+- alt text naturel qui décrit réellement ce que montre l’image, sans recopier la meta description ni empiler des mots-clés ;
 - légende/crédit si le site en utilise.
 
 Si l’environnement permet de télécharger et intégrer proprement l’image, fais-le.
@@ -182,15 +193,14 @@ Sinon, prépare l’intégration et laisse une note claire avec :
 Crée réellement l’article dans le bon format du projet.
 Respecte la structure existante.
 
-Mets à jour uniquement les fichiers nécessaires, par exemple :
-- page listing des articles ;
-- page d’accueil si elle affiche les derniers articles ;
-- sitemap ;
-- flux RSS/Atom si présent ;
-- fichiers de données JSON/YAML/JS/TS si utilisés ;
-- pages catégories/tags si elles existent ;
-- liens internes depuis anciens articles ;
-- image preview sociale si le projet l’utilise.
+Workflow d’intégration propre à EcoBalcon (voir aussi AGENTS.md) :
+- les pages HTML des articles sont générées : ne jamais écrire ni modifier à la main articles/<slug>/index.html, ni les redirections legacy <slug>/index.html et articles/<slug>.html, elles seraient écrasées au prochain rebuild ;
+- ajouter le contenu et les métadonnées de l’article dans scripts/article-overrides.ps1, en suivant le format des articles déjà présents dans ce fichier ;
+- lancer ensuite scripts/rebuild_articles.ps1 : il régénère les pages d’articles, les redirections legacy, l’index des articles, le sitemap (avec balises image), robots.txt, les pages système et le CSS minifié ;
+- un diff étendu sur les fichiers générés après un rebuild est normal : ne pas l’annuler, vérifier simplement qu’aucun changement inattendu ne s’y glisse ;
+- lancer scripts/update_home_article_count.ps1 pour mettre à jour le compteur de guides de la page d’accueil ;
+- ne pas lancer le rebuild avec -RebuildHome : la page d’accueil est préservée par défaut ; si elle doit mettre en avant le nouvel article, la modifier à la main avec prudence ;
+- les liens internes depuis 2 à 5 anciens articles vers le nouveau passent aussi par scripts/article-overrides.ps1, jamais par le HTML généré.
 
 Ne réorganise pas le projet.
 Ne change pas la charte graphique.
@@ -227,8 +237,12 @@ Avant de finaliser, vérifie :
 - rendu HTML cohérent avec les autres articles ;
 - absence de modification inutile.
 
-Si le projet contient des scripts de build, validation, lint ou preview, lance-les si possible.
-Si une commande échoue, corrige si c’est raisonnable, sinon explique clairement le problème.
+Vérifications concrètes attendues sur ce projet :
+- lancer scripts/rebuild_articles.ps1 puis relire la page générée du nouvel article ;
+- vérifier que la nouvelle URL figure dans sitemap.xml, avec sa balise image ;
+- vérifier que les redirections legacy <slug>/index.html et articles/<slug>.html ont bien été générées ;
+- lancer git diff --check, puis inspecter le diff pour repérer tout changement inattendu sur les fichiers générés ;
+- si une commande échoue, corrige si c’est raisonnable, sinon explique clairement le problème.
 
 ────────────────────────
 10. RÉCAP FINAL

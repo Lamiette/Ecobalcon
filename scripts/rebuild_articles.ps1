@@ -1106,7 +1106,101 @@ function Apply-ArticleOverride {
     $data["ImageCanonicalUrl"] = Get-ImageCanonicalUrl $data["ImageFileName"]
   }
 
+  if ($data["DatePublished"]) {
+    $data["DateSort"] = [DateTime]::Parse($data["DatePublished"])
+  }
+
+  if ($data["AuthorName"]) {
+    $authorProfile = Get-AuthorProfile $data["AuthorName"]
+    if ($authorProfile) {
+      $data["AuthorSlug"] = $authorProfile.Slug
+      $data["AuthorUrl"] = "$siteUrl/auteurs/$($authorProfile.Slug)/"
+    }
+    if (-not $data["AuthorType"]) {
+      $data["AuthorType"] = "Person"
+    }
+  }
+
   return [PSCustomObject]$data
+}
+
+function New-ArticleFromOverride {
+  param(
+    [string]$slug,
+    [object]$override
+  )
+
+  if ([string]::IsNullOrWhiteSpace($slug) -or $null -eq $override) { return $null }
+  if (-not $override.Contains("BodyHtml")) { return $null }
+
+  $requiredKeys = @(
+    "Title",
+    "Description",
+    "DatePublished",
+    "AuthorName",
+    "Category",
+    "ImageFileName",
+    "ImageAlt",
+    "BodyHtml"
+  )
+  $missingKeys = @(
+    $requiredKeys |
+      Where-Object {
+        -not $override.Contains($_) -or [string]::IsNullOrWhiteSpace([string]$override[$_])
+      }
+  )
+  if ($missingKeys.Count -gt 0) {
+    throw "L'override de l'article '$slug' est incomplet: $($missingKeys -join ', ')."
+  }
+
+  $title = [string]$override["Title"]
+  $description = [string]$override["Description"]
+  $datePublished = [string]$override["DatePublished"]
+  $dateModified = if ($override.Contains("DateModified") -and $override["DateModified"]) {
+    [string]$override["DateModified"]
+  } else {
+    $datePublished
+  }
+  $authorName = [string]$override["AuthorName"]
+  $authorProfile = Get-AuthorProfile $authorName
+  $authorType = if ($override.Contains("AuthorType") -and $override["AuthorType"]) {
+    [string]$override["AuthorType"]
+  } else {
+    "Person"
+  }
+  $category = Get-CanonicalArticleCategory `
+    -slug $slug `
+    -rawCategory ([string]$override["Category"]) `
+    -title $title `
+    -description $description
+  $imageFileName = [string]$override["ImageFileName"]
+
+  return [PSCustomObject]@{
+    SourcePath = $articleOverridesPath
+    SourceName = "article-overrides.ps1"
+    Slug = $slug
+    OutputName = Get-ArticleLegacyFileName ([PSCustomObject]@{ Slug = $slug })
+    Title = $title
+    SeoTitle = if ($override.Contains("SeoTitle")) { [string]$override["SeoTitle"] } else { "" }
+    Description = $description
+    ImageRemoteUrl = ""
+    ImageFileName = $imageFileName
+    ImageCanonicalUrl = Get-ImageCanonicalUrl $imageFileName
+    ImageAlt = [string]$override["ImageAlt"]
+    DatePublished = $datePublished
+    DateModified = $dateModified
+    TimeRequired = if ($override.Contains("TimeRequired")) { [string]$override["TimeRequired"] } else { "" }
+    AuthorName = $authorName
+    AuthorType = $authorType
+    AuthorSlug = if ($authorProfile) { $authorProfile.Slug } else { "" }
+    AuthorUrl = if ($authorProfile) { "$siteUrl/auteurs/$($authorProfile.Slug)/" } else { "" }
+    Category = $category
+    DateSort = [DateTime]::Parse($datePublished)
+    Intro = if ($override.Contains("Intro") -and $override["Intro"]) { [string]$override["Intro"] } else { $description }
+    BodyHtml = [string]$override["BodyHtml"]
+    Faq = if ($override.Contains("Faq")) { $override["Faq"] } else { $null }
+    HowTo = if ($override.Contains("HowTo")) { $override["HowTo"] } else { $null }
+  }
 }
 
 function Get-ArticleSources {
@@ -1200,6 +1294,20 @@ function Get-ArticleSources {
       }
 
     $articleSources.Add((Apply-ArticleOverride $article))
+  }
+
+  $existingSlugs = @{}
+  foreach ($articleSource in $articleSources) {
+    $existingSlugs[$articleSource.Slug] = $true
+  }
+
+  foreach ($overrideSlug in @($articleOverrides.Keys | Sort-Object)) {
+    if ($existingSlugs.ContainsKey($overrideSlug)) { continue }
+
+    $overrideOnlyArticle = New-ArticleFromOverride -slug $overrideSlug -override $articleOverrides[$overrideSlug]
+    if ($null -ne $overrideOnlyArticle) {
+      $articleSources.Add($overrideOnlyArticle)
+    }
   }
 
   return $articleSources | Sort-Object `
@@ -3073,6 +3181,7 @@ $relatedArticlePriorityMap = @{
   "solutions-compostage-sur-balcon" = @("utilisation-compost-sur-balcon", "jardinage-en-lasagnes-sur-balcon", "recuperer-eau-de-pluie-balcon")
   "utilisation-compost-sur-balcon" = @("solutions-compostage-sur-balcon", "paillage-sur-balcon-ecolo", "recuperer-eau-de-pluie-balcon")
   "recuperer-eau-de-pluie-balcon" = @("reduction-consommation-eau-balcon", "paillage-sur-balcon-ecolo", "solutions-compostage-sur-balcon")
+  "que-planter-en-aout-sur-un-balcon" = @("calendrier-du-jardin-de-balcon", "guide-laitues-sur-son-balcon", "guide-epinards-sur-son-balcon")
 }
 
 function Get-RelatedArticles {
@@ -3794,7 +3903,7 @@ function Build-SitemapXml {
     [ordered]@{ Path = "auteurs\mathias-lancet\index.html"; Loc = "$siteUrl/auteurs/mathias-lancet/"; Priority = "0.5"; ImageUrl = "$siteUrl/images/auteurs/mathias-lancet.webp"; ImageCaption = "Portrait de Mathias Lancet sur un balcon parisien entouré de plantes en pot" },
     [ordered]@{ Path = "categories\index.html"; Loc = "$siteUrl/categories/"; Priority = "0.7"; ImageUrl = "$siteUrl/images/balcon-soleil.webp"; ImageCaption = "Balcon lumineux avec pots, feuillages et fleurs dans l'univers EcoBalcon" },
     [ordered]@{ Path = "categories\fiches-techniques\index.html"; Loc = "$siteUrl/categories/fiches-techniques/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/menthe-pot-balcon-pexels-12727257.webp"; ImageCaption = "Menthe vigoureuse cultivée seule en pot, avec feuillage vert dense" },
-    [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-mai-sur-un-balcon.jpg"; ImageCaption = "Tomates cerises en pot sur un balcon lumineux, installées dans un grand pot en terre cuite" },
+    [ordered]@{ Path = "categories\plantes-semis\index.html"; Loc = "$siteUrl/categories/plantes-semis/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/que-planter-en-aout-sur-un-balcon.webp"; ImageCaption = "Balcon urbain lumineux avec plusieurs pots et jeunes plants alignés le long de la rambarde" },
     [ordered]@{ Path = "categories\entretien-astuces\index.html"; Loc = "$siteUrl/categories/entretien-astuces/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/pots-chauds-balcon-pexels-5138165.jpg"; ImageCaption = "Pots de plantes regroupés sur un balcon avec feuillage et contenants exposés à la chaleur" },
     [ordered]@{ Path = "categories\amenagement-du-balcon\index.html"; Loc = "$siteUrl/categories/amenagement-du-balcon/"; Priority = "0.65"; ImageUrl = "$siteUrl/images/articles/lierre-grimpant-A85V1gor4Dsan5k8.webp"; ImageCaption = "Plante grimpante en pot pour créer de l'intimité sur un balcon" }
   )
