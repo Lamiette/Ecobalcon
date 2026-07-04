@@ -93,6 +93,10 @@ Style attendu :
 - cohérence avec le ton EcoBalcon.
 
 Titres :
+- title SEO = une phrase naturelle et complète, avec le mot-clé principal dans les 3-4 premiers mots et une promesse ou un angle concret (« pendant les vacances », « mois par mois », « sans priver de lumière ») ;
+- jamais de suites de mots-clés tronqués façon « Arrosage vacances balcon : solutions simples » ou « Calendrier lunaire balcon : guide » : Google réécrit ces titres en SERP et leur CTR est plus faible qu'une vraie phrase ;
+- viser 45 à 60 caractères au total suffixe « | EcoBalcon » compris ; si le titre dépasse, raccourcir en reformulant la phrase, jamais en supprimant des mots pour ne garder que les mots-clés ;
+- ne jamais réécrire en masse les titles de pages existantes déjà positionnées (leçon de la chute de trafic du 26 juin 2026, causée par la réécriture simultanée de ~35 titles) : toute modification d'un title établi doit être individuelle, justifiée par des données GSC, puis suivie de plusieurs semaines de stabilisation sans nouveau changement ;
 - vérifier les derniers articles visibles en grille avant de valider un nouveau H1/title SEO ;
 - éviter les séries de titres construits sur le même moule, notamment “X en pot sur balcon : …”, “Guide simple pour …” ou “Guide complet pour …” répétés plusieurs fois ;
 - varier les angles naturellement : question concrète, problème lecteur, bénéfice pratique, formulation conversationnelle ou promesse sobre ;
