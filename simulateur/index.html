@@ -267,6 +267,48 @@
       line-height: 1.15;
     }
 
+    .simulator-match {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .simulator-match-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.8rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .simulator-match-ok {
+      background: rgba(47, 111, 89, 0.1);
+      border: 1px solid rgba(47, 111, 89, 0.16);
+      color: var(--brand-dark);
+    }
+
+    .simulator-match-season {
+      background: rgba(47, 111, 89, 0.16);
+      border: 1px solid rgba(47, 111, 89, 0.24);
+      color: var(--brand-dark);
+    }
+
+    .simulator-match-warn {
+      background: rgba(216, 140, 63, 0.14);
+      border: 1px solid rgba(216, 140, 63, 0.24);
+      color: #7b4d1f;
+    }
+
+    .simulator-match-muted {
+      background: rgba(33, 48, 42, 0.05);
+      border: 1px solid rgba(33, 48, 42, 0.1);
+      color: var(--muted);
+    }
+
     .simulator-tips {
       margin: 0;
       padding-left: 1.1rem;
@@ -564,7 +606,7 @@
               </div>
             </section>
 
-            <aside class="simulator-panel" aria-live="polite">
+            <aside class="simulator-panel" id="resultsPanel" aria-live="polite">
               <h2>Suggestions personnalis&eacute;es</h2>
               <p>Le simulateur fait remonter en priorit&eacute; les plantes qui collent le mieux &agrave; vos conditions.</p>
               <div id="summary" class="simulator-summary"></div>
@@ -627,6 +669,13 @@
                   <option value="5">5 L ou moins</option>
                   <option value="10">10 L ou moins</option>
                   <option value="20">20 L ou moins</option>
+                </select>
+              </label>
+              <label for="librarySeason">
+                <span>Saison</span>
+                <select class="simulator-select" id="librarySeason">
+                  <option value="">Toute l'année</option>
+                  <option value="now">Plantable ce mois-ci</option>
                 </select>
               </label>
             </div>

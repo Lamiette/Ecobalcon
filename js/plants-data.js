@@ -1,4 +1,5 @@
-﻿window.EcoBalconPlants = [
+// months : mois (1-12) où semis ou plantation restent pertinents sur balcon (France métropolitaine).
+window.EcoBalconPlants = [
   {
     name: "Basilic",
     exposure: ["soleil", "mi-ombre"],
@@ -10,6 +11,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Feuilles de juin à octobre",
+    months: [4, 5, 6, 7],
     tags: ["Aromatique", "Facile", "Pot"],
     description: "Une valeur sûre sur balcon si vous avez de la lumière et des arrosages réguliers.",
     tips: ["Arrosez dès que la surface sèche", "Pincez les tiges pour le faire ramifier"]
@@ -25,6 +27,7 @@
     compostNeed: 4,
     difficulty: "Moyen",
     harvest: "Récoltes d'été sur balcon chaud",
+    months: [4, 5, 6],
     tags: ["Légume", "Productif", "Soleil"],
     description: "Très intéressante en balcon ensoleillé avec un pot profond et un tuteur.",
     tips: ["Utilisez un grand pot", "Arrosez régulièrement sans détremper"]
@@ -40,6 +43,7 @@
     compostNeed: 3,
     difficulty: "Facile",
     harvest: "Fruits selon variété, printemps à été",
+    months: [3, 4, 5, 8, 9, 10],
     tags: ["Fruit", "Petit espace", "Accessible"],
     description: "Un classique facile à placer en jardinière ou en suspension.",
     tips: ["Retirez les feuilles abîmées", "Apportez un peu d'engrais en saison"]
@@ -55,6 +59,7 @@
     compostNeed: 1,
     difficulty: "Très facile",
     harvest: "Récolte rapide en 3 à 6 semaines",
+    months: [3, 4, 5, 6, 7, 8, 9],
     tags: ["Légume", "Rapide", "Débutant"],
     description: "Pratique pour débuter : pousse vite et demande peu de place.",
     tips: ["Semez peu mais souvent", "Éclaircissez si les semis sont serrés"]
@@ -70,6 +75,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Feuilles régulières hors grosses chaleurs",
+    months: [3, 4, 5, 6, 7, 8, 9],
     tags: ["Légume", "Petit espace", "Simple"],
     description: "Très bien pour récolter au fil des besoins sans gros matériel.",
     tips: ["Évitez les fortes chaleurs sans arrosage", "Récoltez feuille par feuille"]
@@ -85,6 +91,7 @@
     compostNeed: 4,
     difficulty: "Moyen",
     harvest: "Fruits en été sur balcon chaud",
+    months: [5, 6],
     tags: ["Légume", "Soleil", "Pot profond"],
     description: "Un bon choix sur balcon chaud et lumineux, avec un contenant stable et profond.",
     tips: ["Prévoyez un pot assez grand", "Maintenez une humidité régulière en été"]
@@ -100,6 +107,7 @@
     compostNeed: 2,
     difficulty: "Très facile",
     harvest: "Feuilles pendant toute la belle saison",
+    months: [3, 4, 5, 6, 7, 8, 9],
     tags: ["Aromatique", "Tolère l'ombre", "Vigoureuse"],
     description: "Très simple à cultiver, idéale pour un balcon moins ensoleillé.",
     tips: ["Gardez-la en pot séparé", "Arrosez régulièrement en été"]
@@ -115,6 +123,7 @@
     compostNeed: 1,
     difficulty: "Très facile",
     harvest: "Tiges parfumées presque toute l'année",
+    months: [3, 4, 5, 9, 10],
     tags: ["Aromatique", "Soleil", "Peu d'eau"],
     description: "Une aromatique sobre et très adaptée aux balcons lumineux et bien drainés.",
     tips: ["Arrosez avec modération", "Taillez légèrement après la floraison"]
@@ -130,6 +139,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Floraison parfumée et mellifère",
+    months: [3, 4, 5, 9, 10],
     tags: ["Méditerranéenne", "Soleil", "Peu d'eau"],
     description: "Excellente en plein soleil, surtout sur balcon chaud et bien drainé.",
     tips: ["Choisissez un substrat drainant", "Arrosez sans excès"]
@@ -145,6 +155,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Fleurs comestibles et décoratives",
+    months: [4, 5, 6],
     tags: ["Fleur", "Comestible", "Balcon"],
     description: "Une fleur facile et généreuse qui apporte vite de la couleur sur balcon.",
     tips: ["Évitez les pots trop riches en engrais", "Palissez légèrement si elle s'allonge"]
@@ -160,6 +171,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Feuilles coupées régulièrement",
+    months: [3, 4, 5, 6, 7, 8],
     tags: ["Aromatique", "Compact", "Débutant"],
     description: "Une bonne option pour les petits espaces et les expositions douces.",
     tips: ["Achetez un plant déjà formé", "Coupez les tiges extérieures en priorité"]
@@ -175,6 +187,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Floraison longue",
+    months: [4, 5, 6],
     tags: ["Fleur", "Robuste", "Balcon"],
     description: "Une plante classique de balcon, florifère et assez tolérante.",
     tips: ["Retirez les fleurs fanées", "Arrosez plus souvent pendant les fortes chaleurs"]
@@ -190,6 +203,7 @@
     compostNeed: 3,
     difficulty: "Facile",
     harvest: "Floraison généreuse",
+    months: [4, 5, 6],
     tags: ["Fleur", "Florifère", "Suspension"],
     description: "Parfait pour donner rapidement un effet coloré et abondant.",
     tips: ["Supprimez les fleurs fanées", "Nourrissez un peu en période de floraison"]
@@ -205,6 +219,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Couleur en zone peu ensoleillée",
+    months: [5, 6],
     tags: ["Fleur", "Ombre", "Décoratif"],
     description: "Très utile pour fleurir un balcon lumineux mais sans soleil brûlant.",
     tips: ["Évitez l'eau stagnante", "Placez-le à l'abri du soleil de midi"]
@@ -220,6 +235,7 @@
     compostNeed: 1,
     difficulty: "Très facile",
     harvest: "Tiges fraîches à couper souvent",
+    months: [3, 4, 5, 6, 7, 8, 9],
     tags: ["Aromatique", "Simple", "Compacte"],
     description: "Une des aromatiques les plus faciles à garder en pot.",
     tips: ["Coupez régulièrement", "Divisez la touffe si elle grossit"]
@@ -235,6 +251,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Tiges parfumées toute l'année",
+    months: [3, 4, 5, 9, 10],
     tags: ["Aromatique", "Méditerranéenne", "Robuste"],
     description: "Parfait pour les balcons ensoleillés si le pot est assez profond et drainant.",
     tips: ["Placez-le dans un substrat léger", "Évitez les arrosages trop fréquents"]
@@ -250,6 +267,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Feuilles parfumées pour cuisine",
+    months: [4, 5, 6, 9],
     tags: ["Aromatique", "Compact", "Cuisine"],
     description: "Une aromatique simple qui pousse bien en jardinière ou en petit pot.",
     tips: ["Pincez pour densifier", "Laissez sécher la surface entre deux arrosages"]
@@ -265,6 +283,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Feuilles aromatiques durables",
+    months: [4, 5, 6, 9, 10],
     tags: ["Aromatique", "Soleil", "Durable"],
     description: "Une plante parfumée, robuste et adaptée aux expositions chaudes.",
     tips: ["Évitez l'excès d'eau", "Taillez au printemps pour garder une forme compacte"]
@@ -280,6 +299,7 @@
     compostNeed: 1,
     difficulty: "Moyen",
     harvest: "Feuilles jeunes hors chaleur forte",
+    months: [3, 4, 5, 6, 9],
     tags: ["Aromatique", "Fraîche", "Cuisine"],
     description: "Intéressante pour les balcons doux, surtout hors grosse chaleur.",
     tips: ["Semez en petites quantités", "Gardez le terreau frais sans l'alourdir"]
@@ -295,6 +315,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Feuilles au printemps et en automne",
+    months: [3, 4, 5, 8, 9, 10],
     tags: ["Légume", "Feuilles", "Mi-ombre"],
     description: "Très utile pour les balcons peu brûlants, surtout au printemps et en automne.",
     tips: ["Semez dans un terreau frais", "Récoltez les feuilles au fur et à mesure"]
@@ -310,6 +331,7 @@
     compostNeed: 1,
     difficulty: "Très facile",
     harvest: "Jeunes feuilles rapides",
+    months: [3, 4, 5, 6, 7, 8, 9],
     tags: ["Légume", "Rapide", "Coupe"],
     description: "Une culture pratique pour récolter vite sans prendre beaucoup de place.",
     tips: ["Semez peu mais souvent", "Récoltez jeune pour garder des feuilles tendres"]
@@ -325,6 +347,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Gousses en été",
+    months: [5, 6, 7],
     tags: ["Légume", "Été", "Productif"],
     description: "Une option intéressante pour produire sans avoir besoin d'une grande hauteur.",
     tips: ["Semez quand les températures sont douces", "Arrosez pendant la floraison"]
@@ -340,6 +363,7 @@
     compostNeed: 1,
     difficulty: "Facile",
     harvest: "Gousses de printemps",
+    months: [2, 3, 4, 10],
     tags: ["Légume", "Printemps", "Accessible"],
     description: "Adapté aux balcons frais de début de saison, avec un petit support si besoin.",
     tips: ["Semez tôt dans la saison", "Aidez les tiges à grimper si nécessaire"]
@@ -355,6 +379,7 @@
     compostNeed: 3,
     difficulty: "Facile",
     harvest: "Feuilles sur une longue période",
+    months: [4, 5, 6, 7, 8],
     tags: ["Légume", "Feuillage", "Longue récolte"],
     description: "Une plante généreuse qui tient bien en bac et permet des récoltes prolongées.",
     tips: ["Coupez les grandes feuilles extérieures", "Gardez un pot assez profond"]
@@ -370,6 +395,7 @@
     compostNeed: 1,
     difficulty: "Très facile",
     harvest: "Fleurs mellifères",
+    months: [3, 4, 5, 6, 9],
     tags: ["Fleur", "Rustique", "Mellifère"],
     description: "Une fleur simple à vivre, pratique pour un balcon fleuri et tolérant.",
     tips: ["Retirez les fleurs fanées", "Semez facilement au printemps"]
@@ -385,6 +411,7 @@
     compostNeed: 2,
     difficulty: "Facile",
     harvest: "Couleur en balcon ombragé",
+    months: [5, 6],
     tags: ["Fleur", "Ombre", "Très simple"],
     description: "Une valeur sûre pour donner vite de la couleur sur un balcon peu ensoleillé.",
     tips: ["Gardez le terreau frais", "Supprimez les tiges abîmées"]
@@ -400,10 +427,57 @@
     compostNeed: 2,
     difficulty: "Moyen",
     harvest: "Floraison retombante",
+    months: [4, 5, 6],
     tags: ["Fleur", "Ombre", "Retombant"],
     description: "Très décoratif en suspension ou en pot, surtout sans soleil fort.",
     tips: ["Évitez les expositions très chaudes", "Arrosez dès que le mélange sèche en surface"]
+  },
+  {
+    name: "Concombre",
+    exposure: ["soleil"],
+    wind: ["abrite", "modere"],
+    space: ["moyen", "grand"],
+    goals: ["legumes"],
+    potLiters: 20,
+    waterNeed: 5,
+    compostNeed: 4,
+    difficulty: "Moyen",
+    harvest: "Fruits d'été à récolter jeunes",
+    months: [5, 6],
+    tags: ["Légume", "Grimpant", "Été"],
+    description: "Possible sur balcon chaud avec un grand pot, un support solide et de l'eau régulière.",
+    tips: ["Prévoyez un treillage ou un tuteur costaud", "Arrosez très régulièrement en été"]
+  },
+  {
+    name: "Courgette",
+    exposure: ["soleil"],
+    wind: ["abrite", "modere"],
+    space: ["grand"],
+    goals: ["legumes"],
+    potLiters: 40,
+    waterNeed: 5,
+    compostNeed: 5,
+    difficulty: "Moyen",
+    harvest: "Récoltes généreuses en été",
+    months: [5, 6],
+    tags: ["Légume", "Gourmande", "Grand bac"],
+    description: "Réservée aux balcons spacieux : un seul plant dans un très grand bac peut déjà bien produire.",
+    tips: ["Un seul plant par grand bac", "Récoltez jeune pour stimuler la production"]
+  },
+  {
+    name: "Pomme de terre",
+    exposure: ["soleil", "mi-ombre"],
+    wind: ["abrite", "modere"],
+    space: ["moyen", "grand"],
+    goals: ["legumes", "facile"],
+    potLiters: 30,
+    waterNeed: 3,
+    compostNeed: 3,
+    difficulty: "Facile",
+    harvest: "Récolte 3 à 4 mois après plantation",
+    months: [3, 4, 5],
+    tags: ["Légume", "Sac de culture", "Ludique"],
+    description: "Une culture simple et ludique en sac ou grand bac profond, très gratifiante à récolter.",
+    tips: ["Buttez en rechargeant le terreau au fil de la pousse", "Utilisez un sac ou bac profond bien percé"]
   }
 ];
-
-
