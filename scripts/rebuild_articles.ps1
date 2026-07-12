@@ -45,6 +45,7 @@ $siteAuthors = @(
     MetaDescription = "Clara Fontaine aide à créer un balcon simple et vivant avec aromatiques, fleurs utiles, semis faciles et gestes saisonniers accessibles."
     Intro = "Clara parle aux débutants comme aux jardiniers pressés : elle aide à choisir les bonnes plantes, à comprendre leurs besoins réels et à installer un balcon fleuri ou gourmand qui reste agréable au quotidien."
     Approach = "Elle privilégie les essais progressifs, les variétés tolérantes et les conseils applicables sur quelques mètres carrés. Ses guides cherchent surtout à rendre le jardinage urbain plus clair, plus doux et moins intimidant."
+    Verification = "Pour ses sujets, la vérification porte d'abord sur les besoins réels des plantes, la saison, l'exposition et les limites propres à la culture en pot. Les affirmations techniques sont rapprochées de sources institutionnelles ou horticoles identifiées lorsqu'elles sont disponibles."
     Themes = @("cultures faciles", "aromatiques", "semis en pot", "balcons fleuris")
     PhotoFileName = "clara-fontaine-balcon-fleuri.webp"
     PhotoWidth = 1200
@@ -59,6 +60,7 @@ $siteAuthors = @(
     MetaDescription = "Louis Fargot conseille les pots, supports, rangements et solutions stables pour aménager un balcon pratique sans l’encombrer."
     Intro = "Louis regarde le balcon comme un lieu à organiser avant de le remplir. Il aide à choisir des contenants adaptés, à sécuriser les installations et à garder de la place pour circuler, arroser et profiter."
     Approach = "Son approche reste pratique et mesurée : moins d’achats impulsifs, plus de solutions durables, stables et faciles à entretenir. Chaque conseil part des contraintes réelles d’un balcon urbain."
+    Verification = "Pour ses sujets, la vérification porte sur la stabilité, le poids final, le drainage, la prise au vent, l'entretien et l'utilité réelle du matériel. Les recommandations commerciales doivent rester séparées des critères de choix et signaler clairement les liens affiliés."
     Themes = @("aménagement", "pots et contenants", "matériel utile", "balcons venteux")
     PhotoFileName = "louis-fargot-outils-balcon.webp"
     PhotoWidth = 1200
@@ -73,6 +75,7 @@ $siteAuthors = @(
     MetaDescription = "Mathias Lancet aide à diagnostiquer arrosage, chaleur, feuilles abîmées et petits soucis de culture en pot sur balcon."
     Intro = "Mathias aime partir des signes visibles : un pot qui sèche trop vite, une feuille qui jaunit, un plant qui ralentit. Ses guides aident à poser le bon diagnostic sans dramatiser, puis à agir simplement."
     Approach = "Il relie l’observation des plantes aux gestes à faire au bon moment, avec des conseils adaptés aux volumes de terre limités, aux expositions changeantes et aux petits accidents de culture en ville."
+    Verification = "Pour ses sujets, la vérification commence par distinguer les symptômes qui se ressemblent, puis par contrôler les gestes proposés auprès de références agronomiques ou institutionnelles. Le contexte du pot, de la météo et de l'arrosage reste indiqué quand il change le diagnostic."
     Themes = @("entretien", "arrosage", "diagnostic des plantes", "cultures potagères")
     PhotoFileName = "mathias-lancet.webp"
     PhotoWidth = 640
@@ -1085,7 +1088,10 @@ function Apply-ArticleOverride {
     "Category",
     "BodyHtml",
     "Faq",
-    "HowTo"
+    "HowTo",
+    "Sources",
+    "ReviewNote",
+    "BodyReplacements"
   )
 
   foreach ($key in $supportedKeys) {
@@ -1200,6 +1206,9 @@ function New-ArticleFromOverride {
     BodyHtml = [string]$override["BodyHtml"]
     Faq = if ($override.Contains("Faq")) { $override["Faq"] } else { $null }
     HowTo = if ($override.Contains("HowTo")) { $override["HowTo"] } else { $null }
+    Sources = if ($override.Contains("Sources")) { $override["Sources"] } else { $null }
+    ReviewNote = if ($override.Contains("ReviewNote")) { [string]$override["ReviewNote"] } else { "" }
+    BodyReplacements = if ($override.Contains("BodyReplacements")) { $override["BodyReplacements"] } else { $null }
   }
 }
 
@@ -1291,6 +1300,9 @@ function Get-ArticleSources {
         BodyHtml = $bodyHtml
         Faq = $null
         HowTo = $null
+        Sources = $null
+        ReviewNote = ""
+        BodyReplacements = $null
       }
 
     $articleSources.Add((Apply-ArticleOverride $article))
@@ -1626,9 +1638,12 @@ function Ensure-AffiliateLinkRel {
     $attrs = $m.Groups[2].Value
     $rel = $m.Groups[3].Value
     $parts = @($rel -split '\s+' | Where-Object { $_ })
+    $missing = New-Object System.Collections.Generic.List[string]
     foreach ($needed in @("nofollow", "sponsored", "noopener", "noreferrer")) {
-      if ($parts -notcontains $needed) { $parts += $needed }
+      if ($parts -notcontains $needed) { $missing.Add($needed) }
     }
+    if ($missing.Count -eq 0) { return $m.Value }
+    $parts += @($missing)
     "<a href=`"$url`"$attrs rel=`"$($parts -join ' ')`""
   })
 
@@ -1807,6 +1822,66 @@ function Get-ArticleHowToSchema {
   return $schema
 }
 
+function Apply-ArticleBodyReplacements {
+  param(
+    [string]$bodyHtml,
+    [object]$replacements
+  )
+
+  if ([string]::IsNullOrWhiteSpace($bodyHtml) -or $null -eq $replacements) {
+    return $bodyHtml
+  }
+
+  $result = $bodyHtml
+  foreach ($replacement in @($replacements)) {
+    if ($null -eq $replacement -or -not $replacement.Contains("Old") -or -not $replacement.Contains("New")) { continue }
+    $oldText = [string]$replacement["Old"]
+    if ([string]::IsNullOrEmpty($oldText)) { continue }
+    $result = $result.Replace($oldText, [string]$replacement["New"])
+  }
+
+  return $result
+}
+
+function Get-ArticleSourcesHtml {
+  param([pscustomobject]$article)
+
+  if ($null -eq $article.Sources -or @($article.Sources).Count -eq 0) { return "" }
+
+  $itemsHtml = ((@($article.Sources) | ForEach-Object {
+        $source = $_
+        $publisher = if ($source.Contains("Publisher")) { [string]$source["Publisher"] } else { "" }
+        $title = if ($source.Contains("Title")) { [string]$source["Title"] } else { [string]$source["Url"] }
+        $url = if ($source.Contains("Url")) { [string]$source["Url"] } else { "" }
+        $supports = if ($source.Contains("Supports")) { [string]$source["Supports"] } else { "" }
+        if ([string]::IsNullOrWhiteSpace($url)) { return }
+        $label = if ($publisher) { "$(HtmlEscape $publisher) — $(HtmlEscape $title)" } else { HtmlEscape $title }
+        $supportHtml = if ($supports) { " : $(HtmlEscape $supports)" } else { "" }
+        "              <li><a href=`"$(HtmlEscape $url)`" target=`"_blank`" rel=`"noopener noreferrer`">$label</a>$supportHtml</li>"
+      }) -join "`n")
+
+  if ([string]::IsNullOrWhiteSpace($itemsHtml)) { return "" }
+
+  $reviewNote = if ($article.ReviewNote) {
+    "            <p>$(HtmlEscape $article.ReviewNote)</p>"
+  } else {
+    "            <p>Les références ci-dessous ont été consultées pour vérifier les principaux repères factuels de l'article.</p>"
+  }
+
+  return @"
+<!-- eco-sources:start -->
+            <section class="article-sources" aria-labelledby="article-sources-heading">
+              <h2 id="article-sources-heading">Sources et méthode de vérification</h2>
+$reviewNote
+              <ul class="article-list">
+$itemsHtml
+              </ul>
+              <p><small>Sources consultées le 12 juillet 2026. Les conseils sont adaptés aux contraintes d'un balcon et ne remplacent pas les consignes d'un produit autorisé ni un diagnostic professionnel.</small></p>
+            </section>
+<!-- eco-sources:end -->
+"@
+}
+
 function Build-ArticleHtml {
   param(
     [pscustomobject]$article,
@@ -1816,9 +1891,14 @@ function Build-ArticleHtml {
   $content = Get-Content -Raw -Encoding UTF8 $article.SourcePath
   $heroCaption = if ($article.ImageAlt) { $article.ImageAlt } else { Get-HeroCaption $content }
   $bodyHtml = if ($article.BodyHtml) { Normalize-BodyHtml ($article.BodyHtml.TrimEnd()) } else { Build-ArticleBody $content }
+  $bodyHtml = [regex]::Replace($bodyHtml, '(?s)\s*<!-- eco-sources:start -->.*?<!-- eco-sources:end -->\s*', "`n")
+  $bodyHtml = Apply-ArticleBodyReplacements -bodyHtml $bodyHtml -replacements $article.BodyReplacements
   $bodyHtml = Ensure-AffiliateLinkRel $bodyHtml
   $bodyHtml = Ensure-AffiliateDisclosure $bodyHtml
+  $sourcesHtml = Get-ArticleSourcesHtml $article
+  $articleContentHtml = if ($sourcesHtml) { "$bodyHtml`n$sourcesHtml" } else { $bodyHtml }
   $dateText = Convert-IsoDateToFrench $article.DatePublished
+  $modifiedDateText = if ($sourcesHtml -and $article.DateModified -and $article.DateModified -ne $article.DatePublished) { Convert-IsoDateToFrench $article.DateModified } else { "" }
   $timeText = Convert-TimeRequired $article.TimeRequired
   $canonicalUrl = Get-ArticleCanonicalUrl $article
   $seoTitle = if ($article.SeoTitle) { $article.SeoTitle } else { $article.Title }
@@ -1869,6 +1949,7 @@ function Build-ArticleHtml {
   $authorInlineHtml = if ($authorHref) { "<a href=`"$authorHref`">$authorNameHtml</a>" } else { $authorNameHtml }
   $metaParts = @("<span>Par $authorInlineHtml</span>")
   if ($dateText) { $metaParts += "<span>&bull;</span><span>$dateText</span>" }
+  if ($modifiedDateText) { $metaParts += "<span>&bull;</span><span>Mis &agrave; jour le $(HtmlEscape $modifiedDateText)</span>" }
   if ($timeText) { $metaParts += "<span>&bull;</span><span>$timeText</span>" }
   $metaHtml = ($metaParts -join "`n            ")
 
@@ -1877,6 +1958,7 @@ function Build-ArticleHtml {
   if ($article.Category) { $sidebarItems += "                <li><strong>Th&egrave;me :</strong> $(HtmlEscape $article.Category)</li>" }
   if ($timeText) { $sidebarItems += "                <li><strong>Lecture :</strong> $(HtmlEscape $timeText)</li>" }
   if ($dateText) { $sidebarItems += "                <li><strong>Publication :</strong> $(HtmlEscape $dateText)</li>" }
+  if ($modifiedDateText) { $sidebarItems += "                <li><strong>Mise &agrave; jour :</strong> $(HtmlEscape $modifiedDateText)</li>" }
   $sidebarHtml = ($sidebarItems -join "`n")
 
   $heroTitle = if ($heroCaption) { $heroCaption } else { $article.Title }
@@ -2002,7 +2084,7 @@ $breadcrumbHtml
 
         <div class="article-grid">
           <article class="article-prose">
-$bodyHtml
+$articleContentHtml
           </article>
 
           <aside class="sidebar-stack">
@@ -3102,7 +3184,7 @@ $tagManagerBody
             <div class="author-stats" aria-label="Repères auteur">
               <span><strong>$articleCount</strong> guides publi&eacute;s</span>
               <span><strong>$themeCount</strong> th&egrave;mes suivis</span>
-              <span><strong>EcoBalcon</strong> ligne &eacute;ditoriale</span>
+              <span><strong>EcoBalcon</strong> m&eacute;thode publi&eacute;e</span>
             </div>
           </div>
           <aside class="author-profile-card" aria-label="Profil de $(HtmlEscape $author.Name)">
@@ -3129,6 +3211,12 @@ $tagManagerBody
             <div class="author-theme-list">
 $themesHtml
             </div>
+          </article>
+          <article class="author-brief-card author-verification-card">
+            <span class="eyebrow">V&eacute;rification</span>
+            <h2>Cadre de travail</h2>
+            <p>$(HtmlEscape $author.Verification)</p>
+            <p>La <a href="../../a-propos/">m&eacute;thode &eacute;ditoriale d'EcoBalcon</a> explique la s&eacute;lection des sources et le suivi des corrections. Une erreur ou une information devenue obsol&egrave;te peut &ecirc;tre signal&eacute;e depuis la <a href="../../contact/">page contact</a>.</p>
           </article>
         </section>
 

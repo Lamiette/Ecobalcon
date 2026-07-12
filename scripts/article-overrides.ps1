@@ -2068,7 +2068,22 @@
       SeoTitle = "Utiliser le compost sur balcon : dosages simples"
       Description = "Utiliser du compost sur un balcon : dosages simples, plantes qui aiment ça et erreurs à éviter pour nourrir ses pots sans excès."
       Intro = "Avoir du compost ne suffit pas : sur un balcon, il faut surtout savoir en mettre peu, au bon moment et aux bonnes plantes. Bien utilisé, il nourrit les pots et aide à garder un terreau vivant. Mal dosé, il alourdit ou fatigue certaines cultures."
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "Les dosages ont été vérifiés dans le guide ADEME : pour une jardinière ou un pot, le compost mûr doit être mélangé et non utilisé pur. L'ADEME indique notamment un maximum annuel de 20 % de compost ajouté à la terre d'un contenant déjà cultivé."
+      Sources = @(
+        [ordered]@{
+          Publisher = "ADEME"
+          Title = "Comment réussir son compost ?"
+          Url = "https://librairie.ademe.fr/ged/9059/guide-comment-reussir-son-compost.pdf"
+          Supports = "maturité, usages en pot et proportions indicatives"
+        },
+        [ordered]@{
+          Publisher = "ADEME"
+          Title = "5 règles pour réussir son compost"
+          Url = "https://agirpourlatransition.ademe.fr/particuliers/reduire-dechets/composter-pailler/regles-pour-reussir-compost"
+          Supports = "équilibre des matières, humidité, aération et surveillance"
+        }
+      )
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Compost idéal : mûr, émietté et sans odeur forte<br>Utilisation la plus simple : en petite proportion dans le terreau ou en surface légère<br>Plantes qui apprécient bien le compost : tomates, poivrons, fraisiers, certaines aromatiques et bacs potagers déjà bien installés<br>Point de vigilance : mieux vaut un peu de compost bien utilisé qu’un gros apport qui tasse ou surcharge le pot</p>
@@ -2080,7 +2095,7 @@
             <p>Les cultures plus rapides ou plus tendres, comme les laitues, les épinards ou certains aromatiques, demandent souvent un dosage plus léger. Le but est de nourrir sans alourdir.</p>
             <h2>Les trois usages les plus simples</h2>
             <h3>En mélange dans le terreau</h3>
-            <p>C’est l’option la plus facile pour démarrer un pot ou relancer un rempotage. Le compost mûr vient alors compléter un terreau de bonne qualité sans le remplacer entièrement.</p>
+            <p>C’est l’option la plus facile pour démarrer un pot ou relancer un rempotage. Le compost mûr vient compléter le substrat sans le remplacer. Comme repère, le <a href="https://librairie.ademe.fr/ged/9059/guide-comment-reussir-son-compost.pdf" target="_blank" rel="noopener noreferrer">guide ADEME sur le compost</a> propose, à la plantation en jardinière ou en pot, un mélange d’un tiers de compost, un tiers de terre et un tiers de sable ; pour un contenant déjà cultivé, il conseille de ne pas dépasser 20 % de compost ajouté à la terre chaque année. Adapte ensuite la texture aux besoins de la plante et au drainage du pot.</p>
             <h3>En surfaçage léger</h3>
             <p>Sur des pots déjà installés, une petite couche en surface au bon moment peut suffire à soutenir la saison. On l’incorpore très légèrement ou on laisse l’arrosage l’aider à descendre.</p>
             <h3>En complément d’un paillage</h3>
@@ -2098,7 +2113,7 @@
             <h3>Peut-on mettre du compost dans tous les pots du balcon ?</h3>
             <p>Non, pas de la même façon. Les plantes gourmandes l’apprécient bien, mais sur des petits contenants ou des cultures rapides, il faut rester plus léger.</p>
             <h3>Combien de compost faut-il utiliser en pot ?</h3>
-            <p>Il vaut mieux raisonner en petite proportion et ajuster ensuite. En pot, un excès de compost crée plus facilement des déséquilibres qu’en pleine terre.</p>
+            <p>Le guide ADEME donne deux repères : à la plantation, un tiers de compost mélangé à un tiers de terre et un tiers de sable ; dans un pot déjà cultivé, au maximum 20 % de compost ajouté à la terre chaque année. Ce sont des repères à ajuster selon la plante et le substrat, jamais une invitation à cultiver dans du compost pur.</p>
             <h3>Le compost remplace-t-il totalement l’engrais ?</h3>
             <p>Pas toujours. Il améliore surtout la vie du substrat et apporte une base nutritive intéressante. Selon la culture et la saison, un appoint léger peut encore être utile.</p>
             <h2>En résumé</h2>
@@ -2169,6 +2184,52 @@
     "potager-balcon-eau-de-cuisson" = [ordered]@{
       SeoTitle = "Arroser son potager de balcon à l’eau de cuisson"
       Description = "Potager balcon : semis faciles, eau de cuisson refroidie et gestes simples pour arroser sans gaspiller."
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "Aucune référence institutionnelle consultée ne démontre qu'une eau de cuisson fait mieux pousser les plantes. L'article la présente donc comme une réutilisation ponctuelle d'eau, jamais comme un engrais : uniquement refroidie, non salée, non grasse et sans sauce."
+      BodyReplacements = @(
+        [ordered]@{
+          Old = "<p>Créer un potager sur son balcon est déjà un plaisir. Mais si vous pouviez en plus réduire vos déchets, économiser l’eau et booster la croissance de vos plantes ? C’est exactement ce que permet le potager hybride, une méthode qui combine semis maison et récupération d’eau de cuisson pour l’arrosage. Une approche simple, écologique et économique qui s’adapté parfaitement aux petits espaces urbains.</p>"
+          New = "<p>Réutiliser ponctuellement une eau de cuisson peut éviter de jeter une petite quantité d’eau encore utilisable. Cela ne constitue toutefois ni une méthode agronomique démontrée ni un engrais. Sur un balcon, reste prudent : utilise seulement une eau refroidie, sans sel, sans graisse et sans sauce, puis alterne avec ton eau d’arrosage habituelle.</p>"
+        },
+        [ordered]@{
+          Old = "<li>Réutiliser l’eau de cuisson des légumes, pâtes, riz ou pommes de terre pour arroser, afin de réduire le gaspillage et d’apporter des nutriments naturellement.</li>"
+          New = "<li>Réutiliser occasionnellement une eau de cuisson compatible pour éviter de la jeter, sans lui attribuer un effet fertilisant garanti.</li>"
+        },
+        [ordered]@{
+          Old = "<li>Apport naturel en nutriments<br>L’eau de cuisson contient des minéraux et des traces de nutriments issus des aliments. Les plantes en profitent pour mieux pousser.</li>"
+          New = "<li>Effet nutritif non établi<br>La composition varie selon les aliments et la cuisson. Ne compte pas sur cette eau pour fertiliser les pots et n’ajoute jamais d’eau salée : l’accumulation de sels gêne l’absorption de l’eau par les racines.</li>"
+        },
+        [ordered]@{
+          Old = "<p>Printemps<br>Dès que les températures remontent, lancez les semis de tomates, basilic et salades dans un terreau léger. Commencez aussi les arrosages à l’eau de cuisson refroidie (sans sel) pour enrichir le sol naturellement.</p>"
+          New = "<p>Printemps<br>Dès que les températures remontent, lance tes semis dans un terreau adapté. Si tu réutilises une eau de cuisson, fais-le ponctuellement et seulement si elle est refroidie, non salée et sans matière grasse ; elle ne remplace pas une fertilisation raisonnée.</p>"
+        },
+        [ordered]@{
+          Old = "<p>Le potager hybride agit sur deux leviers essentiels :</p>"
+          New = "<p>Cette organisation associe simplement deux gestes distincts :</p>"
+        },
+        [ordered]@{
+          Old = "<li>Un sol nourri en continu grâce à l’eau de cuisson</li>"
+          New = "<li>une petite économie d’eau lorsque l’eau récupérée est compatible avec l’arrosage ;</li>"
+        },
+        [ordered]@{
+          Old = "<p>Résultat : des cultures plus robustes, des récoltes plus abondantes, et une consommation d’eau réduite.</p>"
+          New = "<p>Le bénéfice certain reste la réutilisation d’un peu d’eau. La vigueur et la récolte dépendent surtout de la lumière, du volume du pot, du substrat, de l’arrosage régulier et d’une fertilisation adaptée.</p>"
+        }
+      )
+      Sources = @(
+        [ordered]@{
+          Publisher = "University of California IPM"
+          Title = "Salinity and salt toxicity"
+          Url = "https://ipm.ucanr.edu/home-and-landscape/nutrient-and-mineral-excesses-salinity-and-salt-toxicity/"
+          Supports = "effets d'un excès de sels sur l'absorption de l'eau et les tissus végétaux"
+        },
+        [ordered]@{
+          Publisher = "ADEME"
+          Title = "Jardiner au naturel"
+          Url = "https://librairie.ademe.fr/ged/9058/guide-jardiner-naturel.pdf"
+          Supports = "priorité donnée à un arrosage ajusté, au paillage et à l'eau de pluie"
+        }
+      )
     }
     "erreurs-jardiner-sur-un-balcon" = [ordered]@{
       SeoTitle = "Erreurs à éviter avec un potager en pot"
@@ -2178,6 +2239,38 @@
       SeoTitle = "Feuilles blanches en pot : reconnaître l’oïdium"
       ImageFileName = "feuilles-oidium-balcon.webp"
       Description = "Feuilles blanches en pot : reconnaître l’oïdium, éviter les confusions et agir simplement sur courgettes, concombres ou tomates."
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "Le diagnostic et les gestes de prophylaxie ont été rapprochés des fiches INRAE sur l'oïdium des cucurbitacées. L'article distingue le feutrage poudreux évolutif des macules argentées naturelles de certaines courgettes."
+      BodyReplacements = @(
+        [ordered]@{
+          Old = "<p>L'oïdium ressemble souvent à une poudre blanche ou gris clair déposée sur la feuille. Au début, cela peut former quelques taches isolées. Ensuite, le voile s'étend, la feuille jaunit parfois, se fatigue et finit par moins nourrir la plante.</p>"
+          New = "<p>D’après <a href=`"https://ephytia.inra.fr/fr/C/8081/Courgette-courges-Principaux-symptomes`" target=`"_blank`" rel=`"noopener noreferrer`">la fiche de diagnostic INRAE</a>, l’oïdium des courgettes et courges forme des taches blanches, poudreuses à duveteuses, qui peuvent s’étendre puis faire jaunir et sécher prématurément les feuilles.</p>"
+        },
+        [ordered]@{
+          Old = "<p>Commence par retirer les feuilles les plus atteintes, surtout si elles sont déjà jaunes ou très couvertes. Ne défolie pas toute la plante d'un coup : elle a encore besoin de surface verte pour continuer à produire.</p>"
+          New = "<p>Commence par retirer délicatement les feuilles les plus atteintes, surtout si elles sont déjà jaunes ou très couvertes, conformément aux <a href=`"https://ephytia.inra.fr/fr/C/8083/Courgette-courges-Methodes-de-protection`" target=`"_blank`" rel=`"noopener noreferrer`">mesures de protection décrites par INRAE</a>. Ne défolie pas toute la plante d’un coup : elle a encore besoin de surface verte pour continuer à produire.</p>"
+        }
+      )
+      Sources = @(
+        [ordered]@{
+          Publisher = "INRAE — ePhytia"
+          Title = "Oïdium des courgettes et courges : principaux symptômes"
+          Url = "https://ephytia.inra.fr/fr/C/8081/Courgette-courges-Principaux-symptomes"
+          Supports = "aspect des taches, progression et conséquences sur les feuilles"
+        },
+        [ordered]@{
+          Publisher = "INRAE — ePhytia"
+          Title = "Oïdium des courgettes et courges : méthodes de protection"
+          Url = "https://ephytia.inra.fr/fr/C/8083/Courgette-courges-Methodes-de-protection"
+          Supports = "retrait précoce et délicat des feuilles fortement atteintes"
+        },
+        [ordered]@{
+          Publisher = "INRAE — ePhytia"
+          Title = "Macules physiologiques des courgettes et courges"
+          Url = "https://ephytia.inra.fr/fr/C/8123/Courgette-courges-Macules-physiologiques"
+          Supports = "confusion possible avec les taches argentées naturelles de certaines variétés"
+        }
+      )
     }
     "tailler-tomates-balcon" = [ordered]@{
       SeoTitle = "Tailler les tomates en pot : quoi couper ?"
@@ -2203,6 +2296,50 @@
     }
     "plantes-qui-survivent-a-la-canicule" = [ordered]@{
       SeoTitle = "12 plantes de balcon qui résistent à la canicule"
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "La sélection reste indicative : aucune plante en pot n'est indestructible. La résistance dépend aussi de l'acclimatation, du volume de substrat, du drainage, de la durée de la chaleur, du vent et de la rusticité hivernale locale."
+      BodyReplacements = @(
+        [ordered]@{
+          Old = "<p>Voici une sélection testée et approuvée pour les balcons exposés plein sud, en été, même en cas de vague de chaleur.</p>"
+          New = "<p>Voici une sélection de plantes généralement adaptées aux situations chaudes et drainées. Elle ne constitue pas un essai comparatif EcoBalcon : en pot, même une espèce tolérante à la sécheresse doit être acclimatée, surveillée et arrosée selon son substrat.</p>"
+        },
+        [ordered]@{
+          Old = "<li>✅ Esthétique, utile en cas de coups de soleil !</li>"
+          New = "<li>✅ Graphique et adaptée à un substrat très drainant ; attention au froid et aux excès d’eau.</li>"
+        },
+        [ordered]@{
+          Old = "<li>🌱 Zéro arrosage en cas de canicule</li>"
+          New = "<li>🌱 Arrosages espacés, mais jamais une règle de « zéro arrosage » sans vérifier le substrat et l’état de la plante</li>"
+        },
+        [ordered]@{
+          Old = "<li>Arroser en plein soleil : ça chauffe les racines et peut provoquer un stress thermique</li>"
+          New = "<li>Attendre systématiquement le soir alors que la plante flétrit fortement : en urgence, arrose le substrat sans mouiller le feuillage, puis reprends un rythme tôt le matin ou le soir.</li>"
+        },
+        [ordered]@{
+          Old = "<li>Brumiser légèrement le feuillage des plantes non sensibles</li>"
+          New = "<li>Éviter la brumisation systématique : l’eau doit surtout atteindre les racines, et un feuillage durablement humide peut favoriser certaines maladies.</li>"
+        }
+      )
+      Sources = @(
+        [ordered]@{
+          Publisher = "INRAE"
+          Title = "Comment les plantes résistent-elles à la sécheresse ?"
+          Url = "https://www.inrae.fr/approchez-vous/plantes-resistance-secheresse"
+          Supports = "rôle des stomates, stratégies des succulentes et conseils d'arrosage"
+        },
+        [ordered]@{
+          Publisher = "INRAE"
+          Title = "Sécheresse : comprendre, prévoir, gérer l'eau et s'adapter"
+          Url = "https://www.inrae.fr/changement-climatique-risques/leau-ressource-vitale/secheresse-et-solutions"
+          Supports = "déficit d'eau disponible, évaporation et effets sur la photosynthèse"
+        },
+        [ordered]@{
+          Publisher = "ADEME"
+          Title = "Jardiner au naturel"
+          Url = "https://librairie.ademe.fr/ged/9058/guide-jardiner-naturel.pdf"
+          Supports = "arrosage ajusté, couverture du sol et gestion sobre de l'eau"
+        }
+      )
     }
     "reduction-consommation-eau-balcon" = [ordered]@{
       SeoTitle = "Économiser l’eau sur son balcon : gestes simples"
@@ -2212,6 +2349,71 @@
     }
     "calendrier-lunaire-balcon" = [ordered]@{
       SeoTitle = "Calendrier lunaire balcon : semis en pot"
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "Le calendrier lunaire est présenté comme une tradition d'organisation, pas comme une méthode dont l'effet sur les cultures serait scientifiquement démontré. Pour décider, la météo, la saison, l'exposition, l'humidité du terreau et l'état de la plante restent prioritaires."
+      BodyHtml = @'
+            <h2>Ce qu’il faut retenir</h2>
+            <p>Le jardinage avec la lune est une tradition d’organisation. La synthèse du conseil scientifique de la Société Nationale d’Horticulture de France ne met pas en évidence de preuve expérimentale suffisamment solide pour promettre une meilleure germination, une croissance plus vigoureuse ou une récolte supérieure grâce aux phases lunaires.</p>
+            <p>Tu peux donc utiliser un calendrier lunaire si ce rituel t’aide à planifier tes tâches, mais il ne doit jamais passer avant la météo, la saison, l’humidité du terreau, l’état de la plante ou le bon stade de développement.</p>
+
+            <h2>Ce que décrivent les calendriers lunaires</h2>
+            <p>Ces calendriers combinent généralement plusieurs repères qui ne désignent pas la même chose :</p>
+            <ul>
+              <li>les phases visibles, comme la nouvelle lune, le premier quartier, la pleine lune et le dernier quartier ;</li>
+              <li>la lune dite montante ou descendante, liée à l’évolution de sa hauteur dans le ciel ;</li>
+              <li>des jours « racines », « feuilles », « fleurs » ou « fruits », issus d’une lecture zodiacale.</li>
+            </ul>
+            <p>La tradition associe certains travaux à ces périodes. Cela décrit une pratique culturelle, pas un effet biologique démontré sur la sève ou les racines.</p>
+
+            <h2>L’ordre de décision qui fonctionne sur un balcon</h2>
+            <ol>
+              <li><strong>Vérifie la saison et la température nocturne.</strong> Un semis ou un repiquage fait au bon « jour lunaire » échouera quand même si la plante a trop froid.</li>
+              <li><strong>Observe l’exposition réelle.</strong> La durée de soleil, la réverbération d’un mur et le vent déterminent directement les besoins du pot.</li>
+              <li><strong>Contrôle le terreau.</strong> Arrose quand la plante en a besoin, même si le calendrier suggère d’attendre.</li>
+              <li><strong>Respecte le stade de la plante.</strong> Une laitue prête à repiquer ou une tomate mûre ne gagne rien à rester en attente plusieurs jours.</li>
+              <li><strong>Utilise ensuite le calendrier lunaire comme aide-mémoire facultatif.</strong></li>
+            </ol>
+            <p>Pour planifier les cultures selon des repères saisonniers, garde plutôt le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> à portée de main.</p>
+
+            <h2>Une façon honnête de tester la pratique</h2>
+            <p>Si tu veux observer par toi-même, compare deux petits lots au lieu de te fier à une impression générale :</p>
+            <ul>
+              <li>utilise les mêmes graines, le même terreau et des contenants identiques ;</li>
+              <li>sème un lot à une date conseillée par le calendrier et l’autre à une date non conseillée, mais avec une météo comparable ;</li>
+              <li>note le nombre de graines levées, le délai de germination et la croissance pendant plusieurs semaines ;</li>
+              <li>répète l’essai plusieurs fois avant de conclure.</li>
+            </ul>
+            <p>Sur un seul balcon, ce test ne produira pas une preuve scientifique générale. Il permet cependant de distinguer une observation mesurée d’un simple souvenir de réussite.</p>
+
+            <h2>Comment s’en servir sans compliquer le balcon</h2>
+            <p>Le calendrier peut servir à répartir des tâches non urgentes : préparer des étiquettes, nettoyer les pots, vérifier les tuteurs, trier les graines ou noter les récoltes. Pour les gestes qui dépendent du vivant, garde une règle simple : l’état réel de la plante décide.</p>
+            <p>Si tu cultives plusieurs espèces, planifie d’abord avec nos guides sur les <a href="guide-laitues-sur-son-balcon.html">laitues</a>, les <a href="guide-radis-sur-son-balcon.html">radis</a>, les <a href="tomates-cerises-balcon.html">tomates cerises</a> et les <a href="fleurs-comestibles-melliferes-balcon.html">fleurs utiles</a>. Leurs besoins concrets restent plus importants que la phase de la lune.</p>
+
+            <h2>FAQ</h2>
+            <h3>La lune fait-elle monter et descendre la sève ?</h3>
+            <p>Cette explication est souvent reprise par les calendriers lunaires, mais le dossier scientifique consulté ne permet pas de la considérer comme une règle horticole démontrée.</p>
+            <h3>Faut-il attendre le bon jour lunaire pour semer ?</h3>
+            <p>Non. Si la température, la lumière et l’humidité sont adaptées, il n’y a pas de raison établie de retarder un semis uniquement à cause du calendrier lunaire.</p>
+            <h3>Le calendrier lunaire est-il inutile ?</h3>
+            <p>Il peut rester utile comme rituel ou outil d’organisation personnelle. Il faut simplement distinguer cette utilité pratique d’une promesse d’effet sur la croissance.</p>
+
+            <h2>En résumé</h2>
+            <p>Sur un balcon, utilise le calendrier lunaire comme un repère facultatif, pas comme une consigne agronomique. Fais passer la météo, l’exposition, l’arrosage, le volume du pot et le stade de la plante en premier. Si tu veux évaluer la pratique, note des résultats comparables plutôt que de promettre un bénéfice non démontré.</p>
+'@
+      Sources = @(
+        [ordered]@{
+          Publisher = "Société Nationale d'Horticulture de France — Conseil scientifique"
+          Title = "Jardiner avec la lune : mythe ou réalité ?"
+          Url = "https://www.snhf.org/wp-content/uploads/2016/10/jardiner-avec-la-lune.pdf"
+          Supports = "analyse critique des hypothèses et du niveau de preuve disponible"
+        },
+        [ordered]@{
+          Publisher = "Société Nationale d'Horticulture de France"
+          Title = "Le conseil scientifique"
+          Url = "https://www.snhf.org/le-conseil-scientifique/"
+          Supports = "origine et cadre scientifique du dossier"
+        }
+      )
     }
     "meilleures-plantes-grimpantes-en-ville" = [ordered]@{
       SeoTitle = "7 plantes grimpantes pour l’intimité"
@@ -2222,7 +2424,22 @@
       SeoTitle = "Nuisibles sur balcon : les solutions naturelles"
       Description = "Pucerons, cochenilles, limaces ou aleurodes sur balcon : les gestes simples pour limiter les dégâts sans pesticides et garder des plantes plus résistantes."
       Intro = "Sur un balcon, les nuisibles arrivent souvent vite parce que l’espace est petit et les plantes rapprochées. Le plus efficace n’est pas de traiter à l’aveugle, mais de repérer le bon coupable, de corriger ce qui affaiblit les pots et d’agir avec des gestes simples."
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "Les gestes proposés suivent une logique de lutte intégrée : identifier, retirer mécaniquement les foyers, corriger le stress de la plante et préserver les auxiliaires. Si un produit devient nécessaire, utilise seulement un produit autorisé pour l'usage et respecte strictement son étiquette."
+      Sources = @(
+        [ordered]@{
+          Publisher = "INRAE — ePhytia"
+          Title = "Lutte biologique par conservation"
+          Url = "https://ephytia.inra.fr/fr/C/23199/Tropileg-Lutte-biologique-par-conservation"
+          Supports = "habitats, fleurs et ressources favorables aux auxiliaires des pucerons, aleurodes et cochenilles"
+        },
+        [ordered]@{
+          Publisher = "Ministère de l'Agriculture"
+          Title = "Jardiner avec des produits d'origine naturelle"
+          Url = "https://agriculture.gouv.fr/jardiner-avec-des-produits-dorigine-naturelle"
+          Supports = "cadre applicable aux produits phytopharmaceutiques utilisés par les jardiniers amateurs"
+        }
+      )
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Nuisibles les plus fréquents : pucerons, cochenilles, aleurodes, limaces, quelques chenilles ou acariens selon la saison<br>Réflexe numéro un : identifier le problème avant de traiter<br>Réflexe numéro deux : corriger l’arrosage, l’aération et l’encombrement des pots<br>Réflexe numéro trois : intervenir tôt avec des gestes doux et réguliers<br>Point clé : un balcon vivant et équilibré attire aussi des alliés naturels</p>
@@ -2240,12 +2457,12 @@
               <li>Évite de surdoser engrais et compost mal mûr.</li>
               <li>Garde un coin accueillant pour les <a href="insectes-utiles-sur-un-balcon.html">insectes utiles sur un balcon</a>.</li>
             </ul>
-            <p>Quelques fleurs et aromatiques aident aussi à stabiliser le balcon. Tu peux t’inspirer de notre guide sur le <a href="balcon-pour-pollinisateurs.html">balcon pour pollinisateurs</a> pour rendre l’espace plus équilibré sans le compliquer.</p>
+            <p>Quelques fleurs et aromatiques offrent pollen, nectar et refuges à certains auxiliaires. Cette logique de <a href="https://ephytia.inra.fr/fr/C/23199/Tropileg-Lutte-biologique-par-conservation" target="_blank" rel="noopener noreferrer">lutte biologique par conservation décrite par INRAE</a> peut contribuer à réguler des ravageurs, sans garantir leur disparition. Tu peux t’inspirer de notre guide sur le <a href="balcon-pour-pollinisateurs.html">balcon pour pollinisateurs</a> pour rendre l’espace plus accueillant sans le compliquer.</p>
             <h2>Que faire contre les pucerons</h2>
-            <p>Les pucerons s’installent souvent sur les jeunes pousses de tomates, poivrons, fèves, rosiers ou basilic. Commence par une douche douce ou un jet d’eau modéré si la plante le supporte. Ensuite, un savon noir très dilué ou un nettoyage manuel sur les tiges les plus touchées suffit souvent si tu agis tôt.</p>
+            <p>Les pucerons s’installent souvent sur les jeunes pousses de tomates, poivrons, fèves, rosiers ou basilic. Commence par un retrait manuel ou un jet d’eau modéré si la plante le supporte. Si tu envisages ensuite un produit, vérifie qu’il dispose d’une autorisation adaptée à l’usage amateur et suis son étiquette : « naturel » ne signifie pas automatiquement autorisé, efficace ou sans risque.</p>
             <p>Surveille ensuite les nouvelles pousses pendant quelques jours. Si des coccinelles, syrphes ou chrysopes passent déjà sur le balcon, laisse-leur aussi un peu de temps pour travailler.</p>
             <h2>Que faire contre les cochenilles et aleurodes</h2>
-            <p>Les cochenilles aiment les coins abrités et les plantes un peu affaiblies. Retire d’abord les foyers à la main avec un chiffon humide ou un coton légèrement imbibé d’eau savonneuse. Les aleurodes demandent surtout de la régularité : secouer légèrement le feuillage, retirer les feuilles les plus envahies et répéter les gestes simples pendant quelques jours donne souvent de meilleurs résultats qu’un traitement brutal.</p>
+            <p>Les cochenilles aiment les coins abrités et les plantes un peu affaiblies. Retire d’abord les foyers à la main avec un chiffon humide. Les aleurodes demandent surtout de la régularité : retirer les feuilles les plus envahies, isoler le pot et répéter l’observation pendant quelques jours donne souvent de meilleurs résultats qu’une pulvérisation improvisée.</p>
             <p>Dans les deux cas, isole si possible la plante la plus atteinte pour éviter la propagation vers les <a href="guide-tomates-sur-son-balcon.html">tomates</a>, les <a href="guide-poivrons-sur-son-balcon.html">poivrons</a> ou les <a href="guide-fraises-sur-son-balcon.html">fraises</a> voisines.</p>
             <h2>Que faire contre les limaces et autres grignotages</h2>
             <p>Les limaces sont moins fréquentes en étage, mais elles restent possibles sur les balcons humides, très végétalisés ou proches d’un jardin. Commence par nettoyer ce qui leur sert d’abri direct, comme les dessous de pots humides ou les amas de feuilles en contact permanent avec le sol.</p>
@@ -2298,7 +2515,22 @@
       SeoTitle = "Récupérer l’eau de pluie sur balcon sans gouttière"
       Description = "Récupérer l’eau de pluie sur un balcon : idées simples sans gouttière, stockage prudent et usages utiles pour arroser sans gaspiller."
       Intro = "Même sans gouttière, un balcon peut récupérer un peu d’eau de pluie utile pour l’arrosage. Le plus important est de rester simple, prudent et cohérent avec l’espace disponible."
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-07-12T16:00:00.000Z"
+      ReviewNote = "L'article distingue l'usage extérieur autorisé de l'eau de pluie, qui reste non potable, et les précautions propres au balcon : poids, écoulement, règlement de copropriété et prévention de l'eau stagnante accessible aux moustiques."
+      Sources = @(
+        [ordered]@{
+          Publisher = "Service-Public.fr"
+          Title = "Récupération de l'eau de pluie"
+          Url = "https://www.service-public.fr/particuliers/vosdroits/F31481"
+          Supports = "usage extérieur pour l'arrosage et caractère non potable de l'eau récupérée"
+        },
+        [ordered]@{
+          Publisher = "ANSES"
+          Title = "FAQ sur le moustique tigre"
+          Url = "https://signalement-moustique.anses.fr/signalement_albopictus/faq"
+          Supports = "vidage des récipients et couverture des réserves d'eau avec une moustiquaire ou un tissu"
+        }
+      )
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Objectif réaliste : récupérer une petite réserve d’eau utile, pas transformer le balcon en citerne<br>Sans gouttière : oui, c’est possible avec des systèmes de collecte simples et légers<br>Points de vigilance : stabilité, poids, propreté de l’eau et absence d’écoulement gênant vers le dessous<br>Le vrai gain : mieux arroser certains pots et gaspiller moins pendant les périodes sèches</p>
@@ -2313,10 +2545,10 @@
             <h3>L’entonnoir ou la rigole maison</h3>
             <p>Sur certaines installations, un petit entonnoir ou une rigole discrète suffit à canaliser une partie de l’eau reçue sur une tablette, un rebord ou une surface déjà présente. Là encore, mieux vaut viser simple que bricoler un système trop ambitieux.</p>
             <h2>Comment stocker l’eau proprement</h2>
-            <p>Un arrosoir, un bidon alimentaire propre ou un seau avec couvercle font souvent très bien l’affaire. Le plus important est d’éviter l’eau stagnante pendant trop longtemps, surtout en période douce, et de garder le contenant facile à déplacer.</p>
+            <p>Un arrosoir, un bidon alimentaire propre ou un seau peuvent convenir. Ferme la réserve de façon à empêcher l’accès des moustiques : l’<a href="https://signalement-moustique.anses.fr/signalement_albopictus/faq" target="_blank" rel="noopener noreferrer">ANSES recommande une moustiquaire ou un tissu correctement fixé</a>, car un simple couvercle n’est pas toujours hermétique. Vide et nettoie régulièrement les petits récipients.</p>
             <p>Si tu récupères peu d’eau mais régulièrement, c’est déjà utile. Sur balcon, une petite réserve bien utilisée vaut souvent mieux qu’un gros contenant mal géré.</p>
             <h2>Pour quels usages cette eau est-elle la plus intéressante ?</h2>
-            <p>L’eau de pluie est surtout utile pour humidifier les grands pots gourmands, relancer un substrat sec ou accompagner des cultures sensibles aux à-coups d’arrosage, comme les <a href="guide-fraises-sur-son-balcon.html">fraises</a>, les <a href="guide-laitues-sur-son-balcon.html">laitues</a> ou les bacs potagers d’été.</p>
+            <p><a href="https://www.service-public.fr/particuliers/vosdroits/F31481" target="_blank" rel="noopener noreferrer">Service-Public.fr autorise l’usage extérieur de l’eau de pluie pour arroser</a> et rappelle qu’elle n’est pas potable. Sur le balcon, réserve-la aux pots : grands contenants gourmands, substrat sec ou cultures sensibles aux à-coups d’arrosage, comme les <a href="guide-fraises-sur-son-balcon.html">fraises</a>, les <a href="guide-laitues-sur-son-balcon.html">laitues</a> ou les bacs potagers d’été.</p>
             <p>Tu peux aussi l’utiliser pour accompagner un apport léger de compost dans les pots ou garder un bac plus frais après un rempotage. Dans ce cas, notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur un balcon</a> t’aidera à rester mesuré.</p>
             <h2>Comment tirer plus de chaque litre récupéré</h2>
             <p>Le vrai gain ne vient pas seulement de la collecte, mais de ce que tu en fais. Si tu combines cette eau avec un <a href="paillage-sur-balcon-ecolo.html">paillage adapté</a> et une routine d’arrosage plus régulière, tu prolonges beaucoup mieux son effet.</p>
