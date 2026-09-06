@@ -171,7 +171,7 @@ Préserve le style des articles existants.
 Prépare une image cohérente avec le sujet.
 
 Règles :
-- utiliser uniquement une image libre de droit avec source/licence vérifiable ;
+- utiliser uniquement une image dont la licence autorise l’utilisation sur le site sans attribution obligatoire, avec source/licence vérifiable ;
 - ne pas inventer de source ;
 - éviter les images kitsch, trop artificielles ou hors sujet ;
 - privilégier une image crédible pour un site de jardinage sur balcon ;
@@ -179,7 +179,8 @@ Règles :
 - fichier placé dans images/articles/ avec un nom optimisé SEO ;
 - attributs width et height renseignés, comme sur les images existantes ;
 - alt text naturel qui décrit réellement ce que montre l’image, sans recopier la meta description ni empiler des mots-clés ;
-- légende/crédit si le site en utilise.
+- ne jamais citer les sources des photos dans les pages du site : aucun nom de photographe, crédit, lien de source ou mention de licence sous les images ni dans le corps des articles ;
+- vérifier la source et la licence en interne ; si une photo impose un crédit, choisir une autre image qui ne nécessite pas d’attribution.
 
 Si l’environnement permet de télécharger et intégrer proprement l’image, fais-le.
 Sinon, prépare l’intégration et laisse une note claire avec :

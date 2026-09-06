@@ -11,10 +11,8 @@
       AuthorName = "Louis Fargot"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-octobre-sur-un-balcon.jpg"
-      ImageAlt = "Pensées violettes et blanches en fleurs dans un pot en terre cuite"
+      ImageAlt = "Pensées jaunes, blanches et roses dans un pot en terre cuite posé sur une table"
       BodyHtml = @'
-            <p><small>Photo : <a href="https://commons.wikimedia.org/wiki/File:Viola_X_wittrockiana_(Pansy_pot),_2-5-%2712_-_Flickr_-_odako1.jpg" target="_blank" rel="noopener noreferrer">Koichi Oda, pensées en pot</a>, sous licence <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>. Image redimensionnée.</small></p>
-
             <h2>Choisir en une minute selon ton balcon</h2>
             <div class="article-key-facts" role="list">
               <div class="article-key-facts-item" role="listitem"><strong>Climat doux, balcon lumineux : </strong><span>un petit semis de mâche d’automne reste possible ; vérifie la période indiquée sur le sachet.</span></div>
@@ -79,15 +77,6 @@
 
             <h2>Commence par le contenant le mieux placé</h2>
             <p>En octobre, une seule jardinière bien choisie peut suffire : mâche si les semis restent possibles, laitues d’hiver en plants pour gagner du temps, ou pensées pour profiter de fleurs. Observe ce premier essai avant de remplir les autres pots. Tu trouveras les gestes des mois suivants dans le <a href="calendrier-du-jardin-de-balcon.html">calendrier annuel</a>.</p>
-            <h2>Sources horticoles</h2>
-            <p>Repères consultés le 6 septembre 2026, puis adaptés ici aux contenants et aux expositions d’un balcon. Les dates restent à croiser avec le climat local et les indications de la variété.</p>
-            <ul>
-              <li><a href="https://blog.kokopelli-semences.fr/2022/10/culture-de-la-mache-en-octobre-bienfaits-preparation-du-sol-et-semis/" target="_blank" rel="noopener noreferrer">Kokopelli : culture de la mâche en octobre</a>, pour distinguer les périodes selon les types de mâche.</li>
-              <li><a href="https://www.rhs.org.uk/vegetables/spinach/grow-your-own" target="_blank" rel="noopener noreferrer">Royal Horticultural Society : cultiver les épinards</a>, pour les semis en saison fraîche.</li>
-              <li><a href="https://www.rhs.org.uk/advice/grow-your-own/containers/may-edible-container-idea/august-edible-container-ideas?lnk=1" target="_blank" rel="noopener noreferrer">RHS : salades d’hiver en contenants</a>, pour le drainage et les protections d’automne.</li>
-              <li><a href="https://www.rhs.org.uk/plants/types/bulbs/planting" target="_blank" rel="noopener noreferrer">RHS : plantation des bulbes</a>, pour le calendrier et la culture en pots.</li>
-              <li><a href="https://www.rhs.org.uk/education-learning/children-young-people/family-activities/grow-it/pansy" target="_blank" rel="noopener noreferrer">RHS : cultiver les pensées</a>, pour l’exposition et le sol.</li>
-            </ul>
 '@
     }
     "que-planter-en-aout-sur-un-balcon" = [ordered]@{
