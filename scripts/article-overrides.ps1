@@ -1,5 +1,95 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "que-planter-en-octobre-sur-un-balcon" = [ordered]@{
+      Title = "Que planter en octobre sur un balcon avant le froid ?"
+      SeoTitle = "Que planter en octobre sur un balcon ?"
+      Description = "Mâche, salades d’hiver, pensées ou bulbes : choisis quoi planter en octobre sur ton balcon selon la lumière, le climat et la place dans tes pots."
+      Intro = "Une jardinière se libère après les tomates, mais les journées raccourcissent : que planter en octobre sur un balcon sans lancer une culture trop tard ? Tu peux encore installer des salades adaptées à l’hiver, semer un peu de mâche ou planter des pensées. Le bon choix dépend surtout de la lumière qui atteint tes pots et de l’arrivée du froid chez toi."
+      TimeRequired = "PT7M"
+      DatePublished = "2026-09-06T13:00:00.000Z"
+      DateModified = "2026-09-06T13:00:00.000Z"
+      AuthorName = "Louis Fargot"
+      Category = "Plantes & semis"
+      ImageFileName = "que-planter-en-octobre-sur-un-balcon.jpg"
+      ImageAlt = "Pensées violettes et blanches en fleurs dans un pot en terre cuite"
+      BodyHtml = @'
+            <p><small>Photo : <a href="https://commons.wikimedia.org/wiki/File:Viola_X_wittrockiana_(Pansy_pot),_2-5-%2712_-_Flickr_-_odako1.jpg" target="_blank" rel="noopener noreferrer">Koichi Oda, pensées en pot</a>, sous licence <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>. Image redimensionnée.</small></p>
+
+            <h2>Choisir en une minute selon ton balcon</h2>
+            <div class="article-key-facts" role="list">
+              <div class="article-key-facts-item" role="listitem"><strong>Climat doux, balcon lumineux : </strong><span>un petit semis de mâche d’automne reste possible ; vérifie la période indiquée sur le sachet.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Froid précoce ou altitude : </strong><span>préfère des plants de salades d’hiver déjà développés et protège les cultures en place.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Envie de fleurs maintenant : </strong><span>installe des pensées ou des violas vendues pour les plantations d’automne.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Envie de fleurs au printemps : </strong><span>plante les bulbes adaptés à la saison ; les tulipes peuvent attendre novembre.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Ombre profonde ou terreau détrempé : </strong><span>corrige d’abord l’emplacement ou l’écoulement avant de remplir un nouveau pot.</span></div>
+            </div>
+            <p>Ces repères concernent un balcon extérieur en France métropolitaine. Sur le littoral méditerranéen, la période favorable peut durer plus longtemps qu’en montagne. Mais même au sud, un balcon encaissé entre deux immeubles peut manquer de lumière dès l’automne.</p>
+
+            <h2>Avant de planter, regarde où arrive vraiment le soleil</h2>
+            <p>Un emplacement ensoleillé en juin peut passer à l’ombre en octobre : le soleil est plus bas, et le balcon du dessus ou l’immeuble d’en face masque davantage les pots. Observe le sol et les jardinières à plusieurs moments de la journée. Place les cultures de feuilles dans la zone la plus lumineuse, sans les installer en équilibre sur la rambarde.</p>
+            <p>Fais ensuite trois vérifications : le pot a-t-il des trous libres ? Le terreau reste-t-il gorgé d’eau plusieurs jours après la pluie ? Peux-tu atteindre la jardinière pour arroser et poser une protection ? Si l’accès est difficile, simplifie avant de planter. Le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> donne la vue d’ensemble ; ici, l’objectif est de choisir ce qui vaut encore la peine d’être lancé ce mois-ci.</p>
+
+            <h2>Quels légumes installer en octobre ?</h2>
+            <h3>La mâche, avec une variété prévue pour les semis d’automne</h3>
+            <p>La mâche est une bonne candidate pour une jardinière libre. Choisis une variété rustique dont le sachet prévoit un semis jusqu’en octobre. Les types à petites graines conviennent aux semis tardifs, mais ne compte pas sur une récolte rapide : avec peu de lumière, les rosettes avancent lentement.</p>
+            <p>Dans un bac percé, aplanis le terreau, sème clair, recouvre selon les indications du sachet et arrose doucement. Garde la surface légèrement humide pendant la levée. Inscris la date et la variété sur une étiquette : cela évite de ressemer trop vite dans un bac où les graines prennent simplement leur temps.</p>
+            <p>Si les nuits deviennent déjà froides, privilégie le début du mois ou quelques plants achetés en mottes. Une plante capable de supporter l’hiver n’est pas forcément capable de pousser vite juste avant celui-ci.</p>
+
+            <h3>Les laitues d’hiver, plutôt en jeunes plants</h3>
+            <p>Pour remplacer un pot terminé sans attendre une germination, les jeunes laitues adaptées à l’hiver sont pratiques. Vérifie la variété et les dates de plantation sur l’étiquette : une laitue vendue en automne n’est pas automatiquement une variété pour l’hiver.</p>
+            <p>Plante à la profondeur de la motte, sans enterrer le cœur, et laisse l’espace conseillé entre les plants. Dans une petite jardinière, mieux vaut quelques pieds aérés qu’un tapis de feuilles humides. Notre fiche sur les <a href="guide-laitues-sur-son-balcon.html">laitues en pot</a> détaille l’arrosage et la récolte. Selon le climat et la variété, une plantation tardive servira surtout à préparer la reprise du printemps.</p>
+
+            <h3>Épinards et radis : seulement si les conditions s’y prêtent</h3>
+            <p>Les épinards d’hiver se lancent de préférence en fin d’été ou au début de l’automne. En octobre, ne les sème pas par automatisme : tente une petite série en début de mois seulement si ta variété le prévoit et si ton balcon reste lumineux et doux. Sinon, conserve les plants déjà installés et reporte le nouveau semis. La fiche des <a href="guide-epinards-sur-son-balcon.html">épinards sur balcon</a> complète ces repères.</p>
+            <p>Même prudence pour les <a href="guide-radis-sur-son-balcon.html">radis</a> : un petit essai reste envisageable sous climat doux, avec une variété adaptée à la période. Leur vitesse de croissance printanière ne se transpose pas à octobre. Si ton balcon reçoit à peine le jour, ne consacre pas tout ton espace à ce pari.</p>
+
+            <h2>Des fleurs maintenant, des bulbes pour plus tard</h2>
+            <h3>Pensées et violas pour une jardinière d’automne</h3>
+            <p>Pour garder de la couleur, choisis des pensées ou des violas proposées pour l’automne, avec un feuillage sain et des boutons. Installe-les dans un terreau qui laisse l’eau s’écouler, en lumière ou au soleil doux. Desserre délicatement les racines si elles tournent au fond du godet et garde le collet au niveau du terreau.</p>
+            <p>Retire les fleurs fanées au fil des semaines et surveille l’humidité au pied. La floraison peut ralentir ou s’interrompre pendant le froid : cela ne signifie pas qu’il faut remplacer toute la jardinière. Garde ces plantes décoratives séparées de tes salades pour éviter toute confusion à la récolte.</p>
+
+            <h3>Bulbes de printemps : ne pas tous les planter au même moment</h3>
+            <p>Les narcisses, crocus et jacinthes se plantent de préférence tôt en automne. Si tu en achètes encore en octobre, choisis des bulbes fermes et sains et plante-les sans les laisser attendre. Pour les tulipes, novembre est un repère courant : inutile de tout installer le même week-end.</p>
+            <p>Choisis un pot assez profond pour respecter la profondeur inscrite sur l’emballage et conserver du terreau sous les bulbes. Arrose après la plantation, puis vérifie l’humidité sans maintenir le mélange détrempé. Prévois aussi la suite : le feuillage devra rester après la floraison pour reconstituer les réserves. Sur un petit balcon, un pot séparé se déplace plus facilement qu’une grande composition mêlée aux légumes.</p>
+
+            <h2>Un exemple concret avec deux jardinières et un pot</h2>
+            <p>Sur un balcon lumineux où les gelées arrivent tard, tu peux organiser une petite relance sans remplacer toutes les cultures :</p>
+            <ol>
+              <li>Dans une jardinière percée d’environ 20 cm de profondeur, sème une seule variété de mâche adaptée à octobre. Laisse une étiquette et surveille la levée.</li>
+              <li>Dans une seconde jardinière, installe quelques laitues d’hiver en respectant leur espacement. Ne les serre pas pour remplir visuellement le bac.</li>
+              <li>Réserve un pot aux pensées, ou aux bulbes si tu préfères préparer les fleurs du printemps.</li>
+            </ol>
+            <p>Si le balcon est froid ou très ombragé, réduis ce programme à une jardinière de plants et à l’entretien des pots existants. Réutilise les contenants disponibles plutôt que d’ajouter de lourds bacs ; garde un passage et une installation stable. Pour une exposition difficile, consulte aussi les repères du <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a>.</p>
+
+            <h2>Les gestes d’octobre qui évitent les pertes</h2>
+            <h3>Arroser après vérification, pas selon le rythme de juillet</h3>
+            <p>Touche le terreau avant d’arroser. Le froid et les jours courts réduisent souvent les besoins, mais un pot sous un auvent peut rester sec alors qu’il pleut dehors. Arrose au pied lorsque c’est nécessaire et vide l’eau qui stagne dans la soucoupe. Vérifie que l’écoulement ne tombe pas chez les voisins.</p>
+            <h3>Préparer la protection avant la première alerte</h3>
+            <p>Repère les plantes frileuses à rentrer dans un emplacement adapté, lumineux, avant le froid. Pour les cultures rustiques, garde un voile prêt à poser sur un petit support et fixe-le pour qu’il ne s’envole pas. Aère dès que le temps le permet. Un voile aide face à un refroidissement ponctuel ; il ne transforme pas une jardinière exposée en serre chauffée.</p>
+            <h3>Libérer les pots progressivement</h3>
+            <p>Conserve les cultures d’été encore saines et productives tant que la météo le permet. Retire les plantes terminées et les débris malades. Si le terreau est tassé, saturé de racines ou s’écoule mal, ne sème pas simplement par-dessus. Remets le contenant en état avant de relancer une culture ; notre guide pour <a href="rempoter-plantes-balcon.html">rempoter les plantes de balcon</a> aide à reconnaître ces situations.</p>
+
+            <h2>Les questions à se poser avant d’acheter</h2>
+            <h3>Est-il trop tard pour semer en octobre ?</h3>
+            <p>Pas toujours : une mâche adaptée aux semis d’automne reste possible en conditions favorables. En climat froid ou avec peu de lumière, préfère des plants déjà développés et accepte une croissance lente.</p>
+            <h3>Peut-on démarrer des tomates ou du basilic dehors ?</h3>
+            <p>Ce n’est pas un choix réaliste pour une nouvelle culture extérieure en octobre en France métropolitaine. Garde la place pour les plantes de saison et prépare ces semis au bon moment l’année suivante.</p>
+            <h3>Faut-il laisser un pot vide tout l’hiver ?</h3>
+            <p>Oui, si tu n’as pas les bonnes conditions ou le temps de le suivre. Retire les restes malades, vérifie le drainage et range les petits contenants inutilisés. Un balcon peut passer l’hiver avec moins de pots à entretenir.</p>
+
+            <h2>Commence par le contenant le mieux placé</h2>
+            <p>En octobre, une seule jardinière bien choisie peut suffire : mâche si les semis restent possibles, laitues d’hiver en plants pour gagner du temps, ou pensées pour profiter de fleurs. Observe ce premier essai avant de remplir les autres pots. Tu trouveras les gestes des mois suivants dans le <a href="calendrier-du-jardin-de-balcon.html">calendrier annuel</a>.</p>
+            <h2>Sources horticoles</h2>
+            <p>Repères consultés le 6 septembre 2026, puis adaptés ici aux contenants et aux expositions d’un balcon. Les dates restent à croiser avec le climat local et les indications de la variété.</p>
+            <ul>
+              <li><a href="https://blog.kokopelli-semences.fr/2022/10/culture-de-la-mache-en-octobre-bienfaits-preparation-du-sol-et-semis/" target="_blank" rel="noopener noreferrer">Kokopelli : culture de la mâche en octobre</a>, pour distinguer les périodes selon les types de mâche.</li>
+              <li><a href="https://www.rhs.org.uk/vegetables/spinach/grow-your-own" target="_blank" rel="noopener noreferrer">Royal Horticultural Society : cultiver les épinards</a>, pour les semis en saison fraîche.</li>
+              <li><a href="https://www.rhs.org.uk/advice/grow-your-own/containers/may-edible-container-idea/august-edible-container-ideas?lnk=1" target="_blank" rel="noopener noreferrer">RHS : salades d’hiver en contenants</a>, pour le drainage et les protections d’automne.</li>
+              <li><a href="https://www.rhs.org.uk/plants/types/bulbs/planting" target="_blank" rel="noopener noreferrer">RHS : plantation des bulbes</a>, pour le calendrier et la culture en pots.</li>
+              <li><a href="https://www.rhs.org.uk/education-learning/children-young-people/family-activities/grow-it/pansy" target="_blank" rel="noopener noreferrer">RHS : cultiver les pensées</a>, pour l’exposition et le sol.</li>
+            </ul>
+'@
+    }
     "que-planter-en-aout-sur-un-balcon" = [ordered]@{
       Title = "Que planter en août sur un balcon ? Les semis qui préparent l’automne"
       SeoTitle = "Que planter en août sur un balcon ?"
@@ -1050,7 +1140,7 @@
       Description = "Calendrier du jardin de balcon : semis, plantations, tailles, protection et récoltes mois par mois pour suivre le bon rythme sans se disperser."
       Intro = "Sur balcon, on gagne beaucoup à jardiner au bon moment plutôt qu’à tout faire d’un coup. Ce calendrier t’aide à garder un rythme simple, mois par mois, pour mieux semer, planter, entretenir et récolter."
       TimeRequired = "PT5M"
-      DateModified = "2026-07-03T09:00:00.000Z"
+      DateModified = "2026-09-06T13:00:00.000Z"
       ImageAlt = "Agenda de jardinage posé parmi des feuilles, symbole d’un calendrier de culture pour balcon"
       BodyHtml = @'
             <h2>Comment utiliser ce calendrier</h2>
@@ -1120,7 +1210,7 @@
               <li>Prépare de nouveaux bacs ou renouvelle les substrats les plus fatigués.</li>
             </ul>
             <h2>Octobre</h2>
-            <p>Le jardin ralentit, mais il reste encore beaucoup à récolter et à organiser pour l’hiver.</p>
+            <p>Le jardin ralentit, mais il reste encore beaucoup à récolter et à organiser pour l’hiver. Pour choisir entre semis tardifs, jeunes salades et fleurs, découvre <a href="que-planter-en-octobre-sur-un-balcon.html">que planter en octobre sur un balcon</a>. Si le froid arrive tôt ou que la lumière manque, privilégie les plants déjà développés plutôt qu’un nouveau semis.</p>
             <ul>
               <li>Rentre ou protège les plantes les plus frileuses.</li>
               <li>Plante les bulbes de printemps et les vivaces adaptées.</li>
@@ -1757,7 +1847,7 @@
       Description = "Épinards sur balcon : quand semer, quel pot choisir, où les placer et comment éviter la montée en graines. Un guide simple pour récolter longtemps en pot."
       Intro = "Les épinards font partie des cultures les plus faciles sur un balcon peu brûlant. Avec un bac pas trop profond, un semis simple et une humidité régulière, on peut récolter plusieurs fois sans entrer dans une culture compliquée."
       TimeRequired = "PT5M"
-      DateModified = "2026-07-03T09:00:00.000Z"
+      DateModified = "2026-09-06T13:00:00.000Z"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Exposition : soleil doux à mi-ombre lumineuse, surtout au printemps et à l’automne<br>Type de pot : jardinière ou bac de 15 à 20 cm de profondeur minimum<br>Substrat : terreau souple, riche et frais, avec un peu de compost mûr<br>Semis : surtout de fin d’hiver au printemps puis de fin d’été à l’automne<br>Arrosage : régulier pour éviter le coup de sec et la montée en graines<br>Récolte : feuille à feuille ou coupe partielle quelques semaines après le semis<br>Variétés faciles : Géant d’hiver, Matador, Monstrueux de Viroflay, jeunes pousses</p>
@@ -1767,6 +1857,7 @@
             <h2>Quand semer des épinards sur un balcon</h2>
             <p>Le meilleur créneau reste souvent le printemps doux et la fin d’été. En plein été, un balcon trop chaud les fait monter en graines beaucoup plus vite.</p>
             <p>Pour une relance de fin d’été, vise plutôt la deuxième partie d’août ou septembre selon la chaleur réelle du balcon. Notre guide <a href="que-planter-en-aout-sur-un-balcon.html">Que planter en août sur un balcon ?</a> t’aide justement à choisir le bon moment entre radis, salades, mâche et épinards.</p>
+            <p>En octobre, la fenêtre se resserre : ne tente un nouveau semis que si la variété le prévoit et si le balcon reste doux et lumineux. Sinon, garde les plants déjà installés. Notre sélection pour <a href="que-planter-en-octobre-sur-un-balcon.html">planter sur le balcon en octobre</a> propose aussi des alternatives quand le froid arrive tôt.</p>
             <p>Si tu débutes, pars sur de petits semis espacés de deux à trois semaines plutôt que tout semer d’un coup. C’est plus simple à suivre et cela étale les récoltes.</p>
             <h2>Le bon pot et le bon terreau</h2>
             <p>Les épinards n’ont pas besoin d’un bac profond, mais ils aiment un contenant assez large pour que les plants respirent. Une jardinière classique ou un bac peu encombrant fonctionne très bien.</p>
