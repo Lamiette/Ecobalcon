@@ -295,115 +295,98 @@ function getGearRecommendations(filters) {
     pots: {
       id: "pots",
       badge: "Contenants",
-      title: "Des pots au bon volume",
-      text: "Le plus rentable si les plantes sèchent trop vite ou manquent de place.",
-      link: "https://amzn.to/3YXjTvS",
-      label: "voir des pots de tailles variées"
+      title: "Choisir le volume avant le pot",
+      text: "Pour les légumes, pars des besoins de la plante, puis vérifie profondeur, drainage et poids du pot arrosé.",
+      check: "Un petit pot de semis ne convient pas à une tomate adulte. Réutilise un contenant adapté si tu en as déjà un.",
+      link: "../articles/le-materiel-essentiel-pour-commencer/#choisir-un-contenant",
+      label: "Choisir un contenant adapté"
     },
     planters: {
       id: "planters",
       badge: "Petit espace",
-      title: "Des jardinières simples",
-      text: "Utile pour aligner aromatiques, fleurs compactes ou salades sans bloquer la circulation.",
+      title: "Une balconnière pour cultures compactes",
+      text: "Exemple documentaire : Elho Vibia Campana Allin1, pour fleurs compactes ou petites cultures selon le volume choisi.",
+      check: "Vérifie les dimensions, le volume et la compatibilité des fixations avec ton garde-corps. Si elle ne convient pas, garde un pot posé au sol, côté intérieur.",
       link: "https://amzn.to/4jAkY50",
-      label: "voir des jardinières basiques"
+      label: "Voir la balconnière Elho sur Amazon",
+      affiliate: true
     },
     soil: {
       id: "soil",
       badge: "Substrat",
-      title: "Un terreau potager fiable",
-      text: "Prioritaire pour les légumes, les fraisiers et les pots qui s’épuisent vite.",
-      link: "https://amzn.to/42G8qDp",
-      label: "voir le terreau potager"
+      title: "Un substrat adapté à la culture",
+      text: "Le substrat de culture compte davantage qu’un accessoire. Choisis un usage indiqué sur le sac, adapté aux plantes et à la plantation en bac.",
+      check: "Le terreau de semis sert au démarrage : ne le choisis pas par défaut pour remplir tous les grands pots.",
+      link: "../articles/rempoter-plantes-balcon/",
+      label: "Choisir son pot et son terreau"
     },
     wateringCan: {
       id: "wateringCan",
       badge: "Arrosage",
       title: "Un arrosoir maniable",
-      text: "Le choix simple quand l’arrosage quotidien devient imprécis ou pénible.",
+      text: "Exemple documentaire : l’arrosoir à fleurs greemotion, si tu cherches un outil simple pour arroser à la main.",
+      check: "Vérifie la contenance, l’encombrement et le poids rempli. Garde ton arrosoir actuel s’il permet déjà un arrosage précis.",
       link: "https://amzn.to/3EPUPjG",
-      label: "voir un arrosoir compact"
+      label: "Voir l’arrosoir greemotion sur Amazon",
+      affiliate: true
     },
-    drip: {
-      id: "drip",
-      badge: "Vacances",
-      title: "Un kit goutte à goutte à tester",
-      text: "Intéressant si vous partez souvent, surtout sur balcon chaud ou venté.",
-      link: "https://amzn.to/3QO15OK",
-      label: "voir un kit goutte à goutte"
-    },
-    ollas: {
-      id: "ollas",
+    heat: {
+      id: "heat",
       badge: "Chaleur",
-      title: "Des ollas pour stabiliser l’eau",
-      text: "À envisager pour les gros pots en plein soleil qui alternent sec et trop arrosé.",
-      link: "https://amzn.to/4o0h748",
-      label: "voir des ollas"
+      title: "Limiter le dessèchement d’abord",
+      text: "Sur un balcon au soleil, ajuste le volume des pots, le paillage et l’exposition avant de choisir un système d’appoint.",
+      check: "Si tu t’absentes, teste tout système dans tes conditions réelles et prévois une personne pour les pots sensibles.",
+      link: "../articles/arroser-plantes-balcon-vacances/",
+      label: "Préparer l’arrosage et les absences"
     },
     herbs: {
       id: "herbs",
       badge: "Aromatiques",
-      title: "Un kit d’herbes aromatiques",
-      text: "Pratique si vous voulez démarrer vite avec des cultures faciles à récolter.",
-      link: "https://amzn.to/3Sjt2Lu",
-      label: "voir un kit d’herbes aromatiques"
+      title: "Choisir les aromatiques avant le kit",
+      text: "Basilic, menthe et thym n’ont pas les mêmes besoins. Choisis d’abord les espèces adaptées à ton exposition.",
+      check: "Des plants déjà développés permettent une récolte plus rapide qu’un kit de graines. Tu peux aussi récupérer une bouture.",
+      link: "../articles/plantes-aromatiques-sur-balcon/",
+      label: "Choisir ses aromatiques"
     },
-    protection: {
-      id: "protection",
-      badge: "Protection",
-      title: "Un filet léger",
-      text: "À garder pour les jeunes pousses exposées aux coups de vent ou aux passages répétés près des bacs.",
-      link: "https://amzn.to/3EV8sxW",
-      label: "voir un filet de protection"
+    wind: {
+      id: "wind",
+      badge: "Vent",
+      title: "Stabiliser avant d’équiper",
+      text: "Vérifie la stabilité des pots, place les plantes hautes à l’abri et choisis des supports compatibles avec le balcon.",
+      check: "Un filet anti-oiseaux n’est pas un brise-vent. N’ajoute pas de grande prise au vent sans fixation adaptée.",
+      link: "../articles/balcon-venteux-plantes-protection-pots/",
+      label: "Sécuriser un balcon venteux"
     }
   };
 
-  if (filters.place === "petit") {
+  // Wind and edible crops take priority over optional shopping suggestions.
+  if (filters.vent === "fort") {
+    add(gear.wind);
+  }
+  if (filters.objectif === "legumes") {
+    add(gear.pots);
+    add(gear.soil);
+  } else if (filters.place === "petit" && filters.vent !== "fort") {
     add(gear.planters);
   } else if (filters.place) {
     add(gear.pots);
   }
 
-  if (filters.objectif === "legumes") {
-    add(gear.soil);
-  } else if (filters.objectif === "aromatiques") {
+  if (filters.objectif === "aromatiques") {
     add(gear.herbs);
-  } else if (filters.objectif === "fleurs") {
+  } else if (filters.objectif === "fleurs" && filters.vent !== "fort") {
     add(gear.planters);
   } else if (filters.objectif === "facile") {
     add(gear.wateringCan);
   }
 
   if (filters.exposition === "soleil") {
-    add(gear.ollas);
-  }
-
-  if (filters.vent === "fort") {
-    add(gear.pots);
-    add(gear.protection);
-  }
-
-  if (filters.objectif === "legumes") {
-    add(gear.pots);
-  } else if (filters.objectif === "aromatiques") {
-    add(filters.place === "petit" ? gear.planters : gear.pots);
-  } else if (filters.objectif === "fleurs") {
-    add(gear.protection);
-  } else if (filters.objectif === "facile") {
-    add(gear.soil);
+    add(gear.heat);
   }
 
   if (!picks.length) {
     add(gear.soil);
     add(gear.wateringCan);
-  }
-
-  if (picks.length < 3) {
-    add(gear.wateringCan);
-  }
-
-  if (picks.length < 3) {
-    add(gear.soil);
   }
 
   return picks.slice(0, 3);
@@ -421,15 +404,16 @@ function renderGearRecommendations(filters) {
   gearRecommendationsEl.hidden = false;
   gearRecommendationsEl.innerHTML = `
     <h3>Matériel utile à prévoir</h3>
-    <p class="gear-recommendations-intro">Ces choix suivent vos critères. L’idée reste de compléter seulement ce qui règle un vrai problème sur votre balcon.</p>
-    <p class="gear-recommendations-disclosure">Liens affiliés Amazon. En tant que Partenaire Amazon, EcoBalcon peut recevoir une commission sur les achats éligibles.</p>
+    <p class="gear-recommendations-intro">Ces pistes suivent tes critères et les caractéristiques annoncées des produits. Réutilise ce que tu possèdes et complète seulement ce qui répond à un besoin. Vérifie la variante et ses caractéristiques avant l’achat.</p>
+    ${recommendations.some((item) => item.affiliate) ? '<p class="gear-recommendations-disclosure">Liens affiliés Amazon. En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>' : ""}
     <div class="gear-recommendation-grid">
       ${recommendations.map((item) => `
         <article class="gear-recommendation-card">
           <span>${item.badge}</span>
           <strong>${item.title}</strong>
           <p>${item.text}</p>
-          <p><a href="${item.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">${item.label}</a></p>
+          <p>${item.check}</p>
+          <p><a href="${item.link}"${item.affiliate ? ' target="_blank" rel="nofollow sponsored noopener noreferrer"' : ""}>${item.label}</a></p>
         </article>
       `).join("")}
     </div>

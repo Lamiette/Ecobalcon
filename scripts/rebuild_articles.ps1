@@ -1654,12 +1654,17 @@ function Ensure-AffiliateDisclosure {
   param([string]$bodyHtml)
 
   if ([string]::IsNullOrWhiteSpace($bodyHtml)) { return "" }
-  if ($bodyHtml -match 'class="affiliate-disclosure"') { return $bodyHtml }
-
   $affiliatePattern = 'href="https?://(?:www\.)?(?:amzn\.to|amazon\.)'
   if ($bodyHtml -notmatch $affiliatePattern) { return $bodyHtml }
 
   $disclosureLine = '            <p class="affiliate-disclosure">Liens affiliés Amazon. En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>'
+  $methodLine = '            <p class="affiliate-method">La sélection repose sur les caractéristiques annoncées et les critères de choix expliqués dans le guide. Vérifie la variante, les dimensions et les consignes du fabricant avant l&rsquo;achat.</p>'
+  if ($bodyHtml -match 'class="affiliate-disclosure"') {
+    if ($bodyHtml -match 'class="affiliate-method"') {
+      return [regex]::Replace($bodyHtml, '<p class="affiliate-method">.*?</p>', $methodLine.TrimStart())
+    }
+    return [regex]::Replace($bodyHtml, '(<p class="affiliate-disclosure">.*?</p>)', ('$1' + "`n" + $methodLine))
+  }
   $lines = [System.Collections.Generic.List[string]]::new()
   foreach ($line in ($bodyHtml -split "`r?`n")) {
     [void]$lines.Add($line)
@@ -1688,6 +1693,7 @@ function Ensure-AffiliateDisclosure {
   }
 
   $lines.Insert($insertIndex, $disclosureLine)
+  $lines.Insert($insertIndex + 1, $methodLine)
   return ($lines -join "`n")
 }
 
@@ -3487,6 +3493,12 @@ $tagManagerBody
             (<code>$googleAnalyticsMeasurementId</code>) pour la mesure d'audience et Microsoft Clarity
             (<code>$microsoftClarityProjectId</code>) pour l'analyse d'usage. Ces outils ne sont charg&eacute;s qu'apr&egrave;s
             un consentement explicite sur le bandeau cookies.
+          </p>
+          <p>
+            Apr&egrave;s ton accord, un clic vers Amazon peut &ecirc;tre mesur&eacute; pour comprendre l'utilit&eacute;
+            des recommandations. Cet &eacute;v&eacute;nement indique le chemin de la page, le contexte (article ou simulateur),
+            l'emplacement du lien et un identifiant de produit ou de lien court. Il ne contient ni tes r&eacute;ponses
+            au simulateur ni l'URL compl&egrave;te du lien. Ce suivi ne permet pas de conna&icirc;tre tes achats sur Amazon.
           </p>
 
           <h2>Formulaire de contact</h2>

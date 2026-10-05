@@ -498,7 +498,7 @@
       Intro = "Sur un balcon, les plantes vivent dans un volume de terre limité qui se tasse, s’épuise et sèche vite. Un bon rempotage, au bon moment, suffit souvent à relancer un pot fatigué sans tout compliquer."
       TimeRequired = "PT6M"
       DatePublished = "2026-04-07T09:00:00.000Z"
-      DateModified = "2026-04-07T09:00:00.000Z"
+      DateModified = "2026-10-05T09:00:00.000Z"
       AuthorName = "Louis Fargot"
       Category = "Entretien & astuces"
       ImageFileName = "rempoter-plantes-balcon.jpg"
@@ -535,7 +535,13 @@
             </ul>
             <h2>Comment rempoter sans stresser la plante</h2>
             <p>Le bon rempotage n’a rien de spectaculaire. Il repose surtout sur une manipulation calme, un pot prêt à l’avance et une plantation à la bonne hauteur.</p>
-            <p>Pour garder une table ou un petit balcon propre, un <a href="https://amzn.to/4gHGlCU">tapis de rempotage pliable</a> aide bien à contenir le terreau. Un <a href="https://amzn.to/4w6x1wN">transplantoir simple</a> suffit ensuite pour remplir les côtés sans tasser comme avec une pelle trop large.</p>
+            <h3 id="materiel-rempotage">Faut-il acheter du matériel pour rempoter ?</h3>
+            <p>Pour une opération ponctuelle, une bassine ou une bâche réutilisée peut contenir le terreau. Une vieille cuillère réservée au jardinage suffit pour remplir de petits pots. Le pot et le substrat adaptés restent prioritaires.</p>
+            <ul>
+              <li><a href="https://amzn.to/4gHGlCU">Tapis de rempotage sur Amazon</a> : utile si tu rempotes souvent sur une table. Vérifie les dimensions ouvertes, les rebords et la place de rangement. Évite cet achat si tu as déjà une protection lavable adaptée.</li>
+              <li><a href="https://amzn.to/4w6x1wN">Transplantoir GARDENA Classic sur Amazon</a> : utile pour déplacer du terreau et remplir les côtés. Vérifie que sa largeur convient à tes pots ; un outil large est moins pratique dans de petits godets.</li>
+            </ul>
+            <p>Le <a href="le-materiel-essentiel-pour-commencer.html">guide du matériel de balcon</a> compare les besoins avant les accessoires. Choisis selon les dimensions de tes pots, ta fréquence de rempotage et la place disponible pour ranger les outils.</p>
             <ol>
               <li>Prépare le nouveau contenant avec un fond propre, les trous dégagés et un premier lit de terreau.</li>
               <li>Sors la plante de son ancien pot en tenant la base, sans tirer sur les tiges.</li>
@@ -1327,40 +1333,53 @@
       SeoTitle = "Matériel essentiel pour jardiner sur un balcon"
       Description = "Matériel pour jardin de balcon : les indispensables vraiment utiles pour commencer sans s’encombrer, bien choisir ses pots et éviter les achats gadgets."
       Intro = "Pour bien démarrer un balcon potager, il n’y a pas besoin de beaucoup de matériel. Le plus important est de choisir quelques indispensables fiables, adaptés à ton espace, plutôt que d’acheter trop dès le début."
-      TimeRequired = "PT4M"
-      DateModified = "2026-03-28T09:00:00.000Z"
+      TimeRequired = "PT6M"
+      DateModified = "2026-10-05T09:00:00.000Z"
       ImageAlt = "Balcon aménagé avec pots, terreau et outils de jardinage prêts pour démarrer"
       BodyHtml = @'
             <h2>Ce qu’il faut vraiment avoir au départ</h2>
             <p>Pour un balcon, le bon matériel tient en peu de choses : des contenants adaptés, un terreau correct, un arrosoir pratique, quelques outils de base et un système simple pour gérer l’eau. Le reste peut venir plus tard, au fur et à mesure de tes cultures.</p>
             <p>Le vrai piège du départ, ce n’est pas le manque d’équipement, c’est l’accumulation d’objets qui finissent par encombrer un petit espace. Si tu veux d’abord poser une méthode, tu peux aussi relire nos <a href="jardin-sur-balcon-astuces.html">10 astuces pour réussir son jardin sur balcon</a>.</p>
-            <h2>1. Des pots et jardinières adaptés à ton espace</h2>
+            <h2 id="choisir-un-contenant">1. Des pots et jardinières adaptés à ton espace</h2>
             <p>Le premier achat utile, ce sont de bons contenants. Pas forcément les plus beaux ni les plus coûteux, mais ceux qui te permettront de jardiner simplement : assez grands, percés au fond et compatibles avec le poids supporté par ton balcon.</p>
             <ul>
               <li>Privilégie quelques contenants de bonne taille plutôt qu’une multitude de petits pots.</li>
               <li>Vérifie toujours le drainage et la stabilité.</li>
               <li>Adapte la profondeur au type de culture envisagé.</li>
             </ul>
-            <p>Si tu veux regarder quelques exemples : <a href="https://amzn.to/3YXjTvS">pots de différentes tailles</a> ou <a href="https://amzn.to/4jAkY50">jardinières basiques</a>.</p>
+            <p>Commence par noter les dimensions et le volume nécessaires à tes cultures. Notre <a href="/simulateur/">simulateur de balcon</a> et le <a href="guide-tomates-sur-son-balcon.html">guide des tomates en pot</a> t’aident à partir des besoins de la plante. Un ancien pot percé, sain et assez grand peut déjà convenir.</p>
+            <h3 id="materiel-choix">Quel achat répond à ton besoin ?</h3>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="materiel-choix" tabindex="0">
+              <table class="comparison-table">
+                <thead><tr><th scope="col">Besoin</th><th scope="col">À vérifier avant l’achat</th><th scope="col">Quand s’en passer</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Contenant pour légumes</th><td>Volume, profondeur, trous de drainage et poids rempli. Une tomate adulte demande davantage de place qu’un semis.</td><td>Tu possèdes déjà un pot adapté et en bon état.</td></tr>
+                  <tr><th scope="row">Balconnière pour petites cultures</th><td>Volume utile, place pour circuler et fixation compatible avec le garde-corps.</td><td>La fixation ne convient pas : choisis un contenant posé à l’intérieur du balcon.</td></tr>
+                  <tr><th scope="row">Arrosoir</th><td>Précision du bec, prise en main, encombrement et poids une fois rempli.</td><td>Ton arrosoir actuel permet d’humidifier toute la motte sans renverser d’eau.</td></tr>
+                  <tr><th scope="row">Irrigation automatique</th><td>Réservoir, alimentation, nombre de pots et débit vérifié sur chaque sortie.</td><td>Tu arroses facilement à la main ou une personne assure le relais pendant les absences.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Pour des fleurs compactes ou de petites cultures, la <a href="https://amzn.to/4jAkY50">balconnière Elho Vibia Campana Allin1 sur Amazon</a> est un exemple à comparer avec ton installation. Plusieurs variantes existent : vérifie celle proposée, ses dimensions et la fixation. Elle ne remplace pas automatiquement un grand pot pour tomates.</p>
             <h2>2. Un bon terreau avant tout</h2>
             <p>Un balcon se joue davantage sur la qualité du substrat que sur la quantité d’accessoires. Un terreau potager souple, enrichi et assez drainant fera beaucoup plus pour tes plantes qu’un gadget d’arrosage mal choisi. Si tu veux voir comment l’utiliser concrètement dans un pot déjà en place, notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> te donne la méthode pas à pas.</p>
             <p>Tu peux l’améliorer avec un peu de compost mûr ou de lombricompost. Notre dossier sur les <a href="solutions-compostage-sur-balcon.html">solutions de compostage sur balcon</a> peut t’aider si tu veux aller vers plus d’autonomie.</p>
-            <p>Pour te faire une idée : <a href="https://amzn.to/42G8qDp">terreau spécial potager</a>.</p>
+            <p>Pour démarrer des graines ou des boutures, tu peux comparer le <a href="https://amzn.to/42G8qDp">terreau de semis, bouturage et repiquage Algoflash sur Amazon</a>. Cet usage est confirmé par la <a href="https://www.algoflash.fr/nos-produits/terreaux/plantes-d-interieur/terreau-semis-bouturage-et-repiquage-algoflash" target="_blank" rel="noopener noreferrer">fiche du fabricant</a>. Pour remplir un grand bac de légumes adultes, choisis un substrat dont l’usage annoncé correspond à la culture en pots ou jardinières ; ne confonds pas ces deux besoins.</p>
             <h2>3. Un arrosoir compact et agréable à utiliser</h2>
             <p>Sur petit espace, le bon arrosoir est celui que tu as envie d’utiliser tous les jours sans t’encombrer. Un modèle léger, précis et facile à ranger suffit largement. Si tu dois slalomer entre des bacs ou arroser des pots suspendus, la maniabilité compte plus que la contenance brute.</p>
-            <p>Un exemple utile : <a href="https://amzn.to/3EPUPjG">arrosoir pratique pour balcon</a>.</p>
+            <p>Un exemple à comparer : l’<a href="https://amzn.to/3EPUPjG">arrosoir à fleurs greemotion sur Amazon</a>. Vérifie sa contenance et son encombrement ; un grand modèle devient lourd lorsqu’il est plein. Si tu as déjà un arrosoir précis et facile à ranger, cet achat n’apporte pas forcément un gain.</p>
             <h2>4. Trois outils manuels, pas plus</h2>
             <p>Pour commencer, un mini kit suffit : une pelle, une petite griffe et un sécateur. Avec ça, tu peux rempoter, aérer la surface du terreau, récolter, nettoyer et faire l’essentiel de l’entretien.</p>
-            <p>Tu n’as pas besoin de transformer le balcon en atelier. Un <a href="https://amzn.to/44lUuQ6">petit kit d’outils</a> bien choisi remplace facilement une collection complète.</p>
+            <p>Tu peux acheter les outils au fil des besoins. Pour remplir les pots, le <a href="https://amzn.to/4w6x1wN">transplantoir GARDENA Classic sur Amazon</a> est un exemple d’outil simple. Vérifie la largeur utile par rapport à tes contenants. Pour deux petits pots, une vieille cuillère réservée au jardinage peut suffire.</p>
             <h2>5. De quoi protéger et stabiliser</h2>
             <p>Selon ton balcon, quelques accessoires deviennent vite utiles : soucoupes, attaches, tuteurs, gants fins ou petites fixations pour jardinières. Ce sont souvent eux qui rendent l’entretien plus fluide, surtout dès que les cultures grandissent.</p>
             <p>Si ton balcon est très exposé, pense aussi à ce qui aide à protéger du vent ou à maintenir les pots en sécurité. Notre guide sur le <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> détaille justement les protections utiles sans transformer l’espace en chantier.</p>
             <h2>6. Le matériel vraiment optionnel</h2>
             <p>Certains équipements sont intéressants, mais pas indispensables au départ : mini-serre, irrigation automatique, lampe horticole ou filet de protection. Ils deviennent utiles quand tu connais déjà ton balcon et tes usages, pas nécessairement le premier jour.</p>
             <ul>
-              <li><a href="https://amzn.to/42Ncy32">Mini-serre</a> si tu veux prolonger les saisons.</li>
-              <li><a href="https://amzn.to/3QO15OK">Kit goutte à goutte</a> si tu t’absentes souvent.</li>
-              <li><a href="https://amzn.to/3EV8sxW">Filet de protection léger</a> si les oiseaux ou animaux viennent piocher dans les bacs.</li>
+              <li><a href="https://amzn.to/42Ncy32">Mini-serre Outsunny sur Amazon</a> pour abriter certains semis : vérifie l’encombrement, l’aération et l’ancrage. Elle ne garantit pas une protection contre le gel et peut surchauffer au soleil.</li>
+              <li><a href="https://amzn.to/3QO15OK">Kit goutte à goutte programmable Raddy WS-64 sur Amazon</a> pour des absences régulières : vérifie le réservoir et l’alimentation, puis suis le <a href="arroser-plantes-balcon-vacances.html">protocole d’essai avant les vacances</a>.</li>
+              <li><a href="https://amzn.to/3EV8sxW">Filet anti-oiseaux Ortoflex sur Amazon</a> seulement si les oiseaux viennent piocher dans les bacs. Ce filet ne sert pas de brise-vent ; pose-le tendu, sans piège pour la faune, conformément à sa notice.</li>
             </ul>
             <h2>Ce qu’il vaut mieux éviter au début</h2>
             <p>Évite d’acheter trop petit, trop décoratif ou trop spécialisé dès la première saison. Ce qui tient dans un panier en rayon ne correspond pas toujours à la réalité d’un balcon urbain chauffé, venteux ou très ensoleillé.</p>
@@ -2141,19 +2160,32 @@
       SeoTitle = "Compost sur balcon : 5 solutions sans odeur"
       Description = "Compost sur balcon : lombricomposteur, bokashi, mini composteur ou solution sans vers. Le guide simple pour composter en petit espace sans odeur."
       Intro = "Oui, on peut composter sur un balcon, même petit. Le vrai enjeu n’est pas seulement de gagner de la place, mais de choisir une méthode adaptée à ton espace, à ton rythme et à ce que tu es prêt à gérer au quotidien."
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-10-05T09:00:00.000Z"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Objectif : réduire une partie des biodéchets et récupérer une matière utile pour les pots<br>Solutions les plus courantes : lombricomposteur, bokashi, mini composteur aéré, seau fermé avant apport partagé, bac de culture enrichi en lasagnes<br>Pour éviter les odeurs : peu de matière à la fois, bon équilibre, récipient adapté et suivi régulier<br>Si tu ne veux pas de vers : bokashi, seau fermé avec apport extérieur, ou bac de culture enrichi progressivement<br>Pour débuter : mieux vaut un système simple et stable qu’un gros dispositif mal suivi</p>
             <h2>Comment choisir la bonne solution</h2>
             <p>Le bon système n’est pas le plus “complet”, mais celui que tu accepteras vraiment d’entretenir. Si tu veux traiter tes biodéchets directement sur place, le lombricomposteur et le bokashi sont souvent les deux options les plus réalistes sur balcon. Si tu veux surtout une routine simple sans trop de suivi, un seau fermé avant apport dans un compost partagé peut être plus confortable.</p>
             <p>Pose-toi trois questions : quelle place as-tu vraiment, veux-tu ou non gérer des vers, et peux-tu sortir régulièrement une partie des matières si besoin ? La réponse à ces trois points simplifie beaucoup le choix.</p>
+            <h3 id="comparer-compostage">Trois options à comparer avant de t’équiper</h3>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="comparer-compostage" tabindex="0">
+              <table class="comparison-table">
+                <thead><tr><th scope="col">Solution</th><th scope="col">Convient si…</th><th scope="col">Limite à anticiper</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Seau de collecte</th><td>Tu as accès à un point d’apport qui accepte tes biodéchets.</td><td>Il faut vider et nettoyer le seau régulièrement. Il ne produit pas de compost sur place.</td></tr>
+                  <tr><th scope="row">Lombricomposteur</th><td>Tu peux gérer de petits apports et protéger les vers des températures extrêmes.</td><td>Un balcon en plein soleil ou très froid impose de déplacer le système dans un endroit adapté.</td></tr>
+                  <tr><th scope="row">Bokashi</th><td>Tu veux un récipient fermé et tu as prévu où faire mûrir la matière fermentée.</td><td>Le contenu n’est pas un compost mûr à verser directement au pied des plantes.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Avant d’acheter, vérifie l’accès pour vider le contenant, la place pour l’ouvrir, l’entretien et la destination de la matière. Pour le bokashi, prévois aussi l’approvisionnement en activateur. Pour le lombricomposteur, vérifie la possibilité de le mettre à l’abri. Si tu disposes d’un point de collecte proche, un seau que tu possèdes déjà peut suffire pour commencer.</p>
+            <p>Ces repères s’appuient sur le <a href="https://agirpourlatransition.ademe.fr/particuliers/reduire-dechets/composter-pailler/composter-dechets-appartement" target="_blank" rel="noopener noreferrer">guide de l’ADEME pour composter en appartement</a>, consulté le 5 octobre 2026.</p>
             <h2>Le lombricomposteur</h2>
             <p>C’est souvent la solution la plus connue sur balcon. Elle fonctionne bien quand le système reste à l’abri des excès de chaleur, du froid brutal et des apports trop massifs. Le vrai avantage est de transformer progressivement de petites quantités de biodéchets en matière intéressante pour les pots.</p>
             <p>Ce n’est pas forcément compliqué, mais cela demande une certaine régularité. Si tu ne veux pas suivre un équilibre entre matières et humidité, ce n’est pas toujours la méthode la plus sereine.</p>
             <h2>Le bokashi</h2>
             <p>Le bokashi plaît souvent à ceux qui veulent composter sur balcon sans vers. Le système reste fermé, prend peu de place et limite bien les odeurs si l’on respecte son fonctionnement. En revanche, il ne donne pas immédiatement un compost prêt à l’emploi : il faut ensuite valoriser ce pré-compost dans de la terre, un bac de culture ou une filière complémentaire.</p>
-            <p>Pour un appartement ou un très petit balcon, c’est souvent l’option la plus simple à garder discrète.</p>
+            <p>Le récipient peut rester discret dans un appartement, mais vérifie d’abord la suite du traitement : une maturation dans un composteur adapté ou dans de la terre sans cultures en place, en suivant les consignes du système. Ne verse pas le contenu encore acide dans tes pots plantés. Si tu comptes l’apporter à un compost partagé, demande au gestionnaire s’il l’accepte avant de t’équiper.</p>
             <h2>Le mini composteur aéré</h2>
             <p>Cette solution peut convenir sur un balcon bien ventilé, avec de petites quantités et un vrai suivi. Elle demande d’être plus attentive à l’humidité et au volume, car un composteur aéré trop petit se déséquilibre vite.</p>
             <p>Elle devient plus intéressante si tu as déjà l’habitude de gérer les apports organiques et que ton balcon reste assez stable sur la durée.</p>
@@ -2311,6 +2343,106 @@
     }
     "arroser-plantes-balcon-vacances" = [ordered]@{
       SeoTitle = "Arroser ses plantes de balcon pendant les vacances"
+      DateModified = "2026-10-05T09:00:00.000Z"
+      TimeRequired = "PT7M"
+      BodyHtml = @'
+<h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <div class="article-key-facts" role="list">
+              <div class="article-key-facts-item" role="listitem"><strong>Pour 2 à 3 jours&nbsp;: </strong><span>une bonne préparation suffit souvent si les pots ne sont pas minuscules</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Les plus sensibles&nbsp;: </strong><span>basilic, laitues, fraisiers, jeunes tomates et petites jardinières très exposées</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Le vrai levier&nbsp;: </strong><span>réduire le dessèchement avant de chercher un système compliqué</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Bon réflexe&nbsp;: </strong><span>tester bouteille, mèche ou réserve quelques jours avant le départ</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Au-delà d’une petite semaine&nbsp;: </strong><span>un passage humain fiable reste souvent la solution la plus sûre</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Repère utile&nbsp;: </strong><span>complète ce guide avec le <a href="../paillage-sur-balcon-ecolo/">paillage sur balcon</a> pour rallonger l’autonomie des pots</span></div>
+            </div>
+            <h2>Pourquoi les départs posent vite problème sur un balcon</h2>
+            <p>Sur un balcon, le volume de terre est limité. Même quand la météo paraît douce, un pot exposé au vent, au soleil de fin de matinée ou à une rambarde chaude peut se vider beaucoup plus vite qu’on ne l’imagine. C’est encore plus vrai pour les jardinières peu profondes et pour les plantes gourmandes qui poussent fort au printemps.</p>
+            <p>Le vrai piège, c’est de raisonner seulement en nombre de jours. Deux jours peuvent se passer sans souci sur un balcon ombragé avec de grands contenants. À l’inverse, quatre jours de chaleur sur un balcon plein sud peuvent suffire à faire souffrir un <a href="../guide-basilic-sur-son-balcon/">basilic</a>, des <a href="../guide-laitues-sur-son-balcon/">laitues</a> ou des <a href="../guide-tomates-sur-son-balcon/">tomates en pot</a> déjà bien développées.</p>
+            <h2>Commence par trier les pots selon leur vraie autonomie</h2>
+            <p>Avant toute solution technique, classe simplement tes plantes en trois groupes :</p>
+            <ul>
+              <li>les pots très fragiles : petites jardinières, jeunes semis, basilic, laitues, fraisiers, plantes en godets encore serrés ;</li>
+              <li>les pots intermédiaires : grands bacs potagers, tomates ou poivrons bien installés, aromatiques en contenants moyens ;</li>
+              <li>les pots plus autonomes : plantes résistantes, aromatiques méditerranéennes, grands contenants déjà paillés et moins exposés.</li>
+            </ul>
+            <p>Ce tri change tout, parce qu’on évite ensuite d’appliquer la même méthode à tout le balcon. Un romarin n’a pas besoin du même niveau de surveillance qu’un basilic bien feuillu, surtout si ton espace ressemble déjà à un <a href="../plantes-pour-un-balcon-plein-soleil/">balcon plein soleil</a>.</p>
+            <h2>Pour un week-end ou 2 à 3 jours d’absence</h2>
+            <p>Dans beaucoup de cas, une bonne préparation suffit largement. Le plus efficace n’est pas de bricoler une réserve d’eau géante, mais de ralentir ce que le balcon perd pendant ton absence.</p>
+            <ol>
+              <li>arrose à fond la veille ou le matin du départ, jusqu’à bien humidifier toute la motte ;</li>
+              <li>regroupe les pots pour créer un microclimat un peu moins sec ;</li>
+              <li>mets les plantes les plus fragiles dans la zone la moins brûlante du balcon ;</li>
+              <li>ajoute un paillage léger si ce n’est pas déjà fait ;</li>
+              <li>retire les soucoupes pleines d’eau stagnante si elles risquent de détremper durablement le pot.</li>
+            </ol>
+            <p>Pour les cultures très sensibles, tu peux aussi créer une ombre légère avec une table, une chaise ou un voile bien fixé. Le but n’est pas de plonger les plantes dans le noir, mais d’éviter les heures les plus dures.</p>
+            <h2>Pour 4 à 7 jours : les solutions simples qui valent le coup</h2>
+            <p>C’est souvent là qu’il faut combiner plusieurs gestes. Une bouteille retournée ou une mèche d’arrosage peuvent aider, mais seulement sur un pot déjà bien humidifié, assez volumineux et dans une zone pas trop brûlante. Sur une petite jardinière en plein vent, ces systèmes sont vite insuffisants.</p>
+            <p>La méthode la plus fiable sur cette durée reste souvent celle-ci :</p>
+            <ul>
+              <li>grands pots bien arrosés et paillés ;</li>
+              <li>plantes fragiles rapprochées dans la zone la plus douce ;</li>
+              <li>petit système de réserve testé avant le départ ;</li>
+              <li>balcon allégé des situations extrêmes, comme les pots noirs au soleil de midi.</li>
+            </ul>
+            <p>Si tu veux bricoler une solution légère, fais toujours un essai quelques jours avant. Le bon système n’est pas celui qu’on installe à la dernière minute, c’est celui qu’on a déjà vu fonctionner sur le bon type de pot.</p>
+            <p class="affiliate-disclosure">Liens affiliés Amazon. En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
+            <p class="affiliate-method">La sélection repose sur les caractéristiques annoncées et les critères de choix expliqués dans le guide. Vérifie la variante, les dimensions et les consignes du fabricant avant l&rsquo;achat.</p>
+            <p>Si tu envisages un achat, le guide du <a href="../le-materiel-essentiel-pour-commencer/">matériel essentiel pour balcon</a> aide à distinguer les besoins de base des accessoires. Compare ensuite les options ci-dessous et fais un essai avant de leur confier tes plantes.</p>
+            <h2 id="choisir-arrosage-absence">Quel système choisir pour ton absence ?</h2>
+            <p>L’autonomie dépend du réservoir, des pots, des plantes et de la météo : compare les contraintes ci-dessous avant de choisir un dispositif.</p>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="choisir-arrosage-absence" tabindex="0">
+              <table class="comparison-table">
+                <thead><tr><th scope="col">Option</th><th scope="col">Usage à envisager</th><th scope="col">À vérifier</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><a href="https://amzn.to/3QO15OK" target="_blank" rel="nofollow sponsored noopener noreferrer">Raddy WS-64 sur Amazon</a></th><td>Arrosage programmable de plusieurs pots.</td><td>Alimentation, réserve nécessaire, nombre de sorties, débit à chaque pot et fonctionnement après interruption.</td></tr>
+                  <tr><th scope="row"><a href="https://amzn.to/4eIEMCh" target="_blank" rel="nofollow sponsored noopener noreferrer">Kit solaire RAINPOINT sur Amazon</a></th><td>Installation avec panneau placé dans un endroit adapté.</td><td>Ensoleillement du panneau, alimentation de secours éventuelle, réservoir et différences de débit entre les pots.</td></tr>
+                  <tr><th scope="row"><a href="https://amzn.to/4xGORrU" target="_blank" rel="nofollow sponsored noopener noreferrer">Cônes pour bouteilles Relaxdays sur Amazon</a></th><td>Appoint sur quelques pots, avec une bouteille compatible.</td><td>Compatibilité, stabilité de la bouteille et vitesse de vidange dans ton substrat.</td></tr>
+                  <tr><th scope="row">Passage d’un proche</th><td>Pots sensibles, forte chaleur ou absence prolongée.</td><td>Accès au balcon, consignes par pot et solution si la personne ne peut pas venir.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Un essai à faire avant le départ</h3>
+            <ol>
+              <li>Installe le dispositif conformément à sa notice sur les pots réellement concernés.</li>
+              <li>Surveille pendant plusieurs jours la réserve et l’humidité à quelques centimètres sous la surface, sans te fier seulement au débit affiché.</li>
+              <li>Vérifie chaque sortie : un pot bien servi ne prouve pas que les autres le sont.</li>
+              <li>Corrige le réglage puis recommence l’observation. Si tu ne peux pas faire cet essai ou si une canicule est annoncée, prévois un relais humain.</li>
+            </ol>
+            <p>Le <a href="https://www.rhs.org.uk/garden-inspiration/get-gardening/how-to-look-after-your-garden-on-holiday" target="_blank" rel="noopener noreferrer">guide de la RHS pour préparer le jardin avant les vacances</a> complète ces gestes. Une bouteille réutilisée ou ton arrosoir actuel restent des options si tes essais montrent qu’ils conviennent.</p>
+            <h2>Au-delà d’une semaine, mieux vaut prévoir un vrai relais</h2>
+            <p>Quand l’absence s’allonge, surtout entre mai et août, il devient difficile de compter seulement sur l’autonomie naturelle des pots. Même des tomates ou des poivrons en grands contenants peuvent basculer vite si le vent se lève ou si la chaleur monte.</p>
+            <p>À ce stade, le plus simple est souvent de demander à quelqu’un de passer une ou deux fois avec une consigne très claire : quels pots prioriser, quelle quantité donner, quelles plantes laisser tranquilles. Tu éviteras beaucoup mieux les excès et les oublis qu’avec un dispositif improvisé. Cette logique complète très bien notre guide sur la <a href="../reduction-consommation-eau-balcon/">réduction de la consommation d’eau sur balcon</a>, qui aide justement à garder des contenants plus stables.</p>
+            <h2>Le petit plan qui change tout avant de partir</h2>
+            <p>Si tu veux garder une routine simple, fais cette checklist la veille :</p>
+            <ul>
+              <li>retire les feuilles abîmées qui pompent pour rien ;</li>
+              <li>récolte ce qui peut l’être sur les aromatiques ou les laitues ;</li>
+              <li>vérifie que les pots les plus sensibles ne sont pas déjà trop serrés ou desséchés ;</li>
+              <li>protège la surface du terreau avec un paillage propre ;</li>
+              <li>regroupe les contenants et baisse légèrement l’exposition ;</li>
+              <li>teste une dernière fois ton système d’appoint si tu en utilisés un.</li>
+            </ul>
+            <p>Ce sont des gestes simples, mais ils font souvent bien plus qu’un gadget posé en urgence. Et si ton balcon encaisse vite les fortes chaleurs, garde aussi sous la main notre article sur les <a href="../plantes-qui-survivent-a-la-canicule/">plantes qui survivent à la canicule</a> et le guide pour <a href="../ombrer-balcon-plantes-chaleur/">créer une ombre légère sans bloquer toute la lumière</a>.</p>
+            <h2>Les erreurs les plus fréquentes</h2>
+            <ul>
+              <li>penser qu’un petit arrosage de surface suffira avant le départ ;</li>
+              <li>laisser les plantes fragiles en plein soleil parce que "ce n’est que pour quelques jours" ;</li>
+              <li>faire confiance à une bouteille ou une mèche jamais testée ;</li>
+              <li>traiter tous les pots de la même manière ;</li>
+              <li>oublier que les petites jardinières sèchent souvent bien plus vite que les grands bacs.</li>
+            </ul>
+            <h2>FAQ</h2>
+            <h3>Comment arroser ses plantes de balcon pendant une semaine de vacances ?</h3>
+            <p>Le plus sûr consiste à combiner plusieurs gestes : arrosage complet avant le départ, regroupement des pots, exposition adoucie, paillage, puis petite réserve testée à l’avance. Si le balcon chauffe fort ou si les pots sont petits, un passage humain reste préférable.</p>
+            <h3>Les bouteilles retournées suffisent-elles pour les tomates et le basilic ?</h3>
+            <p>Pas toujours. Elles peuvent aider sur de grands contenants déjà bien humides, mais elles restent trop aléatoires sur des pots très chauds, ventés ou sur des plantes très gourmandes. Il faut toujours les tester avant et ne pas leur confier tout le balcon à l’aveugle.</p>
+            <h3>Quelles plantes souffrent le plus pendant une absence ?</h3>
+            <p>Le basilic, les laitues, les fraisiers en petite jardinière, les semis récents et beaucoup de cultures d’été en contenants peu profonds font partie des plus sensibles. À l’inverse, certaines aromatiques plus sobres supportent mieux une absence courte.</p>
+            <h2>En résumé</h2>
+            <p>Arroser ses plantes de balcon pendant les vacances ne repose pas sur une astuce miracle, mais sur une préparation réaliste. Plus tu réduis le dessèchement avant de partir, plus les solutions simples deviennent efficaces.</p>
+            <p>Pour aller plus loin, enchaîne avec notre guide sur le <a href="../paillage-sur-balcon-ecolo/">paillage</a>, nos repères pour <a href="../reduction-consommation-eau-balcon/">arroser plus sobrement</a> et nos conseils pour les <a href="../plantes-qui-survivent-a-la-canicule/">balcons qui chauffent fort</a>. Tu auras une base beaucoup plus fiable avant chaque départ.</p>
+'@
     }
     "diy-pots-pour-le-balcon" = [ordered]@{
       SeoTitle = "DIY pots balcon : recycler les objets du quotidien"

@@ -1683,6 +1683,7 @@ a {
 }
 
 .article-prose {
+  min-width: 0;
   padding: 1.8rem 1.8rem 2rem;
   background: rgba(255, 253, 248, 0.9);
   border: 1px solid rgba(33, 48, 42, 0.08);

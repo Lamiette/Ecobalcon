@@ -137,7 +137,7 @@
   }
 
   function loadGoogleAnalytics() {
-    if (!gaMeasurementId || document.getElementById("ecobalcon-ga4-loader")) {
+    if (!state.consent?.audience || !gaMeasurementId || document.getElementById("ecobalcon-ga4-loader")) {
       return;
     }
 
@@ -160,7 +160,7 @@
   }
 
   function loadClarity() {
-    if (!clarityProjectId || document.getElementById("ecobalcon-clarity-loader")) {
+    if (!state.consent?.audience || !clarityProjectId || document.getElementById("ecobalcon-clarity-loader")) {
       return;
     }
 
@@ -424,6 +424,46 @@
     });
   }
 
+  function trackAffiliateClick(event) {
+    if (event.defaultPrevented || !state.consent?.audience || !gaMeasurementId) {
+      return;
+    }
+    if ((event.type === "click" && event.button !== 0) ||
+        (event.type === "auxclick" && event.button !== 1)) {
+      return;
+    }
+
+    const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+    const link = target?.closest("a[href]");
+    if (!link) {
+      return;
+    }
+
+    let destination;
+    try {
+      destination = new URL(link.href, window.location.href);
+    } catch (error) {
+      return;
+    }
+    const host = destination.hostname.toLowerCase();
+    if (!/^https?:$/.test(destination.protocol) ||
+        (host !== "amzn.to" && !/^(?:www\.|smile\.)?amazon\.(?:fr|com|co\.uk|de|es|it|ca|com\.be)$/.test(host))) {
+      return;
+    }
+
+    // No full URL, query string, link text or simulator answers are sent.
+    const asin = destination.pathname.match(/\/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})(?:\/|$)/i);
+    const shortCode = host === "amzn.to" ? destination.pathname.match(/^\/([a-zA-Z0-9]+)\/?$/)?.[1] : null;
+    loadGoogleAnalytics();
+    window.gtag("event", "affiliate_click", {
+      affiliate_partner: "amazon",
+      affiliate_id: asin ? asin[1].toUpperCase() : (shortCode || "amazon-other"),
+      affiliate_context: normalizePath(window.location.pathname) === "/simulateur" ? "simulator" : "article",
+      affiliate_placement: link.closest("#gearRecommendations") ? "recommendation" : "content",
+      page_path: window.location.pathname
+    });
+  }
+
   function init() {
     state.consent = readConsent();
     ensureSimulatorNavItem();
@@ -445,6 +485,8 @@
   }
 
   init();
+  document.addEventListener("click", trackAffiliateClick);
+  document.addEventListener("auxclick", trackAffiliateClick);
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
