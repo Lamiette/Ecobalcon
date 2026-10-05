@@ -31,7 +31,9 @@ const monthlyGuides = {
   4: "../articles/que-planter-en-avril-sur-un-balcon/",
   5: "../articles/que-planter-en-mai-sur-un-balcon/",
   6: "../articles/que-faire-en-juin-potager-balcon/",
-  8: "../articles/que-planter-en-aout-sur-un-balcon/"
+  8: "../articles/que-planter-en-aout-sur-un-balcon/",
+  10: "../articles/que-planter-en-octobre-sur-un-balcon/",
+  11: "../articles/que-planter-en-novembre-sur-un-balcon/"
 };
 const seasonalGuide = monthlyGuides[currentMonth] || "../articles/calendrier-du-jardin-de-balcon/";
 const STORAGE_KEY = "ecobalcon-simulateur";

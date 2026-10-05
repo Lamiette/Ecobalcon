@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Récupérer la pluie : comparer les surfaces</title>
+  <desc id="desc">Sous 10 mm de pluie, une ouverture de 20 cm de diamètre reçoit environ 0,3 litre. Une surface de 50 par 50 cm reçoit 2,5 litres. Valeurs théoriques avant pertes.</desc>
+  <rect width="960" height="560" rx="24" fill="#f3f7f0"/>
+  <g font-family="Arial, sans-serif" fill="#233732">
+    <text x="48" y="68" font-size="30" font-weight="700">Même pluie, quantités différentes</text>
+    <text x="48" y="107" font-size="24">Exemple : une averse de 10 mm</text>
+    <rect x="40" y="140" width="425" height="310" rx="18" fill="#fff"/>
+    <rect x="495" y="140" width="425" height="310" rx="18" fill="#fff"/>
+    <g stroke="#78a9bf" stroke-width="5" stroke-linecap="round">
+      <path d="m150 180 -7 20 m52 -20 -7 20 m52 -20 -7 20 m52 -20 -7 20"/>
+      <path d="m595 180 -7 20 m52 -20 -7 20 m52 -20 -7 20 m52 -20 -7 20 m52 -20 -7 20 m52 -20 -7 20"/>
+    </g>
+    <circle cx="252" cy="274" r="44" fill="#d9eee9" stroke="#2f6f59" stroke-width="4"/>
+    <path d="M208 274h88" stroke="#2f6f59" stroke-width="3"/>
+    <rect x="592" y="229" width="230" height="85" rx="6" fill="#d9eee9" stroke="#2f6f59" stroke-width="4"/>
+    <text x="252" y="355" font-size="24" text-anchor="middle">Ouverture Ø 20 cm</text>
+    <text x="252" y="412" font-size="38" font-weight="700" text-anchor="middle" fill="#2f6f59">≈ 0,3 litre</text>
+    <text x="708" y="355" font-size="24" text-anchor="middle">Surface 50 × 50 cm</text>
+    <text x="708" y="412" font-size="38" font-weight="700" text-anchor="middle" fill="#2f6f59">2,5 litres</text>
+    <text x="48" y="495" font-size="22">Litres = pluie (mm) × surface horizontale (m²)</text>
+    <text x="48" y="532" font-size="20">Maximum théorique avant pertes · Schémas sans échelle · EcoBalcon</text>
+  </g>
+</svg>

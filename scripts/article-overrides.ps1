@@ -74,12 +74,12 @@
     }
     "que-planter-en-octobre-sur-un-balcon" = [ordered]@{
       Title = "Que planter en octobre sur un balcon avant le froid ?"
-      SeoTitle = "Que planter en octobre sur un balcon ?"
+      SeoTitle = "Que planter en octobre sur balcon ? Légumes et fleurs"
       Description = "Mâche, salades d’hiver, pensées ou bulbes : choisis quoi planter en octobre sur ton balcon selon la lumière, le climat et la place dans tes pots."
       Intro = "Une jardinière se libère après les tomates, mais les journées raccourcissent : que planter en octobre sur un balcon sans lancer une culture trop tard ? Tu peux encore installer des salades adaptées à l’hiver, semer un peu de mâche ou planter des pensées. Le bon choix dépend surtout de la lumière qui atteint tes pots et de l’arrivée du froid chez toi."
       TimeRequired = "PT7M"
       DatePublished = "2026-09-06T13:00:00.000Z"
-      DateModified = "2026-10-05T09:00:00.000Z"
+      DateModified = "2026-10-06T00:33:25+02:00"
       AuthorName = "Louis Fargot"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-octobre-sur-un-balcon.jpg"
@@ -1081,7 +1081,7 @@
               <li>Vide la soucoupe si l’eau stagne après un gros arrosage.</li>
               <li>Ajoute un <a href="paillage-sur-balcon-ecolo.html">paillage léger</a> si le pot chauffe vite.</li>
             </ul>
-            <p>Si tu veux lisser encore mieux les besoins en eau pendant l’été, complète avec nos conseils sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a>.</p>
+            <p>Si tu veux lisser encore mieux les besoins en eau pendant l’été, complète avec nos conseils sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a>. Avant une absence, prépare aussi <a href="arroser-plantes-balcon-vacances.html">l’arrosage du basilic pendant les vacances</a> : ce pot sensible mérite une consigne à part.</p>
             <h2>Pincer, tailler et éviter la montée en fleurs</h2>
             <p>C’est le geste qui change tout. Un basilic qu’on laisse pousser droit, sans récolte, s’allonge, se fatigue et fleurit vite. Un basilic que l’on pince régulièrement se ramifie, devient plus dense et reste productif plus longtemps.</p>
             <ul>
@@ -1243,21 +1243,21 @@
               <li>Protège les jeunes plants fragiles si une baisse brutale est annoncée.</li>
             </ul>
             <h2>Mai</h2>
-            <p>Le mois le plus excitant, mais aussi celui où on a envie d’aller trop vite. Le bon réflexe : installer sans surcharger.</p>
+            <p>Le mois le plus excitant, mais aussi celui où on a envie d’aller trop vite. Le bon réflexe : installer sans surcharger. Pour choisir les cultures et vérifier si les conditions permettent de les sortir, consulte <a href="que-planter-en-mai-sur-un-balcon.html">que planter en mai sur un balcon</a>.</p>
             <ul>
               <li>Plante tomates, poivrons, basilic et autres cultures d’été après les dernières gelées.</li>
               <li>Relance des semis de salades pour garder un roulement.</li>
               <li>Mets en place les tuteurs, attaches et premières routines d’arrosage.</li>
             </ul>
             <h2>Juin</h2>
-            <p>La croissance s’accélère. Le balcon demande maintenant un suivi plus régulier que de gros travaux ponctuels.</p>
+            <p>La croissance s’accélère. Le balcon demande maintenant un suivi plus régulier que de gros travaux ponctuels. Le guide <a href="que-faire-en-juin-potager-balcon.html">que faire en juin au potager de balcon</a> détaille les gestes de suivi, les récoltes et les semis à envisager.</p>
             <ul>
               <li>Surveille les ravageurs et réagis tôt si besoin.</li>
               <li>Renforce le <a href="paillage-sur-balcon-ecolo.html">paillage</a> pour garder plus de fraîcheur.</li>
               <li>Ajoute un engrais organique doux sur les cultures gourmandes.</li>
             </ul>
             <h2>Juillet</h2>
-            <p>C’est souvent le mois le plus exigeant sur balcon, parce que le moindre oubli d’eau se paye vite.</p>
+            <p>C’est souvent le mois le plus exigeant sur balcon, parce que le moindre oubli d’eau se paye vite. Si tu prépares un départ, organise <a href="arroser-plantes-balcon-vacances.html">l’arrosage des pots pendant les vacances</a> avant les derniers jours.</p>
             <ul>
               <li>Arrose tôt le matin et surveille les pots les plus exposés.</li>
               <li>Récolte souvent pour soutenir la production.</li>
@@ -1442,7 +1442,7 @@
             <p>Le bon réflexe : les installer dans des pots séparés ou dans une jardinière dédiée aux plantes méditerranéennes, avec un mélange plus drainant que pour les aromatiques fraîches.</p>
             <h2>Les aromatiques fraîches pour les coins plus doux</h2>
             <p>La menthe, la coriandre, le persil ou la ciboulette préfèrent en général une terre plus fraîche. Elles conviennent bien aux balcons à lumière douce, ou aux coins un peu moins brûlants de l’été.</p>
-            <p>Attention à la menthe : elle est vigoureuse et finit vite par occuper toute la place. Le plus simple reste de la garder seule dans son pot.</p>
+            <p>Attention à la menthe : elle est vigoureuse et finit vite par occuper toute la place. Le plus simple reste de la garder seule dans son pot. Notre guide pour <a href="menthe-pot-balcon.html">cultiver la menthe en pot sur un balcon</a> détaille le choix du contenant, l’arrosage et la récolte.</p>
             <h2>Composer une jardinière cohérente</h2>
             <p>Le plus important n’est pas de mélanger beaucoup d’espèces, mais de regrouper celles qui ont des besoins proches. Une jardinière réussie se construit par affinités :</p>
             <ul>
@@ -1875,7 +1875,7 @@
             <p>Sur un balcon peu ensoleillé, les plantes les plus adaptées sont souvent celles qu’on récolte pour leurs feuilles ou celles qui craignent les fortes chaleurs. C’est un vrai terrain de jeu pour les <a href="guide-laitues-sur-son-balcon.html">laitues</a>, les <a href="guide-epinards-sur-son-balcon.html">épinards</a>, les <a href="guide-radis-sur-son-balcon.html">radis</a> et d’autres feuillages frais.</p>
             <p>En pratique, la lumière douce devient même un avantage pendant l’été, car elle limite le dessèchement rapide des pots et la montée en graines de certaines cultures.</p>
             <h2>Aromatiques et plantes décoratives adaptées</h2>
-            <p>Toutes les aromatiques n’aiment pas le soleil brûlant. Le persil, la menthe, la ciboulette ou parfois la coriandre se plaisent très bien dans une lumière plus modérée. Si tu veux un repère global sur ce sujet, tu peux consulter notre guide sur les <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques sur balcon</a>.</p>
+            <p>Toutes les aromatiques n’aiment pas le soleil brûlant. Le persil, la <a href="menthe-pot-balcon.html">menthe cultivée dans son propre pot</a>, la ciboulette ou parfois la coriandre se plaisent très bien dans une lumière plus modérée. Si tu veux un repère global sur ce sujet, tu peux consulter notre guide sur les <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques sur balcon</a>.</p>
             <p>Côté décoratif, les bégonias, impatiens, fuchsias, heuchères, fougères ou hostas offrent une belle présence. Un balcon ombragé peut donc devenir très vivant, même sans miser sur les grands classiques du plein soleil.</p>
             <h2>Ce qu’il vaut mieux éviter</h2>
             <p>Les tomates, aubergines, poivrons ou la plupart des légumes-fruits ont besoin d’un vrai niveau d’ensoleillement pour produire. Les installer en ombre dense conduit souvent à beaucoup de feuillage et très peu de récolte. Mieux vaut réserver l’espace à des plantes qui utiliseront réellement les conditions du lieu.</p>
@@ -1925,16 +1925,16 @@
     }
     "guide-epinards-sur-son-balcon" = [ordered]@{
       Title = "Épinards sur balcon : réussir les semis et la récolte en pot"
-      SeoTitle = "Épinards en pot : semis et récolte facile"
+      SeoTitle = "Épinards en pot : quand semer et comment récolter"
       Description = "Épinards sur balcon : quand semer, quel pot choisir, où les placer et comment éviter la montée en graines. Un guide simple pour récolter longtemps en pot."
-      Intro = "Les épinards font partie des cultures les plus faciles sur un balcon peu brûlant. Avec un bac pas trop profond, un semis simple et une humidité régulière, on peut récolter plusieurs fois sans entrer dans une culture compliquée."
+      Intro = "Les épinards apprécient les saisons fraîches et les balcons lumineux sans chaleur excessive. Un bac assez large et profond, un semis simple et une humidité régulière permettent de récolter plusieurs fois sans compliquer la culture."
       TimeRequired = "PT5M"
-      DateModified = "2026-09-06T13:00:00.000Z"
+      DateModified = "2026-10-06T00:33:25+02:00"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
-            <p>Exposition : soleil doux à mi-ombre lumineuse, surtout au printemps et à l’automne<br>Type de pot : jardinière ou bac de 15 à 20 cm de profondeur minimum<br>Substrat : terreau souple, riche et frais, avec un peu de compost mûr<br>Semis : surtout de fin d’hiver au printemps puis de fin d’été à l’automne<br>Arrosage : régulier pour éviter le coup de sec et la montée en graines<br>Récolte : feuille à feuille ou coupe partielle quelques semaines après le semis<br>Variétés faciles : Géant d’hiver, Matador, Monstrueux de Viroflay, jeunes pousses</p>
+            <p>Exposition : soleil doux à mi-ombre lumineuse, surtout au printemps et à l’automne<br>Type de pot : bac d’environ 30 cm de largeur et de profondeur pour mieux garder la fraîcheur<br>Substrat : terreau souple, riche et frais, avec un peu de compost mûr<br>Semis : printemps puis fin d’été à début d’automne, selon la variété et le climat<br>Arrosage : régulier pour éviter le coup de sec et la montée en graines<br>Récolte : feuille à feuille ou coupe partielle sur un plant bien établi<br>Variétés : vérifie la période de semis et la rusticité sur le sachet</p>
             <h2>Pourquoi les épinards sont intéressants sur un balcon</h2>
-            <p>Les épinards poussent vite, demandent peu de profondeur et aiment les saisons fraîches. Sur un balcon qui n’est pas brûlant, c’est une culture très rassurante pour débuter parce qu’elle répond bien à des gestes simples : semer, garder le terreau frais, récolter régulièrement.</p>
+            <p>Les épinards aiment les saisons fraîches. Sur un balcon qui n’est pas brûlant, cette culture répond à des gestes simples : semer, garder le terreau frais, récolter régulièrement.</p>
             <p>Ils trouvent très bien leur place à côté des <a href="guide-laitues-sur-son-balcon.html">laitues</a>, des <a href="guide-radis-sur-son-balcon.html">radis</a> et même de quelques <a href="guide-fraises-sur-son-balcon.html">fraisiers</a> si tu veux un balcon productif sans miser uniquement sur les cultures d’été plus gourmandes.</p>
             <h2>Quand semer des épinards sur un balcon</h2>
             <p>Le meilleur créneau reste souvent le printemps doux et la fin d’été. En plein été, un balcon trop chaud les fait monter en graines beaucoup plus vite.</p>
@@ -1942,7 +1942,7 @@
             <p>En octobre, la fenêtre se resserre : ne tente un nouveau semis que si la variété le prévoit et si le balcon reste doux et lumineux. Sinon, garde les plants déjà installés. Notre sélection pour <a href="que-planter-en-octobre-sur-un-balcon.html">planter sur le balcon en octobre</a> propose aussi des alternatives quand le froid arrive tôt.</p>
             <p>Si tu débutes, pars sur de petits semis espacés de deux à trois semaines plutôt que tout semer d’un coup. C’est plus simple à suivre et cela étale les récoltes.</p>
             <h2>Le bon pot et le bon terreau</h2>
-            <p>Les épinards n’ont pas besoin d’un bac profond, mais ils aiment un contenant assez large pour que les plants respirent. Une jardinière classique ou un bac peu encombrant fonctionne très bien.</p>
+            <p>Choisis un bac percé, assez large pour espacer les plants. Un contenant plus profond conserve mieux l’humidité qu’une petite jardinière ; surveille toutefois le terreau, surtout quand le vent accélère le dessèchement.</p>
             <p>Vise un terreau potager frais et souple, enrichi légèrement avec du compost mûr. Si tu veux préparer ce mélange sans excès, tu peux t’appuyer sur notre dossier sur <a href="solutions-compostage-sur-balcon.html">les solutions de compostage sur balcon</a> et sur notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur un balcon</a>.</p>
             <h2>Exposition et emplacement</h2>
             <p>Les épinards préfèrent la lumière douce à un plein soleil écrasant. Un balcon est, nord-est ou un coin lumineux mais pas brûlant leur convient souvent très bien.</p>
@@ -1958,8 +1958,9 @@
             <h2>Arrosage : le vrai point de vigilance</h2>
             <p>Les épinards aiment la fraîcheur régulière. Dès que le terreau alterne trop entre sec et mouillé, ils ralentissent, durcissent ou montent en graines plus vite.</p>
             <p>Arrose de préférence le matin, surveille la fraîcheur sur quelques centimètres et ajoute un <a href="paillage-sur-balcon-ecolo.html">paillage léger</a> si le bac chauffe vite. Si tu veux aussi économiser l’eau, complète avec notre guide sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a>.</p>
-            <h2>Récolter sans épuiser le bac</h2>
-            <p>Tu peux couper les feuilles extérieures au fur et à mesure ou récolter une partie du rang quand les plants sont assez développés. Dans les deux cas, mieux vaut revenir souvent plutôt que tout attendre en une seule fois.</p>
+            <h2>Comment récolter les épinards sans arracher le plant ?</h2>
+            <p>Prélève quelques feuilles extérieures sur chaque plant et laisse les jeunes feuilles du centre continuer à pousser. Autre possibilité, sur un plant bien établi : coupe le feuillage juste au-dessus de la base, en préservant le point de croissance. La reprise dépend de la vigueur des racines ; elle n’est pas garantie sur un plant épuisé.</p>
+            <p>La <a href="https://www.rhs.org.uk/vegetables/spinach/grow-your-own" target="_blank" rel="noopener noreferrer">RHS décrit ces deux modes de récolte</a> et recommande, en pot, un contenant d’au moins 30 cm de largeur et de profondeur pour limiter le dessèchement. Une petite jardinière impose une surveillance plus fréquente. Les jeunes pousses peuvent être prêtes vers un mois en conditions favorables, mais le froid et le manque de lumière ralentissent ce délai.</p>
             <p>Sur un balcon bien organisé, cette logique fonctionne très bien avec des cultures rapides comme les laitues et les radis, pendant que les <a href="tomates-cerises-balcon.html">tomates cerises</a> prennent le relais dans les zones plus chaudes.</p>
             <h2>Les erreurs les plus fréquentes</h2>
             <p>La première erreur consiste à semer en plein été sur un balcon très chaud. La deuxième, à laisser le bac sécher entre deux arrosages. La troisième, à serrer les plants au point de bloquer l’air et la lumière.</p>
@@ -1996,18 +1997,82 @@
     }
     "guide-poivrons-sur-son-balcon" = [ordered]@{
       Title = "Poivrons sur balcon : réussir la culture en pot"
-      SeoTitle = "Poivrons en pot : réussir en petit espace"
-      Description = "Poivrons sur balcon : variété compacte, grand pot, chaleur, arrosage régulier et nouaison. Le guide simple pour réussir des poivrons en pot."
+      SeoTitle = "Poivron en pot sur balcon : soleil, pot et arrosage"
+      Description = "Quel pot choisir pour un poivron sur balcon ? Soleil, chaleur, arrosage et fruits qui restent verts : les repères pour réussir la culture en pot."
       Intro = "Les poivrons demandent plus de chaleur que les cultures de printemps, mais ils restent très accessibles sur un balcon ensoleillé. Avec un grand pot, une installation au bon moment et un arrosage suivi, on peut obtenir de beaux fruits sans compliquer toute la saison."
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-10-06T00:33:25+02:00"
+      BodyHtml = @'
+            <h2>Ce qu’il faut savoir en un coup d’œil</h2>
+            <div class="article-key-facts" role="list">
+              <div class="article-key-facts-item" role="listitem"><strong>Exposition&nbsp;: </strong><span>plein soleil, 6 à 8 h par jour</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Type de pot&nbsp;: </strong><span>15 à 25 L minimum, profond et bien drainé</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Substrat&nbsp;: </strong><span>terreau riche, souple, enrichi en compost mûr</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Plantation&nbsp;: </strong><span>mai à juin, quand les nuits restent au-dessus de 12 à 15 °C</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Arrosage&nbsp;: </strong><span>régulier, sans alternance sécheresse / excès d’eau</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Fertilisation&nbsp;: </strong><span>engrais riche en potasse à partir des premières fleurs</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Récolte&nbsp;: </strong><span>de juillet à octobre selon variété et météo</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Variétés conseillées&nbsp;: </strong><span>Mini Bell, Lunchbox, Mohawk, Yolo Wonder compact, poivrons doux snack</span></div>
+            </div>
+            <h2>Poivron en pot sur balcon : les trois choix de départ</h2>
+            <p>Choisis une variété compacte, installe un seul plant dans un pot percé d’au moins 30 cm de largeur et place-le dans le coin le plus ensoleillé, abrité du vent. Ce repère de contenant et l’intérêt des variétés compactes figurent dans le <a href="https://www.rhs.org.uk/vegetables/peppers/grow-your-own" target="_blank" rel="noopener noreferrer">guide des poivrons de la RHS</a>.</p>
+            <p>Si ton balcon ne reçoit que peu de soleil direct, privilégie plutôt les <a href="guide-laitues-sur-son-balcon.html">laitues en pot</a>. Si le soleil chauffe fortement le mur et le contenant, garde la lumière pour le feuillage mais protège le pot de la surchauffe.</p>
+            <h2>Choisir la bonne variété pour un petit espace</h2>
+            <p>Sur balcon, les poivrons les plus simples à réussir sont les variétés compactes ou à petits fruits. Elles démarrent plus vite, demandent moins de volume racinaire et tiennent mieux en pot qu’un gros poivron carré très vigoureux.</p>
+            <p>Si ton espace est brûlant et exposé, inspire-toi aussi de notre sélection de <a href="plantes-pour-un-balcon-plein-soleil.html">plantes pour un balcon plein soleil</a> pour composer un coin cohérent autour des poivrons.</p>
+            <h2>Le bon contenant et le bon substrat</h2>
+            <p>Prévois un pot d’au moins 30 cm de profondeur, stable, percé au fond, avec une soucoupe vidée après arrosage. Un contenant trop petit ralentit la croissance, accentue les coups de chaud et augmente les risques de chute des fleurs.</p>
+            <p>Pour le mélange, vise un terreau potager riche et drainant, auquel tu peux ajouter 20 à 30 % de compost mûr. Si tu veux mieux doser cet apport, consulte notre guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost sur balcon</a>.</p>
+            <h2>Soleil, chaleur et emplacement</h2>
+            <p>Le poivron aime la lumière et la chaleur, mais il fructifie mieux dans une chaleur stable que dans une fournaise sèche. Installe-le dans un endroit ensoleillé, abrité du vent, avec un support mural ou une rambarde qui ne réverbère pas excessivement.</p>
+            <p>En cas de très forte chaleur, garde l’idée d’une ombre légère aux heures les plus dures et d’un paillage épais. Tu peux compléter avec nos conseils pour les <a href="plantes-qui-survivent-a-la-canicule.html">plantes qui survivent à la canicule</a> afin d’éviter les erreurs classiques pendant l’été.</p>
+            <h2>Plantation</h2>
+            <h3>Quand planter ?</h3>
+            <p>Attends la fin du froid printanier. Les poivrons végètent si les nuits restent fraîches. En pratique, vise mai ou début juin selon ta région, lorsque les températures nocturnes restent durablement au-dessus de 12 à 15 °C.</p>
+            <h3>Comment planter ?</h3>
+            <ul>
+              <li>Vérifie que les trous du pot sont libres et que l’eau peut s’évacuer.</li>
+              <li>Remplis avec un terreau riche et tasse très légèrement pour garder de l’air autour des racines.</li>
+              <li>Plante au même niveau que dans le godet, puis arrose généreusement une première fois.</li>
+              <li>Installe tout de suite un petit tuteur pour éviter que les tiges cassent sous le poids des fruits.</li>
+            </ul>
+            <h2>Arrosage : viser la régularité</h2>
+            <p>Le secret, c’est d’éviter les à-coups. Un poivron qui alterne manque d’eau et arrosages massifs devient capricieux : fleurs qui tombent, fruits qui stagnent, nécrose apicale, feuillage qui fatigue.</p>
+            <ul>
+              <li>Arrose à fond quand les 2 à 3 premiers centimètres de terreau commencent à sécher.</li>
+              <li>Privilégie le matin en période chaude, pour limiter l’évaporation et les stress thermiques.</li>
+              <li>Ajoute un <a href="paillage-sur-balcon-ecolo.html">paillage sur balcon</a> pour garder la fraîcheur plus longtemps.</li>
+              <li>Si tu veux arroser plus malin, pioche aussi des idées dans notre dossier sur la <a href="reduction-consommation-eau-balcon.html">réduction de la consommation d’eau sur balcon</a>.</li>
+            </ul>
+            <h2>Nourrir la plante sans la brusquer</h2>
+            <p>Dès l’apparition des premières fleurs, passe sur une fertilisation régulière, toutes les une à deux semaines, avec un engrais organique riche en potasse. C’est ce qui aide la plante à soutenir la floraison puis le grossissement des fruits.</p>
+            <p>Évite en revanche les excès d’azote, qui donnent beaucoup de feuilles mais peu de poivrons. Si tu cultives déjà des tomates, la logique d’entretien reste proche de celle décrite dans notre <a href="guide-tomates-sur-son-balcon.html">guide complet pour cultiver des tomates sur son balcon</a>.</p>
+            <h2>Floraison, pollinisation et nouaison</h2>
+            <p>Les poivrons sont largement autofertiles, mais un léger mouvement des fleurs aide souvent la nouaison. Sur un balcon abrité, tu peux secouer doucement le plant ou tapoter le tuteur pendant la floraison.</p>
+            <p>La présence d’insectes reste un vrai plus pour la dynamique du balcon. Pour ça, tu peux attirer davantage d’auxiliaires grâce à notre article sur les <a href="insectes-utiles-sur-un-balcon.html">insectes utiles sur un balcon</a> et compléter avec quelques <a href="plantes-aromatiques-sur-balcon.html">plantes aromatiques à cultiver sur un balcon</a> tout autour.</p>
+            <h2>Problèmes courants à surveiller</h2>
+            <p>Les fleurs tombent ?<br>Le plus fréquent, c’est un stress de chaleur, un coup de sec ou un plant encore freiné par le froid nocturne.</p>
+            <p>Le bout du fruit noircit ?<br>La nécrose apicale est souvent liée à un arrosage irrégulier et à une absorption perturbée du calcium.</p>
+            <p>Des pucerons ou aleurodes arrivent ?<br>Interviens tôt, avec les mêmes réflexes que dans notre guide pour <a href="proteger-son-balcon-des-nuisibles-naturellement.html">protéger son balcon des nuisibles naturellement</a>.</p>
+            <h2>Pourquoi les poivrons restent-ils verts en pot ?</h2>
+            <p>Un fruit vert n’est pas forcément un échec : il n’a souvent pas encore atteint sa couleur de maturité. Laisse-le sur le plant si la météo reste douce. En fin de saison, le froid et les journées courtes peuvent empêcher la coloration ; tu peux récolter les fruits verts ou déplacer le pot dans un emplacement lumineux et protégé. La RHS conseille cette mise à l’abri pour aider les derniers fruits à mûrir.</p>
+            <h2>Récolte et coloration des fruits</h2>
+            <p>Tu peux récolter les poivrons encore verts, mais ils gagnent en sucre et en parfum lorsqu’ils arrivent à leur couleur finale : rouge, jaune, orange ou chocolat selon la variété. Coupe les fruits avec un sécateur ou des ciseaux pour ne pas casser les branches.</p>
+            <p>En fin de saison, rentre les derniers fruits s’ils sont presque mûrs et garde le pot bien exposé. Même un léger supplément de chaleur peut suffire à terminer la coloration.</p>
+            <h2>Bonnes associations sur le balcon</h2>
+            <p>Les poivrons se marient bien avec le basilic, la ciboulette, les œillets d’Inde et d’autres cultures du même coin chaud. Évite simplement de les serrer contre des plantes beaucoup plus gourmandes en eau si tu veux garder un arrosage cohérent.</p>
+            <p>Pour prolonger la logique potager, tu peux aussi les intégrer à un ensemble plus large de <a href="legumes-faciles-a-cultiver.html">légumes faciles à cultiver en pot</a>.</p>
+            <h2>En résumé</h2>
+            <p>Les poivrons sont adaptés au balcon si tu réunis quatre conditions : chaleur stable, grand pot, arrosage régulier et nourriture suffisante. Commence par un seul plant dans un emplacement bien choisi, puis ajuste l’entretien selon la météo.</p>
+'@
     }
+
     "bouturer-basilic-balcon" = [ordered]@{
       Title = "Bouturer du basilic sur un balcon : la méthode la plus simple"
-      SeoTitle = "Bouturer du basilic dans l’eau"
-      Description = "Bouturer du basilic sur un balcon : choisir la bonne tige, faire raciner dans l’eau ou en pot, puis replanter sans casser la reprise."
+      SeoTitle = "Bouturer le basilic dans l’eau : étapes et replantation"
+      Description = "Bouture de basilic dans l’eau : où couper la tige, quelles feuilles retirer, quand replanter et comment éviter une reprise difficile en pot."
       Intro = "Quand un basilic se plaît vraiment, on a vite envie d’en obtenir un deuxième pot sans tout recommencer. Bonne nouvelle : c’est l’une des aromatiques les plus simples à multiplier si on choisit une tige saine et une reprise douce."
       TimeRequired = "PT6M"
-      DateModified = "2026-04-19T09:00:00.000Z"
+      DateModified = "2026-10-06T00:33:25+02:00"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Moment le plus simple : de mai à août, quand le basilic pousse franchement<br>Tige à choisir : saine, non fleurie, souple mais déjà vigoureuse<br>Méthode la plus rassurante : faire raciner d’abord dans l’eau, puis replanter<br>Alternative : piquer directement en petit pot dans un substrat léger et frais<br>Erreur classique : choisir une tige trop faible ou replanter trop tôt</p>
@@ -2027,6 +2092,8 @@
             <p>Si ton basilic est encore à l’étroit dans son pot, un passage par notre guide pour <a href="rempoter-plantes-balcon.html">rempoter ses plantes de balcon</a> peut aussi aider avant de multiplier.</p>
             <h2>Dans l’eau ou directement en pot ?</h2>
             <h3>La méthode dans l’eau</h3>
+            <p>Repère un nœud, l’endroit où une paire de feuilles rejoint la tige. Coupe juste en dessous, retire les feuilles basses et plonge seulement la partie dénudée dans un verre propre. Les feuilles restantes doivent rester hors de l’eau. Place le verre en lumière douce, puis vérifie le niveau et la propreté de l’eau.</p>
+            <p>Les racines ne suivent pas un calendrier fixe : l’<a href="https://ucanr.edu/blog/over-fence-alameda-county/article/plant-propagation-home-gardeners-comprehensive-guide" target="_blank" rel="noopener noreferrer">Université de Californie</a> décrit un enracinement du basilic dans l’eau en quelques jours à quelques semaines. Observe la tige plutôt que de replanter automatiquement au septième jour.</p>
             <p>C’est la plus rassurante pour un débutant parce qu’elle permet de voir les racines arriver. Un petit verre d’eau propre, beaucoup de lumière sans soleil dur et un renouvellement régulier suffisent souvent.</p>
             <h3>La méthode directement en pot</h3>
             <p>Elle fonctionne aussi très bien si tu gardes un substrat léger, frais et une ambiance douce les premiers jours. Sur un balcon exposé au vent ou aux grosses chaleurs, l’eau reste souvent la voie la plus lisible.</p>
@@ -2052,7 +2119,7 @@
             <h3>Combien de temps faut-il avant de replanter ?</h3>
             <p>Il n’y a pas un nombre de jours parfait, mais une règle simple : attends que les racines soient déjà visibles et un peu développées.</p>
             <h3>Peut-on laisser la bouture longtemps dans l’eau ?</h3>
-            <p>Quelques jours à deux semaines fonctionnent souvent très bien. Au-delà, il vaut mieux penser à la replantation pour relancer une croissance plus stable.</p>
+            <p>Le verre sert ici à faire démarrer des racines. Dès qu’elles sont visibles et développées, prépare le passage dans un petit pot percé. Si la tige ramollit ou noircit avant cela, repars avec une tige saine et un verre nettoyé.</p>
             <h2>En résumé</h2>
             <p>Bouturer du basilic sur un balcon est l’un des gestes les plus simples pour multiplier une aromatique qu’on aime déjà. Choisis une tige saine, fais-la raciner dans l’eau ou dans un petit pot, puis replante doucement sans brusquer la reprise.</p>
 '@
@@ -2063,7 +2130,7 @@
         },
         [ordered]@{
           Question = "Combien de temps faut-il pour qu’une bouture de basilic fasse des racines ?"
-          Answer = "Dans de bonnes conditions, les premières racines apparaissent souvent en quelques jours et deviennent assez solides en une à deux semaines selon la chaleur et la lumière."
+          Answer = "Les premières racines peuvent apparaître en quelques jours à quelques semaines selon la vigueur de la tige, la chaleur et la lumière. Observe leur développement avant de replanter."
         },
         [ordered]@{
           Question = "Faut-il replanter la bouture dès que les racines sortent ?"
@@ -2077,7 +2144,7 @@
           [ordered]@{ Name = "Choisir une tige saine"; Text = "Prélève une tige souple, non fleurie, longue de quelques nœuds et encore bien vigoureuse." },
           [ordered]@{ Name = "Couper sous un nœud"; Text = "Fais une coupe nette juste sous un nœud, puis retire les feuilles du bas pour libérer la future zone d’enracinement." },
           [ordered]@{ Name = "Faire raciner dans l’eau ou dans un petit pot"; Text = "Place la tige dans un verre d’eau propre ou dans un substrat léger maintenu frais et lumineux." },
-          [ordered]@{ Name = "Attendre des racines suffisantes"; Text = "Laisse la bouture s’enraciner quelques jours à deux semaines en surveillant la propreté et la lumière." },
+          [ordered]@{ Name = "Attendre des racines suffisantes"; Text = "Surveille la propreté de l’eau et attends des racines visibles et développées. L’enracinement peut prendre quelques jours à quelques semaines." },
           [ordered]@{ Name = "Replanter doucement"; Text = "Installe la jeune bouture dans un pot drainant, à l’abri du vent et du soleil le plus dur pendant sa reprise." },
           [ordered]@{ Name = "Pincer ensuite pour la densifier"; Text = "Quand la reprise est bonne, pince légèrement les tiges pour encourager un basilic plus compact et plus productif." }
         )
@@ -2799,9 +2866,9 @@
     "recuperer-eau-de-pluie-balcon" = [ordered]@{
       Title = "Récupérer l’eau de pluie sur un balcon : solutions simples sans gouttière"
       SeoTitle = "Récupérer l’eau de pluie sur balcon sans gouttière"
-      Description = "Récupérer l’eau de pluie sur un balcon : idées simples sans gouttière, stockage prudent et usages utiles pour arroser sans gaspiller."
+      Description = "Récupérateur d’eau de pluie sur balcon sans gouttière : récipient, entonnoir ou surface inclinée ? Compare les solutions et estime les litres récupérables."
       Intro = "Même sans gouttière, un balcon peut récupérer un peu d’eau de pluie utile pour l’arrosage. Le plus important est de rester simple, prudent et cohérent avec l’espace disponible."
-      DateModified = "2026-07-12T16:00:00.000Z"
+      DateModified = "2026-10-06T00:33:25+02:00"
       ReviewNote = "L'article distingue l'usage extérieur autorisé de l'eau de pluie, qui reste non potable, et les précautions propres au balcon : poids, écoulement, règlement de copropriété et prévention de l'eau stagnante accessible aux moustiques."
       Sources = @(
         [ordered]@{
@@ -2830,6 +2897,27 @@
             <p>Une petite surface tendue ou inclinée peut guider l’eau vers un seau ou un arrosoir. Cette solution fonctionne bien si elle reste légère, démontable et qu’elle ne prend pas le vent comme une voile.</p>
             <h3>L’entonnoir ou la rigole maison</h3>
             <p>Sur certaines installations, un petit entonnoir ou une rigole discrète suffit à canaliser une partie de l’eau reçue sur une tablette, un rebord ou une surface déjà présente. Là encore, mieux vaut viser simple que bricoler un système trop ambitieux.</p>
+            <h2>Quel récupérateur choisir sur un balcon sans gouttière ?</h2>
+            <p>Avant d’acheter, vérifie d’où viendra l’eau. Un récupérateur conçu pour se raccorder à une descente de gouttière ne collecte rien si tu n’as pas accès à cette descente. Sans gouttière, il faut une ouverture directement sous la pluie ou une petite surface qui conduit l’eau vers le récipient.</p>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="collecte-pluie-options" tabindex="0">
+              <table class="comparison-table">
+                <caption id="collecte-pluie-options">Trois façons de collecter la pluie sans gouttière</caption>
+                <thead><tr><th scope="col">Solution</th><th scope="col">Quand elle convient</th><th scope="col">Sa limite</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Récipient ouvert</th><td>Un coin au sol reçoit directement la pluie.</td><td>Sa petite ouverture collecte peu. Retire-le ou protège l’eau après la pluie.</td></tr>
+                  <tr><th scope="row">Entonnoir</th><td>Il agrandit l’ouverture d’un bidon stable posé au sol.</td><td>Un petit entonnoir fournit une petite quantité ; il ne remplace pas une toiture.</td></tr>
+                  <tr><th scope="row">Surface inclinée amovible</th><td>Une installation stable peut guider l’eau à l’intérieur du balcon.</td><td>Prise au vent, débordement et fixation à vérifier. Range-la quand tu ne peux pas la surveiller.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Si le balcon est entièrement couvert et que la pluie n’atteint pas le dispositif, un bidon seul ne suffit pas. Commence par observer une averse ; tu sauras si une collecte est réaliste avant d’encombrer le passage.</p>
+            <h2>Combien de litres peut-on récupérer avec un entonnoir ?</h2>
+            <p>Pour estimer un maximum théorique, multiplie la hauteur de pluie en millimètres par la surface de collecte horizontale en mètres carrés. <strong>1 mm de pluie sur 1 m² correspond à 1 litre.</strong> Pour une surface inclinée, mesure son emprise horizontale, pas sa surface dépliée. Les éclaboussures, les fuites et le vent diminuent la quantité réellement récupérée.</p>
+            <figure class="rain-collection-figure">
+              <img src="/images/articles/collecte-pluie-surface.svg" width="960" height="560" loading="lazy" alt="Calcul théorique : 10 mm de pluie donnent 0,3 litre sur une ouverture de 20 cm de diamètre, contre 2,5 litres sur une surface horizontale de 50 par 50 cm.">
+              <figcaption>Exemples calculés avant pertes : la surface exposée à la pluie compte davantage que la capacité du bidon.</figcaption>
+            </figure>
+            <p>Un entonnoir de 20 cm de diamètre présente environ 0,031 m² d’ouverture : avec 10 mm de pluie, le maximum est seulement de 0,31 litre. Une surface horizontale de 50 × 50 cm représente 0,25 m² et donnerait 2,5 litres pour cette même pluie. Ces chiffres sont des calculs, pas des mesures réalisées sur une installation.</p>
             <h2>Comment stocker l’eau proprement</h2>
             <p>Un arrosoir, un bidon alimentaire propre ou un seau peuvent convenir. Ferme la réserve de façon à empêcher l’accès des moustiques : l’<a href="https://signalement-moustique.anses.fr/signalement_albopictus/faq" target="_blank" rel="noopener noreferrer">ANSES recommande une moustiquaire ou un tissu correctement fixé</a>, car un simple couvercle n’est pas toujours hermétique. Vide et nettoie régulièrement les petits récipients.</p>
             <p>Si tu récupères peu d’eau mais régulièrement, c’est déjà utile. Sur balcon, une petite réserve bien utilisée vaut souvent mieux qu’un gros contenant mal géré.</p>

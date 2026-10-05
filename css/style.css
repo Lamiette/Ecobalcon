@@ -1977,6 +1977,23 @@ a {
   background: rgba(255, 255, 255, 0.68);
 }
 
+.rain-collection-figure {
+  margin: 1.5rem 0;
+}
+
+.rain-collection-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.rain-collection-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .comparison-table {
   width: 100%;
   min-width: 680px;
