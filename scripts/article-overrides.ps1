@@ -1,5 +1,77 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "que-planter-en-novembre-sur-un-balcon" = [ordered]@{
+      Title = "En novembre, que planter sur un balcon qui refroidit ?"
+      SeoTitle = "Que planter en novembre sur un balcon ?"
+      Description = "Ail d’automne, tulipes ou pensées : découvre quoi planter en novembre sur ton balcon et quels gestes privilégier quand le froid et la pluie arrivent."
+      Intro = "Un pot se libère, les nuits refroidissent et le soleil passe à peine au-dessus de l’immeuble voisin. Que planter en novembre sur un balcon dans ces conditions ? L’ail d’automne et les tulipes pour le printemps sont deux pistes, si tes pots drainent bien. Mais sur un balcon sombre ou déjà gelé, le meilleur programme consiste surtout à préserver les cultures en place."
+      TimeRequired = "PT7M"
+      DatePublished = "2026-10-05T09:00:00.000Z"
+      DateModified = "2026-10-05T09:00:00.000Z"
+      AuthorName = "Clara Fontaine"
+      Category = "Plantes & semis"
+      ImageFileName = "que-planter-en-novembre-sur-un-balcon.jpg"
+      ImageAlt = "Tulipe rouge en fleur dans un grand pot en terre cuite, devant un rosier"
+      BodyHtml = @'
+            <h2>Planter ou protéger : choisis selon ton balcon</h2>
+            <div class="article-key-facts" role="list">
+              <div class="article-key-facts-item" role="listitem"><strong>Pot profond, soleil et eau qui s’écoule : </strong><span>essaie quelques caïeux d’ail prévus pour la plantation d’automne.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Envie de fleurs au printemps : </strong><span>novembre convient à la plantation des tulipes ; réserve-leur un pot séparé.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Temps encore doux, jardinière lumineuse : </strong><span>des pensées ou violas déjà développées peuvent apporter de la couleur.</span></div>
+              <div class="article-key-facts-item" role="listitem"><strong>Terreau gelé, détrempé ou ombre profonde : </strong><span>reporte les plantations et occupe-toi du drainage, des abris et des cultures existantes.</span></div>
+            </div>
+            <p>Ces repères concernent un balcon extérieur en France métropolitaine. Le littoral, l’altitude et le vent changent beaucoup la situation : regarde les prévisions locales et l’état de tes pots avant le calendrier. Si tu prépares encore tes bacs en début d’automne, commence par <a href="que-planter-en-octobre-sur-un-balcon.html">les plantations possibles en octobre</a>.</p>
+
+            <h2>Trois vérifications avant d’acheter une plante</h2>
+            <p><strong>La lumière :</strong> observe le balcon à différents moments d’une journée dégagée. Le coin ensoleillé de l’été peut être à l’ombre en novembre. Réserve la meilleure place aux cultures comestibles ; une exposition sud sur le papier ne suffit pas si un bâtiment coupe le soleil.</p>
+            <p><strong>L’écoulement :</strong> après une pluie ou un arrosage nécessaire, regarde si le contenant se vide et si une soucoupe retient l’eau. Dégage les trous accessibles et utilise un support stable qui laisse passer l’eau sous le pot. Une couche de billes au fond ne corrige pas un contenant sans trous.</p>
+            <p><strong>La place jusqu’au printemps :</strong> un pot d’ail ou de bulbes restera occupé plusieurs mois. Ne le mets pas dans la seule jardinière que tu comptes réserver aux premiers semis de mars. Sur un petit balcon, cette décision évite de devoir tout déplacer au mauvais moment.</p>
+
+            <h2>L’ail d’automne, si tu disposes d’un pot ensoleillé</h2>
+            <p>Choisis de l’ail destiné à la plantation, avec une variété dont l’étiquette indique une mise en place en automne. L’ail acheté pour la cuisine ne te donne pas les mêmes garanties sur l’état sanitaire et l’adaptation à la saison. En cas de doute, garde ce projet pour une variété prévue pour le printemps.</p>
+            <p>La <a href="https://www.rhs.org.uk/vegetables/garlic/grow-your-own" target="_blank" rel="noopener noreferrer">Royal Horticultural Society conseille un pot d’au moins 25 cm de profondeur</a>, avec environ 15 cm entre les caïeux. Plante chaque caïeu pointe vers le haut, sous environ 2,5 cm de terreau, en respectant aussi les consignes du fournisseur. Utilise un mélange pour culture en pot qui laisse l’eau s’écouler et garde le contenant au soleil.</p>
+            <p>Pour un premier essai, quelques caïeux suffisent. Surveille l’humidité sans détremper le mélange et étiquette le pot. La récolte des bulbes se prépare pour la fin du printemps ou l’été suivant, selon la variété et le climat : l’ail n’est pas une culture à récolter avant Noël.</p>
+            <p>Si tu n’as qu’une jardinière peu profonde ou un balcon à l’ombre presque toute la journée, passe ton tour. Pour mieux comprendre ton exposition, consulte le guide du <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> avant de consacrer un pot à cette culture.</p>
+
+            <h2>Les tulipes se plantent maintenant pour fleurir plus tard</h2>
+            <p>La tulipe en fleur de la photo illustre le résultat attendu au printemps. En novembre, tu installes des bulbes au repos. Choisis-les fermes, sans parties molles ni traces de pourriture ; une variété courte sera plus facile à placer sur un balcon exposé au vent.</p>
+            <p>La <a href="https://www.rhs.org.uk/plants/types/bulbs/planting" target="_blank" rel="noopener noreferrer">RHS recommande novembre pour planter les tulipes</a>. Prends un contenant percé qui résiste au gel et laisse assez de profondeur sous les bulbes. Suis la profondeur indiquée sur l’emballage ; le repère courant est d’environ trois fois la hauteur du bulbe. Oriente les pointes vers le haut, sans serrer les bulbes les uns contre les autres.</p>
+            <p>Arrose après plantation, puis vérifie le terreau pendant l’hiver : il doit pouvoir s’égoutter et ne pas sécher complètement. Pose une étiquette avec la variété et la période de floraison. Garde le pot dehors dans un emplacement adapté, plutôt que de le rentrer dans le salon chauffé.</p>
+            <p>Réserve un pot distinct aux bulbes décoratifs, sans les mélanger aux cultures alimentaires. Après la floraison, le feuillage devra finir de jaunir naturellement : prévois dès maintenant un endroit où laisser le pot pendant cette phase.</p>
+
+            <h2>Des fleurs de saison, mais peu de nouveaux semis</h2>
+            <h3>Pensées et violas : pars de plants déjà développés</h3>
+            <p>Si le terreau n’est ni gelé ni saturé d’eau, tu peux installer des pensées ou violas adaptées aux plantations d’automne et d’hiver. Choisis des plants sains, déjà bien formés, et garde le collet au niveau du terreau. Leur croissance sera lente : n’achète pas de tout petits plants en comptant sur un remplissage rapide.</p>
+            <p>Place la jardinière dans la zone la plus lumineuse. La floraison peut reprendre pendant les périodes douces et ralentir avec le froid. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">sélection de plantes pour pots d’hiver de la RHS</a> confirme ces possibilités. Attention au cyclamen vendu comme décoration : tous les cyclamens ne supportent pas le gel, vérifie l’espèce avant de le laisser dehors.</p>
+            <h3>Mâche, épinards et salades : conserve d’abord ce qui pousse</h3>
+            <p>Une culture rustique peut traverser l’hiver sans pousser assez vite pour justifier un nouveau semis en novembre. Garde en priorité les rosettes et les plants installés en fin d’été ou en automne. Récolte les feuilles saines lorsqu’elles sont utilisables et retire celles qui se dégradent au contact du terreau.</p>
+            <p>En climat très doux et sur un balcon lumineux, un petit essai reste possible uniquement si la variété indique cette période. Ne généralise pas ce cas à toute la France. Les fiches sur les <a href="guide-epinards-sur-son-balcon.html">épinards en pot</a> et les <a href="guide-laitues-sur-son-balcon.html">laitues sur balcon</a> t’aident à suivre les cultures déjà en place. Sur un balcon froid ou sombre, garde tes graines pour une période plus favorable.</p>
+
+            <h2>La routine de novembre pour les pots déjà installés</h2>
+            <h3>Prépare le repli avant une nuit froide</h3>
+            <p>Liste les plantes qui doivent passer l’hiver hors gel et choisis pour chacune un emplacement adapté. Une pièce chaude n’est pas automatiquement un bon abri : tiens compte de la lumière et des besoins de la plante. Si le froid arrive en octobre chez toi, n’attends pas novembre pour agir.</p>
+            <p>Pour les pots qui restent dehors, rapproche les contenants d’un mur abrité sans les empiler. Lors d’un épisode froid, protège les parois du pot avec un matériau isolant bien fixé et laisse les trous dégagés. Un voile horticole peut aider les parties aériennes, mais il ne garantit pas la survie d’une plante frileuse pendant un gel prolongé. Les <a href="https://www.rhs.org.uk/prevention-protection/preventing-winter-damage" target="_blank" rel="noopener noreferrer">conseils de la RHS sur les dégâts hivernaux</a> distinguent abri et protection des contenants.</p>
+            <h3>Arrose après avoir touché le terreau</h3>
+            <p>Supprime le rythme automatique de l’été. Vérifie l’humidité sous la surface et arrose au pied seulement lorsque la plante en a besoin, pendant une période sans gel. Un pot sous un auvent peut sécher malgré la pluie. À l’inverse, un bac découvert peut rester trop humide plusieurs jours : n’ajoute pas d’eau dans ce cas et vide la soucoupe.</p>
+            <h3>Vérifie les fixations et garde l’accès aux pots</h3>
+            <p>Attache les protections pour qu’elles ne partent pas chez les voisins, sans obstruer les évacuations du balcon. Contrôle les supports et les tuteurs, puis retire ce qui n’est plus utile. Le guide du <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> complète ces gestes. Évite de lancer une grosse taille ou un apport d’engrais pour forcer une plante qui ralentit.</p>
+
+            <h2>Un programme réaliste avec deux contenants</h2>
+            <p>Sur un petit balcon lumineux et abrité, garde une jardinière de salades déjà installées et consacre un pot libre aux tulipes <strong>ou</strong> à l’ail. Le premier prépare des fleurs ; le second mobilise une place ensoleillée jusqu’à la récolte. Choisis selon ce que tu veux réellement garder au printemps.</p>
+            <p>Sur un balcon froid, commence plutôt par dégager les trous des pots, mettre les plantes fragiles à l’abri et préparer les protections. Sur un balcon très sombre, garder un contenant vide est raisonnable. Tu évites ainsi d’acheter des plants qui ne pourront pas s’établir correctement.</p>
+
+            <h2>Les questions pratiques de novembre</h2>
+            <h3>Peut-on planter si le terreau est gelé ?</h3>
+            <p>Attends qu’il dégèle et s’égoutte. Ne force pas un bulbe ou une motte dans un mélange dur ou gorgé d’eau. Pour une plante achetée en godet, conserve-la provisoirement dans un endroit adapté à ses besoins.</p>
+            <h3>Faut-il rentrer tous les pots ?</h3>
+            <p>Non. Les plantes rustiques adaptées à ton climat peuvent rester dehors avec un emplacement et une protection convenables. Les plantes sensibles demandent un abri adapté ; traite chaque pot selon la plante qu’il contient.</p>
+            <h3>Que faire d’une jardinière vide ?</h3>
+            <p>Retire les restes de cultures malades et les racines qui encombrent le bac. Nettoie le contenant si tu le ranges et mets les petits pots fragiles à l’abri du gel. Si tu conserves le terreau dehors, garde les trous libres et étiquette le bac pour ne pas le confondre avec une plantation de bulbes.</p>
+
+            <h2>Prépare une seule plantation, puis suis la météo</h2>
+            <p>En novembre, un pot d’ail bien placé ou quelques tulipes peuvent suffire à préparer la suite. Le reste du travail consiste à garder des pots accessibles, un terreau qui s’égoutte et des protections prêtes. Pour prévoir décembre et la reprise de fin d’hiver, retrouve le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon mois par mois</a>.</p>
+'@
+    }
     "que-planter-en-octobre-sur-un-balcon" = [ordered]@{
       Title = "Que planter en octobre sur un balcon avant le froid ?"
       SeoTitle = "Que planter en octobre sur un balcon ?"
@@ -7,7 +79,7 @@
       Intro = "Une jardinière se libère après les tomates, mais les journées raccourcissent : que planter en octobre sur un balcon sans lancer une culture trop tard ? Tu peux encore installer des salades adaptées à l’hiver, semer un peu de mâche ou planter des pensées. Le bon choix dépend surtout de la lumière qui atteint tes pots et de l’arrivée du froid chez toi."
       TimeRequired = "PT7M"
       DatePublished = "2026-09-06T13:00:00.000Z"
-      DateModified = "2026-09-06T13:00:00.000Z"
+      DateModified = "2026-10-05T09:00:00.000Z"
       AuthorName = "Louis Fargot"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-octobre-sur-un-balcon.jpg"
@@ -77,6 +149,7 @@
 
             <h2>Commence par le contenant le mieux placé</h2>
             <p>En octobre, une seule jardinière bien choisie peut suffire : mâche si les semis restent possibles, laitues d’hiver en plants pour gagner du temps, ou pensées pour profiter de fleurs. Observe ce premier essai avant de remplir les autres pots. Tu trouveras les gestes des mois suivants dans le <a href="calendrier-du-jardin-de-balcon.html">calendrier annuel</a>.</p>
+            <p>Pour préparer novembre, réserve dès maintenant un pot qui draine bien aux tulipes ou à l’ail d’automne, et conserve les salades déjà installées. Le guide <a href="que-planter-en-novembre-sur-un-balcon.html">Que planter en novembre sur un balcon ?</a> t’aide à choisir entre une dernière plantation et la protection des pots selon la lumière et le froid.</p>
 '@
     }
     "que-planter-en-aout-sur-un-balcon" = [ordered]@{
@@ -1129,7 +1202,7 @@
       Description = "Calendrier du jardin de balcon : semis, plantations, tailles, protection et récoltes mois par mois pour suivre le bon rythme sans se disperser."
       Intro = "Sur balcon, on gagne beaucoup à jardiner au bon moment plutôt qu’à tout faire d’un coup. Ce calendrier t’aide à garder un rythme simple, mois par mois, pour mieux semer, planter, entretenir et récolter."
       TimeRequired = "PT5M"
-      DateModified = "2026-09-06T13:00:00.000Z"
+      DateModified = "2026-10-05T09:00:00.000Z"
       ImageAlt = "Agenda de jardinage posé parmi des feuilles, symbole d’un calendrier de culture pour balcon"
       BodyHtml = @'
             <h2>Comment utiliser ce calendrier</h2>
@@ -1206,8 +1279,9 @@
               <li>Allège les bacs vides et couvre le sol si besoin.</li>
             </ul>
             <h2>Novembre</h2>
-            <p>Le moment est venu de protéger et de simplifier. Un balcon bien préparé passe mieux l’hiver.</p>
+            <p>Le moment est venu de protéger et de simplifier. Dans un pot percé, les tulipes se plantent pour le printemps ; l’ail d’automne reste une option si tu disposes d’un contenant profond et ensoleillé. Pour décider selon ton exposition et l’état du terreau, consulte <a href="que-planter-en-novembre-sur-un-balcon.html">ce que planter et faire en novembre sur un balcon</a>. Si le terreau est gelé ou détrempé, reporte les plantations.</p>
             <ul>
+              <li>Réserve un pot aux bulbes ou à l’ail plutôt que de relancer tous les semis de salades.</li>
               <li>Nettoie les pots, enlève les parties malades et aère l’espace.</li>
               <li>Renforce les protections contre le vent et le froid.</li>
               <li>Valorise les feuilles mortes, cartons bruns ou matières sèches pour le sol et le compost.</li>
