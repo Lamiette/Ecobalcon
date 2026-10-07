@@ -49,7 +49,6 @@ const emptyStateEl = document.getElementById("emptyState");
 const noteEl = document.getElementById("note");
 const gearRecommendationsEl = document.getElementById("gearRecommendations");
 const diagnosticResultEl = document.getElementById("diagnosticResult");
-const runBtn = document.getElementById("runBtn");
 const resetBtn = document.getElementById("resetBtn");
 const potPlantEl = document.getElementById("potPlant");
 const plantCountEl = document.getElementById("plantCount");
@@ -78,6 +77,19 @@ const compostTimeEl = document.getElementById("compostTime");
 const compostSmellEl = document.getElementById("compostSmell");
 const compostRecommendationEl = document.getElementById("compostRecommendation");
 const compostRowsEl = document.getElementById("compostRows");
+const plantJourneyEl = document.getElementById("plantJourney");
+const diagnosticDetailsEl = document.getElementById("diagnosticDetails");
+const gearDetailsEl = document.getElementById("gearDetails");
+const formStatusEl = document.getElementById("formStatus");
+
+function showTool(name) {
+  document.querySelectorAll("[data-tool-view]").forEach((panel) => {
+    panel.hidden = panel.dataset.toolView !== name;
+  });
+  document.querySelectorAll("[data-tool]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.tool === name));
+  });
+}
 
 const compostMethods = [
   {
@@ -187,18 +199,6 @@ function buildSummary(filters, results) {
   return `${count} suggestion${count > 1 ? "s" : ""} trouvée${count > 1 ? "s" : ""} pour ${sentence}${seasonInfo}.`;
 }
 
-function getFallbackAdvice(exposition) {
-  if (exposition === "soleil") {
-    return "Votre balcon semble très ensoleillé : commencez avec lavande, géranium, ciboulette ou fraisier si vous voulez quelque chose d'accessible.";
-  }
-
-  if (exposition === "ombre") {
-    return "Avec peu de soleil direct, privilégiez des plantes comme la menthe, le persil ou le bégonia, généralement plus tolérantes à l'ombre.";
-  }
-
-  return "Avec une exposition intermédiaire, essayez des plantes polyvalentes comme fraisier, basilic, ciboulette ou géranium.";
-}
-
 function getDiagnostic(filters, results) {
   const first = results[0];
   const potNeed = first && first.potLiters ? `${first.potLiters} L minimum pour ${first.name}` : "un volume de pot adapté à la culture principale";
@@ -261,7 +261,10 @@ function getMatchBadges(plant, filters) {
 function renderResults(plantsToShow, filters) {
   resultsEl.innerHTML = "";
 
-  plantsToShow.forEach((plant) => {
+  const more = document.createElement("details");
+  more.className = "simulator-disclosure simulator-more-results";
+  more.innerHTML = `<summary>Voir les ${plantsToShow.length - 3} autres suggestions</summary><div class="simulator-results"></div>`;
+  plantsToShow.forEach((plant, index) => {
     const article = document.createElement("article");
     article.className = "simulator-result";
     const guide = plantArticles[plant.name];
@@ -270,15 +273,21 @@ function renderResults(plantsToShow, filters) {
       ? `<div class="simulator-match">${badges.map((badge) => `<span class="simulator-match-tag simulator-match-${badge.type}">${badge.text}</span>`).join("")}</div>`
       : "";
     article.innerHTML = `
-      <h4>${plant.name}</h4>
-      <div class="simulator-tags">${plant.tags.map((tag) => `<span class="simulator-tag">${tag}</span>`).join("")}</div>
-      <p>${plant.description}</p>
-      <ul class="simulator-tips">${plant.tips.map((tip) => `<li>${tip}</li>`).join("")}</ul>
+      <h3>${plant.name}</h3>
+      <p class="simulator-plant-facts">Pot : <strong>${plant.potLiters || "?"} L minimum</strong> · ${plant.difficulty || "difficulté à vérifier"}</p>
       ${badgesHtml}
+      <details class="simulator-disclosure">
+        <summary>Conseils pour ${plant.name}</summary>
+        <p>${plant.description}</p>
+        <ul class="simulator-tips">${plant.tips.map((tip) => `<li>${tip}</li>`).join("")}</ul>
+      </details>
       ${guide ? `<a class="simulator-guide-link" href="${guide}" aria-label="Voir le guide dédié pour ${plant.name}">Voir le guide dédié</a>` : ""}
+      <button type="button" class="simulator-pot-link" data-pot-plant="${plant.name}">Calculer le pot pour ${plant.name}</button>
     `;
-    resultsEl.appendChild(article);
+    if (index < 3) resultsEl.appendChild(article);
+    else more.querySelector(".simulator-results").appendChild(article);
   });
+  if (plantsToShow.length > 3) resultsEl.appendChild(more);
 }
 
 function getGearRecommendations(filters) {
@@ -423,6 +432,10 @@ function renderGearRecommendations(filters) {
   `;
 }
 
+function normalizeSearch(value) {
+  return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function getPlantText(plant) {
   return [
     plant.name,
@@ -431,32 +444,17 @@ function getPlantText(plant) {
     plant.description,
     plant.tags.join(" "),
     plant.tips.join(" ")
-  ].map((value) => (value || "").toString()).join(" ").toLowerCase();
-}
-
-function hasActiveLibrarySearch() {
-  return Boolean(
-    plantSearchEl.value.trim() ||
-    libraryExposureEl.value ||
-    libraryGoalEl.value ||
-    libraryPotEl.value ||
-    librarySeasonEl.value
-  );
+  ].map((value) => normalizeSearch((value || "").toString())).join(" ");
 }
 
 function renderPlantLibrary() {
-  const query = plantSearchEl.value.trim().toLowerCase();
+  const query = normalizeSearch(plantSearchEl.value.trim());
   const exposure = libraryExposureEl.value;
   const goal = libraryGoalEl.value;
   const potLimit = Number(libraryPotEl.value) || 0;
   const seasonOnly = librarySeasonEl.value === "now";
 
   plantLibraryEl.innerHTML = "";
-
-  if (!hasActiveLibrarySearch()) {
-    librarySummaryEl.textContent = "Lancez une recherche ou choisissez un filtre pour afficher les plantes adaptées.";
-    return;
-  }
 
   const matches = plants
     .filter((plant) => !query || getPlantText(plant).includes(query))
@@ -482,15 +480,18 @@ function renderPlantLibrary() {
       : "";
     card.innerHTML = `
       <h3>${plant.name}</h3>
-      <div class="simulator-tags">${plant.tags.map((tag) => `<span class="simulator-tag">${tag}</span>`).join("")}</div>
       <div class="plant-library-meta">
         <span>Pot : ${plant.potLiters || "?"} L min.</span>
         <span>Difficulté : ${plant.difficulty || "à vérifier"}</span>
+      </div>
+      ${seasonBadge}
+      <details class="simulator-disclosure"><summary>Conseils pour ${plant.name}</summary>
+      <div class="plant-library-meta">
         <span>Récolte/floraison : ${plant.harvest || "selon saison"}</span>
         <span>Plantation : ${formatMonths(plant.months)}</span>
       </div>
-      ${seasonBadge}
       <p>${plant.description}</p>
+      </details>
       ${guide ? `<a class="simulator-guide-link" href="${guide}">Lire le guide</a>` : ""}
     `;
     plantLibraryEl.appendChild(card);
@@ -558,14 +559,14 @@ function restoreFilters() {
   objectifEl.value = sanitize(saved.objectif, labels.objectif);
 
   if (expositionEl.value || ventEl.value || placeEl.value || objectifEl.value) {
+    document.getElementById("extraCriteria").open = Boolean(ventEl.value || placeEl.value);
     runSimulation();
   }
 }
 
 function scrollToResultsPanel() {
-  if (resultsPanelEl && typeof resultsPanelEl.scrollIntoView === "function" && window.matchMedia("(max-width: 960px)").matches) {
-    resultsPanelEl.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  document.getElementById("resultsTitle").focus({ preventScroll: true });
+  resultsPanelEl.scrollIntoView({ behavior: "auto", block: "start" });
 }
 
 function runSimulation(options) {
@@ -577,23 +578,18 @@ function runSimulation(options) {
     objectif: objectifEl.value
   };
 
-  const selectedFilters = Object.values(filters).filter(Boolean).length;
-
   persistFilters(filters);
+  resultsPanelEl.hidden = false;
+  plantJourneyEl.classList.add("has-results");
+  formStatusEl.textContent = "";
+  diagnosticDetailsEl.hidden = true;
+  diagnosticDetailsEl.open = false;
+  gearDetailsEl.hidden = true;
+  gearDetailsEl.open = false;
   emptyStateEl.style.display = "none";
   noteEl.style.display = "none";
   noteEl.textContent = "";
   renderGearRecommendations(null);
-
-  if (!selectedFilters) {
-    resultsEl.innerHTML = "";
-    summaryEl.style.display = "block";
-    summaryEl.textContent = "Choisissez au moins un critère pour lancer le simulateur.";
-    noteEl.style.display = "block";
-    noteEl.textContent = "Commencez par l'exposition : c'est souvent le repère le plus utile pour faire un premier tri sur un balcon.";
-    diagnosticResultEl.textContent = "Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.";
-    return;
-  }
 
   const results = plants
     .filter((plant) => {
@@ -647,9 +643,7 @@ function runSimulation(options) {
     summaryEl.style.display = "block";
     summaryEl.textContent = "Aucune correspondance directe avec cette combinaison de critères.";
     noteEl.style.display = "block";
-    noteEl.textContent = getFallbackAdvice(filters.exposition);
-    diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
-    renderGearRecommendations(filters);
+    noteEl.textContent = "Essaie une autre priorité ou une exposition plus large. Le catalogue permet aussi d’explorer toutes les plantes.";
     if (shouldScroll) {
       scrollToResultsPanel();
     }
@@ -660,7 +654,14 @@ function runSimulation(options) {
   summaryEl.textContent = buildSummary(filters, results);
   renderResults(results, filters);
   renderGearRecommendations(filters);
+  gearDetailsEl.hidden = gearRecommendationsEl.hidden;
+  diagnosticDetailsEl.hidden = false;
   diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
+
+  if (!filters.exposition) {
+    noteEl.style.display = "block";
+    noteEl.textContent = "Ces idées restent à affiner : observe le soleil direct sur ton balcon avant de choisir une plante.";
+  }
 
   if (filters.vent === "fort") {
     noteEl.style.display = "block";
@@ -677,6 +678,12 @@ function resetSimulation() {
   ventEl.value = "";
   placeEl.value = "";
   objectifEl.value = "";
+  resultsPanelEl.hidden = true;
+  plantJourneyEl.classList.remove("has-results");
+  document.getElementById("extraCriteria").open = false;
+  diagnosticDetailsEl.hidden = true;
+  gearDetailsEl.hidden = true;
+  formStatusEl.textContent = "Tes critères ont été effacés. Tu peux recommencer.";
   resultsEl.innerHTML = "";
   summaryEl.style.display = "none";
   summaryEl.textContent = "";
@@ -692,6 +699,7 @@ function resetSimulation() {
     /* stockage indisponible : rien à nettoyer */
   }
   history.replaceState(null, "", window.location.pathname);
+  objectifEl.focus();
 }
 
 function hydratePlantTools() {
@@ -715,7 +723,16 @@ function getPlantByName(name) {
   return plants.find((plant) => plant.name === name) || plants[0];
 }
 
+function validateNumbers(inputs, result) {
+  const invalid = inputs.find((input) => !input.value || !input.checkValidity());
+  if (!invalid) return true;
+  const label = document.querySelector(`label[for="${invalid.id}"]`).textContent.trim();
+  result.textContent = `${label} : indique un nombre entier de ${invalid.min} à ${invalid.max}.`;
+  return false;
+}
+
 function calculatePot() {
+  if (!validateNumbers([plantCountEl], potResultEl)) return;
   const plant = getPlantByName(potPlantEl.value);
 
   if (!plant) {
@@ -728,6 +745,7 @@ function calculatePot() {
 }
 
 function calculateWaterRisk() {
+  if (!validateNumbers([absenceDaysEl, absencePotsEl], waterResultEl)) return;
   const plant = getPlantByName(absencePlantEl.value);
 
   if (!plant) {
@@ -756,6 +774,7 @@ function calculateWaterRisk() {
 }
 
 function calculateCompost() {
+  if (!validateNumbers([compostPotEl], compostResultEl)) return;
   const liters = Math.max(2, Number(compostPotEl.value) || 2);
   const type = compostCultureEl.value;
   const ratio = type === "gourmande" ? 0.08 : type === "feuille" ? 0.04 : 0.02;
@@ -800,8 +819,35 @@ calculateWaterRisk();
 calculateCompost();
 compareCompost();
 restoreFilters();
-runBtn.addEventListener("click", () => runSimulation({ scroll: true }));
+document.getElementById("plantForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  runSimulation({ scroll: true });
+});
+document.querySelector(".simulator-tool-nav").hidden = false;
+showTool("plants");
+document.querySelectorAll("[data-tool]").forEach((button) => {
+  button.addEventListener("click", () => showTool(button.dataset.tool));
+});
+resultsEl.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-pot-plant]");
+  if (!button) return;
+  potPlantEl.value = button.dataset.potPlant;
+  plantCountEl.value = "1";
+  calculatePot();
+  showTool("pots");
+  potPlantEl.focus();
+});
+document.getElementById("libraryReset").addEventListener("click", () => {
+  [plantSearchEl, libraryExposureEl, libraryGoalEl, libraryPotEl, librarySeasonEl].forEach((element) => { element.value = ""; });
+  renderPlantLibrary();
+  plantSearchEl.focus();
+});
 resetBtn.addEventListener("click", resetSimulation);
+[expositionEl, ventEl, placeEl, objectifEl].forEach((element) => {
+  element.addEventListener("change", () => {
+    if (!resultsPanelEl.hidden) formStatusEl.textContent = "Critères modifiés : clique sur Trouver mes plantes pour actualiser la sélection.";
+  });
+});
 potCalcBtn.addEventListener("click", calculatePot);
 waterCalcBtn.addEventListener("click", calculateWaterRisk);
 compostCalcBtn.addEventListener("click", calculateCompost);

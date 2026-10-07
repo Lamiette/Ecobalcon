@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -32,464 +32,7 @@
   <meta name="application-name" content="EcoBalcon">
   <meta name="theme-color" content="#2f6f59">
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="../css/style.min.css">
-  <style>
-    .simulator-page .article-shell {
-      display: grid;
-      gap: 1.5rem;
-      padding-bottom: 3rem;
-    }
-
-    .simulator-shell {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top right, rgba(216, 140, 63, 0.14), transparent 24%),
-        radial-gradient(circle at top left, rgba(47, 111, 89, 0.12), transparent 28%),
-        var(--surface);
-      border: 1px solid rgba(33, 48, 42, 0.08);
-      border-radius: 32px;
-      box-shadow: var(--shadow);
-      padding: clamp(1.3rem, 2.4vw, 2rem);
-    }
-
-    .simulator-heading {
-      display: grid;
-      gap: 0.75rem;
-      margin-bottom: 1.35rem;
-      max-width: 62rem;
-    }
-
-    .simulator-heading h1,
-    .simulator-heading h2 {
-      margin: 0;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-    }
-
-    .simulator-heading p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .simulator-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
-      gap: 1.25rem;
-      align-items: start;
-    }
-
-    .simulator-panel {
-      background: rgba(255, 253, 248, 0.92);
-      border: 1px solid rgba(33, 48, 42, 0.08);
-      border-radius: 24px;
-      padding: clamp(1rem, 2vw, 1.4rem);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    }
-
-    .simulator-panel h2,
-    .simulator-panel h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.18rem;
-    }
-
-    .simulator-panel > p {
-      margin: 0 0 1rem;
-      color: var(--muted);
-    }
-
-    .simulator-fields {
-      display: grid;
-      gap: 0.95rem;
-    }
-
-    .simulator-field {
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .simulator-field label {
-      font-weight: 700;
-    }
-
-    .simulator-field small {
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .simulator-select {
-      width: 100%;
-      min-height: 3.15rem;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(33, 48, 42, 0.14);
-      border-radius: 16px;
-      background: #fff;
-      color: var(--text);
-      font: inherit;
-      appearance: none;
-      transition: border-color 160ms ease, box-shadow 160ms ease;
-    }
-
-    .simulator-select:focus {
-      outline: none;
-      border-color: rgba(47, 111, 89, 0.56);
-      box-shadow: 0 0 0 4px rgba(47, 111, 89, 0.11);
-    }
-
-    .simulator-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.2rem;
-    }
-
-    .simulator-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3rem;
-      padding: 0.82rem 1.15rem;
-      border-radius: 999px;
-      border: 0;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
-    }
-
-    .simulator-button:hover,
-    .simulator-button:focus-visible {
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .simulator-button-primary {
-      color: #fff;
-      background: var(--brand);
-      box-shadow: 0 14px 28px rgba(47, 111, 89, 0.22);
-    }
-
-    .simulator-button-primary:hover,
-    .simulator-button-primary:focus-visible {
-      background: var(--brand-dark);
-    }
-
-    .simulator-button-secondary {
-      color: var(--brand-dark);
-      background: rgba(47, 111, 89, 0.08);
-      border: 1px solid rgba(47, 111, 89, 0.1);
-    }
-
-    .simulator-summary,
-    .simulator-note,
-    .simulator-empty {
-      border-radius: 18px;
-      padding: 1rem 1.1rem;
-    }
-
-    .simulator-summary {
-      display: none;
-      margin-bottom: 0.95rem;
-      background: rgba(47, 111, 89, 0.1);
-      color: var(--brand-dark);
-      font-weight: 700;
-    }
-
-    .simulator-empty {
-      border: 1px dashed rgba(33, 48, 42, 0.16);
-      background: rgba(255, 255, 255, 0.7);
-      color: var(--muted);
-    }
-
-    .simulator-results {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .simulator-result {
-      background: #fff;
-      border: 1px solid rgba(33, 48, 42, 0.08);
-      border-radius: 22px;
-      padding: 1rem 1.05rem;
-      box-shadow: 0 10px 24px rgba(31, 50, 40, 0.05);
-    }
-
-    .simulator-result h4 {
-      margin: 0 0 0.5rem;
-      font-size: 1.08rem;
-    }
-
-    .simulator-result p {
-      margin: 0 0 0.8rem;
-      color: var(--muted);
-    }
-
-    .simulator-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .simulator-tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 1.9rem;
-      padding: 0.32rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(47, 111, 89, 0.12);
-      background: rgba(47, 111, 89, 0.06);
-      color: var(--brand-dark);
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
-
-    .plant-library-card h3 {
-      min-height: 1.45rem;
-    }
-
-    .plant-library-card .simulator-tags {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: stretch;
-      gap: 0.45rem;
-      min-height: 2.65rem;
-    }
-
-    .plant-library-card .simulator-tag {
-      justify-content: center;
-      width: 100%;
-      height: 2.65rem;
-      min-height: 2.65rem;
-      padding-inline: 0.35rem;
-      text-align: center;
-      line-height: 1.15;
-    }
-
-    .simulator-match {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.85rem;
-    }
-
-    .simulator-match-tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 1.8rem;
-      padding: 0.28rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .simulator-match-ok {
-      background: rgba(47, 111, 89, 0.1);
-      border: 1px solid rgba(47, 111, 89, 0.16);
-      color: var(--brand-dark);
-    }
-
-    .simulator-match-season {
-      background: rgba(47, 111, 89, 0.16);
-      border: 1px solid rgba(47, 111, 89, 0.24);
-      color: var(--brand-dark);
-    }
-
-    .simulator-match-warn {
-      background: rgba(216, 140, 63, 0.14);
-      border: 1px solid rgba(216, 140, 63, 0.24);
-      color: #7b4d1f;
-    }
-
-    .simulator-match-muted {
-      background: rgba(33, 48, 42, 0.05);
-      border: 1px solid rgba(33, 48, 42, 0.1);
-      color: var(--muted);
-    }
-
-    .simulator-tips {
-      margin: 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    .simulator-tips li + li {
-      margin-top: 0.35rem;
-    }
-
-    .simulator-guide-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      margin-top: 0.9rem;
-      color: var(--brand-dark);
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-      opacity: 0.82;
-      transition: opacity 160ms ease, color 160ms ease;
-    }
-
-    .simulator-guide-link:hover,
-    .simulator-guide-link:focus-visible {
-      color: var(--brand);
-      opacity: 1;
-      outline: none;
-    }
-
-    .simulator-note {
-      display: none;
-      margin-top: 0.95rem;
-      background: rgba(216, 140, 63, 0.12);
-      border: 1px solid rgba(216, 140, 63, 0.18);
-      color: #7b4d1f;
-    }
-
-    .gear-recommendations {
-      margin-top: 0.95rem;
-      padding: 1rem;
-      border: 1px solid rgba(47, 111, 89, 0.12);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 12px 26px rgba(31, 50, 40, 0.06);
-    }
-
-    .gear-recommendations h3 {
-      margin: 0 0 0.35rem;
-      color: var(--brand-dark);
-      font-size: 1.02rem;
-      line-height: 1.25;
-    }
-
-    .gear-recommendations-intro {
-      margin: 0 0 0.75rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .gear-recommendations-disclosure {
-      margin: 0 0 0.8rem;
-      color: rgba(35, 55, 50, 0.58);
-      font-size: 0.76rem;
-      line-height: 1.5;
-    }
-
-    .gear-recommendation-grid {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .gear-recommendation-card {
-      display: grid;
-      gap: 0.38rem;
-      padding: 0.8rem 0.85rem;
-      border: 1px solid rgba(33, 48, 42, 0.08);
-      border-left: 0.28rem solid var(--accent);
-      border-radius: 12px;
-      background: rgba(255, 253, 248, 0.86);
-    }
-
-    .gear-recommendation-card span {
-      width: fit-content;
-      padding: 0.18rem 0.52rem;
-      border-radius: 999px;
-      background: rgba(47, 111, 89, 0.08);
-      color: var(--brand-dark);
-      font-size: 0.72rem;
-      font-weight: 800;
-      line-height: 1.25;
-    }
-
-    .gear-recommendation-card strong {
-      color: var(--brand-dark);
-      font-size: 0.95rem;
-      line-height: 1.25;
-    }
-
-    .gear-recommendation-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-
-    .gear-recommendation-card a,
-    .gear-recommendations-guide {
-      color: var(--brand-dark);
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .gear-recommendation-card a:hover,
-    .gear-recommendation-card a:focus-visible,
-    .gear-recommendations-guide:hover,
-    .gear-recommendations-guide:focus-visible {
-      color: var(--brand);
-      outline: none;
-    }
-
-    .gear-recommendations-guide {
-      display: inline-flex;
-      margin-top: 0.85rem;
-      font-size: 0.9rem;
-    }
-
-    .simulator-links {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .simulator-link-card {
-      background: var(--surface);
-      border: 1px solid rgba(33, 48, 42, 0.08);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 1.2rem;
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .simulator-link-card h3 {
-      margin: 0;
-      font-size: 1.08rem;
-    }
-
-    .simulator-link-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    @media (max-width: 960px) {
-      .simulator-grid,
-      .simulator-links {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .simulator-actions {
-        flex-direction: column;
-      }
-
-      .simulator-button {
-        width: 100%;
-      }
-
-      .simulator-shell {
-        border-radius: 24px;
-      }
-
-      .simulator-panel,
-      .simulator-result,
-      .simulator-link-card {
-        border-radius: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style.min.css?v=20261007-simulateur-4">
 </head>
 <body class="simulator-page">
   <a class="skip-link" href="#contenu">Passer au contenu</a>
@@ -541,101 +84,249 @@
 
         <section class="simulator-shell" id="simulateur" aria-labelledby="simulateur-title">
           <div class="simulator-heading">
-            <span class="eyebrow">EcoBalcon &middot; outils</span>
-            <h1 id="simulateur-title">Outils pour jardiner sur son balcon</h1>
-            <p>
-              Simulateur d’espace, fiches plantes, conseils d’arrosage et comparatifs pour aménager votre balcon sans acheter trop vite. Pour approfondir, consultez aussi les guides <a href="../articles/plantes-pour-un-balcon-plein-soleil/">balcon plein soleil</a>, <a href="../articles/balcon-a-lombre-plantes-et-culture/">balcon à l’ombre</a> et <a href="../articles/calendrier-du-jardin-de-balcon/">calendrier de culture</a>.
-            </p>
+            <span class="eyebrow">EcoBalcon · outils pratiques</span>
+            <h1 id="simulateur-title">Un balcon qui te ressemble</h1>
+            <p>Commence par choisir tes plantes. Pour une autre question, ouvre simplement l’outil dont tu as besoin.</p>
           </div>
-
-          <div class="simulator-grid">
-            <section class="simulator-panel" aria-labelledby="simulateur-form-title">
-              <h2 id="simulateur-form-title">Vos crit&egrave;res</h2>
-              <p>Quelques r&eacute;ponses suffisent pour faire ressortir les options les plus coh&eacute;rentes.</p>
-
-              <div class="simulator-fields">
-                <div class="simulator-field">
-                  <label for="exposition">Exposition</label>
-                  <small>Le soleil direct change presque tout sur un balcon.</small>
-                  <select class="simulator-select" id="exposition">
-                    <option value="">Choisir une exposition</option>
-                    <option value="soleil">Plein soleil</option>
-                    <option value="mi-ombre">Mi-ombre</option>
-                    <option value="ombre">Ombre / lumi&egrave;re faible</option>
-                  </select>
+          <nav class="simulator-tool-nav" aria-label="Choisir un outil" hidden>
+            <button type="button" data-tool="plants" aria-controls="tool-plants" aria-pressed="true">Choisir mes plantes</button>
+            <button type="button" data-tool="pots" aria-controls="tool-pots" aria-pressed="false">Choisir un pot</button>
+            <button type="button" data-tool="water" aria-controls="tool-water" aria-pressed="false">Préparer une absence</button>
+            <button type="button" data-tool="compost" aria-controls="tool-compost" aria-pressed="false">Utiliser du compost</button>
+            <button type="button" data-tool="library" aria-controls="tool-library" aria-pressed="false">Explorer les plantes</button>
+          </nav>
+          <noscript><p>Active JavaScript pour utiliser les calculateurs. Tu peux aussi consulter les guides en bas de page.</p></noscript>
+          <section id="tool-plants" class="tool-view" data-tool-view="plants" aria-labelledby="simulateur-form-title">
+            <div class="simulator-grid" id="plantJourney">
+              <form class="simulator-panel" id="plantForm">
+                <h2 id="simulateur-form-title">Que planter sur ton balcon ?</h2>
+                <p>Deux réponses pour commencer. Tu peux laisser un choix ouvert si tu hésites.</p>
+                <div class="simulator-fields simulator-start-fields">
+                  <div class="simulator-field">
+                    <label for="objectif">Tu aimerais surtout…</label>
+                    <select class="simulator-select" id="objectif">
+                      <option value="">Découvrir les possibilités</option>
+                      <option value="aromatiques">Cuisiner avec des aromatiques</option>
+                      <option value="legumes">Récolter des légumes</option>
+                      <option value="fleurs">Fleurir mon balcon</option>
+                      <option value="facile">Commencer avec des plantes faciles</option>
+                    </select>
+                  </div>
+                  <div class="simulator-field">
+                    <label for="exposition">Le soleil sur ton balcon</label>
+                    <select class="simulator-select" id="exposition" aria-describedby="sun-help">
+                      <option value="">Je ne sais pas encore</option>
+                      <option value="soleil">Plein soleil</option>
+                      <option value="mi-ombre">Mi-ombre</option>
+                      <option value="ombre">Ombre / peu de soleil direct</option>
+                    </select>
+                    <small id="sun-help">Observe le soleil direct : plusieurs heures, une partie de la journée, ou presque jamais.</small>
+                  </div>
                 </div>
-
-                <div class="simulator-field">
-                  <label for="vent">Vent</label>
-                  <small>Un balcon tr&egrave;s expos&eacute; demande souvent des plantes plus robustes.</small>
-                  <select class="simulator-select" id="vent">
-                    <option value="">Choisir</option>
-                    <option value="abrite">Balcon plut&ocirc;t abrit&eacute;</option>
-                    <option value="modere">Un peu expos&eacute;</option>
-                    <option value="fort">Tr&egrave;s expos&eacute; au vent</option>
-                  </select>
+                <details class="simulator-disclosure" id="extraCriteria">
+                  <summary>Préciser le vent et la place <span>(facultatif)</span></summary>
+                  <div class="simulator-fields">
+                    <div class="simulator-field">
+                      <label for="vent">Ton balcon est-il venteux ?</label>
+                      <select class="simulator-select" id="vent">
+                        <option value="">Je ne sais pas</option>
+                        <option value="abrite">Plutôt abrité</option>
+                        <option value="modere">Un peu exposé</option>
+                        <option value="fort">Très exposé au vent</option>
+                      </select>
+                    </div>
+                    <div class="simulator-field">
+                      <label for="place">La place pour tes pots</label>
+                      <select class="simulator-select" id="place">
+                        <option value="">Je ne sais pas encore</option>
+                        <option value="petit">Un petit coin / quelques pots</option>
+                        <option value="moyen">De la place pour plusieurs pots</option>
+                        <option value="grand">De la place pour de grands bacs</option>
+                      </select>
+                    </div>
+                  </div>
+                </details>
+                <p class="simulator-form-status" id="formStatus" role="status"></p>
+                <div class="simulator-actions">
+                  <button class="simulator-button simulator-button-primary" id="runBtn" type="submit">Trouver mes plantes</button>
+                  <button class="simulator-button simulator-button-secondary" id="resetBtn" type="button">Recommencer</button>
                 </div>
-
-                <div class="simulator-field">
-                  <label for="place">Place disponible</label>
-                  <small>M&ecirc;me un petit balcon peut d&eacute;j&agrave; accueillir plusieurs pots utiles.</small>
-                  <select class="simulator-select" id="place">
-                    <option value="">Choisir</option>
-                    <option value="petit">Petit balcon / peu de pots</option>
-                    <option value="moyen">Balcon moyen</option>
-                    <option value="grand">Balcon spacieux</option>
-                  </select>
-                </div>
-
-                <div class="simulator-field">
-                  <label for="objectif">Votre priorit&eacute;</label>
-                  <small>Vous pouvez viser des aromatiques, des l&eacute;gumes, des fleurs ou le plus simple possible.</small>
-                  <select class="simulator-select" id="objectif">
-                    <option value="">Choisir</option>
-                    <option value="aromatiques">Aromatiques</option>
-                    <option value="legumes">L&eacute;gumes / r&eacute;colte utile</option>
-                    <option value="fleurs">Fleurs / rendu d&eacute;coratif</option>
-                    <option value="facile">Le plus facile possible</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="simulator-actions">
-                <button class="simulator-button simulator-button-primary" id="runBtn" type="button">Voir mes plantes id&eacute;ales</button>
-                <button class="simulator-button simulator-button-secondary" id="resetBtn" type="button">R&eacute;initialiser</button>
-              </div>
-            </section>
-
-            <aside class="simulator-panel" id="resultsPanel" aria-live="polite">
-              <h2>Suggestions personnalis&eacute;es</h2>
-              <p>Le simulateur fait remonter en priorit&eacute; les plantes qui collent le mieux &agrave; vos conditions.</p>
-              <div id="summary" class="simulator-summary"></div>
-              <div id="results" class="simulator-results"></div>
-              <div id="emptyState" class="simulator-empty">
-                Choisissez vos crit&egrave;res puis lancez le simulateur pour voir une premi&egrave;re s&eacute;lection de plantes adapt&eacute;es &agrave; votre balcon.
-              </div>
-              <div id="note" class="simulator-note"></div>
-              <div id="gearRecommendations" class="gear-recommendations" hidden></div>
-            </aside>
-          </div>
-
-          <section class="diagnostic-panel" aria-labelledby="diagnostic-title">
-            <div>
-              <span class="eyebrow">Diagnostic complet</span>
-              <h2 id="diagnostic-title">Plan d'action pour votre balcon</h2>
-              <p>Le diagnostic traduit vos choix en priorités concrètes : type de cultures, volume de pots, vigilance eau et gestes à faire en premier.</p>
-            </div>
-            <div id="diagnosticResult" class="diagnostic-result">
-              Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.
+              </form>
+              <section class="simulator-panel" id="resultsPanel" aria-labelledby="resultsTitle" hidden>
+                <h2 id="resultsTitle" tabindex="-1">Ta sélection de plantes</h2>
+                <div id="summary" class="simulator-summary" role="status"></div>
+                <div id="note" class="simulator-note"></div>
+                <div id="emptyState" class="simulator-empty" hidden></div>
+                <div id="results" class="simulator-results"></div>
+                <details class="simulator-disclosure" id="diagnosticDetails" hidden>
+                  <summary>Mon plan pour démarrer</summary>
+                  <div id="diagnosticResult" class="diagnostic-result"></div>
+                </details>
+                <details class="simulator-disclosure" id="gearDetails" hidden>
+                  <summary>Les contenants et accessoires utiles</summary>
+                  <div id="gearRecommendations" class="gear-recommendations" hidden></div>
+                </details>
+              </section>
             </div>
           </section>
+          <section id="tool-pots" class="tool-view simulator-single-tool" data-tool-view="pots" aria-label="Choisir un pot">
+            <article class="tool-card">
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">L</span>
+                <div>
+                  <h2>Calculateur de pot</h2>
+                  <p>Volume minimal pour une culture en pot.</p>
+                </div>
+              </div>
+              <div class="tool-fields">
+                <label for="potPlant">
+                  <span>Culture</span>
+                  <select class="simulator-select" id="potPlant"></select>
+                </label>
+                <label for="plantCount">
+                  <span>Plants</span>
+                  <input class="simulator-input" id="plantCount" type="number" min="1" max="12" value="1">
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="potCalcBtn" type="button">Calculer</button>
+              <div class="tool-result" id="potResult" role="status"></div>
+            </article>
+          </section>
+          <section id="tool-water" class="tool-view simulator-single-tool" data-tool-view="water" aria-label="Préparer une absence">
+            <article class="tool-card">
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">H2O</span>
+                <div>
+                  <h2>Arrosage vacances</h2>
+                  <p>Risque et plan minimum avant une absence.</p>
+                </div>
+              </div>
+              <div class="tool-fields tool-fields-dense">
+                <label for="absenceDays">
+                  <span>Jours</span>
+                  <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
+                </label>
+                <label for="absencePots">
+                  <span>Pots</span>
+                  <input class="simulator-input" id="absencePots" type="number" min="1" max="40" value="6">
+                </label>
+                <label for="absencePlant">
+                  <span>Culture fragile</span>
+                  <select class="simulator-select" id="absencePlant"></select>
+                </label>
+                <label for="wateringAid">
+                  <span>Solution prévue</span>
+                  <select class="simulator-select" id="wateringAid">
+                    <option value="none">Aucune solution</option>
+                    <option value="paillage">Paillage + pots regroupés</option>
+                    <option value="reserve">Réserve d'eau / oyas testées</option>
+                    <option value="person">Passage d'une personne</option>
+                  </select>
+                </label>
+                <label for="heatLevel" class="tool-field-full">
+                  <span>Contexte</span>
+                  <select class="simulator-select" id="heatLevel">
+                    <option value="doux">Balcon doux ou mi-ombre</option>
+                    <option value="chaud">Balcon chaud</option>
+                    <option value="brulant">Plein soleil / canicule</option>
+                  </select>
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="waterCalcBtn" type="button">Évaluer</button>
+              <div class="tool-result" id="waterResult" role="status"></div>
+            </article>
+          <section class="checklist-download" aria-labelledby="checklist-title">
+            <div>
+              <span class="eyebrow">Checklist PDF</span>
+              <h2 id="checklist-title">Préparer son balcon avant les vacances</h2>
+              <p>Une checklist imprimable pour faire le tour des pots, de l'eau, de l'ombre et des solutions de secours avant de partir.</p>
+            </div>
+            <a class="button" href="../checklists/arrosage-vacances/" target="_blank" rel="noopener">Ouvrir la checklist PDF</a>
+          </section>
 
-          <section class="plant-library-section" aria-labelledby="plant-library-title">
+          </section>
+          <section id="tool-compost" class="tool-view simulator-single-tool" data-tool-view="compost" aria-label="Utiliser du compost">
+            <article class="tool-card">
+              <div class="tool-card-header">
+                <span class="tool-card-icon" aria-hidden="true">%</span>
+                <div>
+                  <h2>Compost en pot</h2>
+                  <p>Dosage prudent sans saturer le substrat.</p>
+                </div>
+              </div>
+              <div class="tool-fields">
+                <label for="compostPot">
+                  <span>Litres du pot</span>
+                  <input class="simulator-input" id="compostPot" type="number" min="2" max="80" value="20">
+                </label>
+                <label for="compostCulture">
+                  <span>Culture</span>
+                  <select class="simulator-select" id="compostCulture">
+                    <option value="gourmande">Culture gourmande</option>
+                    <option value="feuille">Légume feuille / aromatique fraîche</option>
+                    <option value="sobre">Aromatique sobre / plante méditerranéenne</option>
+                  </select>
+                </label>
+              </div>
+              <button class="simulator-button simulator-button-secondary tool-button" id="compostCalcBtn" type="button">Doser</button>
+              <div class="tool-result" id="compostResult" role="status"></div>
+            </article>
+          <section class="comparator-section" aria-labelledby="comparator-title">
+            <div class="section-heading section-heading-compact">
+              <div>
+                <span class="eyebrow">Comparateur compostage</span>
+                <h2 id="comparator-title">Quelle solution de compostage choisir ?</h2>
+                <p>Comparez les options selon la place, les odeurs, le suivi et le type de déchets que vous voulez gérer sur balcon.</p>
+              </div>
+            </div>
+            <div class="library-controls compost-controls" aria-label="Filtres du comparateur compostage">
+              <label for="compostSpace">
+                <span>Place disponible</span>
+                <select class="simulator-select" id="compostSpace">
+                  <option value="petit">Très peu de place</option>
+                  <option value="moyen">Place moyenne</option>
+                  <option value="grand">Balcon confortable</option>
+                </select>
+              </label>
+              <label for="compostTime">
+                <span>Temps d'entretien</span>
+                <select class="simulator-select" id="compostTime">
+                  <option value="faible">Le moins possible</option>
+                  <option value="moyen">Routine hebdomadaire</option>
+                  <option value="fort">Suivi régulier accepté</option>
+                </select>
+              </label>
+              <label for="compostSmell">
+                <span>Sensibilité odeurs</span>
+                <select class="simulator-select" id="compostSmell">
+                  <option value="forte">Très sensible</option>
+                  <option value="moyenne">Tolérance moyenne</option>
+                  <option value="faible">Peu sensible</option>
+                </select>
+              </label>
+            </div>
+            <div id="compostRecommendation" class="tool-result"></div>
+            <details class="simulator-disclosure"><summary>Comparer les quatre solutions</summary>
+            <div class="comparison-table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr><th>Solution</th><th>Place</th><th>Suivi</th><th>Points forts</th><th>À éviter si...</th></tr>
+                </thead>
+                <tbody id="compostRows">
+                </tbody>
+              </table>
+            </div>
+            </details>
+          </section>
+
+
+          </section>
+          <section id="tool-library" class="plant-library-section tool-view" data-tool-view="library" aria-labelledby="plant-library-title">
             <div class="section-heading section-heading-compact">
               <div>
                 <span class="eyebrow">Bibliothèque de plantes</span>
                 <h2 id="plant-library-title">Filtrer les plantes de balcon</h2>
-                <p>Trouvez les plantes adaptées à votre balcon selon l’exposition, l’usage, la difficulté et le volume de pot.</p>
+                <p>Explore les fiches ou cherche une plante précise. Les filtres sont facultatifs.</p>
               </div>
             </div>
             <div class="library-controls" aria-label="Filtres de la bibliothèque plantes">
@@ -679,157 +370,11 @@
                 </select>
               </label>
             </div>
+            <button type="button" class="simulator-button simulator-button-secondary" id="libraryReset">Effacer les filtres</button>
             <div class="library-summary" id="librarySummary" aria-live="polite"></div>
             <div class="plant-library-grid" id="plantLibrary"></div>
           </section>
 
-          <section class="tools-grid" aria-label="Calculateurs balcon">
-            <article class="tool-card">
-              <div class="tool-card-header">
-                <span class="tool-card-icon" aria-hidden="true">L</span>
-                <div>
-                  <h2>Calculateur de pot</h2>
-                  <p>Volume minimal pour une culture en pot.</p>
-                </div>
-              </div>
-              <div class="tool-fields">
-                <label for="potPlant">
-                  <span>Culture</span>
-                  <select class="simulator-select" id="potPlant"></select>
-                </label>
-                <label for="plantCount">
-                  <span>Plants</span>
-                  <input class="simulator-input" id="plantCount" type="number" min="1" max="12" value="1">
-                </label>
-              </div>
-              <button class="simulator-button simulator-button-secondary tool-button" id="potCalcBtn" type="button">Calculer</button>
-              <div class="tool-result" id="potResult"></div>
-            </article>
-
-            <article class="tool-card">
-              <div class="tool-card-header">
-                <span class="tool-card-icon" aria-hidden="true">H2O</span>
-                <div>
-                  <h2>Arrosage vacances</h2>
-                  <p>Risque et plan minimum avant une absence.</p>
-                </div>
-              </div>
-              <div class="tool-fields tool-fields-dense">
-                <label for="absenceDays">
-                  <span>Jours</span>
-                  <input class="simulator-input" id="absenceDays" type="number" min="1" max="30" value="7">
-                </label>
-                <label for="absencePots">
-                  <span>Pots</span>
-                  <input class="simulator-input" id="absencePots" type="number" min="1" max="40" value="6">
-                </label>
-                <label for="absencePlant">
-                  <span>Culture fragile</span>
-                  <select class="simulator-select" id="absencePlant"></select>
-                </label>
-                <label for="wateringAid">
-                  <span>Solution prévue</span>
-                  <select class="simulator-select" id="wateringAid">
-                    <option value="none">Aucune solution</option>
-                    <option value="paillage">Paillage + pots regroupés</option>
-                    <option value="reserve">Réserve d'eau / oyas testées</option>
-                    <option value="person">Passage d'une personne</option>
-                  </select>
-                </label>
-                <label for="heatLevel" class="tool-field-full">
-                  <span>Contexte</span>
-                  <select class="simulator-select" id="heatLevel">
-                    <option value="doux">Balcon doux ou mi-ombre</option>
-                    <option value="chaud">Balcon chaud</option>
-                    <option value="brulant">Plein soleil / canicule</option>
-                  </select>
-                </label>
-              </div>
-              <button class="simulator-button simulator-button-secondary tool-button" id="waterCalcBtn" type="button">Évaluer</button>
-              <div class="tool-result" id="waterResult"></div>
-            </article>
-
-            <article class="tool-card">
-              <div class="tool-card-header">
-                <span class="tool-card-icon" aria-hidden="true">%</span>
-                <div>
-                  <h2>Compost en pot</h2>
-                  <p>Dosage prudent sans saturer le substrat.</p>
-                </div>
-              </div>
-              <div class="tool-fields">
-                <label for="compostPot">
-                  <span>Litres du pot</span>
-                  <input class="simulator-input" id="compostPot" type="number" min="2" max="80" value="20">
-                </label>
-                <label for="compostCulture">
-                  <span>Culture</span>
-                  <select class="simulator-select" id="compostCulture">
-                    <option value="gourmande">Culture gourmande</option>
-                    <option value="feuille">Légume feuille / aromatique fraîche</option>
-                    <option value="sobre">Aromatique sobre / plante méditerranéenne</option>
-                  </select>
-                </label>
-              </div>
-              <button class="simulator-button simulator-button-secondary tool-button" id="compostCalcBtn" type="button">Doser</button>
-              <div class="tool-result" id="compostResult"></div>
-            </article>
-          </section>
-
-          <section class="comparator-section" aria-labelledby="comparator-title">
-            <div class="section-heading section-heading-compact">
-              <div>
-                <span class="eyebrow">Comparateur compostage</span>
-                <h2 id="comparator-title">Quelle solution de compostage choisir ?</h2>
-                <p>Comparez les options selon la place, les odeurs, le suivi et le type de déchets que vous voulez gérer sur balcon.</p>
-              </div>
-            </div>
-            <div class="library-controls compost-controls" aria-label="Filtres du comparateur compostage">
-              <label for="compostSpace">
-                <span>Place disponible</span>
-                <select class="simulator-select" id="compostSpace">
-                  <option value="petit">Très peu de place</option>
-                  <option value="moyen">Place moyenne</option>
-                  <option value="grand">Balcon confortable</option>
-                </select>
-              </label>
-              <label for="compostTime">
-                <span>Temps d'entretien</span>
-                <select class="simulator-select" id="compostTime">
-                  <option value="faible">Le moins possible</option>
-                  <option value="moyen">Routine hebdomadaire</option>
-                  <option value="fort">Suivi régulier accepté</option>
-                </select>
-              </label>
-              <label for="compostSmell">
-                <span>Sensibilité odeurs</span>
-                <select class="simulator-select" id="compostSmell">
-                  <option value="forte">Très sensible</option>
-                  <option value="moyenne">Tolérance moyenne</option>
-                  <option value="faible">Peu sensible</option>
-                </select>
-              </label>
-            </div>
-            <div id="compostRecommendation" class="tool-result"></div>
-            <div class="comparison-table-wrap">
-              <table class="comparison-table">
-                <thead>
-                  <tr><th>Solution</th><th>Place</th><th>Suivi</th><th>Points forts</th><th>À éviter si...</th></tr>
-                </thead>
-                <tbody id="compostRows">
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section class="checklist-download" aria-labelledby="checklist-title">
-            <div>
-              <span class="eyebrow">Checklist PDF</span>
-              <h2 id="checklist-title">Préparer son balcon avant les vacances</h2>
-              <p>Une checklist imprimable pour faire le tour des pots, de l'eau, de l'ombre et des solutions de secours avant de partir.</p>
-            </div>
-            <a class="button" href="../checklists/arrosage-vacances/" target="_blank" rel="noopener">Ouvrir la checklist PDF</a>
-          </section>
         </section>
 
         <section class="simulator-links" aria-label="Guides &agrave; lire ensuite">
@@ -913,6 +458,6 @@
   </div>
 
   <script src="../js/plants-data.js"></script>
-  <script src="../js/simulateur.js"></script>
+  <script src="../js/simulateur.js?v=20261007-simulateur-4"></script>
 </body>
 </html>
