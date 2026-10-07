@@ -23,6 +23,7 @@ $googleAnalyticsMeasurementId = "G-L952X34SHR"
 $microsoftClarityProjectId = "w4a97sk52t"
 $articleOverrides = @{}
 $articleOverridesPath = Join-Path $PSScriptRoot "article-overrides.ps1"
+. (Join-Path $PSScriptRoot "sitemap-state.ps1")
 
 if (Test-Path $articleOverridesPath) {
   . $articleOverridesPath
@@ -405,6 +406,13 @@ function Get-ImageDimensions {
 
   if (-not (Test-Path $fullPath)) {
     return $null
+  }
+
+  if ([IO.Path]::GetExtension($fullPath) -ieq '.svg') {
+    [xml]$svg = Get-Content -LiteralPath $fullPath -Raw -Encoding UTF8
+    $dimensions = [PSCustomObject]@{ Width = [int]$svg.svg.width; Height = [int]$svg.svg.height }
+    $imageDimensionCache[$fullPath] = $dimensions
+    return $dimensions
   }
 
   try {
@@ -3946,10 +3954,40 @@ $(Get-SiteFooterHtml -pagePrefix "/")
 "@
 }
 
+function Update-CategoryArticleLinks {
+  param([object[]]$allArticles)
+  $categoryPaths = [ordered]@{
+    "Fiches Techniques" = "fiches-techniques"
+    "Plantes & semis" = "plantes-semis"
+    "Entretien & astuces" = "entretien-astuces"
+    "Aménagement du balcon" = "amenagement-du-balcon"
+  }
+  foreach ($category in $categoryPaths.Keys) {
+    $path = Join-Path $root "categories/$($categoryPaths[$category])/index.html"
+    if (-not (Test-Path -LiteralPath $path)) { continue }
+    $html = Get-Content -LiteralPath $path -Raw -Encoding UTF8
+    $list = [regex]::Match($html, '(<article class="article-prose">.*?<ul class="article-list">)(?<items>.*?)(</ul>)', 'Singleline')
+    if (-not $list.Success) { throw "Liste des articles introuvable : $path" }
+    $missing = @($allArticles | Where-Object {
+      $_.Category -eq $category -and $list.Groups['items'].Value -notmatch [regex]::Escape("../../articles/$($_.Slug)/")
+    })
+    if ($missing.Count -eq 0) { continue }
+    $addedLinks = ($missing | ForEach-Object {
+      "          <li><a href=`"../../articles/$($_.Slug)/`">$(HtmlEscape $_.Title)</a></li>"
+    }) -join "`n"
+    $insertion = $list.Groups['items'].Index
+    $html = $html.Substring(0, $insertion) + "`n$addedLinks" + $html.Substring($insertion)
+    $count = @($allArticles | Where-Object { $_.Category -eq $category }).Count
+    $html = [regex]::Replace($html, '(<span class="pill">)\d+ guides(</span>)', "`${1}$count guides`${2}")
+    Write-HtmlFile -Path $path -Html ($html.TrimEnd())
+  }
+}
+
 function Build-SitemapXml {
   param([object[]]$allArticles)
 
-  $today = (Get-Date).ToString("yyyy-MM-ddTHH:mm:sszzz")
+  $statePath = Join-Path $PSScriptRoot "sitemap-page-state.json"
+  $pageState = Read-SitemapPageState $statePath
   $entries = New-Object System.Collections.Generic.List[string]
 
   function New-SitemapImageNode {
@@ -3981,16 +4019,23 @@ function Build-SitemapXml {
     )
 
     $imageNode = New-SitemapImageNode -imageUrl $imageUrl -caption $imageCaption
-    return "<url><loc>$(Escape-Xml $loc)</loc><priority>$priority</priority><lastmod>$(Escape-Xml $lastmod)</lastmod>$imageNode</url>"
+    $lastmodNode = if ($lastmod) { "<lastmod>$(Escape-Xml $lastmod)</lastmod>" } else { "" }
+    return "<url><loc>$(Escape-Xml $loc)</loc><priority>$priority</priority>$lastmodNode$imageNode</url>"
   }
 
   $homeFeatured = $allArticles | Select-Object -First 1
-  $homeImageUrl = if ($homeFeatured) { $homeFeatured.ImageCanonicalUrl } else { "" }
-  $homeImageCaption = if ($homeFeatured) { $homeFeatured.ImageAlt } else { "" }
-  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/" -priority "1.0" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
-  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/articles/" -priority "0.9" -lastmod $today -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
+  $indexImageUrl = if ($homeFeatured) { $homeFeatured.ImageCanonicalUrl } else { "" }
+  $indexImageCaption = if ($homeFeatured) { $homeFeatured.ImageAlt } else { "" }
+  $homeHtml = Get-Content -LiteralPath (Join-Path $root "index.html") -Raw -Encoding UTF8
+  $homeImageUrl = [Net.WebUtility]::HtmlDecode([regex]::Match($homeHtml, '<meta property="og:image" content="([^"]+)"').Groups[1].Value)
+  $homeImageCaption = [Net.WebUtility]::HtmlDecode([regex]::Match($homeHtml, '<meta property="og:image:alt" content="([^"]+)"').Groups[1].Value)
+  $homeLastmod = Get-SitemapPageLastmod $root "index.html" $pageState
+  $indexLastmod = Get-SitemapPageLastmod $root "articles/index.html" $pageState
+  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/" -priority "1.0" -lastmod $homeLastmod -imageUrl $homeImageUrl -imageCaption $homeImageCaption))
+  $entries.Add((New-SitemapUrlNode -loc "$siteUrl/articles/" -priority "0.9" -lastmod $indexLastmod -imageUrl $indexImageUrl -imageCaption $indexImageCaption))
   if (Test-Path (Join-Path $root "contact\index.html")) {
-    $entries.Add((New-SitemapUrlNode -loc $contactPageUrl -priority "0.4" -lastmod $today))
+    $lastmod = Get-SitemapPageLastmod $root "contact/index.html" $pageState
+    $entries.Add((New-SitemapUrlNode -loc $contactPageUrl -priority "0.4" -lastmod $lastmod))
   }
 
   $staticPages = @(
@@ -4010,7 +4055,8 @@ function Build-SitemapXml {
 
   foreach ($page in $staticPages) {
     if (Test-Path (Join-Path $root $page.Path)) {
-      $entries.Add((New-SitemapUrlNode -loc $page.Loc -priority $page.Priority -lastmod $today -imageUrl $page.ImageUrl -imageCaption $page.ImageCaption))
+      $lastmod = Get-SitemapPageLastmod $root $page.Path $pageState
+      $entries.Add((New-SitemapUrlNode -loc $page.Loc -priority $page.Priority -lastmod $lastmod -imageUrl $page.ImageUrl -imageCaption $page.ImageCaption))
     }
   }
 
@@ -4020,6 +4066,7 @@ function Build-SitemapXml {
   }
 
   $body = ($entries -join "`n")
+  Write-SitemapPageState $statePath $pageState
   return "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<urlset xmlns=`"http://www.sitemaps.org/schemas/sitemap/0.9`" xmlns:image=`"http://www.google.com/schemas/sitemap-image/1.1`">`n$body`n</urlset>"
 }
 
@@ -4109,6 +4156,7 @@ foreach ($article in $articles) {
 Write-MinifiedStylesheet
 
 Write-HtmlFile -Path (Join-Path $articlesDir "index.html") -Html (Build-ArticlesIndexHtml $articles)
+Update-CategoryArticleLinks $articles
 Write-HtmlFile -Path (Join-Path $root "404.html") -Html (Build-404Html)
 
 $privacyDir = Join-Path $root "politique-confidentialite"

@@ -1,5 +1,121 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "proteger-pots-gel-balcon" = [ordered]@{
+      Title = "Protéger les pots du gel sur un balcon, sans tout rentrer"
+      SeoTitle = "Protéger les pots du gel sur un balcon"
+      Description = "Quels pots protéger du gel sur ton balcon ? Prépare un abri, isole les contenants et garde le drainage libre, avec une checklist avant les nuits froides."
+      Intro = "Une nuit de gel est annoncée et tes pots sont encore dispersés sur le balcon. Commence par identifier les plantes qui doivent hiverner hors gel, puis prépare les contenants qui resteront dehors. Envelopper un pot et couvrir un feuillage répondent à deux besoins différents : voici comment organiser les protections dans un petit espace."
+      DatePublished = "2026-10-07T11:00:00+02:00"
+      DateModified = "2026-10-07T11:00:00+02:00"
+      TimeRequired = "PT6M"
+      AuthorName = "Louis Fargot"
+      Category = "Entretien & astuces"
+      ImageFileName = "proteger-pots-gel-balcon.svg"
+      ImageAlt = "Schéma d’un pot dont les parois sont isolées, posé sur des pieds stables avec une évacuation d’eau libre"
+      BodyHtml = @'
+            <h2>Quels pots faut-il protéger en premier ?</h2>
+            <p>Note sur une feuille le nom des plantes, leur résistance au froid indiquée par le fournisseur et la possibilité de déplacer chaque pot. Une plante adaptée à un hiver doux ne convient pas forcément à un balcon en altitude. Il n’existe pas une température unique à partir de laquelle tous les pots doivent être couverts.</p>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="priorites-gel" tabindex="0">
+              <table class="comparison-table">
+                <caption id="priorites-gel">La priorité dépend de la plante et de ton espace</caption>
+                <thead><tr><th scope="col">Situation</th><th scope="col">Priorité</th><th scope="col">Limite à garder en tête</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Plante à hiverner hors gel</th><td>Prévoir un emplacement compatible avec ses besoins de lumière et de température.</td><td>Une housse dehors ne remplace pas un local hors gel.</td></tr>
+                  <tr><th scope="row">Plante rustique en petit pot exposé</th><td>Déplacer le contenant dans un coin abrité et protéger ses parois.</td><td>La protection du pot ne garantit pas celle des jeunes pousses.</td></tr>
+                  <tr><th scope="row">Grand pot difficile à déplacer</th><td>Préparer une protection accessible et vérifier l’écoulement sur place.</td><td>Ne pas improviser un déplacement lourd à la dernière minute.</td></tr>
+                  <tr><th scope="row">Pot déjà détrempé</th><td>Résoudre d’abord l’eau retenue et l’exposition à la pluie.</td><td>Envelopper un contenant plein d’eau laisse le problème en place.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>La <a href="https://www.rhs.org.uk/prevention-protection/frost-damage" target="_blank" rel="noopener noreferrer">RHS rappelle que les jeunes plantes peuvent être plus sensibles au gel que les sujets établis</a>. Un achat récent mérite donc une attention particulière, même si tu possèdes déjà la même espèce depuis plusieurs années.</p>
+
+            <h2>Choisis un coin abrité qui reste facile à surveiller</h2>
+            <p>Repère, à l’intérieur du balcon, une zone protégée du vent où les pots restent accessibles. La <a href="https://www.rhs.org.uk/prevention-protection/preventing-winter-damage" target="_blank" rel="noopener noreferrer">RHS conseille de regrouper les contenants dans un emplacement sec et abrité</a>. Garde assez de place pour voir le terreau et atteindre les réserves d’eau éventuelles.</p>
+            <p>Sur un balcon étroit, prépare un plan très simple : les petits pots déplaçables ensemble, les grands contenants à leur place et un passage dégagé vers la porte. Ne place pas un pot sur le rebord extérieur pour libérer de la place. Vérifie aussi que les protections ne peuvent pas se détacher au vent.</p>
+            <p>Si tu gardes un fraisier ou un arbuste fruitier, retrouve les contraintes de volume et d’entretien dans le guide des <a href="petits-fruits-en-pot.html">petits fruits en pot</a>. Ce sont les besoins de la plante et les conditions du balcon qui doivent guider le choix, avant l’achat d’une housse.</p>
+
+            <h2>Isole les parois du pot, sans enfermer son évacuation</h2>
+            <p>Pour les contenants qui restent dehors, une enveloppe autour des parois apporte une protection aux racines. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">RHS recommande notamment d’envelopper les pots avec du film à bulles lors de fortes périodes de froid</a> et de les surélever sur des supports stables pour faciliter le drainage.</p>
+            <p>Fixe l’enveloppe au contenant, puis vérifie le fond : les trous et la sortie de l’eau doivent rester libres. Utilise des pieds adaptés à la taille du pot, sans empiler des cales instables. Sur un balcon, conserver la stabilité du contenant est aussi important que l’isolation de ses parois.</p>
+            <p>Le schéma en tête de page montre cette distinction : une enveloppe sur les côtés, un pot stable et de l’espace sous les trous. Il illustre le montage, sans donner de température de protection. Vérifie la résistance au gel annoncée pour le contenant lui-même : toutes les terres cuites ne sont pas prévues pour passer l’hiver dehors.</p>
+
+            <h2>Le voile protège le feuillage, avec des limites</h2>
+            <p>Un voile d’hivernage peut servir de protection temporaire quand du gel est annoncé. Place-le selon la notice, avec une fixation qui tient sans serrer les tiges. Prévois dès l’installation comment le retirer ou l’ouvrir lors des périodes douces et comment accéder au terreau.</p>
+            <p>Une protection passive ne chauffe pas le balcon. Sa capacité dépend du matériau, de l’installation et de la durée du froid : ne transforme pas une indication commerciale en garantie pour ta plante. Pour une espèce qui exige un hivernage hors gel, cherche un abri approprié avant l’épisode froid plutôt que d’accumuler les couches dehors.</p>
+
+            <h2>Avant le gel, vérifie aussi l’eau</h2>
+            <p>Ne remplis pas les soucoupes par précaution. Regarde si une pluie récente a laissé de l’eau dans le cache-pot et vérifie l’humidité du terreau. Si tu hésites entre un pot simplement frais et un mélange saturé, suis le diagnostic du <a href="terreau-humide-hiver-balcon.html">terreau qui reste humide en hiver</a>.</p>
+            <p>Le balcon couvert mérite une vérification séparée : un pot abrité de la pluie peut avoir besoin d’eau alors que les contenants du bord restent mouillés. Il n’est donc pas utile d’imposer le même programme à tous les pots. Garde un accès aux contenants même après avoir installé les protections.</p>
+
+            <h2>La checklist avant une nuit froide</h2>
+            <ol>
+              <li>Vérifie les prévisions locales et les consignes d’hivernage de chaque plante.</li>
+              <li>Place les plantes sensibles dans l’abri prévu, si leurs besoins l’exigent.</li>
+              <li>Regroupe les petits pots dans un coin abrité, à l’intérieur du balcon.</li>
+              <li>Fixe les protections des parois et du feuillage sans bloquer le fond des pots.</li>
+              <li>Vide l’eau retenue dans les soucoupes et garde un passage pour surveiller.</li>
+            </ol>
+
+            <h2>Après le gel, observe avant de tailler</h2>
+            <p>Un feuillage abîmé ne suffit pas à conclure que la plante est perdue. La <a href="https://www.rhs.org.uk/prevention-protection/frost-damage" target="_blank" rel="noopener noreferrer">RHS indique que la reprise peut être tardive et conseille d’attendre la fin du risque de gel avant de tailler les parties endommagées</a>. Évite de multiplier les interventions sur un sujet déjà fragilisé.</p>
+            <p>Profite d’une période plus douce pour contrôler les fixations, le drainage et l’état du contenant. Si un rempotage devient nécessaire, consulte <a href="rempoter-plantes-balcon.html">quand et comment rempoter une plante de balcon</a> plutôt que de changer tous les pots au cœur d’un épisode froid.</p>
+            <p>Pour préparer le balcon progressivement, les guides de <a href="que-planter-en-octobre-sur-un-balcon.html">jardinage en octobre</a> et de <a href="que-planter-en-novembre-sur-un-balcon.html">plantation en novembre</a> t’aident à choisir ce qui peut encore être installé et ce qui mérite surtout d’être préservé.</p>
+'@
+    }
+    "terreau-humide-hiver-balcon" = [ordered]@{
+      Title = "Terreau qui reste humide en hiver : que vérifier dans tes pots ?"
+      SeoTitle = "Terreau humide en hiver : que vérifier ?"
+      Description = "Ton terreau reste humide en hiver ? Vérifie la soucoupe, les trous et l’exposition à la pluie avant d’arroser ou de rempoter les plantes de ton balcon."
+      Intro = "Ton pot reste lourd plusieurs jours après la pluie et tu hésites à arroser. En hiver, la bonne question n’est pas seulement « depuis quand le terreau est-il humide ? », mais « l’eau peut-elle sortir et la plante en a-t-elle besoin ? ». Ce diagnostic aide à distinguer un pot encore frais d’un contenant qui retient trop d’eau."
+      DatePublished = "2026-10-07T11:00:00+02:00"
+      DateModified = "2026-10-07T11:00:00+02:00"
+      TimeRequired = "PT6M"
+      AuthorName = "Mathias Lancet"
+      Category = "Entretien & astuces"
+      ImageFileName = "terreau-humide-hiver-balcon.svg"
+      ImageAlt = "Schéma de diagnostic d’un pot humide : vérifier le terreau, vider l’eau retenue et laisser les trous de drainage libres"
+      BodyHtml = @'
+            <h2>Un terreau humide n’est pas forcément un terreau détrempé</h2>
+            <p>Le nombre de jours depuis le dernier arrosage ne permet pas, à lui seul, de décider. Le pot, le mélange, l’exposition et la plante comptent. La <a href="https://www.rhs.org.uk/container-gardening/how-to-water-containers" target="_blank" rel="noopener noreferrer">RHS recommande de contrôler l’humidité sous la surface plutôt que de suivre un calendrier fixe</a>.</p>
+            <p>Sur un terreau non gelé, vérifie doucement à quelques centimètres de profondeur, sans abîmer les racines. Regarde ensuite sous le contenant. Le schéma en tête de page rappelle ces trois points : le mélange, l’eau retenue autour du pot et la possibilité de s’égoutter.</p>
+            <div class="comparison-table-wrap" role="region" aria-labelledby="diagnostic-terreau-hiver" tabindex="0">
+              <table class="comparison-table">
+                <caption id="diagnostic-terreau-hiver">Observe avant de décider quoi faire</caption>
+                <thead><tr><th scope="col">Ce que tu constates</th><th scope="col">Ce que cela permet de conclure</th><th scope="col">Premier geste</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Terreau frais, pas d’eau retenue, plante stable</th><td>L’humidité seule ne signale pas un problème.</td><td>Attendre et vérifier de nouveau avant d’arroser.</td></tr>
+                  <tr><th scope="row">Eau dans une soucoupe ou un cache-pot</th><td>Le contenant intérieur ne peut pas s’égoutter librement.</td><td>Vider l’eau et contrôler le fond du pot.</td></tr>
+                  <tr><th scope="row">Mélange saturé malgré une pause d’arrosage</th><td>La pluie, l’écoulement ou le substrat sont à examiner.</td><td>Vérifier chaque cause, sans ajouter d’eau.</td></tr>
+                  <tr><th scope="row">Terreau sec sous la surface, pot abrité de la pluie</th><td>L’hiver ne suffit pas à couvrir les besoins en eau.</td><td>Arroser si la plante en a besoin et si le terreau n’est pas gelé.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>1. Regarde la soucoupe et le cache-pot</h2>
+            <p>Sors le petit pot intérieur si tu peux le faire sans effort et regarde ce qui se trouve dessous. Une enveloppe décorative peut cacher de l’eau même lorsque la surface du terreau paraît normale. Vide cette réserve et ne laisse pas le contenant baigner dedans.</p>
+            <p>Dans son <a href="https://www.rhs.org.uk/container-gardening/how-to-water-containers" target="_blank" rel="noopener noreferrer">guide d’arrosage des pots, la RHS conseille de retirer les soucoupes en hiver</a> pour éviter la saturation. Sur ton balcon, organise aussi la récupération des écoulements : vide l’eau recueillie sans la laisser sous le pot et sans l’envoyer chez les voisins.</p>
+            <p>Commence par cette vérification avant d’acheter un nouveau terreau. Un mélange remplacé dans le même cache-pot plein d’eau rencontrera encore le même problème.</p>
+
+            <h2>2. Vérifie les trous, sans démonter un pot lourd</h2>
+            <p>Regarde les sorties accessibles : sont-elles bouchées par des débris ou plaquées contre un support ? Dégage ce qui peut l’être sans forcer. Ne bascule pas seul un grand contenant rempli pour inspecter le fond ; prépare une aide ou une solution adaptée à son poids.</p>
+            <p>Des pieds de pot stables peuvent laisser un passage à l’eau sous le contenant. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">RHS recommande cette surélévation pour faciliter le drainage hivernal</a>. Vérifie l’assise après installation : le pot ne doit ni osciller ni risquer de tomber au premier coup de vent.</p>
+            <p>Un contenant sans évacuation ne devient pas drainant parce que tu poses des cailloux au fond. Si tu utilises un objet recyclé, regarde les points à vérifier dans le guide des <a href="diy-pots-pour-le-balcon.html">pots fabriqués avec des objets du quotidien</a>, puis choisis une solution réellement adaptée à la plante.</p>
+
+            <h2>3. Compare les pots exposés et les pots abrités</h2>
+            <p>Observe une pluie depuis la porte : quels contenants reçoivent l’eau, lesquels restent au sec ? Deux pots voisins peuvent vivre des situations différentes. Si un mélange reste saturé sous les averses successives, cherche un emplacement plus abrité qui conserve la lumière nécessaire à la plante.</p>
+            <p>Ne fabrique pas un abri improvisé qui prend le vent ou dirige l’eau ailleurs sur le balcon. Garde les évacuations du balcon libres. Si tu installes une petite collecte, le guide pour <a href="recuperer-eau-de-pluie-balcon.html">récupérer l’eau de pluie sans gouttière</a> explique pourquoi la surface exposée et le débordement doivent être prévus ensemble.</p>
+            <p>À l’inverse, vérifie les pots sous toiture : certaines plantes persistantes peuvent encore avoir besoin d’eau pendant une période sèche en hiver. L’absence de chaleur estivale n’est pas une raison suffisante pour arrêter tous les arrosages jusqu’au printemps.</p>
+
+            <h2>4. Quand faut-il examiner le substrat et les racines ?</h2>
+            <p>Si l’écoulement extérieur est libre mais que le pot reste saturé, ou si la plante se dégrade, il faut aller plus loin. L’<a href="https://horticulture.ahdb.org.uk/knowledge-library/causes-of-winter-injury-in-container-grown-nursery-stock" target="_blank" rel="noopener noreferrer">AHDB décrit le manque d’oxygène des racines dans les substrats gorgés d’eau</a> et les risques de dommages associés. Ses observations concernent des cultures en conteneurs en pépinière ; elles expliquent le mécanisme, sans diagnostiquer ta plante à distance.</p>
+            <p>Une feuille jaune ou une tige molle peut avoir plusieurs causes. Ne conclus pas automatiquement à une maladie et n’arrose pas davantage simplement parce que le feuillage retombe. Note l’évolution, vérifie les besoins de l’espèce et demande un avis horticole si l’état se dégrade malgré la correction de l’eau retenue.</p>
+            <p>Un rempotage peut être nécessaire si le contenant ou le mélange sont inadaptés, mais ne rempote pas tous les pots encore frais par précaution. Le guide pour <a href="rempoter-plantes-balcon.html">rempoter une plante de balcon</a> détaille le choix du contenant et du moment. N’ajoute pas du <a href="utilisation-compost-sur-balcon.html">compost</a> comme remède automatique à un pot saturé : nourrir et rétablir l’écoulement sont deux interventions différentes.</p>
+
+            <h2>Une routine courte pour suivre l’évolution</h2>
+            <p>Choisis les pots qui posent problème et garde une petite note : pluie reçue, humidité sous la surface, eau retenue dessous, état du feuillage. Après chaque changement, observe ce qui se passe avant de modifier autre chose. Tu sauras ainsi si vider le cache-pot ou déplacer le contenant a suffi.</p>
+            <p>Quand du gel est annoncé, complète ce contrôle avec le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du froid</a>, en gardant le drainage libre. Pour préparer les prochaines plantations, consulte les repères d’<a href="que-planter-en-octobre-sur-un-balcon.html">octobre</a> et de <a href="que-planter-en-novembre-sur-un-balcon.html">novembre</a> : remettre un pot en état vient avant d’y installer une nouvelle culture.</p>
+'@
+    }
     "que-planter-en-novembre-sur-un-balcon" = [ordered]@{
       Title = "En novembre, que planter sur un balcon qui refroidit ?"
       SeoTitle = "Que planter en novembre sur un balcon ?"
@@ -7,7 +123,7 @@
       Intro = "Un pot se libère, les nuits refroidissent et le soleil passe à peine au-dessus de l’immeuble voisin. Que planter en novembre sur un balcon dans ces conditions ? L’ail d’automne et les tulipes pour le printemps sont deux pistes, si tes pots drainent bien. Mais sur un balcon sombre ou déjà gelé, le meilleur programme consiste surtout à préserver les cultures en place."
       TimeRequired = "PT7M"
       DatePublished = "2026-10-05T09:00:00.000Z"
-      DateModified = "2026-10-05T09:00:00.000Z"
+      DateModified = "2026-10-07T11:00:00+02:00"
       AuthorName = "Clara Fontaine"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-novembre-sur-un-balcon.jpg"
@@ -51,14 +167,17 @@
             <h3>Prépare le repli avant une nuit froide</h3>
             <p>Liste les plantes qui doivent passer l’hiver hors gel et choisis pour chacune un emplacement adapté. Une pièce chaude n’est pas automatiquement un bon abri : tiens compte de la lumière et des besoins de la plante. Si le froid arrive en octobre chez toi, n’attends pas novembre pour agir.</p>
             <p>Pour les pots qui restent dehors, rapproche les contenants d’un mur abrité sans les empiler. Lors d’un épisode froid, protège les parois du pot avec un matériau isolant bien fixé et laisse les trous dégagés. Un voile horticole peut aider les parties aériennes, mais il ne garantit pas la survie d’une plante frileuse pendant un gel prolongé. Les <a href="https://www.rhs.org.uk/prevention-protection/preventing-winter-damage" target="_blank" rel="noopener noreferrer">conseils de la RHS sur les dégâts hivernaux</a> distinguent abri et protection des contenants.</p>
+            <p>Le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du gel sur un balcon</a> propose un ordre de priorité et une checklist avant les nuits froides. Si tu souhaites garder un arbuste fruitier dehors, vérifie aussi le contenant et l’entretien dans le dossier des <a href="petits-fruits-en-pot.html">petits fruits en pot</a>.</p>
             <h3>Arrose après avoir touché le terreau</h3>
             <p>Supprime le rythme automatique de l’été. Vérifie l’humidité sous la surface et arrose au pied seulement lorsque la plante en a besoin, pendant une période sans gel. Un pot sous un auvent peut sécher malgré la pluie. À l’inverse, un bac découvert peut rester trop humide plusieurs jours : n’ajoute pas d’eau dans ce cas et vide la soucoupe.</p>
+            <p>Pour décider quoi faire quand un pot reste mouillé, suis les vérifications du <a href="terreau-humide-hiver-balcon.html">terreau humide en hiver</a>. Corrige l’eau retenue et l’écoulement avant d’ajouter du terreau ou un apport de <a href="utilisation-compost-sur-balcon.html">compost dans le contenant</a>.</p>
             <h3>Vérifie les fixations et garde l’accès aux pots</h3>
             <p>Attache les protections pour qu’elles ne partent pas chez les voisins, sans obstruer les évacuations du balcon. Contrôle les supports et les tuteurs, puis retire ce qui n’est plus utile. Le guide du <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> complète ces gestes. Évite de lancer une grosse taille ou un apport d’engrais pour forcer une plante qui ralentit.</p>
 
             <h2>Un programme réaliste avec deux contenants</h2>
             <p>Sur un petit balcon lumineux et abrité, garde une jardinière de salades déjà installées et consacre un pot libre aux tulipes <strong>ou</strong> à l’ail. Le premier prépare des fleurs ; le second mobilise une place ensoleillée jusqu’à la récolte. Choisis selon ce que tu veux réellement garder au printemps.</p>
             <p>Sur un balcon froid, commence plutôt par dégager les trous des pots, mettre les plantes fragiles à l’abri et préparer les protections. Sur un balcon très sombre, garder un contenant vide est raisonnable. Tu évites ainsi d’acheter des plants qui ne pourront pas s’établir correctement.</p>
+            <p>Pour les achats suivants, le guide des <a href="balcon-durable-plantes.html">plantes adaptées aux contraintes d’un balcon</a> aide à choisir selon la lumière, le vent et les besoins en eau, plutôt qu’à remplir tous les pots disponibles.</p>
 
             <h2>Les questions pratiques de novembre</h2>
             <h3>Peut-on planter si le terreau est gelé ?</h3>
@@ -79,7 +198,7 @@
       Intro = "Une jardinière se libère après les tomates, mais les journées raccourcissent : que planter en octobre sur un balcon sans lancer une culture trop tard ? Tu peux encore installer des salades adaptées à l’hiver, semer un peu de mâche ou planter des pensées. Le bon choix dépend surtout de la lumière qui atteint tes pots et de l’arrivée du froid chez toi."
       TimeRequired = "PT7M"
       DatePublished = "2026-09-06T13:00:00.000Z"
-      DateModified = "2026-10-06T00:33:25+02:00"
+      DateModified = "2026-10-07T11:00:00+02:00"
       AuthorName = "Louis Fargot"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-octobre-sur-un-balcon.jpg"
@@ -132,6 +251,7 @@
             <p>Si le balcon est froid ou très ombragé, réduis ce programme à une jardinière de plants et à l’entretien des pots existants. Réutilise les contenants disponibles plutôt que d’ajouter de lourds bacs ; garde un passage et une installation stable. Pour une exposition difficile, consulte aussi les repères du <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a>.</p>
 
             <h2>Les gestes d’octobre qui évitent les pertes</h2>
+            <p>Avant les premières nuits froides, prépare <a href="proteger-pots-gel-balcon.html">la protection des pots contre le gel</a>. Si un contenant reste mouillé entre les averses, vérifie <a href="terreau-humide-hiver-balcon.html">le drainage et l’eau retenue en hiver</a> avant d’y installer une nouvelle culture.</p>
             <h3>Arroser après vérification, pas selon le rythme de juillet</h3>
             <p>Touche le terreau avant d’arroser. Le froid et les jours courts réduisent souvent les besoins, mais un pot sous un auvent peut rester sec alors qu’il pleut dehors. Arrose au pied lorsque c’est nécessaire et vide l’eau qui stagne dans la soucoupe. Vérifie que l’écoulement ne tombe pas chez les voisins.</p>
             <h3>Préparer la protection avant la première alerte</h3>
@@ -498,7 +618,7 @@
       Intro = "Sur un balcon, les plantes vivent dans un volume de terre limité qui se tasse, s’épuise et sèche vite. Un bon rempotage, au bon moment, suffit souvent à relancer un pot fatigué sans tout compliquer."
       TimeRequired = "PT6M"
       DatePublished = "2026-04-07T09:00:00.000Z"
-      DateModified = "2026-10-05T09:00:00.000Z"
+      DateModified = "2026-10-07T11:00:00+02:00"
       AuthorName = "Louis Fargot"
       Category = "Entretien & astuces"
       ImageFileName = "rempoter-plantes-balcon.jpg"
@@ -513,6 +633,7 @@
             <h3>Le meilleur créneau : juste avant la vraie poussée</h3>
             <p>Le moment le plus simple se situe souvent entre mars et mai, selon le climat et les plantes. L’idée n’est pas de suivre une date rigide, mais de profiter de la reprise de saison avant les grosses chaleurs. Une plante qui recommence à pousser doucement supporte généralement mieux le changement qu’en plein été, quand tout sèche trop vite.</p>
             <p>Début avril est souvent un très bon moment pour les aromatiques, les feuillages et les pots qu’on relance après l’hiver. Tu peux d’ailleurs croiser ce repère avec notre guide <a href="que-planter-en-avril-sur-un-balcon.html">Que planter en avril sur un balcon</a> et le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon</a> si tu veux t’organiser plus largement.</p>
+            <p>Un terreau qui reste frais en hiver ne justifie pas à lui seul un rempotage. Commence par <a href="terreau-humide-hiver-balcon.html">vérifier l’eau retenue, les trous et la pluie reçue</a>. Quand du froid est annoncé, prépare plutôt <a href="proteger-pots-gel-balcon.html">la protection du contenant contre le gel</a>, avec une évacuation qui reste libre.</p>
             <h3>Les signes qui montrent qu’un pot est arrivé au bout</h3>
             <ul>
               <li>Les racines tournent en chignon quand tu sors la motte.</li>
@@ -1795,12 +1916,13 @@
       Description = "Petits fruits en pot : fraisiers, framboisiers nains, myrtilles et groseilliers pour récolter sur balcon même avec peu de place."
       Intro = "Les petits fruits ont toute leur place sur un balcon : ils sont décoratifs, gourmands et souvent plus accessibles qu’on l’imagine. Le vrai secret consiste à choisir les espèces en fonction du volume des pots, de la lumière et du rythme d’arrosage."
       TimeRequired = "PT6M"
-      DateModified = "2026-03-28T11:30:00.000Z"
+      DateModified = "2026-10-07T11:00:00+02:00"
       ImageAlt = "Petits fruits rouges et bleus cultivés en pot sur un balcon, avec fraises et groseilles"
       BodyHtml = @'
             <h2>Pourquoi les petits fruits sont intéressants sur balcon</h2>
             <p>Les petits fruits réunissent plusieurs qualités précieuses en ville : ils produisent quelque chose de concret, embellissent le balcon et créent un lien immédiat avec les saisons. Récolter une poignée de fraises ou quelques framboises au bon moment change vraiment la perception d’un petit espace.</p>
             <p>Ils demandent toutefois plus d’anticipation que de simples aromatiques. Le choix du contenant, la stabilité de l’humidité et le renouvellement des plants comptent davantage, surtout pour les arbustes fruitiers.</p>
+            <p>Prévois aussi leur place en hiver : la rusticité varie selon l’espèce et la variété, et le contenant doit rester stable. Le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du gel</a> aide à préparer les sujets qui resteront dehors et à organiser leur surveillance.</p>
             <h2>Les plus accessibles pour commencer</h2>
             <p>Le <a href="guide-fraises-sur-son-balcon.html">fraisier</a> reste le plus simple : compact, productif, compatible avec des contenants assez modestes et très gratifiant dès la première saison. C’est souvent le meilleur point d’entrée si tu veux un balcon fruitier sans te compliquer.</p>
             <p>Les framboisiers nains ou remontants viennent juste après. Ils demandent un peu plus de volume de terre et une taille légère, mais ils restent très intéressants en pot sur un balcon lumineux.</p>
@@ -2321,7 +2443,7 @@
       SeoTitle = "Utiliser le compost sur balcon : dosages simples"
       Description = "Utiliser du compost sur un balcon : dosages simples, plantes qui aiment ça et erreurs à éviter pour nourrir ses pots sans excès."
       Intro = "Avoir du compost ne suffit pas : sur un balcon, il faut surtout savoir en mettre peu, au bon moment et aux bonnes plantes. Bien utilisé, il nourrit les pots et aide à garder un terreau vivant. Mal dosé, il alourdit ou fatigue certaines cultures."
-      DateModified = "2026-07-12T16:00:00.000Z"
+      DateModified = "2026-10-07T11:00:00+02:00"
       ReviewNote = "Les dosages ont été vérifiés dans le guide ADEME : pour une jardinière ou un pot, le compost mûr doit être mélangé et non utilisé pur. L'ADEME indique notamment un maximum annuel de 20 % de compost ajouté à la terre d'un contenant déjà cultivé."
       Sources = @(
         [ordered]@{
@@ -2358,6 +2480,7 @@
             <p>Si tu récupères aussi un peu d’eau de pluie, tu peux combiner cette logique avec notre guide pour <a href="recuperer-eau-de-pluie-balcon.html">récupérer l’eau de pluie sur un balcon</a> afin d’accompagner les apports organiques sans gaspiller.</p>
             <h2>Les erreurs les plus fréquentes</h2>
             <p>La première erreur est d’utiliser un compost pas assez mûr. La deuxième, d’en mettre trop dans un petit pot. La troisième, de croire que toutes les plantes ont besoin de la même richesse.</p>
+            <p>Un pot qui reste gorgé d’eau en saison froide ne demande pas automatiquement du compost. Commence par le diagnostic du <a href="terreau-humide-hiver-balcon.html">terreau humide en hiver</a> : le cache-pot et les trous d’évacuation peuvent être en cause, même avec un substrat encore nourrissant.</p>
             <p>Si tu débutes, garde une règle simple : commence léger, observe la réaction de la plante et ajuste ensuite. C’est beaucoup plus sûr que de suralimenter d’emblée.</p>
             <h2>Et si on n’a pas encore de compost ?</h2>
             <p>Dans ce cas, commence par choisir une méthode réaliste avec notre guide <a href="solutions-compostage-sur-balcon.html">Compost sur balcon : les solutions simples pour petit espace</a>. Le plus important est d’avoir un système que tu suivras vraiment, pas un équipement de plus qui prend la poussière.</p>
@@ -2868,7 +2991,7 @@
       SeoTitle = "Récupérer l’eau de pluie sur balcon sans gouttière"
       Description = "Récupérateur d’eau de pluie sur balcon sans gouttière : récipient, entonnoir ou surface inclinée ? Compare les solutions et estime les litres récupérables."
       Intro = "Même sans gouttière, un balcon peut récupérer un peu d’eau de pluie utile pour l’arrosage. Le plus important est de rester simple, prudent et cohérent avec l’espace disponible."
-      DateModified = "2026-10-06T00:33:25+02:00"
+      DateModified = "2026-10-07T11:00:00+02:00"
       ReviewNote = "L'article distingue l'usage extérieur autorisé de l'eau de pluie, qui reste non potable, et les précautions propres au balcon : poids, écoulement, règlement de copropriété et prévention de l'eau stagnante accessible aux moustiques."
       Sources = @(
         [ordered]@{
@@ -2911,6 +3034,13 @@
               </table>
             </div>
             <p>Si le balcon est entièrement couvert et que la pluie n’atteint pas le dispositif, un bidon seul ne suffit pas. Commence par observer une averse ; tu sauras si une collecte est réaliste avant d’encombrer le passage.</p>
+            <h2>Sur un balcon couvert, où peut-on vraiment collecter ?</h2>
+            <p>Observe une averse depuis un endroit abrité : le sol reçoit-il de la pluie au bord du balcon, ou seulement quelques éclaboussures portées par le vent ? Une zone réellement exposée peut accueillir un petit récipient stable, entièrement à l’intérieur du balcon. Si tout reste sec, aucun entonnoir posé sous le toit ne fera arriver l’eau à lui seul.</p>
+            <p>Ne prolonge pas une toile, une rigole ou un bidon à l’extérieur de la rambarde pour atteindre la pluie. Si la collecte exige de modifier une installation commune, commence par vérifier les autorisations nécessaires. Lorsque l’emplacement ne convient pas, mieux vaut travailler sur <a href="reduction-consommation-eau-balcon.html">les économies d’eau dans les pots</a> que garder un dispositif qui ne collecte presque rien.</p>
+            <h3>Choisir l’entonnoir sans surdimensionner le bidon</h3>
+            <p>Vérifie trois éléments avant l’achat : le diamètre de l’ouverture exposée à la pluie, la compatibilité avec le goulot et la possibilité de fixer l’entonnoir sur un récipient stable. Un large entonnoir instable ne constitue pas un bon choix sur un balcon venteux. Son diamètre sert à estimer la surface de collecte, comme dans les exemples ci-dessous.</p>
+            <p>Si tu réutilises un contenant, vérifie son état et sa stabilité avant de lui confier une réserve d’eau. Le guide des <a href="diy-pots-pour-le-balcon.html">contenants récupérés pour le balcon</a> complète le choix du matériel : un objet décoratif léger n’est pas forcément adapté à rester rempli sous la pluie.</p>
+            <p>Si de l’eau vient d’une autre surface, vérifie son chemin jusqu’au récipient : pas de fuite sur le passage, pas de débordement vers le dessous et un montage accessible pour le nettoyage. La capacité du bidon doit correspondre à ce que tu peux utiliser, déplacer et surveiller, plutôt qu’au plus gros volume vendu.</p>
             <h2>Combien de litres peut-on récupérer avec un entonnoir ?</h2>
             <p>Pour estimer un maximum théorique, multiplie la hauteur de pluie en millimètres par la surface de collecte horizontale en mètres carrés. <strong>1 mm de pluie sur 1 m² correspond à 1 litre.</strong> Pour une surface inclinée, mesure son emprise horizontale, pas sa surface dépliée. Les éclaboussures, les fuites et le vent diminuent la quantité réellement récupérée.</p>
             <figure class="rain-collection-figure">
@@ -2918,6 +3048,10 @@
               <figcaption>Exemples calculés avant pertes : la surface exposée à la pluie compte davantage que la capacité du bidon.</figcaption>
             </figure>
             <p>Un entonnoir de 20 cm de diamètre présente environ 0,031 m² d’ouverture : avec 10 mm de pluie, le maximum est seulement de 0,31 litre. Une surface horizontale de 50 × 50 cm représente 0,25 m² et donnerait 2,5 litres pour cette même pluie. Ces chiffres sont des calculs, pas des mesures réalisées sur une installation.</p>
+            <h2>Prévoir le débordement avant la première pluie</h2>
+            <p>La collecte doit pouvoir être arrêtée facilement : retirer l’entonnoir ou ranger la surface amovible suffit souvent pour une petite installation. Garde le dispositif sous surveillance pendant la pluie et interromps la collecte avant que le récipient soit plein. Un simple couvercle posé sur un bidon ne règle pas le débordement d’un entonnoir encore alimenté.</p>
+            <p>Avec une surface horizontale de 0,25 m² et 20 mm de pluie, le volume théorique serait de 5 litres avant pertes. Un récipient de 5 litres contenant déjà 2 litres n’offre plus que 3 litres de place : cet exemple montre pourquoi il faut vérifier le volume disponible avant l’averse. Il ne prévoit ni les rafales ni les pluies plus fortes.</p>
+            <p>Si tu ne peux pas surveiller, range le dispositif de collecte. N’improvise pas une sortie d’eau au-delà de la rambarde et garde les évacuations du balcon libres. Après la pluie, protège la réserve contre les moustiques et contrôle aussi les soucoupes : le guide du <a href="terreau-humide-hiver-balcon.html">terreau humide en hiver</a> aide à éviter de laisser les pots baignés dans l’eau.</p>
             <h2>Comment stocker l’eau proprement</h2>
             <p>Un arrosoir, un bidon alimentaire propre ou un seau peuvent convenir. Ferme la réserve de façon à empêcher l’accès des moustiques : l’<a href="https://signalement-moustique.anses.fr/signalement_albopictus/faq" target="_blank" rel="noopener noreferrer">ANSES recommande une moustiquaire ou un tissu correctement fixé</a>, car un simple couvercle n’est pas toujours hermétique. Vide et nettoie régulièrement les petits récipients.</p>
             <p>Si tu récupères peu d’eau mais régulièrement, c’est déjà utile. Sur balcon, une petite réserve bien utilisée vaut souvent mieux qu’un gros contenant mal géré.</p>
@@ -2946,12 +3080,12 @@
           Answer = "Oui, à petite échelle. Un contenant bien placé, une surface inclinée légère ou un guidage discret peuvent déjà récupérer une réserve utile pour les pots."
         },
         [ordered]@{
-          Question = "Quel récipient utiliser pour stocker l’eau de pluie sur un balcon ?"
-          Answer = "Un arrosoir, un bidon propre ou un seau avec couvercle suffisent souvent. Le plus important est de garder le système stable, propre et facile à déplacer."
+          Question = "Cette eau peut-elle servir à toutes les plantes ?"
+          Answer = "Elle est surtout intéressante pour l’arrosage des pots et bacs. Le plus important est qu’elle reste propre et qu’elle ne stagne pas trop longtemps avant usage."
         },
         [ordered]@{
-          Question = "Comment faire durer cette eau plus longtemps ?"
-          Answer = "Le plus efficace est de la combiner avec un paillage adapté, des arrosages plus réguliers et des pots moins sensibles aux coups de sec."
+          Question = "Comment éviter que le système devienne contraignant ?"
+          Answer = "En gardant un montage simple, facile à vider, nettoyer et ranger. Sur balcon, la meilleure solution est celle qu’on continue à utiliser sans effort excessif."
         }
       )
       HowTo = [ordered]@{

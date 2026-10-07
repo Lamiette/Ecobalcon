@@ -1675,6 +1675,11 @@ a {
   object-position: center;
 }
 
+.hero-image img[src$=".svg"] {
+  height: auto;
+  object-fit: contain;
+}
+
 .article-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.85fr) minmax(17rem, 0.8fr);

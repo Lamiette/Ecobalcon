@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Protéger un pot du gel</title>
+  <desc id="desc">Envelopper les parois, placer le pot sur des pieds stables et conserver la sortie de l’eau libre. Schéma de principe sans température de protection garantie.</desc>
+  <rect width="1200" height="675" fill="#edf4f1"/>
+  <rect x="40" y="40" width="1120" height="595" rx="28" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#204d3d">
+    <text x="90" y="115" font-size="39" font-weight="700">Un pot protégé garde son drainage</text>
+    <text x="90" y="160" font-size="24" fill="#557065">L’isolation des parois et le voile du feuillage ont des rôles différents.</text>
+    <path d="M435 344 Q433 256 483 211 M437 298 Q381 295 374 251 M443 276 Q504 290 522 246" fill="none" stroke="#467b58" stroke-width="14" stroke-linecap="round"/>
+    <ellipse cx="479" cy="241" rx="40" ry="18" transform="rotate(-46 479 241)" fill="#69a07b"/>
+    <ellipse cx="385" cy="272" rx="38" ry="17" transform="rotate(34 385 272)" fill="#80af8b"/>
+    <ellipse cx="502" cy="265" rx="33" ry="16" transform="rotate(-24 502 265)" fill="#69a07b"/>
+    <path d="M319 351 H553 L531 529 H341 Z" fill="#b47755"/>
+    <ellipse cx="436" cy="351" rx="117" ry="25" fill="#79583c"/>
+    <path d="M310 377 H562 L544 513 H329 Z" fill="#d5e4e0" stroke="#8baf9f" stroke-width="3"/>
+    <path d="M326 401 H555 M330 438 H551 M335 475 H547" stroke="#8baf9f" stroke-width="3" stroke-dasharray="7 10"/>
+    <rect x="350" y="529" width="35" height="37" rx="5" fill="#658776"/>
+    <rect x="488" y="529" width="35" height="37" rx="5" fill="#658776"/>
+    <path d="M428 532 V553 M450 539 V560" stroke="#4695aa" stroke-width="5" stroke-linecap="round"/>
+    <path d="M290 573 H588" stroke="#c3d4cd" stroke-width="7"/>
+    <path d="M561 418 H646" stroke="#658776" stroke-width="3"/>
+    <text x="673" y="412" font-size="29" font-weight="700">Parois enveloppées</text>
+    <text x="673" y="447" font-size="23" fill="#557065">Protection fixée autour du pot</text>
+    <path d="M526 547 H646" stroke="#658776" stroke-width="3"/>
+    <text x="673" y="532" font-size="29" font-weight="700">Fond et sortie libres</text>
+    <text x="673" y="568" font-size="23" fill="#557065">Pieds stables, eau qui s’écoule</text>
+    <text x="90" y="609" font-size="19" fill="#557065">Schéma de principe • Choisir la protection selon la plante et les prévisions locales</text>
+  </g>
+</svg>

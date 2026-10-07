@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_VERSION = '2026-10-06-trafic';
+const CACHE_VERSION = '2026-10-07-seo';
 const STATIC_CACHE  = `ecobalcon-static-${CACHE_VERSION}`;
 const PAGES_CACHE   = `ecobalcon-pages-${CACHE_VERSION}`;
 const IMAGES_CACHE  = `ecobalcon-images-${CACHE_VERSION}`;
