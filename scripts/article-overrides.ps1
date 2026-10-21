@@ -1,17 +1,74 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "reutiliser-terreau-pots-balcon" = [ordered]@{
+      Title = "Peut-on réutiliser le terreau de ses pots ?"
+      SeoTitle = "Peut-on réutiliser le terreau de ses pots ?"
+      Description = "Une culture se termine sur ton balcon ? Apprends à trier l’ancien terreau, à le mélanger pour une nouvelle plantation et à reconnaître les lots à écarter."
+      Intro = "Oui, tu peux réutiliser le terreau après une culture saine, à condition de le préparer avant de replanter. Commence par garder les lots séparés, retire les grosses racines et examine la texture. Voici une méthode pour trier, mélanger et choisir la prochaine utilisation, sans confondre terreau neuf, compost et désinfection."
+      DatePublished = "2026-10-21T18:32:00+02:00"
+      DateModified = "2026-10-21T19:25:40+02:00"
+      TimeRequired = "PT6M"
+      AuthorName = "Clara Fontaine"
+      Category = "Entretien & astuces"
+      ImageFileName = "reutiliser-terreau-mains-pixabay-9642492.jpg"
+      ImageAlt = "Mains tenant du terreau sombre au-dessus d’un pot vide"
+      BodyHtml = @'
+            <h2>Commence par l’histoire du pot, pas par la couleur du terreau</h2>
+            <p>Une jardinière de fleurs arrive en fin de saison, un légume a fini de produire : le substrat n’est pas automatiquement à jeter. En revanche, une couleur sombre ou une surface sans moisissure ne prouvent pas qu’il est sain. Avant de vider plusieurs pots dans le même bac, rappelle-toi ce qui y poussait et comment la culture s’est terminée.</p>
+            <p>Réserve le réemploi aux cultures terminées sans problème sanitaire connu. Un terreau ayant porté une plante malade ou des ravageurs persistants doit rester à part. Pour ton balcon, garde deux lots distincts :</p>
+            <ul>
+              <li><strong>Culture terminée normalement, sans problème sanitaire connu :</strong> tu peux examiner le terreau en vue d’une réutilisation.</li>
+              <li><strong>Maladie racinaire, ravageurs persistants ou dépérissement inexpliqué :</strong> mets ce lot de côté au lieu de le mélanger aux autres. Fais identifier le problème avant d’y installer une nouvelle plante.</li>
+            </ul>
+            <p>Une plante morte n’est pas, à elle seule, la preuve d’une contamination. La distinction utile est entre une fin de cycle attendue et une dégradation dont tu n’as pas compris la cause. Ajouter du terreau neuf ne rend pas un lot suspect « sûr ». Si tu as observé des insectes, commence par <a href="proteger-son-balcon-des-nuisibles-naturellement.html">repérer les ravageurs courants du balcon</a> avant de réutiliser le lot.</p>
+
+            <h2>Prépare un seul lot à la fois, dans un bac</h2>
+            <p>Une bassine suffit pour travailler sans répandre le mélange dans les évacuations. Choisis une journée sans fortes rafales. Pour un grand contenant, prélève de petites quantités plutôt que de soulever seul le pot rempli.</p>
+            <ol>
+              <li><strong>Vide le contenant de la culture terminée.</strong> Retire les étiquettes, les attaches et les restes de tiges.</li>
+              <li><strong>Enlève les grosses racines.</strong> Sépare les blocs avec les doigts.</li>
+              <li><strong>Émiette le substrat.</strong> Recherche une texture meuble que tu peux remuer, avec les grosses masses racinaires retirées.</li>
+              <li><strong>Garde le lot séparé.</strong> Ne lui ajoute pas ensuite le contenu d’un pot suspect.</li>
+            </ol>
+            <p>Retire les grosses racines et travaille à la main pour retrouver une texture souple. Émietter facilite le mélange ; cela ne désinfecte pas le substrat.</p>
+            <p>Occupe-toi aussi du contenant : retire les résidus, lave-le puis rince-le. Pour un pot ayant hébergé une maladie, le nettoyage seul ne garantit pas l’assainissement : la méthode complémentaire dépend du problème identifié.</p>
+
+            <h2>Pour replanter, mesure un volume ancien et un volume neuf</h2>
+            <p>Pour une nouvelle plantation en pot, prépare un mélange à parts égales d’ancien terreau récupérable et de <strong>terreau neuf adapté</strong>. Cette proportion est aussi proposée dans les <a href="https://www.promessedefleurs.com/conseil-plantes-jardin/ficheconseil/que-faire-de-la-terre-et-du-terreau-des-vieux-pots-de-fleurs/" target="_blank" rel="noopener noreferrer">conseils de Promesse de fleurs sur le réemploi du terreau</a>. L’ancien mélange doit rester léger et compatible avec la prochaine culture. Si la plante demande un substrat particulier, prépare celui-ci selon ses besoins au lieu d’appliquer ce ratio par défaut.</p>
+            <p>Par exemple, mesure <strong>5 litres de terreau ancien trié et 5 litres de terreau neuf</strong> avec le même récipient, sans les comprimer. Mélange-les dans le bac pour préparer environ 10 litres avant installation. Le schéma ci-dessous illustre ce mélange.</p>
+            <figure class="rain-collection-figure">
+              <img src="../../images/articles/reutiliser-terreau-pots-balcon.svg?v=20261021-sans-phrase-bas" alt="Mélanger 5 litres de terreau ancien trié et 5 litres de terreau neuf après une culture saine" width="1200" height="610" loading="lazy" decoding="async">
+            </figure>
+            <p>Cette proportion ne répare pas tous les substrats. Si le mélange reste une masse dense impossible à émietter, ne remplis pas le prochain pot avec ce lot. Préfère un substrat neuf correspondant à la plante choisie.</p>
+            <p><strong>Terreau et compost mûr ne sont pas interchangeables.</strong> Le premier est un support de culture ; le second vient de la décomposition de matières organiques. Pour ajouter ce dernier, retrouve ses usages et limites dans le guide pour <a href="utilisation-compost-sur-balcon.html">utiliser le compost en pot</a>. Le mélange ancien/neuf décrit ici ne signifie pas 50 % de compost maison.</p>
+
+            <h2>Vérifie l’eau et la nutrition avant d’installer la plante</h2>
+            <p>Un mélange très sec peut être difficile à humidifier uniformément. Humidifie-le légèrement dans le bac en le remuant avant plantation. Ajoute l’eau progressivement et continue à défaire les blocs secs. Arrête lorsque le mélange est légèrement humide de façon homogène, sans noyaux secs ni eau libre dans la bassine.</p>
+            <p>Vérifie les trous accessibles du pot avant remplissage. Après plantation et arrosage, contrôle qu’il peut s’égoutter et qu’aucun cache-pot ne garde les racines dans l’eau. Si le substrat reste saturé, reprends le diagnostic du <a href="terreau-humide-hiver-balcon.html">terreau humide en hiver</a> : l’engrais ne débouche pas une évacuation.</p>
+            <p>Réutiliser un mélange ne rétablit pas automatiquement sa réserve nutritive. Le terreau neuf peut déjà contenir un engrais : lis son étiquette et les besoins de la culture avant tout apport supplémentaire. N’additionne pas plusieurs produits « pour relancer » un bac encore vide.</p>
+
+            <h2>Réserve un mélange adapté aux petits semis</h2>
+            <p>La méthode précédente vise une nouvelle plantation, pas les semis en petits godets. Pour ceux-ci, garde un substrat spécifique dont la texture convient aux graines et aux jeunes plantules. Le guide du <a href="le-materiel-essentiel-pour-commencer.html">matériel pour débuter sur balcon</a> distingue le terreau de semis du mélange destiné aux légumes adultes.</p>
+            <p>Et si la plante précédente est toujours vivante ? Ne vide pas son pot pour suivre cette méthode. Un rempotage ou un surfaçage répond à une autre situation ; le guide pour <a href="rempoter-plantes-balcon.html">rempoter une plante de balcon</a> t’aide à choisir le geste et le moment.</p>
+
+            <h2>Si tu ne replantes pas maintenant, range sans perdre la trace</h2>
+            <p>Tu n’as pas besoin de préparer tout le mélange à l’automne. Après retrait des débris, conserve le substrat récupérable dans un bac de rangement ou un sac résistant. Étiquette chaque lot : plante précédente, date et problème éventuel. Range les contenants sans bloquer le passage ni les évacuations.</p>
+            <p>Pour un lot suspect ou inutilisable dans tes pots, renseigne-toi auprès de ta collectivité sur la filière qui l’accepte, sans supposer que le bac à biodéchets convient. Ne le disperse pas dans les autres pots pour t’en débarrasser.</p>
+            <p>Au moment de replanter, reprends le tri et choisis une culture adaptée à ton exposition et à la saison. Le guide des <a href="que-planter-en-novembre-sur-un-balcon.html">plantations possibles en novembre</a> peut t’aider à décider ; garder un pot vide reste une option si les conditions ne conviennent pas.</p>
+'@
+    }
     "proteger-pots-gel-balcon" = [ordered]@{
       Title = "Protéger les pots du gel sur un balcon, sans tout rentrer"
       SeoTitle = "Protéger les pots du gel sur un balcon"
       Description = "Quels pots protéger du gel sur ton balcon ? Prépare un abri, isole les contenants et garde le drainage libre, avec une checklist avant les nuits froides."
       Intro = "Une nuit de gel est annoncée et tes pots sont encore dispersés sur le balcon. Commence par identifier les plantes qui doivent hiverner hors gel, puis prépare les contenants qui resteront dehors. Envelopper un pot et couvrir un feuillage répondent à deux besoins différents : voici comment organiser les protections dans un petit espace."
       DatePublished = "2026-10-07T11:00:00+02:00"
-      DateModified = "2026-10-07T11:00:00+02:00"
+      DateModified = "2026-10-21T19:25:40+02:00"
       TimeRequired = "PT6M"
       AuthorName = "Louis Fargot"
       Category = "Entretien & astuces"
-      ImageFileName = "proteger-pots-gel-balcon.svg"
-      ImageAlt = "Schéma d’un pot dont les parois sont isolées, posé sur des pieds stables avec une évacuation d’eau libre"
+      ImageFileName = "pots-neige-hiver-unsplash-Cwgvz9u9YyA.jpg"
+      ImageAlt = "Pot en terre cuite et feuillage couverts de neige sur du mobilier extérieur"
       BodyHtml = @'
             <h2>Quels pots faut-il protéger en premier ?</h2>
             <p>Note sur une feuille le nom des plantes, leur résistance au froid indiquée par le fournisseur et la possibilité de déplacer chaque pot. Une plante adaptée à un hiver doux ne convient pas forcément à un balcon en altitude. Il n’existe pas une température unique à partir de laquelle tous les pots doivent être couverts.</p>
@@ -27,17 +84,20 @@
                 </tbody>
               </table>
             </div>
-            <p>La <a href="https://www.rhs.org.uk/prevention-protection/frost-damage" target="_blank" rel="noopener noreferrer">RHS rappelle que les jeunes plantes peuvent être plus sensibles au gel que les sujets établis</a>. Un achat récent mérite donc une attention particulière, même si tu possèdes déjà la même espèce depuis plusieurs années.</p>
+            <p>Les jeunes plantes peuvent être plus sensibles au gel que les sujets établis. Un achat récent mérite donc une attention particulière, même si tu possèdes déjà la même espèce depuis plusieurs années.</p>
 
             <h2>Choisis un coin abrité qui reste facile à surveiller</h2>
-            <p>Repère, à l’intérieur du balcon, une zone protégée du vent où les pots restent accessibles. La <a href="https://www.rhs.org.uk/prevention-protection/preventing-winter-damage" target="_blank" rel="noopener noreferrer">RHS conseille de regrouper les contenants dans un emplacement sec et abrité</a>. Garde assez de place pour voir le terreau et atteindre les réserves d’eau éventuelles.</p>
-            <p>Sur un balcon étroit, prépare un plan très simple : les petits pots déplaçables ensemble, les grands contenants à leur place et un passage dégagé vers la porte. Ne place pas un pot sur le rebord extérieur pour libérer de la place. Vérifie aussi que les protections ne peuvent pas se détacher au vent.</p>
+            <p>Repère, à l’intérieur du balcon, une zone protégée du vent où les pots restent accessibles. Regroupe les contenants déplaçables dans cet emplacement abrité. Garde assez de place pour voir le terreau et atteindre les réserves d’eau éventuelles.</p>
+            <p>Sur un balcon étroit, prépare un plan très simple : les petits pots déplaçables ensemble, les grands contenants à leur place et un passage dégagé vers la porte. Ne place pas un pot sur le rebord extérieur pour libérer de la place. Vérifie aussi que les protections ne peuvent pas se détacher au vent. Le guide du <a href="balcon-venteux-plantes-protection-pots.html">balcon venteux</a> détaille les points de stabilité et de fixation à contrôler.</p>
             <p>Si tu gardes un fraisier ou un arbuste fruitier, retrouve les contraintes de volume et d’entretien dans le guide des <a href="petits-fruits-en-pot.html">petits fruits en pot</a>. Ce sont les besoins de la plante et les conditions du balcon qui doivent guider le choix, avant l’achat d’une housse.</p>
 
             <h2>Isole les parois du pot, sans enfermer son évacuation</h2>
-            <p>Pour les contenants qui restent dehors, une enveloppe autour des parois apporte une protection aux racines. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">RHS recommande notamment d’envelopper les pots avec du film à bulles lors de fortes périodes de froid</a> et de les surélever sur des supports stables pour faciliter le drainage.</p>
+            <p>Pour les contenants qui restent dehors, une enveloppe autour des parois apporte une protection aux racines. Le dossier <a href="https://www.jardinsdefrance.org/wp-content/uploads/2018/01/JdF645_9_Nos-conseils-pratiques_v2.pdf" target="_blank" rel="noopener noreferrer">Gel au balcon de la Société nationale d’horticulture de France (PDF)</a> décrit notamment l’usage du film à bulles autour des pots et le regroupement dans un coin abrité. Garde la protection sèche et les évacuations accessibles.</p>
             <p>Fixe l’enveloppe au contenant, puis vérifie le fond : les trous et la sortie de l’eau doivent rester libres. Utilise des pieds adaptés à la taille du pot, sans empiler des cales instables. Sur un balcon, conserver la stabilité du contenant est aussi important que l’isolation de ses parois.</p>
-            <p>Le schéma en tête de page montre cette distinction : une enveloppe sur les côtés, un pot stable et de l’espace sous les trous. Il illustre le montage, sans donner de température de protection. Vérifie la résistance au gel annoncée pour le contenant lui-même : toutes les terres cuites ne sont pas prévues pour passer l’hiver dehors.</p>
+            <p>Le schéma ci-dessous montre cette distinction : une enveloppe sur les côtés, un pot stable et de l’espace sous les trous. Il illustre le montage, sans donner de température de protection. Vérifie la résistance au gel annoncée pour le contenant lui-même : toutes les terres cuites ne sont pas prévues pour passer l’hiver dehors.</p>
+            <figure class="rain-collection-figure">
+              <img src="../../images/articles/proteger-pots-gel-balcon.svg?v=20261021-sans-phrase-bas" alt="Pot dont les parois sont enveloppées, posé sur des pieds stables en laissant le fond et les sorties d’eau libres" width="1200" height="625" loading="lazy" decoding="async">
+            </figure>
 
             <h2>Le voile protège le feuillage, avec des limites</h2>
             <p>Un voile d’hivernage peut servir de protection temporaire quand du gel est annoncé. Place-le selon la notice, avec une fixation qui tient sans serrer les tiges. Prévois dès l’installation comment le retirer ou l’ouvrir lors des périodes douces et comment accéder au terreau.</p>
@@ -57,7 +117,7 @@
             </ol>
 
             <h2>Après le gel, observe avant de tailler</h2>
-            <p>Un feuillage abîmé ne suffit pas à conclure que la plante est perdue. La <a href="https://www.rhs.org.uk/prevention-protection/frost-damage" target="_blank" rel="noopener noreferrer">RHS indique que la reprise peut être tardive et conseille d’attendre la fin du risque de gel avant de tailler les parties endommagées</a>. Évite de multiplier les interventions sur un sujet déjà fragilisé.</p>
+            <p>Un feuillage abîmé ne suffit pas à conclure que la plante est perdue : la reprise peut être tardive. Attends la fin du risque de gel avant de tailler les parties endommagées. Évite de multiplier les interventions sur un sujet déjà fragilisé.</p>
             <p>Profite d’une période plus douce pour contrôler les fixations, le drainage et l’état du contenant. Si un rempotage devient nécessaire, consulte <a href="rempoter-plantes-balcon.html">quand et comment rempoter une plante de balcon</a> plutôt que de changer tous les pots au cœur d’un épisode froid.</p>
             <p>Pour préparer le balcon progressivement, les guides de <a href="que-planter-en-octobre-sur-un-balcon.html">jardinage en octobre</a> et de <a href="que-planter-en-novembre-sur-un-balcon.html">plantation en novembre</a> t’aident à choisir ce qui peut encore être installé et ce qui mérite surtout d’être préservé.</p>
 '@
@@ -68,16 +128,16 @@
       Description = "Ton terreau reste humide en hiver ? Vérifie la soucoupe, les trous et l’exposition à la pluie avant d’arroser ou de rempoter les plantes de ton balcon."
       Intro = "Ton pot reste lourd plusieurs jours après la pluie et tu hésites à arroser. En hiver, la bonne question n’est pas seulement « depuis quand le terreau est-il humide ? », mais « l’eau peut-elle sortir et la plante en a-t-elle besoin ? ». Ce diagnostic aide à distinguer un pot encore frais d’un contenant qui retient trop d’eau."
       DatePublished = "2026-10-07T11:00:00+02:00"
-      DateModified = "2026-10-07T11:00:00+02:00"
+      DateModified = "2026-10-21T19:25:40+02:00"
       TimeRequired = "PT6M"
       AuthorName = "Mathias Lancet"
       Category = "Entretien & astuces"
-      ImageFileName = "terreau-humide-hiver-balcon.svg"
-      ImageAlt = "Schéma de diagnostic d’un pot humide : vérifier le terreau, vider l’eau retenue et laisser les trous de drainage libres"
+      ImageFileName = "terreau-pot-humide-pexels-9710613.jpg"
+      ImageAlt = "Plante en pot de terre cuite sur une surface mouillée, avec du terreau éparpillé"
       BodyHtml = @'
             <h2>Un terreau humide n’est pas forcément un terreau détrempé</h2>
-            <p>Le nombre de jours depuis le dernier arrosage ne permet pas, à lui seul, de décider. Le pot, le mélange, l’exposition et la plante comptent. La <a href="https://www.rhs.org.uk/container-gardening/how-to-water-containers" target="_blank" rel="noopener noreferrer">RHS recommande de contrôler l’humidité sous la surface plutôt que de suivre un calendrier fixe</a>.</p>
-            <p>Sur un terreau non gelé, vérifie doucement à quelques centimètres de profondeur, sans abîmer les racines. Regarde ensuite sous le contenant. Le schéma en tête de page rappelle ces trois points : le mélange, l’eau retenue autour du pot et la possibilité de s’égoutter.</p>
+            <p>Le nombre de jours depuis le dernier arrosage ne permet pas, à lui seul, de décider. Le pot, le mélange, l’exposition et la plante comptent. Contrôle l’humidité sous la surface plutôt que de suivre un calendrier fixe.</p>
+            <p>Sur un terreau non gelé, vérifie doucement à quelques centimètres de profondeur, sans abîmer les racines. Regarde ensuite sous le contenant. Le schéma ci-dessous rappelle ces trois points : le mélange, l’eau retenue autour du pot et la possibilité de s’égoutter.</p>
             <div class="comparison-table-wrap" role="region" aria-labelledby="diagnostic-terreau-hiver" tabindex="0">
               <table class="comparison-table">
                 <caption id="diagnostic-terreau-hiver">Observe avant de décider quoi faire</caption>
@@ -91,14 +151,18 @@
               </table>
             </div>
 
+            <figure class="rain-collection-figure">
+              <img src="../../images/articles/terreau-humide-hiver-balcon.svg?v=20261021-sans-phrase-bas" alt="Trois vérifications avant d’arroser : humidité sous la surface, eau retenue dans le cache-pot et trous d’évacuation libres" width="1200" height="610" loading="lazy" decoding="async">
+            </figure>
+
             <h2>1. Regarde la soucoupe et le cache-pot</h2>
             <p>Sors le petit pot intérieur si tu peux le faire sans effort et regarde ce qui se trouve dessous. Une enveloppe décorative peut cacher de l’eau même lorsque la surface du terreau paraît normale. Vide cette réserve et ne laisse pas le contenant baigner dedans.</p>
-            <p>Dans son <a href="https://www.rhs.org.uk/container-gardening/how-to-water-containers" target="_blank" rel="noopener noreferrer">guide d’arrosage des pots, la RHS conseille de retirer les soucoupes en hiver</a> pour éviter la saturation. Sur ton balcon, organise aussi la récupération des écoulements : vide l’eau recueillie sans la laisser sous le pot et sans l’envoyer chez les voisins.</p>
+            <p>Retire les soucoupes quand elles retiennent l’eau de pluie. Le dossier de la SNHF sur le <a href="https://www.jardinsdefrance.org/wp-content/uploads/2018/01/JdF645_9_Nos-conseils-pratiques_v2.pdf" target="_blank" rel="noopener noreferrer">gel au balcon et l’arrosage hivernal (PDF)</a> rappelle de ne pas laisser d’eau stagner sous les pots, tout en surveillant le dessèchement. Sur ton balcon, vide l’eau recueillie sans la laisser sous le pot et sans l’envoyer chez les voisins.</p>
             <p>Commence par cette vérification avant d’acheter un nouveau terreau. Un mélange remplacé dans le même cache-pot plein d’eau rencontrera encore le même problème.</p>
 
             <h2>2. Vérifie les trous, sans démonter un pot lourd</h2>
             <p>Regarde les sorties accessibles : sont-elles bouchées par des débris ou plaquées contre un support ? Dégage ce qui peut l’être sans forcer. Ne bascule pas seul un grand contenant rempli pour inspecter le fond ; prépare une aide ou une solution adaptée à son poids.</p>
-            <p>Des pieds de pot stables peuvent laisser un passage à l’eau sous le contenant. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">RHS recommande cette surélévation pour faciliter le drainage hivernal</a>. Vérifie l’assise après installation : le pot ne doit ni osciller ni risquer de tomber au premier coup de vent.</p>
+            <p>Des pieds de pot stables peuvent laisser un passage à l’eau sous le contenant. Vérifie l’assise après installation : le pot ne doit ni osciller ni risquer de tomber au premier coup de vent. Si tu dois aussi isoler ses parois, consulte le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du froid en gardant le drainage libre</a>.</p>
             <p>Un contenant sans évacuation ne devient pas drainant parce que tu poses des cailloux au fond. Si tu utilises un objet recyclé, regarde les points à vérifier dans le guide des <a href="diy-pots-pour-le-balcon.html">pots fabriqués avec des objets du quotidien</a>, puis choisis une solution réellement adaptée à la plante.</p>
 
             <h2>3. Compare les pots exposés et les pots abrités</h2>
@@ -107,13 +171,13 @@
             <p>À l’inverse, vérifie les pots sous toiture : certaines plantes persistantes peuvent encore avoir besoin d’eau pendant une période sèche en hiver. L’absence de chaleur estivale n’est pas une raison suffisante pour arrêter tous les arrosages jusqu’au printemps.</p>
 
             <h2>4. Quand faut-il examiner le substrat et les racines ?</h2>
-            <p>Si l’écoulement extérieur est libre mais que le pot reste saturé, ou si la plante se dégrade, il faut aller plus loin. L’<a href="https://horticulture.ahdb.org.uk/knowledge-library/causes-of-winter-injury-in-container-grown-nursery-stock" target="_blank" rel="noopener noreferrer">AHDB décrit le manque d’oxygène des racines dans les substrats gorgés d’eau</a> et les risques de dommages associés. Ses observations concernent des cultures en conteneurs en pépinière ; elles expliquent le mécanisme, sans diagnostiquer ta plante à distance.</p>
+            <p>Si l’écoulement extérieur est libre mais que le pot reste saturé, ou si la plante se dégrade, il faut aller plus loin. Dans un substrat gorgé d’eau, les racines manquent d’oxygène et peuvent être endommagées. Ce mécanisme explique un risque ; il ne suffit pas à diagnostiquer ta plante à distance.</p>
             <p>Une feuille jaune ou une tige molle peut avoir plusieurs causes. Ne conclus pas automatiquement à une maladie et n’arrose pas davantage simplement parce que le feuillage retombe. Note l’évolution, vérifie les besoins de l’espèce et demande un avis horticole si l’état se dégrade malgré la correction de l’eau retenue.</p>
             <p>Un rempotage peut être nécessaire si le contenant ou le mélange sont inadaptés, mais ne rempote pas tous les pots encore frais par précaution. Le guide pour <a href="rempoter-plantes-balcon.html">rempoter une plante de balcon</a> détaille le choix du contenant et du moment. N’ajoute pas du <a href="utilisation-compost-sur-balcon.html">compost</a> comme remède automatique à un pot saturé : nourrir et rétablir l’écoulement sont deux interventions différentes.</p>
 
             <h2>Une routine courte pour suivre l’évolution</h2>
             <p>Choisis les pots qui posent problème et garde une petite note : pluie reçue, humidité sous la surface, eau retenue dessous, état du feuillage. Après chaque changement, observe ce qui se passe avant de modifier autre chose. Tu sauras ainsi si vider le cache-pot ou déplacer le contenant a suffi.</p>
-            <p>Quand du gel est annoncé, complète ce contrôle avec le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du froid</a>, en gardant le drainage libre. Pour préparer les prochaines plantations, consulte les repères d’<a href="que-planter-en-octobre-sur-un-balcon.html">octobre</a> et de <a href="que-planter-en-novembre-sur-un-balcon.html">novembre</a> : remettre un pot en état vient avant d’y installer une nouvelle culture.</p>
+            <p>Pour préparer les prochaines plantations, consulte les repères d’<a href="que-planter-en-octobre-sur-un-balcon.html">octobre</a> et de <a href="que-planter-en-novembre-sur-un-balcon.html">novembre</a> : remettre un pot en état vient avant d’y installer une nouvelle culture.</p>
 '@
     }
     "que-planter-en-novembre-sur-un-balcon" = [ordered]@{
@@ -123,7 +187,7 @@
       Intro = "Un pot se libère, les nuits refroidissent et le soleil passe à peine au-dessus de l’immeuble voisin. Que planter en novembre sur un balcon dans ces conditions ? L’ail d’automne et les tulipes pour le printemps sont deux pistes, si tes pots drainent bien. Mais sur un balcon sombre ou déjà gelé, le meilleur programme consiste surtout à préserver les cultures en place."
       TimeRequired = "PT7M"
       DatePublished = "2026-10-05T09:00:00.000Z"
-      DateModified = "2026-10-07T11:00:00+02:00"
+      DateModified = "2026-10-21T19:25:40+02:00"
       AuthorName = "Clara Fontaine"
       Category = "Plantes & semis"
       ImageFileName = "que-planter-en-novembre-sur-un-balcon.jpg"
@@ -144,21 +208,21 @@
             <p><strong>La place jusqu’au printemps :</strong> un pot d’ail ou de bulbes restera occupé plusieurs mois. Ne le mets pas dans la seule jardinière que tu comptes réserver aux premiers semis de mars. Sur un petit balcon, cette décision évite de devoir tout déplacer au mauvais moment.</p>
 
             <h2>L’ail d’automne, si tu disposes d’un pot ensoleillé</h2>
-            <p>Choisis de l’ail destiné à la plantation, avec une variété dont l’étiquette indique une mise en place en automne. L’ail acheté pour la cuisine ne te donne pas les mêmes garanties sur l’état sanitaire et l’adaptation à la saison. En cas de doute, garde ce projet pour une variété prévue pour le printemps.</p>
-            <p>La <a href="https://www.rhs.org.uk/vegetables/garlic/grow-your-own" target="_blank" rel="noopener noreferrer">Royal Horticultural Society conseille un pot d’au moins 25 cm de profondeur</a>, avec environ 15 cm entre les caïeux. Plante chaque caïeu pointe vers le haut, sous environ 2,5 cm de terreau, en respectant aussi les consignes du fournisseur. Utilise un mélange pour culture en pot qui laisse l’eau s’écouler et garde le contenant au soleil.</p>
+            <p>Choisis de l’ail destiné à la plantation, avec une variété dont l’étiquette indique une mise en place en automne. La <a href="https://www.semencemag.fr/images/fiches/semencemag-cultiver-ail-jardin.pdf" target="_blank" rel="noopener noreferrer">fiche des producteurs de plants certifiés d’ail (PDF)</a> distingue les variétés d’automne et de printemps, et déconseille l’ail de consommation comme plant. En cas de doute, garde ce projet pour une variété prévue pour le printemps.</p>
+            <p>Choisis un pot d’au moins 25 cm de profondeur, avec environ 15 cm entre les caïeux. Plante chaque caïeu pointe vers le haut, sous environ 2,5 cm de terreau, en respectant aussi les consignes du fournisseur. Utilise un mélange pour culture en pot qui laisse l’eau s’écouler et garde le contenant au soleil.</p>
             <p>Pour un premier essai, quelques caïeux suffisent. Surveille l’humidité sans détremper le mélange et étiquette le pot. La récolte des bulbes se prépare pour la fin du printemps ou l’été suivant, selon la variété et le climat : l’ail n’est pas une culture à récolter avant Noël.</p>
             <p>Si tu n’as qu’une jardinière peu profonde ou un balcon à l’ombre presque toute la journée, passe ton tour. Pour mieux comprendre ton exposition, consulte le guide du <a href="balcon-a-lombre-plantes-et-culture.html">balcon à l’ombre</a> avant de consacrer un pot à cette culture.</p>
 
             <h2>Les tulipes se plantent maintenant pour fleurir plus tard</h2>
             <p>La tulipe en fleur de la photo illustre le résultat attendu au printemps. En novembre, tu installes des bulbes au repos. Choisis-les fermes, sans parties molles ni traces de pourriture ; une variété courte sera plus facile à placer sur un balcon exposé au vent.</p>
-            <p>La <a href="https://www.rhs.org.uk/plants/types/bulbs/planting" target="_blank" rel="noopener noreferrer">RHS recommande novembre pour planter les tulipes</a>. Prends un contenant percé qui résiste au gel et laisse assez de profondeur sous les bulbes. Suis la profondeur indiquée sur l’emballage ; le repère courant est d’environ trois fois la hauteur du bulbe. Oriente les pointes vers le haut, sans serrer les bulbes les uns contre les autres.</p>
+            <p>Novembre fait partie de la période automnale de plantation des tulipes, précisée dans les <a href="https://www.meillandrichardier.com/tulipes-conseils-de-plantation-taille-entretien" target="_blank" rel="noopener noreferrer">conseils de culture de Meilland Richardier</a>. Prends un contenant percé qui résiste au gel et laisse assez de profondeur sous les bulbes. Suis la profondeur indiquée sur l’emballage ; le repère courant est d’environ deux à trois fois la hauteur du bulbe. Oriente les pointes vers le haut, sans serrer les bulbes les uns contre les autres.</p>
             <p>Arrose après plantation, puis vérifie le terreau pendant l’hiver : il doit pouvoir s’égoutter et ne pas sécher complètement. Pose une étiquette avec la variété et la période de floraison. Garde le pot dehors dans un emplacement adapté, plutôt que de le rentrer dans le salon chauffé.</p>
             <p>Réserve un pot distinct aux bulbes décoratifs, sans les mélanger aux cultures alimentaires. Après la floraison, le feuillage devra finir de jaunir naturellement : prévois dès maintenant un endroit où laisser le pot pendant cette phase.</p>
 
             <h2>Des fleurs de saison, mais peu de nouveaux semis</h2>
             <h3>Pensées et violas : pars de plants déjà développés</h3>
             <p>Si le terreau n’est ni gelé ni saturé d’eau, tu peux installer des pensées ou violas adaptées aux plantations d’automne et d’hiver. Choisis des plants sains, déjà bien formés, et garde le collet au niveau du terreau. Leur croissance sera lente : n’achète pas de tout petits plants en comptant sur un remplissage rapide.</p>
-            <p>Place la jardinière dans la zone la plus lumineuse. La floraison peut reprendre pendant les périodes douces et ralentir avec le froid. La <a href="https://www.rhs.org.uk/container-gardening/winter-selection" target="_blank" rel="noopener noreferrer">sélection de plantes pour pots d’hiver de la RHS</a> confirme ces possibilités. Attention au cyclamen vendu comme décoration : tous les cyclamens ne supportent pas le gel, vérifie l’espèce avant de le laisser dehors.</p>
+            <p>Place la jardinière dans la zone la plus lumineuse. La floraison peut reprendre pendant les périodes douces et ralentir avec le froid. Attention au cyclamen vendu comme décoration : tous les cyclamens ne supportent pas le gel, vérifie l’espèce avant de le laisser dehors.</p>
             <h3>Mâche, épinards et salades : conserve d’abord ce qui pousse</h3>
             <p>Une culture rustique peut traverser l’hiver sans pousser assez vite pour justifier un nouveau semis en novembre. Garde en priorité les rosettes et les plants installés en fin d’été ou en automne. Récolte les feuilles saines lorsqu’elles sont utilisables et retire celles qui se dégradent au contact du terreau.</p>
             <p>En climat très doux et sur un balcon lumineux, un petit essai reste possible uniquement si la variété indique cette période. Ne généralise pas ce cas à toute la France. Les fiches sur les <a href="guide-epinards-sur-son-balcon.html">épinards en pot</a> et les <a href="guide-laitues-sur-son-balcon.html">laitues sur balcon</a> t’aident à suivre les cultures déjà en place. Sur un balcon froid ou sombre, garde tes graines pour une période plus favorable.</p>
@@ -166,7 +230,7 @@
             <h2>La routine de novembre pour les pots déjà installés</h2>
             <h3>Prépare le repli avant une nuit froide</h3>
             <p>Liste les plantes qui doivent passer l’hiver hors gel et choisis pour chacune un emplacement adapté. Une pièce chaude n’est pas automatiquement un bon abri : tiens compte de la lumière et des besoins de la plante. Si le froid arrive en octobre chez toi, n’attends pas novembre pour agir.</p>
-            <p>Pour les pots qui restent dehors, rapproche les contenants d’un mur abrité sans les empiler. Lors d’un épisode froid, protège les parois du pot avec un matériau isolant bien fixé et laisse les trous dégagés. Un voile horticole peut aider les parties aériennes, mais il ne garantit pas la survie d’une plante frileuse pendant un gel prolongé. Les <a href="https://www.rhs.org.uk/prevention-protection/preventing-winter-damage" target="_blank" rel="noopener noreferrer">conseils de la RHS sur les dégâts hivernaux</a> distinguent abri et protection des contenants.</p>
+            <p>Pour les pots qui restent dehors, rapproche les contenants d’un mur abrité sans les empiler. Lors d’un épisode froid, protège les parois du pot avec un matériau isolant bien fixé et laisse les trous dégagés. Un voile horticole peut aider les parties aériennes, mais il ne garantit pas la survie d’une plante frileuse pendant un gel prolongé.</p>
             <p>Le guide pour <a href="proteger-pots-gel-balcon.html">protéger les pots du gel sur un balcon</a> propose un ordre de priorité et une checklist avant les nuits froides. Si tu souhaites garder un arbuste fruitier dehors, vérifie aussi le contenant et l’entretien dans le dossier des <a href="petits-fruits-en-pot.html">petits fruits en pot</a>.</p>
             <h3>Arrose après avoir touché le terreau</h3>
             <p>Supprime le rythme automatique de l’été. Vérifie l’humidité sous la surface et arrose au pied seulement lorsque la plante en a besoin, pendant une période sans gel. Un pot sous un auvent peut sécher malgré la pluie. À l’inverse, un bac découvert peut rester trop humide plusieurs jours : n’ajoute pas d’eau dans ce cas et vide la soucoupe.</p>
@@ -186,6 +250,7 @@
             <p>Non. Les plantes rustiques adaptées à ton climat peuvent rester dehors avec un emplacement et une protection convenables. Les plantes sensibles demandent un abri adapté ; traite chaque pot selon la plante qu’il contient.</p>
             <h3>Que faire d’une jardinière vide ?</h3>
             <p>Retire les restes de cultures malades et les racines qui encombrent le bac. Nettoie le contenant si tu le ranges et mets les petits pots fragiles à l’abri du gel. Si tu conserves le terreau dehors, garde les trous libres et étiquette le bac pour ne pas le confondre avec une plantation de bulbes.</p>
+            <p>Pour préparer une prochaine plantation, vérifie <a href="reutiliser-terreau-pots-balcon.html">quel terreau de tes pots peut resservir et comment le mélanger</a>, en gardant les lots suspects à part.</p>
 
             <h2>Prépare une seule plantation, puis suis la météo</h2>
             <p>En novembre, un pot d’ail bien placé ou quelques tulipes peuvent suffire à préparer la suite. Le reste du travail consiste à garder des pots accessibles, un terreau qui s’égoutte et des protections prêtes. Pour prévoir décembre et la reprise de fin d’hiver, retrouve le <a href="calendrier-du-jardin-de-balcon.html">calendrier du jardin de balcon mois par mois</a>.</p>
@@ -257,7 +322,7 @@
             <h3>Préparer la protection avant la première alerte</h3>
             <p>Repère les plantes frileuses à rentrer dans un emplacement adapté, lumineux, avant le froid. Pour les cultures rustiques, garde un voile prêt à poser sur un petit support et fixe-le pour qu’il ne s’envole pas. Aère dès que le temps le permet. Un voile aide face à un refroidissement ponctuel ; il ne transforme pas une jardinière exposée en serre chauffée.</p>
             <h3>Libérer les pots progressivement</h3>
-            <p>Conserve les cultures d’été encore saines et productives tant que la météo le permet. Retire les plantes terminées et les débris malades. Si le terreau est tassé, saturé de racines ou s’écoule mal, ne sème pas simplement par-dessus. Remets le contenant en état avant de relancer une culture ; notre guide pour <a href="rempoter-plantes-balcon.html">rempoter les plantes de balcon</a> aide à reconnaître ces situations.</p>
+            <p>Conserve les cultures d’été encore saines et productives tant que la météo le permet. Retire les plantes terminées et les débris malades. Si le terreau est tassé, saturé de racines ou s’écoule mal, ne sème pas simplement par-dessus. Avant de remplir de nouveau le bac, vérifie <a href="reutiliser-terreau-pots-balcon.html">si tu peux réutiliser son ancien terreau et comment le préparer</a>.</p>
 
             <h2>Les questions à se poser avant d’acheter</h2>
             <h3>Est-il trop tard pour semer en octobre ?</h3>

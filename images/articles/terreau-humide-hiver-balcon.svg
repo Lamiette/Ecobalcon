@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
   <title id="title">Terreau humide en hiver : trois vérifications</title>
   <desc id="desc">Vérifier le terreau sous la surface, vider l’eau dans le cache-pot et garder les trous d’évacuation libres.</desc>
   <rect width="1200" height="675" fill="#edf4f1"/>
-  <rect x="40" y="40" width="1120" height="595" rx="28" fill="#fff"/>
+  <rect x="40" y="40" width="1120" height="530" rx="28" fill="#fff"/>
   <g font-family="Arial, sans-serif" fill="#204d3d">
     <text x="90" y="115" font-size="40" font-weight="700">Avant d’arroser, regarde sous le pot</text>
     <text x="90" y="160" font-size="25" fill="#557065">Un mélange frais et un contenant plein d’eau ne demandent pas le même geste.</text>
@@ -28,6 +28,5 @@
     <path d="M860 445 H1040" stroke="#c3d4cd" stroke-width="6"/>
     <text x="818" y="488" font-size="26" font-weight="700">3. Sorties libres</text>
     <text x="818" y="520" font-size="20" fill="#557065">Laisser l’eau s’égoutter</text>
-    <text x="90" y="594" font-size="23" fill="#557065">Décide ensuite selon la plante, la pluie reçue et l’état du terreau non gelé.</text>
   </g>
 </svg>

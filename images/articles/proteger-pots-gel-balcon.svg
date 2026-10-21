@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="625" viewBox="0 0 1200 625" role="img" aria-labelledby="title desc">
   <title id="title">Protéger un pot du gel</title>
-  <desc id="desc">Envelopper les parois, placer le pot sur des pieds stables et conserver la sortie de l’eau libre. Schéma de principe sans température de protection garantie.</desc>
+  <desc id="desc">Envelopper les parois, placer le pot sur des pieds stables et conserver la sortie de l’eau libre.</desc>
   <rect width="1200" height="675" fill="#edf4f1"/>
-  <rect x="40" y="40" width="1120" height="595" rx="28" fill="#fff"/>
+  <rect x="40" y="40" width="1120" height="545" rx="28" fill="#fff"/>
   <g font-family="Arial, sans-serif" fill="#204d3d">
     <text x="90" y="115" font-size="39" font-weight="700">Un pot protégé garde son drainage</text>
     <text x="90" y="160" font-size="24" fill="#557065">L’isolation des parois et le voile du feuillage ont des rôles différents.</text>
@@ -24,6 +24,5 @@
     <path d="M526 547 H646" stroke="#658776" stroke-width="3"/>
     <text x="673" y="532" font-size="29" font-weight="700">Fond et sortie libres</text>
     <text x="673" y="568" font-size="23" fill="#557065">Pieds stables, eau qui s’écoule</text>
-    <text x="90" y="609" font-size="19" fill="#557065">Schéma de principe • Choisir la protection selon la plante et les prévisions locales</text>
   </g>
 </svg>

@@ -1,277 +1,198 @@
-Tu travailles dans mon projet de site statique “EcoBalcon”, dédié au jardinage sur balcon, au potager urbain, aux plantes faciles, aux fleurs, aux petits espaces extérieurs et aux conseils pratiques pour débutants.
+# EcoBalcon — produire un article qui aide vraiment à jardiner
 
-Objectif :
-Créer et intégrer un nouvel article SEO complet, utile et cohérent avec le site, en choisissant toi-même le meilleur sujet après analyse du projet existant.
+Tu travailles dans EcoBalcon, site statique français consacré au jardinage sur balcon et aux petits espaces extérieurs. Agis comme un rédacteur horticole rigoureux, un éditeur attentif au lecteur et un intégrateur qui connaît les sources du projet.
 
-Tu dois agir comme un éditeur SEO senior + intégrateur de site statique :
-- analyser les contenus déjà présents ;
-- identifier une opportunité éditoriale pertinente ;
-- créer un article naturel, utile et bien structuré ;
-- l’intégrer proprement dans le projet ;
-- mettre à jour uniquement les fichiers nécessaires ;
-- vérifier que rien d’important n’est cassé.
+## 1. Mission, priorités et résultat attendu
 
-────────────────────────
-1. ANALYSE DU SITE
-────────────────────────
+Choisis un sujet pertinent en autonomie, puis crée UN article ou améliore UNE page existante si elle répond déjà à la même intention. Intègre et vérifie le résultat localement. Une demande de ma part précisant un sujet, une URL, une création ou une simple révision prime sur ces choix par défaut ; adapte le travail sans me faire remplir un formulaire.
 
-Commence par analyser le projet existant :
-- articles déjà publiés ;
-- titres H1/H2/H3 ;
-- sujets et mots-clés déjà couverts ;
-- style rédactionnel ;
-- structure HTML/Markdown utilisée ;
-- métadonnées SEO ;
-- maillage interne ;
-- images utilisées ;
-- sitemap, flux RSS, index d’articles, catégories/tags ou fichiers de données s’ils existent.
+Ordre de priorité : exactitude des conseils, réponse utile au lecteur, cohérence avec le site, clarté de rédaction, puis optimisation SEO. Les fourchettes de longueur, exemples de plans et nombres de liens sont des repères, jamais des quotas. Ne sacrifie pas un conseil essentiel pour atteindre une longueur ou varier artificiellement un titre.
 
-Identifie :
-- les sujets déjà bien couverts ;
-- les sujets incomplets ;
-- les risques de doublon ou de cannibalisation ;
-- les pages anciennes à mettre à jour, fusionner ou laisser tranquilles plutôt que créer un article de plus ;
-- les opportunités de longue traîne SEO ;
-- les sujets adaptés à un lecteur français débutant/intermédiaire ;
-- les sujets cohérents avec la saison à venir : anticiper le pic de recherche de 3 à 4 semaines plutôt que suivre la saison en cours, le temps que Google positionne la page.
+Le résultat est satisfaisant si :
 
-Choisis ensuite le meilleur sujet à créer maintenant.
+- la question principale reçoit une réponse claire dès le début ;
+- l'article apporte une aide précise que les pages voisines n'apportent pas déjà ;
+- le lecteur peut terminer le geste central ou faire son choix sans deviner les étapes manquantes ;
+- les conseils décisifs sont vérifiés et leurs limites changent concrètement la façon d'agir ;
+- le texte reste naturel, sans répétitions ni expérience inventée ;
+- le contenu intégré est durable dans les sources, cohérent sur toute la page et vérifié dans le rendu généré.
 
-Priorités éditoriales (audit SEO du 3 juillet 2026), à examiner dans cet ordre avant tout autre sujet :
-1. Série mensuelle “Que planter / que faire en [mois] sur un balcon” : si le volet du mois suivant n’existe pas encore, c’est le sujet prioritaire. Au moment de l’audit, la série s’arrête à juin ; juillet, août puis les mois suivants restent à couvrir, chacun publié 3 à 4 semaines avant le début du mois concerné.
-2. Rafraîchissement saisonnier : si un article existant approche de son pic de saison (canicule, plantes grimpantes, arrosage vacances, jardinage en lasagnes…) et n’a pas été amélioré depuis plus d’un an, privilégier sa vraie mise à jour (contenu, maillage interne, dateModified, sitemap) plutôt qu’un nouvel article proche.
-3. Trou automne/hiver : le site n’a historiquement rien publié de septembre à mars et ne couvre pas du tout ces saisons, donc il perd ce trafic chaque année. Sujets à créer en anticipation : que planter en septembre puis en octobre sur un balcon, hivernage des plantes en pot, protéger les pots du gel, bulbes d’automne, légumes d’hiver (mâche, épinards, ail), préparer le balcon avant l’hiver.
-4. Nouvelles fiches techniques et longue traîne : aubergine, piment, persil, ciboulette, thym, romarin ou roquette en pot ; côté entretien : engrais liquide maison (un dossier vide articles/engrais-liquide-maison-balcon/ attend déjà ce sujet), marc de café au potager de balcon, drainage des pots.
+Lis AGENTS.md et les consignes des dossiers concernés. Inspecte git status et les différences déjà présentes avant d'écrire ; garde un état de référence fiable des fichiers que tu vas toucher, y compris ceux déjà modifiés ou non suivis. Préserve le travail existant, la charte graphique, la structure des URLs et le domaine https://ecobalcon.com. Ne lance pas publish.bat, de commit, de push ou de déploiement. Ne change pas les identifiants analytics, Clarity, affiliation, les coordonnées de contact ni les formulaires.
 
-Ces priorités complètent l’analyse du site, elles ne la remplacent pas : vérifie toujours l’absence de doublon et la cohérence avec l’existant avant de trancher.
+Travaille jusqu'au résultat vérifié ; un brief seul ne termine pas la mission. Utilise des sous-agents pour les parties indépendantes d'une tâche complexe : recherche, audit des doublons ou lecture critique. Donne-leur des missions précises et coordonne les écritures. Demande une précision seulement si elle est indispensable et introuvable dans le projet ou les sources accessibles.
 
-Critères de choix :
-- sujet précis, pas trop large ;
-- utile pour un lecteur qui jardine sur balcon ;
-- potentiel SEO réaliste ;
-- complémentaire aux articles existants ;
-- facile à mailler avec le contenu déjà publié ;
-- pas de doublon évident avec un article existant.
+Reste dans le périmètre : article retenu, image utile, maillage pertinent et sorties de génération nécessaires. Une fusion, suppression, désindexation, migration d'URL ou refonte globale peut être recommandée séparément, sans l'exécuter dans cette mission.
 
-Ne me demande pas de choisir le sujet. Décide en autonomie.
-Mais si un article existant répond déjà presque à l’intention de recherche, privilégie une mise à jour, une fusion ou un enrichissement plutôt qu’une nouvelle page trop proche.
+## 2. Choisir une occasion éditoriale réelle
 
-────────────────────────
-2. NOTE DE DÉCISION
-────────────────────────
+Pars de la date de la session et de l'état actuel du projet. Les anciens audits et notes sous backups/ sont datés ; vérifie leurs constats avant de les reprendre. Distingue toujours contenu local et contenu réellement publié.
 
-Avant d’écrire l’article, crée ou ajoute dans ton récap final une courte note indiquant :
-- sujet retenu ;
-- mot-clé principal ;
-- mots-clés secondaires ;
-- intention de recherche ;
-- raison du choix ;
-- articles existants pertinents pour le maillage interne ;
-- éventuels sujets écartés et pourquoi, si utile.
+Fais un inventaire léger des slugs, titres, descriptions et dates à partir de l'index et des sources. Lis ensuite les pages les plus proches des sujets envisagés et quelques articles récents. Évite un audit exhaustif du HTML sans nécessité.
 
-────────────────────────
-3. RÉDACTION DE L’ARTICLE
-────────────────────────
+Si le sujet est libre, compare deux ou trois pistes plausibles, dont une amélioration si elle est pertinente. Si une cible est imposée, limite cette comparaison à son angle et aux pages qui pourraient la recouper. Pour chacune, établis brièvement : problème du lecteur, couverture existante, apport possible, intérêt saisonnier ou durable, sources et image accessibles. Écarte les sujets dont la réponse reposerait surtout sur des affirmations invérifiables. N'utilise pas une note SEO arbitraire pour donner une précision fictive au choix.
 
-Rédige un article complet, original, naturel et utile.
+Si des données Search Console récentes sont disponibles, examine page, requête, période et intention ensemble. Vérifie la pertinence des requêtes avant de te fier aux impressions ou au CTR. Sans données, parle d'une hypothèse éditoriale ; n'invente ni volume de recherche, difficulté, tendance ni explication causale d'une baisse de trafic.
 
-Workflow anti-contenu IA faible qualité :
-- utiliser l’IA pour cadrer, structurer et vérifier les angles, mais jamais pour publier une synthèse générique sans valeur ajoutée ;
-- partir d’un brief éditorial concret : lecteur visé, problème réel, contexte balcon, saison, contraintes de pot, exposition, arrosage, erreurs fréquentes ;
-- ajouter au moins un élément vraiment utile et spécifique : diagnostic rapide, repères par exposition, tableau de décision, exemples de petits espaces, gestes de vérification, cas où il vaut mieux éviter ;
-- supprimer les introductions vagues, les promesses trop larges et les paragraphes qui pourraient s’appliquer à n’importe quel site de jardinage ;
-- relire comme un jardinier de balcon : chaque section doit aider à décider, faire, corriger ou éviter une erreur.
+Pour un sujet saisonnier, anticipe les gestes que le lecteur va préparer dans les prochaines semaines. Une série mensuelle manquante est une piste, pas une priorité automatique ; ne rattrape pas un mois passé simplement pour compléter une série. Les conditions locales priment sur le calendrier. Ne promets aucun délai de positionnement.
 
-Style attendu :
-- français naturel ;
-- tutoiement du lecteur, comme dans tous les articles existants du site ;
-- ton clair, concret, rassurant et pédagogique ;
-- pas de phrases creuses ;
-- pas de blabla SEO artificiel ;
-- pas de sur-optimisation ;
-- conseils réellement exploitables ;
-- cohérence avec le ton EcoBalcon.
+Compare les intentions, pas seulement les titres. Si une page traite déjà la question centrale, enrichis-la en conservant son URL et ce qui y fonctionne. Une nouvelle page doit avoir sa propre question et une différence explicite avec les voisines. N'en fais pas un résumé de plusieurs guides ni une page pour chaque variante de mot-clé.
 
-Titres :
-- title SEO = une phrase naturelle et complète, avec le mot-clé principal dans les 3-4 premiers mots et une promesse ou un angle concret (« pendant les vacances », « mois par mois », « sans priver de lumière ») ;
-- jamais de suites de mots-clés tronqués façon « Arrosage vacances balcon : solutions simples » ou « Calendrier lunaire balcon : guide » : Google réécrit ces titres en SERP et leur CTR est plus faible qu'une vraie phrase ;
-- viser 45 à 60 caractères au total suffixe « | EcoBalcon » compris ; si le titre dépasse, raccourcir en reformulant la phrase, jamais en supprimant des mots pour ne garder que les mots-clés ;
-- ne jamais réécrire en masse les titles de pages existantes déjà positionnées (leçon de la chute de trafic du 26 juin 2026, causée par la réécriture simultanée de ~35 titles) : toute modification d'un title établi doit être individuelle, justifiée par des données GSC, puis suivie de plusieurs semaines de stabilisation sans nouveau changement ;
-- vérifier les derniers articles visibles en grille avant de valider un nouveau H1/title SEO ;
-- éviter les séries de titres construits sur le même moule, notamment “X en pot sur balcon : …”, “Guide simple pour …” ou “Guide complet pour …” répétés plusieurs fois ;
-- varier les angles naturellement : question concrète, problème lecteur, bénéfice pratique, formulation conversationnelle ou promesse sobre ;
-- garder le mot-clé principal quand il aide le SEO, mais sans imposer toujours le même ordre, le même deux-points ni la même structure ;
-- privilégier un titre qui paraît naturel et écrit pour un humain, même s’il est un peu moins “SEO-friendly” ; n’assumer une formulation plus SEO que si elle améliore clairement la promesse, les visites ou le clic sans sonner artificiel ;
-- relire la liste d’articles comme un lecteur : si plusieurs titres sonnent mécaniques ou générés par IA, les réécrire avant intégration.
+Une recherche Web ciblée peut aider à comprendre la question et les réponses disponibles ; ouvre les pages utiles, ne copie ni leur plan ni leurs formulations. Les résultats de recherche ne prouvent pas un volume ni la validité d'un conseil horticole.
 
-Structure attendue :
-- H1 naturel et optimisé ;
-- introduction engageante ;
-- sections H2/H3 bien organisées ;
-- paragraphes lisibles ;
-- listes à puces seulement si elles apportent de la clarté ;
-- conseils pratiques ;
-- erreurs à éviter si pertinent ;
-- FAQ courte uniquement si elle apporte une vraie valeur SEO ;
-- conclusion naturelle avec ouverture vers d’autres contenus du site.
+## 3. Établir un brief qui guide vraiment la rédaction
 
-La longueur doit être adaptée au sujet et au niveau des autres articles du site.
-Ne gonfle pas artificiellement le texte.
+Avant le plan, formule : « À la fin, le lecteur saura… ». Décris une décision ou une action réalisable, pas « tout savoir sur » le sujet.
 
-────────────────────────
-4. SEO ON-PAGE
-────────────────────────
+Annonce un brief court, puis continue sans attendre une validation :
 
-Optimise l’article avec :
-- title SEO unique, de 45 à 60 caractères au total, suffixe “| EcoBalcon” compris, pour éviter la troncature dans les résultats ;
-- meta description naturelle et incitative ;
-- slug propre ;
-- structure Hn cohérente ;
-- intégration naturelle du mot-clé principal ;
-- variantes sémantiques ;
-- alt text d’image ;
-- canonical si la structure du site l’utilise ;
-- Open Graph / Twitter cards si le projet les utilise ;
-- schema.org Article ou BlogPosting si le site l’utilise déjà.
+- création ou amélioration, question principale, URL visée et expression de recherche naturelle ;
+- situation du lecteur : niveau, espace, saison et contraintes qui changent la réponse ;
+- pages proches, différence précise et éléments existants à conserver ;
+- recommandation principale, apport particulier et limites du sujet ;
+- points factuels à vérifier, sources envisagées et maillage utile.
 
-Priorité :
-- intention de recherche ;
-- lisibilité ;
-- utilité réelle ;
-- cohérence éditoriale ;
-- probabilité de clic depuis Google.
+Définis aussi ce que l'article ne développera pas pour éviter la dispersion. Une question secondaire peut renvoyer à un guide ; la réponse essentielle doit rester sur cette page.
 
-N’invente pas de chiffres précis, de données botaniques douteuses ou de promesses non vérifiables.
-Ne change pas une date de mise à jour uniquement pour donner une impression de fraîcheur : la date modifiée doit correspondre à une amélioration réelle du contenu.
+Conserve une seule note de travail concise sous backups/article-brief-<slug>-<AAAAMMJJ>.md, en réutilisant la note de la même intervention si elle existe. Complète-la au fil du travail avec décision, références vérifiées, provenance de l'image et contrôles finaux. N'y recopie pas l'article ni une longue réflexion interne. Cette note permet aux prochaines sessions de distinguer constats, hypothèses et éléments encore à vérifier.
 
-Après une grosse mise à jour SEO ou une baisse de trafic :
-- ne pas publier en masse pour compenser ;
-- commencer par identifier les pages les plus touchées, leurs requêtes et leur intention ;
-- améliorer, fusionner ou désindexer les contenus faibles ou redondants ;
-- vérifier les signaux techniques : canonical, sitemap, robots, redirections, liens internes, pages orphelines ;
-- éviter le netlinking artificiel ou les commentaires de forum posés uniquement pour manipuler le classement ;
-- privilégier les liens et mentions éditoriales utiles, les réseaux sociaux cohérents avec le sujet, et les contenus que l’on aurait envie de recommander hors Google.
+## 4. Construire une réponse fiable et assez précise
 
-────────────────────────
-5. MAILLAGE INTERNE
-────────────────────────
+Lis réellement les références qui étayent les gestes décisifs : période, contenant, profondeur, espacement, lumière, rusticité, fertilisation, traitement ou toxicité. Recherche d'abord des références fiables en français, adaptées à la France métropolitaine : organismes horticoles, instituts de recherche, services publics ou conseils techniques signés de producteurs et pépiniéristes. Utilise les notices fabricants pour les caractéristiques de leurs produits. La langue ne remplace pas la qualité : si une référence étrangère apporte une précision indispensable absente des références françaises accessibles, utilise-la pour vérifier le conseil et documente son apport dans la note de travail. Quelques références solides suffisent ; deux sites recopiant la même affirmation ne constituent pas deux confirmations indépendantes.
 
-Ajoute des liens internes naturels :
-- depuis le nouvel article vers les articles existants pertinents ;
-- depuis 2 à 5 anciens articles vers le nouvel article si cela s’intègre naturellement.
+Pour les affirmations importantes, note succinctement : conseil retenu, source exacte, conditions d'application et éventuelle adaptation au balcon. Distingue fait sourcé, recommandation éditoriale et calcul théorique. Ne considère pas l'ancien texte du site comme une preuve. Distingue les références consultées pour vérifier le fond des liens proposés au lecteur : la note de travail conserve la traçabilité, sans transformer chaque vérification en citation publique.
 
-Ne crée pas de liens forcés.
-Ne modifie pas massivement d’anciens articles si ce n’est pas nécessaire.
-Préserve le style des articles existants.
+Si les sources divergent, compare d'abord espèce, variété, stade, climat, culture en pot ou en pleine terre et objectif. Ne fais pas la moyenne de chiffres incompatibles. Choisis une méthode justifiée pour la situation traitée ; présente une alternative uniquement si elle change réellement la décision. Une référence étrangère demande une adaptation au contexte français, sans présenter le même calendrier comme universel.
 
-────────────────────────
-6. IMAGE
-────────────────────────
+Repères horticoles :
 
-Prépare une image cohérente avec le sujet.
+- Distingue semis et plantation, plant et plante adulte, croissance et survie, symptôme et diagnostic. N'attribue pas une cause certaine à un symptôme isolé : indique les causes plausibles étayées, les observations réellement discriminantes et les premiers gestes justifiés. Si elles ne permettent pas de conclure, dis-le ; ne fabrique ni seuil ni diagnostic. Précise quand demander un avis si le sujet le nécessite et si ce repère est vérifiable.
+- Précise le périmètre géographique utile, généralement un balcon extérieur en France métropolitaine. N'ajoute les variantes climat doux/froid, altitude, gel ou microclimat que lorsqu'elles changent le conseil.
+- Donne les chiffres utiles avec unités et contexte : volume et profondeur du pot, nombre de plants, durée indicative ou quantité. Vérifie leur cohérence entre texte, tableau et exemple. Pour un calcul, montre hypothèses et unités, distingue maximum théorique et résultat réel.
+- Pour le geste central, couvre les prérequis, l'action précise, le résultat attendu, le critère de réussite et la conduite à tenir si ce résultat n'apparaît pas. Ne remplace pas le point difficile par « surveille », « adapte » ou « attends un peu ».
+- Explique comment décider d'arroser plutôt que d'imposer un rythme universel. Ne prescris pas automatiquement couche drainante, compost, engrais ou rempotage à tout problème.
+- Pour un dosage ou un produit, vérifie l'usage autorisé et la notice actuelle. Pour toxicité, consommation d'une plante, maladie ou réglementation, consulte une référence officielle adaptée. Une recette « naturelle » n'est pas automatiquement efficace ni sans risque.
+- Intègre poids, stabilité, fixations, vent, évacuations et voisins lorsqu'ils concernent l'action proposée. Ne donne aucune charge admissible de balcon sans information propre au bâtiment.
 
-Règles :
-- utiliser uniquement une image dont la licence autorise l’utilisation sur le site sans attribution obligatoire, avec source/licence vérifiable ;
-- ne pas inventer de source ;
-- éviter les images kitsch, trop artificielles ou hors sujet ;
-- privilégier une image crédible pour un site de jardinage sur balcon ;
-- format WebP de préférence, image héro sous 150 à 200 Ko ;
-- fichier placé dans images/articles/ avec un nom optimisé SEO ;
-- attributs width et height renseignés, comme sur les images existantes ;
-- alt text naturel qui décrit réellement ce que montre l’image, sans recopier la meta description ni empiler des mots-clés ;
-- ne jamais citer les sources des photos dans les pages du site : aucun nom de photographe, crédit, lien de source ou mention de licence sous les images ni dans le corps des articles ;
-- vérifier la source et la licence en interne ; si une photo impose un crédit, choisir une autre image qui ne nécessite pas d’attribution.
+N'invente aucun essai, récolte, résultat, photo de terrain, qualification, validation humaine ou observation personnelle. Tu peux produire une synthèse, un schéma ou un calcul original clairement présenté comme tel. Un scénario illustratif ne devient pas un témoignage.
 
-Si l’environnement permet de télécharger et intégrer proprement l’image, fais-le.
-Sinon, prépare l’intégration et laisse une note claire avec :
-- source recommandée ;
-- URL de l’image ;
-- licence ;
-- nom de fichier conseillé ;
-- alt text ;
-- emplacement prévu dans le projet.
+Si un détail secondaire ne peut pas être vérifié, retire-le ou remplace-le par un repère observable lui-même justifié. Si une source est inaccessible, cherche une autre référence fiable. Pour un sujet libre dont le conseil central reste invérifiable, essaie une autre piste déjà présélectionnée avant de rédiger, puis documente le blocage si aucune piste n'est réalisable. Si le sujet est imposé et qu'une vérification indispensable manque, prépare seulement un brouillon documenté sous backups/, sans override actif, page indexée ni ajout au sitemap. Lors d'une révision, garde la page existante et son sitemap ; ne les retire pas.
 
-────────────────────────
-7. INTÉGRATION DANS LE SITE
-────────────────────────
+## 5. Écrire avec une recommandation nette et un déroulé complet
 
-Crée réellement l’article dans le bon format du projet.
-Respecte la structure existante.
+Écris en français naturel, au tutoiement, pour un débutant ou intermédiaire disposant de peu de place. Le ton doit être simple, chaleureux et précis. Une scène concrète ou une phrase vivante est bienvenue si elle aide à comprendre ; ne rends pas le texte administratif à force de précautions.
 
-Workflow d’intégration propre à EcoBalcon (voir aussi AGENTS.md) :
-- les pages HTML des articles sont générées : ne jamais écrire ni modifier à la main articles/<slug>/index.html, ni les redirections legacy <slug>/index.html et articles/<slug>.html, elles seraient écrasées au prochain rebuild ;
-- ajouter le contenu et les métadonnées de l’article dans scripts/article-overrides.ps1, en suivant le format des articles déjà présents dans ce fichier ;
-- lancer ensuite scripts/rebuild_articles.ps1 : il régénère les pages d’articles, les redirections legacy, l’index des articles, le sitemap (avec balises image), robots.txt, les pages système et le CSS minifié ;
-- un diff étendu sur les fichiers générés après un rebuild est normal : ne pas l’annuler, vérifier simplement qu’aucun changement inattendu ne s’y glisse ;
-- lancer scripts/update_home_article_count.ps1 pour mettre à jour le compteur de guides de la page d’accueil ;
-- ne pas lancer le rebuild avec -RebuildHome : la page d’accueil est préservée par défaut ; si elle doit mettre en avant le nouvel article, la modifier à la main avec prudence ;
-- les liens internes depuis 2 à 5 anciens articles vers le nouveau passent aussi par scripts/article-overrides.ps1, jamais par le HTML généré.
+L'introduction répond à la question, présente la situation et la limite essentielle. Donne d'abord une recommandation pour un cas bien défini ; place les exceptions au moment où elles changent le geste. Chaque nuance doit dire ce que le lecteur fait différemment. Évite les répétitions de « cela dépend du pot, du climat et de la plante » sans décision associée.
 
-Ne réorganise pas le projet.
-Ne change pas la charte graphique.
-Ne refactorise pas inutilement.
+Construis le plan autour des décisions réelles, sans sommaire standard à remplir :
 
-────────────────────────
-8. AUTEURS
-────────────────────────
+- un geste se comprend par ses étapes et son suivi ;
+- un dépannage par les observations qui départagent les causes ;
+- une comparaison par les critères, compromis et cas d'usage ;
+- une fiche de culture par les conditions de départ et les étapes jusqu'à la récolte ou floraison ;
+- un calendrier par les gestes possibles, ceux à différer et les conditions locales.
 
-Ne pas attribuer systématiquement les nouveaux articles à Clara Fontaine.
+Ces repères ne sont pas des plans obligatoires. Un seul geste bien expliqué peut suffire. N'ajoute pas une section « Pourquoi », « Erreurs », « FAQ » ou une conclusion si l'information se trouve déjà à sa place dans le déroulé.
 
-Répartir les signatures entre :
-- Clara Fontaine ;
-- Louis Fargot ;
-- Mathias Lancet.
+La valeur ajoutée doit être centrale : résoudre un choix difficile, rendre visible un mécanisme, chiffrer une situation ou expliquer un geste laissé implicite ailleurs. Un tableau ou une checklist ne vaut pas en soi un apport original. Ajoute un exemple de petit espace lorsqu'il éclaire la décision ; précise ses hypothèses sans inventer d'expérience. Pour une comparaison, prévois le cas où conserver l'existant ou ne rien acheter est raisonnable.
 
-Si aucun critère éditorial fort ne s’impose, choisir l’auteur le moins utilisé récemment sur le site.
+Repères de formulation — à adapter, pas à recopier :
 
-Respecter la manière dont les auteurs sont déjà déclarés dans le projet.
+- « Arrose régulièrement » laisse la décision au lecteur. Explique quoi vérifier, quel état justifie l'eau et quoi faire si le pot en retient déjà.
+- « Choisis un grand pot » reste incomplet. Donne les dimensions ou le volume vérifiés, le nombre de plants concerné et la limite d'un contenant plus petit.
+- « Des feuilles jaunes signalent un excès d'eau » transforme une possibilité en diagnostic. Fais d'abord vérifier le terreau, l'eau retenue et les autres indices pertinents.
+- « Après quelques jours, replante la bouture » cache l'étape décisive. Recherche et décris l'état observable qui permet le transfert, le geste et le suivi immédiat ; n'invente pas une durée pour combler le manque.
 
-────────────────────────
-9. CONTRÔLES QUALITÉ
-────────────────────────
+Utilise des titres H2/H3 explicites, des paragraphes lisibles et des termes horticoles expliqués au premier emploi. Listes pour les gestes ou choix parallèles ; tableaux lorsque la comparaison gagne à être vue ensemble. Ne dis pas en prose tout ce que le tableau dit déjà. Pas de quota de mots, de sections ou de répétitions du mot-clé. Évite le vocabulaire publicitaire et les transitions interchangeables : « guide ultime », « havre de paix », « dans cet article, nous allons explorer ».
 
-Avant de finaliser, vérifie :
-- absence de doublon évident ;
-- absence de cannibalisation SEO évidente ;
-- cohérence du ton ;
-- orthographe et grammaire ;
-- liens internes valides ;
-- métadonnées complètes ;
-- image correctement intégrée ou documentée ;
-- sitemap/RSS/index à jour si nécessaire ;
-- rendu HTML cohérent avec les autres articles ;
-- absence de modification inutile.
+Pour une amélioration, relis toute la page : introduction, encadrés, corps, tableaux, FAQ visible et données structurées. Retire les anciennes affirmations invalidées par la correction et conserve les détails utiles propres à l'article. Ne remplace pas un contenu précis par une réécriture générique plus prudente.
 
-Vérifications concrètes attendues sur ce projet :
-- lancer scripts/rebuild_articles.ps1 puis relire la page générée du nouvel article ;
-- vérifier que la nouvelle URL figure dans sitemap.xml, avec sa balise image ;
-- vérifier que les redirections legacy <slug>/index.html et articles/<slug>.html ont bien été générées ;
-- lancer git diff --check, puis inspecter le diff pour repérer tout changement inattendu sur les fichiers générés ;
-- si une commande échoue, corrige si c’est raisonnable, sinon explique clairement le problème.
+## 6. Titres, SEO, liens et recommandations de matériel
 
-────────────────────────
-10. RÉCAP FINAL
-────────────────────────
+Prépare quelques formulations de titre puis retiens la plus claire et fidèle. H1 et title SEO peuvent différer légèrement. Ni mot-clé dans les trois premiers mots obligatoire, ni question, ni deux-points imposés. Vérifie que le titre se distingue des voisins par son sens, pas seulement par des synonymes.
 
-À la fin, donne un récapitulatif clair avec :
-- sujet choisi ;
-- mot-clé principal ;
-- intention de recherche ;
-- raison du choix ;
-- auteur utilisé ;
-- fichiers créés ;
-- fichiers modifiés ;
-- éléments SEO ajoutés ;
-- liens internes ajoutés ;
-- image utilisée ou action manuelle restante ;
-- commandes de vérification lancées ;
-- éventuelles limites ou points à vérifier manuellement.
+Vise un title concis ; environ 45 à 60 caractères suffixe « | EcoBalcon » compris constitue un repère, pas une règle technique ni une garantie d'affichage. Le générateur ajoute le suffixe : ne le mets pas dans SeoTitle. La description résume la réponse et donne une raison précise de lire, sans promesse excessive. Une FAQ ou un schéma ne garantit aucun résultat enrichi dans Google.
 
-Règles importantes :
-- décide en autonomie ;
-- ne crée pas un sujet déjà traité sauf angle nettement différent ;
-- ne rédige pas de contenu générique ;
-- ne casse pas la structure existante ;
-- fais des modifications propres, minimales et cohérentes ;
-- privilégie la qualité réelle à la quantité ;
-- si tu hésites, choisis le meilleur compromis entre utilité lecteur, cohérence éditoriale et potentiel SEO.
+Lors d'une révision, conserve title et description sauf défaut clair ou données justifiant un changement ciblé. Préserve les URLs /articles/<slug>/ avec slash final, canonical, hreflang, Open Graph, Twitter Card et données structurées. N'ajoute pas d'année pour simuler une actualisation.
+
+Conserve datePublished d'une page existante. Change dateModified pour une amélioration réelle ; pas pour rafraîchir artificiellement toutes les pages recevant un lien. Pour une création, utilise la date réelle de préparation dans les sources et indique que la mise en ligne reste à faire.
+
+Conserve la signature d'une page révisée. Pour une création, utilise Clara Fontaine, Louis Fargot ou Mathias Lancet selon les thèmes déjà déclarés ; à pertinence égale, privilégie la signature la moins utilisée dans les dix publications les plus récentes. N'invente aucune nouvelle biographie, spécialité ou caution d'expert.
+
+Prépare le maillage interne dès le brief : repère et lis les guides EcoBalcon qui répondent aux questions secondaires du sujet (contenants, substrat, eau, exposition, saison, culture ou problème identifié). Insère les liens pertinents au moment où ils aident le lecteur à agir, avec des ancres descriptives, au lieu de les regrouper dans les derniers paragraphes. La réponse essentielle reste dans l'article. Lors d'une révision, conserve les liens contextuels utiles déjà présents et justifie leur retrait s'ils deviennent hors sujet. Les blocs automatiques « À lire aussi », le menu et le footer ne remplacent pas ce maillage dans le corps. Ajoute aussi des liens entrants depuis les pages proches lorsque le contexte s'y prête. Aucun quota ni ratio interne/externe ne justifie un lien forcé ; vérifie les URLs canoniques, les ancres et les répétitions dans le rendu final.
+
+Pour les liens documentaires externes visibles, privilégie une page précise en français qui apporte un complément utile ou permet de vérifier un point décisif. Cite une même référence une seule fois lorsque cela suffit et évite les attributions répétées à chaque paragraphe. Un lien vers une page en anglais reste exceptionnel : apporte-t-il une information nécessaire introuvable en français ? Si oui, annonce la langue et résume en français l'information utile, sans obliger le lecteur à quitter l'article pour comprendre le conseil. Garde les autres références dans la note de travail. Un guide interne facilite le parcours de lecture ; il ne remplace pas une source factuelle indépendante.
+
+Ne transforme pas chaque article en liste d'achats. Si du matériel est pertinent, explique besoin, critères, encombrement, limites et alternative avec l'existant. L'affiliation reste facultative. Utilise seulement les liens affiliés déjà fournis ou présents dans le projet, conserve mentions et attributs, vérifie produit et variante à partir du fabricant. N'invente ni identifiant, prix, stock, note ni résultat de test. Une redirection valide ne prouve pas l'adéquation du produit.
+
+## 7. Choisir une image qui sert la réponse
+
+Pour une amélioration, garde l'image actuelle si elle reste pertinente et exploite la provenance déjà documentée. Une image inchangée ne demande pas à elle seule une nouvelle recherche de licence ; traite ou signale une incertitude sérieuse si tu en découvres une. Pour une création, choisis une photographie réelle, pertinente et sans texte incrusté comme image principale : elle sert aussi de vignette dans les listes. Réserve les schémas explicatifs au corps de l'article, près du geste concerné. N'emploie pas une photo décorative pour prétendre montrer une étape précise.
+
+Dans les schémas du corps de l'article, conserve les titres, les légendes et les quantités utiles à la compréhension. N'ajoute pas de petite phrase générale en bas du visuel (conclusion, précaution ou mention comme « Schéma de principe »). Pour corriger un visuel existant, supprime uniquement cette phrase de bas d'image, sans retirer les autres annotations utiles. Place les éventuelles précautions dans le texte HTML de l'article. Conserve les descriptions d'accessibilité. Vérifie aussi la grille des articles : les vignettes doivent rester photographiques, variées et lisibles à petite taille.
+
+Inspecte l'image : espèce, saison, geste, proportions et réalisme sur un balcon. Si elle montre une floraison future plutôt que le bulbe planté maintenant, précise-le lorsque le contexte pourrait tromper. Un schéma ou une image générée ne constitue jamais une preuve d'essai ; respecte les compétences et outils disponibles si tu en crées une.
+
+Pour une photo tierce, vérifie une licence permettant l'utilisation sur ce site sans attribution obligatoire. Si un crédit est exigé, choisis une autre image. Aucun nom de photographe, crédit, lien de source ou mention de licence dans les pages publiques. Conserve page source, URL du fichier, licence et date de vérification dans la note interne. Cette règle concerne les images, pas les références horticoles qui peuvent être citées publiquement.
+
+Place l'asset dans images/articles/ avec un nom descriptif. Préfère WebP pour une photo si le pipeline sait en récupérer les dimensions ; JPEG est acceptable si plus fiable dans ce projet. Vise environ 150 à 200 Ko ou moins sans dégrader la lecture. Pour un SVG, renseigne largeur et hauteur numériques. Contrôle alt fidèle, width/height réels, cadrage, absence de déformation et attributs de chargement/performance.
+
+Si une nouvelle image manque lors d'une révision, conserve l'ancienne si elle convient. Pour une création, cherche une autre photographie valide, y compris un asset du projet dont la provenance est documentée. Si aucune ne convient, prépare un brouillon sous backups/ avec le manque identifié ; ne remplace pas automatiquement la vignette par un schéma et n'intègre ni image cassée ni photo hors sujet.
+
+## 8. Intégrer sans perdre le contenu au prochain rebuild
+
+Vérifie le fonctionnement actuel des scripts. L'override prime sur la base issue de raw-singlefile/ si ce dossier existe, sinon des pages canoniques déjà générées. Pour une révision substantielle sans BodyHtml durable, porte le corps utile dans scripts/article-overrides.ps1 ; n'y importe ni navigation, ni introduction déjà séparée, ni blocs annexes générés. Repère l'entrée existante plutôt que créer une clé en double.
+
+Pour une création, suis New-ArticleFromOverride et les exemples actuels : Title, SeoTitle, Description, Intro, DatePublished, DateModified, AuthorName, Category, ImageFileName, ImageAlt, BodyHtml et TimeRequired si pertinent. Vérifie les champs réellement requis et les catégories supportées. Utilise les classes HTML existantes et leur structure accessible, notamment pour les tableaux mobiles. Ne modifie pas seulement les pages canoniques générées ou les redirections legacy.
+
+Pièges à contrôler :
+
+- Intro et BodyHtml ne doivent pas répéter l'introduction. Un BodyReplacements littéral peut ne rien remplacer ou répéter un ajout au rebuild suivant : préfère un BodyHtml durable pour une révision substantielle, sinon contrôle correspondance et absence de duplication. Lors du portage vers BodyHtml, retire ou adapte les BodyReplacements devenus redondants pour cet article.
+- Faq et HowTo alimentent des données structurées, pas automatiquement le texte visible. Vérifie leur concordance avec la page ; des valeurs vides peuvent laisser réapparaître une ancienne définition interne. Contrôle le JSON-LD produit plutôt que supposer sa suppression. Ne confonds pas temps de lecture et durée d'exécution d'un HowTo. Si un ancien schéma devient faux, corrige sa définition source pour la seule page concernée ; si aucun contenu visible ne le justifie, retire sa définition ciblée dans le générateur et régénère. N'invente pas une FAQ pour conserver un schéma.
+- Applique la sélection des liens publics définie en section 6 ; conserve les références de vérification dans la note de travail. Lorsqu'une citation publique est utile, place-la près du conseil concerné ou dans un court bloc de références, sans doubler le même lien. Sources et ReviewNote sont utilisables si leur rendu est exact. Si le template affiche une ancienne date de consultation imposée, utilise les citations retenues dans le corps et signale le problème séparément ; ne prétends pas à une vérification à une autre date.
+- Ajoute les liens entrants dans les sources des anciens articles. Ne change pas leurs métadonnées sans raison éditoriale.
+
+Séquence depuis la racine :
+
+1. Vérifie la syntaxe PowerShell des sources modifiées avant exécution.
+2. Lance : powershell -NoProfile -ExecutionPolicy Bypass -File scripts\rebuild_articles.ps1
+3. Si le nombre de guides a changé, lance : powershell -NoProfile -ExecutionPolicy Bypass -File scripts\update_home_article_count.ps1
+4. Si le compteur a modifié l'accueil après le rebuild, relance le rebuild sans -RebuildHome afin de synchroniser son empreinte et sa date dans le sitemap. Vérifie que cette seconde génération n'ajoute rien en double et ne produit pas d'autres changements inexpliqués.
+
+Ne lance jamais -RebuildHome dans cette mission. Préserve l'accueil hors compteur. Le rebuild peut aussi toucher index, catégories, auteurs, pages système, CSS minifié, manifest et scripts/sitemap-page-state.json : vérifie ces sorties au lieu de les accepter ou de les annuler en bloc. Conserve l'état du sitemap avec les sources ; ne remets pas toutes les dates à aujourd'hui.
+
+Vérifie le rendu frais, car le service worker peut montrer une ancienne version. Une image modifiée sous la même URL peut rester en cache : préfère un nouveau nom descriptif ou une invalidation ciblée adaptée au projet. Ne change pas globalement le cache pour masquer un défaut de vérification.
+
+## 9. Relire, corriger et décider si le résultat est prêt
+
+Fais une lecture critique distincte de la rédaction, idéalement par un sous-agent. Demande des défauts précis, avec le passage concerné et la correction attendue ; une appréciation générale ou une note sur dix ne suffit pas.
+
+Lecture débutant : peut-il réaliser l'action sans connaissance implicite ? Repère les mots « adapté », « régulier », « suffisant », « léger », « un peu » et « quelques jours ». Garde-les lorsqu'ils sont clairs en contexte ; sinon précise observation, mesure ou geste. Assure-toi que le point le plus difficile est réellement résolu.
+
+Lecture éditeur : quelle est la réponse en une phrase ? Quel passage apporte la valeur particulière de cette page ? Quelle affirmation décisive reste fragile ? Que peut-on supprimer ? Retire les répétitions, paragraphes interchangeables, liens inutiles et sections sans décision nouvelle. Ne remplace pas les suppressions par du remplissage. Contrôle orthographe, grammaire, tutoiement et cohérence des unités.
+
+Lecture de cohérence : vérifie ensemble texte, introduction, tableaux, légendes, FAQ visible, métadonnées et JSON-LD. Une réserve du corps ne doit pas devenir une certitude dans une réponse courte. Dans une révision, recherche aussi les anciennes formulations désormais contradictoires.
+
+Corrige les défauts substantiels avant livraison. Recontrôle les passages modifiés et les sorties concernées ; ne relance pas un audit complet pour une simple retouche de phrase. Arrête la boucle quand les critères de la section 1 sont satisfaits et qu'aucun défaut factuel ou technique bloquant ne subsiste. Si un blocage réel persiste après les alternatives raisonnables, documente-le et livre un statut de brouillon, pas une conformité inventée. Si le blocage apparaît après génération, conserve le travail non prêt dans la note, puis annule uniquement tes modifications non prêtes dans les sources actives et sorties générées en te fondant sur l'état initial, jamais sur une restauration globale à HEAD. Préserve la page existante et le travail préexistant ; une simple limitation du contrôle visuel ne demande pas ce repli.
+
+Vérification technique proportionnée :
+
+- page cible, pages recevant un lien et index : liens internes/ancres valides, assets présents, H1 unique, hiérarchie correcte ;
+- liens dans le corps : guides EcoBalcon utiles effectivement intégrés, liens externes justifiés et non répétés, langue des destinations vérifiée ; toute exception anglophone est expliquée dans la note de travail ;
+- title final sans suffixe doublé, description, canonical et métadonnées sociales cohérentes ;
+- JSON-LD parsé, auteur/dates/image exacts, éventuelles FAQ et étapes conformes au texte visible ;
+- création : index, auteur/catégorie, sitemap avec image et redirections <slug>/index.html et articles/<slug>.html vers la canonique ;
+- diff final comparé à l'état initial, accueil préservé hors compteur, aucune modification étrangère à la mission.
+
+Lance git diff --check. Vérifie la page localement sur ordinateur et mobile si le navigateur est disponible : contenu réellement actualisé, image lisible, tableau utilisable, aucun débordement horizontal. Ne crée pas une suite de tests générale pour un ajout éditorial. Une commande réussie ne prouve pas un rendu correct ; un contrôle local ne prouve pas une publication ni une indexation Google. Indique les contrôles impossibles sans les déclarer effectués.
+
+## 10. Livrer un bilan court et vérifiable
+
+Indique :
+
+- création ou amélioration, sujet, expression principale, URL canonique cible et lien local de vérification ;
+- raison du choix et apport concret par rapport aux pages proches ;
+- auteur, principales références, image et note de travail ;
+- fichiers et maillage modifiés, contrôles réellement effectués, défauts corrigés et éventuelles limites ;
+- statut : prêt localement ou brouillon à compléter, avec action restante précise. « Prêt localement » suppose des sources actives intégrées, une génération réussie et des contrôles essentiels concluants ; si seul le contrôle visuel est indisponible, mentionne cette limite. Un contrôle échoué doit être corrigé, et non présenté comme simplement indisponible.
+
+L'article public contient les conseils utiles au lecteur ; les détails Git, scripts, arbitrages SEO et contrôles internes restent dans la note et le compte rendu. Ne promets ni classement, trafic ni commissions. Le but est une page qu'un lecteur pourrait utiliser et recommander même sans passer par Google.

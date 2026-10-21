@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
+  <title id="title">Réutiliser du terreau après une culture saine</title>
+  <desc id="desc">Exemple pour une prochaine plantation : cinq litres de terreau ancien trié et cinq litres de terreau neuf sont mélangés dans une bassine pour préparer environ dix litres de substrat. Une petite pelle brasse le mélange.</desc>
+  <defs>
+    <pattern id="ancien" width="43" height="37" patternUnits="userSpaceOnUse">
+      <rect width="43" height="37" fill="#87654b"/>
+      <circle cx="10" cy="11" r="3.2" fill="#c5a17a"/>
+      <ellipse cx="31" cy="27" rx="4" ry="2.7" fill="#573f30"/>
+      <path d="m25 7 6 3" stroke="#aa8761" stroke-width="3" stroke-linecap="round"/>
+    </pattern>
+    <pattern id="neuf" width="39" height="35" patternUnits="userSpaceOnUse">
+      <rect width="39" height="35" fill="#574336"/>
+      <ellipse cx="10" cy="12" rx="3.5" ry="2.3" fill="#b69773"/>
+      <circle cx="29" cy="27" r="2.8" fill="#d7c6a6"/>
+      <path d="m29 6 4 3" stroke="#806448" stroke-width="3" stroke-linecap="round"/>
+    </pattern>
+    <pattern id="melange" width="54" height="43" patternUnits="userSpaceOnUse">
+      <rect width="54" height="43" fill="#70533e"/>
+      <ellipse cx="12" cy="10" rx="4" ry="3" fill="#c8a57c"/>
+      <circle cx="39" cy="29" r="3.6" fill="#4b382c"/>
+      <circle cx="11" cy="32" r="2.5" fill="#dfceb1"/>
+      <path d="m36 8 6 3" stroke="#ab8560" stroke-width="3.5" stroke-linecap="round"/>
+    </pattern>
+    <marker id="fleche" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="m0 0 6 3.5-6 3.5" fill="none" stroke="#61816b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#edf4ee"/>
+  <rect x="30" y="28" width="1140" height="554" rx="30" fill="#fffefb"/>
+  <g font-family="Arial, sans-serif" fill="#244e3b">
+    <rect x="69" y="62" width="360" height="39" rx="19.5" fill="#e7efe2"/>
+    <text x="249" y="88" text-anchor="middle" font-size="20" font-weight="700" letter-spacing="1">APRÈS UNE CULTURE SAINE</text>
+    <text x="69" y="158" font-size="43" font-weight="700">Préparer le terreau pour la suite</text>
+
+    <rect x="68" y="193" width="300" height="353" rx="24" fill="#f3eee5"/>
+    <rect x="438" y="193" width="300" height="353" rx="24" fill="#f0f3e9"/>
+    <rect x="808" y="193" width="324" height="353" rx="24" fill="#e6efe5"/>
+
+    <text x="218" y="258" text-anchor="middle" font-size="54" font-weight="700">5 L</text>
+    <text x="588" y="258" text-anchor="middle" font-size="54" font-weight="700">5 L</text>
+    <text x="970" y="258" text-anchor="middle" font-size="54" font-weight="700">≈ 10 L</text>
+
+    <g aria-hidden="true">
+      <ellipse cx="218" cy="427" rx="98" ry="10" fill="#e3dace"/>
+      <path d="M151 337 C134 269 304 269 285 337" fill="none" stroke="#a0a68d" stroke-width="9" stroke-linecap="round"/>
+      <path d="M129 334 H307 L288 419 Q218 439 148 419 Z" fill="#ba805d"/>
+      <path d="m148 342 13 67" stroke="#dba582" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="218" cy="335" rx="90" ry="22" fill="#d6a07a"/>
+      <ellipse cx="218" cy="332" rx="79" ry="17" fill="url(#ancien)"/>
+      <path d="M129 337 Q218 364 307 337" fill="none" stroke="#9b6547" stroke-width="6"/>
+
+      <ellipse cx="588" cy="427" rx="103" ry="10" fill="#dfe4d4"/>
+      <path d="m518 295 23-13 97 4 20 22-9 27 17 76q-77 31-156 0l15-77Z" fill="#8da77b"/>
+      <path d="m523 302 22-12 88 3 17 15-14 24-100 1Z" fill="url(#neuf)"/>
+      <path d="m518 295 10 39 20-7M658 308l-16 27-14-8" fill="none" stroke="#6d8b5a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M524 348 Q587 359 651 348 L658 391 Q587 409 518 390 Z" fill="#f4f4df"/>
+      <path d="m584 388 3-25m0 11c-18 1-21-11-21-11 15-3 21 6 21 6m0 9c18 1 22-12 22-12-15-3-22 6-22 6" fill="none" stroke="#6c875c" stroke-width="4" stroke-linecap="round"/>
+
+      <path d="M389 354 H417 M403 340 V368" stroke="#61816b" stroke-width="7" stroke-linecap="round"/>
+      <path d="M759 354 H787" stroke="#61816b" stroke-width="5" stroke-linecap="round" marker-end="url(#fleche)"/>
+
+      <ellipse cx="970" cy="432" rx="136" ry="11" fill="#ccddc9"/>
+      <path d="M846 348 H1094 L1071 416 Q970 447 869 416 Z" fill="#799a77"/>
+      <path d="m867 362 10 38" fill="none" stroke="#aac0a1" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="970" cy="348" rx="124" ry="34" fill="#a9bd9b"/>
+      <ellipse cx="970" cy="346" rx="111" ry="25" fill="url(#melange)"/>
+      <path d="m1014 330 26-42" stroke="#9a7048" stroke-width="12" stroke-linecap="round"/>
+      <path d="m1033 300 16-24" stroke="#c59660" stroke-width="17" stroke-linecap="round"/>
+      <path d="m1019 323-15 24q-13 20-27 10c-8-6-1-18 7-26l18-18Z" fill="#c7cec3" stroke="#77907e" stroke-width="2"/>
+      <path d="M924 341 C905 317 952 310 972 319" fill="none" stroke="#d5bd94" stroke-width="4" stroke-linecap="round"/>
+      <path d="m963 313 12 8-14 3" fill="none" stroke="#d5bd94" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="988" cy="313" r="4" fill="#87654b"/>
+      <circle cx="980" cy="298" r="3" fill="#a68460"/>
+    </g>
+
+    <text x="218" y="484" text-anchor="middle" font-size="30" font-weight="700">Terreau ancien</text>
+    <text x="218" y="520" text-anchor="middle" font-size="27" fill="#6d6557">trié et émietté</text>
+    <text x="588" y="484" text-anchor="middle" font-size="30" font-weight="700">Terreau neuf</text>
+    <text x="588" y="520" text-anchor="middle" font-size="27" fill="#64745a">pour plantation</text>
+    <text x="970" y="484" text-anchor="middle" font-size="30" font-weight="700">Mélange préparé</text>
+    <text x="970" y="520" text-anchor="middle" font-size="27" fill="#54734f">brassé dans la bassine</text>
+
+  </g>
+</svg>
