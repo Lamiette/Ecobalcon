@@ -1,5 +1,60 @@
 ﻿function Get-ArticleOverrides {
   return [ordered]@{
+    "conserver-graines-semis-balcon" = [ordered]@{
+      Title = "Comment conserver ses graines pour les prochains semis ?"
+      SeoTitle = "Conserver ses graines pour les prochains semis"
+      Description = "Des sachets de graines ouverts ? Trie-les, range-les au sec et évite la condensation. Un petit test t’aide à décider quoi ressemer sur ton balcon."
+      Intro = "Pour conserver tes graines jusqu’aux prochains semis, garde les sachets identifiés, secs et protégés de la chaleur et de la lumière. Une petite boîte bien placée suffit pour commencer ; le coffre du balcon, humide et soumis aux écarts de température, est moins adapté. Avant de racheter les mêmes variétés, fais le tri et vérifie les lots dont tu doutes."
+      DatePublished = "2026-10-29T08:18:18+01:00"
+      DateModified = "2026-10-29T08:18:18+01:00"
+      TimeRequired = "PT6M"
+      AuthorName = "Louis Fargot"
+      Category = "Entretien & astuces"
+      ImageFileName = "conserver-graines-bocaux-unsplash-ewd18WiYN8.jpg"
+      ImageAlt = "Sachets de graines rangés dans des bocaux en verre, avec deux sachets posés devant"
+      BodyHtml = @'
+            <h2>Commence par les sachets, pas par une nouvelle commande</h2>
+            <p>Quelques radis semés au printemps, une laitue essayée en septembre, un reste de basilic : les fonds de sachets s’accumulent vite quand on cultive seulement deux jardinières. Étale-les sur une table sèche, à l’intérieur, pour savoir ce que tu possèdes déjà.</p>
+            <p>Cette méthode concerne les <strong>graines potagères et florales sèches vendues en sachets</strong>. Une récolte maison encore humide demande d’abord un séchage adapté ; ne l’enferme pas directement avec ton stock. Les bulbes, caïeux d’ail et graines demandant une conservation particulière suivent d’autres règles.</p>
+            <ol>
+              <li><strong>Garde chaque variété dans son sachet.</strong> Ne réunis pas deux restes simplement parce que les graines se ressemblent.</li>
+              <li><strong>Conserve les informations utiles :</strong> espèce, variété, numéro de lot, date conseillée et indications de semis. Note la date d’ouverture si tu la connais, sans la confondre avec l’année de récolte.</li>
+              <li><strong>Repère les lots à vérifier.</strong> Un sachet dont tu ignores l’âge mérite un essai avant de lui réserver toute une jardinière. Mets les sachets humides ou moisis à part, sans les verser dans les autres.</li>
+              <li><strong>Referme le haut proprement.</strong> Replie-le et maintiens-le avec une pince pour éviter les graines répandues au fond de la boîte.</li>
+            </ol>
+            <p>La date d’utilisation conseillée ne signifie pas que toutes les graines cessent de germer le lendemain. Leur capacité à germer diminue à des rythmes différents selon l’espèce et le stockage : l’âge aide à trier, il ne donne pas à lui seul un verdict.</p>
+
+            <h2>Range les sachets secs dans une boîte protégée de l’humidité</h2>
+            <p>Prends un bocal ou une boîte à couvercle étanche, propre et parfaitement sèche. Garde les graines dans leurs sachets à l’intérieur : tu retrouveras la variété et sa notice sans manipuler toutes les semences. La <a href="https://www.fermedesaintemarthe.com/blogs/techniques-de-culture-au-potager/la-conservation-des-graines" target="_blank" rel="noopener noreferrer">Ferme de Sainte Marthe explique comment la chaleur, l’humidité et la lumière dégradent la conservation</a>.</p>
+            <p>Place cette réserve dans un rangement intérieur sec, aussi frais et stable que possible, loin d’un radiateur et des vapeurs de cuisine. Si le récipient est transparent, garde-le dans un placard fermé. Évite le rebord ensoleillé d’une fenêtre et le coffre extérieur qui se réchauffe le jour puis refroidit la nuit. Un emplacement frais mais humide n’est pas un bon compromis.</p>
+            <p>Pour quelques sachets, utilise d’abord ce que tu as. La boîte sert à protéger un stock <strong>déjà sec</strong>, pas à sécher une récolte. Si tu découvres de la buée ou un sachet humide, isole le lot concerné et revois les conditions de rangement avant de refermer la réserve.</p>
+
+            <h2>Si tu choisis le réfrigérateur, évite la condensation</h2>
+            <p>Le froid peut aider à conserver les graines, à condition de maîtriser l’humidité. Ne place pas les sachets papier seuls dans le réfrigérateur : garde-les dans un récipient imperméable à l’humidité, bien fermé, avec des graines déjà sèches.</p>
+            <p>Pour prendre un sachet, sors la boîte et <strong>laisse-la revenir fermée à température ambiante avant de l’ouvrir</strong>. Ouvrir immédiatement expose les graines encore froides à la condensation de l’air de la pièce. Prélève ce qu’il te faut avec les mains sèches, referme le sachet puis la boîte avant de la remettre au frais.</p>
+            <p>Pour préparer simplement les prochains semis, cherche d’abord le meilleur rangement sec disponible chez toi. La congélation et la conservation de collections pendant de nombreuses années demandent un autre protocole ; elles ne sont pas nécessaires pour organiser quelques sachets de balcon.</p>
+
+            <h2>Avant un semis important, teste un lot dont tu doutes</h2>
+            <p>Fais cet essai assez tôt pour pouvoir recommencer ou trouver d’autres graines. Prévois un petit récipient transparent propre avec couvercle, du papier absorbant blanc et de l’eau. Le <a href="https://shol.fr/wp-content/uploads/2026/01/Test-de-germination-des-graines-de-legumes-1.pdf" target="_blank" rel="noopener noreferrer">protocole de la Société d’horticulture d’Orléans et du Loiret (PDF)</a> détaille le suivi et rappelle que plus l’échantillon est grand, plus le résultat est représentatif.</p>
+            <ol>
+              <li><strong>Prélève au moins dix graines si ton stock le permet</strong>, sans sélectionner uniquement les plus grosses. Dix donnent un repère grossier ; utilise davantage de graines pour mieux apprécier le lot.</li>
+              <li><strong>Humidifie le papier et vide l’eau libre.</strong> Répartis les graines sur le papier sans qu’elles se touchent.</li>
+              <li><strong>Note la variété et la date de départ.</strong> Pose le couvercle en gardant une petite aération. Le papier doit rester humide, les graines ne doivent pas baigner.</li>
+              <li><strong>Choisis les conditions de l’espèce.</strong> Pars des indications du sachet ou du grainetier pour la température, la lumière ou l’obscurité et le délai de germination. Garde le récipient à l’intérieur, hors du soleil direct, et vérifie chaque jour l’humidité.</li>
+              <li><strong>Laisse les plantules se développer.</strong> Note celles dont la racine puis la jeune pousse progressent normalement, plutôt que de compter seulement une pointe blanche qui apparaît puis s’arrête.</li>
+            </ol>
+            <p>Pour un exemple concret avec un lot de radis du commerce, maintiens l’essai à <strong>20 °C</strong>, observe un premier résultat au quatrième jour et fais le bilan au <strong>septième jour</strong>. Compte les plantules dont le développement est normal, pas les seules graines fendues. Ce cadre est propre au radis : pour une autre espèce, fixe la durée du test avec les indications du semencier avant de commencer. Une graine demandant une préparation particulière ne peut pas être jugée avec cet essai simplifié. Pour préparer ensuite le vrai semis en jardinière, retrouve le guide des <a href="guide-radis-sur-son-balcon.html">radis en pot</a>.</p>
+
+            <h2>Utilise le résultat pour choisir, sans remplir le pot à l’aveugle</h2>
+            <p>Si sept graines sur dix développent des plantules normales, note « 7 sur 10 », la date et les conditions sur le sachet. C’est le résultat de ce petit essai, pas une promesse de sept plants au balcon. La température, le terreau et l’eau du futur semis compteront aussi.</p>
+            <p>Si très peu de graines se développent, vérifie d’abord que le papier n’a pas séché, que l’eau ne stagnait pas et que la température convenait. Recommence si l’essai a été mal conduit. Si le résultat reste faible dans de bonnes conditions, réserve un lot plus fiable à ton unique jardinière plutôt que d’y vider le vieux sachet : les survivants risqueraient ensuite d’être trop serrés.</p>
+            <p>Une bonne germination sur papier ne remplace pas un substrat de semis approprié. Le guide du <a href="le-materiel-essentiel-pour-commencer.html">matériel pour commencer sur balcon</a> distingue ce besoin du terreau pour plantes adultes. Et si tu conserves aussi un ancien substrat, vérifie séparément <a href="reutiliser-terreau-pots-balcon.html">quel terreau peut être réutilisé</a> ; un mélange récupéré ne convient pas automatiquement aux petits godets.</p>
+
+            <h2>Remets devant les sachets dont tu auras besoin en premier</h2>
+            <p>Glisse deux séparateurs en papier dans la boîte : « prochains semis » et « réserve ». Classe selon les périodes indiquées sur les sachets et ton <a href="calendrier-du-jardin-de-balcon.html">calendrier de culture au balcon</a>, puis note ce qui manque réellement avant un achat.</p>
+            <p>En fin d’automne, ce rangement ne t’oblige pas à semer tout de suite. Si ton balcon manque de lumière ou si le froid s’installe, les repères pour <a href="que-planter-en-novembre-sur-un-balcon.html">choisir les plantations de novembre</a> permettent de différer les mauvais paris. Tu retrouveras des sachets identifiés et un stock vérifié quand les conditions seront meilleures.</p>
+'@
+    }
     "reutiliser-terreau-pots-balcon" = [ordered]@{
       Title = "Peut-on réutiliser le terreau de ses pots ?"
       SeoTitle = "Peut-on réutiliser le terreau de ses pots ?"
@@ -225,7 +280,7 @@
             <p>Place la jardinière dans la zone la plus lumineuse. La floraison peut reprendre pendant les périodes douces et ralentir avec le froid. Attention au cyclamen vendu comme décoration : tous les cyclamens ne supportent pas le gel, vérifie l’espèce avant de le laisser dehors.</p>
             <h3>Mâche, épinards et salades : conserve d’abord ce qui pousse</h3>
             <p>Une culture rustique peut traverser l’hiver sans pousser assez vite pour justifier un nouveau semis en novembre. Garde en priorité les rosettes et les plants installés en fin d’été ou en automne. Récolte les feuilles saines lorsqu’elles sont utilisables et retire celles qui se dégradent au contact du terreau.</p>
-            <p>En climat très doux et sur un balcon lumineux, un petit essai reste possible uniquement si la variété indique cette période. Ne généralise pas ce cas à toute la France. Les fiches sur les <a href="guide-epinards-sur-son-balcon.html">épinards en pot</a> et les <a href="guide-laitues-sur-son-balcon.html">laitues sur balcon</a> t’aident à suivre les cultures déjà en place. Sur un balcon froid ou sombre, garde tes graines pour une période plus favorable.</p>
+            <p>En climat très doux et sur un balcon lumineux, un petit essai reste possible uniquement si la variété indique cette période. Ne généralise pas ce cas à toute la France. Les fiches sur les <a href="guide-epinards-sur-son-balcon.html">épinards en pot</a> et les <a href="guide-laitues-sur-son-balcon.html">laitues sur balcon</a> t’aident à suivre les cultures déjà en place. Sur un balcon froid ou sombre, <a href="conserver-graines-semis-balcon.html">conserve tes graines au sec pour les prochains semis</a> plutôt que de les lancer dans de mauvaises conditions.</p>
 
             <h2>La routine de novembre pour les pots déjà installés</h2>
             <h3>Prépare le repli avant une nuit froide</h3>
@@ -1483,7 +1538,7 @@
             <ul>
               <li>Observe ce qui a bien marché selon l’exposition et les volumes de pots.</li>
               <li>Note les variétés les plus fiables sur ton balcon.</li>
-              <li>Prépare tranquillement le prochain plan de culture sans te précipiter.</li>
+              <li>Prépare tranquillement le prochain plan de culture sans te précipiter : <a href="conserver-graines-semis-balcon.html">trie et range les sachets de graines déjà ouverts</a> avant une nouvelle commande.</li>
             </ul>
             <h2>En résumé</h2>
             <p>Un balcon productif ne dépend pas d’une activité permanente, mais d’un bon rythme. En suivant les saisons, en espaçant les semis et en préparant les périodes sensibles avant qu’elles n’arrivent, tu simplifies énormément le jardinage urbain.</p>
