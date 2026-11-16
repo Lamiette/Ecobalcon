@@ -1,0 +1,122 @@
+[
+  {
+    "file_path": "index.html",
+    "url": "https://ecobalcon.com/",
+    "family": "accueil",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "articles/index.html",
+    "url": "https://ecobalcon.com/articles/",
+    "family": "index_articles",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "articles/bouturer-basilic-balcon/index.html",
+    "url": "https://ecobalcon.com/articles/bouturer-basilic-balcon/",
+    "family": "article",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "articles/jardin-sur-balcon-astuces/index.html",
+    "url": "https://ecobalcon.com/articles/jardin-sur-balcon-astuces/",
+    "family": "article",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "categories/index.html",
+    "url": "https://ecobalcon.com/categories/",
+    "family": "categorie",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "categories/fiches-techniques/index.html",
+    "url": "https://ecobalcon.com/categories/fiches-techniques/",
+    "family": "categorie",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "categories/plantes-semis/index.html",
+    "url": "https://ecobalcon.com/categories/plantes-semis/",
+    "family": "categorie",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "categories/entretien-astuces/index.html",
+    "url": "https://ecobalcon.com/categories/entretien-astuces/",
+    "family": "categorie",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "categories/amenagement-du-balcon/index.html",
+    "url": "https://ecobalcon.com/categories/amenagement-du-balcon/",
+    "family": "categorie",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "auteurs/index.html",
+    "url": "https://ecobalcon.com/auteurs/",
+    "family": "index_auteurs",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "auteurs/clara-fontaine/index.html",
+    "url": "https://ecobalcon.com/auteurs/clara-fontaine/",
+    "family": "auteur",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "simulateur/index.html",
+    "url": "https://ecobalcon.com/simulateur/",
+    "family": "outil",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "checklists/arrosage-vacances/index.html",
+    "url": "https://ecobalcon.com/checklists/arrosage-vacances/",
+    "family": "legacy",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "a-propos/index.html",
+    "url": "https://ecobalcon.com/a-propos/",
+    "family": "institutionnelle",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "contact/index.html",
+    "url": "https://ecobalcon.com/contact/",
+    "family": "contact",
+    "discovery_class": "candidate_recherche"
+  },
+  {
+    "file_path": "contact/merci/index.html",
+    "url": "https://ecobalcon.com/contact/merci/",
+    "family": "contact",
+    "discovery_class": "exclusion_existante"
+  },
+  {
+    "file_path": "politique-confidentialite/index.html",
+    "url": "https://ecobalcon.com/politique-confidentialite/",
+    "family": "institutionnelle",
+    "discovery_class": "exclusion_existante"
+  },
+  {
+    "file_path": "404.html",
+    "url": "https://ecobalcon.com/404.html",
+    "family": "systeme",
+    "discovery_class": "exclusion_existante"
+  },
+  {
+    "file_path": "bouturer-basilic-balcon/index.html",
+    "url": "https://ecobalcon.com/bouturer-basilic-balcon/",
+    "family": "legacy",
+    "discovery_class": "redirection"
+  },
+  {
+    "file_path": "articles/bouturer-basilic-balcon.html",
+    "url": "https://ecobalcon.com/articles/bouturer-basilic-balcon.html",
+    "family": "legacy",
+    "discovery_class": "redirection"
+  }
+]

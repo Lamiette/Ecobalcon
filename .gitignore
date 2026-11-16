@@ -1,3 +1,19 @@
 backups/homepage/
 .edge-profile/
 .edge-profile-gallery/
+
+# Environnement Python local de Spec Kit (recréable)
+.venv-spec-kit/
+
+# Fichiers locaux de développement
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
