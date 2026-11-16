@@ -155,8 +155,16 @@
               <section class="simulator-panel" id="resultsPanel" aria-labelledby="resultsTitle" hidden>
                 <h2 id="resultsTitle" tabindex="-1">Ta sélection de plantes</h2>
                 <div id="summary" class="simulator-summary" role="status"></div>
+                <div id="resultsExplanation" class="simulator-result-explanation">
+                  <p>Quand tu les renseignes, ton exposition (le soleil reçu) et ton objectif servent à sélectionner les plantes. Le vent, la place et le mois influencent ensuite leur ordre.</p>
+                  <p>Cette liste propose jusqu'à huit plantes : elle ne montre pas tout le catalogue.</p>
+                  <p>Semer, c'est faire démarrer une plante à partir de graines. Les périodes de semis ou de plantation sont des repères pour la France métropolitaine, à adapter aux conditions de ton balcon. Elles n'indiquent pas la récolte et ne garantissent pas la réussite.</p>
+                </div>
                 <div id="note" class="simulator-note"></div>
-                <div id="emptyState" class="simulator-empty" hidden></div>
+                <div id="emptyState" class="simulator-empty" hidden>
+                  <p>Tu peux revoir ton objectif ou préciser un choix encore inconnu, puis relancer la recherche. Garde l'exposition que tu as réellement observée sur ton balcon.</p>
+                  <button type="button" id="resultsLibraryBtn" class="simulator-button simulator-button-secondary" aria-controls="tool-library">Explorer le catalogue</button>
+                </div>
                 <div id="results" class="simulator-results"></div>
                 <details class="simulator-disclosure" id="diagnosticDetails" hidden>
                   <summary>Mon plan pour démarrer</summary>
@@ -458,6 +466,6 @@
   </div>
 
   <script src="../js/plants-data.js"></script>
-  <script src="../js/simulateur.js?v=20261007-simulateur-4"></script>
+  <script src="../js/simulateur.js?v=20261101-resultats-4"></script>
 </body>
 </html>

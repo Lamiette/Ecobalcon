@@ -1,0 +1,719 @@
+{
+  "checked_at": "2026-11-16T21:49:22.916854+01:00",
+  "snapshot_reference": "backups/homepage/seo-lot-20261116/snapshot.json",
+  "git_discovery": "disabled by GIT_CEILING_DIRECTORIES, rev-parse returns not a git repository",
+  "files": [
+    {
+      "path": "404.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "arroser-plantes-balcon-vacances/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/arroser-plantes-balcon-vacances.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/arroser-plantes-balcon-vacances/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-a-lombre-plantes-et-culture.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-a-lombre-plantes-et-culture/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-durable-plantes.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-durable-plantes/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-pour-pollinisateurs.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-pour-pollinisateurs/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-venteux-plantes-protection-pots.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/balcon-venteux-plantes-protection-pots/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/bouturer-basilic-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/bouturer-basilic-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/calendrier-du-jardin-de-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/calendrier-du-jardin-de-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/calendrier-lunaire-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/calendrier-lunaire-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/concombre-pot-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/concombre-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/conserver-graines-semis-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/conserver-graines-semis-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/courgette-pot-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/courgette-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/diy-pots-pour-le-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/diy-pots-pour-le-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/erreurs-jardiner-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/erreurs-jardiner-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/feuilles-blanches-balcon-oidium.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/feuilles-blanches-balcon-oidium/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/fleurs-comestibles-melliferes-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/fleurs-comestibles-melliferes-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-basilic-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-basilic-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-epinards-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-epinards-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-fraises-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-fraises-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-laitues-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-laitues-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-poivrons-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-poivrons-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-radis-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-radis-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-tomates-sur-son-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/guide-tomates-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/haricots-nains-pot-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/haricots-nains-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/insectes-utiles-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/insectes-utiles-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardin-sur-balcon-astuces.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardin-sur-balcon-astuces/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardinage-en-lasagnes-sur-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardinage-en-lasagnes-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardiner-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/jardiner-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/le-materiel-essentiel-pour-commencer.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/le-materiel-essentiel-pour-commencer/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/legumes-faciles-a-cultiver.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/legumes-faciles-a-cultiver/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/meilleures-plantes-grimpantes-en-ville.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/meilleures-plantes-grimpantes-en-ville/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/menthe-pot-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/menthe-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/ombrer-balcon-plantes-chaleur.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/ombrer-balcon-plantes-chaleur/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/paillage-sur-balcon-ecolo.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/paillage-sur-balcon-ecolo/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/petits-fruits-en-pot.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-aromatiques-sur-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-aromatiques-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-pour-un-balcon-plein-soleil.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-pour-un-balcon-plein-soleil/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-qui-survivent-a-la-canicule.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/plantes-qui-survivent-a-la-canicule/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/pommes-de-terre-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/pommes-de-terre-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/potager-balcon-eau-de-cuisson.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/potager-balcon-eau-de-cuisson/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/pots-trop-chauds-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/pots-trop-chauds-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/proteger-pots-gel-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/proteger-son-balcon-des-nuisibles-naturellement.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/proteger-son-balcon-des-nuisibles-naturellement/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/quand-sortir-tomates-poivrons-basilic-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/quand-sortir-tomates-poivrons-basilic-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-faire-en-juin-potager-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-faire-en-juin-potager-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-aout-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-aout-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-avril-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-avril-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-mai-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-mai-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-novembre-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-novembre-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-octobre-sur-un-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/que-planter-en-octobre-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/recuperer-eau-de-pluie-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/reduction-consommation-eau-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/reduction-consommation-eau-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/rempoter-plantes-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/rempoter-plantes-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/reutiliser-terreau-pots-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/solutions-compostage-sur-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/solutions-compostage-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/tailler-tomates-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/tailler-tomates-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/terreau-humide-hiver-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/tomates-cerises-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/tomates-cerises-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "articles/utilisation-compost-sur-balcon.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "auteurs/clara-fontaine/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "auteurs/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "auteurs/louis-fargot/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "auteurs/mathias-lancet/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "balcon-a-lombre-plantes-et-culture/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "balcon-durable-plantes/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "balcon-pour-pollinisateurs/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "balcon-venteux-plantes-protection-pots/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "bouturer-basilic-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "calendrier-du-jardin-de-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "calendrier-lunaire-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "concombre-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "conserver-graines-semis-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "contact.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "contact/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "contact/merci/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "courgette-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "diy-pots-pour-le-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "erreurs-jardiner-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "feuilles-blanches-balcon-oidium/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "fleurs-comestibles-melliferes-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-basilic-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-epinards-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-fraises-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-laitues-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-poivrons-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-radis-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "guide-tomates-sur-son-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "haricots-nains-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "insectes-utiles-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "jardin-sur-balcon-astuces/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "jardinage-en-lasagnes-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "jardiner-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "le-materiel-essentiel-pour-commencer/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "legumes-faciles-a-cultiver/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "meilleures-plantes-grimpantes-en-ville/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "menthe-pot-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "ombrer-balcon-plantes-chaleur/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "paillage-sur-balcon-ecolo/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "petits-fruits-en-pot/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "plantes-aromatiques-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "plantes-pour-un-balcon-plein-soleil/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "plantes-qui-survivent-a-la-canicule/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "politique-confidentialite.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "politique-confidentialite/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "pommes-de-terre-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "potager-balcon-eau-de-cuisson/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "pots-trop-chauds-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "proteger-son-balcon-des-nuisibles-naturellement/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "quand-sortir-tomates-poivrons-basilic-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-faire-en-juin-potager-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-planter-en-aout-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-planter-en-avril-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-planter-en-mai-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-planter-en-novembre-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "que-planter-en-octobre-sur-un-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "recuperer-eau-de-pluie-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "reduction-consommation-eau-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "rempoter-plantes-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "scripts/sitemap-page-state.json",
+      "control_difference": "content_changed"
+    },
+    {
+      "path": "sitemap.xml",
+      "control_difference": "content_changed"
+    },
+    {
+      "path": "solutions-compostage-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "tailler-tomates-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "tomates-cerises-balcon/index.html",
+      "control_difference": "serialization_only"
+    },
+    {
+      "path": "utilisation-compost-sur-balcon/index.html",
+      "control_difference": "serialization_only"
+    }
+  ]
+}

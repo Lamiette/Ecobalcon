@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-16T21:54:57.275271+01:00",
+  "environment": "local",
+  "checked_root": "C:\\Users\\Lamiette\\Documents\\ecobalcon",
+  "checks": [
+    {
+      "page": "categories/index.html",
+      "h1_ids_references_and_preservation": "conforme"
+    },
+    {
+      "page": "categories/plantes-semis/index.html",
+      "h1_ids_references_and_preservation": "conforme"
+    },
+    {
+      "page": "categories/entretien-astuces/index.html",
+      "h1_ids_references_and_preservation": "conforme"
+    },
+    {
+      "page": "articles/bouturer-basilic-balcon/index.html",
+      "h1_ids_references_and_preservation": "conforme"
+    }
+  ],
+  "faq_visible_equals_structured": true,
+  "incorrect_howto_removed": true,
+  "basilic_body_and_published_date_preserved": true,
+  "csp_hashes_valid": true,
+  "exactly_four_sitemap_entries_changed": true,
+  "only_three_category_state_entries_changed": true,
+  "browser_desktop_mobile_keyboard": "non_verifie",
+  "browser_reason": "Chrome access host unavailable",
+  "exactly_seven_application_files_changed": [
+    "articles/bouturer-basilic-balcon/index.html",
+    "categories/entretien-astuces/index.html",
+    "categories/index.html",
+    "categories/plantes-semis/index.html",
+    "scripts/article-overrides.ps1",
+    "scripts/sitemap-page-state.json",
+    "sitemap.xml"
+  ]
+}

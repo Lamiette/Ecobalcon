@@ -89,3 +89,12 @@ Puis ouvrir `http://localhost:8000/`.
 - Préférer des phrases simples, des conseils actionnables et des repères pratiques.
 - Garder les liens internes pertinents entre articles connexes.
 - Les articles parlent à une lectrice ou un lecteur qui jardine sur balcon : rester réaliste sur le poids des pots, l'arrosage, le vent, l'exposition, les voisins et la place disponible.
+
+## Spec Kit
+
+- L'installation et le parcours conseillé sont décrits dans `SPEC-KIT.md`.
+- Pour les évolutions importantes, lire `.specify/memory/constitution.md`, puis utiliser les skills `speckit-*` de `.agents/skills/`. Rédiger les spécifications, plans et tâches en français.
+- Garder les retouches simples dans le workflow habituel ; ne pas imposer une spécification complète pour une correction mineure.
+- Spec Kit est installé dans `.venv-spec-kit/`. Si `specify` n'est pas dans le PATH, utiliser `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\specify.ps1 <arguments>`.
+- Les commandes et templates officiels générés restent intacts. La constitution porte les règles du projet ; une adaptation de template éventuelle passe par `.specify/templates/overrides/`.
+- L'installation de l'outil ne constitue pas une demande de modifier le site, de créer un article ou de publier.

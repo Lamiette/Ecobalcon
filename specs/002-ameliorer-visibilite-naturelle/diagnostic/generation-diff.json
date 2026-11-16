@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-11-16T21:53:04.175633+01:00",
+  "control_candidate_content_changes": [
+    "articles/bouturer-basilic-balcon/index.html",
+    "categories/entretien-astuces/index.html",
+    "categories/index.html",
+    "categories/plantes-semis/index.html",
+    "scripts/article-overrides.ps1",
+    "scripts/sitemap-page-state.json",
+    "sitemap.xml"
+  ],
+  "affected_urls": [
+    "https://ecobalcon.com/categories/",
+    "https://ecobalcon.com/categories/plantes-semis/",
+    "https://ecobalcon.com/categories/entretien-astuces/",
+    "https://ecobalcon.com/articles/bouturer-basilic-balcon/"
+  ],
+  "applied_file_hashes": {
+    "categories/index.html": {
+      "before": "adff770c47bbb2540f06d31da929979a43050d58a5d76e71765906e2c27dd9f1",
+      "after": "022ffde030b5d7920226f294325c70517ff05bf28f418b196996803c0582f63d"
+    },
+    "categories/plantes-semis/index.html": {
+      "before": "30f91611060208917a3246114192f515436fc1d73dbfeffe4e8dc1efc701a687",
+      "after": "0b7622c5fc15eb53bfb44ecd9d5f61a1987de1e02657e12c7332190ce9568a6d"
+    },
+    "categories/entretien-astuces/index.html": {
+      "before": "83d74e00cde409093ad9f1ad4ff7e9fab23c850ccc38d462be8ef1233c5f8cd4",
+      "after": "f47876344484562ac17c474603ad50e473d52e001fc7efb227eab381ae2ea7e6"
+    },
+    "articles/bouturer-basilic-balcon/index.html": {
+      "before": "382b765b72ec8e1fc63d81ede8aa0f533795ad58cb0946a8e38bd8726cc66839",
+      "after": "65cacc939a6c8e8a561b20962ec6940cfd67bf186ae53f64057bb8d849492ff3"
+    },
+    "scripts/article-overrides.ps1": {
+      "before": "a6f592fbd02b6c67cc4498f1adf1d0ae0731943a428c160d159088b8f94e58e6",
+      "after": "68b9e9aea2665d49d7a5b55bf3f988a5ad99145560546f05433aae6a4473a7e1"
+    },
+    "sitemap.xml": {
+      "before": "ef59a5205a66206d01752bb0966def998fd138fa9e7ef894e159f6d9f7f047e8",
+      "after": "e3938b8ca145ff26a183b10f707ec64f82f3f076235da08918f893a6a911cfc8"
+    },
+    "scripts/sitemap-page-state.json": {
+      "before": "e5761ddc3c4cd92114b3bf64771032803f860ebf21cf60c07b7b1b8771d52e39",
+      "after": "e26be0db996243bb19e4213bb2d9e4f727f0412c84166a9748b068372bb2f9e5"
+    }
+  },
+  "preserved_preexisting_simulator_state": true,
+  "serialization_changes_excluded": true,
+  "applied_to_repository": true,
+  "applied_at": "2026-11-16T21:54:56.967146+01:00"
+}

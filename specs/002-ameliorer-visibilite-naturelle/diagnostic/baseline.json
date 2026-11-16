@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "lot_id": "LOT-001",
+  "status": "en_realisation",
+  "captured_at": "2026-11-01T15:05:32.598280+00:00",
+  "snapshot_reference": "backups/homepage/seo-lot-20261116/snapshot.json",
+  "affected_urls": [
+    "https://ecobalcon.com/articles/bouturer-basilic-balcon/",
+    "https://ecobalcon.com/categories/",
+    "https://ecobalcon.com/categories/plantes-semis/",
+    "https://ecobalcon.com/categories/entretien-astuces/"
+  ],
+  "availability": "partiel",
+  "measurements": null,
+  "publication_at": null,
+  "due_date": null,
+  "inventory_reference": "initial/inventory.json",
+  "sample_reference": "echantillon.json",
+  "property": "sc-domain:ecobalcon.com",
+  "property_kind": "domaine",
+  "source_reference": "Google Search Console, lecture interface dans Chrome, rapport Performances",
+  "extracted_at": "2026-11-01T15:15:26.251832+00:00",
+  "period_start": "2026-10-03",
+  "period_end": "2026-10-30",
+  "data_timezone": "America/Los_Angeles",
+  "search_type": "Web",
+  "filters": {
+    "country": null,
+    "device": null,
+    "query": null,
+    "page": null
+  },
+  "aggregation": "propriete",
+  "site_metrics": {
+    "clicks": 37,
+    "impressions": 4128,
+    "ctr": 0.008963178294573644,
+    "position": 16.6
+  },
+  "previous_period": {
+    "period_start": "2026-09-05",
+    "period_end": "2026-10-02",
+    "site_metrics": {
+      "clicks": 32,
+      "impressions": 1790,
+      "ctr": 0.017877094972067038,
+      "position": 23
+    }
+  },
+  "page_metrics": {
+    "https://ecobalcon.com/articles/bouturer-basilic-balcon/": {
+      "current": {
+        "clicks": 3,
+        "impressions": 291,
+        "ctr": 0.010309278350515464,
+        "position": 11.2
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 103,
+        "ctr": 0.0,
+        "position": 20.4
+      },
+      "status": "mesure",
+      "aggregation": "page"
+    },
+    "https://ecobalcon.com/categories/": {
+      "current": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "position": 2.8
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0.0,
+        "position": 5.3
+      },
+      "status": "mesure",
+      "aggregation": "page"
+    },
+    "https://ecobalcon.com/categories/plantes-semis/": {
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "position": 9
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0.0,
+        "position": 8
+      },
+      "status": "mesure",
+      "aggregation": "page"
+    },
+    "https://ecobalcon.com/categories/entretien-astuces/": {
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0.0,
+        "position": 2
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0.0,
+        "position": 6.8
+      },
+      "status": "mesure",
+      "aggregation": "page"
+    }
+  },
+  "limitations": [
+    "Manual reading of Search Console UI; no raw export. Dates confirmed in comparison dialog (daily dates use source Pacific Time).",
+    "Very low category impressions; no significance or causal conclusion.",
+    "Latest daily completeness not independently guaranteed; recheck before future comparison.",
+    "Lot position not reconstructed from row positions; request same-scope report if needed.",
+    "Query examples are property-level; no invented page-query join.",
+    "Selection formalisee le 16 novembre apres extraction historique ; reevaluer comparabilite et intervalle avant toute publication et mesure future. Aucune mesure du 16 novembre inventee."
+  ],
+  "selected_action_ids": [
+    "ACT-001",
+    "ACT-002",
+    "ACT-003"
+  ],
+  "selected_at": "2026-11-16T21:49:22.916854+01:00",
+  "completeness": "70/70 rows in pages comparison; queries partial; latest displayed daily data through Oct30, not a real-time view",
+  "preliminary": null,
+  "brand_rule": "Case-insensitive EcoBalcon / Eco Balcon / Eco-Balcon; unclassified queries remain distinct, no inferred brand totals",
+  "brand_coverage": "partial; no exhaustive query export",
+  "lot_metrics": {
+    "clicks": 3,
+    "impressions": 299,
+    "ctr": 0.010033444816053512,
+    "position": null
+  },
+  "lot_previous_metrics": {
+    "clicks": 0,
+    "impressions": 112,
+    "ctr": 0,
+    "position": null
+  },
+  "historical_selection_record": {
+    "selected_at": "2026-11-01T15:15:26.251816+00:00",
+    "note": "Enregistrement preparatoire du 1er novembre conserve ; selection formalisee avec diagnostic/actions le 16 novembre avant correction."
+  },
+  "historical_snapshot_reference": "worktree-before.json",
+  "reprise_inventory_reference": "reprise-20261116/inventory.json",
+  "selection_date": "2026-11-16",
+  "technical_files": [
+    "sitemap.xml",
+    "scripts/sitemap-page-state.json"
+  ],
+  "source_paths": [
+    "categories/index.html",
+    "categories/plantes-semis/index.html",
+    "categories/entretien-astuces/index.html",
+    "scripts/article-overrides.ps1"
+  ],
+  "before_hashes": {
+    "categories/index.html": "adff770c47bbb2540f06d31da929979a43050d58a5d76e71765906e2c27dd9f1",
+    "categories/plantes-semis/index.html": "30f91611060208917a3246114192f515436fc1d73dbfeffe4e8dc1efc701a687",
+    "categories/entretien-astuces/index.html": "83d74e00cde409093ad9f1ad4ff7e9fab23c850ccc38d462be8ef1233c5f8cd4",
+    "scripts/article-overrides.ps1": "a6f592fbd02b6c67cc4498f1adf1d0ae0731943a428c160d159088b8f94e58e6",
+    "articles/bouturer-basilic-balcon/index.html": "382b765b72ec8e1fc63d81ede8aa0f533795ad58cb0946a8e38bd8726cc66839",
+    "sitemap.xml": "ef59a5205a66206d01752bb0966def998fd138fa9e7ef894e159f6d9f7f047e8",
+    "scripts/sitemap-page-state.json": "e5761ddc3c4cd92114b3bf64771032803f860ebf21cf60c07b7b1b8771d52e39"
+  },
+  "protected_hashes": {
+    "index.html": "b722e26a15ead888c1292a38e2fb56c4f04d0017f7f6c84ea5437c7f4f2c2055",
+    "js/simulateur.js": "ac3da98fed900a8159d8a2c65cbf89f1f56508c79cac8a6bf7c763bada11749c",
+    "simulateur/index.html": "5926256bf0059b3927e3f2e34db0156eba4522bc8fdd34ef55419d059fe84fb6",
+    "js/plants-data.js": "0f2fa962aef62c0834c350088636fb8693ffc2184a6303d8233b1d99855560ca",
+    "css/style.css": "bb8ac3d3edbc45adfd0cebaf8dced78ed1952132a89045c0113d3f4ca94e5a8a",
+    "css/style.min.css": "c13c89b2ccdc93ff09c47f58c02b9e1ac78c9a7cb1d2eff4bcf41e271a477fdb",
+    "sw.js": "8be80eeee1d3d2c3dca14bb1f617e965a096f5af5e4bdcce1dad02c21a6178c1",
+    "js/cookie-consent.js": "0d76be21f01763b4b794541f94f2eec9ce014c20b9f10923add24f40b9d7e4d9",
+    "scripts/rebuild_articles.ps1": "689b40c67daa926e442789b992de49b41a223f7f3522d26bdb52468e0a2d60d3"
+  },
+  "reference_is_latest_available": false,
+  "availability_reason": "Lecture GSC historique partielle du 1er novembre conservee. Aucun nouvel acces Chrome possible le 16 novembre ; pas de reference fraiche ni de completude du dernier jour certifiee.",
+  "publication_status": "non_publie",
+  "local_application_at": "2026-11-16T21:54:56.967146+01:00",
+  "reception_limit": "Reception statique realisee ; controle navigateur desktop/mobile/clavier indisponible, T024 ouverte.",
+  "pending_tasks": [
+    "T024"
+  ],
+  "static_reception_reference": "acceptance-checks.json",
+  "generation_reference": "generation-diff.json"
+}

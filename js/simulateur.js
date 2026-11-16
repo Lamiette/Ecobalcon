@@ -46,6 +46,7 @@ const resultsEl = document.getElementById("results");
 const resultsPanelEl = document.getElementById("resultsPanel");
 const summaryEl = document.getElementById("summary");
 const emptyStateEl = document.getElementById("emptyState");
+const resultsLibraryBtn = document.getElementById("resultsLibraryBtn");
 const noteEl = document.getElementById("note");
 const gearRecommendationsEl = document.getElementById("gearRecommendations");
 const diagnosticResultEl = document.getElementById("diagnosticResult");
@@ -193,7 +194,7 @@ function buildSummary(filters, results) {
   }
 
   const count = results.length;
-  const sentence = parts.length ? parts.join(" · ") : "vos critères";
+  const sentence = parts.length ? parts.join(" · ") : "une exploration générale, sans critère précisé";
   const inSeason = results.filter(isPlantableNow).length;
   const seasonInfo = inSeason ? `, dont ${inSeason} à planter en ${monthNames[currentMonth - 1]}` : "";
   return `${count} suggestion${count > 1 ? "s" : ""} trouvée${count > 1 ? "s" : ""} pour ${sentence}${seasonInfo}.`;
@@ -226,34 +227,78 @@ function getDiagnostic(filters, results) {
   `;
 }
 
-function getMatchBadges(plant, filters) {
-  const badges = [];
-
+function buildResultExplanation(plant, filters) {
+  const reasons = [];
   if (filters.exposition && plant.exposure.includes(filters.exposition)) {
-    badges.push({ type: "ok", text: `OK ${labels.exposition[filters.exposition]}` });
+    reasons.push(`ton exposition (${labels.exposition[filters.exposition]})`);
+  }
+  if (filters.objectif && plant.goals.includes(filters.objectif)) {
+    reasons.push(`ton objectif (${labels.objectif[filters.objectif]})`);
   }
 
-  if (filters.vent === "fort" || filters.vent === "modere") {
-    if (plant.wind.includes(filters.vent)) {
-      badges.push({ type: "ok", text: filters.vent === "fort" ? "Tient le vent fort" : "Supporte un peu de vent" });
-    } else {
-      badges.push({ type: "warn", text: "À placer à l'abri du vent" });
-    }
-  }
+  const wind = !filters.vent
+    ? { status: "inconnu", text: "Vent : à vérifier sur ton balcon" }
+    : plant.wind.includes(filters.vent)
+      ? { status: "correspondance", text: `Vent : ${labels.vent[filters.vent]}, selon les repères de la fiche` }
+      : { status: "reserve", text: "À placer à l'abri du vent" };
+  const space = !filters.place
+    ? { status: "inconnu", text: "Place : à vérifier pour tes pots" }
+    : plant.space.includes(filters.place)
+      ? { status: "correspondance", text: `Place : la fiche prévoit ce type d'espace (${labels.place[filters.place]})` }
+      : { status: "reserve", text: "Demande plus de place que ton choix actuel" };
 
-  if (filters.place) {
-    if (!plant.space.includes(filters.place)) {
-      badges.push({ type: "warn", text: "Demande plus de place" });
-    } else if (filters.place === "petit") {
-      badges.push({ type: "ok", text: "OK petit balcon" });
-    }
-  }
+  const hasPeriod = Array.isArray(plant.months) && plant.months.length > 0;
+  const season = !hasPeriod
+    ? { status: "periodeInconnue", text: "Période de semis ou plantation à vérifier" }
+    : isPlantableNow(plant)
+      ? { status: "dansPeriode", text: `À semer ou planter en ${monthNames[currentMonth - 1]}. Période : ${formatMonths(plant.months)}.` }
+      : { status: "horsPeriode", text: `Hors période en ${monthNames[currentMonth - 1]}. Semis ou plantation : ${formatMonths(plant.months)}.` };
+  const potText = Number.isFinite(plant.potLiters) && plant.potLiters > 0
+    ? `Volume du pot : ${plant.potLiters} litre${plant.potLiters > 1 ? "s" : ""} minimum`
+    : "Volume minimal du pot à vérifier";
+  const difficultyText = typeof plant.difficulty === "string" && plant.difficulty.trim()
+    ? `Difficulté de culture : ${plant.difficulty.trim()}`
+    : "Difficulté de culture à vérifier";
 
-  if (isPlantableNow(plant)) {
-    badges.push({ type: "season", text: `À planter en ${monthNames[currentMonth - 1]}` });
-  } else if (Array.isArray(plant.months) && plant.months.length) {
-    badges.push({ type: "muted", text: `Plantation : ${formatMonths(plant.months)}` });
+  return { reasons, wind, space, season, potText, difficultyText };
+}
+
+function buildSelectionExplanation(filters, results) {
+  const inSeason = results.filter(isPlantableNow).length;
+  const unknownPeriods = results.filter((plant) => !Array.isArray(plant.months) || !plant.months.length).length;
+  const messages = [];
+  if (results.length && !filters.exposition) {
+    messages.push("Ces idées restent à affiner : observe le soleil direct sur ton balcon avant de choisir une plante.");
   }
+  if (results.length && filters.vent === "fort") {
+    messages.push("Balcon très exposé au vent : vérifie les réserves de chaque fiche et la stabilité de tes pots.");
+  }
+  if (results.length && !inSeason) {
+    messages.push(unknownPeriods
+      ? `Aucune suggestion n'a de période de semis ou plantation confirmée pour ${monthNames[currentMonth - 1]}. Les périodes manquantes restent à vérifier.`
+      : `Aucune de ces suggestions n'est à semer ou planter en ${monthNames[currentMonth - 1]} selon les périodes des fiches. Tu peux préparer une plantation à une autre période.`);
+  } else if (unknownPeriods) {
+    messages.push("La période de semis ou plantation reste à vérifier pour certaines suggestions.");
+  }
+  return { inSeason, messages };
+}
+
+function renderResultNotes(messages) {
+  noteEl.innerHTML = "";
+  noteEl.style.display = messages.length ? "block" : "none";
+  messages.forEach((message) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = message;
+    noteEl.appendChild(paragraph);
+  });
+}
+
+function getMatchBadges(plant, filters) {
+  const explanation = buildResultExplanation(plant, filters);
+  const types = { correspondance: "ok", reserve: "warn", inconnu: "muted" };
+  const badges = [explanation.wind, explanation.space].map((item) => ({
+    type: types[item.status], text: item.text
+  }));
 
   return badges;
 }
@@ -268,14 +313,20 @@ function renderResults(plantsToShow, filters) {
     const article = document.createElement("article");
     article.className = "simulator-result";
     const guide = plantArticles[plant.name];
+    const explanation = buildResultExplanation(plant, filters);
+    const reason = explanation.reasons.length
+      ? `Elle correspond à ${explanation.reasons.join(" et à ")}.`
+      : "Une possibilité à explorer : l'exposition et l'objectif restent ouverts.";
     const badges = getMatchBadges(plant, filters);
     const badgesHtml = badges.length
       ? `<div class="simulator-match">${badges.map((badge) => `<span class="simulator-match-tag simulator-match-${badge.type}">${badge.text}</span>`).join("")}</div>`
       : "";
     article.innerHTML = `
       <h3>${plant.name}</h3>
-      <p class="simulator-plant-facts">Pot : <strong>${plant.potLiters || "?"} L minimum</strong> · ${plant.difficulty || "difficulté à vérifier"}</p>
+      <p class="simulator-plant-reason"><strong>Pourquoi cette plante ?</strong> ${reason}</p>
       ${badgesHtml}
+      <p class="simulator-plant-season">${explanation.season.text}</p>
+      <p class="simulator-plant-facts"><strong>${explanation.potText}</strong><br>${explanation.difficultyText}</p>
       <details class="simulator-disclosure">
         <summary>Conseils pour ${plant.name}</summary>
         <p>${plant.description}</p>
@@ -586,7 +637,7 @@ function runSimulation(options) {
   diagnosticDetailsEl.open = false;
   gearDetailsEl.hidden = true;
   gearDetailsEl.open = false;
-  emptyStateEl.style.display = "none";
+  emptyStateEl.hidden = true;
   noteEl.style.display = "none";
   noteEl.textContent = "";
   renderGearRecommendations(null);
@@ -641,9 +692,8 @@ function runSimulation(options) {
   if (!results.length) {
     resultsEl.innerHTML = "";
     summaryEl.style.display = "block";
-    summaryEl.textContent = "Aucune correspondance directe avec cette combinaison de critères.";
-    noteEl.style.display = "block";
-    noteEl.textContent = "Essaie une autre priorité ou une exposition plus large. Le catalogue permet aussi d’explorer toutes les plantes.";
+    summaryEl.textContent = `${buildSummary(filters, results)} Aucune correspondance dans le catalogue actuel.`;
+    emptyStateEl.hidden = false;
     if (shouldScroll) {
       scrollToResultsPanel();
     }
@@ -658,15 +708,7 @@ function runSimulation(options) {
   diagnosticDetailsEl.hidden = false;
   diagnosticResultEl.innerHTML = getDiagnostic(filters, results);
 
-  if (!filters.exposition) {
-    noteEl.style.display = "block";
-    noteEl.textContent = "Ces idées restent à affiner : observe le soleil direct sur ton balcon avant de choisir une plante.";
-  }
-
-  if (filters.vent === "fort") {
-    noteEl.style.display = "block";
-    noteEl.textContent = "Balcon venteux : choisissez des pots assez lourds, évitez les plantes trop fragiles et surveillez le dessèchement du terreau.";
-  }
+  renderResultNotes(buildSelectionExplanation(filters, results).messages);
 
   if (shouldScroll) {
     scrollToResultsPanel();
@@ -690,7 +732,7 @@ function resetSimulation() {
   noteEl.style.display = "none";
   noteEl.textContent = "";
   renderGearRecommendations(null);
-  emptyStateEl.style.display = "block";
+  emptyStateEl.hidden = true;
   diagnosticResultEl.textContent = "Lancez le simulateur pour obtenir un plan simple et adapté à votre balcon.";
 
   try {
@@ -843,6 +885,12 @@ document.getElementById("libraryReset").addEventListener("click", () => {
   plantSearchEl.focus();
 });
 resetBtn.addEventListener("click", resetSimulation);
+if (resultsLibraryBtn) {
+  resultsLibraryBtn.addEventListener("click", () => {
+    showTool("library");
+    plantSearchEl.focus();
+  });
+}
 [expositionEl, ventEl, placeEl, objectifEl].forEach((element) => {
   element.addEventListener("change", () => {
     if (!resultsPanelEl.hidden) formStatusEl.textContent = "Critères modifiés : clique sur Trouver mes plantes pour actualiser la sélection.";

@@ -1,0 +1,2 @@
+# Spec Kit officiel, version choisie pour EcoBalcon.
+specify-cli @ https://github.com/github/spec-kit/archive/refs/tags/v1.2.5.zip

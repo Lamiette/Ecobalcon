@@ -2314,7 +2314,7 @@
       Description = "Bouture de basilic dans l’eau : où couper la tige, quelles feuilles retirer, quand replanter et comment éviter une reprise difficile en pot."
       Intro = "Quand un basilic se plaît vraiment, on a vite envie d’en obtenir un deuxième pot sans tout recommencer. Bonne nouvelle : c’est l’une des aromatiques les plus simples à multiplier si on choisit une tige saine et une reprise douce."
       TimeRequired = "PT6M"
-      DateModified = "2026-10-06T00:33:25+02:00"
+      DateModified = "2026-11-16T21:50:07+01:00"
       BodyHtml = @'
             <h2>Ce qu’il faut savoir en un coup d’œil</h2>
             <p>Moment le plus simple : de mai à août, quand le basilic pousse franchement<br>Tige à choisir : saine, non fleurie, souple mais déjà vigoureuse<br>Méthode la plus rassurante : faire raciner d’abord dans l’eau, puis replanter<br>Alternative : piquer directement en petit pot dans un substrat léger et frais<br>Erreur classique : choisir une tige trop faible ou replanter trop tôt</p>
@@ -2367,30 +2367,19 @@
 '@
       Faq = @(
         [ordered]@{
-          Question = "Peut-on bouturer du basilic directement dans l’eau ?"
-          Answer = "Oui. Le basilic s’enracine très facilement dans un verre d’eau si on choisit une tige saine, qu’on retire les feuilles basses et qu’on garde le contenant propre et lumineux."
+          Question = "Peut-on bouturer du basilic acheté en supermarché ?"
+          Answer = "Oui, si certaines tiges sont encore bien saines. Mieux vaut agir assez tôt, avant que le pot trop serré ne fatigue tout le plant."
         },
         [ordered]@{
-          Question = "Combien de temps faut-il pour qu’une bouture de basilic fasse des racines ?"
-          Answer = "Les premières racines peuvent apparaître en quelques jours à quelques semaines selon la vigueur de la tige, la chaleur et la lumière. Observe leur développement avant de replanter."
+          Question = "Combien de temps faut-il avant de replanter ?"
+          Answer = "Il n’y a pas un nombre de jours parfait, mais une règle simple : attends que les racines soient déjà visibles et un peu développées."
         },
         [ordered]@{
-          Question = "Faut-il replanter la bouture dès que les racines sortent ?"
-          Answer = "Mieux vaut attendre que les racines soient déjà visibles et un peu développées. Une replantation trop précoce rend la reprise plus fragile, surtout sur un balcon exposé au vent ou au soleil fort."
+          Question = "Peut-on laisser la bouture longtemps dans l’eau ?"
+          Answer = "Le verre sert ici à faire démarrer des racines. Dès qu’elles sont visibles et développées, prépare le passage dans un petit pot percé. Si la tige ramollit ou noircit avant cela, repars avec une tige saine et un verre nettoyé."
         }
       )
-      HowTo = [ordered]@{
-        Name = "Comment bouturer du basilic sur un balcon"
-        Description = "Les étapes essentielles pour prélever une tige de basilic, la faire raciner puis la replanter dans de bonnes conditions sur un balcon."
-        Steps = @(
-          [ordered]@{ Name = "Choisir une tige saine"; Text = "Prélève une tige souple, non fleurie, longue de quelques nœuds et encore bien vigoureuse." },
-          [ordered]@{ Name = "Couper sous un nœud"; Text = "Fais une coupe nette juste sous un nœud, puis retire les feuilles du bas pour libérer la future zone d’enracinement." },
-          [ordered]@{ Name = "Faire raciner dans l’eau ou dans un petit pot"; Text = "Place la tige dans un verre d’eau propre ou dans un substrat léger maintenu frais et lumineux." },
-          [ordered]@{ Name = "Attendre des racines suffisantes"; Text = "Surveille la propreté de l’eau et attends des racines visibles et développées. L’enracinement peut prendre quelques jours à quelques semaines." },
-          [ordered]@{ Name = "Replanter doucement"; Text = "Installe la jeune bouture dans un pot drainant, à l’abri du vent et du soleil le plus dur pendant sa reprise." },
-          [ordered]@{ Name = "Pincer ensuite pour la densifier"; Text = "Quand la reprise est bonne, pince légèrement les tiges pour encourager un basilic plus compact et plus productif." }
-        )
-      }
+      HowTo = $null
     }
     "insectes-utiles-sur-un-balcon" = [ordered]@{
       Title = "Insectes utiles sur un balcon : lesquels attirer et pourquoi"
