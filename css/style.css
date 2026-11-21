@@ -4293,25 +4293,25 @@ a {
 
 /* Category pages: shared layout, scoped to these collections only. */
 .category-page .category-main {
-  padding: clamp(1.5rem, 4vw, 3rem) 0 4rem;
+  padding: clamp(0.85rem, 2vw, 1.5rem) 0 1.5rem;
 }
 .category-page .category-shell {
   display: grid;
-  gap: clamp(1.4rem, 3vw, 2.2rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 .category-page .category-shell > * { min-width: 0; }
 .category-page .page-hero {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
 }
 .category-page.category-index-page .page-hero {
   grid-template-columns: minmax(0, 1fr);
 }
 .category-page .page-hero-copy { padding: 0; }
-.category-page .page-title {
+.category-page .page-hero-copy .page-title {
   max-width: 24ch;
-  margin: 0.65rem 0 1rem;
+  margin: 0 0 0.65rem;
   font-size: clamp(2rem, 3.8vw, 3rem);
   line-height: 1.12;
   text-wrap: balance;
@@ -4327,11 +4327,11 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.65rem;
-  margin: 1.25rem 0 0;
+  margin: 0.85rem 0 0;
 }
 .category-page .category-hero-media {
   margin: 0;
-  height: clamp(16rem, 28vw, 21rem);
+  height: clamp(12rem, 18vw, 15rem);
   overflow: hidden;
   border-radius: 24px;
   background: var(--surface-strong);
@@ -4523,6 +4523,29 @@ a {
   border-radius: 14px;
   background: #f4f6ef;
 }
+
+.category-page .footer {
+  margin-top: 0;
+}
+.category-page .footer-inner {
+  padding: clamp(1.15rem, 2vw, 1.5rem) 0 1rem;
+  row-gap: 0.85rem;
+}
+.category-page .footer-top {
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+  padding-bottom: 0.85rem;
+}
+.category-page .footer-brand {
+  gap: 0.5rem;
+}
+.category-page .footer-nav-grid {
+  padding-block: 0;
+}
+.category-page .footer-bottom {
+  padding-top: 0.75rem;
+}
+
 @media (max-width: 900px) {
   .category-page .page-hero,
   .category-page .category-help-layout {
@@ -4530,7 +4553,7 @@ a {
     gap: 1.25rem;
   }
   .category-page .category-hero-media {
-    height: clamp(10rem, 24vw, 14rem);
+    height: clamp(8rem, 20vw, 11rem);
   }
 }
 @media (max-width: 700px) {
@@ -4549,7 +4572,7 @@ a {
   }
   .category-page .category-card-action { margin-top: 0.75rem; }
   .category-page .category-hero-media {
-    height: clamp(9rem, 40vw, 11rem);
+    height: clamp(7rem, 32vw, 9rem);
   }
   .category-page .category-shortcuts {
     margin-bottom: 1.5rem;

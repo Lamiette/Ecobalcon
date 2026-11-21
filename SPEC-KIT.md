@@ -47,7 +47,14 @@ résultat avant de passer à la suivante :
 Les documents sont rédigés en français dans `specs/NNN-nom/`. Le pointeur local
 `.specify/feature.json` est ignoré par Git ; il indique la fonctionnalité active.
 Sans l'extension Git, Spec Kit ne crée pas automatiquement les branches.
-Les branches peuvent être créées avec Git selon les besoins.
+Le workflow EcoBalcon reste sur `main` par défaut ; une branche ou une pull request
+n'est créée que sur demande. Spec Kit n'impose pas ces étapes.
+
+Pour publier, lancer le fichier habituel `publish.bat` depuis le projet : il
+synchronise `main`, met à jour le compteur, crée le commit si nécessaire puis
+envoie vers `origin/main`. Aucune pull request n'est nécessaire dans ce parcours.
+Le script s'arrête en cas de conflit ou de branche différente ; il ne force pas
+le push et ne masque pas les changements locaux.
 
 ## Premier essai conseillé
 

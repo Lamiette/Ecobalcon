@@ -38,6 +38,8 @@ Le site public cible le domaine `https://ecobalcon.com`. Ne pas remplacer ce dom
 - Conserver les attributs d'images utiles (`alt`, dimensions quand présentes, `loading`, `fetchpriority` selon le contexte).
 - Ne pas changer les IDs analytics, Clarity, l'email de contact ou FormSubmit sans demande explicite.
 - Ne pas supprimer les dossiers `backups/` ni les profils locaux ignorés.
+- Travailler sur `main` par défaut pour conserver le parcours de publication avec `publish.bat`. Ne créer une branche de travail ou une pull request que si l'utilisateur le demande.
+- L'utilisateur publie en lançant `publish.bat` : synchronisation de `main` par avance rapide, compteur, commit des changements puis push explicite vers `origin/main`. Ne pas lancer ce script à sa place sans demande explicite.
 
 ## Commandes utiles
 
