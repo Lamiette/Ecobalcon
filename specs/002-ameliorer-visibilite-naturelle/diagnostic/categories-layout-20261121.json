@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-11-21T15:03:14.955277+01:00",
+  "snapshot": "backups/homepage/categories-layout-20261121/snapshot.json",
+  "affected_urls": [
+    "https://ecobalcon.com/categories/",
+    "https://ecobalcon.com/categories/plantes-semis/",
+    "https://ecobalcon.com/categories/entretien-astuces/"
+  ],
+  "files": {
+    "categories/index.html": {
+      "before": "022ffde030b5d7920226f294325c70517ff05bf28f418b196996803c0582f63d",
+      "after": "7489ceb72ea31c37aee429df54bd65fadd7dea76c1afc343f85d81907fa27822"
+    },
+    "categories/plantes-semis/index.html": {
+      "before": "0b7622c5fc15eb53bfb44ecd9d5f61a1987de1e02657e12c7332190ce9568a6d",
+      "after": "0ce69ba83ff0c0a0ebe088dc0cf21ddfd3733445d000a1971ad12f7fa516724f"
+    },
+    "categories/entretien-astuces/index.html": {
+      "before": "f47876344484562ac17c474603ad50e473d52e001fc7efb227eab381ae2ea7e6",
+      "after": "1be9c9a812a07dbbd71b7b172b33fe1b41d05357856cdbe0c068585d551f85a2"
+    },
+    "css/style.css": {
+      "before": "bb8ac3d3edbc45adfd0cebaf8dced78ed1952132a89045c0113d3f4ca94e5a8a",
+      "after": "45b2f1940857d5ed332e02682f5122e19744f3e03f111c3ad114d1b4dd7929d3"
+    },
+    "css/style.min.css": {
+      "before": "c13c89b2ccdc93ff09c47f58c02b9e1ac78c9a7cb1d2eff4bcf41e271a477fdb",
+      "after": "a0404430394bd15bd04c54b2a6449bf37f500541117ef2fe736077f82b244f01"
+    },
+    "sitemap.xml": {
+      "before": "e3938b8ca145ff26a183b10f707ec64f82f3f076235da08918f893a6a911cfc8",
+      "after": "fb96153d5a74e5c4cd58826e80533671f5fc247bbcf5f9475ff6ff5744ace07f"
+    },
+    "scripts/sitemap-page-state.json": {
+      "before": "e26be0db996243bb19e4213bb2d9e4f727f0412c84166a9748b068372bb2f9e5",
+      "after": "bf7bedc1994e7becdf607723f5d4c996cd7b98fea1c13480aee36c4fa92e9f6e"
+    }
+  },
+  "old_stylesheet_prefix_preserved": true,
+  "html_seo_and_images_preserved": true,
+  "complete_guide_lists_preserved": {
+    "plantes-semis": 17,
+    "entretien-astuces": 24
+  },
+  "generated_minified_stylesheet": true,
+  "only_selected_sitemap_nodes_changed": true,
+  "browser_check": "non_verifie",
+  "browser_reason": "The browser access host is unavailable",
+  "publication": "non_effectuee",
+  "audit_counts": {
+    "html": 195,
+    "families": {
+      "systeme": 1,
+      "institutionnelle": 2,
+      "legacy": 120,
+      "article": 58,
+      "index_articles": 1,
+      "auteur": 3,
+      "index_auteurs": 1,
+      "categorie": 5,
+      "contact": 2,
+      "accueil": 1,
+      "outil": 1
+    },
+    "discovery_classes": {
+      "exclusion_existante": 4,
+      "candidate_recherche": 73,
+      "redirection": 118
+    },
+    "sitemap_entries": 73,
+    "observations": 226
+  },
+  "new_audit_observations": 0
+}

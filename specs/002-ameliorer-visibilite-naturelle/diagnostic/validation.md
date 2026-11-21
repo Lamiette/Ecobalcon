@@ -90,3 +90,39 @@ selon la préférence exprimée. Ce blocage ne prouve ni défaut ni réussite du
 Les contrôles publics et GSC actuels restent limités comme indiqué dans leurs
 rapports ; ils ne sont pas présentés comme une réception publique.
 La publication demeure une action distincte non exécutée.
+
+## Correction de disposition — 2026-11-21
+
+À la demande de l'utilisateur, reprise de la présentation des trois catégories.
+Les contrôles et empreintes du 16 novembre restent des preuves historiques ; ils
+ne décrivent pas cette nouvelle version. Preuves de la correction :
+[categories-layout-20261121.json](categories-layout-20261121.json).
+
+- Hub : introduction sur une seule colonne, quatre cartes en grille 2 × 2 puis
+  une colonne sur petit écran, cartes entièrement cliquables et actions alignées.
+- Sous-catégories : héros communs plus compacts, images à hauteur bornée, compteur
+  et accès direct aux guides regroupés ; quatre blocs d'orientation avec liens
+  clairement séparés et cibles tactiles d'environ 44 px à la taille de police standard.
+- Listes exhaustives : deux colonnes sur ordinateur, une colonne sous 700 px,
+  liens présentés en cartes de même rangée et sans la limite de largeur éditoriale.
+- Nouveaux styles tous limités à `.category-page`, présente uniquement sur ces
+  trois pages ; le CSS antérieur est conservé octet pour octet avant l'ajout.
+- CSS minifié généré par le rebuild standard dans une copie isolée ; URL CSS des
+  trois pages versionnée `20261121-categories-1` pour éviter l'ancien cache de l'asset.
+
+Comparaison de 417 fichiers : sept fichiers d'application changés seulement,
+dont trois HTML, CSS source/minifié et trois entrées de sitemap/état. Les autres
+pages et fichiers d'application sont préservés. Les 17/24 guides, leurs liens et
+leur ordre restent identiques ; métadonnées, JSON-LD, CSP, images et attributs
+existants conservés. Le contrat littéral du générateur est maintenu.
+
+Relecture indépendante favorable ; audit réel du dépôt : 195 HTML, 73 URLs sitemap,
+mêmes 226 observations préexistantes, aucune nouvelle. Les trois pages et le CSS
+versionné ont été servis en HTTP local avec code 200 et octets identiques aux
+fichiers corrigés. Ce contrôle HTTP n'est pas une vérification de rendu.
+
+La tentative de connexion à l'extension Chrome échoue encore ; aucun contrôle
+natif n'a été utilisé. **Le rendu effectif et le parcours clavier restent
+`non_verifie`, et T024 reste ouverte.** Aperçu local démarré sur
+`http://127.0.0.1:8000/categories/` pour la revue de cette correction avant commit.
+Aucun commit, push, fusion ou déploiement effectué dans cette intervention.

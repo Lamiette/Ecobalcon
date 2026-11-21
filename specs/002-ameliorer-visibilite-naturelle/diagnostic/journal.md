@@ -89,3 +89,32 @@ Prochaine décision : vérifier les quatre pages avec un Chrome accessible à 12
 390 px et au clavier. La réception statique et le dossier sont livrés avec cette
 limite explicite, sans gain SEO mesuré. Aucun staging, commit, push, `publish.bat`,
 déploiement, demande d'indexation ou tâche planifiée exécutés.
+
+## 2026-11-21 — Correction de la disposition des catégories
+
+Nouvelle demande : revoir l'alignement, l'esthétique et l'ergonomie des trois pages
+catégories. Périmètre visuel borné à ces trois URLs ; aucune nouvelle optimisation
+d'article ni publication demandée. État initial propre sur `setup/spec-kit-ecobalcon`.
+Capture courante et deux copies isolées sous
+`backups/homepage/categories-layout-20261121/`, 417 fichiers préservés.
+
+HTML des trois pages confié à un agent, CSS au coordinateur, relecture indépendante
+en lecture seule. Correction des causes relevées dans les sources : grille 3 + 1,
+héros à colonne vide sur le hub, listes éditoriales trop étroites et blocs
+d'orientation peu différenciés. Nouvelle structure commune avec styles exclusivement
+préfixés `.category-page`, grilles 2/1 colonnes, héros et images compacts, liens de
+navigation distincts et focus explicite.
+
+Rebuild standard sans `-RebuildHome` exécuté dans les copies seulement, contrôle
+sans modification puis version corrigée. Fins de ligne et recalcul préexistant
+du sitemap du simulateur écartés ; seules les dépendances réelles des trois pages
+sont appliquées après vérification des empreintes de destination. Jeu livré :
+trois HTML, CSS source/minifié, sitemap et trois entrées correspondantes de son état.
+Les preuves et empreintes sont dans `categories-layout-20261121.json`.
+
+Audit du dépôt sans nouvelle anomalie ; liens, listes 17/24, titres et schémas
+préservés, CSS compilé synchronisé, autres sources d'application inchangées.
+Aperçu HTTP local démarré, trois pages et CSS versionné servis en 200 avec les
+octets attendus. Extension Chrome toujours inaccessible : aucun rendu ni clavier
+réel validé, T024 demeure ouverte. Aucun contrôle natif utilisé selon la préférence
+de l'utilisateur. Aucun commit, push, fusion ou déploiement de cette correction.
